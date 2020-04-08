@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Codilar_MasterTables::codilar_mastertables" title="Master Tables" module="Codilar_MasterTables"
+             sortOrder="30"
+             resource="Codilar_MasterTables::codilar_mastertables"/>
+
+        <add id="Codilar_MasterTables::codilar_mastertables_variantname" title="Variant Name Table"
+             module="Codilar_MasterTables"
+             sortOrder="20" parent="Codilar_MasterTables::codilar_mastertables" action="mastertables/variantname"
+             resource="Codilar_MasterTables::codilar_mastertables_variantname"/>
+
+        <add id="Codilar_MasterTables::codilar_mastertables_metal" title="Metal Table" module="Codilar_MasterTables"
+             sortOrder="20" parent="Codilar_MasterTables::codilar_mastertables" action="mastertables/metal"
+             resource="Codilar_MasterTables::codilar_mastertables_metal"/>
+
+        <add id="Codilar_MasterTables::codilar_mastertables_locationname" title="Location Name Table"
+             module="Codilar_MasterTables"
+             sortOrder="20" parent="Codilar_MasterTables::codilar_mastertables" action="mastertables/locationname"
+             resource="Codilar_MasterTables::codilar_mastertables_locationname"/>
+
+        <add id="Codilar_MasterTables::codilar_mastertables_stonebom" title="Stone Bom Table"
+             module="Codilar_MasterTables"
+             sortOrder="20" parent="Codilar_MasterTables::codilar_mastertables" action="mastertables/stonebom"
+             resource="Codilar_MasterTables::codilar_mastertables_stonebom"/>
+        <add id="Codilar_MasterTables::codilar_mastertables_metalbom" title="Metal Bom Table"
+             module="Codilar_MasterTables"
+             sortOrder="20" parent="Codilar_MasterTables::codilar_mastertables" action="mastertables/metalbom"
+             resource="Codilar_MasterTables::codilar_mastertables_metalbom"/>
+    </menu>
+</config>
+

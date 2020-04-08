@@ -1,0 +1,1086 @@
+variant_name,product_type,category,sub_category,sub_sub_category,gold_diamond_uncut,display_in_ui
+OPNACSCFLREG,Open setting,Accessories,Open setting,Regular,Diamond,NO
+RESACSPYLREG,Payal,Accessories,Ruby Emerald Collection,Regular,Gold,No
+PLGACSARTREG,Plain Gold,Accessories,Plain Gold,Regular,Gold,NO
+SLVACSARTREG,Silver,Accessories,Silver,Regular,Gold,No
+KUNACSTKAREG,Tika,Accessories,Kundan,Regular,Gold,Yes
+KUNACSVNKREG,Vanki,Accessories,Kundan,Regular,Gold,Yes
+OPNACSWCHREG,Watch,Accessories,Regular,Regular,Diamond,Yes
+ANCBNGS01REG,Antique,Bangle,Antique,Regular,Gold,Yes
+ANCBNGS02NKS,Antique,Bangle,Nakas,Nakas,Gold,Yes
+ANCBNGS02REG,Antique,Bangle,Antique,Regular,Gold,Yes
+ANCBNGS04REG,Antique,Bangle,Antique,Regular,Gold,Yes
+CPIBNGS01REG,Chakri Polki,Bangle,Chakri Polki,Regular,Un-Cut,Yes
+CPIBNGS02REG,Chakri Polki,Bangle,Chakri Polki,Regular,Un-Cut,Yes
+CDIBNGCLSECLBR,Close Setting,Bangle,Close Setting,Broad,Diamond,Yes
+CDIBNGCLSECLCR,Close Setting,Bangle,Close Setting,Colour Diamond,Diamond,Yes
+CDIBNGCLSECLTO,Close Setting,Bangle,Close Setting,Close Thoda,Diamond,Yes
+CLSBNGMNSFDI,Close Setting,Bangle,Close Setting,Minus Design,Diamond,Yes
+CLSBNGMNSREG,Close Setting,Bangle,Close Setting,Minus Design,Diamond,Yes
+CLSBNGNAVREG,Close Setting,Bangle,Close Setting,Navratan,Diamond,Yes
+CLSBNGREG3LN,Close Setting,Bangle,Close Setting,3 Line,Diamond,Yes
+CLSBNGREGBRD,Close Setting,Bangle,Close Setting,Broad,Diamond,Yes
+CLSBNGREGCDI,Close Setting,Bangle,Close Setting,Colour Diamond,Diamond,Yes
+CLSBNGREGFDI,Close Setting,Bangle,Close Setting,Full Diamond,Diamond,Yes
+CLSBNGREGGRD,Close Setting,Bangle,Close Setting,Graduation,Diamond,Yes
+CLSBNGREGREG,Close Setting,Bangle,Close Setting,Close Setting,Diamond,Yes
+CLSBNGTODREG,Close Setting,Bangle,Close Setting,Close Setting,Diamond,Yes
+FDIBNGCLSECLOT,Close Setting,Bangle,Close Setting,Full Diamond,Diamond,Yes
+FDIBNGCLSECL,Close Setting,Bangle,Close Setting,Full Diamond,Diamond,Yes
+CDIBNGOPENOP,Colour Diamond,Bangle,Open Setting,Regular,Diamond,Yes
+CDIBNGOPENOPCR,Colour Diamond,Bangle,Open Setting,Regular,Diamond,Yes
+LPHBNGFANCDI,Colour Diamond,Bangle,Luxury Special Product,Regular,Diamond,Yes
+OPNBNGREGCDI,Colour Diamond,Bangle,Open Setting,Regular,Diamond,Yes
+OPNBNGRGRCDI,Colour Diamond,Bangle,Open Setting,Regular,Diamond,Yes
+FDIBNGOPENOPFD,Full Diamond,Bangle,Open Setting,Regular,Diamond,Yes
+LCSBNGFDIC,Full Diamond,Bangle,Luxury Special Product,Regular,Diamond,Yes
+LFSBNGFANFDI,Full Diamond,Bangle,Luxury Special Product,Regular,Diamond,Yes
+LRGBNGFANFDI,Full Diamond,Bangle,Large,Regular,Diamond,Yes
+OPNBNGREGFDI,Full Diamond,Bangle,Open Setting,Regular,Diamond,Yes
+FDIBNGOPENOP,Full Diamond,Bangle,Open setting,Open setting,Diamond,Yes
+KUNBNGS01REG,Kundan,Bangle,Kundan,Regular,Un-Cut,Yes
+LBDBNGREGCDI,LB Diamond,Bangle,Colour Diamond,Colour Diamond,Un-Cut,Yes
+LBDBNGREGFDI,LB Diamond,Bangle,Full Diamond,Regular,Un-Cut,Yes
+SMPBNGREGREG,Misc,Bangle,Misc,Regular,Gold,NO
+LSPBNGMUTCDI,Mutal Cut,Bangle,Lexury Special Product,Colour Diamond,Diamond,Yes
+LSPBNGSPLMUT,Mutual Cut,Bangle,Luxury Special Product,Regular,Diamond,Yes
+CDIBNGNAVTNAVT,Navaratan,Bangle,Colour Diamond,Regular,Diamond,Yes
+OPNBNGNAVNAV,Navaratan,Bangle,Open Setting,Regular,Diamond,Yes
+OPNBNGNAVREG,Navaratan,Bangle,Open Setting,Regular,Diamond,Yes
+MCNBNGS01REG,Plain Gold,Bangle,Machine made,Single,Gold,Yes
+MCNBNGS01ROD,Plain Gold,Bangle,Machine made,Single,Gold,Yes
+MCNBNGS02BBY,Plain Gold,Bangle,Machine made,Set of 2,Gold,Yes
+MCNBNGS02REG,Plain Gold,Bangle,Machine made,Set of 2,Gold,Yes
+MCNBNGS02ROD,Plain Gold,Bangle,Machine made,Set of 2,Gold,Yes
+MCNBNGS04REG,Plain Gold,Bangle,Machine made,Set of 4,Gold,Yes
+MCNBNGS04ROD,Plain Gold,Bangle,Machine made,Set of 4,Gold,Yes
+MCNBNGS06REG,Plain Gold,Bangle,Machine made,Set of 6,Gold,Yes
+MCNBNGS06ROD,Plain Gold,Bangle,Machine made,Set of 6,Gold,Yes
+MCNBNGS08REG,Plain Gold,Bangle,Machine made,Set of 8,Gold,Yes
+MCNBNGS08ROD,Plain Gold,Bangle,Machine made,Set of 8,Gold,Yes
+MCNBNGS12REG,Plain Gold,Bangle,Machine made,Set of 12,Gold,Yes
+MCNBNGS12ROD,Plain Gold,Bangle,Machine made,Set of 12,Gold,Yes
+PLGBNGS01REG,Plain Gold,Bangle,Single,Regular,Gold,Yes
+PLTBNGREGREG,Platinum,Bangle,Platinum,Regular,Gold,Yes
+LCSBNGREGFDI,Regular,Bangle,Close Setting,Full Diamond,Diamond,Yes
+MCNBBGREGBBY,Regular,Bangle,Machine,Baby,Gold,Yes
+CUSBNGREGREG,Regular,Bangle,Customer,Regular,Gold,Yes
+HYDBNGREGREG,Regular,Bangle,Hyderabad,Regular,Gold,Yes
+OLDBNGREGREG,Regular,Bangle,Old,Regular,Gold,Yes
+PLTBNGREGFDI,Regular,Bangle,Platinum,Full Diamond,Gold,No
+RESBNGS01REG,Ruby Emerald,Bangle,Single,Regular,Gold,Yes
+RESBNGS02REG,Ruby Emerald,Bangle,Set of 2,Regular,Gold,Yes
+RESBNGS04REG,Ruby Emerald,Bangle,Set of 4,Regular,Gold,Yes
+MCNBNGS10REG,Set of 10,Bangle,Machine,Regular,Gold,Yes
+PLGBNGS02REG,Set of 2,Bangle,Plain Gold,Regular,Gold,Yes
+SLVBNGREGREG,Silver,Bangle,Silver,Regular,Gold,NO
+OPNBNGREGSLT,Solitaire,Bangle,Open Setting,Regular,Diamond,Yes
+TMCBNGS01LAX,Temple,Bangle,Single,Regular,Gold,Yes
+TMCBNGS01NKS,Temple,Bangle,Single,Nakas,Gold,Yes
+TMCBNGS01REG,Temple,Bangle,Single,Regular,Gold,Yes
+TMCBNGS02NKS,Temple,Bangle,Set of 2,Nakas,Gold,Yes
+TMCBNGS02REG,Temple,Bangle,Set of 2,Regular,Gold,Yes
+TMCBNGS04REG,Temple,Bangle,Set of 4,Regular,Gold,Yes
+UPCBNGS01REG,Uncut Polki,Bangle,Single,Regular,Un-Cut,Yes
+UPCBNGS02REG,Uncut Polki,Bangle,Set of 2,Regular,Un-Cut,Yes
+VCLBNGS01REG,Victorian Collection,Bangle,Single,Regular,Un-Cut,Yes
+VCLBNGS02REG,Victorian Collection,Bangle,Set of 2,Regular,Un-Cut,Yes
+ANCBLTREGREG,Antique,Belt,Regular,Regular,Gold,Yes
+CPIBLTREGLAX,Chakri Polki,Belt,Regular,Regular,Un-Cut,Yes
+CPIBLTREGREG,Chakri Polki,Belt,Regular,Regular,Un-Cut,Yes
+CLSBLTREGPAT,Close Setting,Belt,Patti,Patti,Diamond,Yes
+CLSBLTREGREG,Close Setting,Belt,Regular,Regular,Diamond,Yes
+CDIBLTREGREG,Colour Diamond,Belt,Regular,Regular,Diamond,Yes
+LRGBLTFANCDI,Colour Diamond,Belt,Regular,Regular,Diamond,Yes
+KUNBLTREGREG,Kundan,Belt,Regular,Regular,Un-Cut,Yes
+LBDBLTREGCDI,LB Diamond,Belt,Colour Diamond,Regular,Un-Cut,Yes
+OPNBLTREGPAT,Open Setting,Belt,Patti,Regular,Diamond,Yes
+OPNBLTREGREG,Open Setting,Belt,Regular,Regular,Diamond,Yes
+OPNBLTRGRRGR,Open Setting,Belt,Regular,Regular,Diamond,Yes
+PLGBLTREGREG,Plain Gold,Belt,Regular,Regular,Gold,Yes
+CDIBLTREGRRE,Regular,Belt,Colour Diamond,Regular,Diamond,Yes
+CUSBLTREGREG,Regular,Belt,Customer,Regular,Gold,Yes
+SMPBLTREGREG,Regular,Belt,Sample,Regular,Gold,Yes
+RESBLTREGDAS,Regular,Belt,Ruby Emerald Collection,Dashavataram,Gold,Yes
+RESBLTREGGAJ,Regular,Belt,Ruby Emerald Collection,Gaja Lakshmi,Gold,Yes
+VCLBLTREGKUN,Regular,Belt,Victorian Collection,Kundan,Gold,Yes
+RESBLTREGBBY,Ruby Emerald,Belt,Baby,Regular,Gold,Yes
+RESBLTREGLAX,Ruby Emerald,Belt,Regular,Regular,Gold,Yes
+RESBLTREGREG,Ruby Emerald,Belt,Regular,Regular,Gold,Yes
+RESBLTREGVIS,Ruby Emerald,Belt,Regular,Regular,Gold,Yes
+TMCBLTREGAST,Temple,Belt,Asta Lakshmi,Regular,Gold,Yes
+TMCBLTREGBBY,Temple,Belt,Baby,Regular,Gold,Yes
+TMCBLTREGDAS,Temple,Belt,Dashavataram,Regular,Gold,Yes
+TMCBLTREGGAJ,Temple,Belt,Gajalakshmi,Regular,Gold,Yes
+TMCBLTREGKRI,Temple,Belt,Krishna,Regular,Gold,Yes
+TMCBLTREGKUN,Temple,Belt,Kundan,Regular,Gold,Yes
+TMCBLTREGLAX,Temple,Belt,Regular,Regular,Gold,Yes
+TMCBLTREGREG,Temple,Belt,Regular,Regular,Gold,Yes
+TMCBLTREGVIS,Temple,Belt,Regular,Regular,Gold,Yes
+UPCBLTREGAST,Uncut Polki,Belt,Asta Lakshmi,Regular,Un-Cut,Yes
+UPCBLTREGBBY,Uncut Polki,Belt,Baby,Regular,Un-Cut,Yes
+UPCBLTREGLAX,Uncut Polki,Belt,Regular,Regular,Un-Cut,Yes
+UPCBLTREGREG,Uncut Polki,Belt,Regular,Regular,Un-Cut,Yes
+VCLBLTREGREG,Victorian Collection,Belt,Regular,Regular,Un-Cut,Yes
+CDIBLMBABYBA,Baby,Belt Moguppu,Colour Diamond,Regular,Un-Cut,Yes
+CDIBLMREGRREGR,Colour Diamond,Belt Moguppu,Regular,Regular,Diamond,Yes
+LBDBLMCDIM,Colour Diamond,Belt Moguppu,Regular,Regular,Un-Cut,Yes
+OPNBLMREGREG,Open Setting,Belt Moguppu,Regular,Regular,Diamond,Yes
+OPNBLMRGRRGR,Open Setting,Belt Moguppu,Regular,Regular,Diamond,Yes
+CDIBLMREGRRE,Regular,Belt Moguppu,Colour Diamond,Regular,Diamond,Yes
+CUSBLMREGREG,Regular,Belt Moguppu,Customer,Regular,Gold,Yes
+CPIBRCOVLREG,Chakri Polki,Bracelets,Regular,Regular,Un-Cut,Yes
+CSTBRCLSEREG,Close Setting,Bracelets,Regular,Regular,Gold,Yes
+HOLBRCLSEREG,Close Setting,Bracelets,Regular,Hollow,Gold,Yes
+CRTBRCLSEREG,Close Setting,Bracelets,Regular,Regular,Gold,Yes
+CSTBRCLSEWCH,Close Setting,Bracelets,Watch,Regular,Gold,Yes
+INTBRCLSEREG,Close Setting,Bracelets,Regular,Regular,Gold,Yes
+NWBBRCLSEREG,Close Setting,Bracelets,Regular,Regular,Gold,Yes
+CSTBRCLSEROD,Close Setting,Bracelets,Rhodium,Regular,Gold,Yes
+RJTBRCLSEREG,Close Setting,Bracelets,Regular,Regular,Gold,Yes
+RJTBRCOVLREG,Close Setting,Bracelets,Regular,Regular,Gold,Yes
+RJTBRCLSEROD,Close Setting,Bracelets,Regular,Regular,Gold,Yes
+LSPBRCCDIG,Colour Diamond,Bracelets,Lexury Special Product,,Diamond,Yes
+CDIBRCLADSLADC,Colour Diamond,Bracelets,Colour Diamond,Regular,Diamond,Yes
+LPHBRCLDSCDI,Colour Diamond,Bracelets,Luxury Special Product,Regular,Diamond,Yes
+LRGBRCLDSCDI,Colour Diamond,Bracelets,Large,Regular,Diamond,Yes
+LSPBRCLDSCDI,Colour Diamond,Bracelets,Luxury Special Product,Regular,Diamond,Yes
+OPNBRCLDSCDI,Colour Diamond,Bracelets,Open Setting,Regular,Diamond,Yes
+FDIBRCLADSLADF,Full Diamond,Bracelets,Regular,Regular,Diamond,Yes
+LCSBRCLDSFDI,Full Diamond,Bracelets,Luxury Special Product,Regular,Diamond,Yes
+LFSBRCLDSFDI,Full Diamond,Bracelets,Luxury Special Product,Regular,Diamond,Yes
+LRGBRCFDIH,Full Diamond,Bracelets,Large,Regular,Diamond,Yes
+LRGBRCLDSFDI,Full Diamond,Bracelets,Large,Regular,Diamond,Yes
+OPNBRCLDSFDI,Full Diamond,Bracelets,Open Setting,Regular,Diamond,Yes
+OPNBRCGNTFDI,Gents,Bracelets,Open Setting,Full Diamond,Diamond,Yes
+CSTBRCOVLTGN,Gents,Bracelets,Regular,Regular,Gold,Yes
+CSTBRCOVLREG,Gents,Bracelets,Regular,Regular,Gold,Yes
+FDIBRCGENTGENF,Gents,Bracelets,Reglar,Regular,Diamond,Yes
+ITLBRCOVLREG,Italian,Bracelets,Regular,Regular,Gold,Yes
+SLNBRCLDSCDI,Ladies,Bracelets,Misc,Colour Diamond,Diamond,Yes
+SLNBRCLDSFDI,Ladies,Bracelets,Misc,Full Diamond,Diamond,Yes
+RJTBRCLSEBBY,Ladies,Bracelets,Rajkot,Baby,Gold,Yes
+RESBRCLSEREG,Ladies,Bracelets,Ruby Emerald Collection,Regular,Gold,Yes
+UPCBRCLSEREG,Ladies,Bracelets,Uncut Polki,Regular,Un-Cut,Yes
+HOLBRCLSEREG,Ladies,Bracelets,Ladies,Regular,Gold,Yes
+LBDBRCLDSCDI,LB Diamond,Bracelets,Colour Diamond,Regular,Un-Cut,Yes
+OPNBRCLDSPLN,Plain Gold,Bracelets,Open Setting,Regular,Diamond,Yes
+PLGBRCBNGREG,Plain Gold,Bracelets,Regular,Regular,Gold,Yes
+PLGBRCLSEREG,Plain Gold,Bracelets,Regular,Regular,Gold,Yes
+PLNBRCOVLREG,Plain Gold,Bracelets,Regular,Regular,Gold,Yes
+RJTBRCROUROD,Regualr,Bracelets,Rhodium,Regular,Gold,Yes
+CUSBRCREGREG,Regular,Bracelets,Customer,Regular,Gold,Yes
+HYDBRCREGREG,Regular,Bracelets,Hyderabad,Regular,Gold,Yes
+NEWBRCREGREG,Regular,Bracelets,New,Regular,Gold,Yes
+OLDBRCREGREG,Regular,Bracelets,Old,Regular,Gold,Yes
+SMPBRCREGREG,Regular,Bracelets,Sample,Regular,Gold,Yes
+SDKBRCREGROD,Regular,Bracelets,Sardar Kada,Rhodium,Gold,Yes
+SDKBRCREGREG,Sardar Kada,Bracelets,Regular,Regular,Gold,Yes
+SDKBRCROUBBY,Sardar Kada,Bracelets,Baby,Regular,Gold,Yes
+SDKBRCROUREG,Sardar Kada,Bracelets,Regular,Regular,Gold,Yes
+SDKBRCROUROD,Sardar Kada,Bracelets,Rhodium,Regular,Gold,Yes
+SLVBRCREGREG,Silver,Bracelets,Regular,Regular,Gold,NO
+TMCBRCOVLREG,Temple,Bracelets,Regular,Regular,Gold,Yes
+UPCBRCOVLREG,Uncut Polki,Bracelets,Regular,Regular,Un-Cut,Yes
+VCLBRCLSEREG,Victorian Collection,Bracelets,Regular,Regular,Un-Cut,Yes
+VCLBRCOVLREG,Victorian Collection,Bracelets,Regular,Regular,Un-Cut,Yes
+OPNCHNREGFDI,Regular,Chain,Open setting,Full Diamond,Diamond,Yes
+BKCHN0REGREG,Regular,Chain,Back,Regular,Gold,Yes
+CUSCHNREGREG,Regular,Chain,Customer,Regular,Gold,Yes
+HYDCHNREGREG,Regular,Chain,Hyderabad,Regular,Gold,Yes
+OLDCHNREGREG,Regular,Chain,Old,Regular,Gold,Yes
+SMPCHNREGREG,Regular,Chain,Sample,Regular,Gold,Yes
+MCNCHNREG3LN,Regular,Chain,Machine,3 Line,Gold,Yes
+MCNCHNREGRGR,Regular,Chain,Machine,Regular,Gold,Yes
+ITLCHNREG5LN,Chains,Chains,Regular,Regular,Gold,Yes
+ITLCHNREG12B,Italian,Chains,12 Balls,Regular,Gold,Yes
+ITLCHNREG13B,Italian,Chains,12 Balls,Regular,Gold,Yes
+ITLCHNREG14B,Italian,Chains,14 Balls,Regular,Gold,Yes
+ITLCHNREG1LN,Italian,Chains,1 Line,Regular,Gold,Yes
+ITLCHNREG22B,Italian,Chains,22 Balls,Regular,Gold,Yes
+ITLCHNREG23B,Italian,Chains,23 Balls,Regular,Gold,Yes
+ITLCHNREG24B,Italian,Chains,24 Balls,Regular,Gold,Yes
+ITLCHNREG2LN,Italian,Chains,2 Line,Regular,Gold,Yes
+ITLCHNREG32B,Italian,Chains,32 Balls,Regular,Gold,Yes
+ITLCHNREG33B,Italian,Chains,33 Balls,Regular,Gold,Yes
+ITLCHNREG34B,Italian,Chains,34 Balls,Regular,Gold,Yes
+ITLCHNREG3LN,Italian,Chains,3 Line,Regular,Gold,Yes
+ITLCHNREG3RE,Italian,Chains,3 Balls,Regular,Gold,Yes
+ITLCHNREG66B,Italian,Chains,66 Balls,Regular,Gold,Yes
+ANCCKRREGREG,Antique,Chokers,Regular,Regular,Gold,Yes
+CDICKRBAJUBA,Baju Bandh Choker,Chokers,Colour Diamond,Baju Bandh,Diamond,Yes
+ANCACSVNKBJU,Baju Bandh Choker,Chokers,Antique,Regular,Gold,Yes
+CDICKRBAJUBAJU,Baju Bandh Choker,Chokers,Colour Diamond,Regular,Diamond,Yes
+KUNACSBJUREG,Baju Bandh Choker,Chokers,Kundan,Regular,Un-Cut,Yes
+KUNACSVNKBJU,Baju Bandh Choker,Chokers,Kundan,Regular,Un-Cut,Yes
+RESACSVNKBJU,Baju Bandh Choker,Chokers,Ruby Emerald,Regular,Gold,Yes
+TMCACSVNKBJU,Baju Bandh Choker,Chokers,Temple,Regular,Gold,Yes
+UPCACSBJUREG,Baju Bandh Choker,Chokers,Uncut Polki,Regular,Un-Cut,Yes
+UPCACSVNKBJU,Baju Bandh Choker,Chokers,Uncut Polki,Regular,Un-Cut,Yes
+VCLACSVNKBJU,Baju Bandh Choker,Chokers,Victorian Collection,Regular,Un-Cut,Yes
+CLSCKRREGREG,Close Setting,Chokers,Regular,Regular,Diamond,Yes
+CDICKRREGREG,Colour Diamond,Chokers,Regular,Regular,Diamond,Yes
+CDICKRREGRRE,Colour Diamond,Chokers,Regular,Regular,Diamond,Yes
+CDICKRREGRREGR,Colour Diamond,Chokers,Regular,Regular,Diamond,Yes
+LBDCKRCDIM,Colour Diamond,Chokers,LB Diamond,Regular,Un-Cut,Yes
+LCSCKRREGCDI,Colour Diamond,Chokers,Luxury Special Product,Regular,Diamond,Yes
+LPHCKRFANCDI,Colour Diamond,Chokers,Luxury Special Product,Regular,Diamond,Yes
+LRGCKRFANCDI,Colour Diamond,Chokers,Large,Regular,Diamond,Yes
+LSPCKRCDIM,Colour Diamond,Chokers,Luxury Special Product,Regular,Diamond,Yes
+LSPCKRSPLCDI,Colour Diamond,Chokers,Luxury Special Product,Regular,Diamond,Yes
+OPNCKRFANREG,Fancy,Chokers,Open setting,Regular,Diamond,Yes
+LRGCKRFANCDI,Fancy,Chokers,Fancy,Colour Diamond,Diamond,Yes
+LFSCKRFANFDI,Full Diamond,Chokers,Luxury Special Product,Regular,Diamond,Yes
+LRGCKRFANFDI,Full Diamond,Chokers,Large,Regular,Diamond,Yes
+LRGCKRFDIM,Full Diamond,Chokers,Large,Regular,Diamond,Yes
+KUNCKRREGREG,Kundan,Chokers,Regular,Regular,Un-Cut,Yes
+LBDCKRREGCDI,LB Diamond,Chokers,Colour Diamond,Regular,Un-Cut,Yes
+OPNBAJREGREG,Open Setting,Chokers,Regular,Regular,Diamond,Yes
+OPNCKRREGFAN,Open Setting,Chokers,Regular,Regular,Diamond,Yes
+OPNCKRREGREG,Open Setting,Chokers,Regular,Regular,Diamond,Yes
+OPNCKRRGRRGR,Open Setting,Chokers,Regular,Regular,Diamond,Yes
+OPNCKROPNREG,Open Setting,Chokers,Regular,Regular,Diamond,Yes
+LSPCKRREGCDI,Regular,Chokers,Lexury Special Product,Colour Diamond,Diamond,Yes
+RESCKRREGREG,Ruby Emerald,Chokers,Regular,Regular,Gold,Yes
+SLVCKRREGREG,Silver,Chokers,Regular,Regular,Gold,NO
+TMCCKRREGKUN,Temple,Chokers,Kundan,Regular,Gold,Yes
+TMCCKRREGREG,Temple,Chokers,Regular,Regular,Gold,Yes
+TMCCKRREGKRI,Uncut Polki,Chokers,Regular,Regular,Gold,Yes
+UPCCKRREGREG,Uncut Polki,Chokers,Regular,Regular,Un-Cut,Yes
+VCLCKRREGREG,Victorian Collection,Chokers,Victorian Collection,Regular,Un-Cut,Yes
+KSUCOINREGRE,Regular,Coins,Kasu,Regular,Gold,No
+GOLDCOINREGR,Regular,Coins,Gold,Regular,Gold,No
+REGCONREGREG,Regular,Coins,Regular,Regular,Gold,NO
+CDIERNBALIRBAL,Bali,Earrings,Round Bali,Colour Diamond,Diamond,Yes
+CLSERNBALJBL,Bali,Earrings,J Bali,Close Setting,Diamond,Yes
+FDIERNBALIJBAL,Bali,Earrings,J Bali,Full Diamond,Diamond,Yes
+OPNERNBALJBL,Bali,Earrings,J Bali,Open Setting,Diamond,Yes
+OPNERNBALRBL,Bali,Earrings,Round Bali,Open Setting,Diamond,Yes
+CSTERNBLIREG,Bali,Earrings,Regular,Regular,Gold,Yes
+OPNERNCHBCDI,Chandbali,Earrings,Open setting,Colour Diamond,Diamond,Yes
+CDIERNCHNDCH,Chandbali,Earrings,Chandbali,Colour Diamond,Diamond,Yes
+CDIERNJHUCJU,Chandbali Jhumka,Earrings,Jhumki,Colour Diamond,Diamond,Yes
+ANCERNCHBREG,Chandbalis,Earrings,Antique,Regular,Gold,Yes
+ANCMATCHBREG,Chandbalis,Earrings,Antique,Regular,Gold,Yes
+CDIERNCHNDCHND,Chandbalis,Earrings,Colour Diamond,Regular,Diamond,Yes
+CLSERNCHBREG,Chandbalis,Earrings,Close Setting,Regular,Diamond,Yes
+CPIERNCHBREG,Chandbalis,Earrings,Chakri Polki,Regular,Un-Cut,Yes
+CPIMATCHBREG,Chandbalis,Earrings,Chakri Polki,Regular,Un-Cut,Yes
+GTPERNCHBREG,Chandbalis,Earrings,Gutta Pusulu,Regular,Gold,Yes
+GTPMATCHBREG,Chandbalis,Earrings,Gutta Pusulu,Regular,Gold,Yes
+KUNERNCHBREG,Chandbalis,Earrings,Kundan,Regular,Un-Cut,Yes
+OPNERNCHBREG,Chandbalis,Earrings,Open Setting,Regular,Diamond,Yes
+OPNMATCHBCKT,Chandbalis,Earrings,Open Setting,Choker Tops,Diamond,Yes
+OPNMATCHBNET,Chandbalis,Earrings,Open Setting,Necklace Tops,Diamond,Yes
+RESERNCHBREG,Chandbalis,Earrings,Ruby Emerald,Regular,Gold,Yes
+RESMATCHBREG,Chandbalis,Earrings,Ruby Emerald,Regular,Gold,Yes
+TMCERNCHBREG,Chandbalis,Earrings,Temple,Regular,Gold,Yes
+UPCERNCHBREG,Chandbalis,Earrings,Uncut Polki,Regular,Un-Cut,Yes
+UPCMATCHBMNG,Chandbalis,Earrings,Uncut Polki,Mango,Un-Cut,Yes
+UPCMATCHBREG,Chandbalis,Earrings,Uncut Polki,Regular,Un-Cut,Yes
+VCLERNCHBREG,Chandbalis,Earrings,Victorian Collection,Regular,Un-Cut,Yes
+VCLMATCHBREG,Chandbalis,Earrings,Victorian Collection,Regular,Un-Cut,Yes
+ANCMATHNGREG,Chandeliers,Earrings,Antique,Regular,Gold,Yes
+CDIERNCNDLCNDL,Chandeliers,Earrings,Colour Diamond,Regular,Diamond,Yes
+CLSMATHNGNET,Chandeliers,Earrings,Close Setting,Necklace Tops,Diamond,Yes
+CPIMATHNGREG,Chandeliers,Earrings,Chakri Polki,Regular,Un-Cut,Yes
+FDIERNCNDLCNDL,Chandeliers,Earrings,Full Diamond,Regular,Diamond,Yes
+GTPMATHNGREG,Chandeliers,Earrings,Gutta Pusulu,Regular,Gold,Yes
+ITLMATHNGREG,Chandeliers,Earrings,Itealian,Regular,Gold,Yes
+LRGNETHNGCDI,Chandeliers,Earrings,Large,Colour Diamond,Diamond,Yes
+OPNMATHNGCKT,Chandeliers,Earrings,Open Setting,Choker Tops,Diamond,Yes
+OPNMATHNGHAT,Chandeliers,Earrings,Open Setting,Haram Tops,Diamond,Yes
+OPNMATHNGNET,Chandeliers,Earrings,Open Setting,Necklace Tops,Diamond,Yes
+OPNMATHNGPNT,Chandeliers,Earrings,Open Setting,Pendant Tops,Diamond,Yes
+RESMATHNGREG,Chandeliers,Earrings,Ruby Emerald,Regular,Gold,Yes
+TMCMATHNGKUN,Chandeliers,Earrings,Temple,Kundan,Gold,Yes
+TMCMATHNGREG,Chandeliers,Earrings,Temple,Regular,Gold,Yes
+UPCMATHNGMNG,Chandeliers,Earrings,Uncut Polki,Mango,Un-Cut,Yes
+UPCMATHNGREG,Chandeliers,Earrings,Uncut Polki,Regular,Un-Cut,Yes
+VCLMATHNGREG,Chandeliers,Earrings,Victorian Collection,Regular,Un-Cut,Yes
+LBDCNDREGCDI,Chandilear,Earrings,LB Diamond,Colour Diamond,Diamond,Yes
+LSPCNDFANCDI,Chandilear,Earrings,Lexury Special Product,Colour Diamond,Diamond,Yes
+LSPCNDREGCDI,Chandilear,Earrings,Lexury Special Product,Colour Diamond,Diamond,Yes
+SLVCNDSPLFDI,Chandilear,Earrings,Silver,Full Diamond,Gold,No
+CDIERNCHNGCH,Changeable,Earrings,Changeable,Colour Diamond,Diamond,Yes
+CUSCHNGREGRE,Changeable,Earrings,Customer,Regular,Gold,Yes
+SMPCHNGREGRE,Changeable,Earrings,Sample,Regular,Gold,Yes
+LSPCKTREGCDI,Choker Tops,Earrings,Lexury Special Product,Colour Diamond,Diamond,Yes
+LRGCKTFANCDI,Choker Tops,Earrings,Fancy,Colour Diamond,Diamond,Yes
+CLSERNPARREG,Close Setting,Earrings,Parijatam,Regular,Diamond,Yes
+CDIERNCLSECLCR,Close Setting,Earrings,Colour Diamond,Regular,Diamond,Yes
+CLSERNFLRREG,Close Setting,Earrings,Regular,Regular,Diamond,Yes
+CLSERNREG3ST,Close Setting,Earrings,3 Stones,Regular,Diamond,Yes
+CLSERNREG4ST,Close Setting,Earrings,4 Stones,Regular,Diamond,Yes
+CLSERNREG5ST,Close Setting,Earrings,5 Stones,Regular,Diamond,Yes
+CLSERNREG7ST,Close Setting,Earrings,7 Stones,Regular,Diamond,Yes
+CLSERNREGCDI,Close Setting,Earrings,Colour Diamond,Regular,Diamond,Yes
+CLSERNREGCKT,Close Setting,Earrings,Choker Tops,Regular,Diamond,Yes
+CLSERNREGFDI,Close Setting,Earrings,Full Diamond,Regular,Diamond,Yes
+CLSERNREGREG,Close Setting,Earrings,Regular,Regular,Diamond,Yes
+FDIERNCLSECLFD,Close Setting,Earrings,Full Diamond,Regular,Diamond,Yes
+FDIERNCLSECL3S,Close Setting,Earrings,3 Stones,Full Diamond,Diamond,Yes
+CDIERNCLSECL,Close Setting,Earrings,Colour Diamond,Regular,Diamond,Yes
+CDIERNOPENOP,Colour Diamond,Earrings,Colour Diamond,Regular,Diamond,Yes
+FCYCHNREGREG,Fancy,Earrings,Regular,Regular,Gold,Yes
+FCYCHNREGROD,Fancy,Earrings,Rhodium,Regular,Gold,Yes
+SLNERNFANFDI,Fancy,Earrings,Misc,Full Diamond,Diamond,Yes
+OPNERNFANCDI,Fancy,Earrings,Open setting,Colour Diamond,Diamond,Yes
+CDIERNFANCFA,Fancy,Earrings,Colour Diamond,Fancy,Diamond,Yes
+LSPSTNFANFDI,Fancy,Earrings,Lexury Special Product,Full Diamond,Diamond,Yes
+FDIERNCLSECL,Folwer,Earrings,Close Setting,Regular,Diamond,Yes
+LBDSTNFDIG,Full Diamond,Earrings,LB Diamond,Set,Diamond,Yes
+LCSHNGJMKCDI,Hanging,Earrings,Close Setting,Colour Diamond,Diamond,Yes
+LFSHNGJMKFDI,Hanging,Earrings,Laxuri Special Product,Full Diamond,Diamond,Yes
+LBDHNGJMKCDI,Hanging,Earrings,LB Diamond,Colour Diamond,Diamond,Yes
+LPHHNGJMKCDI,Hanging,Earrings,Colour Diamond,Colour Diamond,Diamond,Yes
+LRGHNGJMKCDI,Hanging,Earrings,Large,Colour Diamond,Diamond,Yes
+ANCERNHNGREG,Hangings,Earrings,Antique,Regular,Gold,Yes
+BLKERNHNGREG,Hangings,Earrings,Black,Regular,Gold,Yes
+CDIERNCHNGCHNG,Hangings,Earrings,Colour Diamond,Regular,Diamond,Yes
+CDIERNHNGREG,Hangings,Earrings,Colour Diamond,Regular,Diamond,Yes
+CPIERNHNGREG,Hangings,Earrings,Chakri Polki,Regular,Un-Cut,Yes
+GTPERNHNGREG,Hangings,Earrings,Gutta Pusulu,Regular,Gold,Yes
+ITLERNHNGREG,Hangings,Earrings,Itealian,Regular,Gold,Yes
+KUNERNHNGREG,Hangings,Earrings,Kundan,Regular,Un-Cut,Yes
+LCSHNGREGCDI,Hangings,Earrings,Luxury Special Product,Colour Diamond,Diamond,Yes
+LFSHNGFANFDI,Hangings,Earrings,Luxury Special Product,Full Diamond,Diamond,Yes
+LPHHNGFANCDI,Hangings,Earrings,Luxury Special Product,Colour Diamond,Diamond,Yes
+LPHHNGREGCDI,Hangings,Earrings,Luxury Special Product,Colour Diamond,Diamond,Yes
+LRGHNGFANCDI,Hangings,Earrings,Large,Colour Diamond,Diamond,Yes
+LRGHNGFANFDI,Hangings,Earrings,Large,Full Diamond,Diamond,Yes
+RESERNHNGMAL,Hangings,Earrings,Ruby Emerald,Mala,Gold,Yes
+RESERNHNGREG,Hangings,Earrings,Ruby Emerald,Regular,Gold,Yes
+TMCERNHNGREG,Hangings,Earrings,Temple,Regular,Gold,Yes
+UPCERNHNGREG,Hangings,Earrings,Uncut Polki,Regular,Un-Cut,Yes
+VCLERNHNGREG,Hangings,Earrings,Victorian Collection,Regular,Un-Cut,Yes
+VCLMATCKTREG,Hangings,Earrings,Victorian Collection,Regular,Un-Cut,Yes
+CSTERNHNGREG,Hangings,Earrings,Regular,Regular,Gold,Yes
+LSPHATREGCDI,Haram Tops,Earrings,Lexury Special Product,Colour Diamond,Diamond,Yes
+ITLCHNREG1RE,Italian,Earrings,Regular,Regular,Gold,Yes
+ITLCHNREG2RE,Italian,Earrings,Regular,Regular,Gold,Yes
+ITLCHNREGBBY,Italian,Earrings,Baby,Regular,Gold,Yes
+ITLCHNREGREG,Italian,Earrings,Regular,Regular,Gold,Yes
+ITLCHNREGROD,Italian,Earrings,Rhodium,Regular,Gold,Yes
+OPNMATJBLPNT,J Bali,Earrings,Open Setting,Pendant Tops,Diamond,Yes
+CDIERNJHURJU,Jhumki,Earrings,Jhumki,Colour Diamond,Diamond,Yes
+CDIJMKJHURJU,Jhumki,Earrings,Jhumki,Colour Diamond,Diamond,Yes
+RESERNJHUREG,Jhumki,Earrings,Ruby Emerald Collection,Regular,Gold,Yes
+TMCJMKREGRGR,Jhumki,Earrings,Temple Collection,Regular,Gold,Yes
+OPNJMKCJMREG,Jhumkis,Earrings,Jhumki,Chandbali Jhumka,Diamond,Yes
+OPNJMKREGCON,Jhumki,Earrings,Jhumki,Regular,Diamond,Yes
+ANCJMKREGREG,Jhumkis,Earrings,Antique,Regular,Gold,Yes
+ANCMATJHUMNG,Jhumkis,Earrings,Antique,Mango,Gold,Yes
+ANCMATJHUREG,Jhumkis,Earrings,Antique,Regular,Gold,Yes
+CDIERNJHUCJUCB,Jhumkis,Earrings,Jhumki,Chandbali Jhumka,Diamond,Yes
+CDIERNJHURJUCN,Jhumkis,Earrings,Colour Diamond,Regular,Diamond,Yes
+CDIERNJHURJUTR,Jhumkis,Earrings,Colour Diamond,Regular,Diamond,Yes
+CLSJMKREGCDI,Jhumkis,Earrings,Close Setting,Colour Diamond,Diamond,Yes
+CLSJMKREGTRD,Jhumkis,Earrings,Close Setting,Traditional,Diamond,Yes
+CPIJMKREGREG,Jhumkis,Earrings,Chakri Polki,Regular,Un-Cut,Yes
+CPIMATJHUREG,Jhumkis,Earrings,Chakri Polki,Regular,Un-Cut,Yes
+CZAJMKREGREG,Jhumkis,Earrings,Cubic Zirconia,Regular,Gold,Yes
+FDIERNJHURJUCN,Jhumkis,Earrings,Full Diamond,Regular,Diamond,Yes
+GTPMATJHUREG,Jhumkis,Earrings,Gutta Pusulu,Regular,Gold,Yes
+KUNJMKREGREG,Jhumkis,Earrings,Kundan,Regular,Un-Cut,Yes
+KUNMATJHUREG,Jhumkis,Earrings,Kundan,Regular,Un-Cut,Yes
+LCSHNGCJMCDI,Jhumkis,Earrings,Luxury Special Product,Colour Diamond,Diamond,Yes
+OPNJMKCJMCJM,Jhumkis,Earrings,Open Setting,Regular,Diamond,Yes
+OPNJMKCJMREG,Jhumkis,Earrings,Open Setting,Regular,Diamond,Yes
+OPNJMKREGCON,Jhumkis,Earrings,Open Setting,Coin,Diamond,Yes
+OPNJMKREGFAN,Jhumkis,Earrings,Open Setting,Fancy,Diamond,Yes
+OPNJMKREGTRD,Jhumkis,Earrings,Open Setting,Traditional,Diamond,Yes
+OPNJMKRGRCON,Jhumkis,Earrings,Open Setting,Coin,Diamond,Yes
+OPNMATJHUCKT,Jhumkis,Earrings,Open Setting,Choker Tops,Diamond,Yes
+OPNMATJHUHAT,Jhumkis,Earrings,Open Setting,Haram Tops,Diamond,Yes
+OPNMATJHUNET,Jhumkis,Earrings,Open Setting,Necklace Tops,Diamond,Yes
+OPNMATJHUPNT,Jhumkis,Earrings,Open Setting,Pendant Tops,Diamond,Yes
+RESJMKREGREG,Jhumkis,Earrings,Ruby Emerald,Regular,Gold,Yes
+TMCJMKREGREG,Jhumkis,Earrings,Temple,Regular,Gold,Yes
+TMCJMKREGRRE,Jhumkis,Earrings,Temple,Regular,Gold,Yes
+TMCMATJHUREG,Jhumkis,Earrings,Temple,Regular,Gold,Yes
+UPCJMKREGREG,Jhumkis,Earrings,Uncut Polki,Regular,Un-Cut,Yes
+UPCMATJHUREG,Jhumkis,Earrings,Uncut Polki,Regular,Un-Cut,Yes
+VCLJMKREGREG,Jhumkis,Earrings,Victorian Collection,Regular,Un-Cut,Yes
+VCLMATJHUREG,Jhumkis,Earrings,Victorian Collection,Regular,Un-Cut,Yes
+GTPJMKREGREG,Jhumkis,Earrings,Gutta Pusulu,Regular,Gold,Yes
+CSTJMKREGREG,Jhumkis,Earrings,Regular,Regular,Gold,Yes
+CDIERNJJHUCJUCB,Jhumkis,Earrings,Chandbali Cum Jhumki,Regular,Diamond,Yes
+MCNCHNBCNREG,Machine,Earrings,Regular,Regular,Gold,Yes
+MCNCHNREGREG,Machine,Earrings,Regular,Regular,Gold,Yes
+CDIERNFANCFANC,Matching Tops,Earrings,Colour Diamond,Fancy,Diamond,Yes
+CDIERNOPENOPCR,Matching Tops,Earrings,Colour Diamond,Open Setting,Diamond,Yes
+CDIERNOPENOPCT,Matching Tops,Earrings,Colour Diamond,Open Setting,Diamond,Yes
+CDIERNSETTNECT,Matching Tops,Earrings,Colour Diamond,Necklace Tops,Diamond,Yes
+FDIERNFANCFANC,Matching Tops,Earrings,Full Diamond,Fancy,Diamond,Yes
+FDIERNOPENOPCT,Matching Tops,Earrings,Full Diamond,Open Setting,Diamond,Yes
+FDIERNOPENOPFD,Matching Tops,Earrings,Full Diamond,Open Setting,Diamond,Yes
+FDIERNOPENOPNT,Matching Tops,Earrings,Full Diamond,Regular,Diamond,Yes
+FDIERNOPENOPSL,Matching Tops,Earrings,Full Diamond,Regular,Diamond,Yes
+FDIERNSETTNECT,Matching Tops,Earrings,Full Diamond,Necklace Tops,Diamond,Yes
+FDIERNSETTPNDT,Matching Tops,Earrings,Full Diamond,Pendant Tops,Diamond,Yes
+LBDCKTREGCDI,Matching Tops,Earrings,Colour Diamond,Regular,Un-Cut,Yes
+LBDHATREGCDI,Matching Tops,Earrings,Colour Diamond,Regular,Un-Cut,Yes
+LBDNETREGCDI,Matching Tops,Earrings,Colour Diamond,Regular,Un-Cut,Yes
+LCSHATREGCDI,Matching Tops,Earrings,Colour Diamond,Regular,Diamond,Yes
+LFSNETFANCDI,Matching Tops,Earrings,Colour Diamond,Regular,Diamond,Yes
+LFSNETFANFDI,Matching Tops,Earrings,Full Diamond,Regular,Diamond,Yes
+LPHCKTFANCDI,Matching Tops,Earrings,Colour Diamond,Regular,Diamond,Yes
+LPHHATFANCDI,Matching Tops,Earrings,Colour Diamond,Regular,Diamond,Yes
+LPHNETCDIF,Matching Tops,Earrings,Colour Diamond,Regular,Diamond,Yes
+LPHNETCDIG,Matching Tops,Earrings,Colour Diamond,Regular,Diamond,Yes
+LPHNETCNDCDI,Matching Tops,Earrings,Colour Diamond,Regular,Diamond,Yes
+LPHNETFANCDI,Matching Tops,Earrings,Colour Diamond,Regular,Diamond,Yes
+LPHPNTFANCDI,Matching Tops,Earrings,Colour Diamond,Regular,Diamond,Yes
+LRGCKTFANCDI,Matching Tops,Earrings,Colour Diamond,Regular,Diamond,Yes
+LRGCKTFANFDI,Matching Tops,Earrings,Full Diamond,Regular,Diamond,Yes
+LRGCKTFDIM,Matching Tops,Earrings,Full Diamond,Regular,Diamond,Yes
+LRGHATCDIG,Matching Tops,Earrings,Colour Diamond,Regular,Diamond,Yes
+LRGHATFANCDI,Matching Tops,Earrings,Colour Diamond,Regular,Diamond,Yes
+LRGNCTFANFDI,Matching Tops,Earrings,Full Diamond,Regular,Diamond,Yes
+LRGNETCDIF,Matching Tops,Earrings,Colour Diamond,Regular,Diamond,Yes
+LRGNETCNDCDI,Matching Tops,Earrings,Colour Diamond,Regular,Diamond,Yes
+LRGNETFANCDI,Matching Tops,Earrings,Colour Diamond,Regular,Diamond,Yes
+LRGNETFANFDI,Matching Tops,Earrings,Full Diamond,Regular,Diamond,Yes
+LRGNETREGCDI,Matching Tops,Earrings,Colour Diamond,Regular,Diamond,Yes
+LRGPNTFANFDI,Matching Tops,Earrings,Full Diamond,Regular,Diamond,Yes
+LSPCKTCDIG,Matching Tops,Earrings,Colour Diamond,Regular,Diamond,Yes
+LSPCKTSPLCDI,Matching Tops,Earrings,Colour Diamond,Regular,Diamond,Yes
+LSPNETFANCDI,Matching Tops,Earrings,Colour Diamond,Regular,Diamond,Yes
+LSPNETSPLCDI,Matching Tops,Earrings,Colour Diamond,Regular,Diamond,Yes
+OPNERNFANFDI,Matching Tops,Earrings,Full Diamond,Regular,Diamond,Yes
+OPNERNREGCDI,Matching Tops,Earrings,Colour Diamond,Regular,Diamond,Yes
+OPNERNREGCKT,Matching Tops,Earrings,Open Setting,Choker Tops,Diamond,Yes
+OPNERNREGFDI,Matching Tops,Earrings,Full Diamond,Regular,Diamond,Yes
+OPNERNRGRCDI,Matching Tops,Earrings,Colour Diamond,Regular,Diamond,Yes
+OPNERNRGRFDI,Matching Tops,Earrings,Full Diamond,Regular,Diamond,Yes
+OPNMATBLIPNT,Matching Tops,Earrings,Open Setting,Pendant Tops,Diamond,Yes
+OPNMATCNDCKT,Matching Tops,Earrings,Open Setting,Choker Tops,Diamond,Yes
+OPNMATCNDHAT,Matching Tops,Earrings,Open Setting,Haram Tops,Diamond,Yes
+OPNMATCNDNCT,Matching Tops,Earrings,Open Setting,Necklace Tops,Diamond,Yes
+OPNMATCNDNET,Matching Tops,Earrings,Open Setting,Necklace Tops,Diamond,Yes
+OPNMATCNDPNT,Matching Tops,Earrings,Open Setting,Pendant Tops,Diamond,Yes
+OPNMATFANNET,Matching Tops,Earrings,Open Setting,Necklace Tops,Diamond,Yes
+OPNMATFANPNT,Matching Tops,Earrings,Open Setting,Pendant Tops,Diamond,Yes
+OPNMATFANREG,Matching Tops,Earrings,Open Setting,Regular,Diamond,Yes
+OPNMATREGCKT,Matching Tops,Earrings,Open Setting,Choker Tops,Diamond,Yes
+OPNMATREGHAT,Matching Tops,Earrings,Open Setting,Haram Tops,Diamond,Yes
+OPNMATREGNET,Matching Tops,Earrings,Open Setting,Necklace Tops,Diamond,Yes
+OPNMATREGPNT,Matching Tops,Earrings,Open Setting,Pendant Tops,Diamond,Yes
+OPNMATSTNPNT,Matching Tops,Earrings,Open Setting,Pendant Tops,Diamond,Yes
+RESMATNETREG,Matching Tops,Earrings,Ruby Emerald,Regular,Gold,Yes
+LSPSTNCDIG,Matching Tops,Earrings,Colour Diamond,Luxury Special Product,Diamond,Yes
+RJTERNHNGREG,Matching Tops,Earrings,Regular,Regular,Gold,Yes
+CDIERNSETTNE,Matching Tops,Earrings,Colour Diamond,Matching Tops,Diamond,Yes
+CDIERNSETTCK,Matching Tops,Earrings,Colour Diamond,Matching Tops,Diamond,Yes
+CDIERNSETTPN,Matching Tops,Earrings,Colour Diamond,Pendant Tops,Diamond,Yes
+LBDMATSTNCDI,Matching Tops,Earrings,LB Diamond,Colour Diamond,Diamond,Yes
+OPNMATCHBPNT,Matching Tops,Earrings,Open setting,Pendant tops,Diamond,Yes
+OPNMATFANCKT,Matching Tops,Earrings,Open setting,Choker Tops,Diamond,Yes
+OPNMATFANHAT,Matching Tops,Earrings,Open setting,Haram Tops,Diamond,Yes
+OPNMATKNTNET,Matching Tops,Earrings,Open setting,Necklace Tops,Diamond,Yes
+OPNMATCHBHAT,Matching Tops,Earrings,Chandbali,Haram Tops,Diamond,Yes
+OPNMATSETNET,Matching Tops,Earrings,Open setting,Necklace Tops,Diamond,Yes
+OPNMATSETPNT,Matching Tops,Earrings,Open setting,Pendant tops,Diamond,Yes
+OPNMATSTNNET,Matching Tops,Earrings,Open setting,Necklace Tops,Diamond,Yes
+RJTMATHNGREG,Matching Tops,Earrings,Rajkot,Regular,Gold,Yes
+SLVMATSTNNET,Matching Tops,Earrings,Silver,Necklace Tops,Gold,Yes
+KUNMATSTDREG,Matching Tops,Earrings,Kundan,Regular,Gold,Yes
+OPNMATHNGNET,Matching Tops,Earrings,Hanging,Necklace Tops,Diamond,Yes
+CLSERNMTLCHM,Matil,Earrings,Close Setting,Champaswralu,Diamond,Yes
+OPNERNMTLCHM,Matil,Earrings,Open Setting,Champaswralu,Diamond,Yes
+OPNERNMTLREG,Matil,Earrings,Open Setting,Regular,Diamond,Yes
+CLSERNMTLREG,Matil,Earrings,Close Setting,Regular,Diamond,Yes
+MESCHNREGREG,Mesh Chain,Earrings,Regular,Regular,Gold,Yes
+OLDERNREGREG,Misc,Earrings,Old,Regular,Diamond,NO
+LSPSTNMUTCDI,Mutal Cut,Earrings,Lexury Special Product,Colour Diamond,Diamond,Yes
+LSPHNGSPLMUT,Mutual Cut,Earrings,Luxury Special Product,Regular,Diamond,Yes
+OPNERNREGNAV,Navaratan,Earrings,Open Setting,Regular,Diamond,Yes
+LBDNETFANFDI,Necklace Tops,Earrings,LB Diamond,Full Diamond,Diamond,Yes
+LSPNETMUTCDI,Necklace Tops,Earrings,Lexury Special Product,Colour Diamond,Diamond,Yes
+OPNERNBALJBL,Open setting,Earrings,Bali,J Bali,Diamond,Yes
+OPNERNFANREG,Open setting,Earrings,Fancy,Regular,Diamond,Yes
+OPNERNREGCDI,Open setting,Earrings,Regular,Colour Diamond,Diamond,Yes
+OPNERNREGFDI,Open setting,Earrings,Regular,Full Diamond,Diamond,Yes
+OPNERNCNDREG,Open Setting,Earrings,Regular,Regular,Diamond,Yes
+OPNERNFANREG,Open Setting,Earrings,Regular,Regular,Diamond,Yes
+OPNERNPTRREG,Open Setting,Earrings,Regular,Regular,Diamond,Yes
+CLSERNPARREG,Parijatam,Earrings,Close Setting,Regular,Diamond,Yes
+FDIERNCLSEPA,Parijatam,Earrings,Full Diamond,Regular,Diamond,Yes
+LRGPNTFANCDI,Pendant tops,Earrings,Large,Colour Diamond,Diamond,Yes
+PLTCHNREGREG,Platinum,Earrings,Regular,Regular,Gold,Yes
+PLTERNREGREG,Platinum,Earrings,Platinum,Regular,Gold,Yes
+CLSERNPTRREG,Pointer,Earrings,Close Setting,Regular,Diamond,Yes
+CBTCHNREGREG,Regualr,Earrings,Regular,Regular,Gold,Yes
+NWBCHNREGREG,Regualr,Earrings,Regular,Regular,Gold,Yes
+RJTCHNREGREG,Regualr,Earrings,Regular,Regular,Gold,Yes
+PLGCHNREGREG,Regualr,Earrings,Regular,Regular,Gold,Yes
+INTCHNREGREG,Regualr,Earrings,Regular,Regular,Gold,Yes
+RJTCHNREGROD,Regualr,Earrings,Rhodium,Regular,Gold,Yes
+MCNCHNREGBOX,Regular,Earrings,Regular,Regular,Gold,Yes
+LBDERNREGCDI,Regular,Earrings,LB Diamond,Colour Diamond,Diamond,Yes
+SLNERNREGCDI,Regular,Earrings,Misc,Colour Diamond,Diamond,Yes
+SLNERNREGFDI,Regular,Earrings,Misc,Full Diamond,Diamond,Yes
+SOLERNREGFDI,Regular,Earrings,Solitaire,Full Diamond,Diamond,Yes
+LRGHNGREGFDI,Regular,Earrings,Large,Full Diamond,Diamond,Yes
+LSPSTNREGCDI,Regular,Earrings,Lexury Special Product,Colour Diamond,Diamond,Yes
+CUSERNREGREG,Regular,Earrings,Customer,Regular,Gold,Yes
+HYDERNREGREG,Regular,Earrings,Hyderabad,Regular,Gold,Yes
+SMPERNREGREG,Regular,Earrings,Sample,Regular,Gold,Yes
+PLTERNREGFDI,Regular,Earrings,Platinum,Full Diamond,Gold,Yes
+OPNERNSTNCKT,Set,Earrings,Open setting,Choker Tops,Diamond,Yes
+SLVCKTREGREG,Silver,Earrings,Regular,Regular,Gold,NO
+SLVERNREGREG,Silver,Earrings,Regular,Regular,Gold,NO
+SLVNETREGREG,Silver,Earrings,Regular,Regular,Gold,NO
+CLSERNREGSLT,Solitaire,Earrings,Close Setting,Regular,Diamond,Yes
+CLSERNSLTREG,Solitaire,Earrings,Close Setting,Regular,Diamond,Yes
+OPNERNREGSLT,Solitaire,Earrings,Open Setting,Regular,Diamond,Yes
+OPNERNSLTREG,Solitaire,Earrings,Open Setting,Regular,Diamond,Yes
+KUNERNSTDREG,Stud,Earrings,Kundan,Regular,Gold,Yes
+ANCERNSTDREG,Studs,Earrings,Antique,Regular,Gold,Yes
+ANCMATSTDREG,Studs,Earrings,Antique,Regular,Gold,Yes
+ANCMATSTDVRM,Studs,Earrings,Antique,Varahalu mala,Gold,Yes
+CLSERNCNGREG,Studs,Earrings,Close Setting,Regular,Diamond,Yes
+CPIMATSTDREG,Studs,Earrings,Chakri Polki,Regular,Un-Cut,Yes
+CZAERNSTDREG,Studs,Earrings,Cubic Zirconia,Regular,Gold,Yes
+GTPERNSTDREG,Studs,Earrings,Gutta Pusulu,Regular,Gold,Yes
+KSUERNSTDREG,Studs,Earrings,Kasu,Regular,Gold,Yes
+OPNERNCNGREG,Studs,Earrings,Open Setting,Regular,Diamond,Yes
+OPNERNSTDFDI,Studs,Earrings,Open Setting,Full Diamond,Diamond,Yes
+OPNMATSTDNET,Studs,Earrings,Open Setting,Necklace Tops,Diamond,Yes
+OPNMATSTDPNT,Studs,Earrings,Open Setting,Pendant Tops,Diamond,Yes
+PLGERNSTDREG,Studs,Earrings,Plain Gold,Regular,Gold,Yes
+RESERNREGMAL,Studs,Earrings,Ruby Emerald,Mala,Gold,Yes
+RESERNSTDREG,Studs,Earrings,Ruby Emerald,Regular,Gold,Yes
+TMCERNSTDREG,Studs,Earrings,Temple,Regular,Gold,Yes
+TMCMATSTDREG,Studs,Earrings,Temple,Regular,Gold,Yes
+UPCERNREGREG,Studs,Earrings,Uncut Polki,Regular,Un-Cut,Yes
+UPCERNSTDREG,Studs,Earrings,Uncut Polki,Regular,Un-Cut,Yes
+UPCMATSTDREG,Studs,Earrings,Uncut Polki,Regular,Un-Cut,Yes
+VCLERNSTDREG,Studs,Earrings,Victorian Collection,Regular,Un-Cut,Yes
+VCLMATSTDREG,Studs,Earrings,Victorian Collection,Regular,Un-Cut,Yes
+CSTERNSTDREG,Studs,Earrings,Regular,Regular,Gold,Yes
+TALCHNREGREG,Tali,Earrings,Regular,Regular,Gold,Yes
+TALCHNREGRRE,Tali,Earrings,Regular,Regular,Gold,Yes
+UPCMATHNGNET,Uncut Polki,Earrings,Matching Tops,Regular,Un-Cut,Yes
+VCLMATNETREG,Victorian Collection,Earrings,Matching Tops,Regular,Un-Cut,Yes
+VCLMATHNGNET,Victorian Collection,Earrings,Matching Tops,Regular,Un-Cut,Yes
+VCLMATHATREG,Victorian Collection,Earrings,Matching Tops,Regular,Un-Cut,Yes
+FNIFNIREGRRE,Regular,Fancy,Fancy,Regular,Diamond,No
+OLDGOLD18K,Old,Gold,Old,,Gold,No
+OLDGOLD22K,Old,Gold,Old,,Gold,No
+OLDGOLDREGRE,Regular,Gold,Old,Regular,Gold,Yes
+ANCHARREGMNG,Antique,Harams,Mango,Mango,Gold,Yes
+ANCHARREGREG,Antique,Harams,Regular,Regular,Gold,Yes
+ANCHARREGVRM,Antique,Harams,Varahalu mala,Varahalu mala,Gold,Yes
+CPIHARREGREG,Chakri Polki,Harams,Chakri Polki,Regular,Un-Cut,Yes
+CLSHARREGKAS,Close Setting,Harams,Kasu,Kasu,Diamond,Yes
+CLSHARREGTRD,Close Setting,Harams,Traditional,Traditional,Diamond,Yes
+LBDHARCDIM,Colour Diamond,Harams,LB Diamond,,Diamond,Yes
+CDIHARBIGHCO,Colour Diamond,Harams,Regular,Regular,Diamond,Yes
+CDIHARBIGHCONT,Colour Diamond,Harams,Contemporary,Regular,Diamond,Yes
+CDIHARFAVTFVKV,Colour Diamond,Harams,Kapat V,Regular,Diamond,Yes
+CDIHARSP2LS2LN,Colour Diamond,Harams,Special 2 Line,Regular,Diamond,Yes
+CDIHARSP3LS3LN,Colour Diamond,Harams,Special 3 Line,Regular,Diamond,Yes
+LBDHARREGCDI,Colour Diamond,Harams,LB Diamond,Regular,Un-Cut,Yes
+LCSHARREGCDI,Colour Diamond,Harams,Luxury Special Product,Regular,Diamond,Yes
+LPHHARFANCDI,Colour Diamond,Harams,Luxury Special Product,Regular,Diamond,Yes
+LRGHARFANCDI,Colour Diamond,Harams,Large,Regular,Diamond,Yes
+LSPHARSPLCDI,Colour Diamond,Harams,Luxury Special Product,Regular,Diamond,Yes
+OPNHARFAVFKV,Colour Diamond,Harams,Kapat V,Open Setting,Diamond,Yes
+OPNHARREGSP1,Colour Diamond,Harams,Open Setting,Special 1 Line,Diamond,Yes
+OPNHARREGSP2,Colour Diamond,Harams,Open Setting,Special 2 Line,Diamond,Yes
+OPNHARREGSP3,Colour Diamond,Harams,Open Setting,Special 3 Line,Diamond,Yes
+OPNHARREGSP4,Colour Diamond,Harams,Open Setting,Special 4 Line,Diamond,Yes
+OPNHARREGTRD,Colour Diamond,Harams,Open Setting,Traditional,Diamond,Yes
+CZAHARREGREG,Cubic Zirconia,Harams,Regular,Regular,Gold,Yes
+CDIHARFANCFA,Fancy,Harams,Colour Diamond,Fancy,Diamond,Yes
+LRGHARFANCDI,Fancy,Harams,Fancy,Colour Diamond,Diamond,Yes
+LFSHARFANFDI,Full Diamond,Harams,Luxury Special Product,Regular,Diamond,Yes
+GTPHARREGREG,Gutta Pusulu,Harams,Regular,Regular,Gold,Yes
+OPNHARREGBLT,Haram cum Belt,Harams,Open Setting,Regular,Diamond,Yes
+LBDHARKASFDI,Kasu,Harams,LB Diamond,Full Diamond,Diamond,Yes
+KSUHARREGREG,Kasu,Harams,Regular,Regular,Gold,Yes
+OPNHARREGCON,Kasu,Harams,Open Setting,Regular,Diamond,Yes
+OPNHARRGRCON,Kasu,Harams,Open Setting,Regular,Diamond,Yes
+KUNHARREGMNG,Kundan,Harams,Mango,Regular,Un-Cut,Yes
+KUNHARREGREG,Kundan,Harams,Regular,Regular,Un-Cut,Yes
+LRGHARCDIM,Large,Harams,Regular,Regular,Diamond,Yes
+LBDHARREGCON,Regular,Harams,LB Diamond,Contemporay,Diamond,Yes
+OPNHARRGRSP3,Regular,Harams,Open setting,3 Line,Diamond,Yes
+OPNHARREGSP5,Regular,Harams,Open setting,5 Line,Diamond,Yes
+LSPHARREGCDI,Regular,Harams,Lexury Special Product,Colour Diamond,Diamond,Yes
+OPNHARREGLR5,Regular,Harams,Open setting,5 Line,Diamond,Yes
+OPNHARREGSP6,Regular,Harams,Open setting,6 Line,Diamond,Yes
+OPNHARREGSP7,Regular,Harams,Open setting,7 Line,Diamond,Yes
+NEWHARREGREG,Regular,Harams,New,Regular,Gold,Yes
+RESHARREGMNG,Regular,Harams,Ruby Emerald Collection,Mango,Gold,Yes
+RESHARREGREG,Ruby Emerald,Harams,Regular,Regular,Gold,Yes
+RESHARREGVRM,Ruby Emerald,Harams,Regular,Varahalu mala,Gold,Yes
+RESHARREGREG,Ruby Emerald Collection,Harams,Regular,Regular,Gold,Yes
+SLVHARSPLCDI,Special,Harams,Silver,Colour Diamond,Gold,No
+TMCHARREGKUN,Temple,Harams,Kundan,Regular,Gold,Yes
+TMCHARREGLAX,Temple,Harams,Temple,Regular,Gold,Yes
+TMCHARREGMNG,Temple,Harams,Mango,Mango,Gold,Yes
+TMCHARREGREG,Temple,Harams,Regular,Regular,Gold,Yes
+TMCHARREGRRE,Temple,Harams,Regular,Regular,Gold,Yes
+TMCHARREGVRM,Temple,Harams,Varahalu mala,Regular,Gold,Yes
+UPCHARREGVRM,Uncut Polki,Harams,Uncut Polki,Varahalu Mala,Gold,Yes
+UPCHARREGMNG,Uncut Polki,Harams,Mango,Regular,Un-Cut,Yes
+UPCHARREGREG,Uncut Polki,Harams,Regular,Regular,Un-Cut,Yes
+UPCHARREGVRM,Uncut Polki,Harams,Varahalu mala,Regular,Un-Cut,Yes
+VCLHARREGKUN,Victorian Collection,Harams,Kundan,Regular,Un-Cut,Yes
+VCLHARREGMNG,Victorian Collection,Harams,Mango,Regular,Un-Cut,Yes
+VCLHARREGREG,Victorian Collection,Harams,Regular,Regular,Un-Cut,Yes
+CUSIMTREGREG,Regular,Iteam,Customer,Regular,Gold,No
+ANCJDAREGREG,Antique,Jada,Antique,Regular,Gold,Yes
+CDIJDABILLBI,Billa,Jada,Colour Diamond,Regular,Diamond,Yes
+OPNJDABILREG,Billa,Jada,Open setting,Regular,Diamond,Yes
+CDIJDAFJDAFJ,Full Jada,Jada,Colour Diamond,Regular,Diamond,Yes
+OPNJDAREGREG,Open Setting,Jada,Regular,Regular,Diamond,Yes
+OPNJDAREGBIL,Regular,Jada,Open setting,Billa,Diamond,Yes
+RESJDAREGREG,Regular,Jada,Ruby Emerald Collection,Regular,Gold,Yes
+TMCJDAREGREG,Temple,Jada,Regular,Regular,Gold,Yes
+UPCJDAREGREG,Uncut Polki,Jada,Regular,Regular,Un-Cut,Yes
+VCLJDAREGREG,Victorian Collection,Jada,Regular,Regular,Un-Cut,Yes
+PLGKLPREGREG,Plain Gold,Kalipoth,Regular,Regular,Gold,Yes
+PLNMSRREG1LN,Plain Gold,Kalipoth,Plain Gold,1 Line,Gold,Yes
+CUSKLPREGREG,Regular,Kalipoth,Customer,Regular,Gold,No
+OLDKLPREGREG,Regular,Kalipoth,Old,Regular,Gold,Yes
+MALERNHNGREG,Earring,Mala,Regular,Regular,Gold,Yes
+REGMALREGREG,Mala,Mala,Regular,Regular,Gold,Yes
+MALCHNREGREG,Regular,Mala,Regular,Regular,Gold,Yes
+REGMALREGREG,Regular,Mala,Regular,Regular,Gold,Yes
+RESMALREGREG,Regular,Mala,Ruby Emerald,Regular,Gold,Yes
+SMPMALAREGRE,Regular,Mala,Green,Regular,Gold,NO
+CUSMALAREGRE,Regular,Mala,Customer,Regular,Gold,Yes
+OLDMALAREGRE,Regular,Mala,Old,Regular,Gold,No
+CPIACSMTLREG,Chakri Polki,Matil,Regular,Regular,Un-Cut,Yes
+FDIMTLCHAMCH,Champaswralu,Matil,Full Diamond,Regular,Diamond,Yes
+FDIMTLREGRRE,Full Diamond,Matil,Regular,Regular,Diamond,Yes
+LBDMTLFANFDI,Matil,Matil,LB Diamond,Full Diamond,Diamond,Yes
+PLGACSMTLREG,Plain Gold,Matil,Regular,Regular,Gold,Yes
+CSTACSMTLREG,Regualr,Matil,Regular,Regular,Gold,Yes
+RESACSMTLREG,Ruby Emerald,Matil,Regular,Regular,Gold,Yes
+UPCACSMTLREG,Uncut Polki,Matil,Regular,Regular,Un-Cut,Yes
+VCLACSMTLREG,Victorian Collection,Matil,Regular,Regular,Un-Cut,Yes
+OPNACSCHNREG,Chain,Misc,Open Setting,Regular,Gold,Yes
+LBDCNDCDIM,Colour Diamond,Misc,LB Diamond,Regular,Un-Cut,Yes
+LRGCNDCDIG,Colour Diamond,Misc,Large,Regular,Diamond,Yes
+LFSCNDFANFDI,Fancy,Misc,Luxury Special Product,Full Diamond,Diamond,Yes
+LPHCNDFANCDI,Fancy,Misc,Luxury Special Product,Colour Diamond,Diamond,Yes
+LRGCNDFANCDI,Fancy,Misc,Large,Colour Diamond,Diamond,Yes
+LRGCNDFANFDI,Fancy,Misc,Large,Full Diamond,Diamond,Yes
+LSPCNDFDIG,Full Diamond,Misc,Luxury Special Product,Regular,Diamond,Yes
+KLPMSR2LNREG,Kalipoth,Misc,2 Line,Regular,Gold,Yes
+LRGLRGLDSFDI,Ladies,Misc,Large,Full Diamond,Diamond,NO
+BLKMSRREG1LN,Regular,Misc,1 Line,Black,Gold,Yes
+BLKMSRREG2LN,Regular,Misc,2 Line,Black,Gold,Yes
+BLKMSRREG3LN,Regular,Misc,3 Line,Black,Gold,Yes
+BLKMSRREG4LN,Regular,Misc,4 Line,Black,Gold,Yes
+BLKMSRREG5LN,Regular,Misc,5 Line,Black,Gold,Yes
+BLKMSRREG8LN,Regular,Misc,8 Line,Black,Gold,Yes
+BLKMSRREGREG,Regular,Misc,Black,Regular,Gold,Yes
+FCYMSRREG5LN,Regular,Misc,5 Line,Fancy,Diamond,Yes
+FCYMSRREGREG,Regular,Misc,Fancy,Regular,Diamond,Yes
+FNIFNIREGREG,Regular,Misc,Fancy,Regular,Diamond,NO
+FNIITMREGREG,Regular,Misc,Fancy,Regular,Diamond,NO
+MCNACSBCNREG,Regular,Misc,Machine,Regular,Gold,No
+MCNACSPYLREG,Regular,Misc,Machine,Regular,Diamond,Yes
+ORDITMREGREG,Regular,Misc,Order,Regular,Diamond,NO
+ORDORDREGREG,Regular,Misc,Order,Regular,Diamond,NO
+PLNMSRREG1LN,Regular,Misc,Plain Gold,1 Line,Gold,Yes
+PLNMSRREG2LN,Regular,Misc,Plain Gold,2 Line,Gold,Yes
+PLNMSRREG3LN,Regular,Misc,Plain Gold,3 Line,Gold,Yes
+PLNMSRREG4LN,Regular,Misc,Plain Gold,4 Line,Gold,Yes
+PLNMSRREGREG,Regular,Misc,Plain Gold,Regular,Gold,Yes
+REGMSCREGREG,Regular,Misc,Regular,Regular,Gold,NO
+REGREPREGREG,Regular,Misc,Regular,Regular,Gold,NO
+RESACSREGREG,Regular,Misc,Ruby Emerald,Regular,Gold,Yes
+SLVAGBREGREG,Regular,Misc,Silver,Regular,Gold,NO
+SLVARTREGREG,Regular,Misc,Silver,Regular,Gold,NO
+SLVBOWREGREG,Regular,Misc,Silver,Regular,Gold,NO
+SLVDIVREGREG,Regular,Misc,Silver,Regular,Gold,NO
+SLVFNIREGREG,Regular,Misc,Silver,Regular,Gold,NO
+SLVGLSREGREG,Regular,Misc,Silver,Regular,Gold,NO
+SLVIDLREGREG,Regular,Misc,Silver,Regular,Gold,NO
+SLVKALREGREG,Regular,Misc,Silver,Regular,Gold,NO
+SLVKUMREGREG,Regular,Misc,Silver,Regular,Gold,NO
+SLVLMPREGREG,Regular,Misc,Silver,Regular,Gold,NO
+SLVPLTREGREG,Regular,Misc,Silver,Regular,Gold,NO
+SLVSPNREGREG,Regular,Misc,Silver,Regular,Gold,NO
+TMCACSARTCUP,Regular,Misc,Temple,Regular,Gold,Yes
+TMCACSKUMREG,Regular,Misc,Temple,Regular,Gold,Yes
+UPCACSARTREG,Regular,Misc,Uncut Polki,Regular,Un-Cut,Yes
+VCLACSBUTREG,Regular,Misc,Victorian Collection,Regular,Un-Cut,Yes
+LSPCNDSPLCDI,Special,Misc,Luxury Special Product,Colour Diamond,Diamond,Yes
+ANCNECREGMNG,Antique,Necklaces,Mango,Regular,Gold,Yes
+ANCNECREGREG,Antique,Necklaces,Regular,Regular,Gold,Yes
+ANCNECREGVRM,Antique,Necklaces,Varahalu mala,Regular,Gold,Yes
+CDINECCLSECL,Close Setting,Necklaces,Colour Diamond,Close Setting,Diamond,Yes
+CDINECCLSECLRG,Close Setting,Necklaces,Colour Diamond,Regular,Diamond,Yes
+CLSNECREGBAL,Close Setting,Necklaces,Close setting ball,Regular,Diamond,Yes
+CLSNECREGKAS,Close Setting,Necklaces,Kasu,Regular,Diamond,Yes
+CLSNECREGREG,Close Setting,Necklaces,Regular,Regular,Diamond,Yes
+CDINECDORIDORI,Colour Diamond,Necklaces,Dori,Regular,Diamond,Yes
+CDINECFANCFANH,Colour Diamond,Necklaces,Fancy,Regular,Diamond,Yes
+CDINECFAVTFV,Colour Diamond,Necklaces,Favourite,Regular,Diamond,Yes
+CDINECFAVTFVBL,Colour Diamond,Necklaces,Favourite Bluee,Regular,Diamond,Yes
+CDINECREGRRCON,Colour Diamond,Necklaces,Contemporary,Regular,Diamond,Yes
+CDINECREGRRTRD,Colour Diamond,Necklaces,Traditional,Regular,Diamond,Yes
+CDINECSP3LS3LN,Colour Diamond,Necklaces,Special 3 Line,Regular,Diamond,Yes
+CDINECSPELS1LN,Colour Diamond,Necklaces,Special 1 Line,Regular,Diamond,Yes
+LBDNECREGCDI,Colour Diamond,Necklaces,LB Diamond,Regular,Un-Cut,Yes
+LBDSTNREGCDI,Colour Diamond,Necklaces,LB Diamond,Regular,Un-Cut,Yes
+LFSNECFANCDI,Colour Diamond,Necklaces,Luxury Special Product,Regular,Diamond,Yes
+LFSSTNREGCDI,Colour Diamond,Necklaces,Luxury Special Product,Regular,Diamond,Yes
+LPHNECCDIH,Colour Diamond,Necklaces,Luxury Special Product,Regular,Diamond,Yes
+LPHNECCDIM,Colour Diamond,Necklaces,Luxury Special Product,Regular,Diamond,Yes
+LPHNECFANCDI,Colour Diamond,Necklaces,Luxury Special Product,Regular,Diamond,Yes
+LPHSTNFANCDI,Colour Diamond,Necklaces,Luxury Special Product,Regular,Diamond,Yes
+LRGNECCDIH,Colour Diamond,Necklaces,Large,Regular,Diamond,Yes
+LRGNECCDIM,Colour Diamond,Necklaces,Large,Regular,Diamond,Yes
+LRGNECFANCDI,Colour Diamond,Necklaces,Large,Regular,Diamond,Yes
+LRGSTNCDID,Colour Diamond,Necklaces,Large,Regular,Diamond,Yes
+LRGSTNCDIG,Colour Diamond,Necklaces,Large,Regular,Diamond,Yes
+LRGSTNFANCDI,Colour Diamond,Necklaces,Large,Regular,Diamond,Yes
+LSPNECSPLCDI,Colour Diamond,Necklaces,Luxury Special Product,Regular,Diamond,Yes
+LSPSTNCDIG-6,Colour Diamond,Necklaces,Luxury Special Product,Regular,Diamond,Yes
+LSPSTNFANCDI,Colour Diamond,Necklaces,Luxury Special Product,Regular,Diamond,Yes
+LBDNECFANFDI,Fancy,Necklaces,LB Diamond,Full Diamond,Diamond,Yes
+LSPNECFANCDI,Fancy,Necklaces,Lexury Special Product,Colour Diamond,Diamond,Yes
+OPNNECFAANRE,Fancy,Necklaces,Open setting,Red,Diamond,Yes
+FDINECFANCFA,Fancy,Necklaces,Full Diamond,Fancy,Diamond,Yes
+CDINECFANCFA,Fancy,Necklaces,Colour Diamond,Fancy,Diamond,Yes
+LRGNECFANCDI,Fancy,Necklaces,Large,Colour Diamond,Diamond,Yes
+OPNNECFAVRD2,Favourite,Necklaces,Open setting,Red,Diamond,Yes
+FDINECFANCFANC,Full Diamond,Necklaces,Fancy,Regular,Diamond,Yes
+FDINECFANCFANH,Full Diamond,Necklaces,Fancy,Regular,Diamond,Yes
+FDINECFANCFANL,Full Diamond,Necklaces,Full Diamond,Regular,Diamond,Yes
+FDINECREGRRCON,Full Diamond,Necklaces,Contemporary,Regular,Diamond,Yes
+LBDNECFAVFDI,Full Diamond,Necklaces,LB Diamond,Regular,Un-Cut,Yes
+LBDSTNREGFDI,Full Diamond,Necklaces,LB Diamond,Regular,Un-Cut,Yes
+LCSSTNREGFDI,Full Diamond,Necklaces,Luxury Special Product,Regular,Diamond,Yes
+LFSNECFANFDI,Full Diamond,Necklaces,Luxury Special Product,Regular,Diamond,Yes
+LFSSTNFANFDI,Full Diamond,Necklaces,Luxury Special Product,Regular,Diamond,Yes
+LFSSTNFDIG,Full Diamond,Necklaces,Luxury Special Product,Regular,Diamond,Yes
+LFSSTNREGFDI,Full Diamond,Necklaces,Luxury Special Product,Regular,Diamond,Yes
+LRGNECFANFDI,Full Diamond,Necklaces,Large,Regular,Diamond,Yes
+LRGNECFDIM,Full Diamond,Necklaces,Large,Regular,Diamond,Yes
+LRGSTNFANFDI,Full Diamond,Necklaces,Large,Regular,Diamond,Yes
+LRGSTNFDIG,Full Diamond,Necklaces,Large,Regular,Diamond,Yes
+LRGSTNJBLFDI,Full Diamond,Necklaces,Large,Regular,Diamond,Yes
+LSPSTNSPLFDI,Full Diamond,Necklaces,Luxury Special Product,Regular,Diamond,Yes
+GTPNECREGREG,Gutta Pusulu,Necklaces,Regular,Regular,Gold,Yes
+ANCNECHARREG,Haram,Necklaces,Antique,Regular,Gold,Yes
+UPCNECHARREG,Haram,Necklaces,Uncut Polki,Regular,Un-Cut,Yes
+ITLNECREGREG,Italian,Necklaces,Regular,Regular,Gold,Yes
+CLSNECKNTREG,Kanti,Necklaces,Close Setting,Regular,Diamond,Yes
+OPNNECKNTHYD,Kanti,Necklaces,Open setting,Hyderabad,Diamond,Yes
+CDINECKANTKANH,Kanti,Necklaces,Colour Diamond,Regular,Diamond,Yes
+CLSNECKNTHYD,Kanti,Necklaces,Close Setting,Hyderabad,Diamond,Yes
+FDINECKANTKANM,Kanti,Necklaces,Full Diamond,Regular,Diamond,Yes
+OPNNECKNTMUM,Kanti,Necklaces,Open Setting,Mumbai,Diamond,Yes
+OPNNECKNTREG,Kanti,Necklaces,Open Setting,Regular,Diamond,Yes
+KSUNECREGREG,Kasu,Necklaces,Kasu,Regular,Gold,Yes
+OPNNECREGCON,Kasu,Necklaces,Open Setting,Regular,Diamond,Yes
+OPNNECREGKAS,Kasu,Necklaces,Open Setting,Regular,Diamond,Yes
+OPNNECRGRCON,Kasu,Necklaces,Open Setting,Regular,Diamond,Yes
+KUNNECREGREG,Kundan,Necklaces,Regular,Regular,Un-Cut,Yes
+LSPNECMUTCDI,Mutal Cut,Necklaces,Lexury Special Product,Colour Diamond,Diamond,Yes
+LSPNECSPLMUT,Mutual Cut,Necklaces,Luxury Special Product,Regular,Diamond,Yes
+LSPSTNSPLMUT,Mutual Cut,Necklaces,Luxury Special Product,Regular,Diamond,Yes
+OPNNECREGSP2,Open setting,Necklaces,Open setting,2 Line,Diamond,Yes
+CPINECREGMNG,Open Setting,Necklaces,Chakri Polki,Mango,Un-Cut,Yes
+CPINECREGREG,Open Setting,Necklaces,Chakri Polki,Regular,Un-Cut,Yes
+CPINECREGVRM,Open Setting,Necklaces,Chakri Polki,Varahalu mala,Un-Cut,Yes
+OPNNECFANREG,Open Setting,Necklaces,Regular,Regular,Diamond,Yes
+OPNNECFAVBL2,Open Setting,Necklaces,Blue,Regular,Diamond,Yes
+OPNNECFAVBL3,Open Setting,Necklaces,Blue,Regular,Diamond,Yes
+OPNNECFAVFKU,Open Setting,Necklaces,Kapat U,Regular,Diamond,Yes
+OPNNECFAVGR1,Open Setting,Necklaces,Green,Regular,Diamond,Yes
+OPNNECFAVRD1,Open Setting,Necklaces,Red,Regular,Diamond,Yes
+OPNNECFAVRD3,Open Setting,Necklaces,Red,Regular,Diamond,Yes
+OPNNECFAVRSG,Open Setting,Necklaces,Rose Gold,Regular,Diamond,Yes
+OPNNECREGL10,Open Setting,Necklaces,10 Line,Regular,Diamond,Yes
+OPNNECREGLR2,Open Setting,Necklaces,Regular,Regular,Diamond,Yes
+OPNNECREGLR4,Open Setting,Necklaces,Regular,Regular,Diamond,Yes
+OPNNECREGMCH,Open Setting,Necklaces,Regular,Regular,Diamond,Yes
+OPNNECREGSP1,Open Setting,Necklaces,Special 1 Line,Regular,Diamond,Yes
+OPNNECREGSP2,Open Setting,Necklaces,Special 2 Line,Regular,Diamond,Yes
+OPNNECREGSP3,Open Setting,Necklaces,Special 3 Line,Regular,Diamond,Yes
+OPNNECREGTRD,Open Setting,Necklaces,Traditional,Regular,Diamond,Yes
+OPNNECRGRRGR,Open Setting,Necklaces,Regular,Regular,Diamond,Yes
+PLTNECREGREG,Platinum,Necklaces,Regular,Regular,Gold,Yes
+OPNNECREGSP5,Regular,Necklaces,Open setting,5 Line,Diamond,Yes
+CDINECREGRRC,Regular,Necklaces,Colour Diamond,Contemporay,Diamond,Yes
+CLSNECREGFLR,Regular,Necklaces,Close Setting,Folwer,Diamond,Yes
+LSPNECREGCDI,Regular,Necklaces,Lexury Special Product,Colour Diamond,Diamond,Yes
+OPNNECREGSP4,Regular,Necklaces,Open setting,4 Line,Diamond,Yes
+CUSNECREGREG,Regular,Necklaces,Customer,Regular,Gold,Yes
+OLDNECREGREG,Regular,Necklaces,Old,Regular,Gold,Yes
+SMPNECREGREG,Regular,Necklaces,Sample,Regular,Gold,Yes
+KUNNECREGMNG,Regular,Necklaces,Kundan,Mango,Gold,Yes
+ANCNECREGDOR,Regular,Necklaces,Antique,Dori,Gold,Yes
+ANCNECREGRGR,Regular,Necklaces,Antique,Regular,Gold,Yes
+RESNECREGMNG,Regular,Necklaces,Ruby Emerald Collection,Mango,Gold,Yes
+SLVNECREGCON,Regular,Necklaces,Silver,Contemporay,Gold,Yes
+PLTNECREGFDI,Regular,Necklaces,Platinum,Full Diamond,Gold,Yes
+VCLNECSHTREG,Regular,Necklaces,Victorian Collection,Regular,Un-Cut,Yes
+RESNECREGREG,Ruby Emerald,Necklaces,Regular,Regular,Gold,Yes
+SLVNECREGREG,Silver,Necklaces,Regular,Regular,Gold,NO
+CLSNECSLTREG,Solitaire,Necklaces,Close Setting,Regular,Diamond,Yes
+OPNNECSLTREG,Solitaire,Necklaces,Open Setting,Regular,Diamond,Yes
+SLVNECSPLCDI,Special,Necklaces,Silver,Colour Diamond,Gold,Yes
+SLVNECSPLFDI,Special,Necklaces,Silver,Full Diamond,Gold,Yes
+CDINECSP3LS3,Special 3Line,Necklaces,Colour Diamond,3 Line,Diamond,Yes
+TMCNECREGKUN,Temple,Necklaces,Kundan,Regular,Gold,Yes
+TMCNECREGLAX,Temple,Necklaces,Temple,Regular,Gold,Yes
+TMCNECREGMNG,Temple,Necklaces,Mango,Regular,Gold,Yes
+TMCNECREGREG,Temple,Necklaces,Regular,Regular,Gold,Yes
+UPCNECREGDOR,Uncut Polki,Necklaces,Dori,Regular,Un-Cut,Yes
+UPCNECREGMNG,Uncut Polki,Necklaces,Mango,Regular,Un-Cut,Yes
+UPCNECREGREG,Uncut Polki,Necklaces,Regular,Regular,Un-Cut,Yes
+UPCNECREGVRM,Uncut Polki,Necklaces,Varahalu mala,Regular,Un-Cut,Yes
+UPCNECREGR,Uncut Polki,Necklaces,Regular,Regular,Un-Cut,Yes
+UPCNECREGNEC,Uncut Polki,Necklaces,Regular,Regular,Un-Cut,Yes
+VCLNECREGREG,Victorian Collection,Necklaces,Regular,Regular,Un-Cut,Yes
+VCLNECREGKUN,Victorian Collection,Necklaces,Kundan,Regular,Un-Cut,Yes
+CLSNSPREGFDI,Close Setting,Nosepins,Full Diamond,Regular,Diamond,Yes
+CLSNSPREGREG,Close Setting,Nosepins,Regular,Regular,Diamond,Yes
+FDINSPCLSECLFD,Close Setting,Nosepins,Full Diamond,Regular,Diamond,Yes
+CDINSPCLSECL,Colour Diamond,Nosepins,Regular,Regular,Diamond,Yes
+LCSNSPREGCDI,Colour Diamond,Nosepins,Luxury Special Product,Regular,Diamond,Yes
+OPNNSPREGCDI,Colour Diamond,Nosepins,Open Setting,Regular,Diamond,Yes
+FDINSPOPENOP,Full Diamond,Nosepins,Open Setting,Regular,Diamond,Yes
+LBDNSPREGFDI,Full Diamond,Nosepins,LB Diamond,Regular,Un-Cut,Yes
+LCSNSPREGFDI,Full Diamond,Nosepins,Luxury Special Product,Regular,Diamond,Yes
+OPNNSPREGFDI,Full Diamond,Nosepins,Open Setting,Regular,Diamond,Yes
+CLSNSPNTHREG,Nath,Nosepins,Close Setting,Regular,Diamond,Yes
+LBDNSPNTHFDI,Nath,Nosepins,LB Diamond,Full Diamond,Un-Cut,Yes
+OPNNSPNTHREG,Nath,Nosepins,Open Setting,Regular,Diamond,Yes
+OPNNSPREGREG,Open Setting,Nosepins,Regular,Regular,Diamond,Yes
+PLGACSNSPREG,Plain Gold,Nosepins,Regular,Regular,Gold,Yes
+SLNNSPREGCDI,Regular,Nosepins,Misc,Colour Diamond,Diamond,Yes
+CUSNSPREGREG,Regular,Nosepins,Customer,Regular,Gold,Yes
+SMPNSPREGREG,Regular,Nosepins,Sample,Regular,Gold,Yes
+RESACSNSPREG,Ruby Emerald,Nosepins,Regular,Regular,Gold,Yes
+VCLACSNSPREG,Victorian Collection,Nosepins,Regular,Regular,Un-Cut,Yes
+OPNPNDALPREG,Alphabet,Pendants,Open Setting,Regular,Diamond,Yes
+ANCPNDLDSREG,Antique,Pendants,Regular,Regular,Gold,Yes
+ANCPNDREGREG,Antique,Pendants,Antique,Regular,Gold,Yes
+CPIPNDREGREG,Chakri Polki,Pendants,Regular,Regular,Un-Cut,Yes
+CLSPNDSHKFLR,Close Setting,Pendants,Single Hook,Folwer,Diamond,Yes
+LBDPNDCDIG,Colour Diamond,Pendants,LB Diamond,Regular,Un-Cut,Yes
+CZAPNDREGBBY,Cubic Zirconia,Pendants,Baby,Regular,Gold,Yes
+CZAPNDREGREG,Cubic Zirconia,Pendants,Regular,Regular,Gold,Yes
+CZAPNDREGTGN,Cubic Zirconia,Pendants,Rhodium,Regular,Gold,Yes
+SOLPNDDHKFDI,Double Hook,Pendants,Solitaire,Full Diamond,Diamond,Yes
+OPNPNDDHKMES,Double Hook,Pendants,Open setting,Mesh,Diamond,Yes
+CDIPNDDHOKDO,Double Hook,Pendants,Colour Diamond,Double Hook,Diamond,Yes
+FDIPNDDHOKDC,Double Hook,Pendants,Full Diamond,Regular,Diamond,Yes
+CDIPNDDHOKDCLC,Double Hook,Pendants,Colour Diamond,Regular,Diamond,Yes
+CDIPNDDHOKDMES,Double Hook,Pendants,Colour Diamond,Double Hook Mesh,Diamond,Yes
+CDIPNDDHOKDOPC,Double Hook,Pendants,Colour Diamond,Double Hook Open,Diamond,Yes
+CLSPNDDHKCDI,Double Hook,Pendants,Close Setting,Colour Diamond,Diamond,Yes
+CLSPNDDHKFDI,Double Hook,Pendants,Close Setting,Full Diamond,Diamond,Yes
+CLSPNDDHKPUS,Double Hook,Pendants,Close Setting,Pusta,Diamond,Yes
+FDIPNDDHOKDCLF,Double Hook,Pendants,Full Diamond,Regular,Diamond,Yes
+FDIPNDDHOKDOPF,Double Hook,Pendants,Full Diamond,Regular,Diamond,Yes
+LBDPNDDHKCDI,Double Hook,Pendants,LB Diamond,Colour Diamond,Un-Cut,Yes
+LFSPNDDHKFDI,Double Hook,Pendants,Luxury Special Product,Full Diamond,Diamond,Yes
+LRGPNDDHKCDI,Double Hook,Pendants,Large,Colour Diamond,Diamond,Yes
+LSPPNDDHKCDI,Double Hook,Pendants,Luxury Special Product,Colour Diamond,Diamond,Yes
+OPNPNDDHKCDI,Double Hook,Pendants,Open Setting,Colour Diamond,Diamond,Yes
+OPNPNDDHKDCH,Double Hook,Pendants,Open Setting,Regular,Diamond,Yes
+OPNPNDDHKFDI,Double Hook,Pendants,Open Setting,Full Diamond,Diamond,Yes
+OPNPNDDHKMCH,Double Hook,Pendants,Open Setting,Regular,Diamond,Yes
+OPNPNDDHKPUS,Double Hook,Pendants,Open Setting,Pusta,Diamond,Yes
+OPNPNDDHKSDP,Double Hook,Pendants,Open Setting,Regular,Diamond,Yes
+OPNPNDDHPFDI,Double Hook,Pendants,Open Setting,Full Diamond,Diamond,Yes
+TMCPNDGNTREG,Gents,Pendants,Temple,Regular,Gold,Yes
+CLSPNDGODREG,God,Pendants,Close Setting,Regular,Diamond,Yes
+OPNPNDGODREG,God,Pendants,Open Setting,Regular,Diamond,Yes
+CSTPNDREGGAN,God,Pendants,Regular,Regular,Gold,Yes
+CSTPNDREGGOD,God,Pendants,Regular,Regular,Gold,Yes
+ITLPNDREGREG,Italian,Pendants,Itealian,Regular,Gold,Yes
+KSUPNDREGREG,Kasu,Pendants,Kasu,Regular,Gold,Yes
+LSPPNDMUTCDI,Mutal Cut,Pendants,Lexury Special Product,Colour Diamond,Diamond,Yes
+LSPPNDSPLMUT,Mutual Cut,Pendants,Luxury Special Product,Mutual cut,Diamond,Yes
+OPNPNDNAVREG,Navaratan,Pendants,Open Setting,Regular,Diamond,Yes
+PLGPNDREGREG,Plain Gold,Pendants,Regular,Regular,Gold,Yes
+PLTPNDREGREG,Platinum,Pendants,Regular,Regular,Gold,Yes
+CSTPNDREGREG,Regualr,Pendants,Regular,Regular,Diamond,Yes
+CUSPNDREGREG,Regular,Pendants,Customer,Regular,Gold,Yes
+HYDPNDREGREG,Regular,Pendants,Hyderabad,Regular,Gold,Yes
+KUNPNDREGREG,Regular,Pendants,Kundan,Regular,Gold,Yes
+OLDPNDREGREG,Regular,Pendants,Old,Regular,Gold,Yes
+SMPPNDREGREG,Regular,Pendants,Sample,Regular,Gold,Yes
+PLTPNDREGFDI,Regular,Pendants,Platinum,Full Diamond,Gold,Yes
+UPCPNDREGGAN,Regular,Pendants,Uncut Polki,Ganesh,Un-Cut,Yes
+RESPNDREGKRI,Ruby Emerald,Pendants,Krishna,Regular,Gold,Yes
+RESPNDREGLAX,Ruby Emerald,Pendants,Regular,Regular,Gold,Yes
+RESPNDREGREG,Ruby Emerald,Pendants,Regular,Regular,Gold,Yes
+SLVPNDREGREG,Silver,Pendants,Regular,Regular,Gold,NO
+SLNPNDSHKFDI,Single Hook,Pendants,Misc,Full Diamond,Diamond,Yes
+LRGPNDSHKCDI,Single Hook,Pendants,Large,Colour Diamond,Diamond,Yes
+FDIPNDSHOKSC,Single Hook,Pendants,Full Diamond,Single Hook,Diamond,Yes
+SLNPNDSHKCDI,Single Hook,Pendants,Misc,Colour Diamond,Gold,Yes
+SLNPNDSHKPLG,Single Hook,Pendants,Misc,Plain Gold,Gold,Yes
+PLTPNDSHKFDI,Single Hook,Pendants,Platinum,Full Diamond,Gold,Yes
+CDIPNDSHOKSCLC,Single Hook,Pendants,Colour Diamond,Regular,Diamond,Yes
+CDIPNDSHOKSO,Single Hook,Pendants,Colour Diamond,Regular,Diamond,Yes
+CDIPNDSHOKSOPC,Single Hook,Pendants,Colour Diamond,Regular,Diamond,Yes
+CDIPNDSHOKSOPF,Single Hook,Pendants,Colour Diamond,Regular,Diamond,Yes
+CLSPNDSHKCDI,Single Hook,Pendants,Close Setting,Colour Diamond,Diamond,Yes
+CLSPNDSHKFDI,Single Hook,Pendants,Close Setting,Full Diamond,Diamond,Yes
+CLSPNDSHKFLR,Single Hook,Pendants,Close Setting,Flower,Diamond,Yes
+CLSPNDSHKPUS,Single Hook,Pendants,Close Setting,Pusta,Diamond,Yes
+FDIPNDSHOKSCLF,Single Hook,Pendants,Full Diamond,Regular,Diamond,Yes
+LBDPNDSHKCDI,Single Hook,Pendants,LB Diamond,Colour Diamond,Un-Cut,Yes
+LFSPNDSHKFDI,Single Hook,Pendants,Luxury Special Product,Full Diamond,Diamond,Yes
+LPHPNDSHKCDI,Single Hook,Pendants,Luxury Special Product,Colour Diamond,Diamond,Yes
+LRGPNDSHKFDI,Single Hook,Pendants,Large,Full Diamond,Diamond,Yes
+LSPPNDSHKCDI,Single Hook,Pendants,Luxury Special Product,Colour Diamond,Diamond,Yes
+LSPPNDSHKFDI,Single Hook,Pendants,Luxury Special Product,Full Diamond,Diamond,Yes
+LSPPNDSHKMUT,Single Hook,Pendants,Luxury Special Product,Mutual cut,Diamond,Yes
+OPNPNDSHKCAR,Single Hook,Pendants,Open Setting,Regular,Diamond,Yes
+OPNPNDSHKCDI,Single Hook,Pendants,Open Setting,Colour Diamond,Diamond,Yes
+OPNPNDSHKFDI,Single Hook,Pendants,Open Setting,Full Diamond,Diamond,Yes
+OPNPNDSHKPUS,Single Hook,Pendants,Open Setting,Pusta,Diamond,Yes
+SOLPNDSHKCDI,Single Hook,Pendants,Colour Diamond,Regular,Diamond,Yes
+SOLPNDSHKFDI,Single Hook,Pendants,Full Diamond,Regular,Diamond,Yes
+SOLPNDSHKPLG,Single Hook,Pendants,Regular,Regular,Gold,Yes
+CLSPNDTLMREG,Tali Moguppu,Pendants,Close Setting,Regular,Diamond,Yes
+FDIPNDTALMTLMO,Tali Moguppu,Pendants,Full Diamond,Regular,Diamond,Yes
+OPNPNDTLMREG,Tali Moguppu,Pendants,Open Setting,Regular,Diamond,Yes
+CDIPNDTALMTLMO,Tali Moguppu,Pendants,Colour Diamond,Regular,Diamond,Yes
+FDIPNDTALMTL,Talimguppu,Pendants,Full Diamond,Tali muguppu,Diamond,Yes
+TMCPNDREGGAN,Temple,Pendants,Regular,Regular,Gold,Yes
+TMCPNDREGGOD,Temple,Pendants,God,Regular,Gold,Yes
+TMCPNDREGKRI,Temple,Pendants,Krishna,Regular,Gold,Yes
+TMCPNDREGKUN,Temple,Pendants,Kundan,Regular,Gold,Yes
+TMCPNDREGLAX,Temple,Pendants,Regular,Regular,Gold,Yes
+TMCPNDREGREG,Temple,Pendants,Regular,Regular,Gold,Yes
+TMCPNDREGVRM,Temple,Pendants,Regular,Regular,Gold,Yes
+CDIPNDTIGRTG,Tiger Nail,Pendants,Colour Diamond,Tiger Nail,Diamond,Yes
+CDIPNDTIGRTGRC,Tiger nail,Pendants,Colour Diamond,Regular,Diamond,Yes
+CDIPNDTIGRTGRO,Tiger nail,Pendants,Colour Diamond,Regular,Diamond,Yes
+CLSPNDTGRREG,Tiger nail,Pendants,Close Setting,Regular,Diamond,Yes
+OPNPNDTGRREG,Tiger nail,Pendants,Open Setting,Regular,Diamond,Yes
+ANLPNDTIGRTG,Tiger nail,Pendants,Regular,Regular,Diamond,Yes
+UPCPNDREGLAX,Uncut Polki,Pendants,Regular,Regular,Un-Cut,Yes
+UPCPNDREGREG,Uncut Polki,Pendants,Regular,Regular,Un-Cut,Yes
+UPCPNDREGTGN,Uncut Polki,Pendants,Rhodium,Regular,Un-Cut,Yes
+VCLPNDREGGAN,Victorian Collection,Pendants,Regular,Regular,Un-Cut,Yes
+VCLPNDREGKRI,Victorian Collection,Pendants,Krishna,Regular,Un-Cut,Yes
+VCLPNDREGLAX,Victorian Collection,Pendants,Regular,Regular,Un-Cut,Yes
+VCLPNDREGREG,Victorian Collection,Pendants,Regular,Regular,Un-Cut,Yes
+VCLPNDREGTGN,Victorian Collection,Pendants,Rhodium,Regular,Un-Cut,Yes
+FDIRNGCLSECL,Close Setting,Rings,Full Diamond,Close Setting,Diamond,Yes
+CLSRNGLDSCDI,Close Setting,Rings,Colour Diamond,Regular,Diamond,Yes
+CLSRNGLDSFDI,Close Setting,Rings,Full Diamond,Regular,Diamond,Yes
+CDIRNGLADSLADC,Colour Diamond,Rings,Regular,Regular,Diamond,Yes
+CDIRNGOPENOP,Colour Diamond,Rings,Open Setting,Regular,Diamond,Yes
+LBDRNGLDSCDI,Colour Diamond,Rings,LB Diamond,Regular,Un-Cut,Yes
+LPHRNGCDIG,Colour Diamond,Rings,Luxury Special Product,Regular,Diamond,Yes
+LPHRNGLDSCDI,Colour Diamond,Rings,Luxury Special Product,Regular,Diamond,Yes
+LRGRNGLDSCDI,Colour Diamond,Rings,Large,Regular,Diamond,Yes
+LSPRNGCDIG,Colour Diamond,Rings,Luxury Special Product,Regular,Diamond,Yes
+LSPRNGLDSCDI,Colour Diamond,Rings,Luxury Special Product,Regular,Diamond,Yes
+OPNRNGLDSCDI,Colour Diamond,Rings,Open Setting,Regular,Diamond,Yes
+CZARNGLDSREG,Cubic Zirconia,Rings,Regular,Regular,Gold,Yes
+FDIRNGCLSECLFD,Full Diamond,Rings,Close Setting,Regular,Diamond,Yes
+FDIRNGLADSLADC,Full Diamond,Rings,Regular,Regular,Diamond,Yes
+FDIRNGLADSLADF,Full Diamond,Rings,Regular,Regular,Diamond,Yes
+FDIRNGOPENOPFD,Full Diamond,Rings,Open Setting,Regular,Diamond,Yes
+LBDRNGLDSFDI,Full Diamond,Rings,LB Diamond,Regular,Un-Cut,Yes
+LCSRNGLDSFDI,Full Diamond,Rings,Luxury Special Product,Regular,Diamond,Yes
+LFSRNGLDSFDI,Full Diamond,Rings,Luxury Special Product,Regular,Diamond,Yes
+LRGRNGLDSFDI,Full Diamond,Rings,Large,Regular,Diamond,Yes
+LSPRNGLDSFDI,Full Diamond,Rings,Luxury Special Product,Regular,Diamond,Yes
+OPNRNGLDSFDI,Full Diamond,Rings,Open Setting,Regular,Diamond,Yes
+LBDRNGGNTSLT,Gents,Rings,LB Diamond,Solitaire,Diamond,Yes
+SLNRNGGNTFDI,Gents,Rings,Misc,Full Diamond,Diamond,Yes
+OPNRNGGNTCDI,Gents,Rings,Open setting,Colour Diamond,Diamond,Yes
+CSTRNGGNTBND,Gents,Rings,Regular,Band,Gold,Yes
+CDIRNGGENTGENC,Gents,Rings,Colour Diamond,Regular,Diamond,Yes
+CLSRNGGNTCDI,Gents,Rings,Colour Diamond,Close Setting,Diamond,Yes
+CLSRNGGNTFDI,Gents,Rings,Full Diamond,Close Setting,Diamond,Yes
+CLSRNGGNTSLT,Gents,Rings,Solitaire,Close Setting,Diamond,Yes
+CLSRNGSLTGNT,Gents,Rings,Solitaire,Close Setting,Diamond,Yes
+CZARNGGNTBLJ,Gents,Rings,Balaji,Cubic Zirconia,Gold,Yes
+CZARNGGNTREG,Gents,Rings,Regular,Cubic Zirconia,Gold,Yes
+FDIRNGGENTGENF,Gents,Rings,Regular,Regular,Diamond,Yes
+FDIRNGGENTGENT,Gents,Rings,Regular,Regular,Diamond,Yes
+LBDRNGGNTFDI,Gents,Rings,Full Diamond,LB Diamond,Un-Cut,Yes
+OPNRNGGNTFDI,Gents,Rings,Full Diamond,Open Setting,Diamond,Yes
+OPNRNGGNTPLN,Gents,Rings,Plain Gold,Open Setting,Diamond,Yes
+OPNRNGGNTSLT,Gents,Rings,Solitaire,Open Setting,Diamond,Yes
+OPNRNGSLTGNT,Gents,Rings,Solitaire,Open Setting,Diamond,Yes
+RESRNGGNTREG,Gents,Rings,Ruby Emerald,Regular,Gold,Yes
+CSTRNGGNTROD,Gents,Rings,Rhodium,Regular,Gold,Yes
+CSTRNGGNTREG,Gents,Rings,Rhodium,Regular,Gold,Yes
+CSTRNGGNTBLJ,Gents,Rings,Regular,Regular,Gold,Yes
+CSTRNGGNTSAI,Gents,Rings,Regular,Regular,Gold,Yes
+CSTRNGGNTGAN,Gents,Rings,Regular,Regular,Gold,Yes
+CSTRNGLDSLAX,God,Rings,Ladies,Regular,Gold,Yes
+CSTRNGLDSSAI,God,Rings,Ladies,Regular,Gold,Yes
+CSTRNGGNTGOD,God,Rings,Gents,Regular,Gold,Yes
+HYDRNGREGREG,Hyderabad,Rings,Hyderabad,Regular,Diamond,Yes
+ITLRNGLDSREG,Italian,Rings,Itealian,Regular,Gold,Yes
+KUNRNGLDSREG,Kundan,Rings,Kundan,Regular,Gold,Yes
+SLNRNGLDSFDI,Ladies,Rings,Misc,Full Diamond,Diamond,Yes
+FDIRNGLADSLA,Ladies,Rings,Full Diamond,Regular,Diamond,Yes
+FDIRNGLADSPL,Ladies,Rings,Full Diamond,Platinum,Diamond,Yes
+PLTRNGLDSFDI,Ladies,Rings,Platinum,Full Diamond,Gold,Yes
+CLSRNGLDSFDI,Ladies,Rings,Close Setting,Full Diamond,Diamond,Yes
+LBDRNGLDSFDI,Ladies,Rings,Ladies,Full Diamond,Diamond,Yes
+OPNRNGLDSFDI,Ladies,Rings,Open setting,Full Diamond,Diamond,Yes
+CSTRNGLDSREG,Ladies,Rings,Regular,Regular,Gold,Yes
+SLNRNGLDSREG,Ladies,Rings,Regular,Regular,Gold,Yes
+OLDRNGREGREG,Misc,Rings,Old,Regular,Diamond,NO
+LSPRNGMUTCDI,Mutal Cut,Rings,Lexury Special Product,Colour Diamond,Diamond,Yes
+LSPRNGSPLMUT,Mutual Cut,Rings,Luxury Special Product,Regular,Diamond,Yes
+OPNRNGLDSCKT,Open Setting,Rings,Regular,Regular,Diamond,Yes
+PLTRNGLDSREG,Platinum,Rings,Regular,Regular,Gold,Yes
+PLTRNGREGREG,Platinum,Rings,Regular,Regular,Gold,Yes
+SMPRNGREGREG,Regular,Rings,Sample,Regular,Gold,Yes
+CSTRNGREGREG,Regular,Rings,Regular,Regular,Gold,Yes
+SLNRNGREGREG,Regular,Rings,Misc,Regular,Gold,No
+PLTRNGREGFDI,Regular,Rings,Platinum,Full Diamond,Gold,Yes
+RESRNGLDSREG,Ruby Emerald,Rings,Regular,Regular,Gold,Yes
+SLVRNGREGREG,Silver,Rings,Silver,Regular,Gold,NO
+CLSRNGSLTLDS,Solitaire,Rings,Close Setting,#REF!,Diamond,Yes
+CLSRNGLDSSLT,Solitaire,Rings,Close Setting,Regular,Diamond,Yes
+OPNRNGLDSSLT,Solitaire,Rings,Open Setting,Regular,Diamond,Yes
+OPNRNGSLTLDS,Solitaire,Rings,Open Setting,Ladies,Diamond,Yes
+TMCRNGLDSREG,Temple,Rings,Regular,Regular,Gold,Yes
+UPCRNGLDSREG,Uncut Polki,Rings,Regular,Regular,Un-Cut,Yes
+VCLRNGLDSREG,Victorian Collection,Rings,Regular,Regular,Un-Cut,Yes
+CUSTLCREGREG,Regular,Tali Chain,Customer,Regular,Gold,Yes
+ORDTLCREGREG,Regular,Tali Chain,Order,Regular,Gold,No
+CUSTLMREGREG,Regular,Tali Moguppu,Customer,Regular,Gold,Yes
+NEWTLMREGREG,Regular,Tali Moguppu,New,Regular,Gold,Yes
+ANCACSTKAREG,Antique,Tika,Regular,Regular,Gold,Yes
+CPIACSTKAREG,Chakri Polki,Tika,Regular,Regular,Un-Cut,Yes
+CLSTKAREGREG,Close Setting,Tika,Regular,Regular,Diamond,Yes
+CDITKAOPENOPCR,Colour Diamond,Tika,Open Setting,Regular,Diamond,Yes
+CDITKAOPENOP,Colour Diamond,Tika,Colour Diamond,Regular,Diamond,Yes
+OPNTKAREGREG,Open Setting,Tika,Open Setting,Regular,Diamond,Yes
+LBDTKAREGCDI,Regular,Tika,LB Diamond,Colour Diamond,Diamond,Yes
+CUSTKAREGREG,Regular,Tika,Customer,Regular,Gold,Yes
+SMPTKAREGREG,Regular,Tika,Sample,Regular,Gold,Yes
+TMCACSTKAREG,Temple,Tika,Regular,Regular,Gold,Yes
+UPCACSTKAREG,Uncut Polki,Tika,Regular,Regular,Un-Cut,Yes
+VCLACSTKAREG,Victorian Collection,Tika,Regular,Regular,Un-Cut,Yes
+ANCACSVNKREG,Antique,Vanki,Regular,Regular,Gold,Yes
+LBDVNKREGCDI,Colour Diamond,Vanki,LB Diamond,Regular,Un-Cut,Yes
+OPNACSVNKREG,Open Setting,Vanki,Regular,Regular,Diamond,Yes
+CUSVNKREGREG,Regular,Vanki,Customer,Regular,Gold,Yes
+OLDVNKREGREG,Regular,Vanki,Old,Regular,Gold,No
+SMPVNKREGREG,Regular,Vanki,Sample,Regular,Gold,Yes
+RESACSVNKREG,Ruby Emerald,Vanki,Regular,Regular,Gold,Yes
+TMCACSVNKREG,Temple,Vanki,Regular,Regular,Gold,Yes
+UPCACSVNKREG,Uncut Polki,Vanki,Regular,Regular,Un-Cut,Yes
+VCLACSVNKREG,Victorian Collection,Vanki,Regular,Regular,Un-Cut,Yes

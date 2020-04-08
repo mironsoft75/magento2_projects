@@ -1,0 +1,14 @@
+<?php
+$ajaxUrl = $block->getUrl("import/video/showvideolog");
+?>
+<button id="video-button">Check Status</button>
+<div id="video-log"></div>
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "Codilar_ProductImageAndVideos/js/videologajax": {
+                    "AjaxUrl": "<?php echo $ajaxUrl; ?>"
+                }
+            }
+        }
+</script>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!--
+ /**
+  * @author Evince Team
+  * @copyright Copyright (c) 2018 Evince (http://evincemage.com/)
+  */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="codilar" translate="label" sortOrder="500">
+            <label>Codilar</label>
+        </tab>
+        <section id="codilar_mail" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <tab>codilar</tab>
+            <resource>Codilar_ComputePrice::codilar_mail</resource>
+            <label>Send mail on product update</label>
+            <group id="settings" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0"
+                   showInStore="0">
+                <label>Send mail on product update</label>
+                <field id="send_mail" translate="label" type="select" sortOrder="1" showInDefault="1"
+                       showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Enable mail sending on product update</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="sender_name" translate="label" type="text" sortOrder="2" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <depends>
+                        <field id="*/*/send_mail">1</field>
+                    </depends>
+                    <label>Sender Name</label>
+                </field>
+                <field id="sender_email" translate="label" type="text" sortOrder="3" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <depends>
+                        <field id="*/*/send_mail">1</field>
+                    </depends>
+                    <label>Sender emailID</label>
+                </field>
+                <field id="receiver_email" translate="label" type="text" sortOrder="4" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <depends>
+                        <field id="*/*/send_mail">1</field>
+                    </depends>
+                    <label>Receiver emailID</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

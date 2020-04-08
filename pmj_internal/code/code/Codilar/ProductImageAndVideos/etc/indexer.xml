@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Indexer/etc/indexer.xsd">
+    <indexer id="codilar_product_videos" view_id="codilar_product_videos"  class="Codilar\ProductImageAndVideos\Model\Indexer\Video">
+        <title translate="true">Products Video</title>
+        <description translate="true">Assign Video to Products</description>
+    </indexer>
+    <indexer id="codilar_product_images" view_id="codilar_product_images"  class="Codilar\ProductImageAndVideos\Model\Indexer\Images">
+        <title translate="true">Products Images</title>
+        <description translate="true">Assign Images to Products</description>
+    </indexer>
+
+</config>

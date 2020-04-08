@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\AssignImagesAndCategories\Api\ImagesAndCategoriesRepositoryInterface"
+                type="Codilar\AssignImagesAndCategories\Model\ImagesAndCategoriesRepository"/>
+    <preference for="Codilar\AssignImagesAndCategories\Api\Data\ImagesAndCategoriesInterface"
+                type="Codilar\AssignImagesAndCategories\Model\ImagesAndCategories"/>
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="assignimagesandcategories" xsi:type="object">Codilar\AssignImagesAndCategories\Console\AssignImagesAndCategories</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="addimagesandcategories" xsi:type="object">Codilar\AssignImagesAndCategories\Console\AddImagesAndCategories</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

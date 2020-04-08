@@ -1,0 +1,17 @@
+karat_color,metal_type,karat,metal_color
+"22,YELLOW",Gold,22,Yellow
+"18,YELLOW",Gold,18,Yellow
+"95.00,WHITE",Platinum,95,White
+"92,WHITE",Gold,22,White
+"14,WHITE",Gold,14,White
+"22,WHITE",Gold,22,White
+"18,ROSE",Gold,18,Rose
+"18,WHITE",Gold,18,White
+"18,YELLOW/18,ROSE",Gold,18,Yellow/Rose
+"22,YELLOW/18,YELLOW",Gold,22/18,Yellow
+"14,YELLOW",Gold,14,Yellow
+"95.00,YELLOW",Platinum,95,Yellow
+"18,WHITE/18,YELLOW",Gold,18,White/Yellow
+"100,YELLOW",Gold,24,Yellow
+"75.00,WHITE/100,YELLOW",Gold,18/24,White/Yellow
+"22,YELLOW",Gold,22,Yellow

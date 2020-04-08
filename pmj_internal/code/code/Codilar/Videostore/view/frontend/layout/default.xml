@@ -1,0 +1,17 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<head>
+    <css src="Codilar_Videostore::css/videocart.css"/>
+    <!-- <css src="https://cdn.plyr.io/3.5.3/plyr.css" src_type="url" /> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" src_type="url"/> -->
+</head>
+<body>
+    <referenceContainer name="header.panel">
+        <block class="Magento\Framework\View\Element\Html\Links" name="videocart.link"  after="header.links" template="Codilar_Videostore::toplinks.phtml"/>
+    </referenceContainer>
+    <referenceBlock name="header.links">
+        <block class="Magento\Framework\View\Element\Html\Links" name="videocart.mobile.link"  after="header.links" template="Codilar_Videostore::toplinks_mobile.phtml"/>
+    </referenceBlock>
+    <referenceContainer name="footer" remove="true" />
+    
+</body>
+</page>

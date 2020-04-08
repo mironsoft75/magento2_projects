@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::content">
+                    <resource id="Codilar_MasterTables::codilar_mastertables" title="Master Tables"
+                              sortOrder="20">
+                        <resource id="Codilar_MasterTables::codilar_mastertables_variantname"
+                                  title="Variant Name Table" translate="title" sortOrder="50"/>
+                        <resource id="Codilar_MasterTables::codilar_mastertables_metal"
+                                  title="Metal Table" translate="title" sortOrder="50"/>
+                        <resource id="Codilar_MasterTables::codilar_mastertables_locationname"
+                                  title="Location Name Table" translate="title" sortOrder="50"/>
+                        <resource id="Codilar_MasterTables::codilar_mastertables_stonebom"
+                                  title="Stone Bom Table" translate="title" sortOrder="50"/>
+                        <resource id="Codilar_MasterTables::codilar_mastertables_metalbom"
+                                  title="Metal Bom Table" translate="title" sortOrder="50"/>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

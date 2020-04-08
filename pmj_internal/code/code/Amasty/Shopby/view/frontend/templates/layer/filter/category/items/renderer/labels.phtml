@@ -1,0 +1,88 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2019 Amasty (https://www.amasty.com)
+ * @package Amasty_Shopby
+ */
+?>
+<?php
+/** @var \Amasty\ShopbyBase\Model\FilterSetting $filterSetting */
+/** @var \Amasty\Shopby\Model\Layer\Filter\Item $filterItem */
+/** @var \Amasty\Shopby\Block\Navigation\FilterRenderer\Category $block */
+/** @var \Amasty\Shopby\Model\Layer\Filter\CategoryItems $filterItems */
+$filterItems = $block->getFilter()->getItems();
+$categoryHelper = $block->getCategoryHelper();
+$filterSetting = $block->getFilterSetting();
+$filterSubcategoriesView = $block->isFolding();
+$filterSubcategoriesType = $filterSubcategoriesView
+    ? "amShopbyFilterCategoryLabelsFolding"
+    : 'amShopbyFilterCategoryFlyOut';
+$filterFoldingClass = $filterSubcategoriesView ? '-folding' : '';
+$isParent = $block->isParent($filterItems, $block->getPath());
+?>
+
+<?php foreach ($filterItems->getItems($block->getPath()) as $filterItem) : ?>
+    <?php $uniqId = uniqid(); ?>
+    <?php $currentPath = ($block->getPath() ?: $filterItems->getStartPath()) . '/' . $filterItem->getValueString(); ?>
+    <li class="item" data-label="<?= $block->escapeHtml($filterItem->getOptionLabel()) ?>">
+        <?php if ($block->isExpandByClick($currentPath)) : ?>
+            <span class="am-collapse-icon"></span>
+        <?php endif; ?>
+        <?php if ($filterItem->getCount() > 0) : ?>
+            <a class="am-filter-item-<?= /* @noEscape */ $block->escapeId($uniqId) ?>
+                <?php if ($isParent) : ?>
+                    <?= "amshopby-filter-parent" ?>
+                <?php endif; ?>"
+                href="<?= /* @noEscape */ $block->escapeUrl($filterItem->getUrl()) ?>"
+                <?= /* @noEscape */ $filterItem->getRelNofollow() ? ' rel="nofollow"' : '' ?>
+                <?php if (!$filterSetting->isMultiselect()) : ?>
+                    <?= /* @noEscape */ " forseload " ?>
+                <?php endif; ?>
+            >
+                <input
+                    name="amshopby[<?= /* @noEscape */ $block->getFilter()->getRequestVar(); ?>][]"
+                    value="<?= $block->escapeHtml($filterItem->getValueString()); ?>"
+                    type="<?= /* @noEscape */ $block->getInputType(); ?>"
+                    <?= /* @noEscape */ $block->checkedFilter($filterItem) ? ' checked' : ''; ?>
+                />
+        <?php endif; ?>
+        <?php if ($block->getFilter()->useLabelsOnly()) : ?>
+            <span class="label"><?= /* @noEscape */ $filterItem->getOptionLabel() ?></span>
+        <?php else : ?>
+            <img src="<?= /* @noEscape */ $categoryHelper->getCategoryImageUrl($filterItem->getValue()) ?>"
+                 class="am-category-image"
+                 title="<?= $block->escapeHtml($filterItem->getOptionLabel()); ?>"
+                 height="<?= /* @noEscape */ $categoryHelper->getCategoryFilterImageSize(); ?>"
+                 width="<?= /* @noEscape */ $categoryHelper->getCategoryFilterImageSize(); ?>"/>
+            <?php if ($block->getFilter()->useLabelsAndImages()) : ?>
+                <span class="label"><?= /* @noEscape */ $filterItem->getOptionLabel() ?></span>
+            <?php endif; ?>
+        <?php endif; ?>
+        <?php if ($block->getFilterSetting()->isShowProductQuantities()) : ?>
+            <?php $title = ($filterItem->getCount() == 1) ? __('item') : __('items'); ?>
+            <span class="count"><?= /* @noEscape */ $filterItem->getCount() ?><span class="filter-count-label">
+                    <?= $block->escapeHtml($title) ?>
+            </span></span>
+        <?php endif; ?>
+        <?php if ($filterItem->getCount() > 0) : ?>
+            </a>
+        <?php endif; ?>
+
+        <script type="text/x-magento-init">
+            {
+                ".am-filter-item-<?= /* @noEscape */ $block->escapeId($uniqId) ?>": {
+                    "<?= /* @noEscape */ $filterSubcategoriesType ?>" : {
+                        "collectFilters": <?= /* @noEscape */ $block->collectFilters(); ?>
+                    }
+                }
+            }
+        </script>
+
+        <?php if ($filterItems->getItemsCount($currentPath)) : ?>
+            <ul class="items items-children level-
+                <?= /* @noEscape */ $block->getLevel() . ' ' . $filterFoldingClass; ?>">
+                <?= /* @noEscape */ $block->renderChildrenItems($currentPath); ?>
+            </ul>
+        <?php endif; ?>
+    </li>
+<?php endforeach; ?>

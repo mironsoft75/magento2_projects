@@ -1,0 +1,4 @@
+stock_type,name,variant_name,karat_color,stock_code,location_name,dept,party,vendor_party,owner_party,pcs,total_weight,net_weight,pg_weight,metal_rate,bom_variant_name,stone_pcs,stone_weight,stone_rate,stock_value,labour_value,wastage
+COMPANY STOCK,test1,MCNBNGS12REG-15-1,"95.00,WHITE",CPND87511,PMJ&GEMS-B-C-BANJARA HILLS-SHOWROOM,BNJ Showroom,,BIMAL,,1,10.62,10.588,10.0586,0,,0,0,0,0,1500,10
+,,,,,,BNJ Showroom,,,,0,0,0,0,3200,PT95WHITE,0,10.588,0,37058,0,
+,,,,,,BNJ Showroom,,,,0,0,0,0,0,DIARNDVVSEF0.135 TO 0.175(IV),1,0.16,88000,10160,0,

@@ -1,0 +1,38 @@
+<?php
+/** @var \Codilar\Videostore\Block\Adminhtml\Activity\Index $block */
+$activityDetails = $block->getActivityDetails();
+?>
+<div class="activity-container">
+    <table class="activity-table">
+        <thead>
+        <tr>
+            <th>
+                Request ID
+            </th>
+            <th>
+                Activity Data
+            </th>
+        </tr>
+        </thead>
+        <?php
+        foreach ($activityDetails as $activityDetail){
+            $requestId = $activityDetail['videostore_request_id'];
+            $details = (array)json_decode($activityDetail['videostore_request_activity']); ?>
+            <tr class="activity-request-row">
+                <td>
+                    <?= $requestId ?>
+                </td>
+                <td>
+                    <p> Admin: <?= $details['admin'] ?></p>
+                    <p>Email: <?= $details['email'] ?></p>
+                    <p>Old Status: <?= $details['oldStatus'] ?></p>
+                    <p> New Status: <?= $details['newStatus'] ?></p>
+                    <p>Old Assignee: <?= $details['oldAssignee'] ?></p>
+                    <p> New Assignee: <?= $details['newAssignee'] ?> </p>
+                    <p>Time: <?= $details['time'] ?></p>
+                </td>
+            </tr>
+        <?php }
+        ?>
+    </table>
+</div>

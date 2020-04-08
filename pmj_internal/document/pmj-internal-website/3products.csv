@@ -1,0 +1,12 @@
+stock_type,name,variant_name,karat_color,stock_code,location_name,dept,party,vendor_party,owner_party,pcs,total_weight,net_weight,pg_weight,metal_rate,bom_variant_name,stone_pcs,stone_weight,stone_rate,stock_value,labour_value,wastage
+COMPANY STOCK,test1,VCLACSVNKREG-15-1,"95.00,WHITE/22,YELLOW/18,YELLOW",CPND87511,PMJ&GEMS-B-C-BANJARA HILLS-SHOWROOM,BNJ Showroom,,BIMAL,,1,10.62,3,10.0586,0,,0,0,0,0,1500,10
+,,,,,,BNJ Showroom,,,,0,0,0,0,3200,PT95WHITE,0,1,0,37058,0,
+,,,,,,BNJ Showroom,,,,,,,,,AG-22-YELLOW,0,1,0,0,0,
+,,,,,,BNJ Showroom,,,,,,,,,AG-18-YELLOW,0,1,0,0,0,
+,,,,,,BNJ Showroom,,,,0,0,0,0,0,DIARNDVVSEF0.135 TO 0.175(IV),1,0.16,88000,10160,0,
+COMPANY STOCK,test2,VCLACSVNKREG-101-1,"95.00,WHITE/22,YELLOW/18,YELLOW",SACS87410,PMJ&GEMS-B-C-HIMAYATHNAGAR-SHOWROOM,HMR Showroom,,SADHANA GOLD,,1,11.175,3,10.281,0,,0,0,0,0,500,10
+,,,,,,HMR Showroom,,,,,,,,,PT95WHITE,0,1,0,0,0,
+,,,,,,HMR Showroom,,,,,,,,,AG-18-YELLOW,0,1,0,0,0,
+,,,,,,HMR Showroom,,,,0,0,0,0,,AG-22-YELLOW,0,1,0,36877.5,0,
+COMPANY STOCK,test3,VCLACSVNKREG-6-1,"22,YELLOW",SACS87415,PMJ&GEMS-B-C-HIMAYATHNAGAR-SHOWROOM,HMR Showroom,,M/s.SRI SAINATH JEWELLERS,,1,6.25,6.25,5.75,0,,0,0,0,0,2100,10
+,,,,,,HMR Showroom,,,,0,0,0,0,3200,AG-22-YELLOW,0,6.25,0,17250,0,

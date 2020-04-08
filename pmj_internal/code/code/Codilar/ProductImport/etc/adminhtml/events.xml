@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <!--<event name="catalog_product_import_bunch_save_after">-->
+        <!--<observer name="catalog_product_price_calculation_on_product_Import" instance="Codilar\ProductImport\Observer\SetProductsComputedPrice"/>-->
+    <!--</event>-->
+    <event name="catalog_product_save_before">
+        <observer name="catalog_product_price_calculation_on_product_save" instance="Codilar\ProductImport\Observer\SetCentralComputedPrice"/>
+    </event>
+    <!--<event name="codilar_master_tables_save_after">-->
+        <!--<observer name="catalog_product_price_calculation_on_master_table_save" instance="Codilar\ProductImport\Observer\SetMasterTableComputedPrice"/>-->
+    <!--</event>-->
+    <event name="codilar_variant_name_import_after">
+        <observer name="catalog_category_creation" instance="Codilar\ProductImport\Observer\SetVariantCategory"/>
+    </event>
+</config>

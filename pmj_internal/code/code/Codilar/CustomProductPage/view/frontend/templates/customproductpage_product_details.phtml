@@ -1,0 +1,389 @@
+<?php
+/**
+ * @var $productDetails \Codilar\CustomProductPage\Block\Product\Details
+ */
+$productDetails = $block->getLayout()->createBlock('\Codilar\CustomProductPage\Block\Product\Details');
+$productData = $productDetails->getCurrentProductDetails();
+// echo "<pre>";
+// print_r($productData);
+// die;
+$totalCount = 1;
+$qualityImage = $this->getViewFileUrl('Codilar_Videostore::images/test_image.jpg');
+$prodImageCount = null;
+?>
+
+<div class="video-image-container">
+<div class="bg-black"></div>
+    <div class="slideshow-container container">
+        <?php $i = 1;
+            $videoUrl = null;
+            $poster = null;
+            $posters = null;
+            $combine = [];
+            $pName = $productData['name'];
+            $pName = preg_replace('/\s+/', '-', $pName);
+            ?>
+            <div class="mySlides prdt-img-container fade text-center d-block">
+                <div class="video-main-img-container slideshow-container2">
+                <?php $videoUrl = explode(',',$productData['video_url']);
+                      $posters = explode(',',$productData['video_thumbnail_url']); 
+                      $customImages = explode(',',$productData['image_custom_urls']);
+                      $emptyCheckVurl = (!empty(array_filter($videoUrl)))? 1:0;
+                      $emptyCheckIurl = (!empty(array_filter($customImages)))? 1:0;
+                    ?>
+               <?php if (($emptyCheckVurl) || ($emptyCheckIurl)): ?>
+                        <?php
+                        $j = 1;
+                         if ($emptyCheckIurl) {
+                            foreach ($customImages as $image) {
+                                 ?>
+                            <div class="myslides-inner-<?php echo $i ?> <?php echo $pName . "-" . ($i + $j); ?>">
+                                 <img class="main-img" src="<?php echo $image ?>"/>
+                              </div>
+                                <?php $j++;
+                             }
+                         }
+                        ?>
+                                  <?php if ($emptyCheckVurl): ?>
+                            <?php $combine = array_combine($posters,$videoUrl); ?>
+                            <?php 
+                                $customK = 2;
+                                foreach($combine as $vimg => $vurl):?>
+                            <div class="myslides-inner-<?php echo $i ?> <?php echo $pName . "-" . ($i + $customK + 99); ?>">
+                                <video class="js-player main-img video-frame" autopause controls playsinline
+                                       poster="<?php echo $vimg ?>" preload="auto" width="900"
+                                       height="600" data-setup='{}'>
+                                    <source src="<?php echo $vurl ?>" type="video/mp4" size="720"/>
+                                </video>
+
+                            </div>            
+                            <?php $customK++; endforeach; ?>     
+                        <?php endif; ?>
+                    <?php else: ?>
+                        <?php echo $this->getLayout()
+                            ->createBlock('Magento\Cms\Block\Block')
+                            ->setBlockId('video_image_placeholder')
+                            ->toHtml(); ?>
+                    <?php endif; ?>
+                </div>
+
+
+                <div class="selected-product-data">
+                <div class="d-flex justify-content-between thumb-container">
+                        <?php $prodImageCount = count($customImages) + count($posters);?>
+                        <script type="text/javascript">
+                            requirejs(['jquery'], function (jQuery) {
+                                if(jQuery( window ).width() < 768)
+                                {
+                                        var pimagecount = <?php echo ($prodImageCount > 4)? 1:0?>;
+                                            if(pimagecount)
+                                            {
+                                                jQuery('.responsive-check').addClass("h-scroll");
+                                            }  
+                                }
+                                else
+                                {
+                                    var pimagecount = <?php echo ($prodImageCount > 7)? 1:0 ?>;
+                                            if(pimagecount)
+                                            {
+                                                jQuery('.responsive-check').addClass("h-scroll");
+                                            } 
+                                }
+                            });
+                            </script>
+                        <div class="product-images responsive-check d-flex justify-content-between justify-content-sm-start col px-0">
+                           
+                           <?php $j = 1;
+                            foreach ($customImages as $image2) {
+                                ?>
+                                <div class="product-gallery  p-2 m-2 text-center">
+                                    <img class="thumb-img js-pause <?php echo $pName . "-" . ($i + $j); ?>"
+                                         data-name="<?php echo $pName . "-" . ($i + $j); ?>"
+                                         src="<?php echo $image2 ?>"/>
+                                </div>
+                                <?php $j++;
+                            } ?>
+                               <?php if ($productData['video_thumbnail_url'] != ""): ?>
+                                <?php $vthumb = $productData['video_thumbnail_url']; ?>
+                                <?php  $customL = 2; ?>
+                                <?php foreach($combine as $vtimg => $vturl):?>
+                                <div class="product-gallery  p-2 m-2 text-center">
+                                    <!-- <span class="video-show"></span> -->
+                                    <img class="thumb-img js-pause vthumb <?php echo $pName . "-" . ($i + $customL + 99); ?>"
+                                         data-name="<?php echo $pName . "-" . ($i + $customL + 99); ?>"
+                                         data-video="<?php echo $vturl ?>" src="<?php echo $vtimg ?>"/>
+                                </div>
+                        <?php $customL++; endforeach; ?>
+                            <?php endif; ?>
+                        </div>
+                        <div class="video-prod-desc">
+                            <h6 class="h2">
+                                <span>Price:</span><span><?php echo $productData['price']; ?></span>
+                            </h6>
+                        </div>
+                    </div>
+
+
+                    <div class="product-video-details">
+                        <h3 class="product-detaild-heading font-weight-bold">Product Details</h3>
+                        <div class="other-details">
+                            <div class="d-flex justify-content-between py-2 px-3 fs-14">
+                                <span>Product Name</span><span><?php echo(($productData['name'] != "") ? $productData['name'] : '-'); ?></span>
+                            </div>
+                            <div class="d-flex justify-content-between py-2 px-3 fs-14">
+                                <span>Stock Status</span><span><?php echo(($productData['stock_status'] != "") ? "Instock" : '-'); ?></span>
+                            </div>
+                            <div class="d-flex justify-content-between py-2 px-3 fs-14">
+                                <span>Stock Code</span><span><?php echo(($productData['stock_code'] != "") ? $productData['stock_code'] : '-'); ?></span>
+                            </div>
+                            <div class="d-flex justify-content-between py-2 px-3 fs-14">
+                                <span>Location</span><span>
+                                    <?php echo $productData['location']; ?>
+                                </span>
+                            </div>
+                        </div>
+
+                        <h5 class="metail-details-heading text-left font-weight-bold">Metail Details</h5>
+                        <div class="stone-details">
+                            <table class="table table-bordered">
+                                <?php foreach ($productData['metal_details'] as $mkey => $mdetails) { ?>
+                                    <tr class="fs-14 text-left">
+                                        <!--                             <div class="d-flex justify-content-between py-2 px-3 fs-14"><span class="text-capitalize">
+                                         -->
+                                        <th colspan="2"
+                                            class="table-width text-capitalize"><?php echo str_replace('_', ' ', $mkey) ?></th>
+                                        <!-- </span> -->
+                                        <?php
+                                        if ($mdetails) {
+                                            $mdetailsCount = count($mdetails);
+                                            $mdetailIterator = 1;
+                                            foreach ($mdetails as $mdetail) {
+                                                if ($mdetailIterator != $mdetailsCount) {
+                                                    ?>
+                                                    <td><?php echo(($mdetail != "") ? $mdetail : '-') ?></td>
+                                                <?php } else {
+                                                    ?>
+                                                    <td><?php echo(($mdetail != "") ? $mdetail : '-'); ?></td>
+                                                <?php }
+                                                $mdetailIterator++;
+                                            }
+                                        } else {
+                                            ?>
+                                            <td><?php echo "-"; ?></td>
+                                        <?php }
+                                        ?>
+                                    </tr>
+                                    <!-- </div> -->
+                                <?php } ?>
+                                <!-- <div class="d-flex justify-content-between py-2 px-3 fs-14"> -->
+                                <tr class="fs-14 text-left">
+                                    <th colspan="2" class="table-width text-capitalize">Metal Weight</th>
+
+                                    <?php
+                                    $metalWeightCount = count($productData['metal_weight']);
+                                    $metalWeightIterator = 1;
+                                    if ($productData['metal_weight']) {
+                                        foreach ($productData['metal_weight'] as $metalWeight) {
+                                            if ($metalWeightIterator != $metalWeightCount) {
+                                                ?>
+                                                <td><?php echo(($metalWeight != '') ? $metalWeight : '-'); ?></td>
+                                            <?php } else {
+                                                ?>
+                                                <td><?php echo(($metalWeight != '') ? $metalWeight : '-'); ?></td>
+                                            <?php }
+                                            $metalWeightIterator++;
+                                        }
+                                    } else {
+                                        ?>
+
+                                        <td><?php echo "-" ?></td>
+
+                                    <?php }
+                                    ?>
+                                </tr>
+                                <!-- </div> -->
+                            </table>
+                        </div>
+
+                        <h5 class="stone-details-heading text-left font-weight-bold">Stone Details</h5>
+                        <div class="stone-details">
+                            <table class="table table-bordered">
+                                <?php foreach ($productData['stone_details'] as $key => $sdetails) { ?>
+                                    <tr class="fs-14 text-left">
+                                        <!--                             <div class="d-flex justify-content-between py-2 px-3 fs-14"><span class="text-capitalize">
+                                         -->
+                                        <th colspan="2"
+                                            class="table-width text-capitalize"><?php echo str_replace('_', ' ', $key) ?></th>
+                                        <!-- </span> -->
+                                        <?php
+                                        if ($sdetails) {
+                                            $detailsCount = count($sdetails);
+                                            $detailIterator = 1;
+                                            foreach ($sdetails as $detail) {
+                                                if ($detailIterator != $detailsCount) {
+                                                    ?>
+                                                    <td><?php echo(($detail != "") ? $detail : '-') ?></td>
+                                                <?php } else {
+                                                    ?>
+                                                    <td><?php echo(($detail != "") ? $detail : '-'); ?></td>
+                                                <?php }
+                                                $detailIterator++;
+                                            }
+                                        } else {
+                                            ?>
+                                            <td><?php echo "-"; ?></td>
+                                        <?php }
+                                        ?>
+                                    </tr>
+                                    <!-- </div> -->
+                                <?php } ?>
+                                <!-- <div class="d-flex justify-content-between py-2 px-3 fs-14"> -->
+                                <tr class="fs-14 text-left">
+                                    <th colspan="2" class="table-width text-capitalize">Stone Weight</th>
+
+                                    <?php
+                                    $stoneWeightCount = count($productData['stone_weight']);
+                                    $stoneWeightIterator = 1;
+                                    if ($productData['stone_weight']) {
+                                        foreach ($productData['stone_weight'] as $stoneWeight) {
+                                            if ($stoneWeightIterator != $stoneWeightCount) {
+                                                ?>
+                                                <td><?php echo(($stoneWeight != '') ? $stoneWeight : '-'); ?></td>
+                                            <?php } else {
+                                                ?>
+                                                <td><?php echo(($stoneWeight != '') ? $stoneWeight : '-'); ?></td>
+                                            <?php }
+                                            $stoneWeightIterator++;
+                                        }
+                                    } else {
+                                        ?>
+
+                                        <td><?php echo "-" ?></td>
+
+                                    <?php }
+                                    ?>
+                                </tr>
+                                <!-- </div> -->
+                            </table>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+                <!-- Next and previous buttons -->
+                <a class="video-left-inner-arrow js-pause" onclick="plusSlides2(-1,'<?php echo $i ?>')">&#10094;</a>
+                <a class="video-right-inner-arrow js-pause" onclick="plusSlides2(1,'<?php echo $i ?>')">&#10095;</a>
+
+            </div>
+
+            <?php $i++;
+         ?>
+
+    </div>
+</div>
+
+
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+
+            "dist": {},
+            "videoPlayer": {}
+        }
+    }
+
+
+</script>
+
+<script type="text/javascript">
+    requirejs(['jquery'], function (jQuery) {
+        var slideIndex2 = 1;
+
+
+        jQuery(document).ready(function () {
+            var count = '<?php echo $totalCount ?>';
+            for (var i = 1; i <= count; i++) {
+                showSlides2(slideIndex2, i);
+            }
+        });
+        window.plusSlides2 = function (n, num) {
+            n = parseInt(n);
+            num = parseInt(num);
+            slideIndex2 = slideIndex2 + n;
+            showSlides2(slideIndex2, num);
+        };
+
+
+        function showSlides2(n, num) {
+            var i;
+            var className = "myslides-inner-" + num;
+            var slides = document.getElementsByClassName(className);
+            jQuery(slides).removeClass("currentadded");
+            if (n > slides.length) {
+                slideIndex2 = 1
+            }
+            if (n < 1) {
+                slideIndex2 = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                // slides[i].style.display = "none";
+                jQuery(slides[i]).removeClass("d-block");
+                jQuery(slides[i]).addClass("d-none");
+            }
+            // slides[slideIndex2-1].style.display = "block";
+            jQuery(slides[slideIndex2 - 1]).addClass("currentadded");
+            jQuery(slides[slideIndex2 - 1]).removeClass("d-none");
+            jQuery(slides[slideIndex2 - 1]).addClass("d-block");
+        }
+    });
+</script>
+
+
+<script type="text/javascript">
+    requirejs(['jquery'], function (jQuery) {
+        jQuery(document).ready(function () {
+
+            jQuery(window).load(function () {
+                jQuery('.loading').hide();
+            });
+            var proImages = '<?php echo $prodImageCount ?>';
+
+            jQuery('.thumb-img').click(function () {
+                jQuery('.product-gallery').removeClass('thumb-animate');
+                tcss = jQuery(this).parent();
+                jQuery(tcss).addClass("thumb-animate").delay(15000).animate('', '3000', 'linear');
+
+                attr = jQuery(this).attr('data-name');
+                prnt = jQuery(this).parent().parent().parent().parent().parent();
+                prnt2 = jQuery(prnt).find('.video-main-img-container');
+                child = jQuery(prnt).find('.currentadded');
+
+                if (jQuery(prnt).find('.currentadded').length) {
+
+                    jQuery(child).removeClass("d-block");
+                    jQuery(child).addClass("d-none");
+                    if (jQuery(prnt2).find("." + attr).length) {
+
+                        jQuery(prnt2).find("." + attr).addClass("d-block");
+                        jQuery(prnt2).find("." + attr).addClass("currentadded");
+                    }
+                }
+            });
+
+        });
+    });
+</script>
+
+<script>
+    require(['jquery'], function ($) {
+            $(document).on("click","[data-plyr=fullscreen]",function() {
+                    $(".plyr--video .plyr__controls").addClass("plyr--video plyr__controls fullscreen-controls");
+            });
+            $(document).on("click",".plyr__control--pressed",function(){
+                $(".plyr--video .plyr__controls").removeClass("fullscreen-controls");
+            })
+        });
+</script>

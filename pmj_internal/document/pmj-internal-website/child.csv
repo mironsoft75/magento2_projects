@@ -1,0 +1,8 @@
+stock_type,name,variant_name,karat_color,stock_code,location_name,dept,party,vendor_party,owner_party,pcs,total_weight,net_weight,pg_weight,metal_rate,bom_variant_name,stone_pcs,stone_weight,stone_rate,stock_value,labour_value,wastage
+COMPANY STOCK,test4,CLSBNGTODREG-272-1,"22,YELLOW",SACS88166,PMJ&GEMS-B-C-HIMAYATHNAGAR-SHOWROOM,HMR Showroom,,SURAAJ JEWELLERS,SURAAJ JEWELLERS,1,51.07,49.878,45.88776,0,,0,0,0,0,3350,10
+,,,,,,HMR Showroom,,,,0,0,0,0,,AG-22-YELLOW,0,49.878,0,0,0,
+,,,,,,HMR Showroom,,,,0,0,0,0,0,RBPMIXMIXREDMIX,36,5.96,1500,0,0,
+COMPANY STOCK,test5,CLSBNGTODREG-769-1,"22,YELLOW",SACS88348,PMJ&GEMS-B-C-HIMAYATHNAGAR-SHOWROOM,HMR Showroom,,JEETENDER SONI,,1,44.45,20.61,18.9612,0,,0,0,0,0,1150,10
+,,,,,,HMR Showroom,,,,0,0,0,0,0,ONXMIXMIXGREENMIX,37,94.35,350,80197.5,0,
+,,,,,,HMR Showroom,,,,0,0,0,0,0,PRLMIXMIXMIXMIX,1,24.85,350,8697.5,0,
+,,,,,,HMR Showroom,,,,0,0,0,0,,AG-22-YELLOW,0,20.61,0,65314.1205,0,

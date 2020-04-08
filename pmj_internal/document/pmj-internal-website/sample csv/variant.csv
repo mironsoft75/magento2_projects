@@ -1,0 +1,12 @@
+variant_name,product_type,category,sub_category,sub_sub_category,gold_diamond_uncut,display_in_ui
+PLTRNGREGREG,Platinum,Ring,Regular,Regular,Gold,Yes
+CLSNSPREGFDI,Close Setting,Nose Pin,Regular,Full Diamond,Diamond,Yes
+OPNPNDTLMREG,Open Setting,Pendant,Temple,Regular,Uncut,Yes
+REGMSCREGREG,Regular,Misc.,Regular,Regular,"Gold, Diamond",Yes
+OPNBRCLDSCDI,Open Setting,Bracelet,Regular,Color Diamond,"Gold, Uncut",Yes
+FDIBRCPLINPLIN,Full Diamond,Bracelet,Regular,Regular,"Diamond, Uncut",Yes
+OPNNECREGTRD,Open Setting,Necklace,Regular,Regular,Gold,Yes
+REGREPREGREG,Regular,Repair,Regular,Regular,Diamond,Yes
+MCNACSBCNREG,,,,,,No
+PLNMSRREG1LN,Plain,,Regular,Single Line,"Gold, Diamond",Yes
+REGMALREGREG,,,,,,No

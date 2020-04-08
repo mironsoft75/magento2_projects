@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Codilar Technologies Pvt. Ltd.
+ * @category    pmj-internal
+ * @package    pmj-internal
+ * @copyright   Copyright (c) 2016 Codilar. (http://www.codilar.com)
+ * @purpose     pmj-internal
+ * @author       Codilar Team
+ **/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Codilar_ProductImageAndVideos">
+        <sequence>
+            <module name="Magento_Catalog"/>
+        </sequence>
+    </module>
+</config>

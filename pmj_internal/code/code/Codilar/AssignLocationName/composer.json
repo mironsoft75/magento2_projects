@@ -1,0 +1,21 @@
+{
+  "name": "codilar/AssignLocationName",
+  "description": "codilar AssignLocationName module",
+  "license": "proprietary",
+  "authors": [
+    {
+      "email": "mohith@codilar.com",
+      "name": "Mohith"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Codilar\\AssignLocationName\\": ""
+    }
+  }
+}
