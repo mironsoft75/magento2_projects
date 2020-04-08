@@ -1,0 +1,20 @@
+
+.cod-view{}
+.block-bluedart-wrapper {
+    border: 0 none;
+    box-sizing: border-box;
+    float: left;
+    order: 1;
+    padding-right: 4%;
+    width: 75%;
+    margin-bottom: 20px;
+}
+#block-bluedart{
+    width: 60%;
+}
+#block-bluedart-heading{
+    font-size: 1.6rem;
+    color: #1979c3;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}

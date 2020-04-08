@@ -1,0 +1,10 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <update handle="styles"/>
+    <body>
+        <referenceContainer name="content">
+            <uiComponent name="videostore_request_view_form"/>
+            <!--<block class="Codilar\Videostore\Block\Adminhtml\RequestProducts\RequestProducts" cacheable="false" name="videostore_request_view_products" template="Codilar_Videostore::RequestProducts.phtml"/>-->
+            <uiComponent name="request_product_listing"/>
+        </referenceContainer>
+    </body>
+</page>

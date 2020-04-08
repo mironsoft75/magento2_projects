@@ -1,0 +1,138 @@
+<div id="otp-popup" class="verify-otp-form">
+    <div class="otp-heading"><?php echo __("Enter the OTP sent to ".$block->getPhoneNumber()) ?></div>
+    <form
+            class="form-control"
+            id="verify-otp"
+            data-mage-init='{"validation":{}}'
+    >
+        <input id="otp" autocomplete="off" type="text" minlength="6" maxlength="6" class="form-input" placeholder="Enter OTP" data-validate="{required:true}" autofocus/>
+        <div id="notice-messages"></div>
+        <div class="text-align-content">
+            <div id="change-number"><?= __("Change Number") ?></div>
+            <div id="resend-otp"><?= __("Resend OTP") ?> </div>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="button-verfy"><?= __("Verify") ?></button>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    (function(){
+        require(
+            [
+                'jquery',
+                'Magento_Ui/js/modal/modal'
+            ],
+            function($, modal){
+                $(document).ready(function () {
+                    var resendOtp = $("#resend-otp");
+                    resendOtp.hide();
+                    setTimeout(function(){
+                        resendOtp.show();
+                    }, 60000);
+                });
+                $('#otp').on('keypress', function(e) {
+                    var charCode = (e.which) ? e.which : event.keyCode;
+                    return !(charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57));
+                    /* Allow pressing enter key even if 6 digits are pressed */
+                    if(e.keyCode === 13) {
+                        return true;
+                    }
+                    /* Restrict upto 6 digits */
+                    if(this.value.length === 6) {
+                        return false;
+                    }
+                });
+                var options = {
+                    type: 'popup',
+                    responsive: true,
+                    innerScroll: true,
+                    buttons: [],
+                    close: function(e){
+                        alert("h");
+                        redirectUser();
+                    }
+                };
+                var modalContainer = $('#otp-popup');
+                var noticeMessageContainer = $('#notice-messages');
+                var showNoticeMessage = function(message){
+                    noticeMessageContainer.css("color","green");
+                    noticeMessageContainer.html(message);
+                };
+                var redirectUser = function () {
+                    //popup.closeModal();
+                    window.location = '<?php echo $block->getCloseUrl() ?>';
+                };
+                var showErrorNoticeMessage = function(message){
+                    noticeMessageContainer.css("color","#e02b27");
+                    noticeMessageContainer.html(message);
+                };
+                var errorHandler = function(e){
+                    showErrorNoticeMessage(e.statusText);
+                };
+                var initOtp = function(resend, verify, change){
+                    resend.on('click', function(){
+                        const pageMessage = $(".page .messages");
+                        pageMessage.remove();
+                        $.ajax('<?php echo $block->getResendUrl() ?>', {
+                            method: 'GET',
+                            showLoader: true,
+                            success: function (r) {
+                                if(r.status == true){
+                                    var resendOtp = $("#resend-otp");
+                                    resendOtp.hide();
+                                    setTimeout(function(){
+                                        resendOtp.show();
+                                    }, 60000);
+                                    showNoticeMessage(r.message)
+                                }
+                                else{
+                                    errorHandler({statusText: r.message});
+                                }
+                            },
+                            error: errorHandler
+                        });
+                    });
+
+                    verify.on('submit', function(e){
+                        const pageMessage = $(".page .messages");
+                        pageMessage.remove();
+                        e.preventDefault();
+                        if(!$(this).valid()) return false;
+
+                        if($('#otp').val().length < 6) {
+                            return errorHandler({statusText: "Enter at least 6 digits"});
+                        }
+
+                        $.ajax('<?php echo $block->getVerifyUrl() ?>', {
+                            method: 'POST',
+                            showLoader: true,
+                            data: {
+                                'otp': $('#otp').val()
+                            },
+                            success: function(r){
+                                if(r.status == true){
+                                    showNoticeMessage(r.message);
+                                    window.location.href = '<?php echo $block->getDashboardUrl() ?>';
+                                }
+                                else{
+                                    errorHandler({statusText: r.message});
+                                }
+                            },
+                            error: errorHandler
+                        });
+                        return false;
+                    });
+
+                    change.on('click', function () {
+                        window.location.href = '<?php echo $block->getNumberChangeUrl() ?>';
+                    });
+                };
+
+                initOtp($('#resend-otp'), $('#verify-otp'), $('#change-number'));
+            }
+        );
+    })();
+</script>

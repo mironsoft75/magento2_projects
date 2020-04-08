@@ -1,0 +1,16 @@
+<?php
+// @codingStandardsIgnoreFile
+?>
+<?php $_helper = $this->helper('WeltPixel\Multistore\Helper\Data'); ?>
+<?php if ($_helper->redirectToHomePage() ) : ?>
+    <script>
+        require(['jquery'],
+            function ($) {
+                $(document).ready(function() {
+                    $('.switcher-option > a').each(function()
+                        { $(this).attr('data-post', $(this).attr('data-post').replace(/"uenc":.*",/g, '"uenc":",",')); }
+                    );
+                });
+            });
+    </script>
+<?php endif; ?>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::content">
+                    <resource id="Codilar_Codilar::imagetoolbox" title="Codilar Image 360"
+                              sortOrder="20">
+                        <resource id="Codilar_Image360::image360_settings_edit"
+                                  title="Codilar Image360 Settings Edit" translate="title" sortOrder="30"/>
+                        <resource id="Codilar_Image360::image360_import_edit"
+                                  title="Codilar Image 360 Import Edit " translate="title" sortOrder="40"/>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

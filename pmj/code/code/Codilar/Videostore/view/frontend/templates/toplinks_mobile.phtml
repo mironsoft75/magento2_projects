@@ -1,0 +1,24 @@
+<li class="custom-header-links-mobile item link compare" data-bind="scope: 'compareProducts'" data-role="compare-products-link">
+    <a class="action compare no-display" title="<?= /* @escapeNotVerified */ __('Compare Products') ?>"
+       data-bind="attr: {'href': compareProducts().listUrl}, css: {'no-display': !compareProducts().count}"
+    >
+        <?= /* @escapeNotVerified */ __('Compare Products') ?>
+        <span class="counter qty" data-bind="text: compareProducts().countCaption"></span>
+    </a>
+</li>
+<li class="custom-header-links-mobile"><a href="<?php echo $this->getUrl('videostore/cart/'); ?>">Videocart</a></li>
+<li class="custom-header-links-mobile"><a href="<?php echo $this->getUrl('store-locator'); ?>">Store Locator</a></li>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "compareProducts": {
+                        "component": "Magento_Catalog/js/view/compare-products"
+                    }
+                }
+            }
+        }
+    }
+
+</script>

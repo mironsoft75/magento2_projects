@@ -1,0 +1,96 @@
+<?php
+// @codingStandardsIgnoreFile
+?>
+<div class="contact-container">
+    <div class="col-sm-6 col-xs-12 col-contact-info">
+        <h4>Contact Information</h4>
+        <p>If you would like to talk to us about a project or you have a question, please get in touch. Fill in our
+            contact form and we’ll get right back to you.<br /> Whether you’re looking to discuss a new project or
+            simply say hello, we’d love to hear from you.</p>
+        <h4>Phone:</h4>
+        <p> <span class="number">
+                <i class="icon  icon-phone"></i>
+                <a href="tel:8008019281">+91 800 801 9281</a>
+            </span></p>
+        <p><span class="whatsapp-number">
+                <img class="whatsapp-img" src="<?= $block->getViewFileUrl('images/whatsapp.png'); ?>" alt="">
+                <a href="https://api.whatsapp.com/send?phone=919066226190&amp;text=Hello PMJ Jewels. I am interested in your PMJ Jewels services."
+                    target="_blank">+91 800 801 9281</a>
+            </span></p>
+        <h4>Email:</h4>
+        <p>yourmail@yourdomain.com</p>
+        <div class="col-md-12 col-sm-12 col-xs-12 mobile-toggle social-icon-links-main">
+            <div class="title">
+                <h4 class="no-padding-mob">Let's Stay in touch!</h4>
+            </div>
+            <div class="mg-mobile">
+                <a href="https://www.facebook.com/PMJJewels/" class="social-icons si-borderless si-facebook">
+                    <i class="icon-facebook"></i>
+                    <i class="icon-facebook"></i>
+                </a>
+                <a href="https://twitter.com/PMJJewels1964" class="social-icons si-borderless si-twitter">
+                    <i class="icon-twitter"></i>
+                    <i class="icon-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/pmj_jewels/" class="social-icons si-borderless si-instagram">
+                    <i class="icon-instagram"></i>
+                    <i class="icon-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xs-12 form-area">
+        <div class="page-title">
+            <h1>
+                <?php /* @escapeNotVerified */ echo __('Contact Us') ?>
+            </h1>
+        </div>
+        <form class="form contact" action="<?php /* @escapeNotVerified */ echo $block->getFormAction(); ?>" id="contact-form"
+            method="post" data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>"
+            data-mage-init='{"validation":{}}'>
+            <fieldset class="fieldset">
+                <div class="field name required">
+                    <label class="label" for="name"><span><?php /* @escapeNotVerified */ echo __('Name') ?></span></label>
+                    <div class="control">
+                        <input name="name" placeholder="Enter your full name" id="name" title="<?php /* @escapeNotVerified */ echo __('Name') ?>"
+                            value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getPostValue('name') ?: $this->helper('Magento\Contact\Helper\Data')->getUserName()) ?>"
+                            class="input-text" type="text" data-validate="{required:true}" />
+                    </div>
+                </div>
+                <div class="field email required">
+                    <label class="label" for="email"><span><?php /* @escapeNotVerified */ echo __('Email') ?></span></label>
+                    <div class="control">
+                        <input name="email" placeholder="Enter Your Email Address" id="email" title="<?php /* @escapeNotVerified */ echo __('Email') ?>"
+                            value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getPostValue('email') ?: $this->helper('Magento\Contact\Helper\Data')->getUserEmail()) ?>"
+                            class="input-text" type="email" data-validate="{required:true, 'validate-email':true}" />
+                    </div>
+                </div>
+                <div class="field telephone">
+                    <label class="label" for="telephone"><span><?php /* @escapeNotVerified */ echo __('Phone Number') ?></span></label>
+                    <div class="control">
+                        <input name="telephone" placeholder="Enter Your Phone Number" id="telephone" title="<?php /* @escapeNotVerified */ echo __('Phone Number') ?>"
+                            value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getPostValue('telephone')) ?>"
+                            class="input-text" type="text" />
+                    </div>
+                </div>
+                <div class="field comment required">
+                    <label class="label" for="comment"><span><?php /* @escapeNotVerified */ echo __('What’s on your mind') ?></span></label>
+                    <div class="control">
+                        <textarea placeholder="Please let us know if you have anything to share" name="comment" id="comment" title="<?php /* @escapeNotVerified */ echo __('What’s on your mind?') ?>"
+                            class="input-text" cols="5" rows="3" data-validate="{required:true}"><?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getPostValue('comment')) ?></textarea>
+                    </div>
+                </div>
+                <?php echo $block->getChildHtml('form.additional.info'); ?>
+            </fieldset>
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <input type="hidden" name="hideit" id="hideit" value="" />
+                    <button type="submit" title="<?php /* @escapeNotVerified */ echo __('Submit') ?>" class="action submit primary">
+                        <span>
+                            <?php /* @escapeNotVerified */ echo __('Submit') ?></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

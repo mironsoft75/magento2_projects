@@ -1,0 +1,13 @@
+{
+    "name": "codilar/sms",
+    "description": "Codilar Sms Module",
+    "type": "Codilar-Module",
+    "license": "OSL",
+    "authors": [
+        {
+            "name": "Jayanka Ghosh",
+            "email": "jayan@codilar.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}

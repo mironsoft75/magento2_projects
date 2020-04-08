@@ -1,0 +1,260 @@
+html body.catalog-category-view, html body.catalogsearch-result-index {
+   @media @desktop{
+       #layered-filter-block .filter-content .filter-options .filter-options-item .filter-options-content {display: none}
+   }
+    .page-wrapper{
+        .page-main{
+            .columns{
+                #layer-product-list{
+                    .products.wrapper{
+                        .products.list{
+                            >.product-item{
+                                height: auto !important;
+                                @media @desktop {
+                                    margin-left: calc(~"(100% - 3 * 32.333333333333%) / 3");
+                                    margin-bottom: 10px;
+                                }
+                                @media @mobile {
+                                    margin-bottom: 15px;
+                                    width: 100%;
+                                }
+                                @media @tab-portrait {
+                                    width: 50%;
+                                }
+                                .product-item-info{
+                                    padding-bottom: 25px;
+                                    border: 2px solid rgba(168, 168, 168, 0.1) !important;
+                                    box-shadow: none;
+                                    border-radius: 10px;
+                                    padding: 0;
+                                    overflow: hidden;
+                                    @media @mobile {
+                                        padding: 0 10px;
+                                    }
+                                    &:hover {
+                                        box-shadow: none !important;
+                                        .hover-button-main {
+                                            opacity: 1 !important;
+                                        }
+                                    }
+                                    .product_image {
+                                        .product-item-actions {
+                                            .action.towishlist:before {
+                                                content: "\e73e";
+                                                color: #818181;
+                                            }
+                                        }
+                                        .product-image-container {
+                                            width: 100% !important;
+                                            .product-image-wrapper {
+                                                height: auto;
+                                                width: auto;
+                                                padding: 0 !important;
+                                                .product-image-photo {
+                                                    width: 100%;
+                                                    margin: 0;
+                                                    position: initial;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    @media @mobile {
+                                        box-shadow: none;
+                                        border: none !important;
+                                        .product-item-actions {
+                                            display: block;
+                                            .action.towishlist {
+                                                top: 5px;
+                                                left: 0;
+                                            }
+                                            .action.tocompare {
+                                                top: 0;
+                                                right: 0;
+                                            }
+                                        }
+                                    }
+                                    @media @sm-mobile {
+                                        .product-item-actions {
+                                            .action.towishlist, .action.tocompare {
+                                                top: 5px;
+                                            }
+                                        }
+                                    }
+                                    .wishlist-container{
+                                        float: left;
+                                        z-index: 99;
+                                        position: relative;
+                                        cursor: pointer;
+                                    }
+                                    .compare-container{
+                                        float: right;
+                                        z-index: 99;
+                                        position: relative;
+                                        cursor: pointer;
+                                    }
+                                    .product-item-details{
+                                        padding: 10px 15px;
+                                        @media @mobile {
+                                            padding-left: 0;
+                                            padding-right: 0;
+                                        }
+                                        position: initial;
+                                        > * {
+                                            position: initial;
+                                        }
+                                        .hover-button-main {
+                                            position: relative;
+                                            top: initial;
+                                            text-align: center;
+                                            padding: 0;
+                                            left: -15px;
+                                            width: calc(~"100% + 30px");
+                                            font-size: 15px;
+                                            opacity: 0;
+                                            @media @mobile {
+                                                visibility: hidden;
+                                            }
+                                            .hover-btn {
+                                                position: absolute;
+                                                top: -35px;
+                                                z-index: 999;
+                                                width: 100%;
+                                                background: #fff;
+                                                padding: 10px;
+                                            }
+                                        }
+                                        .product-item-name {
+                                            text-align: left !important;
+                                            width: 50%;
+                                            @media @mobile {
+                                                width: 100%;
+                                            }
+                                            .product-item-link {
+                                                overflow: hidden;
+                                                text-overflow: ellipsis;
+                                                display: -webkit-box;
+                                                -webkit-box-orient: vertical;
+                                                -webkit-line-clamp: 1;
+                                                line-height: 19px;
+                                                width: 100%;
+                                                max-height: 19px;
+                                                min-height: 19px;
+                                                text-align: left !important;
+                                            }
+                                        }
+                                        .price-box {
+                                            text-align: left !important;
+                                        }
+                                        > .price-box {
+                                            min-height: 40px;
+                                            width: 50%;
+                                            margin-bottom: 0;
+                                            @media @mobile {
+                                                width: 100%;
+                                            }
+                                            @media @sm-mobile {
+                                                min-height: auto;
+                                                padding-bottom: 10px;
+                                            }
+                                            .product-discount-percent {
+                                                display: block;
+                                            }
+                                            .special-price {
+                                                margin-right: 5px;
+                                            }
+                                            .old-price {
+                                                margin-left: 0px;
+                                                text-decoration: line-through;
+                                                .price-container .price {
+                                                    @media @mobile {
+                                                        font-size: 10px !important;
+                                                    }
+                                                }
+                                            }
+                                            .product-discount-percent {
+                                                position: absolute;
+                                                top: 15px;
+                                                z-index: 9;
+                                                right: 15px;
+                                                background: #E05B3B;
+                                                color: #fff !important;
+                                                padding: 5px;
+                                                border-radius: 5px;
+                                                text-transform: uppercase;
+                                                margin: 0;
+                                                font-size: 12px;
+                                                font-weight: normal;
+                                                @media @mobile {
+                                                    top: 5px;
+                                                }
+                                            }
+                                        }
+                                        .product-item-actions{
+                                            display: none;
+                                        }
+                                        .category-tryonvideo-form{
+                                            width: 45%;
+                                            position: absolute;
+                                            bottom: 35px;
+                                            right: 10px;
+                                            @media @mobile {
+                                                position: initial;
+                                                width: auto;
+                                            }
+                                            .category-tryon-video-form{
+                                                .category-tryonvideo-button{
+                                                    text-align: center;
+                                                    .tryonvideo-button {
+                                                        width: 100%;
+                                                        border-radius: 4px;
+                                                        background: #fff;
+                                                        color: @primary !important;
+                                                        display: inline-flex;
+                                                        align-items: center;
+                                                        justify-content: center;
+                                                        padding: 5px;
+                                                        .icon {
+                                                            font-size: 15px;
+                                                            margin-top: 2px;
+                                                            margin-right: 5px;
+                                                        }
+                                                        span {
+                                                            color: @primary !important;
+                                                            @media @sm-mobile {
+                                                                font-size: 10px;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .product-item-inner:before {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.page-products{
+    &.catalog-category-view{
+        .messages{
+            margin-bottom:50px;
+        }
+    }
+    &.catalogsearch-result-index{
+        .messages{
+            position: relative;
+            top: -15px;
+            @media @mobile {
+                top: 0;
+            }
+        }
+    }
+}

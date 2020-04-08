@@ -1,0 +1,137 @@
+<!--======Bluedart COD check=====-->
+<?php $_quote = $block->getQuote();
+?>
+<?php
+$check_price = $_quote->getGrandTotal();
+$zip = '';
+if ($_quote->getShippingAddress())
+    $zip = $_quote->getShippingAddress()->getPostcode();
+?>
+
+<!--======End Bluedart COD check=====-->
+<!--====Bluedart COD=====-->
+<div class="block-bluedart-wrapper">
+    <div id="block-bluedart" class="cod-view block">
+        <div class="title" data-role="title">
+            <strong id="block-bluedart-heading" aria-level="2" role="heading"><?php echo __("Check For Cash On Delivery") ?></strong>
+        </div>
+        <div class="content" aria-labelledby="block-bluedart-heading" data-role="content" role="tabpanel" style="">
+
+            <div class="field" style="display: inline; float: left; width: 60%;">
+                <input type="text" name="pincode"  value="" id="pincodevalue" placeholder="<?= __("Enter pincode to check COD") ?>"  />
+            </div>
+            <div class="actions-toolbar" style="display: inline; float: left;">
+                <div class="primary">
+                    <button style="border-radius: 0px 3px 3px 0px;" class="button" onclick="checkPin();" type="button"><span>Check</span></button>
+                </div>
+            </div>
+        </div>
+        <div style="float:left;">
+            <div id="pinresult" style="padding-top:3px;" class="clearfix"></div>
+            <div id="estimatedDeliveryDate" style="padding-top:3px;"></div>
+        </div>
+    </div>
+</div>
+<!--====End Bluedart COD==-->
+<script>
+    var checkPin = function () {
+    };
+    require(['jquery', 'Magento_Checkout/js/model/quote'], function (jQuery, quote) {
+
+        checkPin = function ()
+        {
+            var pin = document.getElementById('pincodevalue').value;
+            if (pin == '')
+            {
+                alert("Please enter pincode.");
+                return true;
+            }
+            else
+            {
+                //document.getElementById('loader').style.display = 'inline-block';
+                var data = {
+                    pin: pin,
+                    instring: true,
+                    price_limit: <?= $check_price; ?>
+                };
+                jQuery.ajax({
+                    type: "POST",
+                    url: "<?php echo $this->getUrl('bluedart/check/cod'); ?>",
+                    data: data,
+                    dataType: 'html',
+                    showLoader: true,
+                    beforeSend: function(){
+                        jQuery("#pinresult").html('<?php echo __('Please wait! while we are getting COD availability.') ?>');
+                    },
+                    success: function (res)
+                    {
+                        jQuery("#pinresult").html(res);
+                    },
+                    error: function(){
+                        jQuery("#pinresult").html('');
+                    }
+                });
+                estimatedDeliveryDate();
+            }
+        }
+        estimatedDeliveryDate = function ()
+        {
+            var pin = document.getElementById('pincodevalue').value;
+            if (pin == '')
+            {
+                alert("Please enter pincode.");
+                return true;
+            }
+            else
+            {
+                //document.getElementById('loader').style.display = 'inline-block';
+                var data = {
+                    pin: pin,
+                    instring: true,
+                    price_limit: <?= $check_price; ?>
+                };
+                jQuery.ajax({
+                    type: "POST",
+                    url: "<?php echo $this->getUrl('bluedart/check/deliverdate'); ?>",
+                    data: data,
+                    dataType: 'html',
+                    showLoader: false,
+                    beforeSend: function(){
+                        jQuery("#estimatedDeliveryDate").html('<?php echo __('Please wait! while we are getting your estimated delivery date') ?>');
+                    },
+                    success: function (res)
+                    {
+                        jQuery("#estimatedDeliveryDate").html(res);
+                    }, 
+                    error: function(){
+                        jQuery("#estimatedDeliveryDate").html('');
+                    }
+                });
+            }
+        }
+
+        var estchk =setInterval(function () {
+            if (typeof quote != 'undfined') {
+                var currenpin = document.getElementById('pincodevalue').value;
+                var postcodeval = jQuery('[name="postcode"]').val();
+                if (postcodeval != '' && (currenpin == '' || currenpin != postcodeval)) {
+                    var addr = quote.shippingAddress();
+                    if (typeof addr != 'undefined' && addr != null) {
+                        var postcode = addr.postcode;
+                        if (typeof postcode != 'undefined' && postcode != '' && postcode != null) {
+                            document.getElementById('pincodevalue').value = postcode;
+                            checkPin();
+                            clearInterval(estchk);
+                        }
+                    }
+                }
+            }
+        }, 1000);
+
+
+        jQuery(document).on('change', '[name="postcode"]', function () {
+            document.getElementById('pincodevalue').value = jQuery('[name="postcode"]').val();
+            checkPin();
+        });
+    });
+</script>	

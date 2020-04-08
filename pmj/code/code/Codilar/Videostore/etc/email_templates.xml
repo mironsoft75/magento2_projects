@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="videostore_request_template" label="Request Submit" file="Videostore/videoRequest.html" type="html" module="Codilar_Videostore" area="frontend"/>
+    <template id="videostore_request_status" label="Request Status" file="Videostore/videoRequestStatus.html" type="html" module="Codilar_Videostore" area="frontend"/>
+</config>

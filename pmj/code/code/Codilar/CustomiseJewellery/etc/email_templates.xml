@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Email/etc/email_templates.xsd">
+    <template id="customise_jewellery_confirmation_mail_upload" label="PMJ Customise Jewellery Request Conformation:Upload Design" file="customiseJewelleryRequestConfirmationUpload.html" type="html" module="Codilar_CustomiseJewellery" area="frontend"/>
+    <template id="customise_jewellery_confirmation_mail_customise" label="PMJ Customise Jewellery Request Conformation:Customise Existing Design" file="customiseJewelleryRequestConfirmationCustomise.html" type="html" module="Codilar_CustomiseJewellery" area="frontend"/>
+    <template id="customise_jewellery_confirmation_mail_work_with_our_designers" label="PMJ Customise Jewellery Request Conformation:Work With Our Designers" file="customiseJewelleryRequestConfirmationWorkWithOurDesigners.html" type="html" module="Codilar_CustomiseJewellery" area="frontend"/>
+</config>

@@ -1,0 +1,19 @@
+<?php
+$_helper = $this->helper('WeltPixel\ProductPage\Helper\Data');
+$isMagnifierEnabled = $_helper->getMagnifierEnabled();
+$zoomType = $_helper->getMagnifierEventType();
+?>
+
+<?php if ($isMagnifierEnabled && $zoomType == 'hover') : ?>
+
+<script>
+    require(["jquery"], function ($) {
+        $(document).ready(function() {
+            $(document).on('mouseleave', '.fotorama__stage' ,function() {
+                $('.magnify-lens').addClass('magnify-hidden');
+                $('.magnifier-preview').addClass('magnify-hidden');
+            });
+        });
+    });
+</script>
+<?php endif; ?>

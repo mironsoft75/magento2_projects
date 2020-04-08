@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+
+    <!--<event name="customer_login">
+        <observer name="codilar_customer_otp_redirect" instance="Codilar\Customer\Observers\Frontend\Login"/>
+    </event>-->
+
+    <event name="controller_action_predispatch_checkout_index_index">
+        <observer name="codilar_customer_authenticate_on_checkout" instance="Codilar\Customer\Observers\Frontend\Checkout" />
+    </event>
+
+</config>

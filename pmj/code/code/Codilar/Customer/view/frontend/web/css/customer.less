@@ -1,0 +1,273 @@
+// customer register page
+.customer-account-create .page-title-wrapper,
+.customer-account-forgotpassword .page-title-wrapper,
+.customer-account-login .page-title-wrapper,
+.customer-account-verify .page-title-wrapper,
+.customer-account-resetotp .page-title-wrapper,
+.customer-account-createpassword .page-title-wrapper{
+  text-align: center;
+}
+.customer-account-create .page-title-wrapper .page-title,
+.customer-account-forgotpassword .page-title-wrapper .page-title,
+.customer-account-login .page-title-wrapper .page-title,
+.customer-account-verify .page-title-wrapper .page-title,
+.customer-account-resetotp .page-title-wrapper .page-title,
+.customer-account-createpassword .page-title-wrapper .page-title{
+  font-size: 20px;
+  font-weight: 600;
+}
+.form.password.reset,
+.form.send.confirmation,
+.form.password.forget,
+.form.create.account,
+.form.form-login {
+  margin:auto;
+}
+.customer-account-create {
+  .country-flag {
+    width: 15%;
+    float: left;
+  }
+  input.input-text.full-number-grid.input-create-acc {
+    width: 85%;
+    float: left;
+  }
+  .indian-flag-png {
+    height: 42px;
+    vertical-align: middle;
+    padding-right: 10px;
+    margin-top: -10%;
+  }
+  .field.field-name-firstname, .field.field-name-lastname , .field.field-email, .field.field-name-phone-number, .field.password, .field.confirmation {
+    width: 49%;
+    float: left;
+  }
+  .field.field-name-firstname, .field.field-email, .field.password {
+    margin-right: 2%;
+  }
+  fieldset.fieldset.create.info.create-info-mrg-btm {
+    margin: unset;
+  }
+  .block.social-login-authentication-channel.account-social-login {
+    margin-bottom: 20px;
+  }
+  .account-social-login .actions-toolbar.social-btn {
+    width: 180px;
+  }
+  .actions-toolbar.social-btn.social-btn-actions-toolbar.facebook-login {
+    margin-right: 1%;
+  }
+}
+.customer-account-login {
+  .block-customer-login, .block-new-customer {
+    float: unset;
+    margin: auto;
+  }
+  span.login-generate-otp {
+    color: #03AFB1;
+    font-weight: bold;
+    font-size: 14px !important;
+  }
+  .generate-otp {
+    color: #03AFB1;
+    cursor: pointer;
+  }
+  .otp_sent {
+    display: none;
+    color: #e02b27;
+  }
+  .resend-otp {
+    display: none;
+    color: #03AFB1;
+  }
+  span.login-resend-otp {
+    font-size: 14px !important;
+  }
+  .resend-otp {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px !important;
+  }
+  .login-country-code {
+    display: flex;
+    align-items: center;
+  }
+  .country-flag {
+    padding: 0 10px;
+  }
+  .login-error-message {
+    display: none;
+    color: #e02b27;
+  }
+  .account-social-login .actions-toolbar.social-btn {
+    width: 180px;
+  }
+  .actions-toolbar.social-btn.social-btn-actions-toolbar.facebook-login {
+    margin-right: 1%;
+  }
+  span.forgot-password-link {
+    color: #03AFB1;
+    font-weight: 600;
+  }
+}
+.customer-account-index {
+  .box-actions {
+    a.action.edit, a.action.change-password {
+      color: #03AFB1;
+      font-weight: 600;
+    }
+  }
+  .block-dashboard-addresses{
+    a.action.edit {
+      span {
+        color: #03AFB1;
+        font-weight: 600;
+      }
+    }
+  }
+}
+.customer-account-edit {
+  .indian-flag-png {
+    height: 42px;
+    vertical-align: middle;
+    padding-right: 8px;
+  }
+  .password-change-block-toggle-container {
+    display: flex;
+  }
+  .block-title.block-my-accoucnt.block-my-accoucnt-cust {
+    margin-left: 15px;
+    margin-bottom: 5px;
+  }
+  input.edit-field.full-number-grid-acc.field-mob-num {
+    width: 89%;
+    float: left;
+    margin-top: 1%;
+  }
+  .country-flag {
+    width: 11%;
+    float: left;
+  }
+  input.edit-field.email.valid {
+    margin-top: 1%;
+  }
+}
+.customer-account-verify {
+  @media screen and (min-width: 768px) {
+    .verify-otp-form {
+      width: 40%;
+      margin: auto;
+    }
+  }
+  #change-number {
+    cursor: pointer;
+    color: #03AFB1;
+    font-weight: 600;
+    margin-top: 1%;
+  }
+  #resend-otp {
+    display: none;
+    cursor: pointer;
+    color: #03AFB1;
+    font-weight: 600;
+    margin-top: 1%;
+  }
+  .button-verfy {
+    background: #03AFB1;
+    color: #fff;
+    border: unset;
+    margin-top: 1%;
+  }
+}
+.customer-account-forgotpassword {
+  .page.messages {
+    width: 50%;
+    margin: auto;
+  }
+  .forgot-password-fieldset {
+    margin-bottom: 15px;
+  }
+  .form.password.forget .fieldset:after {
+    margin-top: 10px;
+  }
+  @media screen and (min-width: 768px) {
+    .form.password.forget {
+      width: 40%;
+    }
+  }
+}
+.customer-account-resetotp {
+  @media screen and (min-width: 768px) {
+    .form.otp.reset {
+      margin:auto;
+      width: 40%;
+      .fieldset {
+        margin-bottom: 15px !important;
+      }
+    }
+  }
+  .resend-otp-link {
+    cursor: pointer;
+    display: none;
+    color: #03AFB1;
+    font-weight: 600;
+  }
+  .reset-otp-message {
+    display: none;
+    margin-top: 1%;
+  }
+}
+
+//newsletter
+.newsletter #subscription-message {
+  display: none;
+  background: white;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+//button colors
+.action.primary {
+  background: #03AFB1;
+  border: 1px solid #03AFB1;
+}
+a:visited, .alink:visited {
+  color: #03AFB1;
+}
+.action.primary:hover {
+  background: #03AFB1;
+  border: 1px solid #03AFB1;
+}
+a:hover, .alink:hover {
+  color: #03AFB1;
+}
+.action.primary:focus, .action.primary:active {
+  background: #03AFB1;
+  border: 1px solid #03AFB1;
+}
+.customer-address-index {
+  .box-address-billing {
+    a.action.edit {
+      color: #03AFB1;
+      font-weight: 600;
+    }
+  }
+  .box-address-shipping {
+    a.action.edit {
+      color: #03AFB1;
+      font-weight: 600;
+    }
+  }
+}
+.customer-account-createpassword {
+  @media screen and (min-width: 768px) {
+    .form.password.reset {
+      width: 40%;
+    }
+  }
+}
+.customer-account-login .column.main .login-container .block-customer-login .block-content .form-login .actions-toolbar {
+  .submit-button, .mobile-otp-button {
+    border-radius: 4px;
+  }
+}

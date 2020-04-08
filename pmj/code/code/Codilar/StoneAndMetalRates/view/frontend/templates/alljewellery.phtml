@@ -1,0 +1,40 @@
+<?php
+$metalCollection=$block->getMetalCollection();
+?>
+
+<div id="gold-rate-panel" class="gold-rate-panel" >
+    <div class="gold-price-today">
+        <span class="heading-gold-rate ">Gold Rate</span>
+        <table style="width: 155px;" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+            <?php
+            foreach ($metalCollection as $item)
+            {?>
+                 <tr>
+                <td><?=$item['metal_purity']?> kt</td>
+                <td class="gold-rate-rupees">Rs. <?=$item['rate']?></td>
+            </tr>
+            <?php
+            }
+            ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+<style>
+    .gold-rate-panel{
+        display: block;
+
+    }
+    .heading-gold-rate{
+        font-size: 13px;
+        border-bottom: 1px solid #cccccc;
+        padding: 0 0 5px;
+    }
+    .gold-rate-rupees{
+        text-transform: none;
+    }
+    .gold-rate-panel .gold-price-today table tbody > tr > td:first-child {
+        padding-left: 0px;
+    }
+</style>

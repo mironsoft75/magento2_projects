@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Codilar_Videostore::Videostore"
+             title="Videostore"
+             module="Codilar_Videostore"
+             sortOrder="50"
+             resource="Codilar_Videostore::Videostore"/>
+        <add id="Codilar_Videostore::requests"
+             title="Manage Requests"
+             module="Codilar_Videostore"
+             sortOrder="10" action="videostore/index"
+             resource="Codilar_Videostore::index"
+             parent="Codilar_Videostore::Videostore"/>
+        <add id="Codilar_Videostore::timeslots"
+             title="Timeslot"
+             module="Codilar_Timeslot"
+             sortOrder="20" action="codilartimeslot/index/index"
+             resource="Codilar_Timeslot::blocks"
+             parent="Codilar_Videostore::Videostore"/>
+        <add id="Codilar_Videostore::activity"
+             title="Activity"
+             module="Codilar_Videostore"
+             sortOrder="20" action="videostore/activity/index"
+             resource="Codilar_Videostore::activity"
+             parent="Codilar_Videostore::Videostore"/>
+    </menu>
+</config>

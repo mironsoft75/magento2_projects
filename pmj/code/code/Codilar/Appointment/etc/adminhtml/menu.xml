@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Codilar_Appointment::Codilar_Appointment" title="PMJ Appointment" module="Codilar_Appointment"
+             sortOrder="30"
+             resource="Codilar_Appointment::codilar_appointment"/>
+        <add id="Codilar_Appointment::codilar_appointment_request" title="Appoint Request" module="Codilar_Appointment"
+             sortOrder="20" parent="Codilar_Appointment::Codilar_Appointment" action="appointment/request"
+             resource="Codilar_Appointment::codilar_appointment_request"/>
+    </menu>
+</config>
+

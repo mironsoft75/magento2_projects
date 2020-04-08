@@ -1,0 +1,167 @@
+.page-header{
+  .panel.header{
+    .custom-header-links{
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      #videocart{
+          .videocart-button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            cursor: pointer;
+            .cart-button-text{
+              display: flex;
+              align-items: center;
+            }
+            .icon{
+              font-size: 18px;
+            }
+            p{
+              padding: 0 2px;
+              margin: 0;
+              font-size: 12px;
+              .counter-bg{
+                border: 1px solid white;
+                min-height: 15px;
+                height: 15px;
+                min-width: 15px;
+                line-height: 13px;
+                border-radius: 2px;
+                text-align: center;
+                margin-left: 5px;
+                margin-top: -5px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                .counter-number{
+                  font-size: 12px;
+                  line-height: initial;
+                }
+              }
+            }
+          }
+        #videocart-dropdown{
+          padding: 20px;
+          position: absolute;
+          width: 390px;
+          background: #fff;
+          z-index: 999;
+          box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.5);
+          height: auto;
+          top: 100%;
+          right: 50%;
+          transform: translateX(50%);
+          .scrollable-container{
+            margin-top: 20px;
+          }
+          .scrollable-product{
+            max-height: 400px;
+            overflow: auto;
+          }
+          .videocart-close{
+            float: right;
+            position: absolute;
+            right: 20px;
+            top: 5px;
+            padding: 10px;
+            cursor: pointer;
+            &::after{
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+              font-size: 16px;
+              line-height: 16px;
+              color: #757575;
+              content: '\e616';
+              font-family: 'luma-icons';
+              margin: 0;
+              vertical-align: top;
+              display: inline-block;
+              font-weight: normal;
+              overflow: hidden;
+              text-align: center;
+            }
+          }
+          .videocart-product{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid grey;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            .product-image{
+              width: 120px;
+            }
+            .product-details{
+              width: 200px;
+              max-width: 200px;
+              display: flex;
+              margin-left: 15px;
+              box-sizing: border-box;
+              .product-item-name{
+                min-width: 135px;
+                .product-item-link{
+                  color: #303030;
+                  transition: all 0.5s ease;
+                  font-size: 18px;
+                  &:hover{
+                    color: #03afb1;
+                  }
+                }
+                .product-item-price{
+                  color: #303030;
+                  font-weight: bold;
+                }
+              }
+              form{
+                margin-left: 10px;
+                display: flex;
+                align-items: center;
+                button{
+                  background: none;
+                  border: none;
+                  color: #03afb1;
+                  &::before{
+                    font-size: 18px;
+                    line-height: 20px;
+                    color: #03afb1;
+                    content: '\e604';
+                    font-family: 'luma-icons';
+                    vertical-align: middle;
+                    display: inline-block;
+                    font-weight: normal;
+                    overflow: hidden;
+                    text-align: center;
+                  }
+                }
+                .icon-trash{
+                  font-size: 16px;
+                  &:hover{
+                    color: #03afb1;
+                  }
+                }
+              }
+            }
+          }
+          .actions{
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 10px;
+            .primary{
+              a{
+                padding: 15px;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.videostore-cart-index {
+  .ui-datepicker .ui-datepicker-title .ui-datepicker-year {
+    width: 56%;
+  }
+}

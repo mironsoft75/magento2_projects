@@ -1,0 +1,619 @@
+#countryFlag {
+  .country-flag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .indian-flag-png {
+      height: 30px;
+      vertical-align: middle;
+      padding-right: 0;
+      margin-top: 0;
+    }
+  }
+}
+
+.account {
+  input, select {
+    background: #F2F2F2;
+    border: 1px solid #f2f2f2;
+
+    &:focus {
+      border: 1px solid @primary;
+    }
+  }
+
+  .sidebar.sidebar-additional {
+    .block-compare {
+      .block-content {
+        .actions-toolbar {
+          .primary {
+            a {
+              box-shadow: none !important;
+            }
+          }
+        }
+      }
+    }
+
+    .block-reorder {
+      .block-content {
+        .form.reorder {
+          .actions-toolbar {
+            .primary.no-display {
+              @media @mobile {
+                display: block;
+                width: 36%;
+                margin: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .columns {
+    .column.main {
+      @media @mobile {
+        padding-bottom: 0;
+      }
+    }
+
+    .sidebar-main {
+      @media @mobile {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+}
+
+.customer-account-login {
+  .page-title-wrapper {
+    .page-title {
+      span {
+        font-size: 28px;
+      }
+    }
+  }
+
+  .column.main {
+    .login-container {
+      display: flex;
+      box-sizing: border-box;
+      padding: 10px;
+      @media @mobile {
+        flex-direction: column;
+      }
+
+      .block-customer-login {
+        flex-basis: 50%;
+        margin: 0;
+        @media @mobile {
+          flex-basis: 100%;
+        }
+
+        .block-title {
+          @media @mobile {
+            text-align: center;
+          }
+
+          strong {
+            font-size: 20px;
+            letter-spacing: 1px;
+            line-height: initial;
+          }
+        }
+
+        .block-content {
+          .form-login {
+            .actions-toolbar {
+              .primary {
+                button {
+                  font-size: 14px;
+
+                  span {
+                    font-size: 14px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .block-new-customer {
+        flex-basis: 50%;
+        margin: 0;
+        @media @mobile {
+          flex-basis: 100%;
+          margin-top: 30px;
+        }
+
+        .block-title {
+          @media @mobile {
+            text-align: center;
+          }
+
+          strong {
+            font-size: 20px;
+            letter-spacing: 1px;
+            line-height: initial;
+          }
+        }
+
+        .block-content {
+          .actions-toolbar {
+            .primary {
+              a {
+                font-size: 14px;
+
+                span {
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .social-login-authentication-channel {
+    .social-btn-actions-toolbar {
+      @media @mobile {
+        width: 195px !important;
+        margin-right: 0 !important;
+      }
+      @media @tab {
+        &.facebook-login {
+          margin-right: 1% !important;
+        }
+      }
+      .btn-social {
+        > span {
+          background-size: cover;
+          top: -1px;
+        }
+      }
+    }
+  }
+}
+
+//customer account create page
+
+.customer-account-create {
+  .column.main {
+    .country-flag {
+      @media @tab-portrait {
+        width: 40px;
+        justify-content: left !important;
+      }
+    }
+    input.input-text.full-number-grid.input-create-acc {
+      @media @tab-portrait {
+        width: calc(~"100% - 50px");
+      }
+    }
+    .create.account.form-create-account {
+      .fieldset {
+        .field {
+          label {
+            display: none;
+          }
+
+          @media @mobile {
+            width: 100%;
+          }
+
+          input {
+            border: 1px solid #F2F2F2;
+
+            &:focus {
+              border: 1px solid @primary;
+            }
+          }
+
+          .login-country-code {
+            #countryFlag
+
+          }
+        }
+
+        .field.password {
+          .control {
+            input[type="password"] {
+              order: 1;
+            }
+
+            #password-strength-meter-container {
+              padding-top: 0px;
+              order: 3;
+            }
+          }
+        }
+      }
+    }
+
+    .social-login-authentication-channel.account-social-login {
+      .facebook-login {
+        @media @mobile {
+          width: 195px;
+          margin-right: 0;
+        }
+      }
+
+      .google-login {
+        @media @mobile {
+          width: 195px;
+          margin-right: 0;
+        } 
+      }
+
+      .social-btn-actions-toolbar {
+        @media @tab {
+          &.facebook-login {
+            margin-right: 1% !important;
+          }
+        }
+        .btn-social {
+          > span {
+            background-size: cover;
+            top: -1px;
+          }
+        }
+      }
+    }
+
+    .actions-toolbar {
+      .pull-right-block {
+        button {
+          font-size: 14px;
+
+          span {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//customer account edit page
+
+.customer-account-edit {
+  @media @mobile {
+    h1.page-title {
+      margin-right: 0 !important;
+      font-size: 16px;
+    }
+  }
+  .page-wrapper {
+    .column.main {
+      .block-title.block-my-accoucnt.block-my-accoucnt-cust {
+        margin-left: 0;
+      }
+
+      .edit-form {
+        .col-xs-12 {
+          @media @mobile {
+            padding-left: 0;
+          }
+        }
+
+        .pad-input-blocks {
+          margin-bottom: 10px;
+        }
+
+        .country-code-block {
+          display: flex;
+          @media @mobile {
+            display: flex;
+          }
+
+          .country-flag {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            height: 40px;
+            width: 40px;
+
+            .indian-flag-png {
+              height: 30px;
+              vertical-align: middle;
+              padding-right: 0;
+              margin-top: 0;
+            }
+          }
+
+          input[name="phone_number"] {
+            width: 100%;
+          }
+        }
+
+        .password-change-block-toggle-container {
+          box-sizing: border-box;
+          padding: 10px 0;
+          display: flex;
+          align-items: center;
+
+          input[type='checkbox'] {
+            margin: 0;
+          }
+
+          label[for="password-change-block-toggle"] {
+            padding-left: 10px;
+
+            .text-checked.text-checked-cust {
+              margin: 0;
+            }
+          }
+        }
+
+        #change-password-block {
+          .sub-text-edit:first-child {
+            padding-left: 0;
+            @media @mobile {
+              padding-right: 0;
+            }
+            @media @tab-portrait {
+              padding-right: 10px;
+            }
+          }
+
+          .field.new.password {
+            padding-right: 0;
+            @media @tab-portrait {
+              padding-left: 6px;
+            }
+
+            #password-strength-meter-container {
+              margin-top: 0px;
+            }
+          }
+        }
+      }
+
+      .save-changes-custom {
+        @media @mobile {
+          display: flex;
+          padding-left: 0;
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+}
+
+.newsletter-manage-index {
+  .form-newsletter-manage {
+    .choice {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+    }
+  }
+}
+
+//sales order history
+.account.sales-order-history {
+  .page-wrapper {
+    .page-main {
+      .column.main {
+        .table-wrapper.orders-history {
+          @media @mobile {
+            border: none;
+          }
+        }
+
+        .order-products-toolbar {
+          .pages {
+            .item {
+              .action::before {
+                color: @primary !important;
+              }
+            }
+          }
+          .limiter {
+            @media @desktop {
+              float: right;
+            }
+            #limiter {
+              background: #ffffff url('../images/select-bg.svg') no-repeat 100% 45%;
+              border: 1px solid @primary;
+              color: #000 !important;
+              box-shadow: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//shared wishlist styles
+.wishlist-shared-index {
+  .page-wrapper {
+    .page-main {
+      .column.main {
+        .wishlist.table-wrapper {
+          #wishlist-table {
+            .col.comment {
+              display: none;
+            }
+
+            tbody {
+              .col.product {
+                .product.photo {
+                  display: inline-block;
+                }
+
+                .product.name {
+                  display: block;
+                }
+              }
+
+              .col.actions {
+                vertical-align: middle;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media @tab-portrait {
+  body.account .block-collapsible-nav {
+    z-index: 3;
+  }
+}
+//recent order
+.account.customer-account-index {
+  .page-wrapper {
+    .page-main {
+      .column.main {
+        .block.block-dashboard-orders {
+          .block-title.order {
+            @media @mobile {
+              border: none;
+            }
+          }
+
+          .block-content {
+            .table-wrapper.orders-recent {
+              @media @mobile {
+                border: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//customer review page
+.review-customer-index {
+  .page-wrapper {
+    .page-main {
+      .column.main {
+        .table-wrapper {
+          @media @mobile {
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+//wishlist comment section removed
+.account.wishlist-index-index {
+  .page-wrapper {
+    .page-main {
+      .column.main {
+        .products-grid.wishlist {
+          .product-items {
+            .product-item {
+              @media @tab-portrait {
+                width: 50%;
+                padding: 20px 10px 20px 0 !important;
+              }
+              .product-item-info {
+                .price-box{
+                  text-align: center;
+                  @media @tab-portrait {
+                    .product-discount-percent {
+                      display: block;
+                    }
+                  }
+                }
+
+                .tooltip.wrapper.product-item-tooltip {
+                  text-align: center;
+                  display: block;
+                  cursor: pointer;
+                  .tooltip.content {
+                    left: 50%;
+                    transform: translateX(-50%);
+                    @media @mobile {
+                      width: 210px;
+                    }
+                    &:before {
+                      left: 50%;
+                      margin-left: 0;
+                      transform: translateX(-50%);
+                      @media @tab-portrait {
+                        left: 7%;
+                        transform: translateX(-7%);
+                      }
+                    }
+                    &:after {
+                      left: 50%;
+                      margin-left: 0;
+                      transform: translateX(-50%);
+                      @media @tab-portrait {
+                        left: 7%;
+                        transform: translateX(-7%);
+                      }
+                    }
+                  }
+                }
+
+                .product-item-inner {
+                  @media @mobile {
+                    display: inline-flex;
+                  }
+                  @media @tab-portrait {
+                    clip: initial;
+                    height: auto;
+                    width: auto;
+                    box-shadow: none;
+                    margin-top: 10px;
+                    padding: 0 10px 10px;
+                    left: 1px;
+                    position: initial;
+                    .box-tocart {
+                      margin-left: 0;
+                    }
+                  }
+
+                  .field.comment-box {
+                    .control {
+                      display: none;
+                    }
+                  }
+
+                  .product-item-actions {
+                    @media @mobile {
+                      display: inline-flex;
+                    }
+
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media @tab-portrait {
+    .products-grid.wishlist {
+      .product-item-name, .product-item-description, .product-item .price-box, .product-item-tooltip {
+        margin-left: 123px;
+        text-align: left !important;
+      }
+    }
+  }
+}
+
+//customer address page form
+.customer-address-form{
+  .form-address-edit{
+    .field.custom{
+      display: none;
+    }
+  }
+}

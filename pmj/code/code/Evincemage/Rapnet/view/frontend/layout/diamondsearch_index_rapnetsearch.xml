@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+ /**
+  * @author Evince Team
+  * @copyright Copyright (c) 2018 Evince (http://evincemage.com/)
+  */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Diamond Search Result</title>
+        <css src="Evincemage_Rapnet::main.css"/>
+        <link src="Evincemage_Rapnet::js/touchit.js"/>
+        <link src="Evincemage_Rapnet::js/main.js"/>
+    </head>
+    <body>
+        <referenceBlock name="page.main.title" remove="true"/>
+        <referenceBlock name="head.additional">
+            <block class="Evincemage\Rapnet\Block\Index" name="evince.diamondsearch.head"  template="Evincemage_Rapnet::head.phtml" after="-"/>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Evincemage\Rapnet\Block\Index" name="diamond.search"/>
+
+            <block class="Evincemage\Rapnet\Block\Search\Result" name="diamond.search.result" template="Evincemage_Rapnet::search/result.phtml">
+                <block class="Evincemage\Rapnet\Block\Search\ListProduct" name="diamond.search.list" template="Evincemage_Rapnet::search/list.phtml">
+                    <block class="Magento\Catalog\Block\Product\ProductList\Toolbar" name="product_list_toolbar" template="Magento_Catalog::product/list/toolbar.phtml">
+                    </block>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

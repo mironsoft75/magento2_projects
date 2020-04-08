@@ -1,0 +1,607 @@
+.cms-customised-jewellery {
+    .custom-jewellery-container {
+        .custom-jewellery-img-container {
+            max-height: 330px;
+            overflow: hidden;
+            position: relative;
+            width: 100vw;
+            left: calc(~"-50vw + 50%");
+            height: auto;
+            display: inline-block;
+            img {
+                width: 100vw;
+            }
+        }
+        .customise-generate-otp{
+            margin: 15px 0 10px 0;
+            width: 200px;
+            box-sizing: border-box;
+            padding: 10px;
+            color: white;
+            background: #03afb1;
+            text-align: center;
+            border: 1px solid #03afb1;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            cursor: pointer;
+            &:hover{
+                color: #03afb1;
+                background: #fff;
+            }
+            @media @mobile{
+                margin: 15px 0 10px 0;
+            }
+        }
+
+        .customise-resend-otp{
+            margin: 10px 0;
+            width: 200px;
+            box-sizing: border-box;
+            padding: 10px;
+            color: white;
+            background: #03afb1;
+            text-align: center;
+            border: 1px solid #03afb1;
+            cursor: pointer;
+            display:none;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            &:hover{
+                color: #03afb1;
+                background: #fff;
+            }
+        }
+        button {
+            border-radius: 4px !important;
+        }
+        .custom-jewellery-mid {
+            .content-heading {
+                .title {
+                    text-align: center;
+                    padding: 10px;
+                    margin: 34px 0;
+                    font-weight: bold;
+                    font-size: 30px;
+                    @media @mobile{
+                        font-size: 20px;
+                        margin: 10px 0;
+                    }
+                }
+            }
+            .custom-slider {
+                width: 80%;
+                margin: auto;
+                .owl-carousel.owl-theme.owl-loaded {
+                    .owl-stage-outer {
+                        .owl-stage {
+                            @media @mobile{
+                                display: flex;
+                            }
+                            .owl-item {
+                                text-align: center;
+                                width: 20% !important;
+                                height: 350px;
+                                @media @mobile {
+                                    width: 100% !important;
+                                    margin-left: auto;
+                                    height: auto;
+                                }
+                            }
+                            .content_slider {
+                                position: absolute;
+                                top: 60%;
+                                left: 15px;
+                                width: 85%;
+                                z-index: 1;
+                                color: black;
+                                @media @mobile {
+                                    top: 80%;
+                                    left: 15px;
+                                    position: initial;
+                                    margin: 0 auto;
+                                }
+                                .custom_content {
+                                    p {
+                                        transition: all 0.8s ease;
+                                        cursor: pointer;
+                                        font-size: 16px;
+                                        @media @mobile {
+                                            font-size: 18px;
+                                        }
+                                        &:hover {
+                                            color: #03AFB1;
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                    .owl-controls{
+                        .owl-nav{
+                            .owl-prev{
+                                @media @mobile{
+                                    &::before{
+                                        background-color: @primary;
+                                    }
+                                    &:hover{
+                                        background: @primary;
+                                        &::before{
+                                            background-color: #fff;
+                                        }
+                                    }
+                                    left: -40px;
+                                }
+                            }
+                            .owl-next{
+                                @media @mobile{
+                                    &::before{
+                                        background-color: @primary;
+                                    }
+                                    &:hover{
+                                        background: @primary;
+                                        &::before{
+                                            background-color: #fff;
+                                        }
+                                    }
+                                    right: -40px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .custom-form-template {
+            padding-top: 20px;
+            box-sizing: border-box;
+            input:not(input[type='checkbox']){
+                height: 40px;
+                background: #f2f2f2;
+                margin: 5px 0;
+            }
+            textarea {
+                background: #f2f2f2;
+                border: none;
+            }
+            .customised-form-container {
+                .content-heading {
+                    .title {
+                        text-align: center;
+                        padding: 20px;
+                        margin: 0;
+                        font-weight: bold;
+                        font-size: 30px;
+                    }
+                }
+                .tab {
+                    display: flex;
+                    width: 80%;
+                    margin: 0 auto;
+                    @media @mobile{
+                        flex-direction: column;
+                        width: 100%;
+                    }
+                    @media @tab {
+                        flex-direction: row;
+                    }
+                    .tablinks {
+                        width: 100%;
+                        padding: 15px;
+                        border-radius: 4px;
+                        text-transform: capitalize;
+                        background: #fff;
+                        border: 1px solid #03AFB1;
+                        color: #03AFB1;
+                        &:hover{
+                            background: @primary;
+                            border: 1px solid @primary;
+                            color: #fff !important;
+                        }
+                        @media @mobile {
+                            margin-bottom: 20px;
+                        }
+                    }
+                    .tablinks.active {
+                        background: @primary;
+                        border: 1px solid @primary;
+                        color: #fff;
+                        &:hover{
+                            background: @primary;
+                            border: 1px solid @primary;
+                            color: #fff !important;
+                        }
+                    }
+                }
+                #upload,
+                #customdesign,
+                #workdes {
+                    .form-title {
+                        text-align: center;
+                        padding: 20px;
+                        font-size: 20px;
+                        font-weight: bold;
+                        margin: 0;
+                        @media @mobile {
+                            font-size: 20px;
+                        }
+                    }
+                }
+                #upload {
+                    .upload-container {
+                        width: 80%;
+                        display: flex;
+                        margin: auto;
+                        @media @mobile{
+                            width: 100%;
+                            flex-direction: column;
+                        }
+                        @media @tab {
+                            flex-direction: row;
+                        }
+                        .input-file {
+                            position: relative;
+                            width: 300px;
+                            height: 245px;
+                            cursor: pointer;
+                            overflow: hidden;
+                            #images{
+                                position: absolute;
+                                width: 100%;
+                                
+                            }
+                            input[type='file'] {
+                                color: #f1e5e6;
+                                transition: all 0.5s;
+                                width: 100%;
+                                height: 100%;
+                                margin: 0;
+                                line-height: 246px;
+                                cursor: pointer;
+                                z-index: 1;
+                                position: absolute;
+                                top: 0;
+                                opacity: 0;
+                            }
+                            p {
+                                background: #03AFB1;
+                                color: white;
+                                padding: 10px;
+                                text-align: center;
+                                text-transform: uppercase;
+                                position: absolute;
+                                width: 100%;
+                                bottom: -10px;
+                            }
+                        }
+                        #image {
+                            visibility: hidden;
+                            height: 0;
+                            width: 0;
+                            position: absolute;
+                        }
+                        .left-sec {
+                            flex-basis: 30%;
+                            margin-top: 5px;
+                            @media @mobile {
+                                display: flex;
+                                justify-content: center;
+                                padding-left: 15px;
+                            }
+                            @media @tab {
+                                margin-right: 15px;
+                            }
+                        }
+                        .right-sec {
+                            flex-basis: 70%;
+                            padding-left: 20px;
+                            @media @mobile{
+                                padding-left: 15px;
+                                padding-top: 20px;
+                            }
+                            @media @tab {
+                                padding-top: 5px;
+                            }
+                            #customise-otp_sent1{
+                                margin-top: 15px;
+                            }
+                            #verify{
+                                margin-top: 20px;
+                            }
+                            #otp-error-message1{
+                                margin-top: 15px;
+                            }
+                            #number-error-message1{
+                                margin-top: 15px;
+                            }
+                            .row {
+                                margin: 0 auto;
+                                @media @mobile {
+                                    margin-left: 0;
+                                }
+                            }
+                            .fieldset {
+                                .field {
+                                    .control{
+                                        textarea{
+                                            margin-top: 5px;
+                                            @media @mobile {
+                                                margin-top: 0;
+                                            }
+                                        }
+                                        .validate-email {
+                                            margin-top: 2px;
+                                            @media @mobile {
+                                                margin-top: 0;
+                                            }
+                                        }
+                                    }
+                                    .control.inputbox {
+                                        display: flex;
+                                        align-items: center;
+                                        p {
+                                            margin: 0;
+                                            font-size: 14px;
+                                        }
+                                        input[type='checkbox'] {
+                                            margin: 0 10px 0 0;
+                                        }
+                                    }
+                                }
+                                .mobile-container{
+                                    .customise-generate-otp{
+                                        margin-top: 10px;
+                                    }
+                                    #verify{
+                                        margin-top: 20px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                #customdesign {
+                    .customdesign-container {
+                        width: 80%;
+                        display: flex;
+                        margin: auto;
+                        input[name='mobile']{
+                            margin: 3px 0 0 0;
+                            @media @mobile {
+                                margin: 0;
+                            }
+                            @media @tab {
+                                margin: 0;
+                            }
+                        }
+                        @media @mobile{
+                            width: 100%;
+                            flex-direction: column;
+                        }
+                        @media @tab {
+                            flex-direction: row;
+                        }
+                        .row {
+                            margin: 0 auto;
+                            margin-bottom: 15px;
+                            .col-md-6 {
+                                @media @mobile {
+                                    margin-bottom: 18px;
+                                }
+                            }
+                            @media @mobile {
+                                margin-bottom: 10px;
+                            }
+                            @media @tab {
+                                margin-bottom: 10px;
+                            }
+                        }
+                        .input-file {
+                            position: relative;
+                            width: 300px;
+                            height: 245px;
+                            @media @mobile{
+                                width: 100%;
+                                height: 100%;
+                                margin-left: 5px;
+                            }
+                            @media @tab {
+                                margin-left: 0;
+                                width: 300px;
+                                height: 245px;
+                            }
+                            #sku_image {
+                                position: relative;
+                                display: flex;
+                                flex-direction: column;
+                                @media @mobile{
+                                    height: 100%;
+                                }
+                                input {
+                                    margin: 0;
+                                }
+                                img{
+                                    width: 100%;
+                                    height: 240px;
+                                    object-fit: cover;
+                                    @media @tab {
+                                        height: 200px;
+                                        min-height: 200px;
+                                    }
+                                }
+                                p {
+                                    box-sizing: border-box;
+                                    padding: 15px;
+                                    color: white;
+                                    background: @primary;
+                                    text-align: center;
+                                    border: 1px solid @primary;
+                                    margin: 0;
+                                    cursor: pointer;
+                                    text-transform: uppercase;
+                                }
+                            }
+                        }
+                        .left-sec{
+                            flex-basis: 30%;
+                            overflow: visible;
+                            height: 340px;
+                            margin-top: 5px;
+                            @media @tab {
+                                margin-top: 0;
+                                margin-right: 15px;
+                                flex-basis: 300px;
+                                padding-top: 5px;
+                            }
+                        }
+                        .right-sec {
+                            flex-basis: 70%;
+                            padding-left: 5px;
+                            @media @mobile{
+                                margin-top: 0px;
+                            }
+                            @media @tab {
+                                padding-left: 15px;
+                                padding-top: 5px;
+                            }
+                            #customise-otp_sent2{
+                                margin-bottom: 15px;
+                            }
+                            #otp-error-message2{
+                                margin-top: 5px;
+                                @media @mobile {
+                                    margin-top: 8px;
+                                }
+                            }
+                            #verify{
+                                margin-top: 20px;
+                            }
+                            .row {
+                                @media @mobile {
+                                    margin-top: 0px;
+                                    margin-left: 0;
+                                }
+                                @media @tab {
+                                    margin-top: 0px;
+                                }
+                            }
+                            .fieldset {
+                                .row{
+                                    .col-md-12, .col-md-6{
+                                        @media @mobile{
+                                            padding: 0;
+                                        }
+                                    }
+                                }
+                                .field {
+                                    .mobile-inputs{
+                                        margin-top: 15px;
+                                        margin-bottom: 15px;
+                                        @media @mobile {
+                                            margin-top: 18px;
+                                        }
+                                        @media @tab {
+                                            margin-top: 18px;
+                                        }
+                                    }
+                                    .customise-generate-otp{
+                                        margin-top: 15px;
+                                    }
+                                    .control.inputbox {
+                                        display: flex;
+                                        align-items: center;
+                                        p {
+                                            margin: 0;
+                                            @media @mobile {
+                                                font-size: 14px;
+                                            }
+                                        }
+                                        input[type='checkbox'] {
+                                            margin: 0 10px 0 0;
+                                        }
+                                    }
+                                    .control{
+                                        textarea{
+                                            @media @mobile{
+                                                margin-top: -10px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                #workdes {
+                    .workdes-container {
+                        width: 80%;
+                        margin: auto;
+                        @media @mobile{
+                            width: 100%;
+                        }
+                        .row {
+                            margin-bottom: 17px;
+                        }
+                        .form-container {
+                            #customise-otp_sent3{
+                                margin: 15px 0;
+                            }
+                            #otp-error-message3{
+                                margin-top: 5px;
+                            }
+                            #verify{
+                                margin-top: 20px;
+                            }
+                            #number-error-message3{
+                                margin-top: 15px;
+                            }
+                            .row {
+                                .col-md-4 {
+                                    @media @mobile {
+                                        margin-bottom: 20px;
+                                    }
+                                }
+                                >.col-md-6{
+                                    @media @mobile{
+                                        padding-left: 15px;
+                                        padding-right: 15px;
+                                    }
+                                    @media @tab {
+                                        padding-left: 15px;
+                                        padding-right: 15px;
+                                    }
+                                }
+                            }
+                            .control.inputbox {
+                                display: flex;
+                                align-items: center;
+                                p {
+                                    margin: 0;
+                                    font-size: 14px;
+                                }
+                                input[type='checkbox'] {
+                                    margin: 0 10px 0 0;
+                                    @media @mobile{
+                                        margin-left: 0;
+                                    }
+                                }
+                            }
+                            .control{
+                                .mobile-first-input{
+                                    @media @mobile{
+                                        margin-bottom: 20px;
+                                    }
+                                }
+                                .textarea{
+                                    margin-top: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

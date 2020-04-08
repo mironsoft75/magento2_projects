@@ -1,0 +1,69 @@
+.catalog-product-view{
+  .modals-wrapper{
+    .modal-popup.confirm{
+      .modal-header{
+        h1{
+          display: block;
+        }
+      }
+      .modal-footer{
+        display: block;
+        text-align: center;
+      }
+    }
+    .modal-popup.tryonVideoModal-container{
+      .modal-inner-wrap{
+        width: 35%;
+        height: auto;
+        background: @primary;
+        @media @mobile{
+          width: 90%;
+        }
+        .modal-header{
+          h1{
+            display: none;
+          }
+        }
+        .modal-content{
+          overflow: hidden;
+          @media @mobile{
+            padding: 10px;
+          }
+          #tryonVideoModal{
+            .tryon-modal-img{
+              .img-bg{
+                display: flex;
+                justify-content: center;
+                img {
+                  object-fit: contain;
+                }
+              }
+            }
+          }
+        }
+        .modal-footer{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 20px 10px;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          .tryon-ok{
+            margin-bottom: 15px;
+            background: #fff;
+            color: @primary !important;
+            span{
+              color: @primary !important;
+            }
+          }
+          .checkbox{
+            label{
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

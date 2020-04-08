@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <weltpixel_quick_cart>
+            <general>
+                <enable>1</enable>
+                <open_minicart>1</open_minicart>
+            </general>
+            <header>
+                <header_height>50px</header_height>
+                <header_background>#000000</header_background>
+                <header_text_color>#FFFFFF</header_text_color>
+            </header>
+            <footer>
+                <subtotal_background>#F6F6F6</subtotal_background>
+                <subtotal_text_color>#000000</subtotal_text_color>
+            </footer>
+        </weltpixel_quick_cart>
+    </default>
+</config>

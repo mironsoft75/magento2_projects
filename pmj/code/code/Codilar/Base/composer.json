@@ -1,0 +1,21 @@
+{
+  "name": "codilar/base",
+  "description": "codilar base module",
+  "license": "proprietary",
+  "authors": [
+    {
+      "email": "salman@codilar.com",
+      "name": "Salman"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Codilar\\Base\\": ""
+    }
+  }
+}

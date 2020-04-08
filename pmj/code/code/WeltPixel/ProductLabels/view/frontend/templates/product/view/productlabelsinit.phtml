@@ -1,0 +1,17 @@
+<script>
+    require(['jquery', 'mage/gallery/gallery', 'wpProductLabels'], function($, gallery, wpProductLabels){
+        $('[data-gallery-role=gallery-placeholder]').on('gallery:loaded', function () {
+            var requestUrl = '<?php echo $this->getUrl("wpproductlabels/product/labels/product_id/" . $this->getProduct()->getId()); ?>';
+            $.get({
+                url: requestUrl,
+                cache: false
+            }, function(result) {
+                $('.fotorama__stage').append(result);
+                wpProductLabels.adjustRightLabels();
+                $(window).resize(function() {
+                    wpProductLabels.adjustRightLabels();
+                });
+            });
+        });
+    });
+</script>

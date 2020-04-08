@@ -1,0 +1,226 @@
+<?php
+/** @var \Codilar\Videostore\Block\Cart\Index $block */
+
+$countries = $block->getCountries();
+?>
+<div class="img-bg">
+    <div class="tryon-modal-img">
+        <div class="img-container">
+            <img src="<?php echo $this->helper('\Magento\Cms\Helper\Wysiwyg\Images')->getBaseUrl() . 'wysiwyg/video_store/videostore_banner.png' ?>">
+        </div>
+    </div>
+</div>
+<div class="main-title">
+    <h1>Video Shopping</h1>
+</div>
+<div class="container row">
+    <div class="video-store-form-container col-md-4">
+        <div class="form-title">
+            <h3>Book your free slot</h3>
+        </div>
+        <form class="form videostore-form" id ="video-store-form"action="<?= $block->getRequestFormAction() ?>" method="post"
+              id="form-validate"
+              data-mage-init='{"validation":{}}'
+              enctype="multipart/form-data" autocomplete="off" novalidate="novalidate">
+            <?= $block->getBlockHtml('formkey') ?>
+            <fieldset class="fieldset">
+                <div class="field required">
+                    <div class="control">
+                        <i class="icon icon-user"></i>
+                        <input
+                                required
+                                type="text"
+                                id="fullname"
+                                name="fullname"
+                                placeholder="Full Name"
+                                title="Full Name" class="input-text required-entry" data-validate="{required:true}"
+                                autocomplete="off" aria-required="true">
+                    </div>
+                </div>
+                <div class="field required">
+                    <div class="control">
+                        <i class="icon icon-email3"></i>
+                        <input
+                                required
+                                type="email"
+                                name="email"
+                                autocomplete="email"
+                                placeholder="Email Id"
+                                id="email_address" value="" title="Email" class="input-text"
+                                data-validate="{required:true, 'validate-email':true}" aria-required="true">
+                    </div>
+                </div>
+                <div class="field required">
+                    <div class="control">
+                        <i class="icon icon-calendar-1"></i>
+                        <input
+                                required
+                                type="text"
+                                placeholder="Date"
+                                name="tryonDate"
+                                id="tryonDate" value="" title="<?= $block->escapeHtmlAttr(__('Date')) ?>"
+                                class="input-text input-create-acc" data-validate="{required:true}">
+                    </div>
+                </div>
+                <div class="field required">
+                    <div class="control">
+                        <i class="icon icon-clock"></i>
+                        <select required name="tryonTime" id="timeSelect" value="" title="Time" class="input-text"
+                                data-validate="{required:true}">
+                            <option value="" selected>Time</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field country ">
+                    <div class="control">
+                        <i class="icon icon-globe"></i>
+                        <select class="country-dropdown" name="country"  id="country" required>
+                            <option disabled selected>Select your country</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field region ">
+                    <div class="control">
+                        <i class="icon icon-globe"></i>
+                        <select class="state-dropdown" name="state" required>
+                            <option disabled selected>Select your state</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field required">
+                    <div class="control">
+                        <i class="icon icon-mobile"></i>
+                        <input
+                                required
+                                type="text"
+                                name="mobile"
+                                placeholder="Mobile No"
+                                id="mobile_number"
+                                maxlength="10"
+                                minlength="10"
+                                title="Mobile" class="input-text" data-validate="{required:true}" aria-required="true">
+<!--                        <p style="display: none;" class="btn generate-otp-btn">Generate Otp</p>-->
+                    </div>
+<!--                    <div style="display: none; margin: 20px 0 0 0; " class="otp-sent alert alert-success">-->
+<!--                        <strong>OTP has been sent!</strong>-->
+<!--                    </div>-->
+                </div>
+<!--           /////     otp field has been removed-->
+<!--                <div class="field required">-->
+<!--                    <div class="opt-container control">-->
+<!--                        <input disabled="true"-->
+<!--                               type="text"-->
+<!--                               name="otp" id="otp"-->
+<!--                               value="" title="Enter OTP"-->
+<!--                               placeholder="Enter Otp"-->
+<!--                               class="input-text opt-input"-->
+<!--                               maxlength="6"-->
+<!--                               minlength="6"-->
+<!--                               data-validate="{required:true, maxlength:6, minlength:6}" aria-required="true">-->
+<!--                        <div style="display: none;" class="otp-details">-->
+<!--                            <span class="resend-otp-msg">Didn't receive a OTP? </span><span class="btn resend-otp-btn">Resend OTP</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div style="display: none; margin: 20px 0 0;" class="otp-resent alert alert-success">-->
+<!--                        <strong>OTP has been Resent!</strong>-->
+<!--                    </div>-->
+<!--                    <div style="display: none;" class="otp-success alert alert-success">-->
+<!--                        <strong>OTP Verified!</strong>-->
+<!--                    </div>-->
+<!--                    <div style="display: none; margin: 20px 0 0;;" class=" otp-failed alert alert-danger">-->
+<!--                        <strong>Invalid OTP!</strong>-->
+<!--                    </div>-->
+<!--                </div>-->
+                <div class="field">
+                    <div class="control">
+                        <i class="icon icon-envelope-alt"></i>
+                        <textarea placeholder="Message" name="message" id="message" cols="5" rows="3"
+                                  data-validate="{required:false}" aria-required="true"></textarea>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <button type="submit" id="videocart-submit" class="action submit primary" title="Submit"><span>Submit</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="videostore-product-container col-md-6" id="videostore_product_container"
+         data-bind="scope: 'videocart_checkout'">
+        <!-- ko template: getTemplate() --><!-- /ko -->
+    </div>
+</div>
+<style>
+    .opt-control {
+        pointer-events: none;
+        opacity: 0.6;
+    }
+
+    input[disabled] {
+        pointer-events: none;
+    }
+</style>
+<script type="text/x-magento-init">
+{
+    "#videocart":{
+        "Magento_Ui/js/core/app": {
+        "components":{
+                "videocart_checkout":{
+                      "component": "Codilar_Videostore/js/view/content",
+                     "template": "Codilar_Videostore/view/videocartlisting"
+                }
+            }
+        }
+    }
+}
+
+</script>
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "videocartForm": {}
+            }
+        }
+
+</script>
+
+<script type="text/javascript">
+    require([
+        'jquery',
+        'mage/calendar'
+    ], function ($) {
+        $(document).ready(function(){
+            var countryList = <?= json_encode($countries); ?>;
+            var countryDropdownContainer = $('.country-dropdown');
+            var stateDropdownContainer = $('.state-dropdown');
+            var createCountryDropdown = function() {
+                countryList.forEach(function(e){
+                    countryDropdownContainer.append('<option value="'+e.country[0]+'">'+e.country[0]+'</option>');
+                });
+                countryDropdownContainer.append('<option value="other">Other</option>');
+            };
+            var createStateDropdown = function(state) {
+                stateDropdownContainer.html('<option disabled selected>Select your state</option>')
+                state.forEach(function(el){
+                    stateDropdownContainer.append('<option value="'+el+'">'+el+'</option>');
+                })
+            };
+            $('.country-dropdown').change(function(e){
+                var selectedCountryVal = $(this).val();
+                if(selectedCountryVal == 'other') {
+                    $('.field.region').hide();
+                } else {
+                    $('.field.region').show();
+                    countryList.forEach(function(e){
+                        if(e.country[0] == selectedCountryVal) {
+                            createStateDropdown(e.state[0]);
+                        }
+                    })
+                }
+            });
+            createCountryDropdown();
+        });
+    });
+</script>

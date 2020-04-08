@@ -1,0 +1,28 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <!--
+     **
+     * @package     Igorludgero_Socialshare
+     * @author      Igor Ludgero Miura - https://www.igorludgero.com/ - igor@igorludgero.com
+     * @copyright   Igor Ludgero Miura - https://www.igorludgero.com/ - igor@igorludgero.com
+     * @license     https://opensource.org/licenses/AFL-3.0  Academic Free License 3.0 | Open Source Initiative
+     **
+    -->
+    <menu>
+        <add id="Igorludgero_Socialshare::socialshare_menutop"
+             title="[IgorLudgero] - Social Share Links"
+             module="Igorludgero_Socialshare"
+             sortOrder="99"
+             resource="Igorludgero_Socialshare::socialshare_menutop"
+        />
+
+        <add id="Igorludgero_Socialshare::socialshare_settings"
+             title="Configure links"
+             module="Igorludgero_Socialshare"
+             sortOrder="1"
+             resource="Igorludgero_Socialshare::socialshare_settings"
+             parent="Igorludgero_Socialshare::socialshare_menutop"
+             action="adminhtml/system_config/edit/section/socialshare/"
+        />
+
+    </menu>
+</config>

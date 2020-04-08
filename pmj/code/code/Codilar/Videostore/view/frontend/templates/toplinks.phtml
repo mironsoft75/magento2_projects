@@ -1,0 +1,58 @@
+<?php
+// @codingStandardsIgnoreFile
+
+/* @var \Magento\Wishlist\Block\Link $block */
+?>
+<ul class="custom-header-links">
+    <li class="link cwishlist" data-bind="scope: 'wishlist'">
+        <a href="<?php echo $this->getUrl('wishlist'); ?>">Wishlist
+            <!-- ko if: wishlist().counter > 0 -->
+                <span data-bind="text: wishlist().counter" class="counter qty"></span>
+            <!-- /ko -->
+        </a>
+    </li>
+    <li>
+        <div class="dropdown"  id="videocart" data-bind="scope: 'videocart_component'">
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        </div>
+    </li>
+    <li><a href="<?php echo $this->getUrl('store-locator'); ?>">Store Locator</a></li>
+</ul>
+
+
+<script type="text/x-magento-init">
+{
+    "#videocart":{
+        "Magento_Ui/js/core/app": {
+        "components":{
+                "videocart_component":{
+                      "component": "Codilar_Videostore/js/view/content",
+                     "template": "Codilar_Videostore/view/videocart"
+                }
+            }
+        }
+    }
+}
+</script>
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "catalogAddToTryOn": {}
+            }
+        }
+</script>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "wishlist": {
+                        "component": "Magento_Wishlist/js/view/wishlist"
+                    }
+                }
+            }
+        }
+    }
+
+</script>
+

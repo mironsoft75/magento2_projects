@@ -1,0 +1,110 @@
+<?php
+/**
+ *
+ * (Load html for shipment creation)
+ * popup
+ */
+?>
+
+<div id="ship_overlay">
+    <div id="shipment_creation">
+        <div class="blurdart_order_shipment_logo" >&emsp;</div>		
+        <form id="blurdart_order_shipment" name="blurdart_order_shipment" method="post" action="<?php echo $this->getUrl('bluedart/shipment/sendshipment', ['order_id' => $this->getOrder()->getId()]); ?>" enctype="multipart/form-data">
+            <input type="hidden" name="shipment_referer" value="<?php echo $this->getCurrentUrl(); ?>" />
+            <?php echo $this->getBlockHtml('formkey') ?>
+            <input name="order_id" type="hidden" value="<?php echo $this->getRequest()->getParam('order_id') ?>" />
+            <?php
+                if ($this->getOrder()->canShip() && !$this->getOrder()->getForcedShipmentWithInvoice()){
+            ?>
+                <div class="text_short" style="float: left; width: 25%;">
+                    <label><?php echo __('Create Shipment') ?></label>
+                    <select name="shiporder">
+                        <option value="no"><?php echo __("No"); ?></option>
+                        <option value="yes"><?php echo __("Yes"); ?></option>
+                    </select>
+                    <br/>
+                    <small>If selected 'Yes' then order shipment will be created with order items, and will be mail to customer with shipment Tracking Id and Shipment Name as 'Bluedart'</small>
+                </div>
+            <?php } ?>
+            <fieldset class="shipment_creation_fieldset" id="MyBShipModel_body">
+                <legend>Packing Box Dimension </legend>
+                <div class="error_flex"></div>
+                <div id="receiver_details" class="shipment_creation_part">
+                    <?php
+                    $helper = $this->helper('Softprodigy\Bluedart\Helper\Data');
+                    $defaultCode = $helper->getStoreConfig('Softprodigy_Bluedart/general/product_code');
+                    ?>
+                    <div class="text_short">
+                        <label><?php echo __('Shipment Mode') ?> (<?php echo __("Shipment Mode") ?>)</label>
+                        <select name="shipmode">
+                            <option value="A" <?php echo $defaultCode=='A'? ' selected="selected" ': ''; ?>><?php echo __("Air"); ?></option>
+                            <option value="E" <?php echo $defaultCode=='E'? ' selected="selected" ': ''; ?>><?php echo __("Surface"); ?></option>
+                        </select>
+                    </div>
+                    <div class="text_short">
+                        <label><?php echo __('Breadth') ?> (<?php echo __("In cm") ?>)</label>
+                        <input id="breadth" data-title="<?php echo __('Breadth') ?>" name="shipment[breadth]" type="text" min="1" onchange="validateNonNegative(this);" onkeyup="validateNonNegative(this);" onpaste="validateNonNegative(this);" class="input-text required-entry validate-number" />
+                    </div>
+                    <div class="text_short">
+                        <label><?php echo __('Height') ?> (<?php echo __("In cm") ?>)</label>
+                        <input id="height" data-title="<?php echo __('Height') ?>" name="shipment[height]" onchange="validateNonNegative(this);" onkeyup="validateNonNegative(this);" onpaste="validateNonNegative(this);" type="text"  min="1" class="input-text required-entry validate-number" />
+                    </div>
+                    <div class="text_short">
+                        <label><?php echo __('Length') ?> (<?php echo __("In cm") ?>)</label>
+                        <input id="length" data-title="<?php echo __('Length') ?>" name="shipment[length]" type="text" onchange="validateNonNegative(this);" onkeyup="validateNonNegative(this);" onpaste="validateNonNegative(this);"  min="1" class="input-text required-entry validate-number" />
+                    </div>
+                    <div class="text_short">
+                        <label><?php echo __('Weight') ?> <span style="color:#f00;">(<?php echo __("In gm") ?>)</span></label>
+                        <input id="weight" data-title="<?php echo __('Weight') ?>" onchange="validateNonNegative(this);" onkeyup="validateNonNegative(this);" onpaste="validateNonNegative(this);" data-bind="textInput: shipWeight" name="shipment[weight]" type="text" class="input-text required-entry validate-number" />
+                    </div>
+                    <label>
+                        <strong><?php echo __('Actual Weight (in kg)') ?><br/>
+                            <label data-bind="text: actShipWeight"></label> (kg)
+                        </strong>
+                    </label>
+                </div>
+            </fieldset>
+            
+            <div class="clearer"></div>
+
+            <!--		<button id="shipment_creation_submit_id" type="submit" name="shipment_creation_submit_id">Submit Shipment</button>
+                            <button onclick="getclose()" type="button">Close</button>-->
+        </form>
+    </div>
+</div>
+<!--<script src="https://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" />
+<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>-->
+<style>
+    .order-payment-additional #ship_overlay{
+        display: none;
+    }
+</style>
+<script>
+    require([
+        'ko',
+        'jquery'
+    ], function (ko, $) {
+        function MyBShipModel(jquery) {
+            this.actShipWeight = ko.observable('');
+            this.shipWeight = ko.pureComputed({
+                read: function () {
+                    return '';
+                },
+                write: function (value) {
+                    if(value==='' || value<0)
+                        value = 0;
+                    
+                    if (value > 0) { // Ignore values with no space character
+                        this.actShipWeight((parseFloat(value)/1000).toFixed(4));
+                        jQuery('#weight').val(Math.floor(value));
+                    }
+                },
+                owner: this
+            });
+        }
+        var bele = document.getElementById("MyBShipModel_body");
+        ko.cleanNode(bele);
+        ko.applyBindings(new MyBShipModel($), bele);
+    });
+</script>

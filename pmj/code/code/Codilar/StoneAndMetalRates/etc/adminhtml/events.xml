@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="codilar_stone_metal_rates_save_after">
+        <observer name="activity_log" instance="Codilar\StoneAndMetalRates\Observer\Activity" />
+    </event>
+</config>

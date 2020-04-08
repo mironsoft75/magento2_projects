@@ -1,0 +1,149 @@
+<?php
+/**
+ * @var $block \Codilar\Appointment\Block\AppointmentData
+ */
+$countryList=$block->getCountriesData();
+$regionList=$block->getRegionData();
+$postUrl = $block->getBaseUrls();
+$countries=$block->getRegionsOfCountry();
+
+?>
+<form class="form videostore-form" id="appoint_form" name='form' action="<?= $block->getUrl('appointment/appointment/result') ?>"
+      data-mage-init='{"validation":{}}' enctype="multipart/form-data" method="POST">
+    <?= $block->getBlockHtml('formkey') ?>
+    <input type="hidden" value="" name="sku" />
+    <div class="form-inputs-main-box">
+        <div class="details-main appointment-fieldset fieldset-main">
+            <div class="field name">
+                <label class="label" for="name"><span><?php  echo __('Your Name*') ?></span></label>
+                <div class="control">
+                    <input placeholder="Enter Your Name" type="text" name="name" required/>
+                </div>
+            </div>
+            <div class="field mobile">
+                <label class="label" for="mobile"><span><?php  echo __('Phone Number*') ?></span></label>
+                <div class="control">
+                    <input placeholder="Will call you on this number" minlength="5" maxlength="20" type="number" name="mobile" required/>
+                </div>
+            </div>
+            <div class="field country-main">
+                <label class="label" for="country"><span><?php  echo __('Tell us where you are*') ?></span></label>
+                <div class="control">
+                    <select class="country-dropdown" name="country" required>
+                        <option disabled selected>Select your country</option>
+                    </select>
+                </div>
+            </div>
+            <div class="field regionlist">
+                <label class="label" for="region"><span><?php  echo __(' ') ?></span></label>
+                <div class="control">
+                    <select class="state-dropdown" name="state" required>
+                        <option disabled selected>Select your state</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="appointment-form-msg-main alert alert-success mt-20 hide">
+        <strong>Thank You!</strong> Your submission has been received. Our team executive will get back to you shortly.
+    </div>
+    <div class="action-button">
+        <button type="submit" class="form-button">Submit</button>
+    </div>
+</form>
+
+<script type="text/javascript">
+    require([
+        'jquery',
+        'mage/calendar'
+    ], function ($) {
+        $(document).ready(function(){
+            var countryList = <?= json_encode($countries); ?>;
+            var countryDropdownContainer = $('.country-dropdown');
+            var stateDropdownContainer = $('.state-dropdown');
+            var createCountryDropdown = function() {
+                countryList.forEach(function(e){
+                    countryDropdownContainer.append('<option value="'+e.country[0]+'">'+e.country[0]+'</option>');
+                })
+                countryDropdownContainer.append('<option value="other">Other</option>');
+            }
+
+            var createStateDropdown = function(state) {
+                stateDropdownContainer.html('<option disabled selected>Select your state</option>')
+                state.forEach(function(el){
+                    stateDropdownContainer.append('<option value="'+el+'">'+el+'</option>');
+                })
+            }
+            
+            $('.country-dropdown').change(function(e){
+                var selectedCountryVal = $(this).val();
+                if(selectedCountryVal == 'other') {
+                    $('.field.regionlist').hide();
+                } else {
+                    $('.field.regionlist').show();
+                    countryList.forEach(function(e){
+                        if(e.country[0] == selectedCountryVal) {
+                            createStateDropdown(e.state[0]);
+                        }
+                    })
+                }
+            })
+            createCountryDropdown();
+            var form = $('#appoint_form');
+            form.submit(function (e) {
+                if(form.valid()) {
+                    e.preventDefault();
+                    $('body').loader('show');
+                    var country = $('#appoint_form .country-dropdown').val();
+                    var city = $('#appoint_form .state-dropdown').val();
+                    var name = $("#appoint_form input[name='name']").val();
+                    var mobile = $("#appoint_form input[name='mobile']").val();
+                    var fromkey = $("#appoint_form input[name='form_key']").val();
+                    var requestUrl = window.location.href;
+                    var today = new Date();
+                    var dd = String(today.getDate()).padStart(2, '0');
+                    var mm = String(today.getMonth() + 1).padStart(2, '0');
+                    var yyyy = today.getFullYear();
+                    today = yyyy + '-' + mm + '-' + dd;
+                    if($("#appoint_form input[name='sku']").val()) {
+                        var sku = $("#appoint_form input[name='sku']").val();
+                    } else {
+                        var sku = '';
+                    }
+                    var videostoreRequestStatus ="No";
+                    var appointmentRequestStatus ="Yes";
+                    var url = "<?= $block->getUrl('appointment/appointment/result') ?>";
+                    try {
+                        $.ajax({
+                            url: url,
+                            type: "POST",
+                            data: {
+                                form_key:fromkey,
+                                country: country,
+                                city: city,
+                                name: name,
+                                appointmentDate: today,
+                                mobile: mobile,
+                                requestUrl : requestUrl,
+                                sku: sku,
+                                videostoreRequestStatus:videostoreRequestStatus,
+                                appointmentRequestStatus:appointmentRequestStatus
+                            },
+                            success: function (data) {
+                                jQuery('#appoint_form').trigger("reset");
+                                jQuery('body').loader('hide');
+                                $('.appointment-form-msg-main').removeClass('hide');
+                                setTimeout(function(){
+                                    $('.appointment-form-msg-main').addClass('hide');
+                                },3000);
+                            }
+                        });
+                        $('body').loader('hide');
+                    }catch (e) {
+                    }
+                    return false;
+                }
+            });
+        });
+    });
+</script>

@@ -1,0 +1,43 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+
+<form class="form form-orders-search" id="oar-widget-orders-and-returns-form" data-mage-init='{"ordersReturns":{}, "validation":{}}' action="<?= /* @escapeNotVerified */ $block->getActionUrl() ?>"
+      method="post" name="guest_post">
+    <fieldset class="fieldset">
+        <div class="track-order-description">
+            <legend class="admin__legend"><span><?= /* @escapeNotVerified */ __('To track your order please enter your Order ID in the box below and press the "Track" button. This was given to you on your receipt and in the confirmation email you should have received.') ?></span></legend>
+        </div>
+        <br>
+        <div class="track-order">
+            <div class="field id required">
+                <label class="label" for="oar-order-id"><span><?= /* @escapeNotVerified */ __('ORDER ID') ?></span></label>
+                <div class="control">
+                    <input type="text" class="input-text" id="oar-order-id" name="oar_order_id"
+                           data-validate="{required:true}"/ placeholder="<?= /* @escapeNotVerified */ __('Found in your order confirmation email.') ?>">
+                </div>
+            </div>
+            <div class="field email required">
+                <label class="label" for="email"><span><?= $block->escapeHtml(__('BILLING EMAIL')) ?></span></label>
+                <div class="control">
+                    <input name="email" id="email" title="<?= /* @escapeNotVerified */  __('Email') ?>" value="<?= /* @escapeNotVerified */ $this->helper('Magento\Contact\Helper\Data')->getPostValue('email') ?: $this->helper('Magento\Contact\Helper\Data')->getUserEmail() ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}" placeholder="<?= /* @escapeNotVerified */ __('Email you used during checkout.') ?>"/>
+                </div>
+            </div>
+
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <button type="submit" title="<?= /* @escapeNotVerified */ __('Continue') ?>" class="action submit primary">
+                        <span><?= /* @escapeNotVerified */ __('Track') ?></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+</form>

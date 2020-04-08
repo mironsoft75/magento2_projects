@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\Videostore\Api\VideostoreRequestRepositoryInterface"
+                type="Codilar\Videostore\Model\VideostoreRequestRepository" />
+    <preference for="Codilar\Videostore\Api\VideostoreCartRepositoryInterface"
+                type="Codilar\Videostore\Model\VideostoreCartRepository" />
+    <preference for="Codilar\Videostore\Api\VideostoreRequestActivityInterface"
+                type="Codilar\Videostore\Model\VideostoreRequestActivity" />
+    <preference for="Codilar\Videostore\Api\Data\VideostoreCartInterface"
+                type="Codilar\Videostore\Model\VideostoreCart" />
+    <preference for="Codilar\Videostore\Api\Data\VideostoreRequestActivityInterface"
+                type="Codilar\Videostore\Model\VideostoreRequestActivity" />
+    <preference for="Codilar\Videostore\Api\VideostoreRequestActivityRepositoryInterface"
+                type="Codilar\Videostore\Model\VideostoreRequestActivityRepository" />
+</config>

@@ -1,0 +1,56 @@
+<?php
+/**
+ * @var $block \Magento\Catalog\Block\Product\View
+ */
+/**
+ * @var $commonBlock \Codilar\Base\Block\Common
+ */
+$commonBlock= $block->getLayout()->createBlock('Codilar\Base\Block\Common');
+$_product = $commonBlock->getCurrentProduct();
+$diamondDetails = $commonBlock->getDiamondDetails($_product);
+$diamondPrice = $diamondDetails['diamond_price'];
+$stoneType = "ct";
+unset($diamondDetails['diamond_price']);
+?>
+<?php if($diamondDetails): ?>
+  <p class="table-caption"><?=/* @escapeNotVerified */__('Diamond/Gemstone Details')?></p>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+            <th>Type</th>
+            <th>Total No</th>
+            <th>Total Weight</th>
+            <th>Quality</th>
+            <th>Shape</th>
+            <th>Setting Type</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <?php foreach($diamondDetails as $diamondDetail): ?>
+            <?php
+            $stoneName = (array_key_exists('stone_name_for_customer',$diamondDetail)) ? $diamondDetail['stone_name_for_customer'] : "";
+            $stoneQuality = (array_key_exists('diamond_quality',$diamondDetail)) ? $diamondDetail['diamond_quality'] : "";
+            $settingType = (array_key_exists('stone_setting_type',$diamondDetail)) ? $diamondDetail['stone_setting_type'] : "";
+            $stonePcs = (array_key_exists('stone_pcs',$diamondDetail)) ? $diamondDetail['stone_pcs'] : "";
+            $stoneShape = (array_key_exists('stone_shape',$diamondDetail)) ? $diamondDetail['stone_shape'] : "";
+            $stoneTotalWeight = (array_key_exists('stone_total_wt',$diamondDetail)) ? $diamondDetail['stone_total_wt'] : "";
+            ?>
+            <tr>
+                <th><?= $block->escapeHtml(__($stoneName))?></th>
+                <td><?= $block->escapeHtml(__($stonePcs)) ?></td>
+                <td><?= $block->escapeHtml(__($stoneTotalWeight." ".$stoneType)) ?></td>
+                <td><?= $block->escapeHtml(__($stoneQuality))?></td>
+                <td><?= $block->escapeHtml(__($stoneShape))?></td>
+                <td><?= $block->escapeHtml(__($settingType)) ?></td>
+            </tr>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
+  </div>
+<?php elseif($_product->getTypeId() == "configurable"): ?>
+    <div>
+
+    </div>
+<?php endif; ?>

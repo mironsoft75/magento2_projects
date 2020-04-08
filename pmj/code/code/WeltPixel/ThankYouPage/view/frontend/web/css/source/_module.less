@@ -1,0 +1,136 @@
+& when (@media-common = true) {
+	.checkout-onepage-success {
+		.thankyou-wrapper {
+			margin: 0 auto 67px auto;
+			text-align: center;
+			p{
+				margin-bottom: 0px;
+			}
+			.actions-toolbar {
+				text-align: center;
+				.primary {
+					float: none;
+				}
+			}
+			.thank-you-page {
+				h1 {
+					margin-bottom: 12px;
+					line-height: 30px;
+				}
+				.icon_thank_you_01{
+					width: 55px;
+					height: 55px;
+					background-image: url('../WeltPixel_ThankYouPage/images/icon_01.svg');
+					background-repeat: no-repeat;
+					margin: 81px auto 21px auto;
+				}
+			}
+			.newsletter-description {
+				font-size: 15px;
+				text-align: center;
+				margin-bottom: 10px;
+				font-weight: bold;
+			}
+			.block.newsletter {
+				.actions{
+					span{
+						margin-top: -2px;
+						display: block;
+					}
+				}
+				.field {
+					.control {
+						&:before {
+							line-height: 32px;
+							margin-top: 8px;
+						}
+					}
+				}
+				input, .action.subscribe {
+					&:focus{
+						box-shadow: none;
+					}
+				}
+			}
+			.checkout-success {
+				.actions-toolbar  {
+					margin-top: 21px; 
+					.primary {
+						.action {
+							margin: 0px;
+						}
+					}
+				}
+			}
+			.checkout-success, #registration, .cmsblock-container, .block.newsletter {
+				margin-bottom: 64px;
+			}
+			div:last-child {
+				margin-bottom: 0px !important;
+			}
+			.icon_thank_you_02{
+				width: 55px;
+				height: 55px;
+				background-image: url('../WeltPixel_ThankYouPage/images/icon_02.svg');
+				background-repeat: no-repeat;
+				margin: 0 auto 21px auto;
+			}
+			.icon_thank_you_03{
+				width: 55px;
+				height: 55px;
+				background-image: url('../WeltPixel_ThankYouPage/images/icon_03.svg');
+				background-repeat: no-repeat;
+				margin: 0 auto 21px auto;
+			}
+			.registration-thank-you{
+				.action{
+					margin-top: 21px;
+				}
+			}
+		}
+	}
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+	.checkout-onepage-success {
+		.thankyou-wrapper {
+			.block.newsletter {
+				width: 35%;
+				margin: 0 auto 65px;
+				.block.newsletter .form.subscribe{
+					width: 82%;
+					margin: 0 auto;
+				}
+			}
+			.cmsblock-container{
+				width: 80%;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+	.checkout-onepage-success {
+		.thankyou-wrapper {
+			.action.primary {
+				width: 100%;
+			}
+			.thank-you-page {
+				h1 {
+					margin-bottom: 10px;
+				}
+			}
+			.block.newsletter {
+				.block.newsletter .form.subscribe{
+					width: 100%;
+				}
+			}
+			.cmsblock-container{
+				width: 100%;
+			}
+		}
+	}
+}
+

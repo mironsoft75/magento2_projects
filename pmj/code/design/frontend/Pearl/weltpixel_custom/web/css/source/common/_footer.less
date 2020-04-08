@@ -1,0 +1,348 @@
+:root footer.page-footer {
+    margin-top: 20px;
+    h4 {
+        font-size: 15px;
+    }
+    .footer.content {
+        .w.footer-v3 {
+            padding-bottom: 60px;
+            a {
+                color: #fff;
+                &:hover {
+                    color: @primary;
+                }
+            }
+            .footer-section2-content {
+                .footer-links-section {
+                    .footer-links {
+                        display: flex;
+                        justify-content: space-between;
+                        @media @mobile {
+                            flex-direction: column;
+                            margin: 0;
+                            align-items: center;
+                        }
+                        .contact-main-box {
+                            @media @desktop {
+                                padding-left: 80px;
+                                position: relative;
+                                &:before {
+                                    content: '';
+                                    border-left: 1px solid #504B4B;
+                                    position: absolute;
+                                    left: 0;
+                                    bottom: 30px;
+                                    top: 55px;
+                                }
+                            }
+                            .contact-details-main {
+                                display: inline-block;
+                                margin-top: 5px;
+                                .number {
+                                    display: flex;
+                                    align-items: center;
+                                    margin-bottom: 15px;
+                                    @media @mobile {
+                                        display: inline-block;
+                                        width: 100%;
+                                    }
+                                    .icon {
+                                        background: #fff;
+                                        color: #222 !important;
+                                        width: 18px;
+                                        border-radius: 50%;
+                                        height: 18px;
+                                        display: inline-flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        font-size: 12px;
+                                        margin-right: 7px;
+                                    }
+                                }
+                                .whatsapp-number {
+                                    display: flex;
+                                    align-items: center;
+                                    width: 100%;
+                                    @media @mobile {
+                                        display: inline-flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                    }
+                                    img {
+                                        width: 18px;
+                                        height: auto;
+                                        margin-right: 7px;
+                                    }
+
+                                }
+                                .social-icons-main {
+                                    .social-icon-item {
+                                        width: 22px;
+                                        height: 22px;
+                                        display: inline-flex;
+                                        background: #fff;
+                                        margin-right: 10px;
+                                        padding: 5px;
+                                        border-radius: 50%;
+                                        align-items: center;
+                                        justify-content: center;
+                                        font-size: 9px;
+                                        &:last-child {
+                                            margin-right: 0;
+                                        }
+                                        i {
+                                            color: #222 !important;
+                                        }
+                                    }
+                                }
+                                .payment-options {
+                                    .img-main {
+                                        display: inline-flex;
+                                        align-items: center;
+                                        img {
+                                            margin-right: 10px;
+                                            &:last-child {
+                                                margin-right: 0;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .mobile-toggle.address-v3 {
+                            text-align: center;
+                            @media @desktop {
+                                padding-right: 80px;
+                                position: relative;
+                                padding-top: 55px;
+                                &:before {
+                                    content: '';
+                                    border-left: 1px solid #504B4B;
+                                    position: absolute;
+                                    right: 0;
+                                    bottom: 30px;
+                                    top: 55px;
+                                }
+                            }
+                            .mini-logo {
+                                padding-top: 0;
+                                img {
+                                    width: auto;
+                                    height: 90px;
+                                }
+                            }
+                            .details-v3 {
+                                font-size: 14px;
+                                color: #fff;
+                                display: flex;
+                                flex-direction: column;
+                                @media @mobile {
+                                    font-size: 14px;
+                                }
+                                .store-time {
+                                    >p {
+                                        margin: 0;
+                                    }
+                                    strong p {
+                                        font-size: 16px;
+                                    }
+                                }
+                                .number {
+                                    margin-top: 35px;
+                                    color: #fff;
+                                    padding-right: 10px;
+                                    display: inline-flex;
+                                    align-items: center;
+                                    @media @mobile{
+                                        justify-content: center;
+                                    }
+                                    .icon-phone {
+                                        padding-right: 5px;
+                                        font-size: 20px;
+                                    }
+                                    a {
+                                        color: #fff;
+                                    }
+                                }
+                                .whatsapp-number {
+                                    color: #fff;
+                                    display: inline-flex;
+                                    align-items: center;
+                                    margin-top: 10px;
+                                    @media @mobile{
+                                        justify-content: center;
+                                    }
+                                    .whatsapp-img {
+                                        width: 18px;
+                                        height: auto;
+                                        margin-right: 7px;
+                                    }
+                                    a {
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                        }
+                        .mobile-toggle {
+                            h4 {
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        } //pre footer 
+        .pre-footer {
+            display: block !important;
+            .form-container {
+                width: 100%;
+                .newsletter-form {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    @media @desktop {
+                        flex-wrap: wrap;
+                    }
+                    @media @mobile {
+                        flex-direction: column;
+                    }
+                    .form-title {
+                        box-sizing: border-box;
+                        padding: 30px 10px;
+                        @media @desktop {
+                            width: 100%;
+                            text-align: center;
+                        }
+                        @media @mobile {
+                            box-sizing: border-box;
+                            padding: 30px 15px;
+                            width: 100%;
+                            text-align: center;
+                        }
+                        h3 {
+                            padding: 0;
+                            margin: 0;
+                            font-size: 22px;
+                        }
+                    }
+                    .form-field {
+                        flex-basis: 20%;
+                        padding-left: 20px;
+                        @media @mobile {
+                            width: 100%;
+                            margin: 0;
+                            padding: 0 15px;
+                            text-align: center;
+                        }
+                        #newsletter-input{
+                            background: #fff !important;
+                            border: 1px solid #fff !important;
+                            border-radius: 6px;
+                            @media @mobile{
+                                width: 100%;
+                            }
+                        }
+                        &.gender {
+                            flex-basis: auto;
+                            @media @mobile {
+                                margin-top: 15px;
+                            }
+                            .label {
+                                margin: 0;
+                                color: #989898;
+                                font-weight: bold;
+                                @media @mobile {
+                                    margin-bottom: 10px;
+                                }
+                            }
+                            .container-main {
+                                display: initial;
+                                position: relative;
+                                padding-left: 25px;
+                                margin-bottom: 12px;
+                                cursor: pointer;
+                                font-size: 13px;
+                                font-weight: bold;
+                                -webkit-user-select: none;
+                                -moz-user-select: none;
+                                -ms-user-select: none;
+                                user-select: none;
+                                margin-right: 10px;
+                                input {
+                                    position: absolute;
+                                    opacity: 0;
+                                    cursor: pointer;
+                                    &:checked ~ .checkmark {
+                                        background-color: @primary;
+                                        &:after {
+                                            display: block;
+                                        }
+                                    }
+                                }
+                                .checkmark {
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    height: 15px;
+                                    width: 15px;
+                                    background: none;
+                                    border-radius: 50%;
+                                    border: 1px solid #A7A7A7;
+                                    &:after {
+                                        content: "";
+                                        position: absolute;
+                                        display: none;
+                                        top: 2px;
+                                        left: 2px;
+                                        width: 9px;
+                                        height: 9px;
+                                        border-radius: 50%;
+                                        background: white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .form-button {
+                        padding-left: 20px;
+                        @media @mobile{
+                            padding: 0 15px;
+                            margin-top: 20px;
+                            width: 100%;
+                            text-align: center;
+                        }
+                        .newsletter-submit-btn {
+                            font-size: 12px;
+                            font-weight: bold;
+                            min-width: 170px;
+                        }
+                    }
+                }
+            }
+            #newsletter-message{
+                width: 500px;
+                margin: auto;
+                text-align: center;
+                @media @mobile {
+                    width: 100%;
+                    padding: 0 15px;
+                    text-align: center;
+                    margin-top: 20px;
+                }
+            }
+            .content-main {
+                width: 50%;
+                margin: auto;
+                box-sizing: border-box;
+                padding: 0 0 20px 0;
+                text-align: justify;
+                margin-top: 30px;
+                @media @mobile{
+                    padding: 20px 15px;
+                    width: 100%;
+                   margin-top: 15px;
+                }
+            }
+        }
+    }
+}

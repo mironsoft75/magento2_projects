@@ -1,0 +1,33 @@
+<div class="customer-section-left">
+    <div class="contact-details-phone">
+        <span class="chat-container">
+            <i class="icon icon-comment2"></i>
+            <span class="icon-text">24X7 Helpline</span>
+        </span>
+        <span class="number">
+            <i class="icon  icon-comment2"></i>
+            <a href="tel:8008019281">+91 800 801 9281</a>
+        </span>
+        <span class="whatsapp-number">
+            <span class="whatsapp-img-main">
+                <img class="whatsapp-img" src="<?= $block->getViewFileUrl('images/whatsapp-logo-blue.png'); ?>" alt="">
+            </span>
+            <a class="only-desktop" href="https://web.whatsapp.com/send?phone=918008019281&amp;text=Hello PMJ Jewels. I am interested in your PMJ Jewels services." target="_blank">+91 800 801 9281</a>
+            <a class="only-mobile" href="https://api.whatsapp.com/send?phone=918008019281&amp;text=Hello PMJ Jewels. I am interested in your PMJ Jewels services." target="_blank">+91 800 801 9281</a>
+        </span>
+    </div>
+</div>
+<script>
+    require(['jquery'], function ($) {
+        let flag = true;
+        $('.chat-container').click(function (e) {
+            if (flag) {
+                $zoho.salesiq.floatwindow.visible('show');
+                flag = false;
+            } else {
+                $zoho.salesiq.floatwindow.visible('hide');
+                flag = true;
+            }
+        });
+    });
+</script>

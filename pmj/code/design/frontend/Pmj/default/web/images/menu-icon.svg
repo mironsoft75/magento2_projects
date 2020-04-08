@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #00afb1;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="Hamburger_Menu_Icon" data-name="Hamburger Menu Icon" transform="translate(-14 -68)">
+    <g id="Group_5976" data-name="Group 5976" transform="translate(0 11)">
+      <g id="Group_5975" data-name="Group 5975" transform="translate(15 62)">
+        <rect id="Rectangle_3026" data-name="Rectangle 3026" class="cls-1" width="18.2" height="2.8" rx="1.4" transform="translate(0)"/>
+        <rect id="Rectangle_3027" data-name="Rectangle 3027" class="cls-1" width="28" height="2.8" rx="1.4" transform="translate(0 8.4)"/>
+        <rect id="Rectangle_3028" data-name="Rectangle 3028" class="cls-1" width="19.6" height="2.8" rx="1.4" transform="translate(8.4 16.8)"/>
+      </g>
+    </g>
+    <rect id="Rectangle_3076" data-name="Rectangle 3076" class="cls-2" width="30" height="30" transform="translate(14 68)"/>
+  </g>
+</svg>

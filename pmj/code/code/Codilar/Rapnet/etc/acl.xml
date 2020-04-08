@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Codilar_Rapnet::codilar_rapnet" title="Codilar" sortOrder="20">
+                    <resource id="Codilar_Rapnet::codilar_rapnet_urlrewrite" title="Codilar UrlRewrite" sortOrder="10">
+                        <resource id="Codilar_Rapnet::codilar_urlrewrite_grid" title="Codilar UrlRewrite Grid"
+                                  sortOrder="20"/>
+                        <resource id="Codilar_Rapnet::codilar_urlrewrite_save" title="Codilar UrlRewrite Save"
+                                  sortOrder="30"/>
+                    </resource>
+                    <resource id="Codilar_Rapnet::codilar_rapnet_rapnetproducts" title="Codilar RapnetProducts" sortOrder="10">
+                        <resource id="Codilar_Rapnet::codilar_rapnetproducts_grid" title="Codilar RapnetProducts Grid"
+                                  sortOrder="20"/>
+                        <resource id="Codilar_Rapnet::codilar_rapnetproducts_save" title="Codilar RapnetProducts Save"
+                                  sortOrder="30"/>
+                    </resource>
+                </resource>
+
+                <resource id="Magento_Backend::system" title="System" translate="title" sortOrder="90">
+                    <resource id="Magento_Backend::tools" title="Tools" translate="title" sortOrder="50">
+                        <resource id="Magento_Backend::cache" title="Cache Management" translate="title" sortOrder="10">
+                            <resource id="Magento_Backend::main_actions" title="Clean Cache Actions" translate="title"
+                                      sortOrder="10">
+                                <resource id="Magento_Backend::warm_rapnet_cache" title="Warm Rapnet Filters"
+                                          translate="title" sortOrder="30"/>
+                            </resource>
+                        </resource>
+                        <resource id="Magento_Backend::setup_wizard" title="Web Setup Wizard" translate="title"
+                                  sortOrder="20"/>
+                    </resource>
+                </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Codilar_Rapnet::config_rapnet" title="Rapnet"/>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

@@ -1,0 +1,163 @@
+& when (@media-common = true) {
+  /* DESIGN 1 */
+  #ws_embed_sms_notification {
+    clear: left;
+    font: 14px Helvetica, Arial, sans-serif;
+    margin-top: 50px;
+    &.ws-left {
+      text-align: left;
+    }
+    .block-span {
+      display: block;
+      &.mg-top-span {
+        margin-bottom: 20px;
+      }
+    }
+    .control-subs {
+      &:before {
+        font-size: 16px;
+        line-height: 32px;
+        color: #575757;
+        margin: 0 0 0 8px;
+        vertical-align: middle;
+        display: inline-block;
+        font-weight: normal;
+        overflow: hidden;
+        speak: none;
+        text-align: center;
+        position: absolute;
+        background: url('../WeSupply_Toolbox/images/icone_phone.png');
+        content: '';
+        width: 12px;
+        height: 20px;
+        margin-top: 6px;
+      }
+      .ws-Phone {
+        padding-left: 35px;
+      }
+
+    }
+  }
+  #ws-error-response {
+    color: red;
+  }
+  #ws-success-response {
+    color: green;
+  }
+
+  /* DESIGN 2 */
+  .ws_embed_sms_notification {
+    border: 1px solid #b5b5b5;
+    width: 100%;
+    margin-top: 50px;
+    .inline-block {
+      .ws-phone-dsg-2 {
+        width: 160px;
+        padding-left: 35px;
+        background: #f7f7f7;
+      }
+      .sms-subs {
+        margin-top: -3px;
+        margin-left: 3px;
+        border-radius: 0px;
+      }
+      .action.subscribe.primary.sms-subs {
+        background: #303030;
+        border: 1px solid #303030;
+      }
+      .title-dsg-2 {
+        padding: 15px;
+        color: #fff;
+        font-size: 13px;
+        margin: 0px;
+        border: 1px solid #303030;
+        background: #303030;
+      }
+      .control-subs-2 {
+        &:before {
+          font-size: 16px;
+          line-height: 32px;
+          color: #575757;
+          margin: 0 0 0 8px;
+          vertical-align: middle;
+          display: inline-block;
+          font-weight: normal;
+          overflow: hidden;
+          speak: none;
+          text-align: center;
+          position: absolute;
+          background: url('../WeSupply_Toolbox/images/icone_phone.png');
+          content: '';
+          width: 12px;
+          height: 20px;
+          margin-top: 6px;
+        }
+      }
+    }
+  }
+  .ws-responses {
+    margin-top: 5px;
+  }
+}
+/* MEDIA QUERIES */
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m){
+  .ws_embed_sms_notification{
+    max-width: 720px;
+    text-align: left !important;
+    .inline-block{
+      display: inline-block;
+    }
+    .wpx-span{
+      margin: 0 4%;
+      font-size: 10px;
+    }
+  }
+  #ws_embed_sms_notification{
+    .control-subs{
+      .ws-Phone{
+        width: 325px;
+      }
+      .sms-subs{
+        margin-top: -3px;
+        margin-left: -5px;
+        border-radius: 0px;
+      }
+    }
+  }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l){
+  .ws_embed_sms_notification{
+    max-width: 868px;
+    .wpx-span{
+      margin: 0 9%;
+      font-size: 14px;
+    }
+  }
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m){
+  .ws_embed_sms_notification{
+    text-align: center;
+  }
+  .wpx-span{
+    span{
+      display: block;
+      margin: 15px 0;
+      font-size: 10px;
+    }
+  }
+  .control-subs-2{
+    //margin-bottom: 15px;
+  }
+  #ws_embed_sms_notification{
+    .control-subs{
+      .ws-Phone{
+        width: 100%;
+      }
+      .sms-subs{
+        margin-top: 15px;
+        border-radius: 0px;
+        width: 100%;
+      }
+    }
+  }
+}

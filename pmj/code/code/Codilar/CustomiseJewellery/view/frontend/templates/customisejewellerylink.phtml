@@ -1,0 +1,10 @@
+<?php $_product = $block->getProduct();
+$sku = $_product->getSku();
+?>
+<div class="customise-jewellery-link">
+    <div>
+        <a href="<?= $block->getUrl(null, ['_direct' => 'customised-jewellery', '_query' => ['sku' => $sku]]) ?>">customise
+            further</a>
+    </div>
+</div>
+

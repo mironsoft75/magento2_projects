@@ -1,0 +1,114 @@
+<?php
+/**
+ * @author Evince Team
+ * @copyright Copyright (c) 2018 Evince (http://evincemage.com/)
+ */
+?>
+
+<?php
+$url = $block->getSearchUrl();
+$diamondCollection = $block->getProductCollection();
+$certNumber = $block->getCertNumber();
+$request = $block->getRequest()->getParams();
+$productShapes = ['Round','Princess','Emerald','Radiant','Pear','Marquise','Oval','Asscher','Heart','Cushion Modified','Cushion Brilliant'];
+?>
+<?php foreach($diamondCollection['data'] as $result): ?>
+
+    <?php $diamond = get_object_vars($result); ?>
+    <tr>
+        <td><?=$diamond['shape']?></td>
+        <td>
+            <?php if($diamond['has_image_file'] == 1): ?>
+                <img src="<?php echo $diamond['image_file_url']; ?>"
+                     alt="<?php echo $diamond['size'] . " " . $diamond['shape'] . " " . $diamond['color'] . " " . $diamond['clarity']; ?>"
+                     title="<?php echo $diamond['size'] . " " . $diamond['shape'] . " " . $diamond['color'] . " " . $diamond['clarity']; ?>"
+                     height="30"
+                     width="30"/>
+            <?php elseif(in_array($diamond['shape'],$productShapes)): ?>
+                <?php if(strpos($diamond['shape'],'Cushion') === false): ?>
+                    <img src="<?= $this->getViewFileUrl("Evincemage_Rapnet::images/small/".$diamond['shape'].".jpg"); ?>"
+                         alt="<?php echo $diamond['size'] . " " . $diamond['shape'] . " " . $diamond['color'] . " " . $diamond['clarity']; ?>"
+                         title="<?php echo $diamond['size'] . " " . $diamond['shape'] . " " . $diamond['color'] . " " . $diamond['clarity']; ?>"
+                         height="30"
+                         width="30" />
+                <?php elseif($diamond['shape']): ?>
+                    <img src="<?= $this->getViewFileUrl("Evincemage_Rapnet::images/small/Cushion.jpg"); ?>"
+                         alt="<?php echo $diamond['size'] . " " . $diamond['shape'] . " " . $diamond['color'] . " " . $diamond['clarity']; ?>"
+                         title="<?php echo $diamond['size'] . " " . $diamond['shape'] . " " . $diamond['color'] . " " . $diamond['clarity']; ?>"
+                         height="30"
+                         width="30" />
+                <?php endif; ?>
+            <?php else: ?>
+                <?= "NA" ?>
+            <?php endif; ?>
+        </td>
+        <td><?=$diamond['size']?></td>
+        <td>
+            <?php
+                if($_REQUEST['search_type']=='Fancy'){
+                    echo $diamond['fancy_color_dominant_color'];
+                } else {
+                    echo $diamond['color'];
+                }
+            ?>
+        </td>
+        <td><?=$diamond['clarity']?></td>
+
+        <?php if($diamond['has_cert_file'] == "True"):?>
+            <td class="cert_view">
+                <a href='http://www.diamondselections.com/GetCertificate.aspx?diamondid=<?=$diamond['diamond_id']?>' target="_blank">
+                    <?=$diamond['lab']?>
+                </a>
+            </td>
+        <?php else:?>
+            <td><?=$diamond['lab']?></td>
+        <?php endif;?>
+
+        <td class="diamond-cert">
+
+            <?php if($diamond['lab'] == "IGI"):?>
+                <a href='http://www.igiworldwide.com/verify.php?r=<?=$diamond['cert_num']?>'
+                   target="_blank"><?php echo $diamond['cert_num'];?>
+                </a>
+            <?php elseif($diamond['lab'] == "HRD"):?>
+                <a href='https://my.hrdantwerp.com/?record_number=<?=$diamond['cert_num']?>'
+                   target="_blank"><?php echo $diamond['cert_num']?>
+                </a>
+            <?php else:?>
+                <a href='http://www.diamondselections.com/GetCertificate.aspx?diamondid=<?=$diamond['diamond_id']?>'
+                   target="_blank"><?php echo $diamond['cert_num']?>
+                </a>
+            <?php endif;?>
+        </td>
+        <?php if(($request['search_type'] == 'White' || $request['search_type'] == 'Glowing') &&
+            ( !isset($request['diamond_shape']) || $request['diamond_shape'][0] == '87' )):
+        ?>
+         <td><?=$diamond['cut']?></td>
+        <?php endif; ?>
+
+        <td><?=$diamond['polish']?></td>
+        <td><?=$diamond['symmetry']?></td>
+        <td><?=$diamond['fluor_intensity']?></td>
+        <td><?=$diamond['meas_width']?></td>
+        <td><?=$diamond['depth_percent']?></td>
+        <td><?=$diamond['table_percent']?></td>
+        <td><?=$block->getPrice($diamond['total_sales_price_in_currency'])?></td>
+
+        <td class="diamond-cert">
+            <?php
+                if (in_array($diamond['cert_num'], $certNumber)){
+                    echo __('Sold Out');
+                }
+                else{
+            ?>
+                <button class="shopit" data-buy="<?=$block->getCartUrl($diamond['diamond_id'])?>"></button>
+            <?php } ?>
+        </td>
+        <td class="diamond-cert">
+            <a href="<?=$block->getProductUrl($diamond['diamond_id']);?>"><?php echo __('View'); ?></a>
+        </td>
+    </tr>
+
+<?php endforeach; ?>
+
+

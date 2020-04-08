@@ -1,0 +1,100 @@
+@import "_lifetime-warranty";
+@import "_free-shipping";
+@import "_hassle-free-returns";
+@import "_free-engraving";
+@import "_free-resizings";
+@import "_lifetime-upgrade";
+
+#selectedLinkStyle{
+    .columns{
+        .column.main{
+            #WidePane{
+                #GuaranteeLeftPane{
+                    padding-left: 20px;
+                    @media @mobile{
+                        display: none !important;
+                    }
+                    .nav.items.left-side-links{
+                        .nav.item{
+                            border-left: 3px solid #fff;
+                            a{
+                                padding-left: 10px;
+                                color: #000;
+                                &:hover{
+                                    color: @primary;
+                                }
+                            }
+                        }
+                        .nav.item.current{
+                            border-left: 3px solid @primary;
+                            a{
+                                color: @primary;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+#rightSectionHeader{
+    #GuaranteeRightPane{
+        .RiskFreeContent{
+            .risk-free-header{
+                font-size: 20px;
+                font-weight: bold;
+                box-sizing: border-box;
+                padding: 0 0 20px 0;
+            }
+            #CServiceFieldsForm{
+                table{
+                    tbody{
+                        tr{
+                            td{
+                                padding-left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.cms-customer-service,
+.cms-customer-service-lifetime-warranty, 
+.cms-customer-service-free-shipping,
+.cms-customer-service-hassle-free-returns,
+.cms-customer-service-free-engraving,
+.cms-customer-service-free-resizings,
+.cms-customer-service-lifetime-upgrade{
+    #selectedLinkStyle;
+    #rightSectionHeader;
+    p{
+        font-size: 16px;
+    }
+    .block-static-block{
+        .dropdown.only-mobile{
+            display: none;
+           @media @mobile{
+                display: block;
+                text-align: center;
+                button[data-toggle="dropdown"]{
+                    width: 100%;
+                    span{
+                        position: absolute;
+                        right: 20px;
+                        top: 15px;
+                    }
+                    &:hover{
+                        background: #fff;
+                        color: @primary;
+                    }
+                }
+                .dropdown-menu{
+                    width: 100%;
+                }
+           }
+        }
+    }
+}

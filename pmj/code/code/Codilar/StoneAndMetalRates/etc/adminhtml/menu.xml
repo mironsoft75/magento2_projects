@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Codilar_StoneAndMetalRates::pmj" title="PMJ" module="Codilar_StoneAndMetalRates" sortOrder="30" resource="Codilar_StoneAndMetalRates::pmj"/>
+        <add id="Codilar_StoneAndMetalRates::add_stone_rates" title="Stone Rates" module="Codilar_StoneAndMetalRates" sortOrder="20" parent="Codilar_StoneAndMetalRates::pmj" action="rate/stone" resource="Codilar_StoneAndMetalRates::add_stone_rates"/>
+        <add id="Codilar_StoneAndMetalRates::add_metal_rates" title="Metal Rates" module="Codilar_StoneAndMetalRates" sortOrder="20" parent="Codilar_StoneAndMetalRates::pmj" action="rate/metal/index" resource="Codilar_StoneAndMetalRates::add_metal_rates"/>
+    </menu>
+</config>
+

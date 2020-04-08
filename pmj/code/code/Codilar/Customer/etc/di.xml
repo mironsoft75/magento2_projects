@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="Magento\Customer\Controller\Account\CreatePost"
+                type="Codilar\Customer\Controller\Account\CreatePost" />
+
+    <preference for="Magento\Customer\Controller\Account\LoginPost"
+                type="Codilar\Customer\Controller\Account\LoginPost" />
+
+    <preference for="Magento\Customer\Controller\Account\EditPost"
+                type="Codilar\Customer\Controller\Account\EditPost" />
+
+    <preference for="Magento\Customer\Controller\Account\ForgotPasswordPost"
+                type="Codilar\Customer\Controller\Account\ForgotPasswordPost"/>
+
+    <preference for="Magento\Customer\Model\AccountManagement"
+                type="Codilar\Customer\Model\AccountManagement"/>
+</config>

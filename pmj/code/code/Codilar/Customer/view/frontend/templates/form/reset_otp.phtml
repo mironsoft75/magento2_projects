@@ -1,0 +1,151 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \Codilar\Customer\Block\ResetOtp $block */
+$formKey = $block->getFormKey();
+$customerId = $block->getCustomerId();
+$mobileNumber = $block->getMobileNumber();
+?>
+<form method="post"
+    id="form-validate"
+      class="form otp reset"
+      data-mage-init='{"validation":{}}'>
+    <fieldset class="fieldset" data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>">
+        <p><?= $block->escapeHtml(__('For security reasons we verify your identity. A code has been sent to your mobile number')) ?> <?php echo $mobileNumber; ?> <?= $block->escapeHtml(__('Please enter below.')) ?></p>
+        <div class="field otp required">
+            <label class="label" for="otp"><span><?= $block->escapeHtml(__('Enter Code')) ?></span></label>
+            <div class="control">
+                <input type="text" class="input-text" name="otp" id="otp"
+                       placeholder="<?= $block->escapeHtml(__('Enter Code')) ?>"
+                       minlength="6"
+                       maxlength="6"
+                       data-validate="{required:true}"
+                       autocomplete="off">
+            </div>
+            <span class="resend-otp-link">
+                <div><?= $block->escapeHtml(__('Resend Code')) ?></div>
+            </span>
+            <div class="reset-otp-message">
+
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="button" class="action submit primary codilar_resetotp_button"><span><?= $block->escapeHtml(__('Continue')) ?></span></button>
+        </div>
+    </div>
+</form>
+<script>
+    require([
+        'jquery'
+    ], function ($) {
+        $(document).ready(function () {
+            var resendButton = $(".resend-otp-link");
+            resendButton.hide();
+            var resetMessage = $(".reset-otp-message");
+            resetMessage.hide();
+            setTimeout(function(){
+                resendButton.show();
+                resetMessage.hide();
+            }, 60000);
+            $(".codilar_resetotp_button").click(function () {
+                const pageMessage = $(".page .messages");
+                pageMessage.remove();
+                resetMessage.hide();
+                var otp = $("#otp").val();
+                var formKey = "<?php echo $formKey; ?>";
+                var mobile_number = "<?php echo $mobileNumber; ?>";
+                var id = "<?php echo $customerId; ?>";
+                var otpVerifyUrl = "<?php echo $this->getUrl('customer/account/verifyotp'); ?>";
+                if(otp.length == 6){
+                    resetMessage.hide();
+                    $.ajax({
+                        method: "POST",
+                        data: {form_key: formKey, id:id ,mobile_number:mobile_number, otp:otp},
+                        url: otpVerifyUrl,
+                        success:function (data) {
+                            var status=data.status;
+                            if(status=="1"){
+                                var url = data.url+"?id="+id+"&token="+data.token;
+                                resetMessage.text("OTP Verified");
+                                resetMessage.css("color","green");
+                                setTimeout(function(){
+                                    resetMessage.hide();
+                                    window.location.replace(url);
+                                }, 1000);
+                            }
+                            else{
+                                var error = data.error;
+                                resetMessage.text(error);
+                                resetMessage.css("color","#e02b27");
+                                resetMessage.show();
+                            }
+
+                        },
+                        error:function (data) {
+                            resetMessage.text("Invalid OTP");
+                            resetMessage.css("color","#e02b27");
+                            resetMessage.show();
+                            $("#otp").val("")
+                        }
+                    });
+                }
+                else {
+                    resetMessage.text("OTP should be 6 digits");
+                    resetMessage.css("color","#e02b27");
+                    resetMessage.show();
+                }
+            });
+            $(".resend-otp-link").click(function () {
+                const pageMessage = $(".page .messages");
+                pageMessage.remove();
+                resetMessage.hide();
+                resendButton.hide();
+                var formKey = "<?php echo $formKey; ?>";
+                var mobile_number = "<?php echo $mobileNumber; ?>";
+                var id = "<?php echo $customerId; ?>";
+                var resendOtpUrl = "<?php echo $this->getUrl('customer/account/resendotp'); ?>";
+                resetMessage.hide();
+                $.ajax({
+                    method: "POST",
+                    data: {form_key: formKey, id:id ,mobile_number:mobile_number},
+                    url: resendOtpUrl,
+                    success:function (data) {
+                        var status=data.status;
+                        if(status=="1"){
+                            resetMessage.text("OTP sent again");
+                            resetMessage.css("color","#378226");
+                            resetMessage.show();
+                            setTimeout(function(){
+                                resendButton.show();
+                                resetMessage.hide();
+                            }, 60000);
+                        }
+                        else{
+                            var error = data.error;
+                            resetMessage.text(error);
+                            resetMessage.css("color","#e02b27");
+                            resetMessage.show();
+                        }
+
+                    },
+                    error:function (data) {
+                        resetMessage.text("Error while sending OTP");
+                        resetMessage.css("color","#e02b27");
+                        resetMessage.show();
+                    }
+                });
+            });
+            $('#otp').on('keypress', function(evt) {
+                var charCode = (evt.which) ? evt.which : event.keyCode;
+                return !(charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57));
+            });
+        });
+    });
+</script>

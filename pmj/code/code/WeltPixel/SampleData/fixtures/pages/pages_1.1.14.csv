@@ -1,0 +1,16 @@
+title,page_layout,meta_keywords,meta_description,identifier,content_heading,content,is_active,sort_order,layout_update_xml,custom_theme,custom_root_template,custom_layout_update_xml,custom_theme_from,custom_theme_to,css_global,css_phone_small,css_phone,css_tablet_small,css_tablet,css_desktop,css_desktop_large,custom_js
+"Instagram Widget Demo",1column,,,weltpixel-instagram-widget-demo,"","
+<div class=""instagram-container"">
+{{widget type=""WeltPixel\InstagramWidget\Block\Widget\Instagram"" instagram_client_id=""e21514b30c9d44d4b48c52bade4b56ed"" instagram_access_token=""6199620633.e21514b.092dd49e04644ff588ea1e0d78c8e09a"" title=""#WELTPIXEL ON INSTAGRAM (by location)"" description=""WeltPixel offices. We would love to meet you. Images with geolocation tag."" background_color=""#fafafa"" images_per_row=""col-4"" limit=""8"" sort_by=""none"" resolution=""standard_resolution"" feed_type=""tagged"" tag_name=""pearltheme""}}
+
+<p>
+{{widget type=""WeltPixel\InstagramWidget\Block\Widget\Instagram"" instagram_client_id=""e21514b30c9d44d4b48c52bade4b56ed"" instagram_access_token=""6199620633.e21514b.092dd49e04644ff588ea1e0d78c8e09a"" title=""#PEARL ON INSTAGRAM (by picture tag)"" description=""Images with particular Instagram #tag‎"" images_per_row=""col-4"" limit=""4"" sort_by=""none"" resolution=""standard_resolution"" feed_type=""tagged"" tag_name=""pearltheme_v7""}}
+</p>
+
+{{widget type=""WeltPixel\InstagramWidget\Block\Widget\Instagram"" instagram_client_id=""e21514b30c9d44d4b48c52bade4b56ed"" instagram_access_token=""6199620633.e21514b.092dd49e04644ff588ea1e0d78c8e09a"" title=""#WELTPIXEL RANDOM INSTAGRAM IMAGES"" description=""Random Images from WeltPixel Instagram Account"" background_color=""#fafafa"" images_per_row=""col-6"" limit=""12"" sort_by=""random"" resolution=""standard_resolution"" feed_type=""user"" user_id=""6199620633""}}
+</div>
+",1,,,,,,,,"
+.breadcrumbs{
+    display:none;
+}
+",,,,,,,

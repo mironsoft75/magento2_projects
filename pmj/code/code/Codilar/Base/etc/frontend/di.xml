@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <!-- To send the custom data to product view page -->
+    <type name="Magento\Catalog\Helper\Product">
+        <plugin name="catalog_product_view" type="Codilar\Base\Plugin\Product" />
+    </type>
+    <type name="Magento\Checkout\Block\Onepage">
+        <arguments>
+            <argument name="layoutProcessors" xsi:type="array">
+                <item name="checkoutFieldsReorder" xsi:type="object">Codilar\Base\Block\LayoutProcessor</item>
+            </argument>
+        </arguments>
+    </type>
+    <preference for="Magento\Wishlist\CustomerData\Wishlist" type="Codilar\Base\CustomerData\Wishlist" />
+    <preference for="Magento\Catalog\CustomerData\CompareProducts" type="Codilar\Base\CustomerData\CompareProducts" />
+    <preference for="Evincemage\Rapnet\Controller\Cart\Add" type="Codilar\Base\Controller\Cart\Add" />
+</config>

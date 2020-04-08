@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">timeslot_form.block_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">New Timeslot</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <!--<button name="save_and_continue" class="Codilar\VirtualStoreWiseTimeslot\Block\Adminhtml\Timeslot\Edit\SaveAndContinueButton"/>-->
+            <button name="save" class="Codilar\Timeslot\Block\Adminhtml\Timeslot\Edit\SaveButton"/>
+            <!--<button name="reset" class="Codilar\VirtualStoreWiseTimeslot\Block\Adminhtml\Timeslot\Edit\ResetButton"/>-->
+            <!--<button name="delete" class="Codilar\VirtualStoreWiseTimeslot\Block\Adminhtml\Timeslot\Edit\DeleteButton"/>-->
+            <button name="back" class="Codilar\Timeslot\Block\Adminhtml\Timeslot\Edit\BackButton"/>
+        </buttons>
+        <namespace>timeslot_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>timeslot_form.block_form_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="block_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="codilartimeslot/index/save"/>
+        </settings>
+        <dataProvider class="Codilar\Timeslot\Model\Forms\DataProvider" name="block_form_data_source">
+            <settings>
+                <requestFieldName>timeslot_id</requestFieldName>
+                <primaryFieldName>timeslot_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general">
+        <settings>
+            <label/>
+        </settings>
+        <field name="timeslot_id" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">block</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <visible>false</visible>
+                <dataScope>timeslot_id</dataScope>
+            </settings>
+        </field>
+        <field name="is_active" sortOrder="10" formElement="checkbox">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">timeslot</item>
+                    <item name="default" xsi:type="number">1</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>boolean</dataType>
+                <label translate="true">Is Active</label>
+                <dataScope>is_active</dataScope>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <valueMap>
+                            <map name="false" xsi:type="number">0</map>
+                            <map name="true" xsi:type="number">1</map>
+                        </valueMap>
+                        <prefer>toggle</prefer>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+        <field name="day" sortOrder="30" formElement="select">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">timeslot</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Day</label>
+                <dataScope>day</dataScope>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="Codilar\Timeslot\Model\Source\Day"/>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+        <field name="start_time" sortOrder="40" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">timeslot</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">From</label>
+                <dataScope>start_time</dataScope>
+            </settings>
+        </field>
+        <field name="end_time" sortOrder="50" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">timeslot</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">To</label>
+                <dataScope>end_time</dataScope>
+            </settings>
+        </field>
+    </fieldset>
+</form>

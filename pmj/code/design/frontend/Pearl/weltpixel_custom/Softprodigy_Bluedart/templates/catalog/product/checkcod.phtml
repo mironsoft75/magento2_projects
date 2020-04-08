@@ -1,0 +1,78 @@
+<!--======Bluedart COD check=====-->
+<?php $_product = $block->getProduct(); 
+?>
+<?php $check_price = $_product->getFinalPrice(); ?>
+<script>
+    var checkPin = function(){};
+    require(['jquery'], function (jQuery) {
+    
+    checkPin = function()
+    {
+        var pin = document.getElementById('pincodevalue').value;
+        if (pin == '')
+        {
+            alert("Please enter pincode.");
+            return true;
+        }
+        else
+        {
+            //document.getElementById('loader').style.display = 'inline-block';
+            var data = {
+                pin: pin,
+                instring: true,
+                price_limit: <?=$check_price; ?>
+            };
+            jQuery.ajax({
+                type: "POST",
+                url: "<?php echo $this->getUrl('bluedart/check/cod'); ?>",
+                data: data,
+                dataType: 'html',
+                showLoader: true,
+                success: function (res)
+                {
+                    jQuery("#pinresult").html(res);
+                }
+            });
+        }
+    }
+    });
+</script>	
+<!--======End Bluedart COD check=====-->
+<!--====Bluedart COD=====-->
+<div class="cod-view">
+    <!-- <div style="padding-bottom:10px;"><?php echo __("Check For Cash On Delivery") ?></div> -->
+    <div class="input-box">
+        <input style="width: 65%" type="text" name="pincode"  value="" id="pincodevalue" placeholder="<?=__("Enter pincode to check COD")?>" /><button class="action primary button" onclick="checkPin();" type="button"><span>SEARCH</span></button>
+    </div>
+    <div id="pinresult" style="padding-top:3px;"></div>
+    <div class="info-txt-main">
+        <div class="info-txt">
+            <p>
+                <span class="icon"><i class="icon-line-check"></i></span>
+                <span class="label"><?php echo __("Cash on Delivery"); ?></span>
+            </p>
+        </div>
+        <div class="info-txt">
+            <p>
+                <span class="icon"><i class="icon-line-check"></i></span>
+                <span class="label"><?php echo __("EMI Options"); ?></span>
+            </p>
+        </div>
+        <div class="info-txt">
+            <p>
+                <span class="icon"><i class="icon-line-check"></i></span>
+                <span class="label"><?php echo __("Try on Live Video"); ?></span>
+            </p>
+        </div>
+    </div>
+</div>
+<!--====End Bluedart COD==-->
+<!--====Store locator link==-->
+<div class="store-locator">
+    <a href="<?= $this->getUrl('store-locator'); ?>" class="marker">
+        <span class="icon"><i class="icon-location"></i></span>
+        <span class="label"><?php echo __("Store Locator"); ?></span>
+        <span class="icon-arrow"><i class="icon-line-arrow-right"></i></span>
+    </a>
+</div>
+<!--====End Store locator link==-->

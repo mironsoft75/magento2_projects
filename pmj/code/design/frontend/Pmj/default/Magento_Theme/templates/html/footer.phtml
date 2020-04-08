@@ -1,0 +1,167 @@
+<div class="footer-main-box page-main">
+    <div class="social-icons-main">
+        <a href="https://www.instagram.com/pmj_jewels/" class="social-icon">
+            <img src="<?= $block->getViewFileUrl('images/insta-icon.svg'); ?>" />
+            <img class="only-for-legecy" src="<?= $block->getViewFileUrl('images/insta-icon-brown.svg'); ?>" />
+        </a>
+        <a href="https://www.facebook.com/PMJJewels/" class="social-icon">
+            <img src="<?= $block->getViewFileUrl('images/fb-icon.svg'); ?>" />
+            <img class="only-for-legecy" src="<?= $block->getViewFileUrl('images/fb-icon-brown.svg'); ?>" />
+        </a>
+        <a href="https://twitter.com/PMJJewels1964" class="social-icon">
+            <img src="<?= $block->getViewFileUrl('images/tw-icon.svg'); ?>" />                
+            <img class="only-for-legecy" src="<?= $block->getViewFileUrl('images/tw-icon-brown.svg'); ?>" />                
+        </a>
+    </div>
+    <div class="footer-content-main row">
+        <div class="footer-content-box">
+            <ul class="footer-links">
+                <li class="title"><?= __('About Us'); ?></li>
+                <li class="footer-link">
+                    <a href="<?php echo $this->getUrl(); ?>#beginning"><?= __('Our History'); ?></a>
+                </li>
+                <li class="footer-link">
+                    <a href="<?php echo $this->getUrl(); ?>#design"><?= __('Our Designs'); ?></a>
+                </li>
+                <li class="footer-link">
+                    <a href="<?php echo $this->getUrl(); ?>#diamond"><?= __('Our Diamonds'); ?></a>
+                </li>
+                <li class="footer-link">
+                    <a href="<?php echo $this->getUrl('aalayam'); ?>"><?= __('Our Collections'); ?></a>
+                </li>
+                <li class="footer-link privacy">
+                    <a href="<?php echo $this->getUrl('privacy'); ?>"><?= __('Privacy'); ?></a>
+                </li>
+                <li class="footer-link">
+                    <a href="<?php echo $this->getUrl('terms-and-conditions'); ?>"><?= __('Terms & Conditions'); ?></a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer-content-box">
+            <ul class="footer-links">
+                <li class="title"><?= __('Jewellery'); ?></li>
+                <li class="footer-link">
+                    <a href="<?php echo $this->getUrl('jewellery'); ?>"><?= __('Rings'); ?></a>
+                </li>
+                <li class="footer-link">
+                    <a href="<?php echo $this->getUrl('jewellery'); ?>"><?= __('Earrings'); ?></a>
+                </li>
+                <li class="footer-link">
+                    <a href="<?php echo $this->getUrl('jewellery'); ?>"><?= __('Pendants'); ?></a>
+                </li>
+                <li class="footer-link">
+                    <a href="<?php echo $this->getUrl('jewellery'); ?>"><?= __('Bracelets'); ?></a>
+                </li>
+                <li class="footer-link">
+                    <a href="<?php echo $this->getUrl('jewellery'); ?>"><?= __('Bangles'); ?></a>
+                </li>
+                <li class="footer-link">
+                    <a href="<?php echo $this->getUrl('jewellery'); ?>"><?= __('Nosepins'); ?></a>
+                </li>
+                <li class="footer-link">
+                    <a href="<?php echo $this->getUrl('jewellery'); ?>"><?= __('Necklaces'); ?></a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer-content-box">
+            <ul class="footer-links">
+                <li class="title"><?= __('Store Locator'); ?></li>
+                <li class="footer-link">
+                    <a href="<?php echo $this->getUrl('stores'); ?>"><?= __('Hyderabad'); ?></a>
+                </li>
+                <li class="footer-link">
+                    <a href="<?php echo $this->getUrl('stores'); ?>"><?= __('Vijayawada'); ?></a>
+                </li>
+                <li class="footer-link">
+                    <a href="<?php echo $this->getUrl('stores'); ?>"><?= __('Vizag'); ?></a>
+                </li>
+                <li class="footer-link">
+                    <a href="<?php echo $this->getUrl('stores'); ?>"><?= __('Bengaluru'); ?></a>
+                </li>
+
+                <li class="title working-hours"><?= __('Working Hours'); ?></li>
+                <li class="footer-link"><?= __('10:30am - 8:30pm'); ?></li>
+                <li class="footer-link"><?= __('Monday to Sunday'); ?></li>
+            </ul>
+        </div>
+        <div class="footer-content-box">
+            <ul class="footer-links">
+                <li class="title"><?= __('Contact Us'); ?></li>
+                <li class="footer-link">
+                    <a href="tel:+918008886888"> +91 800 888 6888</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    require([
+        'jquery',
+        'owl_carousel', 
+        'owl_config'
+    ], function ($) {
+        $(document).ready(function() {
+            var closeModal = function() {
+                $('.close-modal-action').click(function(){
+                    $('body').removeClass('overflow-hidden');
+                    $('.popup-main-box').hide();
+                    $('.appointment-form-msg-main').addClass('hide');
+                });
+            }
+
+            var initSlider = function(sliderContainer) {
+                $('.'+sliderContainer).owlCarousel({
+                    loop: true,
+                    nav: true,
+                    autoplay:true,
+                    autoplayTimeout:3000,
+                    smartSpeed: 600,
+                    dots: false,
+                    items: 1,
+                    responsive:{
+                        0:{
+                            items:1
+                        }
+                    }
+                });
+            }
+
+            $('.open-modal').click(function(e){
+                var popupTarget = $(this).attr('href');
+                var sliderContainer = $(this).attr('data-slider');
+                if(!sliderContainer) {
+                    sliderContainer = 'collection-slider';
+                }
+                $('body').addClass('overflow-hidden');
+                $(popupTarget).show();
+                closeModal();
+                initSlider(sliderContainer);
+            })
+
+            $('.video-call-request').click(function(e) {
+                if($(this).attr('data-sku')) {
+                    $('input[name="sku"]').val($(this).attr('data-sku'));
+                }
+                $('#videostore-modal').show();
+                $('body').addClass('overflow-hidden');
+                closeModal();
+            });
+            $('.book-appoinment').click(function(e) {
+                if($(this).attr('data-sku')) {
+                    $('input[name="sku"]').val($(this).attr('data-sku'));
+                }
+                $('#book-appoinment-modal').show();
+                $('body').addClass('overflow-hidden');
+                closeModal();
+            })
+
+            //mobile menu
+            $('.logo-main .nav-toggle').click(function(){
+                $('.custom-menu-main').toggle();
+            })
+        })
+    });
+</script>

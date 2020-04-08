@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="Softprodigy_Backend" translate="label" sortOrder="100">
+            <label>Softprdoigy</label>
+        </tab>
+        <section id="Softprodigy_Bluedart" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Bluedart</label>
+            <tab>Softprodigy_Backend</tab>
+            <resource>Magento_Cms::config_cms</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Bluedart Configuration</label>
+                <field id="enabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable This Module</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="sandbox" translate="label" type="select" sortOrder="2" showInDefault="1">
+                    <label>Is Sandbox</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[If yes then sandbox mode will be apply, Live mode otherwise]]></comment>
+                </field>
+                <field id="licence_key" translate="label" type="text" sortOrder="3" showInDefault="1">
+                    <label>Licence Key</label>
+                </field>
+                <field id="login_id" translate="label" type="text" sortOrder="4" showInDefault="1">
+                    <label>LoginID</label>
+                </field>
+                <field id="email_id_from" translate="label" type="text" sortOrder="5" showInDefault="1">
+                    <label>Email Id (From email send)</label>
+                </field>
+                <field id="store_name" translate="label" type="text" sortOrder="6" showInDefault="1">
+                    <label>Store Name</label>
+                </field>
+                <field id="contact_number" translate="label" type="text" sortOrder="7" showInDefault="1">
+                    <label>India's Contact Telephone</label>
+                </field>
+                <field id="store_contact_addr" translate="label" type="textarea" sortOrder="8" showInDefault="1">
+                    <label>Store Contact Address</label>
+                </field>
+                <field id="pin_code" translate="label" type="text" sortOrder="9" showInDefault="1">
+                    <label>PinCode</label>
+                </field>
+                <field id="customer_code" translate="label" type="text" sortOrder="10" showInDefault="1">
+                    <label>Customer code</label>
+                </field>
+                <field id="vander_code" translate="label" type="text" sortOrder="11" showInDefault="1">
+                    <label>Vander code</label>
+                </field>
+                <field id="origin_area" translate="label" type="text" sortOrder="12" showInDefault="1">
+                    <label>Origin area</label>
+                </field>
+                <field id="tin_no" translate="label" type="text" sortOrder="13" showInDefault="1">
+                    <label>TIN No.</label>
+                </field>
+                <field id="product_code" translate="label" type="select" sortOrder="2" showInDefault="1">
+                    <label>Default Shipment Mode</label>
+                    <source_model>Softprodigy\Bluedart\Model\Config\Source\ProductCode</source_model>
+                    <comment><![CDATA[If not selected then Air will be used by default]]></comment>
+                </field>
+                <field id="pickup_time" translate="label" type="text" sortOrder="14" showInDefault="1">
+                    <label>Package Pickup time</label>
+                    <comment><![CDATA[Time on which daily, packges will be collect by Bluedart, eg: 05:30 pm ]]></comment>
+                </field>
+                <field id="pdf_logo" translate="label" type="image" sortOrder="15" showInDefault="1">
+                    <label>Logo for PDF</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">bluedart</upload_dir>
+                    <base_url type="media" scope_info="1">bluedart</base_url>
+                </field>
+            </group>
+            <group id="order_conf" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Order Configuration</label>
+                <field id="shipmentcomment" translate="label" type="textarea" sortOrder="1" showInDefault="1">
+                    <label>Shipment Comment</label>
+                    <comment><![CDATA[Comment about shipment tracking, please do not add tracking link to comment]]></comment>
+                </field>
+                <field id="track_link"  translate="label" type="text" sortOrder="2" showInDefault="1">
+                    <label>Track Link of Bluedart</label>
+                </field>
+            </group>
+        </section>
+    </system>  
+</config>

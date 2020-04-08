@@ -1,0 +1,24 @@
+<?php
+/**
+ * @var \Magento\Ccavenuepay\Block\Adminhtml\System\Config\CcavenuepayRules $block
+ */
+?>
+<?php $block->getJson(); ?>
+<script>
+    require([
+        'prototype',
+        'jquery',
+        'Magento_Ccavenuepay/js/ccavenuepay'
+    ], function ($) {
+        var license_key = '<?php echo $block->getLicence(); ?>';
+        var module_version = '2.2';
+        var module_name = '<?php echo $block->getModuleCms(); ?>';
+        var Ccavenue_token = "magento";
+        var pdf_path = "<?php echo $block->getCcavenuepayPdfManualLink(); ?>";
+        var video_path = "<?php echo $block->getCcavenuepayVideoLink(); ?>";
+        var checkmoduleupload_ajax_url = "<?php echo $block->getBaseUrl() . 'ccavenuepay/ccavenuepay/checkmoduleupload'; ?>";
+        var newmoduleupdatenow_ajax_url = "<?php echo $block->getBaseUrl() . 'ccavenuepay/ccavenuepay/newmoduleupdatenow'; ?>";
+        var Ccavenue_token = "magento";
+
+    });
+</script>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Review\Block\Adminhtml\Grid" type="Codilar\Base\Block\Adminhtml\Grid" />
+    <preference for="Magento\Review\Block\Adminhtml\Edit\Form" type="Codilar\Base\Block\Adminhtml\Edit\Form" />
+    <preference for="Evincemage\Rapnet\Controller\Product\View" type="Codilar\Base\Controller\Product\View" />
+    <preference for="Magento\Catalog\Model\Product\Image" type="Codilar\Base\Model\Product\Image" />
+</config>

@@ -1,0 +1,11 @@
+<script>
+require(['jquery', 'testimonialsGrid' ],
+function   ($, SEMICOLONSTESTIMONIALSGRID) {
+    $(document).ready( SEMICOLONSTESTIMONIALSGRID.widget.init() );
+    $(window).on( 'resize', function() {
+        var t = setTimeout( function(){
+            SEMICOLONSTESTIMONIALSGRID.widget.testimonialsGrid();
+        }, 500 );
+    });
+});
+</script>

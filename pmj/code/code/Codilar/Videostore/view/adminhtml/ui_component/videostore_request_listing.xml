@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">videostore_request_listing.videostore_request_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>videostore_request_listing_columns</spinner>
+        <deps>
+            <dep>videostore_request_listing.videostore_request_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="videostore_request_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">videostore_request_id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <dataProvider class="Codilar\Videostore\Ui\DataProvider\VideostoreRequestDataProvider" name="videostore_request_listing_data_source">
+            <settings>
+                <requestFieldName>videostore_request_id</requestFieldName>
+                <primaryFieldName>videostore_request_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <filterSearch name="full_name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="provider" xsi:type="string">videostore_request_listing.videostore_request_listing_data_source</item>
+                    <item name="chipsProvider" xsi:type="string">videostore_request_listing.videostore_request_listing.listing_top.listing_filters_chips</item>
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="provider" xsi:type="string">videostore_request_listing.videostore_request_listing.listing_top.bookmarks</item>
+                        <item name="namespace" xsi:type="string">current.search</item>
+                    </item>
+                </item>
+            </argument>
+        </filterSearch>
+        <filters name="listing_filters">
+            <argument name="data" xsi:type="array">
+                <item name="observers" xsi:type="array">
+                    <item name="column" xsi:type="string">column</item>
+                </item>
+            </argument>
+            <settings>
+                <templates>
+                    <filters>
+                        <select>
+                            <param name="template" xsi:type="string">ui/grid/filters/elements/ui-select</param>
+                            <param name="component" xsi:type="string">Magento_Ui/js/form/element/ui-select</param>
+                        </select>
+                    </filters>
+                </templates>
+            </settings>
+        </filters>
+        <massaction name="listing_massaction">
+            <action name="delete">
+                <settings>
+                    <confirm>
+                        <message translate="true">Are you sure you want to delete selected items?</message>
+                        <title translate="true">Delete items</title>
+                    </confirm>
+                    <url path="videostore/index/massDelete"/>
+                    <type>delete</type>
+                    <label translate="true">Delete</label>
+                </settings>
+            </action>
+        </massaction>
+        <paging name="listing_paging"/>
+        <!--<filterSearch name="fulltext"/>-->
+    </listingToolbar>
+
+    <columns name="videostore_request_listing_columns">
+        <settings>
+            <childDefaults>
+                <param name="fieldAction" xsi:type="array">
+                    <item name="provider" xsi:type="string">videostore_request_listing.videostore_request_listing.videostore_request_listing_columns_editor</item>
+                    <item name="target" xsi:type="string">startEdit</item>
+                    <item name="params" xsi:type="array">
+                        <item name="0" xsi:type="string">${ $.$data.rowIndex }</item>
+                        <item name="1" xsi:type="boolean">true</item>
+                    </item>
+                </param>
+            </childDefaults>
+        </settings>
+        <selectionsColumn name="ids" sortOrder ="6">
+            <settings>
+                <indexField>videostore_request_id</indexField>
+                <resizeEnabled>false</resizeEnabled>
+                <resizeDefaultWidth>55</resizeDefaultWidth>
+            </settings>
+        </selectionsColumn>
+        <column name="videostore_request_id" sortOrder="10">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">ID</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <column name="full_name" sortOrder="20">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Full Name</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <column name="email" sortOrder="30">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Email</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <column name="mobile_number" sortOrder="40">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Mobile</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <column name="requested_date" sortOrder="50" class="Magento\Ui\Component\Listing\Columns\Date" component="Magento_Ui/js/grid/columns/date">
+            <settings>
+                <filter>dateRange</filter>
+                <dataType>date</dataType>
+                <label translate="true">Requested Date</label>
+                <sorting>asc</sorting>
+                <dateFormat>MMM d, Y</dateFormat>
+            </settings>
+        </column>
+        <column name="requested_time" sortOrder="50">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Requested Time</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <column name="assigned_to" sortOrder="70">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Assigned To</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <column name="videostore_request_created_at" sortOrder="80" class="Magento\Ui\Component\Listing\Columns\Date" component="Magento_Ui/js/grid/columns/date">
+            <settings>
+                <filter>dateRange</filter>
+                <label translate="true">Created At</label>
+                <dataType>date</dataType>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <column name="videostore_request_updated_at" sortOrder="90" class="Magento\Ui\Component\Listing\Columns\Date" component="Magento_Ui/js/grid/columns/date">
+            <settings>
+                <filter>dateRange</filter>
+                <dataType>date</dataType>
+                <label translate="true">Updated At</label>
+                <sorting>asc</sorting>
+                <visible>false</visible>
+            </settings>
+        </column>
+        <column name="country" sortOrder="100">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Country</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <column name="state" sortOrder="110">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">State</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <column name="videostore_request_status" sortOrder="120">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Status</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <actionsColumn name="actions" class="Codilar\Videostore\Ui\Component\VideostoreRequest\Listing\Column\PageActions" sortOrder="100">
+            <settings>
+                <indexField>videostore_request_id</indexField>
+                <resizeEnabled>false</resizeEnabled>
+                <resizeDefaultWidth>107</resizeDefaultWidth>
+            </settings>
+        </actionsColumn>
+    </columns>
+</listing>

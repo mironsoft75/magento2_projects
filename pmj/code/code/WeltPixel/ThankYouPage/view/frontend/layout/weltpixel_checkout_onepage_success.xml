@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <container name="checkout.thankyoupage.wrapper" as="checkout_thankyoupage_wrapper" htmlTag="div" htmlClass="thankyou-wrapper">
+                <block class="WeltPixel\ThankYouPage\Block\Wrapper" name="checkout.content.wrapper" before="-" />
+            </container>
+        </referenceContainer>
+        <referenceContainer name="checkout.content.wrapper">
+            <container after="-" name="weltpixel.checkout.block" htmlTag="div" htmlClass="cmsblock-container">
+                <block ifconfig="weltpixel_thankyoupage/custom_block/enable" class="Magento\Cms\Block\Block" name="weltpixel.checkout.block.content">
+                    <arguments>
+                        <argument name="block_id" xsi:type="helper" helper="WeltPixel\ThankYouPage\Helper\Data::getCheckoutBlockId"/>
+                    </arguments>
+                </block>
+            </container>
+            <block ifconfig="weltpixel_thankyoupage/newsletter_subscribe/enable" class="WeltPixel\ThankYouPage\Block\Newsletter" template="WeltPixel_ThankYouPage::newsletter.phtml" name="weltpixel.checkout.newsletter" />
+        </referenceContainer>
+        <move element="checkout.success" destination="checkout.content.wrapper" />
+        <move element="checkout.registration" destination="checkout.content.wrapper" />
+        <referenceBlock name="checkout.success">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="helper" helper="WeltPixel\ThankYouPage\Helper\Data::getOrderDetailTemplate" />
+            </action>
+        </referenceBlock>
+        <referenceBlock name="checkout.registration">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="helper" helper="WeltPixel\ThankYouPage\Helper\Data::getCreateAccountTemplate" />
+            </action>
+        </referenceBlock>
+        <!-- clarify the page title removal inside te order details -->
+        <referenceBlock name="page.main.title" remove="true">
+            <action method="setPageTitle">
+                <argument name="title" xsi:type="helper" helper="WeltPixel\ThankYouPage\Helper\Data::getPageTitle" />
+            </action>
+        </referenceBlock>
+    </body>
+</page>

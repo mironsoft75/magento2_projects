@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Codilar_StoneAndMetalRates::css/metal_edit.css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <uiComponent name="rate_metal_form"/>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Codilar\StoneAndMetalRates\Block\Adminhtml\Activity" name="activity_log" template="Codilar_StoneAndMetalRates::activity.phtml"/>
+        </referenceContainer>
+    </body>
+</page>
+
+
