@@ -1,0 +1,21 @@
+{
+  "name": "codilar/logo",
+  "description": "codilar logo module",
+  "license": "proprietary",
+  "authors": [
+    {
+      "email": "vijayr@codilar.com",
+      "name": "Vijay R"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Codilar\\Logo\\": ""
+    }
+  }
+}

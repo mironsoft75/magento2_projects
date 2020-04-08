@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Softprodigy_Bluedart::Bluedart" title="Bluedart" module="Softprodigy_Bluedart" sortOrder="15" resource="Softprodigy_Bluedart::Bluedart"/>
+        
+        <add id="Softprodigy_Bluedart::Bluedart_Mawb" title="Generate AWB" module="Softprodigy_Bluedart" sortOrder="2" parent="Softprodigy_Bluedart::Bluedart" action="bluedart/mass/generate" resource="Softprodigy_Bluedart::Bluedart"/>
+<!--        <add id="Softprodigy_Bluedart::Bluedart_printawb" title="Print AWB" module="Softprodigy_Bluedart" sortOrder="3" parent="Softprodigy_Bluedart::Bluedart" action="bluedart/print/label" resource="Softprodigy_Bluedart::Bluedart"/>-->
+     
+        <add id="Softprodigy_Bluedart::Bluedart_Manifest" title="Generate Manifest" module="Softprodigy_Bluedart" sortOrder="4" parent="Softprodigy_Bluedart::Bluedart" action="bluedart/manifest/generate" resource="Softprodigy_Bluedart::Bluedart"/>
+        <add id="Softprodigy_Bluedart::Bluedart_printmanifest" title="Manifest History" module="Softprodigy_Bluedart" sortOrder="5" parent="Softprodigy_Bluedart::Bluedart" action="bluedart/manifest/history" resource="Softprodigy_Bluedart::Bluedart"/>
+        
+        <add id="Softprodigy_Bluedart::SystemConfg" title="Bluedart Configuration" module="Magento_Config" sortOrder="6" parent="Softprodigy_Bluedart::Bluedart" action="adminhtml/system_config/edit/section/Softprodigy_Bluedart" resource="Magento_Config::config"/>
+    </menu>
+</config>

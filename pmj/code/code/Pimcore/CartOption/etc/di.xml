@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Backend\Block\Widget\Grid\Massaction\AbstractMassaction">
+        <plugin name="UrlRewrite_massaction_select"
+                type="Pimcore\CartOption\Plugin\SelectAll" sortOrder="13" disabled="false" />
+    </type>
+</config>

@@ -1,0 +1,93 @@
+<!--======Bluedart COD check=====-->
+<?php $_product = $block->getProduct(); 
+?>
+<?php $check_price = $_product->getFinalPrice(); ?>
+<script>
+    var checkPin = function(){};
+    require(['jquery'], function (jQuery) {
+    
+    checkPin = function()
+    {
+        var pin = document.getElementById('pincodevalue').value;
+        if (pin == '')
+        {
+            alert("Please enter pincode.");
+            return true;
+        }
+        else
+        {
+            //document.getElementById('loader').style.display = 'inline-block';
+            var data = {
+                pin: pin,
+                instring: true,
+                price_limit: <?=$check_price; ?>
+            };
+            jQuery.ajax({
+                type: "POST",
+                url: "<?php echo $this->getUrl('bluedart/check/cod'); ?>",
+                data: data,
+                dataType: 'html',
+                showLoader: true,
+                beforeSend: function(){
+                    jQuery("#pinresult").html('<?php echo __('Please wait! while we are getting COD availability.') ?>');
+                },
+                success: function (res)
+                {
+                    jQuery("#pinresult").html(res);
+                },
+                error: function(){
+                    jQuery("#pinresult").html('');
+                }
+            });
+            estimatedDeliveryDate();
+        }
+    }
+    estimatedDeliveryDate = function()
+    { 
+        var pin = document.getElementById('pincodevalue').value;
+        if (pin == '')
+        {
+            alert("Please enter pincode.");
+            return true;
+        }
+        else
+        {
+            //document.getElementById('loader').style.display = 'inline-block';
+            var data = {
+                pin: pin,
+                instring: true,
+                price_limit: <?php echo$check_price; ?>
+                
+            };
+            jQuery.ajax({
+                type: "POST",
+                url: "<?php echo $this->getUrl('bluedart/check/deliverdate'); ?>",
+                data: data,
+                dataType: 'html',
+                showLoader: false,
+                beforeSend: function(){
+                    jQuery("#estimatedDeliveryDate").html('<?php echo __('Please wait! while we are getting your estimated delivery date') ?>');
+                },
+                success: function (res)
+                {
+                    jQuery("#estimatedDeliveryDate").html(res);
+                }, 
+                error: function(){
+                    jQuery("#estimatedDeliveryDate").html('');
+                }
+            });
+        }
+    }
+    });
+</script>	
+<!--======End Bluedart COD check=====-->
+<!--====Bluedart COD=====-->
+<div class="cod-view">
+    <div style="padding-bottom:10px;"><?php echo __("Check For pincode availability") ?></div>
+    <input style="width: 60%" type="text" name="pincode"  value="" id="pincodevalue" placeholder="<?=__("Enter pincode to check availability")?>"  />
+    
+    <button class="button" onclick="checkPin();" type="button"><span>Check</span></button>
+    <div id="pinresult" style="padding-top:3px;"></div>
+    <div id="estimatedDeliveryDate" style="padding-top:3px;"></div>
+</div>
+<!--====End Bluedart COD==-->

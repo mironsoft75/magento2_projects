@@ -1,0 +1,21 @@
+{
+  "name": "codilar/pricedecimal",
+  "description": "codilar pricedecimal module",
+  "license": "proprietary",
+  "authors": [
+    {
+      "email": "vijayr@codilar.com",
+      "name": "Vijay"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Codilar\\PriceDecimal\\": ""
+    }
+  }
+}

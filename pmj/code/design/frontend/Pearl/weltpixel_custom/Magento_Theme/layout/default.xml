@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<attribute name="class" value="theme-pearl"/>
+		<referenceBlock name="form.subscribe" remove="true"/>
+		<referenceBlock name="footer_links" remove="true"/>
+		<referenceBlock name="register-link" remove="true" />
+		<move element="store_switcher" destination="header.panel" after="store_language" />
+		<referenceBlock name="store.settings">
+			<block class="Magento\Store\Block\Switcher" name="store.settings.storeswitcher" template="switch/stores.phtml">
+				<arguments>
+					<argument name="id_modifier" xsi:type="string">nav</argument>
+				</arguments>
+			</block>
+		</referenceBlock>
+		 <referenceContainer name="footer">
+             <block class="Magento\Theme\Block\Html\Footer" name="footer-content-block" template="Magento_Theme::html/footer.phtml" />
+        </referenceContainer>
+		<referenceBlock name="header.panel">
+        	<block class="Magento\Framework\View\Element\Html\Links" name="toplinks.left"  before="-" template="Magento_Theme::toplinks_left.phtml"/>
+    	</referenceBlock>
+        <referenceBlock name="sidebar.additional">
+            <referenceBlock name="wishlist_sidebar" remove="true" />
+            <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+            <referenceBlock name="sale.reorder.sidebar" remove="true"/>
+        </referenceBlock>
+		<move element="catalog.compare.link" destination="header.panel" after="videocart.link"/>
+		<referenceContainer name="header.panel">
+			<container name="search.icon.desktop" before="header.links">
+				<block name="custom.search.icon" template="Magento_Theme::custom-search.phtml" after="-" />
+			</container>
+		</referenceContainer>
+	</body>
+</page>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Rapnet</title>
+        <css src="Codilar_Rapnet::main.css"/>
+        <css src="Codilar_Rapnet::css/_rapnet.css"/>
+        <link src="Codilar_Rapnet::js/touchit.js"/>
+        <link src="Codilar_Rapnet::js/main.js"/>
+    </head>
+    <body>
+        <referenceBlock name="page.main.title" remove="true"/>
+        <referenceBlock name="head.additional">
+            <block class="Codilar\Rapnet\Block\Index" name="codilar.rapnet.head"
+                   template="Codilar_Rapnet::head.phtml" after="-">
+            </block>
+        </referenceBlock>
+
+        <referenceContainer name="content">
+            <block class="Magento\Cms\Block\Block" name="diamondsearch_banner" before="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">diamondsearch_banner</argument>
+                </arguments>
+            </block>
+            <block class="Codilar\Rapnet\Block\PageData" name="rapnet_listing_head"
+                   template="Codilar_Rapnet::pagedata_head.phtml">
+                <block class="Codilar\Rapnet\Block\PageData" name="rapnet_listing"
+                       template="Codilar_Rapnet::pagedata.phtml"/>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

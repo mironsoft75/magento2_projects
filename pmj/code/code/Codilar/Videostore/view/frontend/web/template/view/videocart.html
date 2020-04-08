@@ -1,0 +1,70 @@
+<div class="videocart-button">
+    <p type="button" class="cart-button-text">Videocart
+         <!-- ko if: getCount() > 0 -->
+            <span class="counter-bg">
+                    <span class="counter-number"  data-bind="text: getCount(), click: openDialog"></span>
+            </span>
+        <!-- /ko -->
+    </p>
+</div>
+<div style="position: absolute; display: none;" id="videocart-dropdown" title="Video Cart">
+    <p id="btn-minicart-close" class="videocart-close" data-bind="click: dialogClose, attr: { title: $t('Close') }" title="Close">
+    </p>
+    <div class="scrollable-container" data-bind="afterRender: reloadSection()">
+        <!-- ko ifnot: getProducts().getLength() -->
+        <div>
+            <strong><p class="add-products-to-view">Add Products to view</p></strong>
+        </div>
+        <!-- /ko -->
+        <!-- ko if: getProducts().getLength() -->
+        <div class="scrollable-product" data-bind="foreach: { data: getProducts(), as: 'product' }">
+            <div class="videocart-product">
+                <div class="product-image">
+                    <a  data-bind="attr: { href: product.url}">
+                        <img data-bind="attr: { src: product.thumbnail, alt: product.name, title: product.name }" />
+                    </a>
+                </div>
+                <div class="product-details">
+                    <div class="product-item-name">
+                        <h3><a class="product-item-link" data-bind="text: product.name, attr: { href: product.url, title: product.name }"></a></h3>
+                        <strong><p class="product-item-price" data-bind="text: product.price, title: product.name "></p></strong>
+                    </div>
+                    <form class="cart-delete-form" method="post" data-bind="submit: $parent.deleteProduct">
+                        <input type="hidden" name="product-id" data-bind="attr: { value: product.id}" />
+                        <button title="Remove" name="remove-cart-button"></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /ko -->
+        <!-- ko if: getProducts().getLength() -->
+        <div class="actions">
+            <div class="primary">
+                <a type="button" class="action primary"
+                   data-bind="attr:{
+                   href: getProceedUrl()
+                   }"
+                   data-action="close"
+                   title="Submit Request">Submit Request</a>
+            </div>
+        </div>
+        <!-- /ko -->
+    </div>
+</div>
+<style>
+.add-products-to-view{
+    text-align: center; 
+    color: #303030;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+</style>
+<script>
+$('body').click(function(e){
+    if(e.target.className == 'cart-button-text'){
+           $('#videocart-dropdown').toggle();
+    }else{
+		$('#videocart-dropdown').hide();
+	}
+});
+</script>

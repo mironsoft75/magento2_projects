@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<attribute name="class" value="theme-pearl"/>
+		<referenceBlock name="form.subscribe" remove="true"/>
+		<referenceBlock name="footer_links" remove="true"/>
+		<move element="store_switcher" destination="header.panel" after="store_language" />
+		<referenceBlock name="store.settings">
+			<block class="Magento\Store\Block\Switcher" name="store.settings.storeswitcher" template="switch/stores.phtml">
+				<arguments>
+					<argument name="id_modifier" xsi:type="string">nav</argument>
+				</arguments>
+			</block>
+		</referenceBlock>
+	</body>
+</page>

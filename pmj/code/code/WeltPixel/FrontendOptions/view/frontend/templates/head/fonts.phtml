@@ -1,0 +1,10 @@
+<?php
+
+// @codingStandardsIgnoreFile
+
+/** @var $block \WeltPixel\FrontendOptions\Block\Head\Fonts */
+?>
+<?php $fontUrl = $block->getGoogleFonts() ?>
+<?php if ($fontUrl) : ?>
+<link rel="stylesheet" type="text/css" href="<?php /* @escapeNotVerified */ echo $fontUrl; ?>">
+<?php endif; ?>

@@ -1,0 +1,110 @@
+:root body.product-details {
+    background: #fff7ef;
+    .page-wrapper .page-header header.page-header .header.content .custom-menu-main .static-menu-items .static-menu-item.collection {
+        a {
+            color: @primary;
+        }
+    }
+    .breadcrumbs {
+        display: none !important;
+    }
+    .custom-menu-main, .breadcrumbs {
+        background: #fff7ef !important;
+    }
+    footer.page-footer {
+        background: #fff;
+    }
+    .product-details-main {
+        padding-bottom: 40px;
+        .breadcrumbs-main {
+            .back-btn {
+                color: #000;
+                font-size: 15px;
+                display: inline-flex;
+                align-items: center;
+                line-height: initial;
+                .icon {
+                    margin-right: 10px;
+                    font-size: 30px;
+                }
+            }
+        }
+        .product-detail-box {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            margin-top: 40px;
+            @media @mobile {
+                display: block;
+                width: 100%;
+            }
+            .img-main-box {
+                min-width: 32%;
+                max-width: 32%;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0px 7px 9px -3px #ddd;
+                @media @mobile {
+                    max-width: 100%;
+                }
+                img {
+                    width: 100%;
+                    max-width: 100%;
+                    vertical-align: middle;
+                }
+            }
+            .product-info-main-box {
+                width: 100%;
+                @media @mobile {
+                    width: calc(~"100% - 30px");
+                    margin: 0 auto;
+                }
+                .product-info-content {
+                    background: #E8D4BA;
+                    padding: 20px 50px;
+                    border-radius: 0 10px 10px 0;
+                    @media @mobile {
+                        border-radius: 0 0 10px 10px;
+                        text-align: center;
+                        padding: 20px 10px;
+                    }
+                    .title {
+                        font-weight: bold;
+                    }
+                    .specification-main {
+                        display: inline-block;
+                        margin-top: 15px;
+                        .options {
+                            list-style: none;
+                            padding: 0;
+                        }
+                    }
+                    .action-button-main {
+                        button {
+                            min-width: 270px;
+                            @media @mobile {
+                                width: 100%;
+                            }
+                        }
+                        @media @mobile {
+                            width: 100%;
+                        }
+                        .book-appoinment {
+                            @media @desktop {
+                                margin-right: 20px;
+                            }
+                            @media @mobile {
+                                margin-bottom: 10px;
+                            }
+                        }
+                        .icon {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

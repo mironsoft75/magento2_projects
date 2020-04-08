@@ -1,0 +1,38 @@
+<form method="post" action="<?php echo $this->getUrl("*/*/generatenow"); ?>">
+    <input type="hidden" name="form_key" value="<?php echo $this->getFormKey(); ?>" />
+<div id="manifest_date_range" class="field overview required" data-role="filter-form">
+    <p><?php echo __("Note: Time will consider pick-up time, which is given as <b> %1 </b>, so date would be consigder eg: %2", $block->getStoreConfig("Softprodigy_Bluedart/general/pickup_time"), date('Y-m-d').' '.$block->getStoreConfig("Softprodigy_Bluedart/general/pickup_time")) ?></p>
+    <div style="display: inline-block;" class="range-line">
+        <input type="text" id="manifest_date_from" name="mfrom" placeholder="From Date" class="input-text admin__control-text" />
+        
+    </div>
+    <div style="display: inline-block;" class="range-line">
+        <input type="text" id="manifest_date_to" name="mto" placeholder="To Date" class="input-text admin__control-text" />
+    </div>
+    <button class="btn button action-secondary"><span>Generate Manifest</span></button>
+</div>
+</form>
+<br/>
+<br/>
+ 
+<?php
+    echo $this->getChildHtml('bluedart.manifest.generate.orders');
+?>
+<script>
+    require(["jquery", "mage/calendar"], function ($) {
+
+        $("#manifest_date_range").dateRange({
+            dateFormat: "M/d/yy",
+            //timeFormat: "hh:mm:ss a",
+            showsTime: false,
+            buttonText: "Date selector",
+            from: {
+                id: "manifest_date_from"
+            },
+            to: {
+                id: "manifest_date_to"
+            }
+        });
+
+    });
+</script>

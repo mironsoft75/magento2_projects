@@ -1,0 +1,920 @@
+:root body.theme-pearl .page-wrapper {
+    .page-header {
+        z-index: 200;
+        @media @mobile {
+            * {
+                font-size: 14px;
+            }
+        }
+        header.page-header .header.content {
+            background: #fff;
+            padding: 20px 15px !important;
+            @media @tab-landscape {
+                padding: 10px 15px !important;
+            }
+            .sections.nav-sections-3.nav-sections {
+                .navigation {
+                    @media @desktop {
+                        ul li.level0.first > a {
+                            padding-left: 10px;
+                        }
+                    }
+                    li[data-category="collections"] {
+                        .level0.submenu.boxed {
+                            li:first-child {
+                                display: none !important;
+                            }
+                        }
+                        .submenu.boxed {
+                         @media @desktop{
+                            box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+                            -moz-box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+                            -webkit-box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+                         }
+                            .submenu-child.bottom-block-child {
+                                @media @mobile {
+                                    width: 100% !important;
+                                }
+                                .menu-block.bottom-block.block-container {
+                                    @media @mobile {
+                                        display: block !important;
+                                    }
+                                    .collection-list {
+                                        @media @mobile {
+                                            display: block !important;
+                                        }
+                                        height: 300px;
+                                        -webkit-columns: 2;
+                                        -moz-columns: 2;
+                                        columns: 2;
+                                        -moz-column-fill: auto;
+                                        column-fill: auto;
+                                        line-height: 25px;
+                                        @media @mobile {
+                                            -webkit-columns: unset;
+                                            -moz-columns: unset;
+                                            columns: unset;
+                                            height: auto;
+                                            overflow-y: auto;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    li[data-category="all jewellery"] {
+                        .submenu.fullwidth {
+                          @media @desktop{
+                            box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+                            -moz-box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+                            -webkit-box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+                          }
+                            .submenu-child {
+                                @media @mobile {
+                                    padding-left: 10px;
+                                }
+                            }
+                        }
+                    }
+                    li[data-category="fast delivery"] {
+                        .level0.submenu {
+                         @media @desktop{
+                            box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+                            -moz-box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+                            -webkit-box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+                         }
+                            .submenu-child {
+                                padding-left: 10px !important;
+                            }
+                        }
+                    }
+                    li[data-category="pmj legacy"] {
+                        .submenu.boxed {
+                         @media @desktop{
+                            box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+                            -moz-box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+                            -webkit-box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+                         }
+                            .submenu-child {
+                                @media @mobile {
+                                    padding-left: 10px;
+                                }
+                            }
+                        }
+                    }
+                    li[data-category="fast delivery"] {
+                        .level0.submenu.sectioned {
+                         @media @desktop{
+                            box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+                            -moz-box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+                            -webkit-box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+                         }
+                            .submenu-child {
+                                background: #ffffff;
+                                >.columns-group.starter {
+                                    top: 0 !important;
+                                }
+                                .fastdelivery-right-block {
+                                    box-sizing: border-box;
+                                    padding-left: 20px;
+                                    .fastdelivery-right-content {
+                                        display: flex;
+                                        flex-direction: column;
+                                        box-sizing: border-box;
+                                        padding: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    li[data-category="solitaire"] {
+                        .submenu.fullwidth {
+                         @media @desktop{
+                            width: 100%;
+                            padding-top: 5px;
+                            box-sizing: border-box;
+                         }
+                          box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+                          -moz-box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+                          -webkit-box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+                            .submenu-child {
+                                .fullwidth-wrapper {
+                                    .fullwidth-wrapper-inner {
+                                        display: flex;
+                                        justify-content: center;
+                                        @media @mobile {
+                                            width: 100% !important;
+                                        }
+                                        >ul:first-child {
+                                            .megamenu.level1 {
+                                                padding-top: 0;
+                                                >a:first-child {
+                                                    padding-top: 0;
+                                                }
+                                            }
+                                        }
+                                        .left-group {
+                                            box-sizing: border-box;
+                                            padding: 10px;
+                                            .submenu-child.left-block-child {
+                                                .menu-block.left-block {
+                                                    padding-top: 0;
+                                                    .solitaire-left-content {
+                                                        .diamond-education {
+                                                            li {
+                                                                &:first-child {
+                                                                    color: #575757;
+                                                                    font-size: 20px;
+                                                                    text-transform: uppercase;
+                                                                    line-height: 24px;
+                                                                    margin-top: 0;
+                                                                    padding-top: 0;
+                                                                    cursor: default;
+                                                                    a {
+                                                                        padding: 8px 0 0 0;
+                                                                        cursor: default;
+                                                                        span {
+                                                                            font-size: 14px;
+                                                                            padding-bottom: 5px;
+                                                                            border-bottom: 1px solid #cecece;
+                                                                        }
+                                                                    }
+                                                                }
+                                                                padding: 10px 0 0;
+                                                                a {
+                                                                    font-size: 14px;
+                                                                }
+                                                                &:hover a {
+                                                                    color: @primary;
+                                                                    background: none !important;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .columns-group {
+                                            box-sizing: border-box;
+                                            padding: 10px;
+                                        }
+                                        .right-group {
+                                            .submenu-child.right-block-child {
+                                                .right-block.block-container {
+                                                    padding-top: 0;
+                                                    .solitaire-right-block {
+                                                        .solitaire-left-content {
+                                                            .loose-diamonds {
+                                                                li {
+                                                                    &:first-child {
+                                                                        color: #575757;
+                                                                        font-size: 20px;
+                                                                        text-transform: uppercase;
+                                                                        line-height: 24px;
+                                                                        margin-top: 0;
+                                                                        padding-top: 0;
+                                                                        cursor: default;
+                                                                        a {
+                                                                            padding: 8px 0 0 0;
+                                                                            cursor: default;
+                                                                            span {
+                                                                                font-size: 14px;
+                                                                                padding-bottom: 5px;
+                                                                                border-bottom: 1px solid #cecece;
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    padding: 10px 0 0;
+                                                                    a {
+                                                                        font-size: 14px;
+                                                                    }
+                                                                    &:hover a {
+                                                                        color: @primary;
+                                                                        background: none !important;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .megamenu {
+                        a {
+                            &:hover {
+                                color: @primary  !important;
+                            }
+                        }
+                        > .level-top {
+                            @media @mobile {
+                                display: block;
+                            }
+                        }
+                        .level2:hover>a {
+                            color: @primary  !important;
+                        }
+                        >ul[role='menu'] {
+                            .ui-menu-item.all-category {
+                                @media @mobile {
+                                    display: none;
+                                    width: 100% !important;
+                                    background: #fff;
+                                    padding-left: 10px;
+                                    border: none;
+                                }
+                            }
+                        }
+                    }
+                    .megamenu.level-top-sectioned[data-category="all jewellery"] {
+                        .all-category {
+                            .all-txt {
+                                @media @mobile {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                    .megamenu.level-top-sectioned[data-category="rings"],
+                    .megamenu.level-top-sectioned[data-category="earrings"],
+                    .megamenu.level-top-sectioned[data-category="pendants"],
+                    .megamenu.level-top-sectioned[data-category="bangles & bracelets"],
+                    .megamenu.level-top-sectioned[data-category="solitaire"],
+                    .megamenu.level-top-sectioned[data-category="all jewellery"] {
+                        >ul[role='menu'] {
+                            .ui-menu-item.all-category {
+                                @media @mobile {
+                                    display: block;
+                                    width: 100% !important;
+                                    background: #fff;
+                                    padding-left: 0;
+                                    border: none;
+                                }
+                            }
+                        }
+                        .submenu.sectioned>li:first-child {
+                            background: #f2f2f2;
+                        }
+                        .submenu.level1 {
+                            padding: 0;
+                            @media @mobile {
+                                padding-left: 0 !important;
+                            }
+                        }
+                        .submenu.boxed,
+                        .submenu.fullwidth {
+                          box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+                          -moz-box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+                          -webkit-box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+                            @media @mobile {
+                                box-shadow: none;
+                            }
+                        }
+                        .submenu.sectioned {
+                            -moz-box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+                            -webkit-box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+                            box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+                            @media @mobile {
+                                box-shadow: none;
+                            }
+                            >li:first-child {
+                                width: 35% !important;
+                                @media @mobile {
+                                    width: auto !important;
+                                    background: #fff;
+                                }
+                            }
+                            >li:nth-child(2) {
+                                width: 30% !important;
+                            }
+                            .submenu-child.bottom-block-child {
+                                border: none !important;
+                            }
+                            .submenu-child {
+                                .menu-block.left-block.block-container {
+                                    width: 100% !important;
+                                    .ring-left-block {
+                                        display: flex;
+                                        .ring-left-content {
+                                            width: 50% !important;
+                                            .price-range {
+                                                padding: 5px 0 0 0;
+                                                line-height: 20px;
+                                                li {
+                                                    &:first-child {
+                                                        color: #575757;
+                                                        font-size: 20px;
+                                                        text-transform: uppercase;
+                                                        line-height: 24px;
+                                                        margin-top: 0;
+                                                        padding-top: 0;
+                                                        cursor: default;
+                                                        a {
+                                                            padding-top: 0;
+                                                            cursor: default;
+                                                            font-size: 17px;
+                                                            span {
+                                                                padding-bottom: 5px;
+                                                                border-bottom: 1px solid #cecece;
+                                                            }
+                                                        }
+                                                    }
+                                                    padding: 10px 0 0;
+                                                    a {
+                                                        font-size: 14px;
+                                                    }
+                                                    &:hover a {
+                                                        color: @primary;
+                                                        background: none !important;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .ring-right-content {
+                                            display: flex;
+                                            flex-direction: column;
+                                            box-sizing: border-box;
+                                            padding: 35px 20px;
+                                            img {
+                                                padding-bottom: 10px;
+                                            }
+                                        }
+                                    } //pendant
+                                    .pendant-left-block {
+                                        display: flex;
+                                        .pendant-left-content {
+                                            width: 50%;
+                                            .price-range {
+                                                padding: 5px 0 0 0;
+                                                line-height: 20px;
+                                                li {
+                                                    &:first-child {
+                                                        color: #575757;
+                                                        font-size: 20px;
+                                                        text-transform: uppercase;
+                                                        line-height: 24px;
+                                                        margin-top: 0;
+                                                        padding-top: 0;
+                                                        cursor: default;
+                                                        a {
+                                                            padding-top: 0;
+                                                            cursor: default;
+                                                            font-size: 17px;
+                                                            span {
+                                                                padding-bottom: 5px;
+                                                                border-bottom: 1px solid #cecece;
+                                                            }
+                                                        }
+                                                    }
+                                                    padding: 10px 0 0;
+                                                    a {
+                                                        font-size: 14px;
+                                                    }
+                                                    &:hover a {
+                                                        color: @primary;
+                                                        background: none !important;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .pendant-right-content {
+                                            display: flex;
+                                            flex-direction: column;
+                                            box-sizing: border-box;
+                                            padding: 35px 20px;
+                                            img {
+                                                padding-bottom: 10px;
+                                            }
+                                        }
+                                    } //rings
+                                    .earring-left-block {
+                                        display: flex;
+                                        .earring-left-content {
+                                            width: 50%;
+                                            .price-range {
+                                                padding: 5px 0 0 0;
+                                                line-height: 20px;
+                                                li {
+                                                    &:first-child {
+                                                        color: #575757;
+                                                        font-size: 20px;
+                                                        text-transform: uppercase;
+                                                        line-height: 24px;
+                                                        margin-top: 0;
+                                                        padding-top: 0;
+                                                        cursor: default;
+                                                        a {
+                                                            padding-top: 0;
+                                                            cursor: default;
+                                                            font-size: 17px;
+                                                            span {
+                                                                padding-bottom: 5px;
+                                                                border-bottom: 1px solid #cecece;
+                                                            }
+                                                        }
+                                                    }
+                                                    padding: 10px 0 0;
+                                                    a {
+                                                        font-size: 14px;
+                                                    }
+                                                    &:hover a {
+                                                        color: @primary;
+                                                        background: none !important;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .earring-right-content {
+                                            display: flex;
+                                            flex-direction: column;
+                                            box-sizing: border-box;
+                                            padding: 35px 20px;
+                                            img {
+                                                padding-bottom: 10px;
+                                            }
+                                        }
+                                    } //bangles
+                                    .bangles-left-block {
+                                        display: flex;
+                                        .bangles-left-content {
+                                            width: 50%;
+                                            .price-range {
+                                                padding: 5px 0 0 0;
+                                                line-height: 20px;
+                                                li {
+                                                    &:first-child {
+                                                        color: #575757;
+                                                        font-size: 20px;
+                                                        text-transform: uppercase;
+                                                        line-height: 24px;
+                                                        margin-top: 0;
+                                                        padding-top: 0;
+                                                        cursor: default;
+                                                        a {
+                                                            padding-top: 0;
+                                                            cursor: default;
+                                                            font-size: 17px;
+                                                            span {
+                                                                padding-bottom: 5px;
+                                                                border-bottom: 1px solid #cecece;
+                                                            }
+                                                        }
+                                                    }
+                                                    padding: 10px 0 0;
+                                                    a {
+                                                        font-size: 14px;
+                                                    }
+                                                    &:hover a {
+                                                        color: @primary;
+                                                        background: none !important;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .bangles-right-content {
+                                            display: flex;
+                                            flex-direction: column;
+                                            box-sizing: border-box;
+                                            padding: 35px 20px;
+                                            img {
+                                                padding-bottom: 10px;
+                                            }
+                                        }
+                                    } //bangles end
+                                    //solitaire
+                                    .solitaire-left-block{
+                                        .solitaire-left-content {
+                                            .diamond-education {
+                                                padding:0;
+                                                line-height: 20px;
+                                                li {
+                                                    &:first-child {
+                                                        color: #575757;
+                                                        font-size: 20px;
+                                                        text-transform: uppercase;
+                                                        line-height: 24px;
+                                                        margin-top: 0;
+                                                        padding-top: 0;
+                                                        cursor: default;
+                                                        a {
+                                                            padding: 3px 0 0 0;
+                                                            cursor: default;
+                                                            span {
+                                                                font-size: 14px;
+                                                                padding-bottom: 5px;
+                                                                border-bottom: 1px solid #cecece;
+                                                            }
+                                                        }
+                                                    }
+                                                    padding: 10px 0 0;
+                                                    a {
+                                                        font-size: 14px;
+                                                    }
+                                                    &:hover a {
+                                                        color: @primary;
+                                                        background: none !important;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                .columns-group {
+                                    .megamenu.level1 {
+                                        .level1.submenu {
+                                            height: 300px;
+                                            -webkit-columns: 2;
+                                            -moz-columns: 2;
+                                            columns: 2;
+                                            -moz-column-fill: auto;
+                                            column-fill: auto;
+                                            @media @mobile {
+                                                -webkit-columns: unset;
+                                                -moz-columns: unset;
+                                                columns: unset;
+                                                height: auto;
+                                                overflow-y: auto;
+                                            }
+                                        }
+                                    }
+                                }
+                            } //right block
+                            .submenu-child.right-block-child {
+                                width: 35% !important;
+                                margin-left: -1px;
+                                float: none;
+                                .menu-block.right-block.block-container {
+                                    width: 100% !important;
+                                    .ring-right-block {
+                                        display: flex;
+                                        .ring-left-content {
+                                            width: 50%;
+                                            .metal-stones {
+                                                padding: 5px 0 0 0;
+                                                line-height: 20px;
+                                                li {
+                                                    &:first-child {
+                                                        color: #575757;
+                                                        font-size: 20px;
+                                                        text-transform: uppercase;
+                                                        line-height: 24px;
+                                                        margin-top: 0;
+                                                        padding-top: 0;
+                                                        cursor: default;
+                                                        a {
+                                                            padding-top: 0;
+                                                            cursor: default;
+                                                            font-size: 15px;
+                                                            span {
+                                                                padding-bottom: 5px;
+                                                                border-bottom: 1px solid #cecece;
+                                                            }
+                                                        }
+                                                    }
+                                                    padding: 10px 0 0;
+                                                    a {
+                                                        font-size: 14px;
+                                                    }
+                                                    &:hover a {
+                                                        color: @primary;
+                                                        background: none !important;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .ring-right-content {
+                                            display: flex;
+                                            flex-direction: column;
+                                            box-sizing: border-box;
+                                            padding: 35px 20px;
+                                        }
+                                    } //earring
+                                    .earring-right-block {
+                                        display: flex;
+                                        .earring-left-content {
+                                            width: 50%;
+                                            .metal-stones {
+                                                padding: 5px 0 0 0;
+                                                line-height: 20px;
+                                                li {
+                                                    &:first-child {
+                                                        color: #575757;
+                                                        font-size: 20px;
+                                                        text-transform: uppercase;
+                                                        line-height: 24px;
+                                                        margin-top: 0;
+                                                        padding-top: 0;
+                                                        cursor: default;
+                                                        a {
+                                                            padding-top: 0;
+                                                            cursor: default;
+                                                            font-size: 15px;
+                                                            span {
+                                                                padding-bottom: 5px;
+                                                                border-bottom: 1px solid #cecece;
+                                                            }
+                                                        }
+                                                    }
+                                                    padding: 10px 0 0;
+                                                    a {
+                                                        font-size: 14px;
+                                                    }
+                                                    &:hover a {
+                                                        color: @primary;
+                                                        background: none !important;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .earring-right-content {
+                                            display: flex;
+                                            flex-direction: column;
+                                            box-sizing: border-box;
+                                            padding: 35px 20px;
+                                        }
+                                    } //pendant
+                                    .pendant-right-block {
+                                        display: flex;
+                                        .pendant-left-content {
+                                            width: 50%;
+                                            .metal-stones {
+                                                padding: 5px 0 0 0;
+                                                line-height: 20px;
+                                                li {
+                                                    &:first-child {
+                                                        color: #575757;
+                                                        font-size: 20px;
+                                                        text-transform: uppercase;
+                                                        line-height: 24px;
+                                                        margin-top: 0;
+                                                        padding-top: 0;
+                                                        cursor: default;
+                                                        a {
+                                                            padding-top: 0;
+                                                            cursor: default;
+                                                            font-size: 15px;
+                                                            span {
+                                                                padding-bottom: 5px;
+                                                                border-bottom: 1px solid #cecece;
+                                                            }
+                                                        }
+                                                    }
+                                                    padding: 10px 0 0;
+                                                    a {
+                                                        font-size: 14px;
+                                                    }
+                                                    &:hover a {
+                                                        color: @primary;
+                                                        background: none !important;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .pendant-right-content {
+                                            display: flex;
+                                            flex-direction: column;
+                                            box-sizing: border-box;
+                                            padding: 35px 20px;
+                                        }
+                                    } //bangles
+                                    .bangles-right-block {
+                                        display: flex;
+                                        .bangles-left-content {
+                                            width: 50%;
+                                            .metal-stones {
+                                                padding: 5px 0 0 0;
+                                                line-height: 20px;
+                                                li {
+                                                    &:first-child {
+                                                        color: #575757;
+                                                        font-size: 20px;
+                                                        text-transform: uppercase;
+                                                        line-height: 24px;
+                                                        margin-top: 0;
+                                                        padding-top: 0;
+                                                        cursor: default;
+                                                        a {
+                                                            padding-top: 0;
+                                                            cursor: default;
+                                                            font-size: 15px;
+                                                            span {
+                                                                padding-bottom: 5px;
+                                                                border-bottom: 1px solid #cecece;
+                                                            }
+                                                        }
+                                                    }
+                                                    padding: 10px 0 0;
+                                                    a {
+                                                        font-size: 14px;
+                                                    }
+                                                    &:hover a {
+                                                        color: @primary;
+                                                        background: none !important;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .bangles-right-content {
+                                            display: flex;
+                                            flex-direction: column;
+                                            box-sizing: border-box;
+                                            padding: 35px 20px;
+                                        }
+                                    }
+                                    .solitaire-right-block{
+                                        .solitaire-left-content {
+                                            .loose-diamonds {
+                                                line-height: 20px;
+                                                li {
+                                                    &:first-child {
+                                                        color: #575757;
+                                                        font-size: 20px;
+                                                        text-transform: uppercase;
+                                                        line-height: 24px;
+                                                        margin-top: 0;
+                                                        padding-top: 0;
+                                                        cursor: default;
+                                                        a {
+                                                            padding: 3px 0 0 0;
+                                                            cursor: default;
+                                                            span {
+                                                                font-size: 14px;
+                                                                padding-bottom: 5px;
+                                                                border-bottom: 1px solid #cecece;
+                                                            }
+                                                        }
+                                                    }
+                                                    padding: 10px 0 0;
+                                                    a {
+                                                        font-size: 14px;
+                                                    }
+                                                    &:hover a {
+                                                        color: @primary;
+                                                        background: none !important;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .navigation .megamenu.level-top-sectioned[data-category="rings"] .sectioned,
+    .navigation .megamenu.level-top-sectioned[data-category="earrings"] .sectioned,
+    .navigation .megamenu.level-top-sectioned[data-category="pendants"] .sectioned,
+    .navigation .megamenu.level-top-sectioned[data-category="bangles & bracelets"] .sectioned,
+    .navigation .megamenu.level-top-sectioned[data-category="all jewellery"] .sectioned,
+    .navigation .megamenu.level-top-sectioned[data-category="solitaire"] .sectioned {
+        left: 50% !important;
+        width: 85% !important;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+
+        @media @desktop{
+            box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+            -moz-box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+            -webkit-box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.15);
+        }
+        
+        @media @mobile {
+            left: 45% !important;
+        }
+    }
+    .nav-sections .navigation ul li.level0>a {
+        border-bottom: 2px solid #fff;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .nav-sections .navigation ul li.level0:hover>a {
+        color: #03afb1 !important;
+        background: none !important;
+        border-bottom: 2px solid #03afb1;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .ui-state-focus {
+        background: none !important;
+    }
+    @media @mobile {
+        .navigation .submenu:not(:first-child).expanded {
+            padding-left: 0;
+        }
+    }
+    @media @tab-landscape {
+        .megamenu.level-top-sectioned[data-category="rings"],
+        .megamenu.level-top-sectioned[data-category="earrings"],
+        .megamenu.level-top-sectioned[data-category="pendants"],
+        .megamenu.level-top-sectioned[data-category="bangles & bracelets"] {
+            .submenu-child:first-child {
+                display: none !important;
+            }
+        }
+    }
+    .megamenu.level-top-sectioned[data-category="all jewellery"] {
+        .submenu-child {
+            &:first-child {
+                background: #f2f2f2;
+                @media @tab-landscape {
+                    display: none !important;
+                }
+            }
+            > ul.columns-group {
+                @media @desktop {
+                    max-width: 250px;
+                }
+            }
+            .left-block {
+                .all-jewellery-left-block {
+                    .all-jewellery-left-content {
+                        .price-range {
+                            padding: 5px 0 0 0;
+                            line-height: 20px;
+                            li {
+                                &:first-child {
+                                    color: #575757;
+                                    font-size: 20px;
+                                    text-transform: uppercase;
+                                    line-height: 24px;
+                                    margin-top: 0;
+                                    padding-top: 0;
+                                    cursor: default;
+                                    a {
+                                        padding-top: 0;
+                                        cursor: default;
+                                        font-size: 17px;
+                                        span {
+                                            padding-bottom: 5px;
+                                            border-bottom: 1px solid #cecece;
+                                        }
+                                    }
+                                }
+                                padding: 10px 0 0;
+                                a {
+                                    font-size: 14px;
+                                }
+                                &:hover a {
+                                    color: @primary;
+                                    background: none !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+ /**
+  * @author Evince Team
+  * @copyright Copyright (c) 2018 Evince (http://evincemage.com/)
+  */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="diamondsearch" frontName="diamondsearch">
+            <module name="Evincemage_Rapnet" />
+        </route>
+    </router>
+</config>

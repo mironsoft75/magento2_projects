@@ -1,0 +1,797 @@
+<?php $skuParameter=$block->getSkuParameter();
+?>
+<div class="customised-form-container">
+    <div class="tab">
+        <div class="col-md-4 col-sm-4 col-xs-12 tab-button">
+            <button class="tablinks  action primary" id="upload-button" onclick="openTab(event, 'upload')">Upload any Design</button>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12 tab-button">
+            <button class="tablinks action primary" id="custom-design-button" onclick="openTab(event, 'customdesign')">Customize Existing design
+            </button>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12 tab-button">
+            <button class="tablinks action primary" onclick="openTab(event, 'workdes')">Work with our designers</button>
+        </div>
+    </div>
+    <div style="display: block;" id="upload" class="tabcontent row">
+        <form class="form1" id="jewel_upload_form1" name='form' action="<?= $block->getUrl('jewel/custom/index') ?>"
+              data-mage-init='{"validation":{}}' enctype="multipart/form-data" method="POST">
+            <?= $block->getBlockHtml('formkey') ?>
+            <input name="type" id="type1" value="1" type="hidden"/>
+            <h3 class="form-title">Upload your design</h3>
+            <div class="upload-container">
+                <div class="left-sec">
+                    <div class="control">
+                        <div class="input-file field required" onclick="openImageSelector();">
+                            <img id="images"
+                                 src='<?php echo $block->getViewFileUrl('Codilar_CustomiseJewellery::images/upload-image.jpg'); ?>'
+                                 alt="upload-image" />
+                            <p>Upload Image</p>
+                        </div>
+                        <div class="field required">
+                            <input type="file" name="image" id="image" class="input-file required-entry in"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-sec">
+                    <div>
+                        <div class="row">
+                            <fieldset class="fieldset">
+                                <div class="field required">
+                                    <div class="control">
+                                        <input name="name" type="text" class="input-text required-entry in"
+                                               placeholder="Full Name *">
+                                    </div>
+                                </div>
+                                <div class="field mobile-container">
+                                    <div class="control">
+                                        <input name="mobile" id="mobile1" type="text"
+                                               class="input-text mobile required-entry in"
+                                               placeholder="Mobile Number *" maxlength="10"/>
+                                        <div class="number-error-message" id="number-error-message1"></div>
+                                        <div data-form-id="1" class="customise-generate-otp"
+                                             id="customise-generate-otp1">
+                                            <span class="jewel-generate-otp"><?= $block->escapeHtml(__('Generate OTP')) ?></span>
+                                        </div>
+                                        <div data-form-id="1" class="customise-resend-otp" id="customise-resend-otp1">
+                                            <span class="jewel-resend-otp"><?= $block->escapeHtml(__('Resend OTP')) ?></span>
+                                        </div>
+                                        <div class="customise-otp_sent" id="customise-otp_sent1">
+                                            <span> <?= $block->escapeHtml(__('OTP Sent')) ?></span>
+                                        </div>
+                                        <div id="verify" class="otpverify"><input type="text" name="verifyotp"
+                                                                                  class="input-text verify1 required-entry in"
+                                                                                  id="otpverify1"
+                                                                                  placeholder="Enter OTP *"
+                                                                                  maxlength="6"></div>
+                                        <div class="otp-error-message" id="otp-error-message1"></div>
+                                    </div>
+                                </div>
+                                <div class="field required">
+                                    <div class="control">
+                                        <input name="email" type="text"
+                                               class="input-text required-entry validate-email in"
+                                               placeholder="Email Address *" required/>
+                                    </div>
+                                </div>
+                                <div class="field required">
+                                    <div class="control">
+                                        <input name="budget" type="text" id="budget1" class="budget input-text required-entry in"
+                                               placeholder="Your Budget (Ex. Rs 10,000)"
+                                               required/>
+                                    </div>
+                                </div>
+                                <div class="field required">
+                                    <div class="control">
+                                         <textarea name="details" cols="60" rows="5"
+                                                   class="input-text required-entry in"
+                                                   placeholder="Details of Jewellery *"
+                                                   required></textarea>
+                                    </div>
+                                </div>
+                                <div class="field required">
+                                    <div class="control inputbox">
+                                        <input type="checkbox" class="checkterm" id="term1"/>
+                                        <p class="only-desktop" title="Terms and Conditions">I have read and agree to the <a
+                                                    href="<?= $this->getUrl('terms-and-conditions') ?>">Terms and
+                                                Conditions</a><span class="red">*</span></p>
+                                                <p class="only-mobile" title="Terms and Conditions">I have read and agree to the <a
+                                                    href="<?= $this->getUrl('terms-and-conditions') ?>">T&C</a><span class="red">*</span></p>
+                                    </div>
+                                    <div class="checkbox-error-message" id="checkbox-error-message1"></div>
+                                </div>
+                                <div class="form-submit-field">
+                                    <div class="control submitbtn">
+                                        <button class="action primary" type="submit" name="submit" value="submit"
+                                                id="submit1">Submit
+                                        </button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="customdesign" class="tabcontent">
+        <form class="form2" id="jewel_customdesign_form2" action="<?= $block->getUrl('jewel/custom/index') ?>"
+              data-mage-init='{"validation":{}}' enctype="multipart/form-data" method="POST">
+            <?= $block->getBlockHtml('formkey') ?>
+            <input name="type" id="type2" value="2" type="hidden">
+            <h3 class="form-title">Our Designs</h3>
+            <div class="customdesign-container">
+                <div class="left-sec">
+                    <div class="input-file">
+                        <div id="sku_image">
+                            <img id="findimage"
+                                 src='<?php echo $block->getViewFileUrl('Codilar_CustomiseJewellery::images/upload-image.jpg'); ?>'/>
+                            <input type="text" name="jewel_sku" id="jewel_id"
+                                   class="jewel_id input-text required-entry in" placeholder="Enter Sku">
+                            <div id="skustatus" style="display: block"></div>
+                            <span class="find_image_container">
+                                 <p class="find_image">
+                                <?= $block->escapeHtml(__('Find Image')) ?></p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-sec">
+                    <div class="row">
+                        <fieldset class="fieldset">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="field required">
+                                        <div class="control">
+                                            <input name="name" type="text" class="input-text required-entry in"
+                                                   placeholder="Full Name *">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="field">
+                                        <div class="control">
+                                            <div class="mobile-inputs">
+                                                <input name="mobile" type="text" id="mobile2"
+                                                       class="input-text mobile required-entry in"
+                                                       placeholder="Mobile Number *" maxlength="10">
+                                            </div>
+                                            <div class="mobile-messages">
+                                                <div class="number-error-message" id="number-error-message2"></div>
+                                                <div data-form-id="2" class="customise-generate-otp"
+                                                     id="customise-generate-otp2"><span class="jewel-generate-otp">
+                                <?= $block->escapeHtml(__('Generate OTP')) ?></span></div>
+                                                <div data-form-id="2" class="customise-resend-otp"
+                                                     id="customise-resend-otp2"><span class="jewel-resend-otp">
+                                <?= $block->escapeHtml(__('Resend OTP')) ?></span></div>
+                                                <div class="customise-otp_sent" id="customise-otp_sent2"><span>
+                                <?= $block->escapeHtml(__('OTP Sent')) ?></span></div>
+                                            </div>
+                                        </div>
+                                        <div id="verify" class="otpverify"><input type="text" name="verifyotp"
+                                                                                  class="input-text verify2 required-entry in"
+                                                                                  id="otpverify2"
+                                                                                  placeholder="Enter OTP *"
+                                                                                  maxlength="6"></div>
+                                        <div class="otp-error-message" id="otp-error-message2"></div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="field required">
+                                        <div class="control">
+                                            <input name="email" type="text"
+                                                   class="input-text required-entry validate-email in"
+                                                   placeholder="Email Address *">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="field required">
+                                        <div class="control">
+                                            <input name="budget" type="text" id="budget2"
+                                                   class="budget input-text required-entry in"
+                                                   placeholder="Your Budget (Ex. Rs 10,000)">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="field required">
+                                        <div class="control">
+                                            <textarea name="details" cols="60" class="input-text required-entry in"
+                                                      placeholder="Details of Jewellery *"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="field required">
+                                        <div class="control inputbox">
+                                            <input type="checkbox" class="checkterm" id="term2"/>
+                                            <p class="only-desktop" title="Terms and Conditions">I have read and agree to the <a
+                                                    href="<?= $this->getUrl('terms-and-conditions') ?>">Terms and
+                                                Conditions</a><span class="red">*</span></p>
+                                                <p class="only-mobile" title="Terms and Conditions">I have read and agree to the <a
+                                                    href="<?= $this->getUrl('terms-and-conditions') ?>">T&C</a><span class="red">*</span></p>
+                                        </div>
+                                        <div class="checkbox-error-message" id="checkbox-error-message2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="field">
+                                        <div class="control submitbtn">
+                                            <button class="action primary" type="submit" name="submit" value="submit"
+                                                    id="submit2">Submit
+                                            </button>
+                                        </div>
+                                    </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="workdes" class="tabcontent tabdesigncontent ">
+        <div class="workdes-container">
+            <h3 class="form-title">Your Personal details</h3>
+            <form class="form3" enctype="multipart/form-data" action="<?= $block->getUrl('jewel/custom/index') ?>"
+                  data-mage-init='{"validation":{}}'
+                  id="jewel_workdes_form3" method="POST" data-hasrequired="* Required Fields">
+                <?= $block->getBlockHtml('formkey') ?>
+                <input name="type" id="type3" value="3" type="hidden">
+
+                <div class="form-container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="field required">
+                                <div class="control">
+                                    <input name="name" type="text"
+                                           class="input-text required-entry in mobile-first-input"
+                                           placeholder="Full Name *">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="field required">
+                                <div class="control">
+                                    <input name="email" type="text" class="input-text required-entry validate-email in"
+                                           placeholder="Email Address *">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="field required">
+                                <div class="control">
+                                    <input name="mobile" type="text" id="mobile3"
+                                           class="input-text mobile  required-entry in" placeholder="Mobile Number *"
+                                           maxlength="10">
+                                    <div class="number-error-message" id="number-error-message3"></div>
+                                    <div data-form-id="3" class="customise-generate-otp"
+                                         id="customise-generate-otp3"><span class="login-generate-otp">
+                    <?= $block->escapeHtml(__('Generate OTP')) ?></span></div>
+                                    <div data-form-id="3" class="customise-resend-otp" id="customise-resend-otp3"><span
+                                                class="login-resend-otp">
+                    <?= $block->escapeHtml(__('Resend OTP')) ?></span></div>
+                                    <div class="customise-otp_sent" id="customise-otp_sent3"><span>
+                    <?= $block->escapeHtml(__('OTP Sent')) ?></span></div>
+                                    <div id="verify" class="otpverify"><input type="text" name="verifyotp"
+                                                                              class="input-text verify3 required-entry in" id="otpverify3"
+                                                                              placeholder="Enter OTP *" maxlength="6">
+                                    </div>
+                                    <div class="otp-error-message" id="otp-error-message3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="field required">
+                                <div class="control textareainputbox">
+                                    <textarea name="details" rows="10" class="input-text required-entry in"
+                                              placeholder="Details of Jewellery *"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="field required">
+                                <div class="control inputbox">
+                                    <input type="checkbox" class="checkterm " id="term3"/>
+                                    <p class="only-desktop" title="Terms and Conditions">I have read and agree to the <a
+                                                    href="<?= $this->getUrl('terms-and-conditions') ?>">Terms and
+                                                Conditions</a><span class="red">*</span></p>
+                                                <p class="only-mobile" title="Terms and Conditions">I have read and agree to the <a
+                                                    href="<?= $this->getUrl('terms-and-conditions') ?>">T&C</a><span class="red">*</span></p>
+                                </div>
+                                <div class="checkbox-error-message" id="checkbox-error-message3"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="submitbtn">
+                                <button class="action primary" type="submit" name="submit" value="submit" id="submit3">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<style>
+    .tabcontent:not(:first-child) {
+        display: none;
+        padding: 6px 12px;
+    }
+
+    .tabcontent:first-child {
+        display: block;
+    }
+
+    .customise-otp_sent {
+        display: none;
+    }
+</style>
+<script type="text/javascript">
+    require([
+        'jquery',
+        'Magento_Ui/js/modal/alert',
+        'jquery/ui'
+    ], function ($, alert, tabs) {
+        const productSku = "<?= $skuParameter ?>";
+        openTab = function (evt, TabSection) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(TabSection).style.display = "block";
+            evt.currentTarget.className += " active";
+        };
+        if(productSku){
+            $('#upload').hide();
+            $('#customdesign').show();
+            $('#custom-design-button').addClass('active');
+            $('#jewel_id').val(productSku);
+            findImage();
+        }
+        if(!productSku){
+            $('#upload-button').addClass('active');
+        }
+        document.getElementById("image").onchange = function () {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                document.getElementById("images").src = e.target.result;
+            };
+
+            // read the image file as a data URL.
+            reader.readAsDataURL(this.files[0]);
+        };
+        openImageSelector = function () {
+            $('#image').click();
+        }
+
+        jQuery(document).ready(function () {
+            var generateOtp = $('.customise-generate-otp');
+            var resendButton = $(".customise-resend-otp");
+            var findImageButton = $('.find_image_container');
+            var submitbutton3 = $("form#jewel_workdes_form3");
+            var submitbutton2 = $("form#jewel_customdesign_form2");
+            var submitbutton1 = $("form#jewel_upload_form1");
+            var otpText = $(".customise-otp_sent");
+            var uploadImage=$("#image");
+            resendButton.hide();
+            otpText.hide();
+            setInputFilter(document.getElementById("mobile1"), function(value) {
+                return /^-?\d*$/.test(value); });
+            setInputFilter(document.getElementById("mobile2"), function(value) {
+                return /^-?\d*$/.test(value); });
+            setInputFilter(document.getElementById("mobile3"), function(value) {
+                return /^-?\d*$/.test(value); });
+            setInputFilter(document.getElementById("otpverify1"), function(value) {
+                return /^-?\d*$/.test(value); });
+            setInputFilter(document.getElementById("otpverify2"), function(value) {
+                return /^-?\d*$/.test(value); });
+            setInputFilter(document.getElementById("otpverify3"), function(value) {
+                return /^-?\d*$/.test(value); });
+            setInputFilter(document.getElementById("budget1"), function(value) {
+                return /^-?\d*$/.test(value); });
+            setInputFilter(document.getElementById("budget2"), function(value) {
+                return /^-?\d*$/.test(value); });
+            function setInputFilter(textbox, inputFilter) {
+                ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function(event) {
+                    textbox.addEventListener(event, function() {
+                        if (inputFilter(this.value)) {
+                            this.oldValue = this.value;
+                            this.oldSelectionStart = this.selectionStart;
+                            this.oldSelectionEnd = this.selectionEnd;
+                        } else if (this.hasOwnProperty("oldValue")) {
+                            this.value = this.oldValue;
+                            this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+                        }
+                    });
+                });
+            }
+
+
+            generateOtp.on('click', function () {
+                var formNumber = jQuery(this).data("form-id");
+                sendOtp(formNumber);
+            });
+            resendButton.on('click', function () {
+                var formNumber = jQuery(this).data("form-id");
+                sendOtp(formNumber);
+            });
+            findImageButton.on('click', function () {
+                findImage();
+            });
+            uploadImage.on('click', function () {
+                if( document.getElementById("image").files.length == 0 ){
+                    $("#image-error").hide();
+                }
+            });
+
+
+            submitbutton3.submit(function (event) {
+                event.preventDefault();
+                var checkboxError3 = $('#checkbox-error-message3');
+                var otpErrorMessage3 = $("#otp-error-message3");
+                var VerifyUrl = "<?= $block->getUrl("jewel/custom/verify"); ?>";
+                var submitUrl = "<?= $block->getUrl("jewel/custom/index"); ?>";
+                var formNumber=$('#type3').val();
+                $("#number-error-message3").hide();
+                var otp = $(".verify3").val();
+                var number = $("#mobile3").val();
+                if ($('#term3:checkbox:checked').length > 0) {
+                    checkboxError3.hide();
+                } else {
+                    checkboxError3.text("Please accept our Terms and Conditions.");
+                    checkboxError3.css('color', "red");
+                    checkboxError3.show();
+                    event.preventDefault();
+                    return false;
+                }
+                var dataFormvalidator = $('#jewel_workdes_form3');
+                if (dataFormvalidator.validation().valid()) {
+                    $.ajax({
+                        showLoader: true,
+                        url: VerifyUrl,
+                        data: {number: number, otp: otp, formNumber:formNumber},
+                        type: "POST"
+                    }).done(function (data) {
+                        if (data['status'] == "true") {
+                            $.ajax({
+                                showLoader: true,
+                                url: submitUrl,
+                                data: submitbutton3.serialize(),
+                                type: "POST"
+                            }).done(function (data) {
+                                location.reload();
+                            });
+                            $(this).unbind('submit').submit();
+                        } else if (data['status'] == "otpError") {
+                            otpErrorMessage3.text("OTP is Invalid.");
+                            otpErrorMessage3.css('color', "red");
+                            otpErrorMessage3.css('margin-top', "15px");
+                            otpErrorMessage3.show();
+                            otpText.hide();
+                            event.preventDefault();
+                        } else if (data['status'] == "phoneError") {
+                            otpErrorMessage3.text("Invalid OTP for this Mobile Number.");
+                            otpErrorMessage3.css('color', "red");
+                            otpErrorMessage3.show();
+                            otpText.hide();
+                            event.preventDefault();
+                        }
+                    });
+                }
+                if(otp.length <1){
+                    otpErrorMessage3.hide();
+
+                }
+            });
+            submitbutton2.submit(function (event) {
+                event.preventDefault();
+                var checkboxError2 = $('#checkbox-error-message2');
+                var otpErrorMessage2 = $("#otp-error-message2");
+                var skustatus = $("#skustatus");
+                skustatus.hide();
+                $("#number-error-message2").hide();
+                var VerifyUrl = "<?= $block->getUrl("jewel/custom/verify"); ?>";
+                var submitUrl = "<?= $block->getUrl("jewel/custom/index"); ?>";
+                var formNumber=$('#type2').val();
+                var param = $(".verify2").val();
+                var number = $("#mobile2").val();
+                if ($('#term2:checkbox:checked').length > 0) {
+                    checkboxError2.hide();
+                } else {
+                    checkboxError2.text("Please accept our Terms and Conditions.");
+                    checkboxError2.css('color', "red");
+                    checkboxError2.show();
+                    event.preventDefault();
+                    return false;
+                }
+                var dataFormvalidator = $('#jewel_customdesign_form2');
+                if (dataFormvalidator.validation().valid()) {
+                    $.ajax({
+                        showLoader: true,
+                        url: VerifyUrl,
+                        data: {otp: param, number: number,formNumber:formNumber},
+                        type: "POST"
+                    }).done(function (data) {
+                        if (data['status'] == "true") {
+
+                            $.ajax({
+                                showLoader: true,
+                                url: submitUrl,
+                                data: submitbutton2.serialize(),
+                                type: "POST"
+                            }).done(function (data) {
+                                window.location.href = "<?=$block->getUrl('customised-jewellery'); ?>";
+                            });
+                            $(this).unbind('submit').submit();
+
+                        } else if (data['status'] == "otpError") {
+                            otpErrorMessage2.text("OTP is Invalid!");
+                            otpErrorMessage2.css('color', "red");
+                            otpErrorMessage2.show();
+                            otpText.hide();
+                            event.preventDefault();
+                        } else if (data['status'] == "phoneError") {
+                            otpErrorMessage2.text("Invalid OTP for this Mobile Number.");
+                            otpErrorMessage2.css('color', "red");
+                            otpErrorMessage2.show();
+                            otpText.hide();
+                            event.preventDefault();
+                        }
+                    });
+
+                }
+                if(param.length <1){
+                    otpErrorMessage2.hide();
+
+                }
+
+
+            });
+            submitbutton1.submit(function (event) {
+                event.preventDefault();
+                var checkboxError1 = $('#checkbox-error-message1');
+                var otpErrorMessage1 = $("#otp-error-message1");
+                var VerifyUrl = "<?= $block->getUrl("jewel/custom/verify"); ?>";
+                var submitUrl = "<?= $block->getUrl("jewel/custom/index"); ?>";
+                var formNumber=$('#type1').val();
+                var param = $(".verify1").val();
+                var number = $("#mobile1").val();
+                $("#number-error-message1").hide();
+                var form = $('#jewel_upload_form1')[0];
+                var formData = new FormData(form);
+                if ($('#term1:checkbox:checked').length > 0) {
+                    checkboxError1.hide();
+                } else {
+                    checkboxError1.text('Please accept our Terms and Conditions.');
+                    checkboxError1.css('color', "red");
+                    checkboxError1.show();
+                    event.preventDefault();
+                    return false;
+                }
+                var dataFormvalidator = $('#jewel_upload_form1');
+                if (dataFormvalidator.validation().valid()) {
+                    $.ajax({
+                        showLoader: true,
+                        url: VerifyUrl,
+                        data: {otp: param, number: number,formNumber:formNumber},
+                        type: "POST"
+                    }).done(function (data) {
+                        if (data['status'] == "true") {
+
+                            $.ajax({
+                                enctype: 'multipart/form-data',
+                                processData: false,
+                                contentType: false,
+                                showLoader: true,
+                                url: submitUrl,
+                                data: formData,
+                                type: "POST"
+                            }).done(function (data) {
+                                location.reload();
+                            });
+                            $(this).unbind('submit').submit();
+
+                        } else if (data['status'] == "otpError") {
+                            otpErrorMessage1.text("OTP is Invalid.");
+                            otpErrorMessage1.css('color', "red");
+                            otpErrorMessage1.show();
+                            otpText.hide();
+                            event.preventDefault();
+                        } else if (data['status'] == "phoneError") {
+                            otpErrorMessage1.text("Invalid OTP for this Mobile Number.");
+                            otpErrorMessage1.css('color', "red");
+                            otpErrorMessage1.show();
+                            otpText.hide();
+                            event.preventDefault();
+                        }
+                    });
+                }
+                if(param.length <1){
+                    otpErrorMessage1.hide();
+
+                }
+
+            });
+        });
+
+
+        function findImage() {
+            var sku = $("#jewel_id").val();
+            var skuError = $("#jewel_id-error");
+            var skustatus = $("#skustatus");
+            var fidImageUrl = "<?php echo $block->getUrl('jewel/custom/fetchImage') ?>";
+            if (sku.length < 1) {
+                $('#findimage').attr('src', "<?php echo $block->getViewFileUrl('Codilar_CustomiseJewellery::images/upload-image.jpg'); ?>");
+                skuError.hide();
+                skustatus.text('Enter Sku.');
+                skustatus.css('color', "red");
+                skustatus.show();
+            } else {
+                $.ajax(fidImageUrl, {
+                    method: "POST",
+                    data: {
+                        sku: sku
+                    },
+                    showLoader: true,
+                    success: function (response) {
+                        if (response['status'] == "true") {
+                            $('#findimage').attr('src', response['imageUrl']);
+                            skustatus.hide();
+                            skuError.hide();
+                        } else {
+                            $('#findimage').attr('src', "<?php echo $block->getViewFileUrl('Codilar_CustomiseJewellery::images/upload-image.jpg'); ?>");
+                            skustatus.text(response['message']);
+                            skustatus.css('color', "red");
+                            skustatus.show();
+                            skuError.hide();
+                        }
+                    },
+                    error: function (e) {
+
+                    }
+                });
+
+            }
+        }
+
+        function sendOtp(formNumber) {
+            var mobilepattern = /([1-9]{1}[0-9]{9})/;
+            var otpUrl = "<?php echo $block->getUrl('jewel/custom/otp') ?>";
+            var otpErrorMessage1 = $("#otp-error-message1");
+            var otpErrorMessage2 = $("#otp-error-message2");
+            var otpErrorMessage3 = $("#otp-error-message3");
+            if (formNumber == 1) {
+                var generateOtp = $('#customise-generate-otp1');
+                var resendButton = $("#customise-resend-otp1");
+                var otpText = $("#customise-otp_sent1");
+                var errorMessage = $("#number-error-message1");
+                var phoneNumber = $("#mobile1").val();
+                otpErrorMessage1.hide();
+                errorMessage.hide();
+                otpText.hide();
+                if (phoneNumber.length < 1) {
+                    errorMessage.text("Enter Mobile number.");
+                    errorMessage.css('color', "red");
+                    errorMessage.show();
+                    $("#mobile1-error").hide();
+                    return false;
+                } else if (!mobilepattern.test(phoneNumber) || phoneNumber.length != 10) {
+                    errorMessage.text("Invalid Mobile number.");
+                    errorMessage.css('color', "red");
+                    errorMessage.show();
+                    $("#mobile1-error").hide();
+                    return false;
+                }
+
+            }
+            if (formNumber == 2) {
+                var generateOtp = $('#customise-generate-otp2');
+                var resendButton = $("#customise-resend-otp2");
+                var otpText = $("#customise-otp_sent2");
+                var errorMessage = $("#number-error-message2");
+                var phoneNumber = $("#mobile1").val();
+                otpErrorMessage2.hide();
+                errorMessage.hide();
+                otpText.hide();
+                var phoneNumber = $("#mobile2").val();
+                if (phoneNumber.length < 1) {
+                    errorMessage.text("Enter Mobile number.");
+                    errorMessage.css('color', "red");
+                    errorMessage.show();
+                    $("#mobile2-error").hide();
+                    return false;
+                } else if (!mobilepattern.test(phoneNumber) || phoneNumber.length != 10) {
+                    errorMessage.text("Invalid Mobile number.");
+                    errorMessage.css('color', "red");
+                    errorMessage.show();
+                    $("#mobile2-error").hide();
+                    return false;
+                }
+
+            }
+            if (formNumber == 3) {
+                var generateOtp = $('#customise-generate-otp3');
+                var resendButton = $("#customise-resend-otp3");
+                var otpText = $("#customise-otp_sent3");
+                var errorMessage = $("#number-error-message3");
+                var phoneNumber = $("#mobile1").val();
+                otpErrorMessage3.hide();
+                errorMessage.hide();
+                otpText.hide();
+                var phoneNumber = $("#mobile3").val();
+                if (phoneNumber.length < 1) {
+                    errorMessage.text("Enter Mobile number.");
+                    errorMessage.css('color', "red");
+                    errorMessage.show();
+                    $("#mobile3-error").hide();
+                    return false;
+                } else if (!mobilepattern.test(phoneNumber) || phoneNumber.length != 10) {
+                    errorMessage.text("Invalid Mobile number.");
+                    errorMessage.css('color', "red");
+                    errorMessage.show();
+                    $("#mobile3-error").hide();
+                    return false;
+                }
+
+            }
+            $.ajax(otpUrl, {
+                method: "POST",
+                data: {
+                    phone_number: phoneNumber,
+                    formNumber:formNumber
+                },
+                showLoader: true,
+                success: function (response) {
+                    if (response.status == false) {
+                        otpText.text(response.message);
+                        otpText.css('color', "red");
+                        generateOtp.show();
+                        resendButton.hide();
+                    } else {
+                        otpText.text(response.message);
+                        otpText.css('color', "green");
+                        generateOtp.hide();
+                        resendButton.hide();
+                        setTimeout(function () {
+                            resendButton.show();
+                            otpText.hide();
+                            otpErrorMessage1.hide();
+                            otpErrorMessage2.hide();
+                            otpErrorMessage3.hide();
+                        }, 60000);
+                    }
+                    otpText.show();
+                },
+                error: function (e) {
+
+                }
+            });
+        }
+    });
+</script>

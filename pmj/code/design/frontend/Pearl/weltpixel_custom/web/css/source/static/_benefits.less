@@ -1,0 +1,245 @@
+.cms-pmj-benefits {
+    .page-main{
+        background: @beniftsBg;
+        .page-title-wrapper{
+            text-align: center !important;
+            padding-bottom: 0 !important;
+        }
+    }
+    .benefits-main {
+        //common styling
+        p {
+            font-size: 14px;
+        }
+        h3{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .section-header {
+            text-align: center; 
+            padding: 20px;
+            box-sizing: border-box;
+            @media @mobile{
+                padding: 10px;
+            }
+            h3 {
+                box-sizing: border-box;
+                padding: 10px 0;
+                position: relative;
+                @media @mobile{
+                    width: 100%;
+                }
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+        #sectionPadding {
+            box-sizing: border-box;
+            padding: 20px 0;
+        }
+        #anchorTagButton {
+            box-sizing: border-box;
+            padding: 10px 20px;
+            border: 1px solid @primary;
+            color: @primary;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+            display: inline-block;
+            @media @mobile{
+                padding: 10px 40px;
+            }
+            &:hover {
+                background: @primary;
+                color: #fff;
+            }
+        }
+        .benefits-top {
+            background: @beniftsBg;
+            box-sizing: border-box;
+            padding: 0 0 20px 0;
+            width: 90%;
+            margin: auto;
+            @media @mobile{
+                padding: 10px 0;
+            }
+            .description {
+                padding: 20px;
+                text-align: center;
+                width: 50%;
+                margin: auto;
+                @media @mobile{
+                    width: 100%;
+                }
+            }
+            .advantages-container {
+                padding: 0 20px;
+                box-sizing: border-box;
+                @media @mobile{
+                    padding: 0 15px;
+                }
+                .advantage-box {
+                    @media @mobile{
+                        padding: 0;
+                        margin-bottom: 30px;
+                    }
+                    .advantage-main {
+                        background: white;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        box-sizing: border-box;
+                        padding: 20px;
+                        .advantage-desc {
+                            text-align: center;
+                            box-sizing: border-box;
+                            padding: 5px;
+                        }
+                    }
+                }
+            }
+        } 
+        //save upto 
+        .section-2 {
+            background: @beniftsBg;
+            width: 90%;
+            margin: auto;
+            @media @mobile{
+                padding: 10px 0;
+            }
+            #sectionPadding;
+            .save-upto-content {
+                p {
+                    text-align: justify;
+                }
+            }
+            .save-upto-footer {
+                text-align: center;
+                a {
+                    #anchorTagButton;
+                    margin-top: 5px;
+                }
+            }
+        } //shop with confidence
+        .section-3 {
+            background: @beniftsBg;
+            .section-main {
+                width: 90%;
+                margin: auto;
+                background: #ffff;
+                box-sizing: border-box;
+                padding: 0 20px;
+                @media @mobile{
+                    margin-top: 14px;
+                    padding: 0 10px;
+                }
+                .shop-with-content {
+                    >.row {
+                        box-sizing: border-box;
+                        padding: 20px 0;
+                        .content-steps {
+                            text-align: center;
+                            img{
+                                max-width: 49px;
+                                width: 49px;
+                                height: auto;
+                            }
+                            p {
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+        //soliatire advantage
+        .section-4 {
+            background: @beniftsBg;
+            .advantage-main {
+                width: 90%;
+                margin: auto;
+                background: #ffff;
+                box-sizing: border-box;
+                padding: 20px;
+                .solitaire-advan-content {
+                    .advantage-steps {
+                        .advantage-step {
+                            box-sizing: border-box;
+                            padding: 20px 0;
+                            >div{
+                                @media @mobile{
+                                    text-align: center;
+                                }
+                            }
+                        }
+                        .advantage-footer {
+                            .advantage-footer-btn{
+                                text-align: left;
+                                @media @mobile{
+                                    text-align: center;
+                                }
+                                a{
+                                    #anchorTagButton;
+                                }
+                            }
+                        }
+                    }
+                    .advantage-img-container{
+                        padding-top: 20px;
+                        img{
+                            width: 100%;
+                            object-fit: cover;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        //shop anytime
+        .section-5{
+            background: @beniftsBg;
+           .section-main{
+            width: 90%;
+            margin: auto;
+            box-sizing: border-box;
+            padding: 0 20px;
+            @media @mobile{
+                padding: 0px;
+            }
+            .shop-anytime-content{
+                    >div{
+                    text-align: center;
+                    height: 550px;
+                    @media @mobile{
+                        margin-bottom: 20px;
+                    }
+                    @media @tab{
+                        margin-bottom: 30px;
+                    }
+                        .content-main{
+                            background: #fff;
+                            box-sizing: border-box;
+                            padding: 20px;
+                            height: 100%;
+                            position: relative;
+                            .content{
+                                h3{
+                                    font-size: 20px;
+                                }
+                            }
+                            .content-footer{
+                                position: absolute;
+                                bottom: 30px;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                a{
+                                    #anchorTagButton;
+                                }
+                            }
+                        }
+                    }
+                }
+           }
+        }
+    }
+}

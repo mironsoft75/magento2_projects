@@ -1,0 +1,196 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14 Apr, 2016, 6:39:38 PM
+    Author     : mannu
+*/
+.admin__menu #menu-softprodigy-bluedart-bluedart.level-0 > a::before{
+    content: url('../images/blue_dart.png');
+}
+#shipment_creation legend {
+    display: block;
+    font-weight: bold;
+    margin-left: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.shipment_creation_fieldset {
+    float: right;
+    margin-bottom: 10px;
+    margin-left: 4px;
+    margin-right: 2px;
+    min-height: 250px;
+    width: 310px;
+}
+/*#shipment_creation {
+    width: 700px;
+    font-family: verdana;
+    font-size: 12px;
+    z-index: 401;
+    display: none;
+    opacity: 1;
+    background: #fff;
+    padding: 15px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 25%;
+}*/
+#shipment_creation_header {
+    margin-bottom: 20px;
+}
+#shipment_creation_logo {
+    float: right;
+}
+#shipment_creation_title {
+    float: left;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+.clearer {
+    clear: both;
+}
+.shipment_creation_part {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+#aramex_shipment label {
+    display: block;
+    float: left;
+    font-size: 11px;
+    padding: 2px;
+    width: 90px;
+}
+#shipment_creation input,
+#shipment_creation select {
+    display: block;
+    background: #fff none repeat scroll 0 0 padding-box;
+    border: 1px solid #c2c2c2;
+    border-radius: 1px;
+    box-sizing: border-box;
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    height: 32px;
+    line-height: 1.42857;
+    padding: 0 9px;
+    vertical-align: baseline;
+    width: 100%;
+}
+#aramex_shipment .text_short {
+    clear: both;
+    margin-bottom: 5px;
+    min-height: 28px;
+    width: 300px;
+}
+#shipment_infromation .text_short {
+    min-height: 35px;
+}
+#shipment_creation .little_description {
+    font-size: 9px;
+    color: #555;
+    float: right;
+    padding-right: 20px;
+    margin-bottom: 5px;
+    margin-top: 3px;
+}
+#general_details {
+    margin-bottom: -10px;
+}
+.shipment_creation_fieldset_big {
+    margin-bottom: 10px;
+}
+#shipment_creation_general_info {
+    background: #FFFFCC;
+}
+#shipment_infromation,
+#shipment_infromation2 {
+    float: left;
+}
+#general_details .text_short,
+#general_details textarea {
+    width: 300px;
+    float: left;
+    color: #000;
+}
+/*#ship_overlay {
+    z-index: 400;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    top: 0;
+    left: 0;
+}*/
+#aramex_items_table {
+    text-align: left;
+    border-collapse: collapse;
+}
+#aramex_items_table th {
+    text-align: left;
+    background: #ccc;
+}
+#aramex_items_table td,
+#aramex_items_table th {
+    border: 0 none;
+    padding: 1px 15px 3px 3px;
+}
+;
+#aramex_items_table .aramex_item_qty {
+    width: 20px;
+}
+#aramex_items_table .aramex_item_name {
+    width: 180px;
+}
+#aramex_items_table .aramex_item_options {
+    width: 20px;
+}
+#aramex_items_table .aramex_item_tobe_shipped {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+#aramex_shipment label.error {
+    display: inline-block;
+    float: none;
+    margin-left: 17px;
+    padding-left: 58px;
+    width: 200px;
+}
+#aramex_shipment a.error span,
+#aramex_shipment .required,
+#aramex_shipment .validation-advice {
+    color: #000000 !important;
+    font-weight: normal !important;
+}
+#aramex_shipment .error {
+    color: red !important;
+}
+#shipper_details textarea,
+#receiver_details textarea,
+#shipment_infromation textarea {
+    width: 190px;
+}
+#shipment_creation .aramex_input_items_qty {
+    width: 25px;
+}
+
+.blurdart_order_shipment_logo {
+    background: rgba(0, 0, 0, 0) url("../images/blue_dart_logo.png") no-repeat scroll center center;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 30%;
+}
+#shipment_creation > form{
+        margin-top: 10px;
+}
+#shipment_creation > form > fieldset {
+/*    margin-left: 20%;*/
+    width: 65%;
+}

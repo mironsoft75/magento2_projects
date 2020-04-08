@@ -1,0 +1,35 @@
+<?php
+// @codingStandardsIgnoreFile
+?>
+
+
+<div class="product-tryonvideo-form">
+    <form class="tryon-video-form"
+          action="" method="post"
+          id="product_tryonvideo_form">
+        <?= $block->getBlockHtml('formkey') ?>
+        <div class="tryonvideo-button">
+            <button type="submit" id="tryonvideo-button" class="action primary">
+                <span>View On Video Call</span>
+            </button>
+        </div>
+
+    </form>
+</div>
+
+<!-- Modal -->
+<div id="tryonVideoModal" style="display: none">
+   <?php
+    echo $this->getLayout()
+        ->createBlock('Magento\Cms\Block\Block')
+        ->setBlockId('video_store_process_block')
+        ->toHtml();
+    ?>
+</div>
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "catalogAddToTryOn": {}
+            }
+        }
+</script>

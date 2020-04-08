@@ -1,0 +1,21 @@
+{
+  "name": "codilar/body",
+  "description": "codilar body module",
+  "license": "proprietary",
+  "authors": [
+    {
+      "email": "vijayr@codilar.com",
+      "name": "Vijay"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Codilar\\Body\\": ""
+    }
+  }
+}

@@ -1,0 +1,123 @@
+:root body.cms-jewellery {
+    .page.messages {
+        margin: 0 auto;
+        padding: 0 20px;
+        margin-top: 20px;
+    }
+    .page-wrapper .page-header header.page-header .header.content .custom-menu-main .static-menu-items .static-menu-item.jewellery {
+        a {
+            color: @primary;
+        }
+    }
+    .column.main {
+        background: url('../images/jewellery-bck.png');
+        background-size: cover;
+    }
+    .jewellery-page-main {
+        margin-top: 10px;
+        padding-bottom: 40px;
+        @media @mobile {
+            margin-top: 0;
+            padding-top: 5px;
+        }
+        .jewellery-card {
+            position: relative;
+            margin-bottom: 25px;
+            @media @mobile {
+                margin-bottom: 20px;
+            }
+            img {
+                width: 100%;
+                max-width: 100%;
+                vertical-align: middle;
+                border-radius: 4px;
+                &.jwellery-img-lg {
+                    @media @mobile {
+                        display: none;
+                    }
+                }
+                &.jwellery-img-sm {
+                    @media @mobile {
+                        display: block;
+                    }
+                    @media @desktop {
+                        display: none;
+                    }
+                }
+            }
+            .card-content {
+                position: absolute;
+                top: 75%;
+                right: 15%;
+                transform: translate(20%, -50%);
+                text-align: right;
+                @media @mobile {
+                    top: initial;
+                    bottom: 15px;
+                    transform: initial;
+                    right: 20px;
+                }
+                .card-title {
+                    font-size: 45px;
+                    color: #fff; 
+                    @media @mobile {
+                        font-size: 14px;
+                    }               
+                }
+                .explore-btn {
+                    color: #fff;
+                    border: 1px solid #fff;
+                    padding: 7px 25px;
+                    margin-top: 16px;
+                    display: inline-block;
+                    border-radius: 5px;
+                    font-size: 20px;
+                    @media @mobile {
+                        padding: 5px 20px;
+                        margin-top: 5px;
+                        font-size: 10px;
+                    }
+                    &:hover {
+                        border-color: #a9a9a9;
+                    }
+                }
+            }
+        }
+        .video-store-form-main {
+            .title-text {
+                background: #F8F8F8;
+                padding: 10px;
+                margin-bottom: 20px;
+                @media @mobile {
+                    padding: 20px;
+                }
+                .title {
+                    margin: 0;
+                    font-size: 20px;
+                    text-align: center;
+                }
+            }
+            input, select, textarea {
+                background-color: #F8F8F8 !important;
+            }
+            .action-button {
+                @media @mobile {
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+    .popup-btn {
+        background: #39979B;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-transform: capitalize;
+        font-size: 18px;
+        display: inline-block;
+        margin-top: 20px;
+        @media @mobile {
+            font-size: 12px;
+        }
+    }
+}

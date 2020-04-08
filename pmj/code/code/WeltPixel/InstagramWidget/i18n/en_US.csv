@@ -1,0 +1,33 @@
+User,User
+Tagged,Tagged
+Location,Location
+"As they come from Instagram","As they come from Instagram"
+"Newest to oldest","Newest to oldest"
+"Oldest to newest","Oldest to newest"
+"Highest # of likes to lowest","Highest # of likes to lowest"
+"Lowest # likes to highest","Lowest # likes to highest"
+"Highest # of comments to lowest","Highest # of comments to lowest"
+"Lowest # of comments to highes","Lowest # of comments to highes"
+"Random order","Random order"
+Random,Random
+"WeltPixel InstagramWidget","WeltPixel InstagramWidget"
+"Instagram Client Id","Instagram Client Id"
+"Instagram Access Token","Instagram Access Token"
+Title,Title
+Description,Description
+"Container Background Color","Container Background Color"
+"Images Per Row","Images Per Row"
+Limit,Limit
+"Maximum number of Images to add","Maximum number of Images to add"
+SortBy,SortBy
+"Sort the images in a set order.","Sort the images in a set order."
+Resolution,Resolution
+"Size of the images to get.","Size of the images to get."
+"Feed Type","Feed Type"
+"Customize what Instafeed fetches","Customize what Instafeed fetches"
+"User Id","User Id"
+"Unique id of a user to get","Unique id of a user to get"
+"Tag Name","Tag Name"
+"Images with a specific tag","Images with a specific tag"
+"Location Id","Location Id"
+"Images from a location","Images from a location"

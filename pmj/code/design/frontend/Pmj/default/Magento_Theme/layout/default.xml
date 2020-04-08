@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header-wrapper">
+            <container name="logo-wrapper" label="Page logo" htmlTag="div" htmlClass="logo-main" after="-" />  
+            <container name="custom-menu" label="custom menu" htmlTag="div" htmlClass="custom-menu-main" after="logo-wrapper">
+                <block class="Magento\Cms\Block\Block" name="static_website_menu" before="-">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">static_website_menu</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+        <move element="logo" destination="logo-wrapper" />
+        <move element="copyright" destination="footer"/>
+        <referenceBlock name="header.panel" remove="true"/>
+        <referenceContainer name="header.right" remove="true" />
+        <referenceBlock name="top.search" remove="true" />
+        <referenceBlock name="navigation.sections" remove="true" />
+        <referenceBlock name="form.subscribe" remove="true"/>
+        <referenceContainer name="breadcrumb-menu-main" remove="true" />
+    </body>
+</page>

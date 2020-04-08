@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Codilar_Base::css/configurable.css"/>
+    </head>
+    <body>
+        <referenceContainer name="before.body.end">
+            <block class="Codilar\Base\Block\DefaultOptions"
+                   name="codilar_Base_configurable_defaults"
+                   template="Codilar_Base::configurable/default_options.phtml" />
+        </referenceContainer>
+    </body>
+</page>

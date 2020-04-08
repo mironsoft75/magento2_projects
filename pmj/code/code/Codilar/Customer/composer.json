@@ -1,0 +1,26 @@
+{
+  "name": "Codilar/Customer",
+  "description": "Codilar Customer Configurations",
+  "require": {
+    "php": "~5.6.5|7.0.2|7.0.4|~7.0.6",
+    "Codilar/sms": "0.0.1.*",
+    "codilar/magento2-messages":"1.0.0",
+    "Magento/Module-Customer":"2.0.13.*",
+    "Magento/Module-Checkout":"2.0.0.*",
+    "Magento/Module-config":"2.2.0.*"
+  },
+  "type": "Magento-Module",
+  "version": "1.0.2",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Magento\\Customer\\": ""
+    }
+  }
+}

@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright Â© 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="ccavenuepay" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>CCAvenue MCPG</label>
+                <comment><![CDATA[<fieldset class="form-wrapper" id="edit-ccavenue-main-panel"">
+                            <div class="fieldset-wrapper">
+                                <div id="ccavenue-main-panel-left" style="height:70px;">
+                                    <a href="https://www.ccavenue.com" target="_blank">
+                                        <img typeof="foaf:Image" src="https://www.ccavenue.com/images_shoppingcart/ccavenue_logo_india.png" alt="CCAvenues Logo">
+                                    </a><br><br> 
+                                    </div>
+                                <div id="ccavenue-main-panel-midd">
+                                    <h2 class="panel-title">CCAvenue MCPG </h2>
+                                    <!--<br>--> 
+                                    <a style="text-decoration: none; font-size:16px;font-family:Verdana, Geneva, sans-serif; color:#09F;">Module Version :</a>
+                                    <a id="module_version" style="text-decoration: none;color:#390; font-family:Verdana, Geneva, sans-serif; font-size:12px; font-weight:bold">2.2</a>                
+                                    <br> 
+ <a href="mailto:shoppingcart@ccavenue.com?Subject=India%20Shopping%20Cart%20-%20Magento%202.2" target="_top">Contact Support</a>
+                                </div>
+                                
+                        </div>
+                    </fieldset>
+                ]]>
+                </comment>
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="allow_multiple_currency" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Allow Multiple Currency</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="new_order_status" translate="label" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>New order status</label>
+                    <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                </field>
+                <field id="payment_success_order_status" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Payment Success order status</label>
+                    <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                </field>
+                <field id="allowed_currencies" translate="label" type="multiselect" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Allowed Currencies</label>
+                    <source_model>Magento\Ccavenuepay\Model\Adminhtml\Source\Currency</source_model>
+                </field>
+                <field id="payment_confirmation_mail" translate="label" type="select" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Payment Confirmation Mail</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="transaction_mode" translate="label" type="select" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Transaction Mode</label>
+                    <source_model>Magento\Ccavenuepay\Model\Adminhtml\Source\TransactionMode</source_model>
+                </field>
+                <field id="merchant_id" translate="label" type="text" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Merchant Id</label>
+                </field>
+                <field id="access_code" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Access Code</label>
+                </field>
+                <field id="encryption_key" translate="label" type="password" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Encryption Key</label>
+                </field>
+                <field id="min_order_total" translate="label" type="text" sortOrder="13" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Minimum Order Total</label>
+                </field>
+                <field id="max_order_total" translate="label" type="text" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Maximum Order Total</label>
+                </field>
+                <field id="debug" translate="label" type="select" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Debug</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="payment_action" translate="label" type="select" sortOrder="16" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Payment Action</label>
+                    <source_model>Magento\Ccavenuepay\Model\Adminhtml\Source\PaymentAction</source_model>
+                </field>
+                <field id="allowspecific" translate="label" type="allowspecific" sortOrder="17" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <label>Payment From Applicable Countries</label>
+                    <source_model>Magento\Payment\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="18" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <label>Payment From Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="19" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <label>Sort Order</label>
+                    <frontend_class>validate-number</frontend_class>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
+

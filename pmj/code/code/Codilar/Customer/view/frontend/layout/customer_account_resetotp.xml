@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Verify It For You</title>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Codilar\Customer\Block\ResetOtp" name="codilar_reset_otp" template="Codilar_Customer::form/reset_otp.phtml" cacheable="false"/>
+        </referenceContainer>
+    </body>
+</page>

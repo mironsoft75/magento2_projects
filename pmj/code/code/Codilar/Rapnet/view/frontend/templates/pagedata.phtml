@@ -1,0 +1,139 @@
+<?php
+/**
+ * @var $block \Magento\Catalog\Block\Product\View
+ */
+/** @var $pageBlock \Codilar\Rapnet\Block\PageData $pageBlock */
+/**
+ * @var $diamondBlock \Codilar\Rapnet\Block\Index
+ */
+$pageBlock = $block->getLayout()->createBlock('Codilar\Rapnet\Block\PageData');
+$collection = $pageBlock->getPageCollection();
+$diamondBlock = $block->getLayout()->createBlock('Codilar\Rapnet\Block\Index');
+$diamondAttributes = $diamondBlock->getDiamondAttributes();
+$request = $block->getRequest()->getParams();
+$productShapes = ['Round', 'Princess', 'Emerald', 'Radiant', 'Pear', 'Marquise', 'Oval', 'Asscher', 'Heart', 'Cushion Modified', 'Cushion Brilliant'];
+
+
+?>
+<?php if ($pageBlock->getPagerHtml()) : ?>
+    <div class="page-number toolbar bottom rapnet-table-top"><?php echo $pageBlock->getPagerHtml(); ?></div>
+<?php endif; ?>
+<div style="overflow-x:auto;">
+<table class="data table table-bordered" id="result_table">
+    <thead>
+    <tr>
+        <th scope="col" class="col shape">Shape</th>
+        <th scope="col" class="col image">Image</th>
+        <th scope="col" class="col wei">Wei.</th>
+        <th scope="col" class="col col">Col.</th>
+        <th scope="col" class="col clr">Clr.</th>
+        <th scope="col" class="col lab">Lab.</th>
+        <th scope="col" class="col cert">Cert.</th>
+        <th scope="col" class="col cut">Cut</th>
+        <th scope="col" class="col polish">Polish</th>
+        <th scope="col" class="col sym">Sym.</th>
+        <th scope="col" class="col fluor">Fluor.</th>
+        <th scope="col" class="col meas">Meas</th>
+        <th scope="col" class="col depth">Depth</th>
+        <th scope="col" class="col table-col">Table</th>
+        <th scope="col" class="col price">Price</th>
+        <th scope="col" class="col view"></th>
+
+    </tr>
+    </thead>
+    <tbody id="codilar-rapnet-body">
+    <?php foreach ($collection as $data) : ?>
+        <tr>
+            <td data-th="Shape" class="col shape"><?php echo $data['diamond_shape']; ?></td>
+
+
+            <td data-th="Image" class="col image">
+
+                <?php if ($data['diamond_has_image_file'] == "1") : ?>
+                    <img src="<?php echo $data['diamond_image_file_url']; ?>"
+                         alt="<?php echo $data['diamond_carats'] . " " . $data['diamond_shape'] . " " . $data['diamond_color'] . " " . $data['diamond_clarity']; ?>"
+                         title="<?php echo $data['diamond_carats'] . " " . $data['diamond_shape'] . " " . $data['diamond_color'] . " " . $data['diamond_clarity']; ?>"
+                         height="30"
+                         width="30"/>
+                <?php elseif (in_array($data['diamond_shape'], $productShapes)) : ?>
+                    <?php if (strpos($data['diamond_shape'], 'Cushion') === false) : ?>
+                        <img src="<?= $this->getViewFileUrl("Codilar_Rapnet::images/small/" . $data['diamond_shape'] . ".jpg"); ?>"
+                             alt="<?php echo $data['diamond_carats'] . " " . $data['diamond_shape'] . " " . $data['diamond_color'] . " " . $data['diamond_clarity']; ?>"
+                             title="<?php echo $data['diamond_carats'] . " " . $data['diamond_shape'] . " " . $data['diamond_color'] . " " . $data['diamond_clarity']; ?>"
+                             height="30"
+                             width="30"/>
+                    <?php elseif ($data['diamond_shape']) : ?>
+                        <img src="<?= $this->getViewFileUrl("Codilar_Rapnet::images/small/Cushion.jpg"); ?>"
+                             alt="<?php echo $data['diamond_carats'] . " " . $data['diamond_shape'] . " " . $data['diamond_color'] . " " . $data['diamond_clarity']; ?>"
+                             title="<?php echo $data['diamond_carats'] . " " . $data['diamond_shape'] . " " . $data['diamond_color'] . " " . $data['diamond_clarity']; ?>"
+                             height="30"
+                             width="30"/>
+                    <?php endif; ?>
+                <?php else : ?>
+                    <?= "NA" ?>
+                <?php endif; ?>
+            </td>
+
+
+            <td data-th="Wei" class="col wei"><?php echo $data['diamond_carats']; ?></td>
+            <td data-th="Col" class="col col"><?php echo $data['diamond_color']; ?></td>
+            <td data-th="Clr" class="col clr"><?php echo $data['diamond_clarity']; ?></td>
+            <?php if ($data['diamond_has_cert_file'] == "1") : ?>
+                <td data-th="Lab" class="col lab.">
+                    <a href='http://www.diamondselections.com/GetCertificate.aspx?diamondid=<?= $data['diamond_id'] ?>'
+                       target="_blank">
+                        <?= $data['diamond_lab'] ?>
+                    </a>
+                </td>
+            <?php else : ?>
+                <td data-th="Lab"><?= $data['diamond_lab'] ?></td>
+            <?php endif; ?>
+            <td data-th="Cert" class="col cert">
+                <?php if ($data['diamond_lab'] == "IGI") : ?>
+                    <a href='http://www.igiworldwide.com/verify.php?r=<?= $data['diamond_certificate_num'] ?>'
+                       target="_blank"><?php echo $data['diamond_certificate_num']; ?>
+                    </a>
+                <?php elseif ($data['diamond_lab'] == "HRD") : ?>
+                    <a href='https://my.hrdantwerp.com/?record_number=<?= $data['diamond_certificate_num'] ?>'
+                       target="_blank"><?php echo $data['diamond_certificate_num'] ?>
+                    </a>
+                <?php else : ?>
+                    <a href='http://www.diamondselections.com/GetCertificate.aspx?diamondid=<?= $data['diamond_id'] ?>'
+                       target="_blank"><?php echo $data['diamond_certificate_num'] ?>
+                    </a>
+                <?php endif; ?>
+            </td>
+            <td data-th="Cut" class="col cut"><?php echo $data['diamond_cut']; ?></td>
+            <td data-th="Polish" class="col polish"><?php echo $data['diamond_polish']; ?></td>
+            <td data-th="Sym" class="col sym"><?php echo $data['diamond_symmetry']; ?></td>
+            <td data-th="Fluor" class="col fluor"><?php echo $data['diamond_fluoresence']; ?></td>
+            <td data-th="Meas" class="col meas"><?php echo $pageBlock->getMeasurement($data) ?></td>
+            <td data-th="Depth" class="col depth"><?php echo $data['diamond_depth_percent']; ?></td>
+            <td data-th="Table" class="col table-col"><?php echo $data['diamond_table_percent']; ?></td>
+            <td data-th="Price"
+                class="col price"><?= $pageBlock->getPrice($data['diamond_price']); ?></td>
+            <td data-th="col" class="col view">
+                <a href="<?php echo $block->getBaseUrl() . 'rapnet/product/view/id/' . $data['diamond_id']; ?>"
+                   class="add-to-view">
+                    <span>View</span>
+                </a>
+            </td>
+
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+</div>
+<?php if ($pageBlock->getPagerHtml()) : ?>
+    <div class="page-number toolbar bottom rapnet-table-bottom pmj"><?php echo $pageBlock->getPagerHtml(); ?></div>
+<?php endif; ?>
+<script>
+    // require(['jquery'], function ($) {
+    //     $(document).ready(function () {
+    //         let countValue =   $(".rapnet-table-top .toolbar-number").html().trim().split(' ');
+    //         let countText =  "Results Count:"+countValue[5];
+    //         $(".rapnet-table-top .toolbar-number").html(countText);
+    //
+    //     });
+    // });
+</script>

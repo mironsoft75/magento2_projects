@@ -1,0 +1,112 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Product additional attributes template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Attributes
+ */
+?>
+<?php
+/**
+ * @var $_helper \Magento\Catalog\Helper\Output
+ */
+$_helper = $this->helper('Magento\Catalog\Helper\Output');
+$_product = $block->getProduct();
+
+// @codingStandardsIgnoreFile
+/** @var $pageBlock \Codilar\Rapnet\Block\RapnetProducts $rapnetProductsBlock */
+$rapnetProductsBlock = $block->getLayout()->createBlock('Codilar\Rapnet\Block\RapnetProducts');
+$currentProduct = $rapnetProductsBlock->getCurrentProduct();
+?>
+<?php if ($_additional = $block->getAdditionalData()): ?>
+    <div class="attribute-option-main additional-attributes-wrapper table-wrapper">
+        <table class="data table additional-attributes" id="product-attribute-specs-table">
+            <?php if ($currentProduct->getAttributeSetId() != $rapnetProductsBlock->getAttributeId()) : ?>
+            <caption class="table-caption"><?= /* @escapeNotVerified */
+                __('Product Details') ?></caption>
+            <?php endif;?>
+            <tbody>
+            <?php foreach ($_additional as $_data): ?>
+                <tr>
+                    <th class="col label" scope="row"><?= $block->escapeHtml(__($_data['label'])) ?></th>
+                    <td class="col data"
+                        data-th="<?= $block->escapeHtml(__($_data['label'])) ?>"><?= /* @escapeNotVerified */
+                        $_helper->productAttribute($_product, $_data['value'], $_data['code']) ?></td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+<?php endif; ?>
+
+<!-- metal details start -->
+<!-- checking for rapnet products -->
+<?php if ($currentProduct->getAttributeSetId() != $rapnetProductsBlock->getAttributeId()) : ?>
+<?php if ($_additional = $block->getAdditionalData()): ?>
+    <div class="attribute-option-main" id="product-info-metal-details">
+        <table class="table">
+            <caption class="table-caption"><?= /* @escapeNotVerified */
+                __('Metal Details') ?></caption>
+            <tbody>
+            <?php foreach ($_additional as $_data): ?>
+                <?php
+                if ($_data['code'] == 'metal_type') {
+                    $metal_type = $_helper->productAttribute($_product, $_data['value'], $_data['code']);
+                }
+                if ($_data['code'] == 'metal_color') {
+                    $metal_color = $_helper->productAttribute($_product, $_data['value'], $_data['code']);
+                }
+                if ($_data['code'] == 'net_weight') {
+                    $metal_netweight = $_helper->productAttribute($_product, $_data['value'], $_data['code']);
+                }
+                if ($_data['code'] == 'metal_karat') {
+                    $metal_carat = $_helper->productAttribute($_product, $_data['value'], $_data['code']);
+                }
+                if ($_data['code'] == 'weight_unit') {
+                    $metal_unit = $_helper->productAttribute($_product, $_data['value'], $_data['code']);
+                }
+                ?>
+            <?php endforeach; ?>
+            <?php if(isset($metal_carat) && isset($metal_type)): ?>
+                <tr>
+                        <th>Metal Type</th>
+                        <td><?= $block->escapeHtml(__($metal_carat.$metal_type)) ?></td>
+                </tr>
+            <?php endif; ?>
+            <?php if(isset($metal_color)): ?>
+                <tr>
+                    <th>Metal Color</th>
+                    <td><?= $block->escapeHtml(__($metal_color)) ?></td>
+                </tr>
+            <?php endif; ?>
+            <?php if(isset($metal_netweight) && isset($metal_unit)): ?>
+                <tr>
+                    <th>Metal weight</th>
+                    <td><?= $block->escapeHtml(__($metal_netweight.$metal_unit)) ?></td>
+                </tr>
+            <?php endif; ?>                
+            </tbody>
+        </table>
+    </div>
+<?php endif; ?>
+<?php endif; ?>
+
+<!-- metal details end -->
+
+
+<!---diamond details start-->
+<div class="attribute-option-main" id="product-info-diamond-details">
+</div>
+<!-- diamond details end -->
+
+
+<!-- price break start -->
+<div class="attribute-option-main" id="product-info-price-breakup">
+</div>
+<!-- price break end -->

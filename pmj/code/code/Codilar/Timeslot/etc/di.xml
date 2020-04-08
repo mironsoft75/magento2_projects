@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\Timeslot\Api\TimeslotRepositoryInterface"
+                type="Codilar\Timeslot\Model\TimeslotRepository" />
+
+    <preference for="Codilar\Timeslot\Api\TimeslotManagementInterface"
+                type="Codilar\Timeslot\Model\TimeslotManagement" />
+
+    <preference for="Codilar\Timeslot\Api\SlotsByDayInterface"
+                type="Codilar\Timeslot\Model\SlotsByDay" />
+</config>

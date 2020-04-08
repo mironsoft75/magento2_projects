@@ -1,0 +1,63 @@
+<?php
+/**
+ * @var $block \Magento\Catalog\Block\Product\View
+ */
+/**
+ * @var $commonBlock \Codilar\Base\Block\Common
+ */
+$commonBlock= $block->getLayout()->createBlock('Codilar\Base\Block\Common');
+$_product = $commonBlock->getCurrentProduct();
+$currencySymbol = $commonBlock->getCurrentCurrencySymbol();
+$diamondDetails = $commonBlock->getDiamondDetails($_product);
+$goldDetails = $commonBlock->getGoldDetails($_product);
+if($goldDetails){
+    $makingCharges = (array_key_exists('making_charges',$goldDetails)) ? $goldDetails['making_charges'] : "0";
+    $diamondPrice = $diamondDetails['diamond_price'];
+    $metalTotalAmount = (array_key_exists('metal_total_amount',$goldDetails)) ? $goldDetails['metal_total_amount'] : "";
+    $subTotal = $diamondPrice+$metalTotalAmount;
+    unset($diamondDetails['diamond_price']);
+}
+?>
+<?php if($diamondDetails && $goldDetails): ?>
+<div class="price-breakup-main-box">
+    <table class="table">
+        <caption class="table-caption"><?=/* @escapeNotVerified */__('Price Break Up')?></caption>
+        <tbody>
+        <?php
+        $metalType = (array_key_exists('metal_type',$goldDetails)) ? $goldDetails['metal_type'] : "";
+        $metalKarat = (array_key_exists('metal_karat',$goldDetails)) ? $goldDetails['metal_karat'] : "";
+        $metalRate = (array_key_exists('metal_rate',$goldDetails)) ? $goldDetails['metal_rate'] : "";
+        $metalWeight = (array_key_exists('metal_weight',$goldDetails)) ? $goldDetails['metal_weight'] : "";
+        $metalAmount = (array_key_exists('metal_amount',$goldDetails)) ? $goldDetails['metal_amount'] : "";
+        ?>
+        <tr>
+            <th><?= $block->escapeHtml(__($metalKarat." ".$metalType)) ?></th>
+            <td><?= $block->escapeHtml(__($currencySymbol.number_format($metalAmount,2))) ?></td>
+        </tr>
+          <?php foreach($diamondDetails as $diamondDetail): ?>
+              <?php
+              $stoneName = (array_key_exists('stone_name_for_customer',$diamondDetail)) ? $diamondDetail['stone_name_for_customer'] : "";
+              $stoneQuality = (array_key_exists('diamond_quality',$diamondDetail)) ? $diamondDetail['diamond_quality'] : "";
+              $stoneRate = (array_key_exists('stone_rate',$diamondDetail)) ? $diamondDetail['stone_rate'] : "";
+              $settingType = (array_key_exists('stone_setting_type',$diamondDetail)) ? $diamondDetail['stone_setting_type'] : "";
+              $stonePcs = (array_key_exists('stone_pcs',$diamondDetail)) ? $diamondDetail['stone_pcs'] : "";
+              $stoneTotalWeight = (array_key_exists('stone_total_wt',$diamondDetail)) ? $diamondDetail['stone_total_wt'] : "";
+              $stoneTotalPrice = (array_key_exists('stone_total_price',$diamondDetail)) ? $diamondDetail['stone_total_price'] : "";
+              ?>
+              <tr>
+                  <th><?= $block->escapeHtml(__($stoneName)) ?></th>
+                  <td><?= $block->escapeHtml(__($currencySymbol.number_format($stoneTotalPrice,2))) ?></td>
+              </tr>
+          <?php endforeach; ?>
+        <tr>
+            <th><?= $block->escapeHtml(__("Making Charges")) ?></th>
+            <td><?= $block->escapeHtml(__($currencySymbol.number_format($makingCharges,2))) ?></td>
+        </tr>
+  </tbody>
+</table>
+</div>
+<?php elseif($_product->getTypeId() == "configurable"): ?>
+    <div>
+
+    </div>
+<?php endif; ?>

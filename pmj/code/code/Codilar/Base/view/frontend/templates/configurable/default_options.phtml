@@ -1,0 +1,18 @@
+<?php
+/**
+ * @var $block Codilar\Base\Block\DefaultOptions
+ */
+?>
+<?php if($block->getProductTypeId() == "configurable"): ?>
+    <script type="text/x-magento-init">
+        {
+            "*": {
+                "Codilar_Base/js/configurable/product_data": {
+                    "productData": <?php echo $block->getProductDataJson() ?>,
+                    "diamondUrl": "<?php echo $block->getDiamondDetailsUrl(); ?>",
+                    "priceBreakUpUrl": "<?php echo $block->getPriceBreakUpDetailsUrl(); ?>"
+                }
+            }
+        }
+    </script>
+<?php endif; ?>

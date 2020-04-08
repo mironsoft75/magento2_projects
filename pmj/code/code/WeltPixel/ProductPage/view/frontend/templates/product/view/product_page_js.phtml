@@ -1,0 +1,11 @@
+<?php $_helper = $this->helper('WeltPixel\ProductPage\Helper\Data'); ?>
+<?php $positionProductInfo = $_helper->getPositionProductInfo($_helper->getStoreId()) ?>
+<div id="swipeOff"></div>
+<script>
+require(['jquery', 'productPage', 'mage/mage', 'mage/ie-class-fixer', 'mage/gallery/gallery'],
+	function ($) {
+        window.positionProductInfo = '<?php echo $positionProductInfo ?>';
+		productPage.load();
+	}
+);
+</script>

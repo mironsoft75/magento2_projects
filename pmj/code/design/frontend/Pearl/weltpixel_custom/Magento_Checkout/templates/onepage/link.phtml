@@ -1,0 +1,36 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+?>
+<?php if ($block->isPossibleOnepageCheckout()):?>
+    <button type="button"
+            data-role="proceed-to-checkout"
+            title="<?= /* @escapeNotVerified */ __('Proceed to Checkout') ?>"
+            data-mage-init='{"Magento_Checkout/js/proceed-to-checkout":{"checkoutUrl":"<?= /* @escapeNotVerified */ $block->getCheckoutUrl() ?>"}}'
+            class="action primary checkout<?= ($block->isDisabled()) ? ' disabled' : '' ?>"
+            <?php if ($block->isDisabled()):?>disabled="disabled"<?php endif; ?>>
+        <span><?= /* @escapeNotVerified */ __('Proceed to Checkout') ?></span>
+    </button>
+<?php endif?>
+<script>
+    require([
+        'jquery'
+    ], function ($) {
+        $(document).ready(function () {
+            // $("#discount-coupon-form button.primary").attr("disabled", true);
+            // $('#discount-coupon-form input[name="coupon_code"]').keyup(function(){
+            // if($('#discount-coupon-form input[name="coupon_code"]').val()=="")
+            //     $("#discount-coupon-form button.primary").attr("disabled", true);
+            // else
+            //     $("#discount-coupon-form button.primary").removeAttr("disabled");
+            // });
+            $("button.primary.checkout").click(function () {
+                jQuery('body').loader('show');
+            });
+        });
+    });
+</script>

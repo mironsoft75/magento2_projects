@@ -1,0 +1,27 @@
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="other_settings">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Other Settings</item>
+            </item>
+        </argument>
+            <fieldset name="body">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="label" xsi:type="string" translate="true">Body</item>
+                        <item name="collapsible" xsi:type="boolean">true</item>
+                        <item name="sortOrder" xsi:type="string">3</item>
+                    </item>
+                </argument>
+                <field name="body_script">
+                    <argument name="data" xsi:type="array">
+                        <item name="config" xsi:type="array">
+                            <item name="label" xsi:type="string" translate="true"> Miscellaneous Script Area</item>
+                            <item name="formElement" xsi:type="string">textarea</item>
+                            <item name="notice" xsi:type="string" translate="true">This will be displayed just after the body start tag.</item>
+                        </item>
+                    </argument>
+                </field>
+            </fieldset>
+    </fieldset>
+</form>

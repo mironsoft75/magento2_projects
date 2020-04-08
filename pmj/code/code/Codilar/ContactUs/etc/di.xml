@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Contact\Controller\Index\Post"
+                type="Codilar\ContactUs\Controller\Index\Post" />
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="magento_contactus_grid_data_source" xsi:type="string">Codilar\ContactUs\Model\ResourceModel\ContactUs\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Codilar\ContactUs\Model\ResourceModel\ContactUs\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magento_contact_us</argument>
+            <argument name="resourceModel" xsi:type="string">Codilar\ContactUs\Model\ResourceModel\ContactUs</argument>
+        </arguments>
+    </virtualType>
+</config>

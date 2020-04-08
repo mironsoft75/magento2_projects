@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="Codilar\Rapnet\Api\UrlRewriteInterface" type="Codilar\Rapnet\Model\UrlRewriteRepository" />
+
+    <preference for="Codilar\Rapnet\Api\Data\RapnetInterface" type="Codilar\Rapnet\Model\Rapnet" />
+    <preference for="Codilar\Rapnet\Api\RapnetRepositoryInterface" type="Codilar\Rapnet\Model\RapnetRepository" />
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="codilar_rapnet_urlrewrite_grid_data_source" xsi:type="string">Codilar\Rapnet\Model\ResourceModel\UrlRewrite\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Codilar\Rapnet\Model\ResourceModel\UrlRewrite\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">codilar_rapnet_url_rewrite</argument>
+            <argument name="resourceModel" xsi:type="string">Codilar\Rapnet\Model\ResourceModel\UrlRewrite</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="codilar_rapnet_rapnetproducts_grid_data_source" xsi:type="string">Codilar\Rapnet\Model\ResourceModel\Rapnet\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Codilar\Rapnet\Model\ResourceModel\Rapnet\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">codilar_rapnet</argument>
+            <argument name="resourceModel" xsi:type="string">Codilar\Rapnet\Model\ResourceModel\Rapnet</argument>
+        </arguments>
+    </virtualType>
+</config>

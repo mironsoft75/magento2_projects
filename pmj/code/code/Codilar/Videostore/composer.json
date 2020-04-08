@@ -1,0 +1,21 @@
+{
+  "name": "codilar/videostore",
+  "description": "codilar videostore module",
+  "license": "proprietary",
+  "authors": [
+    {
+      "email": "navaneeth.v@codilar.com",
+      "name": "Navaneeth"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Codilar\\Videostore\\": ""
+    }
+  }
+}

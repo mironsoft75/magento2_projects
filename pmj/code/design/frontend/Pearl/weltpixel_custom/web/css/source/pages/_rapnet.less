@@ -1,0 +1,403 @@
+/* body.diamondsearch-index-index {
+    #search-diamonds #search-diamonds-form {
+        @media @desktop {
+            margin-bottom: 20px;
+        }
+    }
+}    
+.diamondsearch-index-rapnetsearch, .diamondsearch-index-index {
+    #search-diamonds {
+        max-width: 900px;
+        margin: 0 auto;
+        #search-diamonds-form {
+            margin-bottom: 0;
+            .search_section {
+                display: inline-flex;
+                flex-wrap: wrap;
+                padding-bottom: 0;
+                > .title {
+                    text-align: center;
+                    margin-top: 15px;
+                    width: 100%;
+                    h2 {
+                        margin: 0;
+                        font-size: 30px;
+                        font-weight: 900;
+                    }
+                }
+                .shape.section {
+                    width: 100%;
+                    background: none;
+                    border: none;
+                    margin: 0;
+                    padding-left: 0;
+                    padding-right: 0;
+                    .slider_wrapper {
+                        padding: 0;
+                    }
+                    .title {
+                        text-align: center
+                    }
+                    ul {
+                        display: inline-flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        li {
+                            box-sizing: initial;
+                            min-height: auto;
+                            min-width: 60px;
+                            padding: 5px;
+                            width: auto !important;
+                            margin: 1px;
+                            background: rgba(245, 245, 245, 0.6);
+                            &:before {
+                                display: none;
+                            }
+                            b {
+                                font-size: 12px;
+                                padding-bottom: 0;
+                            }
+                            span {
+                                width: 30px;
+                                height: 30px;
+                                background-size: 400px;
+                            }
+                            &.round span {
+                                background-position: 4px -1px;
+                            }
+                            &.princess span {
+                                background-position: -34px 0px;
+                            }
+                            &.emerald span {
+                                background-position: -74px 1px;
+                            }
+                            &.radiant span {
+                                background-position: -113px 0px;
+                            }
+                            &.cushion span {
+                                background-position: -150px 1px;
+                            }
+                            &.pear span {
+                                background-position: -187px 0px;
+                            }
+                            &.marquise span {
+                                background-position: -225px 0px;
+                            }
+                            &.oval span {
+                                background-position: -263px 0px;
+                            }
+                            &.asscher span {
+                                background-position: -302px 1px;
+                            }
+                            &.heart span {
+                                background-position: -340px 1px;
+                            }
+                            &:after {
+                                background: @primary;
+                            }
+                            &.selected {
+                                background: @primary;
+                            }
+                        }
+                    }
+                }
+                .certificate.section {
+                    .slider_wrapper {
+                        padding: 0;
+                    }
+                }
+                .section {
+                    padding: 10px;
+                    margin: 0;
+                    min-height: auto;
+                    margin-right: 2px;
+                    margin-top: 4px;
+                    width: calc(~"50% - 2px");
+                    background: rgba(245, 245, 245, 0.6);
+                    border-bottom: 2px solid rgba(207, 202, 202, 0.7);
+                    @media @mobile {
+                        width: 100%;
+                        margin-right: 0;
+                    }
+                }
+                .section:nth-child(even) {
+                    margin-left: 2px;
+                    margin-right: 0;
+                    @media @mobile {
+                        margin-left: 0;
+                    }
+                }
+                .ui-slider-horizontal {
+                    height: 3px;
+                    border: none;
+                }
+                .ui-slider-legend p span {
+                    top: -16px;
+                }
+                .ui-slider {
+                    .ui-slider-val {
+                        margin-top: 15px;
+                        width: 70px;
+                        margin-bottom: 0;
+                    }
+                    .ui-slider-handle {
+                        width: 14px;
+                        height: 14px;
+                        @media @mobile {
+                            margin-left: 0;
+                            top: -6px;
+                        }
+                    }
+                    .ui-state-focus {
+                        background: @primary !important;
+                    }
+                }
+                .title {
+                    font-size: 15px;
+                }
+                .options_control {
+                    margin: 10px auto;
+                    background: @primary;
+                }
+                .slider_wrapper ul {
+                    margin-bottom: 0;
+                }
+                > .more_options {
+                    display: flex;
+                    width: 100%;
+                    flex-wrap: wrap;
+                    &.hideops {
+                        left: 0;
+                    }
+                }
+            }
+            button.ds_button {
+                background: @primary;
+                &.search {
+                    padding-right: 18px;
+                }
+            }
+        }
+    }
+    #search_results {
+        #result_table thead tr th {
+            background: @primary;
+        }
+        table a {
+            color: @primary;
+        }
+        .pagination .active a {
+            background-color: @primary;
+        }
+    }
+}
+
+.diamondsearch-product-view {
+    .diamond-guide-main {
+        text-align: right;
+        .diamond-guide-btn {
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+} */
+
+/*----------------------New changes---------------------*/
+.pointer-n
+{
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.5 !important;
+}
+.rapnet-index-index #search-diamonds #search-diamonds-form .search_section .certificate.section .slider_wrapper
+{
+  padding-top: 10px !important;
+}
+.rapnet-index-index #search-diamonds #search-diamonds-form
+{
+  .price.section,.carat.section,.certificate.cut.section,
+  .certificate.color.section,.certificate.clarity.section,.certificate.section,
+  .certificate.polish.section,.certificate.symmetry.section,.tableper.section,
+  .depth.section,.certificate.fluoresence.section
+  {
+    text-align: left !important;
+  }
+}
+.rapnet-table-top
+{
+  margin-bottom: 5px;
+  .items.pages-items
+  {
+    display: none;
+  }
+  //.toolbar-number {
+  //  &:before {
+  //    content: 'Results Count:';
+  //  }
+  //}
+}
+.search-tool-tip
+{
+  display: none;
+}
+.pmj-tooltip {
+  background: #d3d3d3;
+  border-radius: 20px;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  text-align: center;
+  //position: absolute;
+  //left: 13%;
+  //top: 9%;
+  color: #fff;
+
+  &:hover~.search-tool-tip
+  {
+    display: block;
+    width: 345px !important;
+    max-width: 345px !important;
+    min-width: 250px !important;
+    position: absolute;
+    padding: 8px;
+    z-index: 5;
+    background-color: white;
+    border: #e9e9e9 1px solid;
+    border-radius: 6px;
+    color: #33363e;
+    top: 25%;
+    left: 15%;
+    font-size: 12px;
+    pointer-events: none;
+  }
+  &:hover~.search-tool-tip.shape-pmj
+  {
+    display: block;
+    width: 345px !important;
+    max-width: 345px !important;
+    min-width: 250px !important;
+    position: absolute;
+    padding: 8px;
+    z-index: 5;
+    background-color: white;
+    border: #e9e9e9 1px solid;
+    border-radius: 6px;
+    color: #33363e;
+    top: 28%;
+    left: 53%;
+    font-size: 12px;
+    pointer-events: none;
+  }
+}
+.rapnet-table-bottom
+{
+  .toolbar-amount
+  {
+    display: none !important;
+  }
+}
+.rapnet-product-thumb-img {
+  width: 200px;
+}
+@media (min-width: 768px)
+{
+  .rapnet-index-index #search_results #result_table tr th.price, .rapnet-index-index #search_results #result_table tr th.shape, .rapnet-index-index #search_results #result_table tr th.meas {
+    width: 100px;
+  }
+}
+@media (max-width: 767px){
+  .rapnet-index-index #search-diamonds #search-diamonds-form
+  {
+    .price.section,.carat.section,.certificate.cut.section,
+    .certificate.color.section,.certificate.clarity.section,.certificate.section,
+    .certificate.polish.section,.certificate.symmetry.section,.tableper.section,
+    .depth.section,.certificate.fluoresence.section
+    {
+      text-align: center !important;
+    }
+  }
+  .pmj-tooltip {
+    background: #d3d3d3;
+    border-radius: 20px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    text-align: center;
+    //position: absolute;
+    //left: 13%;
+    //top: 9%;
+    color: #fff;
+
+    &:hover~.search-tool-tip
+    {
+      display: block;
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 100% !important;
+      position: absolute;
+      padding: 8px;
+      z-index: 5;
+      background-color: white;
+      border: #e9e9e9 1px solid;
+      border-radius: 6px;
+      color: #33363e;
+      top: 14%;
+      left: 0;
+      right: 0;
+      font-size: 11px;
+      pointer-events: none;
+    }
+    &:hover~.search-tool-tip.shape-pmj
+    {
+      display: block;
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 100% !important;
+      position: absolute;
+      padding: 8px;
+      z-index: 5;
+      background-color: white;
+      border: #e9e9e9 1px solid;
+      border-radius: 6px;
+      color: #33363e;
+      top: 14%;
+      left: 0;
+      right: 0;
+      font-size: 11px;
+      pointer-events: none;
+    }
+  }
+  body.catalog-product-view #maincontent .product.info.detailed .rapnet-pro-page .item.title {
+    margin: 0 2px !important;
+  }
+  :root body.catalog-product-view #maincontent .product.info.detailed .rapnet-pro-page .item.title .data.switch
+  {
+    font-size: 12px !important;
+  }
+
+
+}
+@media (max-width: 768px) and (min-width:768px)
+{
+  .pmj-tooltip:hover ~ .search-tool-tip
+  {
+    top: 8%;
+  }
+  .rapnet-index-index #search_results #result_table tr th.price, .rapnet-index-index #search_results #result_table tr th.shape {
+    width: 100px;
+  }
+  .rapnet-index-index #search_results #result_table thead tr th
+  {
+    width: 75px;
+  }
+  #search_results
+  {
+    padding: 0 10px;
+  }
+}

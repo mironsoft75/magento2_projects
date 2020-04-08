@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::content">
+                    <resource id="Codilar_CustomiseJewellery::custom" title="Codilar Customise Jewellery"
+                              sortOrder="20">
+                        <resource id="Codilar_CustomiseJewellery::customise_jewellery"
+                                  title="CodilarCodilar Customise Jewellery" translate="title" sortOrder="50"/>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

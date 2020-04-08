@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="payment_method_assign_data">
+        <observer name="ccavenuepay_data_assign" instance="Magento\Ccavenuepay\Observer\DataAssignObserver" />
+    </event>
+    <event name="payment_method_is_active">
+        <observer name="ccavenuepay_available" instance="Magento\Ccavenuepay\Observer\CheckPaymentAvailabilityObserver" />
+    </event>
+</config>

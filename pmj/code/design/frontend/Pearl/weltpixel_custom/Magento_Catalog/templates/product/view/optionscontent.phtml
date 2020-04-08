@@ -1,0 +1,280 @@
+<?php
+/** @var \Codilar\Core\Helper\Product $productHelper */
+$productHelper = $this->helper("Codilar\Core\Helper\Product");
+/**
+ * @var $block \Magento\Catalog\Block\Product\View\Description
+ */
+$_product = $block->getProduct();
+$attribute_code = "metal_karat";
+$_attribute_value = "14k";
+$_attribute = $_product->getResource()->getAttribute($attribute_code);
+if($_attribute){
+    $_attribute_value = $_attribute->getFrontend()->getValue($_product);
+}
+/**
+ * @var $blockObj \Codilar\Base\Block\DefaultOptions
+ */
+$blockObj= $block->getLayout()->createBlock('Codilar\Base\Block\DefaultOptions');
+?>
+<div class="product-options">
+
+    <div class="tab">
+        <button class="action tablinks diamond-tab hide" onclick="openTab(event, 'diamond-quality-tab')"><?php echo __('Diamond Quality'); ?></button>
+        <button class="action tablinks metal-tab hide" onclick="openTab(event, 'metal-tab')"><?php echo __('Metal'); ?></button>
+        <button class="action tablinks ring-size-tab hide" onclick="openTab(event, 'ring-size-tab')"><?php echo __('Size'); ?></button>
+    </div>
+    <div class="tab-content">
+        <div id="diamond-quality-tab" class="tabcontent">
+            <div id="diamond-quality-options-main"></div>
+            <div class="diamond-guide-main">
+                <a target="_blank" href="<?= $block->getUrl('diamond-buying-guide/'); ?>" class="diamond-guide-btn">
+                    <span class="icon"><img src="<?= $block->getViewFileUrl('images/diamond-guide.png'); ?>" /></i></span>
+                    <span><?= __('Diamond guide'); ?></span>
+                </a>
+            </div>
+        </div>
+
+        <div id="metal-tab" class="tabcontent"></div>
+
+        <div id="ring-size-tab" class="tabcontent">
+            <div class="option">
+                <select class="ring-size-select"></select>
+            </div>
+            <div class="chart">
+                <?php echo $block->getLayout()->createBlock('Codilar\SizeGuide\Block\Product\View\Size')->setTemplate('Codilar_SizeGuide::product/view/size.phtml')->toHtml(); ?>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    require(['jquery', 'mage/gallery/gallery', 'Magento_ConfigurableProduct/js/configurable'], function($, gallery) {
+        var metalKarat = "<?= $_attribute_value; ?>";
+        var diamondQualityValues = [];
+        var customOptions        = {};
+        var tabtitleIdLabel      = 'tab';
+        var productType          = '<?php echo $productHelper->getProductFromRegistry()->getTypeId(); ?>';
+        var diamondQualityTitle  = 'diamond quality';
+        var tabTitleContainer = $('.product-options .tab');
+        var tabcontentContainer = $('.product-options .tabcontent');
+        var options = $('#product-options-wrapper > .fieldset > .field');
+        var defaultProductData = <?= $blockObj->getDefaultOptionsJson() ?>;
+        
+        createTabContentDiamond = function(value, label, selectorId, selectedStatus) {
+            let activeClass = '';
+            if(selectedStatus) {
+                activeClass = 'active';
+            }
+            var html = '<div onclick="addActiveClass(this); setTheOptionValue('+selectorId+','+value+')" data-value="'+value+'" class="option '+activeClass+'">'+
+                            '<div class="radio"><i class="icon-line-check"></i></div>'+
+                            '<div class="icon">'+
+                                '<img src="<?= $block->getViewFileUrl('images/round.png'); ?>" />'+
+                            '</div>'+
+                            '<p class="name">'+label+'</p>'+
+                        '</div>';
+            $('.product-options #diamond-quality-options-main').append(html);
+        }
+
+        createTabContentMetal = function(value, label, selectorId, selectedStatus) {
+            let activeClass = '';
+            if(selectedStatus) {
+                activeClass = 'active';
+            }
+            var html = '<div onclick="addActiveClass(this); setTheOptionValue('+selectorId+','+value+')" data-value="'+value+'" class="option '+activeClass+' '+label.toLowerCase()+'"z>'+
+                            '<p class="label"></p>'+
+                            '<p class="name">'+label+'</p>'+
+                            '<p class="value">'+metalKarat+'</p>'
+                        '</div>';
+            $('.product-options #metal-tab').append(html);
+        }
+
+        createTabContentRingSize = function(value, label, selectorId, selectedStatus) {
+            let selected = '';
+            if(selectedStatus) {
+                selected = 'selected';
+            }
+            var html = '<option '+selected+' value="'+value+'">'+label+'</option>';
+            $('.product-options #ring-size-tab .option .ring-size-select').append(html);
+            $('.product-options #ring-size-tab .option .ring-size-select').on('change', function(){
+                setTheOptionValue('#'+selectorId, $(this).attr('value'));
+            })
+        }
+
+        getOption = function() {
+            diamondQualityValues = []; 
+            customOptions = {};
+            options.each(function(k, v) {
+                if($(v).hasClass('configurable')) {
+                    let label = $(v).find('label.label').text().trim().toLowerCase();
+                    let customOptionsObj = [];
+                    if(label == diamondQualityTitle) {
+                        let diamondQualitySelctorId = $(v).find('select').attr('id');
+                        $(v).find('select option').each(function(k1, v1){
+                            let obj = {'value': $(v1).attr('value'), 'label': $(v1).text()};
+                            if($(v).find('select').val() && obj.value == $(v).find('select').val()) {
+                                obj.selectedValue = $(v).find('select').val();
+                            }
+                            if(obj.value !== '') {
+                                customOptionsObj.push(obj);
+                            }
+                        });
+                        let isRequired = false;
+                        if($(v).hasClass('required')) {
+                            isRequired = true;
+                        }
+                        diamondQualityValues['diamond']     = customOptionsObj;
+                        diamondQualityValues['id']          = diamondQualitySelctorId;
+                        diamondQualityValues['required']    = isRequired;
+                    }
+                } else {
+                    let label = $(v).find('label.label').text().trim().toLowerCase();
+                    let customOptionSelctorId = $(v).find('select').attr('id');
+                    let customOptionsObj = [];
+                    $(v).find('select option').each(function(k1, v1){
+                        let obj = {'value': $(v1).attr('value'), 'label': $(v1).text()};
+                        if($(v).find('select').val() && obj.value == $(v).find('select').val()) {
+                                obj.selectedValue = $(v).find('select').val();
+                            }
+                        if(obj.value !== '') {
+                            customOptionsObj.push(obj);
+                        }
+                    });
+                    if(label == 'size') {
+                        label = 'ringsize';
+                    }
+                    let isRequired = false;
+                    if($(v).hasClass('required')) {
+                        isRequired = true;
+                    }
+                    customOptionsObj['id']  = customOptionSelctorId;
+                    customOptionsObj['required']  = isRequired;
+                    customOptions[label] = customOptionsObj;
+                }
+            });
+            $('.product-options .tablinks').removeClass('hide');
+            if(!diamondQualityValues.diamond) {
+                $('.product-options .diamond-tab').addClass('hide');
+            }
+            if(!customOptions.ringsize) {
+                $('.product-options .ring-size-tab').addClass('hide');
+            }
+            if(!customOptions.metal) {
+                $('.product-options .metal-tab').addClass('hide');
+            }
+        }
+
+        openTab = function(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "flex";
+            getOption();
+            if(diamondQualityValues && !$("#"+diamondQualityValues.id).val()) {
+                $("#"+diamondQualityValues.id).val($("#"+diamondQualityValues.id+" option:eq(1)").val());
+            }
+            if(customOptions.metal && !$("#"+customOptions.metal.id).val()) {
+                $("#"+customOptions.metal.id).val($("#"+customOptions.metal.id+" option:eq(1)").val());
+            }
+            if(customOptions.ringsize && !$("#"+customOptions.ringsize.id).val()) {
+                $("#"+customOptions.ringsize.id).val($("#"+customOptions.ringsize.id+" option:eq(1)").val());
+            }
+
+            if(tabName == 'diamond-quality-tab') {
+                if(diamondQualityValues.diamond && diamondQualityValues.diamond.length) {
+                    evt.target.className += " active";
+                    $('.product-options #diamond-quality-options-main').html('');
+                    let isValueSet = false;
+                    diamondQualityValues.diamond.forEach(function(element){
+                        let selectedStatus = false;
+                        if(element.selectedValue) {
+                            selectedStatus = true;
+                            isValueSet     = true;
+                        }
+                        createTabContentDiamond(element.value, element.label, diamondQualityValues.id, selectedStatus);
+                    })
+                    if(!isValueSet) {
+                        $('[data-gallery-role=gallery-placeholder]').on('gallery:loaded', function () {
+                            //$('#diamond-quality-options-main .option:first-child').click();
+                            if(defaultProductData){
+                                $.each(defaultProductData, function( index, value ) {
+                                    $('.option[data-value="'+value+'"]').click();
+                                });
+                            }
+                            else{
+                                $('#diamond-quality-options-main .option:first-child').click();
+                            }
+                        });
+                    }
+                }
+            } else if (tabName == 'metal-tab') {
+                if(customOptions.metal && customOptions.metal.length) {
+                    evt.target.className += " active";
+                    let arrowHtml = '<div class="arrow-main">'+
+                                        '<div class="left-arrow">'+
+                                            '<i class="icon-angle-left"></i>'+
+                                        '</div>'+
+                                        '<div class="right-arrow">'+
+                                            '<i class="icon-angle-right"></i>'+
+                                        '</div>'+
+                                    '</div>'
+                    $('.product-options #metal-tab').html('');
+                    let isValueSet = false;
+                    customOptions.metal.forEach(function(element){
+                        let selectedStatus = false;
+                        if(element.selectedValue) {
+                            selectedStatus = true;
+                            isValueSet     = true;
+                        }
+                        createTabContentMetal(element.value, element.label, customOptions.metal.id, selectedStatus);
+                    })
+                    if(!isValueSet) {
+                        $('#metal-tab .option:first-child').click();
+                    }
+                    var div = document.getElementById('metal-tab');
+                    var hasHorizontalScrollbar = div.scrollWidth > div.clientWidth;
+                    if(hasHorizontalScrollbar) {
+                        $('.product-options #metal-tab').prepend(arrowHtml);
+                    }
+                }
+            } else if (tabName == 'ring-size-tab') {
+                if(customOptions.ringsize && customOptions.ringsize.length) {
+                    evt.target.className += " active";
+                    $('.product-options #ring-size-tab .option .ring-size-select').html('<option disabled>Choose an option</option>');
+                    customOptions.ringsize.forEach(function(element){
+                        let selectedStatus = false;
+                        if(element.selectedValue) {
+                            selectedStatus = true;
+                        }
+                        createTabContentRingSize(element.value, element.label, customOptions.ringsize.id, selectedStatus);
+                    });
+                }
+            }
+        }
+        if(productType == 'configurable'){
+            $(document).on('configurable.initialized', function() {
+                $('.diamond-tab').click();
+            })
+        } else {
+            $('.product-options .metal-tab').addClass('has-border-radius');
+            setTimeout(function(){
+                $('.metal-tab').click();
+            }, 500);
+        }
+
+        addActiveClass = function(element) {
+            $(element).closest('.tabcontent').find('.option').removeClass('active');
+            $(element).addClass('active');
+        }
+
+        setTheOptionValue = function(selectorId, value) {
+            $(selectorId).val(value).change();
+        }
+    });
+
+</script>

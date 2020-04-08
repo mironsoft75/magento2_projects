@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="weltpixel_quick_cart" translate="label" type="text" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Quick Cart</label>
+            <tab>weltpixel</tab>
+            <resource>WeltPixel_QuickCart::QuickCartSettings</resource>
+            <group id="notification" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Important / Recommended:</label>
+                <fieldset_css>weltpixel-recommended-header active</fieldset_css>
+                <field id="notification_msg" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>WeltPixel\Backend\Block\Adminhtml\System\Config\Notification</frontend_model>
+                </field>
+            </group>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings for QuickCart</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <comment>Enable/Disable QuickCart.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <comment>
+                    <![CDATA[
+                        <script type="text/javascript">
+                            require(['jquery', 'domReady!'], function(){
+                                var groups = [
+                                    'weltpixel_quick_cart_header',
+                                    'weltpixel_quick_cart_footer',
+                                ];
+
+                                if (jQuery('#weltpixel_quick_cart_general_enable').val() != 1){
+                                    for (var i = 0; i < groups.length; i++) {
+                                        jQuery('#' + groups[i]).closest('.section-config').hide();
+                                    }
+                                }
+
+                                jQuery('#weltpixel_quick_cart_general_enable').on('change', function(){
+                                    if (this.value != 1) {
+                                        for (var i = 0; i < groups.length; i++) {
+                                            jQuery('#' + groups[i]).closest('.section-config').hide();
+                                        }
+                                    } else {
+                                        for (var i = 0; i < groups.length; i++) {
+                                            jQuery('#' + groups[i]).closest('.section-config').show();
+                                        }
+                                    }
+                                })
+                            });
+                        </script>
+                    ]]>
+                </comment>
+                <field id="open_minicart" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Open minicart after item is added</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If set to Yes, the Quick Cart opens each time an item is added to the cart.</comment>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="header" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Quick Cart Header</label>
+                <field id="header_height" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Height</label>
+                    <comment>Set the height of Quick Cart header [in px]. E.g. 40px</comment>
+                    <validate>required</validate>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                    </depends>
+                </field>
+                <field id="header_background" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background Color</label>
+                    <comment>Select background color for QuickCart Header. Example: #000000</comment>
+                    <validate>required color {required:false, hash:true}</validate>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                    </depends>
+                </field>
+                <field id="header_text_color" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Color</label>
+                    <comment>Select text color of QuickCart Header title. Example: #FFFFFF</comment>
+                    <validate>required color {required:false, hash:true}</validate>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="footer" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Quick Cart Footer</label>
+                <field id="subtotal_background" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Subtotal Background Color</label>
+                    <comment>Select background color for subtotal section from QuickCart footer. Example: #F6F6F6</comment>
+                    <validate>required color {required:false, hash:true}</validate>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                    </depends>
+                </field>
+                <field id="subtotal_text_color" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Subtotal Text Color</label>
+                    <comment>Select color for text in subtotal section from QuickCart footer. Example: #000000</comment>
+                    <validate>required color {required:false, hash:true}</validate>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

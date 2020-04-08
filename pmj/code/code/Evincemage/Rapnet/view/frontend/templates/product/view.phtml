@@ -1,0 +1,121 @@
+<?php
+/**
+ * @author Evince Team
+ * @copyright Copyright (c) 2018 Evince (http://evincemage.com/)
+ */
+?>
+<?php
+ $product = $block->getProduct();
+?>
+
+<?php if(empty($product)): ?>
+    <?=__('Product not found. Please try again after some time.') ?>
+<?php else: ?>
+
+    <div class="product-info-main">
+        <div class="page-title-wrapper product">
+            <h1 class="page-title">
+                <span class="base" data-ui-id="page-title-wrapper" itemprop="name">
+                     <?=$block->getName()?>
+                </span>
+            </h1>
+        </div>
+        <div class="product-info-price">
+            <div class="price-box">
+                <span class="price-container">
+                    <span class="price"><?=$block->getPrice()?></span>
+                </span>
+            </div>
+            <div class="product-info-stock-sku">
+                <div class="stock available" title="Availability">
+                    <span><?=__('In stock')?></span>
+                </div>
+                <div class="product attribute sku">
+                    <strong class="type"><?=__('SKU')?></strong>
+                    <div class="value" itemprop="sku"><?= $product['diamond_id']?></div>
+                </div>
+            </div>
+        </div>
+        <div class="product-add-form">
+            <form action="<?= /* @NoEscape */ $block->getSubmitUrl() ?>" method="post" id="product_addtocart_form">
+                <?= $block->getBlockHtml('formkey') ?>
+
+                <div class="box-tocart">
+                    <button type="submit" title="Add to Cart" class="action primary tocart" id="product-addtocart-button">
+                        <span><?=__('Add to Cart')?></span>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="product media">
+        <div class="gallery-placeholder">
+            <?php if(isset($product['image']) && $product['image']): ?>
+                <?=$product['image']?>
+            <?php else: ?>
+                <img src="<?=$block->getPlaceholderUr()?>" />
+            <?php endif; ?>
+        </div>
+    </div>
+
+    <div class="product info detailed">
+        <div class="product data items" data-mage-init='{"tabs":{"openedState":"active"}}'>
+            <div class="data item title"
+                 aria-labeledby="tab-label-additional-title"
+                 data-role="collapsible" id="tab-label-additional">
+                <a class="data switch"
+                   tabindex="-1"
+                   data-toggle="switch"
+                   href="#additional"
+                   id="tab-label-additional-title">
+                    <?=__('Details') ?>
+                </a>
+            </div>
+            <div class="data item content" id="additional" data-role="content">
+                <div class="additional-attributes-wrapper table-wrapper">
+                    <table class="data table additional-attributes" id="diamond-product-attribute-table">
+                        <caption class="table-caption"><?= /* @escapeNotVerified */ __('More Information') ?></caption>
+                        <tbody>
+                        <?php foreach ($block->getProductAttributes() as $label => $key): ?>
+                            <tr>
+                                <?php
+                                    $value = 'N/A';
+                                    if(isset($product[$key])){
+                                        $value = $product[$key];
+                                    }
+                                    if($label == 'No'){
+                                        $value = $key;
+                                    }
+
+                                    if ($label == "Certificate"){
+                                        $value = $product['cert_num'];
+
+                                        if($product['lab'] == "IGI"){
+                                            $value.= "<a href='http://www.igiworldwide.com/verify.php?r=".$product['cert_num']."' target='_blank' > ".__('View Certificate')." </a> ";
+                                        }elseif($product['lab'] == "HRD"){
+                                            $value.= "<a href='https://my.hrdantwerp.com/?record_number=".$product['cert_num']."' target='_blank' > ".__('View Certificate')." </a> ";
+                                        }else{
+                                            $value.= "<a href='http://www.diamondselections.com/GetCertificate.aspx?diamondid=".$product['diamond_id']."' target='_blank' > ".__('View Certificate')." </a> ";
+                                        }
+                                    }
+
+                                    if(!$value){
+                                        $value = 'N/A';
+                                    }
+
+                                ?>
+                                <th class="col label" scope="row"><?= $block->escapeHtml(__($label)) ?></th>
+                                <td class="col data" data-th="<?= $block->escapeHtml(__($label)) ?>">
+                                    <?= /* @escapeNotVerified */ $value ?>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>

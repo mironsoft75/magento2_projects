@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Theme\Model\Design\Config\MetadataProvider">
+        <arguments>
+            <argument name="metadata" xsi:type="array">
+                <item name="body_script" xsi:type="array">
+                    <item name="path" xsi:type="string">design/body/script</item>
+                    <item name="fieldset" xsi:type="string">other_settings/body</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>

@@ -1,0 +1,41 @@
+<?php
+$logoUrl = $this->getLogoUrl();
+$phone = $this->getPhone();
+$contactType = $this->getContactType();
+$contactArea = $this->getContactArea();
+$contactOption = $this->getContactOption();
+$contactLanguage = $this->getContactLanguage();
+?>
+
+<?php if ($phone && $contactType) : ?>
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "<?= /* @escapeNotVerified */
+        $block->getBaseUrl() ?>",
+      "logo": "<?= /* @escapeNotVerified */
+        $logoUrl; ?>",
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "telephone": "<?= /* @escapeNotVerified */
+        $block->stripTags($phone); ?>",
+        "contactType": "<?= /* @escapeNotVerified */
+        $contactType; ?>",
+        <?php if ($contactArea) : ?>
+        "areaServed": "<?= /* @escapeNotVerified */
+            $block->stripTags($contactArea); ?>",
+        <?php endif; ?>
+        <?php if ($contactOption) : ?>
+        "contactOption": "<?= /* @escapeNotVerified */
+            $block->stripTags($contactOption); ?>",
+        <?php endif; ?>
+        <?php if ($contactLanguage) : ?>
+        "availableLanguage": "<?= /* @escapeNotVerified */
+            $block->stripTags($contactLanguage); ?>"
+        <?php endif; ?>
+      }]
+    }
+
+    </script>
+<?php endif; ?>

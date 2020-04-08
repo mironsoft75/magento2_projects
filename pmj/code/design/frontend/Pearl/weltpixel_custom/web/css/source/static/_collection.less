@@ -1,0 +1,83 @@
+:root .cms-collections {
+    .collection-slider-main {
+        .owl-theme.owl-carousel {
+            .owl-item {
+                border-radius: 10px;
+                overflow: hidden;
+            }
+            .owl-stage-outer {
+                box-shadow: 0px 12px 11px -8px #575555;
+            }
+            .owl-dots {
+                margin-top: 20px;
+                position: initial;
+            }
+            .owl-controls .owl-dot {
+                span {
+                    border: 1px solid #E6E6E6;
+                    background: #E6E6E6;
+                }
+                &.active span{
+                    background: @primary;
+                    border: 1px solid @primary;
+                }
+            }
+        }
+    }
+    .section-title {
+        font-size: 35px;
+        padding: 0 0 10px;
+        @media @mobile {
+            font-size: 20px;
+        }
+    }
+    .our-collection-main {
+        .collection-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            @media @mobile {
+                display: block;
+            }
+            .collections-main {
+                width: 32%;
+                margin-bottom: 20px;
+                @media @mobile {
+                    width: 100% !important;
+                }
+                .collection-item {
+                    position: relative;
+                    display: inline-block;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    &:hover img {
+                        transform: scale(1.1);
+                    }
+                    img {
+                        vertical-align: middle;
+                        transition: 0.5s;
+                    }
+                    .label {
+                        position: absolute;
+                        left: 0;
+                        bottom: 30px;
+                        font-size: 25px;
+                        padding: 10px 25px;
+                        background: rgba(48, 48, 48, 0.53);
+                        margin: 0;
+                        border-radius: 0 10px 10px 0;
+                        color: #fff;
+                        @media @mobile {
+                            font-size: 17px;
+                            padding: 8px 25px;
+                            bottom: 15px;
+                        }
+                    }
+                }
+                &:nth-child(4n), &:nth-child(5n) {
+                    width: 49%;
+                }
+            }
+        }
+    }
+}

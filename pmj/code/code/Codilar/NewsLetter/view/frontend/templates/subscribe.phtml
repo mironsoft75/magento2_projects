@@ -1,0 +1,99 @@
+<div class="pre-footer">
+    <div class="form-container">
+        <form id="newsletter-form" class="newsletter-form"
+              action="<?= $block->getUrl('news/subscriber/new') ?>"
+              novalidate="novalidate">
+            <div class="form-title">
+                <h3>Sign up for our email list</h3>
+            </div>
+            <div class="form-field">
+                <input id="newsletter-input" name="email" autocomplete="on" required="" type="email" placeholder="Email Address..."/>
+            </div>
+            <div class="form-field gender">
+                <p class="label">Gender</p>
+                <label class="container-main">Man
+                    <input value="Man" type="radio" checked="checked" name="gender">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container-main">Woman
+                    <input value="Woman" type="radio" name="gender">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="form-button">
+                <button class="newsletter-submit-btn" type="submit" >SUBMIT</button>
+            </div>
+        </form>
+    </div>
+    <div id="newsletter-message"></div>
+    <div class="content-main">
+        <p>*By signing up you confirm that you have read the Privacy Policy and agree that your email and gender will be
+            collected and used by PMJ for the purposes of sending news, promotions and updates via email. You
+            can withrdaw your consent at any time by unsubscribing or contacting us via online.sales@pmjjewels.com.
+        </p>
+    </div>
+</div>
+<script type="text/javascript">
+    require([
+        'jquery'
+    ], function ($) {
+        $(document).ready(function () {
+        });
+        var form = $('.newsletter-submit-btn');
+        form.click(function (e) {
+            jQuery('body').loader('show');
+            var email = $("#newsletter-input").val();
+            var gender = $("#newsletter-form input[name='gender']:checked").val();
+            var loadingMessage = $('#newsletter-message');
+            loadingMessage.hide();
+            var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+            if ($.trim(email).length == 0) {
+                loadingMessage.text("Please enter a valid email address (Ex: johndoe@domain.com).");
+                loadingMessage.css("color", "#e02b27");
+                loadingMessage.show();
+                jQuery('body').loader('hide');
+                e.preventDefault();
+            }
+            if (filter.test(email)) {
+                var url = "<?= $block->getUrl('news/subscriber/new') ?>";
+                try {
+                    $.ajax({
+                        url: url,
+                        dataType: 'json',
+                        type: 'POST',
+                        data: {email: email, gender: gender},
+                        success: function (data) {
+                            loadingMessage.css("color", "red");
+                            if (data.status != "ERROR") {
+                                loadingMessage.css("color", "green");
+                                $('#newsletter-message').val('');
+                            }
+                            loadingMessage.html(data.msg);
+                            loadingMessage.show();
+                            jQuery('body').loader('hide');
+                        },
+                        complete: function () {
+                            setTimeout(function () {
+                                loadingMessage.hide();
+                            }, 5000);
+                            jQuery('body').loader('hide');
+                        }
+                    });
+                } catch (e) {
+                    jQuery('body').loader('hide');
+                    loadingMessage.css("color", "red");
+                    loadingMessage.html(e.msg);
+                    loadingMessage.show();
+                }
+                return false;
+            }
+            else {
+                loadingMessage.text("Please enter a valid email address (Ex: johndoe@domain.com).");
+                loadingMessage.css("color", "#e02b27");
+                loadingMessage.show();
+                jQuery('body').loader('hide');
+                e.preventDefault();
+            }
+        });
+    });
+</script>

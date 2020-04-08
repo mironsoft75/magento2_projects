@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Change Mobile Number</title>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Codilar\Customer\Block\Change" name="customer_number_change" template="Codilar_Customer::form/change.phtml" cacheable="false" />
+        </referenceContainer>
+    </body>
+</page>

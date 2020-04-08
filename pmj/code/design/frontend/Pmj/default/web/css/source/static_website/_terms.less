@@ -1,0 +1,106 @@
+:root body.theme-pearl.cms-terms-and-conditions .page-wrapper {
+    @media @mobile {
+        .tc-content {
+            box-sizing: border-box;
+            min-height: 1px;
+            position: relative;
+            padding-left: 30px;
+            padding-right: 30px;
+            width: 100%;
+            overflow: hidden;
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin-left: 0%;
+            right: auto;
+            left: auto;
+        }
+        .tc-content .para-head {
+            font-size: 22px !important;
+        }
+        .text-para {
+            font-size: 24px;
+        }
+    }
+
+    .text-para {
+        font-size: 26px;
+        .icon-diamond2 {
+            vertical-align: bottom;
+        }
+        .fa.fa-diamond {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            &:before {
+                content: "\f219";
+            }
+        }
+    }
+    .page-footer {
+        background-image: url('../images/bck-overlay.png') !important;
+        background-size: 100% 100% !important;
+    }
+    .custom-menu-main {
+        background-image: url('../images/bck-overlay.png');
+    }
+    .para-head {
+        color: rgb(201, 156, 89);
+        font-size: 35px;
+        height: 32px;
+        margin-bottom: 10px;
+        margin-top: 25px;
+    }
+    .tc-content {
+        box-sizing: border-box;
+        min-height: 1px;
+        position: relative;
+        padding-left: 30px;
+        padding-right: 30px;
+        width: 100%;
+        overflow: hidden;
+        flex: 0 0 83.3333%;
+        max-width: 83.3333%;
+        margin-left: 0%;
+        right: auto;
+        left: auto;
+        @media @mobile {
+            max-width: 100%;
+            flex: 100%;
+        }
+    }
+    .spacing {
+        box-sizing: border-box;
+        min-height: 1px;
+        position: relative;
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 100%;
+        overflow: hidden;
+        flex: 0 0 8.33333%;
+        max-width: 8.33333%;
+        margin-left: 0%;
+        right: auto;
+        left: auto;
+        @media @mobile {
+            display: none;
+        }
+    }
+    .tandc {
+        margin-left: -15px;
+        margin-right: -15px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-grow: 0;
+        flex-shrink: 0;
+        align-items: normal;
+        overflow: hidden;
+        background-image: url('../images/bck-legecy.png');
+        background-size: cover;
+        color: #363636;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+}

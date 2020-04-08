@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Codilar_Rapnet::codilar_rapnet" title="Codilar Rapnet" module="Codilar_Rapnet" sortOrder="30" resource="Codilar_Rapnet::codilar_rapnet"/>
+        <add id="Codilar_Rapnet::codilar_rapnet_urlrewrite" title="UrlRewrite" module="Codilar_Rapnet" sortOrder="20" parent="Codilar_Rapnet::codilar_rapnet" action="rapnet/urlrewrite" resource="Codilar_Rapnet::codilar_rapnet_urlrewrite"/>
+        <add id="Codilar_Rapnet::codilar_rapnet_products" title="Rapnet Products" module="Codilar_Rapnet" sortOrder="20" parent="Codilar_Rapnet::codilar_rapnet" action="rapnet/rapnetproducts" resource="Codilar_Rapnet::codilar_rapnet_rapnetproducts"/>
+    </menu>
+</config>
+

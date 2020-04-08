@@ -1,0 +1,11 @@
+<?php
+// @codingStandardsIgnoreFile
+?>
+<?php $_helper = $this->helper('WeltPixel\CustomHeader\Helper\Data'); ?>
+<?php if ($_helper->isGlobalPromoEnabled() ) : ?>
+    <div class="global-notification-wrapper" data-mage-init='{"WeltPixel_CustomHeader/js/globalPromo": {}}'>
+        <div class="notice-inner">
+            <?php echo $this->getChildHtml('global_promo_message_content'); ?>
+        </div>
+    </div>
+<?php endif; ?>

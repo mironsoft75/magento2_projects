@@ -1,0 +1,159 @@
+:root body.cms-collection {
+    background: #fff7ef;
+    .page-wrapper .page-header header.page-header .header.content .custom-menu-main .static-menu-items .static-menu-item.collection {
+        a {
+            color: @primary;
+        }
+    }
+    .custom-menu-main, .breadcrumbs {
+        background: #fff7ef !important;
+    }
+    footer.page-footer {
+        background: #fff;
+    }
+    .collection-main {
+        padding-bottom: 40px;
+        .collection-banner-main {
+            margin-top: 30px;
+            @media @mobile {
+                margin-top: 0;
+            }
+            .owl-theme {
+                .owl-dots {
+                    margin-top: 20px;
+                    position: initial;
+                }
+                &.owl-carousel {
+                    .owl-stage-outer {
+                        box-shadow: 0px 12px 11px -8px #575555;
+                    }
+                    .owl-item {
+                        border-radius: 10px;
+                        overflow: hidden;
+                    }
+                    .owl-controls .owl-dot{
+                        span {
+                            border: 1px solid #E6E6E6;
+                            background: #E6E6E6;
+                        }
+                        &.active span {
+                            background: #B19160;
+                            border: 1px solid #B19160;
+                        }
+                    }
+                }
+            }
+        }
+        .info-main {
+            margin-bottom: 45px;
+            margin-top: 25px;
+            .info-img {
+                text-align: center;
+                margin-bottom: 30px;
+                @media @mobile {
+                    margin-bottom: 15px;
+                }
+                img {
+                    max-width: 230px;
+                    @media @mobile {
+                        max-width: 150px;
+                    }
+                }
+            }
+            .desc {
+                text-align: center;
+                font-size: 19px;
+                @media @mobile {
+                    font-size: 15px;
+                }
+            }
+        }
+        .collection-box-main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .collection-box {
+                width: 30%;
+                position: relative;
+                margin-bottom: 25px;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0px 7px 9px -3px #ddd;
+                @media @mobile {
+                    width: 100%;
+                    box-shadow: none;
+                    border-radius: 0;
+                }
+                .collection-link {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                }
+                .collection-img {
+                    @media @desktop {
+                        height: 100%;
+                    }
+                    @media @mobile {
+                        border-radius: 10px;
+                        overflow: hidden;
+                    }
+                    img {
+                        width: 100%;
+                        vertical-align: middle;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .collection-hover {
+                    display: none;
+                    position: absolute;
+                    bottom: 0;
+                    background: #E8D4BA;
+                    padding: 15px;
+                    @media @mobile {
+                        background: none;
+                        display: block;
+                        position: relative;
+                    }
+                    .book-appoinment {
+                        margin-bottom: 10px;
+                    }
+                    .book-appoinment, .video-call-request {
+                        width: 100%;
+                        .icon {
+                            margin-right: 10px;
+                        }
+                    }
+                    &.only-for-desktop {
+                        @media @mobile {
+                            display: none !important;
+                        }
+                    }
+                }
+                &:hover {
+                    .collection-hover {
+                        display: block;
+                    }
+                }
+            }
+        }
+        .store-locator-btn {
+            text-align: center;
+            margin-top: 20px;
+            .button {
+                background: @primary;
+                color: #fff;
+                font-size: 19px;
+                border-radius: 4px;
+                padding: 8px 20px;
+                display: inline-block;
+                @media @mobile {
+                    font-size: 15px;
+                }
+            }
+
+        }
+    }
+}

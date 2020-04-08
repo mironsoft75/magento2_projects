@@ -1,0 +1,18 @@
+<form class="form form-discount order-comment-form">
+    <div class="payment-option-inner">
+        <div class="field" data-bind="css: comment.css()">
+            <label class="label">
+                <span data-bind="i18n: 'Enter PAN Number'"></span>
+            </label>
+            <div class="control">
+                <input  type="text"
+                        class="input-text order-comment order-comment-input"
+                        name="comment-code"
+                        data-validate="{'required-entry':true}"
+                        data-bind="value: comment,valueUpdate: 'afterkeydown',attr:{placeholder: $t('Enter your PAN Number...')} " />
+                <div class="pan-number-field-error">This is a required field.</div>
+                <p data-bind="if: hasMaxLength()">Remaining characters: <span class="order-comment-form__characters" data-bind="text: remainingCharacters"></span></p>
+            </div>
+        </div>
+    </div>
+</form>

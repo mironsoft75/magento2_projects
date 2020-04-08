@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="wesupply" translate="label" sortOrder="1000" class="wesupply-tab">
+            <label>WeSupply</label>
+        </tab>
+        <section id="wesupply_api" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Configuration</label>
+            <tab>wesupply</tab>
+            <resource>WeSupply_Toolbox::APISettings</resource>
+            <group id="integration" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>WeSupply Integration</label>
+                <comment>
+                    <![CDATA[
+                    <strong>Before starting the configuration, make sure to first create a <a href="https://wesupply.ai" target="_blank">WeSupply Account HERE</a>, and start for FREE.</strong><br/>
+                    ]]>
+                </comment>
+                <field id="wesupply_enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Enable WeSupply</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+            </group>
+            <group id="step_1" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Step 1 - Add your WeSupply Sub-domain and API credentials</label>
+                <comment>
+                    <![CDATA[
+                     In your WeSupply account, go to <strong>Settings -> Providers to access your WeSupply API credentials.</strong>
+                    ]]>
+                </comment>
+                <field id="wesupply_subdomain" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <frontend_model>WeSupply\Toolbox\Block\System\Config\InputText</frontend_model>
+                    <label>WeSupply SubDomain</label>
+                    <validate>required</validate>
+                    <comment>Your WeSupply allotted subdomain</comment>
+                </field>
+                <field id="wesupply_client_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>WeSupply Account Client Id</label>
+                    <comment>You can find the WeSupply API Credentials under: WeSupply -> Settings -> Providers -> Magento</comment>
+                </field>
+                <field id="wesupply_client_secret" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>WeSupply Account Client Secret</label>
+                    <comment>You can find the WeSupply API Credentials under: WeSupply -> Settings -> Providers -> Magento</comment>
+                </field>
+
+                <field id="wesupply_connection_test" translate="label comment" type="button" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <frontend_model>WeSupply\Toolbox\Block\System\Config\CredentialsCheck</frontend_model>
+                    <label>Test Account Credentials</label>
+                </field>
+
+                <depends>
+                    <field id="wesupply_api/integration/wesupply_enabled">1</field>
+                </depends>
+            </group>
+            <group id="step_2" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Step 2 - Generate Magento credentials for your WeSupply connection</label>
+                <comment>
+                    <![CDATA[
+                   Press Generate + Save Config to generate and save Magento credentials necessary to be added in WeSupply account.
+                   <br/>Fill in below credentials to your WeSupply account under <strong>Settings -> Providers -> Magento -> Enable</strong>
+                    ]]>
+                </comment>
+                <field id="access_key_generate" translate="label comment" type="button" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <frontend_model>WeSupply\Toolbox\Block\System\Config\Generate</frontend_model>
+                    <label>Generate Access Key</label>
+                    <comment>Make sure to Save the credentials after generation</comment>
+                </field>
+                <field id="access_key" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Access Key</label>
+                    <!--<validate>required</validate>-->
+                </field>
+
+                <field id="client_name" translate="label" type="note" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Client Name</label>
+                    <comment model="WeSupply\Toolbox\Model\ClientNameComment"></comment>
+                </field>
+                <field id="api_endpoint_info" translate="label" type="note" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>API Info</label>
+                    <comment model="WeSupply\Toolbox\Model\ApiInfoComment"></comment>
+                </field>
+                <depends>
+                    <field id="wesupply_api/integration/wesupply_enabled">1</field>
+                </depends>
+
+            </group>
+            <group id="step_3" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="1">
+                <label>Step 3 - Would you like to use WeSupply for My Account Customer Order View?</label>
+                <comment>
+                    <![CDATA[
+                   If enabled, your customers will have access to advanced order tracking under WeSupply platform once they click <strong>View Order.</strong>
+                    ]]>
+                </comment>
+                <field id="wesupply_order_view_enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Enable WeSupply Order View</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <depends>
+                    <field id="wesupply_api/integration/wesupply_enabled">1</field>
+                </depends>
+            </group>
+            <group id="step_4" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="1">
+                <label>Step 4 - Allow users to subscribe to SMS alert notification on Checkout Success page?</label>
+                <comment>
+                    <![CDATA[
+                   If enabled, your customers will have the option to subscribe to SMS order tracking once the purchase is complete.
+                   <br/>
+                   <strong>SMS alert notification is only available for WeSupply Startup and Pro Plan</strong>
+                    ]]>
+                </comment>
+                <field id="checkout_page_notification" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Enable Notification Signup Box</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="notification_type" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Insert Notification Box as</label>
+                    <comment>
+                        <![CDATA[
+                        If <strong>Default Location</strong> is selected, the notification sign up box will show on success page.
+                        <br/>
+                        If <strong>Widget</strong> is selected, you can display the notification sign up box by adding the widget in a cms block already displayed on success page.
+                        ]]>
+                    </comment>
+                    <source_model>WeSupply\Toolbox\Model\Config\Source\NotificationDesignType</source_model>
+                    <depends>
+                        <field id="wesupply_api/step_4/checkout_page_notification">1</field>
+                    </depends>
+                </field>
+                <field id="design_notification" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Choose a design for Notification Signup Box</label>
+                    <source_model>WeSupply\Toolbox\Model\Config\Source\NotificationDesignMode</source_model>
+                    <depends>
+                        <field id="wesupply_api/step_4/checkout_page_notification">1</field>
+                        <field id="wesupply_api/step_4/notification_type">default</field>
+                    </depends>
+                </field>
+
+                <depends>
+                    <field id="wesupply_api/integration/wesupply_enabled">1</field>
+                </depends>
+            </group>
+        </section>
+    </system>
+</config>

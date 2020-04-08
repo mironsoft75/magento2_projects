@@ -1,0 +1,21 @@
+{
+  "name": "codilar/rapnet",
+  "description": "codilar rapnet module",
+  "license": "proprietary",
+  "authors": [
+    {
+      "email": "mohith@codilar.com",
+      "name": "Mohith"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Codilar\\Rapnet\\": ""
+    }
+  }
+}

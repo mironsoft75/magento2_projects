@@ -1,0 +1,157 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \Magento\Customer\Block\Form\Edit $block */
+
+/* @var \Codilar\Customer\Helper\Data $customerHelper */
+$customerHelper = $this->helper('Codilar\Customer\Helper\Data');
+$customer = $customerHelper->getLoggedInCustomer();
+if($customer):
+    $phoneNumber = ($customer->getCustomAttribute('phone_number')) ? $customer->getCustomAttribute('phone_number')->getValue() : null;
+    ?>
+    <form class="form form-edit-account edit-account-information customize-dashboard full-width-block" action="<?= $block->escapeUrl($block->getUrl('customer/account/editpost')) ?>" method="post" id="form-validate" enctype="multipart/form-data" data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>" autocomplete="off" novalidate="novalidate"  data-mage-init='{"validation": {}}'>
+        <?= $block->getBlockHtml('formkey') ?>
+        <div class="row">
+            <div class="block-title block-my-accoucnt block-my-accoucnt-cust col-xs-12 col-sm-3"><strong><?php /* @escapeNotVerified */ echo __('Edit Account') ?></strong></div>
+        </div>
+        <div class="edit-form">
+            <div class="box-content box-content-custom">
+                <div class="col-xs-12 col-sm-6 pad-input-blocks sub-text-edit">
+                    <p class="sub-block-context">
+                        <input type="text" class="edit-field" placeholder="First Name" name="firstname" value="<?= $customer->getFirstName() ?>" data-validate="{required:true}"/>
+                    </p>
+                </div>
+                <div class="col-xs-12 col-sm-6 pad-input-blocks sub-text-edit">
+                    <p class="sub-block-context">
+                        <input type="text" class="edit-field" placeholder="Last Name" name="lastname" value="<?= $customer->getLastName() ?>" data-validate="{required:true}"/>
+                    </p>
+                </div>
+                <div class="col-xs-12 col-sm-6 pad-input-blocks sub-text-edit">
+                    <p class="sub-block-context">
+                        <input type="email" class="edit-field email" name="email" placeholder="Enter Email" value="<?= $customer->getEmail() ?>" data-validate="{required:true, 'validate-email':true}" />
+                    </p>
+                </div>
+                <div class="col-xs-12 col-sm-6 pad-input-blocks sub-text-edit country-code-block">
+                    <div class="country-flag"><img class="indian-flag-png" src="<?= $this->getViewFileUrl('Codilar_Customer::images/india-flag.png'); ?>"></div>
+                    <input type="text" minlength="10" maxlength="10" class="edit-field full-number-grid-acc field-mob-num" name="phone_number" placeholder="Mobile Number" value="<?= $phoneNumber ?>" data-validate="{required:true}"/>
+                </div>
+                <div class="col-xs-12""></div>
+                <input type="hidden" name="change_email" id="change-email" data-role="change-email" value="1" title="<?= $block->escapeHtmlAttr(__('Change Email')) ?>" class="checkbox" />
+            <?php if (!$customerHelper->isCustomerSocialLogin()): ?>
+                <div class="col-xs-12">
+                    <div class="password-change-block-toggle-container">
+                        <input type="checkbox" name="change_password" id="password-change-block-toggle" value="1" title="<?= $block->escapeHtmlAttr(__('Change Password')) ?>"<?php if ($block->getChangePassword()): ?> checked="checked"<?php endif; ?> class="checkbox" />
+                        <label for="password-change-block-toggle">
+                            <span></span>
+                            <p class="text-checked text-checked-cust"><?= __("Change Password") ?></p>
+                        </label>
+                    </div>
+                    <div id="change-password-block" style="display: none">
+                        <div class="col-xs-12 col-sm-6 pad-input-blocks sub-text-edit">
+                            <p class="sub-block-context">
+                                <input class="edit-field" placeholder="Current Password" id="password-confirmation" type="password" name="current_password" value="" data-validate="{required:true}" aria-required="true"/>
+                            </p>
+                        </div>
+                        <div class="field new password required col-xs-12 col-sm-6 pad-input-blocks sub-text-edit" data-container="new-password">
+                            <div class="control">
+                                <input type="password" class="input-text"
+                                       placeholder="New Password"
+                                       name="password" id="password"
+                                       data-password-min-length="<?= $block->escapeHtml($block->getMinimumPasswordLength()) ?>"
+                                       data-password-min-character-sets="<?= $block->escapeHtml($block->getRequiredCharacterClassesNumber()) ?>"
+                                       data-input="new-password"
+                                       data-validate="{required:true, 'validate-customer-password':true}"
+                                       autocomplete="off" />
+                                <div id="password-strength-meter-container" data-role="password-strength-meter" aria-live="polite">
+                                    <div id="password-strength-meter" class="password-strength-meter">
+                                        <?= $block->escapeHtml(__('Password Strength')) ?>:
+                                        <span id="password-strength-meter-label" data-role="password-strength-meter-label">
+                                            <?= $block->escapeHtml(__('No Password')) ?>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
+
+        </div>
+        </div>
+        <div class="col-sm-6 col-xs-12 save-changes-custom">
+            <div class="actions-toolbar customer-edit-right">
+                <div class="primary pimary-width-mrg">
+                    <button type="submit" class="action save primary update-edited-btn"><span><?= __('Update') ?></span></button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+    <script type="text/javascript">
+        require(['jquery', 'mage/url'], function ($, url) {
+            var changePasswordBlock = $('#change-password-block');
+
+            var passwordBlockToggle = function (isEnabled) {
+                if(isEnabled){
+                    changePasswordBlock.show();
+                    changePasswordBlock.find('input').attr('disabled', false);
+                } else {
+                    changePasswordBlock.hide();
+                    changePasswordBlock.find('input').attr('disabled', true);
+                }
+            };
+
+            /* Initially change password block is disabled */
+
+            $('#password-change-block-toggle').on('click', function () {
+                if(this.checked) {
+                    passwordBlockToggle(true);
+                } else {
+                    passwordBlockToggle(false);
+                }
+            });
+
+            $('.field-mob-num').on('keypress', function(evt) {
+                var charCode = (evt.which) ? evt.which : event.keyCode;
+                return !(charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57));
+            });
+            jQuery(document).ready( function() {
+                const passwordToggle = $("#password-change-block-toggle");
+                if(passwordToggle.prop('checked') === true){
+                    changePasswordBlock.show();
+                }
+                else{
+                    changePasswordBlock.hide();
+                }
+            });
+        });
+    </script>
+    <script>
+        require([
+            "jquery",
+            "mage/calendar"
+        ], function($){
+            $("#dob").calendar({
+                buttonText:"<?php echo __('Select Date') ?>",
+                changeYear: true,
+                yearRange: "1918:<?php echo date('Y') ?>",
+                showAnim: "puff"
+            });
+        });
+    </script>
+<?php endif; ?>
+<script type="text/x-magento-init">
+    {
+        "[data-container=new-password]": {
+            "passwordStrengthIndicator": {
+                "formSelector": "form.form-edit-account"
+            }
+        }
+    }
+</script>

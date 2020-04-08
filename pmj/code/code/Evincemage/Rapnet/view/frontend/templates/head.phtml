@@ -1,0 +1,43 @@
+<?php
+/**
+ * @author Evince Team
+ * @copyright Copyright (c) 2018 Evince (http://evincemage.com/)
+ */
+?>
+<?php
+$sliderColor = $block->getSiderColor();
+$hoverColor = $block->getHoverColor();
+?>
+
+<style>
+    #search-diamonds .ui-slider-horizontal .ui-slider-range {
+        background-color: #<?=$sliderColor ?>;
+        border-color: #<?=$sliderColor ?>;
+    }
+
+    #wh-modal .ds_button,
+    #search-diamonds .ds_button,
+    #search-diamonds .ds_button.inverted:hover,
+    #search-diamonds .options_control:hover,
+    #search-diamonds .ui-slider .ui-slider-tooltip,
+    #search_results table tr td button.shopit:hover,
+    #search-diamonds .section.stocknumber input[type="submit"]:hover,
+    #search-diamonds .section.shape ul li.selected span,
+    #search-diamonds .section.certificate ul li.selected span,
+    #search-diamonds .section.certificate ul li:active span,
+    #search_results table tr.selected td,
+    #search_results table tr:hover td,
+    #search-diamonds .ui-widget-content .ui-slider-handle {
+        background-color: #<?=$hoverColor ?>;
+    }
+
+    #search-diamonds .options_control,
+    #wh-modal .wh-content h3 {
+        border-color: #<?=$hoverColor ?>;
+    }
+
+    #search-diamonds .ui-slider .ui-slider-tooltip .ui-tooltip-pointer-down-inner {
+        border-top: 7px solid #<?=$hoverColor ?> !important;
+    }
+
+</style>

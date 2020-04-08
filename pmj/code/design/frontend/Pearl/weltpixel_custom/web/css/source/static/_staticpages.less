@@ -1,0 +1,497 @@
+@import '_returnpolicy';
+@import "_faq";
+@import "_benefits";
+@import "customer_service/_customer_service";
+@import "_store_locator";
+@import "_collection.less";
+
+.cms-page-view {
+    .page-wrapper {
+        .breadcrumbs {
+            max-width: 1400px !important;
+            width: 1400px !important;
+            margin: auto;
+        }
+
+        .page-main {
+            .page-title-wrapper {
+                text-align: left;
+                padding: 20px;
+
+                .page-title {
+                    font-size: 30px;
+                    margin: 0;
+                    @media @mobile {
+                        font-size: 22px;
+                    }
+                }
+
+                @media @mobile {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+.theme-pearl.cms-privacy,
+.theme-pearl.cms-terms-and-conditions {
+    .page-wrapper {
+        .page-main {
+            @media @mobile {
+                .page-title-wrapper {
+                    padding: 20px 0;
+                    .page-title {
+                        font-size: 20px;
+                    }
+                }
+            }
+            .columns {
+                .column.main {
+                    .privacy-container {
+                        ul {
+                            @media @mobile {
+                                padding-left: 25px;
+                            }
+                            li {
+                                font-size: 18px;
+                                @media @mobile {
+                                    font-size: inherit;
+                                }
+                            }
+                        }
+                    }
+
+                    .terms-and-conditions-container {
+                        box-sizing: border-box;
+                        padding: 0 20px;
+                        @media @mobile {
+                            padding: 0;
+                        }
+                        p {
+                            font-size: 18px;
+                            @media @mobile {
+                                font-size: inherit;
+                            }
+                        }
+
+                        h4 {
+                            font-size: 20px;
+                            font-weight: bold;
+                            text-align: left;
+                            @media @mobile {
+                                font-size: inherit;
+                            }
+                        }
+
+                        ul {
+                            @media @mobile {
+                                padding-left: 25px;
+                            }
+                            li {
+                                font-size: 18px;
+                                @media @mobile {
+                                    font-size: inherit;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.cms-customer-testimonials {
+    .page-wrapper {
+        .page-main {
+            .page-title-wrapper {
+                @media @mobile {
+                    padding: 20px 0;
+                    .page-title {
+                        font-size: 20px;
+                    }
+                }
+            }
+            .testimonial {
+                > .testi-image {
+                    @media @mobile {
+                        .icon-user {
+                            width: 35px !important;
+                            height: 35px !important;
+                            font-size: 21px;
+                            line-height: 35px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//payment options
+.theme-pearl.cms-payment-options {
+    .column.main {
+        .payment-options {
+            padding-left: 20px;
+            box-sizing: border-box;
+
+            @media @mobile {
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+//collection page
+.cms-collections {
+    .row {
+        @media @mobile {
+            margin: 0;
+        }
+    }
+
+    .section-title {
+        padding: 31px;
+        box-sizing: border-box;
+        text-align: center;
+
+        h3 {
+            margin: 0;
+            font-size: 30px;
+            text-transform: uppercase;
+
+            @media @mobile {
+                font-size: 25px;
+            }
+        }
+    }
+
+    img {
+        width: 100%;
+        display: block;
+    }
+
+    .header-banner {
+        >div {
+            padding: 0;
+
+            a {
+                display: inline-block;
+                vertical-align: bottom;
+                width: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .first-row {
+        display: flex;
+
+        @media @mobile {
+            display: block;
+        }
+
+        .left-section {
+            padding: 0;
+
+            img {
+                width: 100%;
+                display: block;
+            }
+        }
+
+        .right-section {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+
+            @media @mobile {
+                padding-top: 15px;
+            }
+
+            .top-img,
+            .bottom-left,
+            .bottom-right {
+                padding: 0;
+            }
+
+            .top-img {
+                max-width: 100%;
+                padding-left: 15px;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+
+                @media @mobile {
+                    padding: 0;
+                }
+
+                img {
+                    @media @mobile {
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            .bottom-row {
+                padding-top: 15px;
+                max-width: 100%;
+                box-sizing: border-box;
+                height: 100%;
+                display: flex;
+
+                .bottom-left,
+                .bottom-right {
+                    box-sizing: border-box;
+                    display: flex;
+
+                    @media @mobile {
+                        padding-left: 0;
+                    }
+
+                    img {
+                        max-height: 100%;
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .bottom-left {
+                    @media @mobile {
+                        padding-right: 15px;
+                    }
+                }
+
+                .bottom-right {
+                    padding-left: 15px;
+
+                    @media @mobile {
+                        padding-top: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .second-row {
+        .img-container {
+            text-align: center;
+            padding: 0 15px 0 0;
+
+            @media @mobile {
+                width: 50%;
+            }
+
+            a {
+                display: inline-block;
+                vertical-align: bottom;
+                width: 100%;
+            }
+
+            p {
+                margin: 0;
+                box-sizing: border-box;
+                padding: 10px;
+            }
+        }
+    }
+
+    .third-row {
+        .img-container {
+            padding: 0 15px 0 0;
+
+            @media @mobile {
+                padding: 0;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+//diamond buying guide
+.cms-diamond-buying-guide {
+    .column.main {
+        @media @mobile {
+            .row {
+                margin: 0;
+            }
+
+            .left-sec,
+            .right-sec {
+                padding: 0;
+            }
+
+            .right-sec {
+
+                .right-sec-first-row,
+                .right-sec-second-row,
+                .right-sec-third-row,
+                .right-sec-fourth-row {
+                    >div {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+//diamond education
+.cms-education {
+    .education-container {
+        display: flex;
+        @media @mobile {
+            display: block;
+        }
+        .education-guide-box {
+            width: 20%;
+            @media @mobile {
+                width: 100%;
+            }
+            .content-main {
+                height: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .content-header {
+                    font-weight: bold;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+//education subpages
+//earring guide , Ring guide
+.cms-earring-guide,
+.cms-ring-guide,
+.cms-pendant-guide,
+.cms-precious-metal-guide {
+    .col-main {
+        padding-left: 20px;
+
+        .earrings-guide-container,
+        .ring-guide-container,
+        .pendant-guide-container,
+        .precious-metal-guide-guide-container {
+            padding: 0;
+        }
+
+        .earrings-guide-row-container,
+        .ring-guide-row-container,
+        .pendant-guide-row-container {
+            display: flex;
+            align-items: center;
+            width: 80%;
+
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+
+        .earrings-image,
+        .ring-image,
+        .pendant-image {
+            flex-basis: 20%;
+            margin: 0;
+            text-align: left;
+        }
+
+        .earrings-text,
+        .ring-text,
+        .pendant-text {
+            text-align: justify;
+            flex-basis: 70%;
+            margin: 0;
+        }
+    }
+
+}
+
+//career container
+.cms-whats-buzzing,
+.cms-work-with-us,
+.cms-our-craftsmanship,
+.cms-our-story {
+    .career-container {
+        position: relative;
+
+        .image-container {
+
+            .story-img,
+            .craftmanship-img,
+            .buzzing-img,
+            .work-with-us-img {
+                display: none;
+            }
+        }
+
+        .link-container {
+            position: absolute;
+            bottom: -10px;
+            width: 100%;
+
+            >ul {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+
+                >li {
+                    margin: 0;
+                    list-style: none;
+
+                    .pmj-button {
+                        background: #fff;
+                        color: @primary;
+                        padding: 30px 40px;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//work with us 
+.cms-work-with-us {
+    .career-container {
+        .image-container {
+            .work-with-us-img {
+                display: block;
+            }
+        }
+
+        .link-container {
+            >ul>li{
+                .pmj-button.work-link {
+                    background: @primary;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .work-with-us-container{
+        margin-top: 80px !important;
+        h3{
+            font-size: 20px;
+        }
+        >.row::not(:last-child){
+            margin-bottom: 30px;
+        }
+    }
+}

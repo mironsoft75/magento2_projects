@@ -1,0 +1,176 @@
+<?php
+/** @var \Codilar\Videostore\Block\Cart\Index $block */
+?>
+<div class="main-title">
+    <h1>Video Shopping</h1>
+</div>
+<div class="container row">
+    <div class="video-store-content col-md-8">
+        <p> Shopping is now more relaxing at the comfort of your home. PMJ Jewellers brings the shop to your doorstep.
+            With our state of art "Video Technology" and "Jewellery Experts" ,you just have to choose Jewellery
+            you wish to buy and “GO LIVE” from any corner of the world.!</p>
+        <p>For a live shopping experience Sign up now to book your free slot. Our team would reach you to confirm the
+            appointment</p>
+        <p>You can shop with your family members under the guidance of our Jewellery experts. View our signature
+            collection and ask our team your product queries.</p>
+    </div>
+    <!--    data-mage-init='{"validation":{}}'-->
+    <div class="video-store-form-container col-md-4">
+        <div class="form-title">
+            <h3>Book your free slot</h3>
+        </div>
+        <form class="form videostore-form" action="<?= $block->getRequestFormAction() ?>" method="post"
+              id="form-validate"
+              data-mage-init='{"validation":{}}'
+              enctype="multipart/form-data" autocomplete="off" novalidate="novalidate">
+            <?= $block->getBlockHtml('formkey') ?>
+            <fieldset class="fieldset">
+                <div class="field required">
+                    <div class="control">
+                        <i class="icon icon-user"></i>
+                        <input
+                                required
+                                type="text"
+                                id="fullname"
+                                name="fullname"
+                                placeholder="Full Name"
+                                title="Full Name" class="input-text required-entry" data-validate="{required:true}"
+                                autocomplete="off" aria-required="true">
+                    </div>
+                </div>
+                <div class="field required">
+                    <div class="control">
+                        <i class="icon icon-email3"></i>
+                        <input
+                                required
+                                type="email"
+                                name="email"
+                                autocomplete="email"
+                                placeholder="Email Id"
+                                id="email_address" value="" title="Email" class="input-text"
+                                data-validate="{required:true, 'validate-email':true}" aria-required="true">
+                    </div>
+                </div>
+                <div class="field required">
+                    <div class="control">
+                        <i class="icon icon-calendar-1"></i>
+                        <input
+                                required
+                                type="text"
+                                placeholder="Date"
+                                name="tryonDate"
+                                id="tryonDate" value="" title="<?= $block->escapeHtmlAttr(__('Date')) ?>"
+                                class="input-text input-create-acc" data-validate="{required:true}">
+                    </div>
+                </div>
+                <div class="field required">
+                    <div class="control">
+                        <i class="icon icon-clock"></i>
+                        <select required name="tryonTime" id="timeSelect" value="" title="Time" class="input-text"
+                                data-validate="{required:true}">
+                            <option value="" selected>Time</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field country ">
+                    <div class="control">
+                        <i class="icon icon-globe"></i>
+                        <select style="pointer-events: none" required name="country" id="country" value=""
+                                title="Country" class="input-text" data-validate="{required:false}">
+                            <option selected value="India"><?= $block->escapeHtml(__('India')) ?></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field region ">
+                    <div class="control">
+                        <i class="icon icon-globe"></i>
+                        <select required name="state" id="state" value="" title="State" class="input-text"
+                                data-validate="{required:false}">
+                            <option value=""><?= $block->escapeHtml(__('Select a State')) ?></option>
+                            <?php
+                            foreach ($block->getStates('IN') as $states) { ?>
+                                <option value="<?= $states['value'] ?>"><?= $states['label'] ?></option>
+                            <?php }
+                            ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="field required">
+                    <div class="control">
+                        <i class="icon icon-mobile"></i>
+                        <input
+                                required
+                                type="text"
+                                name="mobile"
+                                placeholder="Mobile No"
+                                id="mobile_number"
+                                maxlength="10"
+                                minlength="10"
+                                title="Mobile" class="input-text" data-validate="{required:true}" aria-required="true">
+                        <p style="display: none;" class="btn generate-otp-btn">Generate Otp</p>
+                    </div>
+                    <div style="display: none; margin: 20px 0 0 0; " class="otp-sent alert alert-success">
+                        <strong>OTP has been sent!</strong>
+                    </div>
+                </div>
+
+                <div class="field required">
+                    <div class="opt-container control">
+                        <input disabled="true"
+                               type="text"
+                               name="otp" id="otp"
+                               value="" title="Enter OTP"
+                               placeholder="Enter Otp"
+                               class="input-text opt-input"
+                               maxlength="6"
+                               minlength="6"
+                               data-validate="{required:true, maxlength:6, minlength:6}" aria-required="true">
+                        <div style="display: none;" class="otp-details">
+                            <span class="resend-otp-msg">Didn't receive a OTP?</span> <span class="btn resend-otp-btn">Resend OTP</span>
+                        </div>
+                    </div>
+                    <div style="display: none; margin: 20px 0 0;" class="otp-resent alert alert-success">
+                        <strong>OTP has been Resent!</strong>
+                    </div>
+                    <div style="display: none;" class="otp-success alert alert-success">
+                        <strong>OTP Verified!</strong>
+                    </div>
+                    <div style="display: none; margin: 20px 0 0;;" class=" otp-failed alert alert-danger">
+                        <strong>Invalid OTP!</strong>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <i class="icon icon-envelope-alt"></i>
+                        <textarea placeholder="Message" name="message" id="message" cols="5" rows="3"
+                                  data-validate="{required:false}" aria-required="true"></textarea>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <button type="submit" id="videocart-submit" class="action submit primary" title="Submit"><span>Submit</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<style>
+    .opt-control {
+        pointer-events: none;
+        opacity: 0.6;
+    }
+
+    input[disabled] {
+        pointer-events: none;
+    }
+</style>
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "videocartForm": {}
+            }
+        }
+
+</script>

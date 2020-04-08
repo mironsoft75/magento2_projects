@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="catalog_product_import_bunch_save_after">
+        <observer name="catalog_product_price_calculation_csvfileupload" instance="Codilar\PriceCalculation\Observer\ProductPriceCsv"/>
+    </event>
+    <event name="catalog_product_load_after">
+        <observer name="catalog_product_stone_information_read_only" instance="Codilar\PriceCalculation\Observer\StoneInformation"/>
+    </event>
+    <event name="codilar_stone_metal_rates_save_after">
+        <observer name="catalog_product_price_grid_edit" instance="Codilar\PriceCalculation\Observer\ProductPriceGridEdit"/>
+    </event>
+    <event name="catalog_product_save_before">
+        <observer name="catalog_product_price_calculation_product_save" instance="Codilar\PriceCalculation\Observer\SetCentralComputedPrice"/>
+    </event>
+</config>

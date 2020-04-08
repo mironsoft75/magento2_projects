@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Codilar_ContactUs::magento_contactus_grid" title="Contact Us" module="Codilar_ContactUs" sortOrder="100" parent="Magento_Review::catalog_reviews_ratings_reviews_all" action="magento_contactus/index/index" resource="Magento_Reports::magento_contactus_grid"/>
+    </menu>
+</config>
+

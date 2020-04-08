@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.sku">
+            <arguments>
+                <argument name="at_label" xsi:type="string">Code</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="product.info.review" remove="true" />
+        <move element="product.info.price" destination="product.info.main" before="page.main.title" />
+        <move element="product.info.sku" destination="product.info.main" after="page.main.title" />
+        <referenceContainer name="product.info.main">
+            <container name="product.collection.name.main" label="Product collection info" htmlTag="div" htmlClass="product-collection-info-main" before="cod.check.store.locator.main">
+                <block class="Magento\Catalog\Block\Product\View\Description" name="product.collection.name" template="Magento_Catalog::product/view/collectionsname.phtml" />
+            </container>
+            <container name="product.options.main" label="Product options main" htmlTag="div" htmlClass="product-options-main" before="cod.check.store.locator.main" after="product.collection.name.main">
+                <block class="Magento\Catalog\Block\Product\View\Description" name="product.options.content" template="Magento_Catalog::product/view/optionscontent.phtml" />
+            </container>
+            <container name="cod.check.store.locator.main" label="cod and store locator main" htmlTag="div" htmlClass="cod-storelocator-main" after="product.info.extrahint">
+                <block class="Magento\Catalog\Block\Product\View\Description" name="product.storelocator" template="Magento_Catalog::product/view/storelocator.phtml" after="-" />
+            </container>
+            <container name="addtocart.tryonvideo.main" label="Add to cart and try on video main" htmlTag="div" htmlClass="addtocart-tryvideo-main" after="cod.check.store.locator.main"/>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <container name="product.static.info.main" label="Product static info main" htmlTag="div" htmlClass="static-info-main" after="gallery.info.main-box" before="product.details.static.main">
+                <block class="Magento\Cms\Block\Block" name="product_contact_info" before="-">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">product_contact_info</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="product_certificate_block" after="-">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">product_certificate_block</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="product_advange_block" after="-">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">product_advange_block</argument>
+                    </arguments>
+                </block>
+            </container>
+            <container name="product.details.static.main" label="product details and static blocks main" htmlTag="div" htmlClass="product-details-static-main" after="product.static.info.main">
+                <container name="product.details.data.main" label="product details data box main" htmlTag="div" htmlClass="product-details-data-box" before="product.details.static.box.main" />
+            </container>
+            <container name="gallery.info.main-box" label="gallery product info main" htmlTag="div" htmlClass="gallery-info-main-box codilar" before="-" />
+        </referenceContainer>
+        <referenceBlock name="product.info.details">
+            <block class="Magento\Catalog\Block\Product\View\Attributes" name="product.info.overview.rapnet" template="Magento_Catalog::product/view/overview.phtml" group="detailed_info">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Overview</argument>
+                    <argument name="priority" xsi:type="string">1</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Catalog\Block\Product\View" name="certificate_tab" template="Magento_Catalog::product/view/certificate.phtml" group="detailed_info" >
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Certificate</argument>
+                    <argument name="priority" xsi:type="string">2</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Catalog\Block\Product\View\Attributes" name="product.info.technical" template="Magento_Catalog::product/view/attributes.phtml" group="detailed_info">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Product Details</argument>
+                    <argument name="priority" xsi:type="string">3</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Review\Block\Product\Review" name="reviews.tab.custom" as="reviews_custom" template="Magento_Review::review.phtml" group="detailed_info">
+                <block class="Magento\Review\Block\Form" name="product.review.form.custom" as="review_form_custom">
+                    <arguments>
+                        <argument name="jsLayout" xsi:type="array">
+                            <item name="components" xsi:type="array">
+                                <item name="review-form" xsi:type="array">
+                                    <item name="component" xsi:type="string">Magento_Review/js/view/review</item>
+                                </item>
+                            </item>
+                        </argument>
+                    </arguments>
+                    <container name="product.review.form.fields.before.custom" as="form_fields_before_custom" label="Review Form Fields Before"/>
+                </block>
+            </block>
+            <block class="Magento\Catalog\Block\Product\View" name="product-info-contact-form" template="Magento_Catalog::product/view/contact_form.phtml" group="detailed_info">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Contact Form</argument>
+                    <argument name="priority" xsi:type="string">4</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <referenceBlock name="product.attributes" remove="true" />
+        <referenceBlock name="reviews.tab" remove="true" />
+        <referenceBlock name="product.info.overview" remove="false" />
+        <referenceBlock name="product.info.description" remove="true" />
+        <move element="codilar.product.avail.delivery" destination="cod.check.store.locator.main" before="product.storelocator"/>
+        <move element="product.info" destination="addtocart.tryonvideo.main" after="-" />
+        <move element="product.tryoncart" destination="addtocart.tryonvideo.main" before="-" />
+        <move element="catalog.product.related" destination="content" after="product.info.details" />
+        <move element="product.info.media" destination="gallery.info.main-box" before="-" />
+        <move element="product.info.main" destination="gallery.info.main-box" after="-" />
+    </body>
+</page>

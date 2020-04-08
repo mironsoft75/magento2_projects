@@ -1,0 +1,166 @@
+<?php
+/**
+ * @author Evince Team
+ * @copyright Copyright (c) 2018 Evince (http://evincemage.com/)
+ */
+?>
+<?php
+$request = $block->getRequest()->getParams();
+$list = $block->getProductCollection();
+$urlString = $block->getUrlString();
+?>
+<div id="search_results">
+    <div class="search_section">
+        <?php if (isset($list['pagination']['total']) && $list['pagination']['total'] != 0): ?>
+            <table id="result_table">
+                <thead>
+                    <tr>
+                        <th onclick="window.location='<?=$urlString."&by=shape&c=y"?>'" class="sshape">
+                            <?= /* @escapeNotVerified */ __('Shape') ?>
+                        </th>
+
+                        <th class="sshape"> <?= /* @escapeNotVerified */ __('Image') ?> </th>
+
+                        <th onclick="window.location='<?=$urlString."&by=size&c=y"?>'" class="sweight">
+                            <?= /* @escapeNotVerified */ __('Wei.') ?>
+                        </th>
+                        <th onclick="window.location='<?=$urlString."&by=color&c=y"?>'" class="scolor">
+                            <?= /* @escapeNotVerified */ __('Col.') ?>
+                        </th>
+                        <th onclick="window.location='<?=$urlString."&by=clarity&c=y"?>'" class="sclarity">
+                            <?= /* @escapeNotVerified */ __('Clr.') ?>
+                        </th>
+                        <th onclick="window.location='<?=$urlString."&by=lab&c=y"?>'" class="slab">
+                            <?= /* @escapeNotVerified */ __('Lab.') ?>
+                        </th>
+                        <th class="scertificate"><?= /* @escapeNotVerified */ __('Cert.') ?></th>
+
+                        <?php if(($request['search_type'] == 'White' || $request['search_type'] == 'Glowing') &&
+                            ( !isset($request['diamond_shape']) || $request['diamond_shape'][0] == '87' )):
+                        ?>
+                            <th onclick="window.location='<?=$urlString."&by=cut&c=y"?>'" class="scut">
+                                <?= /* @escapeNotVerified */ __('Cut') ?>
+                            </th>
+                        <?php endif; ?>
+
+                        <th class="spolish"><?= /* @escapeNotVerified */ __('Polish') ?></th>
+                        <th class="ssym"><?= /* @escapeNotVerified */ __('Sym.') ?></th>
+                        <th class="sfluor"><?= /* @escapeNotVerified */ __('Fluor.') ?></th>
+                        <th class="smeas"><?= /* @escapeNotVerified */ __('Meas.') ?></th>
+                        <th class="sdepth"><?= /* @escapeNotVerified */ __('Depth') ?></th>
+                        <th class="stable"><?= /* @escapeNotVerified */ __('Table') ?></th>
+
+                        <th onclick="window.location='<?=$urlString."&by=price&c=y"?>'" class="sprice">
+                            <?= /* @escapeNotVerified */ __('Price') ?>
+                        </th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?=$block->getChildHtml('diamond.search.list') ?>
+                </tbody>
+            </table>
+
+            <div class="pagination" style="text-align:center;">
+                <?php
+                    $current = 1;
+                    parse_str($urlString , $parameters);
+
+                    foreach ($parameters as $key => $request){
+                        if ($key == "page"){
+                            $current = $request;
+                            $p = "&".$key."=".$request;
+                            $urlString = str_replace($p, "", $urlString);
+                        }
+                        if ($key == "c"){
+                            $by = "&".$key."=".$request;
+                            $urlString = str_replace($by, "&c=", $urlString);
+                        }
+                    }
+
+                    $number = 20;
+                    $pages = ceil($list['pagination']['total']/$number);
+                ?>
+
+                <ul>
+                    <li <?=($current == 1) ? 'class="disabled"' : ''?>>
+                        <a href="<?=($current == 1) ? '#_' : $urlString.'&page='.($current-1)?>">
+                            <?= /* @escapeNotVerified */ __('Prev') ?>
+                        </a>
+                    </li>
+                    <?php if($current <= 5): ?>
+
+                        <?php for ($i= 1; $i <= $pages; $i++): ?>
+
+                            <?php
+                                $class = "";
+                                if ($i > 10){
+                                    continue;
+                                }
+
+                                if ($i == $current){
+                                    $class = 'class="active"';
+                                }
+                            ?>
+
+                            <li <?=$class?>>
+                                <a href="<?=$urlString."&page=".$i?>">
+                                    <?=$i?>
+                                </a>
+                            </li>
+                        <?php endfor; ?>
+
+                    <?php else: ?>
+
+                        <?php for ($i= $current - 5; $i <= $pages; $i++): ?>
+                            <?php
+                                $class = "";
+                                if ($i >= $current + 6){
+                                    continue;
+                                }
+                                if ($i == $current){
+                                        $class = 'class="active"';
+                                }
+                            ?>
+
+                            <li <?=$class?>>
+                                <a href="<?=$urlString."&page=".$i?>"><?=$i?></a>
+                            </li>
+
+                        <?php endfor; ?>
+
+                    <?php endif;?>
+
+                    <li <?=($current == $pages) ? 'class="disabled"' : ''?>>
+                        <a href="<?=($current == $pages) ? '#_' : $urlString.'&page='.($current+1)?>">
+                            <?= /* @escapeNotVerified */ __('Next') ?>
+                        </a>
+                    </li>
+                </ul>
+                <br>
+
+                <?php
+                    if($current == 1){
+                        $from = 1;
+                        $to = $number;
+                    } else {
+                        $from = (($current - 1) * $number) + 1;
+                        $to = ($current * $number);
+                    }
+
+                    if($list['pagination']['total'] < $to) {
+                        $to = $list['pagination']['total'];
+                    }
+
+                    echo __("Results ") . number_format($from) . __(" to ") . number_format($to) . __(" of ") . number_format($list['pagination']['total']);
+                ?>
+            </div>
+
+        <?php elseif(isset($list['pagination'])): ?>
+        <div class="no-result">
+            <h1><?=  __("No Results")?></h1>
+        </div>
+        <?php endif; ?>
+    </div>
+</div>

@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="weltpixel_thankyoupage" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Custom Thank You Page</label>
+            <tab>weltpixel</tab>
+            <resource>WeltPixel_ThankYouPage::ThankYouPageSettings</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enable" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable module</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="order_details" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Order Details</label>
+                <field id="enable" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="subtitle" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Subtitle</label>
+                    <comment>Use %1 as placeholder for order increment id.</comment>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="description" translate="label" type="textarea" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="continue_shopping" translate="label" type="select" sortOrder="95" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show 'Continue Shopping'</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sort Order</label>
+                    <validate>number required</validate>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="create_account" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Create Account</label>
+                <field id="enable" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Default Magento functionality. (Only for guest checkout)</comment>
+                </field>
+                <field id="description" translate="label" type="textarea" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="email_label" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Label</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="after_creation_message" translate="label" type="textarea" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Message displayed after account creation</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sort Order</label>
+                    <validate>number required</validate>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="newsletter_subscribe" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Newsletter Subscribe</label>
+                <field id="enable" translate="label comment" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>When enabled, if user not subscribed to newsletter, show option to subscribe to newsletter.</comment>
+                </field>
+                <field id="description" translate="label" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sort Order</label>
+                    <validate>number required</validate>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="custom_block" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Custom Block</label>
+                <field id="enable" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="block_id" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Block</label>
+                    <source_model>WeltPixel\ThankYouPage\Model\Config\Source\BlockCollection</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sort Order</label>
+                    <validate>number required</validate>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

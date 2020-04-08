@@ -1,0 +1,59 @@
+
+<?php
+/**
+ * @var $block \Magento\Catalog\Block\Product\View\Description
+ */
+$_product = $block->getProduct();
+$attribute_code = "collection";
+$attributeValues = null;
+$_attribute = $_product->getResource()->getAttribute($attribute_code);
+if($_attribute){
+    $_attribute_value = $_attribute ->getFrontend()->getValue($_product);
+    $attributeValues = str_replace(","," |",$_attribute_value);
+}
+?>
+<?php if ($attributeValues):?>
+    <p class="collection-name"><?= __($attributeValues); ?></p>
+<?php endif; ?>
+<p class="more-details-btn-main">
+    <?php echo __('More Details'); ?>
+</p>
+
+<script>
+    require(['jquery'], function ($) {
+        $(document).ready(function(){
+            $('.live-chat-btn-product').click(function(){
+                $zoho.salesiq.floatwindow.visible('show')
+            });
+            $('.call-btn-product').click(function(){
+                $zoho.salesiq.floatwindow.visible('show')
+            });
+            // removing action to move screen to contact us
+            // $('.call-btn-product').click(function(){
+            //     $("#tab-label-product-info-contact-form").click();
+            //     if($(window).width() > 767) {
+            //         var clicked = true;
+            //         $('html, body').animate({
+            //             scrollTop: $("#tab-label-product-info-contact-form").offset().top - $('header').height()
+            //         }, 1000, function() {
+            //             if(!clicked) {
+            //                 $(".contact-form-main-tab .form-area").effect("highlight", {color: 'rgba(3, 175, 177, 0.39)'});
+            //                 $(".contact-form-main-tab .form-area #name").focus();1
+            //             }
+            //             clicked = false;
+            //         });
+            //     } else {
+            //         $('html, body').animate({
+            //             scrollTop: $("#tab-label-product-info-contact-form").offset().top - $('header').height()
+            //             scrollTop: $(".contact-form-main-sidebar").offset().top - $('header').height()
+            //         });
+            //     }
+            // });
+            $('.more-details-btn-main').click(function(){
+                $('html, body').animate({
+                    scrollTop: $(".product.info.detailed").offset().top - $('header').height()
+                }, 1000);
+            })
+        });
+    });
+</script>

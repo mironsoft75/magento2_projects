@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+ /**
+  * @author Evince Team
+  * @copyright Copyright (c) 2018 Evince (http://evincemage.com/)
+  */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <rapnet>
+            <settings>
+                <rapnet>1</rapnet>
+                <slider_colour>1979c3</slider_colour>
+                <hover_colour>1979c3</hover_colour>
+            </settings>
+        </rapnet>
+    </default>
+</config>

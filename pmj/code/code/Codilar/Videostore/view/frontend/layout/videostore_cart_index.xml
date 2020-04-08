@@ -1,0 +1,13 @@
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Videostore</title>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <referenceBlock name="catalog.compare.sidebar" remove="true" />
+            <referenceContainer name="sidebar.additional" remove="true" />
+            <block class="Codilar\Videostore\Block\Cart\Index" cacheable="true" name="videostore_cart_index" template="Codilar_Videostore::videostore_cart_index.phtml">
+            </block>
+        </referenceContainer>
+    </body>
+</page>

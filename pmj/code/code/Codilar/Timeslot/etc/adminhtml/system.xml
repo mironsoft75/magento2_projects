@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="timeslot" translate="label" sortOrder="100" class="codilar-tab">
+            <label>Codilar Settings</label>
+        </tab>
+        <section id="timeslot" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+            <resource>Codilar_Timeslot::codilar</resource>
+            <class>separator-top</class>
+            <label>Timeslot</label>
+            <tab>codilar</tab>
+            <group id="timeslot" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Timeslot Threshold Configurations</label>
+                <field id="customerthreshold" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Customer Threshold</label>
+                </field>
+                <field id="adminthreshold" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Admin Threshold</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

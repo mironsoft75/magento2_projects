@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Codilar_Customer" setup_version="1.0.4">
+        <sequence>
+            <module name="Magento_Customer" />
+            <module name="Amazon_Core"/>
+            <module name="Amazon_Login"/>
+            <module name="Amazon_Payment"/>
+        </sequence>
+    </module>
+</config>

@@ -1,0 +1,10 @@
+<?php
+$product = $block->getProduct();
+?>
+<h1 style="color: #bababa"><?php echo $product->getData('certificate'); ?></h1>
+<?php
+echo $this->getLayout()
+    ->createBlock('Magento\Cms\Block\Block')
+    ->setBlockId('product_certificate_block')
+    ->toHtml();
+?>

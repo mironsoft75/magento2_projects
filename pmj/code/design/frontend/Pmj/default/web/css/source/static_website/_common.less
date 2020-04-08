@@ -1,0 +1,380 @@
+@import "_header.less";
+@import "_footer.less";
+
+.bck-overlay-light {
+    background-color: #e2dcd0;
+    background: url('../images/bck-overlay.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bck-overlay-dark {
+    background-color: #e2dcd0;
+    background: url('../images/bck-legecy.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    @media @mobile {
+        background-size: initial;
+    }
+}
+.only-for-legecy {
+    display: none;
+}
+.no-margin {
+    margin: 0;
+}
+:root body.theme-pearl {
+    &.overflow-hidden {
+        overflow: hidden;
+    }
+    &.amlocator-index-index #maincontent.page-main, .page-main, .page.messages {
+        max-width: 1300px !important;
+        @media screen and (max-width: 1370px) and (min-width: 900px) {
+            padding: 0 65px;
+        }
+    }
+    &.amlocator-index-index #maincontent.page-main {
+        padding: 0 15px;
+        @media screen and (max-width: 1370px) and (min-width: 900px) {
+            padding: 0 65px;
+        }
+    }
+    &.cms-page-view .breadcrumbs {
+        max-width: 1300px !important;
+        width: 1300px !important;
+        margin: auto;
+        display: none !important;
+        a {
+            color: #000;
+        }
+        @media @mobile {
+            display: none !important;
+            width: 100% !important;
+            margin-top: 20px;
+        }
+        @media screen and (max-width: 1370px) and (min-width: 900px) {
+            width: 100% !important;
+            padding: 0 65px;
+        }
+    }
+}
+#maincontent.page-main {
+    max-width: initial !important;
+    padding: 0;
+    .columns {
+        max-width: initial !important;
+        .column.main {
+            padding: 0;
+            min-height: auto;
+        }
+    }
+}
+.popup-main-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99;
+    text-align: center;
+    display: none;
+    .close-modal {
+        position: absolute;
+        top: 30px;
+        right: 50px;
+        font-size: 40px;
+        color: #fff;
+        cursor: pointer;
+        @media @mobile {
+            top: 10px;
+            right: 15px;
+            font-size: 30px;
+        }
+    }
+    .popup-content-main {
+        margin-top: 75px;
+        @media @mobile {
+            margin-top: 45px;
+        }
+    }
+    &.appointment-modal-main {
+        .popup-content-main  {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            width: 60%;
+            text-align: initial;
+            background: #F4F4F4;
+            border-radius: 10px;
+            box-sizing: border-box;
+            padding: 25px 50px;
+            max-height: 100vh;
+            overflow-y: auto;
+            @media @mobile {
+                width: 95%;
+                background: #fff;
+                padding: 45px 20px 25px;
+            }
+            .close-modal {
+                color: #363636;
+                font-size: 25px;
+                top: 10px;
+                right: 15px;
+            }
+            .modal-title {
+                font-size: 24px;
+                text-align: center;
+                font-weight: bold;
+                @media @mobile {
+                    font-size: 19px;
+                }
+            }
+            .form-inputs-main-box {
+                display: block;
+                input, select, #datepicker {
+                    background-color: #FFFFFF;
+                    height: 42px;
+                    border-radius: 5px;
+                    @media @mobile {
+                        background-color: #F8F8F8;
+                    }
+                }
+                textarea {
+                    background-color: #FFFFFF;
+                    border-radius: 5px;
+                    @media @mobile {
+                        background-color: #F8F8F8;
+                    }
+                }
+                .fieldset-main {
+                    width: 100%;
+                    display: inline-block;
+                    margin-top: 25px;
+                    @media @mobile {
+                        margin-bottom: 0;
+                        &.appointment-fieldset {
+                            margin-top: 0;
+                        }
+                    }
+                    .fieldset-label {
+                        text-align: center;
+                    }
+                    .field {
+                        padding-left: 10px;
+                    }
+                    &.extra-main {
+                        margin-top: 15px;
+                        .fieldset-label {
+                            font-size: 15px;
+                            text-align: left;
+                            padding-left: 10px;
+                            @media @mobile {
+                                text-align: center;
+                            }
+                        }
+                        .field {
+                            margin-top: 5px;
+                        }
+                    }
+                    &.appointment-fieldset {
+                        @media @desktop {
+                            display: inline-flex;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+                        }
+                    }
+                }
+            }
+            .action-button {
+                @media @mobile {
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+}
+
+.collection-slider {
+    .item img {
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+        margin: 0 auto;
+        @media @mobile {
+            width: 60% !important;
+            height: 200px;
+        }
+    }
+}
+.mt-20 {
+    margin-top: 20px;
+}
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.videostore-form {
+    .form-inputs-main-box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        @media @mobile {
+            display: block;
+        }
+        .fieldset-main {
+            width: 48%;
+            @media @mobile {
+                width: 100%;
+                display: inline-block;
+                margin-bottom: 30px;
+            }
+            .fieldset-label {
+                font-size: 18px;
+                margin: 0;
+                @media @mobile {
+                    text-align: center;
+                }
+            }
+            .field {
+                margin-top: 15px;
+                width: 48%;
+                display: inline-block;
+                input, select, textarea {
+                    height: 42px;
+                    border-radius: 5px;
+                    border-color: transparent;
+                    &[aria-invalid="true"]{
+                        border-color: #ff7070;
+                    }
+                }
+                #datepicker, #datetimepicker, .datepicker, .mobile-timepicker {
+                    background-image: url('../images/select-bg.svg');
+                    background-repeat: no-repeat;
+                    background-position: 100% 45%;
+                    width: 100%;
+                    border-color: transparent;
+                    &[aria-invalid="true"]{
+                        border-color: #ff7070;
+                    }
+                }
+                @media @mobile {
+                    width: 100%;
+                    input, select, #datepicker {
+                        height: 40px !important;
+                    }
+                    .mobile-date-picker, .mobile-timepicker {
+                        background-image: none !important;
+                    }
+                }
+                &.email {
+                    width: 100%;
+                }
+                &:nth-of-type(2n) {
+                    float: right;
+                }
+                .label {
+                    font-size: 15px;
+                    margin-bottom: 5px;
+                    display: inline-block;
+                    @media @desktop {
+                        min-height: 16px;
+                    }
+                    @media @mobile {
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+
+            }
+            &.extra-main {
+                width: 100%;
+                margin-top: 20px;
+                @media @mobile {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+                .field {
+                    width: 100%;
+                    textarea {
+                        height: 100px;
+                    }
+                }
+            }
+        }
+    }
+    .action-button {
+        text-align: center;
+        margin-top: 20px;
+        @media @mobile {
+            margin-top: 0;
+        }
+        .form-button {
+            padding: 8px 50px;
+            font-size: 19px;
+        }
+    }
+}
+.success-modal {
+    .modal-title {
+        border: none;
+        text-align: center;
+        font-size: 30px;
+    }
+    .modal-content {
+        font-size: 17px;
+        text-align: center;
+    }
+    .modal-footer button {
+        min-width: 100px;
+        &:hover {
+            border-color: @primary;
+        }
+    }
+}
+
+.ui-datepicker {
+    width: 260px;
+}
+.ui_tpicker_hour_label, .ui_tpicker_minute_label {
+    padding-top: 10px;
+}
+.appointment-form-msg-main {
+    text-align: center;
+}
+
+//timepicker
+.time-drop-down-main-box {
+    position: relative;
+    .time-drop-down {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid #ddd;
+        width: 100%;
+        background: #fff;
+        display: flex;
+        .time-picker-panel-select {
+            width: 33%;
+            max-height: 150px;
+            overflow-y: auto;
+            text-align: center;
+            ul {
+                padding: 0;
+                list-style: none;
+                li {
+                    margin: 0;
+                    padding: 7px 0px;
+                    cursor: pointer;
+                    &.time-picker-panel-select-option-selected {
+                        background: #ddd;
+                    }
+                    &:hover {
+                        background: #edfaff;
+                    }
+                }
+            }
+        }
+    }
+}

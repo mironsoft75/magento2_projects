@@ -1,0 +1,137 @@
+.contact-index-index {
+    .page-wrapper {
+        .columns {
+            .column.main {
+                @media @mobile{
+                    padding-bottom: 0;
+                }
+                .contact-container {
+                    margin-top: 0;
+                    .col-contact-info {
+                        @media @tab-portrait {
+                            width: 100%;
+                        }
+                        .social-icon-links-main {
+                            padding: 0;
+                            .title h4 {
+                                @media @mobile {
+                                    padding: 0;
+                                }
+                            }
+                            .social-icons {
+                                color: #555;
+                            }
+                        }
+                        >h4:first-child {
+                            font-size: 20px;
+                            font-weight: bold;
+                            padding: 20px 0;
+                            margin: 10px 0;
+                            line-height: normal;
+                        }
+                        .number {
+                            color: #232323;
+                            padding-right: 10px;
+                            display: inline-flex;
+                            align-items: center;
+                            @media @mobile {
+                                justify-content: center;
+                            }
+                            .icon-phone {
+                                color: #232323;
+                                padding-right: 5px;
+                                font-size: 20px;
+                            }
+                            a {
+                                color: #232323;
+                            }
+                        }
+                        .whatsapp-number {
+                            color: #232323;
+                            display: inline-flex;
+                            align-items: center;
+                            margin-top: 10px;
+                            @media @mobile {
+                                justify-content: center;
+                            }
+                            .whatsapp-img {
+                                width: 18px;
+                                height: auto;
+                                margin-right: 7px;
+                            }
+                            a {
+                                color: #232323;
+                            }
+                        }
+                    }
+                    .form-area {
+                        @media @desktop{
+                            padding-right: 0;
+                        }
+                        @media @mobile {
+                            padding: 0;
+                        }
+                        @media @tab-portrait {
+                            width: 100%;
+                        }
+                        .page-title {
+                            margin: 0;
+                            padding: 0;
+                            h1 {
+                                font-size: 20px;
+                                font-weight: bold;
+                                padding: 20px 0;
+                                margin: 10px 0;
+                                line-height: normal;
+                                @media @mobile{
+                                    text-align: center;
+                                }
+                            }
+                        }
+                        #contact-form {
+                            .input-text,
+                            #comment {
+                                background: #f2f2f2;
+                                border: 1px solid #f2f2f2;
+                                box-shadow: none;
+                                padding-left: 10px;
+                                &:focus {
+                                    border: 1px solid @primary;
+                                }
+                                &.mage-error {
+                                    border: 1px solid #ff0000
+                                }
+                            }
+                            .input-text.mage-error{
+                                border: 1px solid #ff0000;
+                            }
+                            .actions-toolbar {
+                                display: inline-block;
+                                margin-bottom: 20px;
+                            }
+                        }
+                        &::after {
+                            @media @mobile {
+                                content: "";
+                                display: block;
+                                background-color: #f8f8f8;
+                                position: absolute;
+                                width: 100%;
+                                top: -100%;
+                                right: 0;
+                                bottom: 0;
+                                z-index: -1;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.contact-index-index .form-area :after{
+    @media @mobile{
+        display: none;
+    }
+}

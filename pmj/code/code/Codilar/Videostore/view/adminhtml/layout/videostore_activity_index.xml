@@ -1,0 +1,10 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Codilar_Videostore::css/videostoreActivity.css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Codilar\Videostore\Block\Adminhtml\Activity\Index" cacheable="false" name="videostore_activity_index" template="Codilar_Videostore::videostore_activity_index.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

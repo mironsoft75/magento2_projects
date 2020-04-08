@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+ /**
+  * @author Evince Team
+  * @copyright Copyright (c) 2018 Evince (http://evincemage.com/)
+  */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="codilar" translate="label" sortOrder="500">
+            <label>Codilar</label>
+        </tab>
+        <section id="product_price_breakup" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <label>Product Page</label>
+            <tab>codilar</tab>
+            <resource>Codilar_Base::config_price_breakup</resource>
+            <group id="settings" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0"
+                   showInStore="0">
+                <label>General Settings</label>
+                <field id="price_breakup" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0"
+                       showInStore="0" canRestore="1">
+                    <label>Product Details Tab</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="max_width" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0"
+                       showInStore="0" canRestore="1">
+                    <label>Image Max Width</label>
+                </field>
+                <field id="max_height" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0"
+                       showInStore="0" canRestore="1">
+                    <label>Image Max Height</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

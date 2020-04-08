@@ -1,0 +1,434 @@
+<?php
+/**
+ * @var $block \Magento\Catalog\Block\Product\View
+ */
+/** @var $pageBlock \Codilar\Rapnet\Block\PageData $pageBlock */
+/**
+ * @var $diamondBlock \Codilar\Rapnet\Block\Index
+ */
+/**
+ * @var $filterOrder \Codilar\Rapnet\Block\FilterOrder
+ */
+$pageBlock = $block->getLayout()->createBlock('Codilar\Rapnet\Block\PageData');
+$collection = $pageBlock->getPageCollection();
+$diamondBlock = $block->getLayout()->createBlock('Codilar\Rapnet\Block\Index');
+$diamondAttributes = $diamondBlock->getDiamondAttributes();
+$request = $block->getRequest()->getParams();
+$filterOrder = $block->getLayout()->createBlock('Codilar\Rapnet\Block\FilterOrder');
+?>
+<div class="codilar_rapnet_listing_div" id="codilar_rapnet_listing_div">
+    <div id="search-diamonds">
+        <form id="search-diamonds-form"
+              action="<?= $block->getUrl('rapnet/index/pagedata') ?>"
+              class="search_form">
+            <div class="search_section">
+                <div class="shape section full">
+                    <h2 class="title"><?= /* @escapeNotVerified */
+                        __('Shape') ?></h2>
+                    <span class="pmj-tooltip">?</span>
+                    <span class="search-tool-tip shape-pmj"
+                          data-tooltip="Shape refers to the overall outline of the diamond when viewed from the top."
+                          data-tooltip-position="right">
+                             Shape refers to the overall outline of the diamond when viewed from the top.
+                        </span>
+                    <div class="slider_wrapper">
+                        <ul id="shape-list">
+                            <?php
+                            $shapeOptions = $diamondAttributes['rapnet_diamond_shape']['options'];
+                            $width = 100 / count($shapeOptions);
+                            ?>
+                            <?php
+                            $sortedShapes=$filterOrder->shapeFilter($shapeOptions);
+                            ?>
+                            <?php foreach ($sortedShapes as $options) : ?>
+                                <li style="width:<?= $width ?>%"
+                                    class="shape-item <?= strtolower($options['label']); ?>
+                               <?php if (array_key_exists('diamond_shape', $request)) : ?>
+                            <?php if (in_array($options['label'], explode(',', $request['diamond_shape']))) : ?> <?= 'selected' ?><?php endif; ?>
+                            <?php endif; ?>"
+                                    attid="<?= str_replace(' ', '_', $options['value']) ?>"
+                                    value="<?= $options['label'] ?>" data-value="<?= $options['label'] ?>">
+                                    <span></span>
+                                    <b><?= $options['label'] ?></b>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
+                <div class="price section">
+                    <span class="title"><?= /* @escapeNotVerified */
+                        __('Price') ?></span>
+<!--                    <span class="pmj-tooltip">?</span>-->
+<!--                    <span class="search-tool-tip"-->
+<!--                          data-tooltip="The value of a diamond is based on the appropriate combination of the 4 Cs of a diamond."-->
+<!--                          data-tooltip-position="right">-->
+<!--                        The value of a diamond is based on the appropriate combination of the 4 Cs of a diamond-->
+<!--                    </span>-->
+                    <div class="slider_wrapper">
+                        <div id="price-slider">
+                            <?php $values = $pageBlock->getPriceValues($request); ?>
+                            <input type="text" class="ui-slider-val slider-left" value="<?= $values[0] ?>"
+                                   id="price_from" />
+                            <input type="text" class="ui-slider-val slider-right" value="<?= $values[1] ?>"
+                                   id="price_to"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="carat section goright">
+                    <span class="title"><?= /* @escapeNotVerified */
+                        __('Carat') ?></span>
+                    <span class="pmj-tooltip">?</span>
+                    <span class="search-tool-tip"
+                          data-tooltip="A carat is the unit of weight by which a diamond is measured. Carat size alone does not represent the total beauty and value of a diamond."
+                          data-tooltip-position="right">
+                        A carat is the unit of weight by which a diamond is measured. Carat size alone does not represent the total beauty and value of a diamond.
+                    </span>
+                    <div class="slider_wrapper">
+                        <div id="carat-slider">
+                            <?php $values = $pageBlock->getCaratsValues($request); ?>
+                            <input type="text" class="ui-slider-val slider-left" value="<?= $values[0] ?>"
+                                   id="carat_from" />
+                            <input type="text" class="ui-slider-val slider-right" value="<?= $values[1] ?>"
+                                   id="carat_to" />
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate cut section">
+                    <span class="title"><?= /* @escapeNotVerified */
+                        __('Cut') ?></span>
+                    <span class="pmj-tooltip">?</span>
+                    <span class="search-tool-tip"
+                          data-tooltip="Certificates are proof of a diamond’s identity, authenticity and value"
+                          data-tooltip-position="right">
+                           Certificates are proof of a diamond’s identity, authenticity and value
+                    </span>
+                    <div class="slider_wrapper">
+                        <ul id="cut-list">
+                            <?php $cutOptions = $diamondAttributes['rapnet_diamond_cut']['options']; ?>
+                            <?php
+                            $sortedCuts=$filterOrder->cutFilter($cutOptions);
+                            ?>
+                            <?php foreach ($sortedCuts as $options) : ?>
+                                <li class="<?= ($options == end($sortedCuts)) ? 'cut last' : 'cut' ?>
+                     <?php if (array_key_exists('diamond_cut', $request)) : ?>
+                            <?php if (in_array($options['label'], explode(',', $request['diamond_cut']))) : ?> <?= 'selected' ?><?php endif; ?>
+                            <?php endif; ?>"
+                                    attid="<?= str_replace(' ', '_', $options['value']) ?>"
+                                    value="<?= $options['label'] ?>" data-value="<?= $options['label'] ?>">
+                                    <span><?= $options['label'] ?></span>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
+                <div class="certificate color section">
+                    <span class="title"><?= /* @escapeNotVerified */
+                        __('Color') ?></span>
+                    <span class="pmj-tooltip">?</span>
+                    <span class="search-tool-tip"
+                          data-tooltip="The degree of colourlessness of a diamond is defined as its colour. It is the absence of colour that makes a diamond more valuable and rare."
+                          data-tooltip-position="right">
+                        The degree of colourlessness of a diamond is defined as its colour. It is the absence of colour that makes a diamond more valuable and rare.
+                    </span>
+                    <div class="slider_wrapper">
+                        <ul id="color-list">
+                            <?php $colorOptions = $diamondAttributes['rapnet_diamond_color']['options']; ?>
+                            <?php
+                            $sortedColors=$filterOrder->colorFilter($colorOptions);
+                            ?>
+                            <?php foreach ($sortedColors as $options) : ?>
+                                <li class="<?= ($options == end($sortedColors)) ? 'color last' : 'color' ?>
+                          <?php if (array_key_exists('diamond_color', $request)) : ?>
+                            <?php if (in_array($options['label'], explode(',', $request['diamond_color']))) : ?> <?= 'selected' ?><?php endif; ?>
+                            <?php endif; ?>"
+                                    attid="<?= str_replace(' ', '_', $options['value']) ?>"
+                                    value="<?= $options['label'] ?>" data-value="<?= $options['label'] ?>">
+                                    <span><?= $options['label'] ?></span>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
+                <div class="certificate clarity section">
+                    <span class="title"><?= /* @escapeNotVerified */
+                        __('Clarity') ?></span>
+                    <span class="pmj-tooltip">?</span>
+                    <span class="search-tool-tip"
+                          data-tooltip="Degree of purity of a diamond or absence of inclusion is termed Clarity. This determines a diamond's ability to let in light and reflect it."
+                          data-tooltip-position="right">
+                        Degree of purity of a diamond or absence of inclusion is termed Clarity. This determines a diamond's ability to let in light and reflect it.
+                    </span>
+                    <div class="slider_wrapper">
+                        <ul id="clarity-list">
+                            <?php $clarityOptions = $diamondAttributes['rapnet_diamond_clarity']['options']; ?>
+                            <?php
+                            $sortedClaritys=$filterOrder->clarityFilter($clarityOptions);
+                            ?>
+                            <?php foreach ($sortedClaritys as $options) : ?>
+                                <li class="<?= ($options == end($sortedClaritys)) ? 'clarity last' : 'clarity' ?>
+                      <?php if (array_key_exists('diamond_clarity', $request)) : ?>
+                            <?php if (in_array($options['label'], explode(',', $request['diamond_clarity']))) : ?> <?= 'selected' ?><?php endif; ?>
+                            <?php endif; ?>"
+                                    attid="<?= str_replace(' ', '_', $options['value']) ?>"
+                                    value="<?= $options['label'] ?>" data-value="<?= $options['label'] ?>">
+                                    <span><?= $options['label'] ?></span>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
+                <div class="certificate section goright">
+                    <span class="title"><?= /* @escapeNotVerified */
+                        __('Certificate') ?></span>
+                    <span class="pmj-tooltip">?</span>
+                    <span class="search-tool-tip"
+                          data-tooltip="Certificates are proof of a diamond's identity, authenticity and value."
+                          data-tooltip-position="right">Certificates are proof of a diamond's identity, authenticity and value.
+                        </span>
+                    <div class="slider_wrapper">
+                        <ul id="certificate-list">
+                            <?php $certificatesOptions = $diamondAttributes['rapnet_diamond_certificates']['options']; ?>
+                            <?php
+                            $sortedCertificates=$filterOrder->certificateFilter($certificatesOptions);
+                            ?>
+                            <?php foreach ($sortedCertificates as $options) : ?>
+                                <li class="<?= ($options == end($sortedCertificates)) ? 'certificate last' : 'certificate' ?>
+                                <li class="<?= ($options == end($sortedCertificates)) ? 'certificate last' : 'certificate' ?>
+                     <?php if (array_key_exists('diamond_lab', $request)) : ?>
+                            <?php if (in_array($options['label'], explode(',', $request['diamond_lab']))) : ?> <?= 'selected' ?><?php endif; ?>
+                            <?php endif; ?>"
+                                    attid="<?= str_replace(' ', '_', $options['value']) ?>"
+                                    value="<?= $options['label'] ?>" data-value="<?= $options['label'] ?>">
+                                    <span><?= $options['label'] ?></span>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearer"></div>
+                <div class="more_options hideops" style="display: none">
+                    <div class="certificate  polish section">
+                        <span class="title"><?= /* @escapeNotVerified */
+                            __('Polish') ?></span>
+                        <span class="pmj-tooltip">?</span>
+                        <span class="search-tool-tip"
+                              data-tooltip="Polish of a diamond influences its ability to let in light and reflect it back resulting in its brilliance and scintillation."
+                              data-tooltip-position="right">
+                            Polish of a diamond influences its ability to let in light and reflect it back resulting in its brilliance and scintillation.
+                            </span>
+                        <div class="slider_wrapper">
+                            <ul id="polish-list">
+                                <?php $polishOptions = $diamondAttributes['rapnet_diamond_polish']['options']; ?>
+                                <?php
+                                $sortedPolish=$filterOrder->polishFilter($polishOptions);
+                                ?>
+                                <?php foreach ($sortedPolish as $options) : ?>
+                                    <li class="<?= ($options == end($sortedPolish)) ? 'polish last' : 'polish' ?>
+                             <?php if (array_key_exists('diamond_polish', $request)) : ?>
+                            <?php if (in_array($options['label'], explode(',', $request['diamond_polish']))) : ?> <?= 'selected' ?><?php endif; ?>
+                            <?php endif; ?>"
+                                        attid="<?= str_replace(' ', '_', $options['value']) ?>"
+                                        value="<?= $options['label'] ?>" data-value="<?= $options['label'] ?>">
+                                        <span><?= $options['label'] ?></span>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="certificate symmetry section goright">
+                        <span class="title"><?= /* @escapeNotVerified */
+                            __('Symmetry') ?></span>
+                        <span class="pmj-tooltip">?</span>
+                        <span class="search-tool-tip"
+                              data-tooltip="Symmetry defines the exactness of the shape of a diamond and the symmetrical arrangement of its facets."
+                              data-tooltip-position="right">
+                            Symmetry defines the exactness of the shape of a diamond and the symmetrical arrangement of its facets.
+                            </span>
+                        <div class="slider_wrapper">
+                            <ul id="symmetry-list">
+                                <?php $symmetryOptions = $diamondAttributes['rapnet_diamond_symmetry']['options']; ?>
+                                <?php
+                                $sortedSymmetry=$filterOrder->symmetryFilter($symmetryOptions);
+                                ?>
+                                <?php foreach ($sortedSymmetry as $options) : ?>
+                                    <li class="<?= ($options == end($sortedSymmetry)) ? 'symmetry last' : 'symmetry' ?>
+                             <?php if (array_key_exists('diamond_symmetry', $request)) : ?>
+                            <?php if (in_array($options['label'], explode(',', $request['diamond_symmetry']))) : ?> <?= 'selected' ?><?php endif; ?>
+                            <?php endif; ?>"
+                                        attid="<?= str_replace(' ', '_', $options['value']) ?>"
+                                        value="<?= $options['label'] ?>" data-value="<?= $options['label'] ?>">
+                                        <span><?= $options['label'] ?></span>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tableper section">
+                        <span class="title"><?= /* @escapeNotVerified */
+                            __('Table(%)') ?></span>
+                        <span class="pmj-tooltip">?</span>
+                        <span class="search-tool-tip"
+                              data-tooltip="The table is the uppermost, flat polished facet of a diamond, which runs parallel to the plane of the girdle."
+                              data-tooltip-position="right">
+                            The width of the diamond's table expressed as a percentage of its average diameter.
+                            </span>
+                        <div class="slider_wrapper">
+                            <div id="tableper-slider">
+                                <?php $values = $pageBlock->getTablePercent($request); ?>
+                                <input type="text" class="ui-slider-val slider-left" value="<?= $values[0] ?>"
+                                       id="tableper_from"
+                                />
+                                <input type="text" class="ui-slider-val slider-right" value="<?= $values[1] ?>"
+                                       id="tableper_to"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="depth section goright">
+                        <span class="title"><?= /* @escapeNotVerified */
+                            __('Depth(%)') ?></span>
+                        <span class="pmj-tooltip">?</span>
+                        <span class="search-tool-tip"
+                              data-tooltip="The height of a diamond, measured from the culet to the table, divided by its average girdle diameter."
+                              data-tooltip-position="right">
+                            The height of a diamond, measured from the culet to the table, divided by its average girdle diameter.
+                            </span>
+                        <div class="slider_wrapper">
+                            <div id="depth-slider">
+                                <?php $values = $pageBlock->getDepthPercent($request); ?>
+                                <input type="text" class="ui-slider-val slider-left" value="<?= $values[0] ?>"
+                                       id="depth_from"
+                                />
+                                <input type="text" class="ui-slider-val slider-right" value="<?= $values[1] ?>"
+                                       id="depth_to"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="certificate fluoresence section">
+                        <span class="title"><?= /* @escapeNotVerified */
+                            __('Fluorescence') ?></span>
+                        <span class="pmj-tooltip">?</span>
+                        <span class="search-tool-tip"
+                              data-tooltip="A diamond's characteristic to change colour or glow when exposed to UV light is called fluorescence."
+                              data-tooltip-position="right">
+                            A diamond's characteristic to change colour or glow when exposed to UV light is called fluorescence.
+                            </span>
+                        <div class="slider_wrapper">
+                            <ul id="fluoresence-list">
+                                <?php $fluoresenceOptions = $diamondAttributes['rapnet_diamond_fluorescence']['options']; ?>
+                                <?php
+                                $sortedFluoresence=$filterOrder->fluorescneceFilter($fluoresenceOptions);
+                                ?>
+                                <?php foreach ($sortedFluoresence as $options) : ?>
+                                    <li class="<?= ($options == end($sortedFluoresence)) ? 'fluoresence last' : 'fluoresence' ?>
+                              <?php if (array_key_exists('diamond_fluoresence', $request)) : ?>
+                            <?php if (in_array($options['label'], explode(',', $request['diamond_fluoresence']))) : ?> <?= 'selected' ?><?php endif; ?>
+                            <?php endif; ?>"
+                                        attid="<?= str_replace(' ', '_', $options['value']) ?>"
+                                        value="<?= $options['label'] ?>" data-value="<?= $options['label'] ?>">
+                                        <span><?= $options['label'] ?></span>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="note-solitaires section goright">
+                        <p>
+                            <?= /* @escapeNotVerified */
+                            __('NOTE: Cut will not be shown for Fancy Shaped Diamonds. Check Certificate for all details before placing an order.') ?>
+                        </p>
+                    </div>
+                </div>
+                <div class="clearer"></div>
+                <div class="options_control"><?= /* @escapeNotVerified */
+                    __('Advance Search') ?></div>
+            </div>
+            <button onclick="window.location='<?= $block->getUrl('rapnet') ?>'" type="button" class="ds_button">
+                <?= /* @escapeNotVerified */
+                __('Clear') ?>
+            </button>
+        </form>
+    </div>
+</div>
+
+
+<div class="codilar_rapnet_listing_table" id="search_results">
+    <?php echo $this->getChildHtml("rapnet_listing"); ?>
+</div>
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "filter": {
+                "priceValues":<?php echo json_encode($pageBlock->getPriceValues($request)); ?>,
+                "caratValues":<?php echo json_encode($pageBlock->getCaratsValues($request)); ?>,
+                "tablePercentValues":<?php echo json_encode($pageBlock->getTablePercent($request)); ?>,
+                "depthPercentValues":<?php echo json_encode($pageBlock->getDepthPercent($request)); ?>
+                }
+            }
+        }
+
+</script>
+<script>
+    require(['jquery'], function ($) {
+        $(document).ready(function () {
+            $('.certificate.cut.section').addClass('pointer-n');
+            let clickCount = 0;
+            $(document).on( "click", ".shape-item", function() {
+                clickCount++;
+                let vote_selected = $('#shape-list > .selected').length;
+                $("#shape-list .shape-item").each(function(index,element){
+                    if(($(element).attr('class').trim() === "shape-item round                                selected") && (vote_selected == 2))
+                    {
+                        if(clickCount == 3)
+                        {
+                            $(".certificate.cut.section").addClass('pointer-n');
+                        }
+                        else{
+                            $(".certificate.cut.section").removeClass('pointer-n');
+                        }
+                    }
+                    else{
+                            if(($('.shape-item.round').hasClass('selected')) && vote_selected == 2)
+                            {
+                                $(".certificate.cut.section").removeClass('pointer-n');
+                            }
+                            else {
+                                $(".certificate.cut.section").addClass('pointer-n');
+                            }
+                    }
+                });
+
+            });
+
+            $(document).on( "click", ".shape-item.round", function() {
+                $(".certificate.cut.section").removeClass('pointer-n');
+
+                if($(this).hasClass('selected')) {
+                            $(".certificate.cut.section").addClass('pointer-n');
+                        }
+
+            });
+
+        });
+
+        //More Options control
+        $(document).ready(function() {
+            var $searchModule = $('#search-diamonds');
+            $searchModule.find('.options_control').on('click', function () {
+
+                if ($searchModule.find('.more_options').hasClass('hideops')) {
+                    $(this).text("Less Options");
+                    $searchModule.find('.more_options').removeClass('hideops').hide().fadeIn(400);
+                } else {
+                    $(this).text("More Options");
+                    $searchModule.find('.more_options').addClass('hideops').hide();
+                }
+            });
+        });
+
+    });
+</script>

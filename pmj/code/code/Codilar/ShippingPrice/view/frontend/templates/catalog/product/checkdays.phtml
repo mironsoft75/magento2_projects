@@ -1,0 +1,51 @@
+<?php $_product = $block->getProduct();
+?>
+<?php $days = $_product->getManufacturingDays(); ?>
+<?php $check_price = $_product->getFinalPrice(); ?>
+<script>
+    var checkPin = function () {
+    };
+    require(['jquery'], function (jQuery) {
+
+        checkPin = function () {
+            var pin = document.getElementById('pincodevalue').value;
+            if (pin == '') {
+                alert("Please enter pincode.");
+                return true;
+            }
+            else {
+                var data = {
+                    pin: pin,
+                    instring: true,
+                    days: <?=$days; ?>,
+                    price_limit: <?=$check_price; ?>
+                };
+                jQuery.ajax({
+                    type: "POST",
+                    url: "<?php echo $this->getUrl('shipping/check/days'); ?>",
+                    data: data,
+                    dataType: 'html',
+                    showLoader: true,
+                    success: function (res) {
+                        jQuery("#pinresult").html(res);
+                    }
+                });
+            }
+        }
+    });
+</script>
+<div class="cod-view">
+    <!-- <div style="padding-bottom:10px;"><?php echo __("Check For Cash On Delivery") ?></div> -->
+    <div class="input-box">
+        <input style="width: 65%" type="text" name="pincode"  value="" id="pincodevalue" placeholder="<?=__("Enter pincode for delivery option")?>" /><button class="action primary button" onclick="checkPin();" type="button"><span>SEARCH</span></button>
+    </div>
+    <div id="pinresult" style="padding-top:3px;"></div>
+    <div class="info-txt-main">
+        <div class="info-txt">
+            <p>
+                <span class="icon"><i class="icon-line-check"></i></span>
+                <span class="label"><?php echo __("Try on Live Video"); ?></span>
+            </p>
+        </div>
+    </div>
+</div>

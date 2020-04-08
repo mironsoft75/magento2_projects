@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Codilar_CustomiseJewellery::custom" title="Customise Jewellery" module="Codilar_CustomiseJewellery" sortOrder="30" resource="Codilar_CustomiseJewellery::custom"/>
+        <add id="Codilar_CustomiseJewellery::customise_jewellery" title="Customise Jewellery" module="Codilar_CustomiseJewellery" sortOrder="20" parent="Codilar_CustomiseJewellery::custom" action="jewel/custom/index" resource="Codilar_CustomiseJewellery::customise_jewellery"/>
+    </menu>
+</config>

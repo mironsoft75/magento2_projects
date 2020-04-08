@@ -1,0 +1,34 @@
+<?php
+$activityCollection=$block->getActivityCollection();
+?>
+
+<div class="">
+    <div class="activity-header">Activity Log</div>
+    <?php foreach ($activityCollection as $data) {
+        $newdata=$data->getData('new_data');
+        $oldData=$data->getData('old_data');
+        $changedata=$data->getData('activity');
+        $newdata=json_decode($newdata,true);
+        $olddata=json_decode($oldData,true);
+        $changedata=json_decode($changedata,true);
+        unset($changedata['form_key']);
+        ?>
+        <div class="activity-log-one">
+            <p><div class="activity-user"><b>User Name : </b><?= $data->getData('user_name') ?></div> </p>
+            <p><div class="activity-user"><b>Updated At : </b><?= $data->getData('created_at') ?></div> </p>
+            <p><div class="activity-user"><b>Entity ID : </b><?= $data->getData('data_id') ?></div> </p>
+            <div class="activity-changes">
+                <table class="activity-changes-table table">
+                    <?php foreach ($changedata as $key=> $value){
+                        ?>
+                        <tr>
+                            <td><div class="activity-changes-old-data"><b>Old <?= $key ?></b> : <?= $olddata[$key] ?></div></td>
+                            <td><div class="activity-changes-new-data"><b>New <?= $key ?></b> : <?= $newdata[$key] ?></div></td>
+                        </tr>
+                    <?php } ?>
+                </table>
+            </div>
+        </div>
+    <?php
+    } ?>
+</div>

@@ -1,0 +1,25 @@
+{
+  "name": "weltpixel/module-command",
+  "description": "WeltPixel Command Module",
+  "require": {
+    "php": "~5.6.5|7.0.2|7.0.4|~7.0.6|~7.1.0",
+    "magento/framework": "100.* | 101.*",
+    "magento/module-backend": "100.*",
+    "magento/module-store": "100.*",
+    "weltpixel/m2-weltpixel-backend": "~1.0 | master"
+  },
+  "type": "magento2-module",
+  "version": "1.7.5",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "WeltPixel\\Command\\": ""
+    }
+  }
+}

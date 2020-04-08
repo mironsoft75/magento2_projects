@@ -1,0 +1,281 @@
+:root body.cms-index-index {
+    .page-wrapper {
+        .page-header {
+            .logo-main {
+                background: rgb(255, 247, 239);
+            }
+            .custom-menu-main {
+                background-color: #e2dcd0;
+                background: url('../images/bck-overlay.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+                @media @mobile {
+                    background: rgb(255, 247, 239);
+                }
+            }
+            header.page-header .header.content .custom-menu-main .static-menu-items .static-menu-item.legecy a {
+                color: @primary;
+            }
+        }
+    }
+    footer.page-footer {
+        background-color: #e2dcd0;
+        background: url('../images/bck-legecy.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        .social-icon {
+            img {
+                display: none;
+                &.only-for-legecy {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .column.main {
+        .legecy-card {
+            padding: 15px 0;
+            @media @mobile {
+                overflow: hidden;
+            }
+            &#beginning {
+                .history-head {
+                    text-transform: initial;
+                    font-size: 50px;
+                    font-weight: normal;
+                    font-family: inherit;
+                    @media @mobile {
+                        font-size: 30px;
+                    } 
+                }
+                .img-main {
+                    width: 80%;
+                    @media @mobile {
+                        width: 100%;
+                    }
+                    img {
+                        width: 100%;
+                        margin-left: -125px;
+                        @media @mobile {
+                            width: 500px;
+                            margin-left: 0;
+                            position: relative;
+                            left: -89px;
+                            max-width: initial;
+                            height: 400px;
+                        }
+                    }
+                }
+            }
+            .page-main {
+                position: relative;
+                .top-right {
+                    width: 40%;
+                    text-align: right;
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    font-size: 18px;
+                    transform: translateY(-50%);
+                    @media screen and (max-width: 1370px) and (min-width: 900px) {
+                        right: 65px;
+                    }
+                    @media @mobile {
+                        width: 100%;
+                        position: initial;
+                        transform: initial;
+                        text-align: center;
+                    }
+                }
+            }
+            &#design {
+                text-align: center;
+                .designImage {
+                    width: 100%;
+                    max-width: 1200px;
+                    @media @mobile {
+                        display: none;
+                    }
+                }
+                .designImagePhone1, .designImagePhone2 {
+                    display: none;
+                    @media @mobile {
+                        display: block;
+                        width: 100%;
+                        position: relative;
+                        top: 45px;
+                    }
+                }
+                .designHead {
+                    position: absolute;
+                    top: 44px;
+                    font-size: 50px;
+                    text-align: center;
+                    width: 100%;
+                    left: 0;
+                    @media @mobile {
+                        font-size: 30px;
+                        top: 0;
+                    }
+                }
+                .designContent {
+                    width: 51%;
+                    font-size: 18px;
+                    position: absolute;
+                    bottom: 110px;
+                    left: 115px;
+                    @media @mobile {
+                        position: initial;
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+            }
+            &.manufacturing-main, &.qc-main {
+                padding: 100px 0;
+                @media @mobile {
+                    padding: 20px 0;
+                    text-align: center;
+                }
+                .img-main {
+                    img {
+                        width: 100%;
+                        max-width: 100%;
+                    }
+                }
+                .manufacturing-head {
+                    font-size: 50px;
+                    margin-top: 40px;
+                    @media @mobile {
+                        font-size: 30px;
+                        margin-top: 0;
+                    }
+                }
+                .manufactingContent {
+                    width: 80%;
+                    font-size: 18px;
+                    margin-bottom: 40px;
+                    margin-top: 40px;
+                    @media @mobile {
+                        width: 100%;
+                        margin-top: 20px;
+                    }
+                }
+            }
+            &.qc-main {
+                text-align: right;
+                @media @mobile {
+                    text-align: center;
+                }
+                .manufactingContent {
+                    float: right;
+                    width: 100%;
+                }
+                .manufacturing-head {
+                    margin-top: 0;
+                    @media @mobile {
+                        margin-bottom: 20px;
+                    }
+                }
+                .img-main {
+                    text-align: left;
+                    img {
+                        max-width: 90%;
+                    }
+                }
+            }
+            &.certificate-main {
+                padding: 100px 0;
+                @media @mobile {
+                    padding: 20px 0 40px;
+                }
+                text-align: center;
+                .certificate {
+                    font-size: 50px;
+                    margin-bottom: 60px;
+                    @media @mobile {
+                        font-size: 30px;
+                        margin-bottom: 30px;
+                    }
+                }
+                .certificateContent1 {
+                    width: 45%;
+                    margin: 0 auto;
+                    font-size: 18px;
+                    text-align: center;
+                    margin-top: 100px;
+                    @media @mobile {
+                        margin-top: 30px;
+                        width: 100%;
+                        font-size: 18px;
+                    }
+                }
+                img {
+                    max-width: 75%;
+                    display: block;
+                    margin: 0 auto;
+                    max-height: 80px;
+                    object-fit: contain;
+                    @media @mobile {
+                        margin-bottom: 50px;
+                    }
+                }
+                .legecy-btn {
+                    text-decoration: none;
+                    text-align: center;
+                    background-color: #AC8D6A;
+                    border-radius: 5px;
+                    border: 0;
+                    color: white;
+                    margin-top: 65px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    font-size: 24px;
+                    padding-left: 30px;
+                    padding-right: 30px;
+                    display: inline-block;
+                    min-width: 250px;
+                    @media @mobile {
+                        font-size: 15px;
+                        margin-top: 25px;
+                        margin-bottom: 0px;
+                        padding-right: 25px;
+                        padding-left: 25px;
+                        padding-bottom: 10px;
+                        padding-top: 10px;
+
+                    }
+                    &.only-for-desktop {
+                        @media @mobile {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            &#diamond {
+                padding: 100px 0;
+                @media @mobile {
+                    padding: 20px 0;
+                }
+                .diamondQuality {
+                    font-size: 50px;
+                    @media @mobile {
+                        font-size: 30px;
+                    }
+                }
+                img {
+                    width: 100%;
+                    max-width: 900px;
+                }
+                .certificateContent1 {
+                    width: 50%;
+                    font-size: 18px;
+                    @media @mobile {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

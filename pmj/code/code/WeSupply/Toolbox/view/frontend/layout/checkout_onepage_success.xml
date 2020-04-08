@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<body>
+    <referenceContainer name="content">
+        <block class="WeSupply\Toolbox\Block\Notification"
+               name="wesupply.notification"
+               template="WeSupply_Toolbox::notification.phtml"
+               after="checkout.success" ifconfig="wesupply_api/step_4/checkout_page_notification">
+        </block>
+    </referenceContainer>
+</body>

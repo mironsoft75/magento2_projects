@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+<!--
+        <script src="Softprodigy_Bluedart::js/common.js"/>
+        <script src="Softprodigy_Bluedart::js/jquery.chained.js"/>
+-->
+        <script src="Softprodigy_Bluedart::js/main.js"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Softprodigy\Bluedart\Block\Adminhtml\Mass" name="bluedart.mass.generate.list" template="mass/generate.phtml">
+                <block class="Softprodigy\Bluedart\Block\Adminhtml\Mass\Orders" name="bluedart.mass.generate.orders"/>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

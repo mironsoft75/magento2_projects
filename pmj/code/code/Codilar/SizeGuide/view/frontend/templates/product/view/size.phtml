@@ -1,0 +1,27 @@
+<?php
+$attributeSetId=$block->getProductAttributeId();
+$status=$block->getStatus();
+$ringAttributeSets=$block->getRingAttributeSet();
+$ringAttributeSet=explode(',',$ringAttributeSets);
+$bangleAttributeSets=$block->getBangleAttributeSet();
+$bangleAttributeSet=explode(',',$bangleAttributeSets);
+if($status){
+    foreach ($ringAttributeSet as $id)
+    {
+        if($attributeSetId==$id){
+            ?>
+            <a class="chart-btn" href="<?php echo $block->getViewFileUrl('Codilar_SizeGuide::ring_size_guide.jpg'); ?>" target="_blank">Ring Size</a>
+            <?php
+        }
+    }
+    foreach ($bangleAttributeSet as $id)
+    {
+        if($attributeSetId==$id){
+            ?>
+            <a class="chart-btn" href="<?php echo $block->getViewFileUrl('Codilar_SizeGuide::ring_size_guide.jpg'); ?>" target="_blank">bangle Size</a>
+            <?php
+        }
+    }
+}
+
+

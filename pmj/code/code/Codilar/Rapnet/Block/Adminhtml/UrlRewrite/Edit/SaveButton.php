@@ -1,0 +1,29 @@
+<?php
+
+namespace Codilar\Rapnet\Block\Adminhtml\UrlRewrite\Edit;
+
+use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
+
+/**
+ * Class SaveButton
+ * @package Codilar\Rapnet\Block\Adminhtml\UrlRewrite\Edit
+ */
+class SaveButton extends GenericButton implements ButtonProviderInterface
+{
+    /**
+     * @return array
+     */
+    public function getButtonData()
+    {
+
+        return [
+            'label' => __('Save UrlRewrite'),
+            'class' => 'save primary',
+            'data_attribute' => [
+                'mage-init' => ['button' => ['event' => 'save']],
+                'form-role' => 'save',
+            ],
+            'sort_order' => 90,
+        ];
+    }
+}

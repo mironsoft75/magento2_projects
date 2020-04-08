@@ -1,0 +1,26 @@
+<style>
+    #sitemap-listing-container{
+        width: 100%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    .sitemap-listing{
+        float: left;
+        width: 33.333333333333333333%;
+    }
+</style>
+<?php
+$productCollection=$block->getProductCollection();
+?>
+<div id="sitemap-listing-container">
+    <?php
+        foreach($productCollection as $product){ ?>
+            <div class="sitemap-listing">
+                <a href="<?= $product->getProductUrl();?>"><?= $product->getName();?></a>
+            </div>
+        <?php } ?>
+</div>
+
+
+
+
