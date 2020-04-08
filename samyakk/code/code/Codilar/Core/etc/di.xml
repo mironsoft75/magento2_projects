@@ -1,0 +1,23 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Codilar\Core\Model\TemplateParser\Context">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="store_manager" xsi:type="object">Magento\Store\Model\StoreManagerInterface</item>
+            </argument>
+            <argument name="filterPipeline" xsi:type="array">
+                <item name="loop_filter" xsi:type="array">
+                    <item name="sort_order" xsi:type="number">10</item>
+                    <item name="class" xsi:type="object">Codilar\Core\Model\TemplateParser\FilterPipeline\Loop</item>
+                </item>
+                <item name="condition_filter" xsi:type="array">
+                    <item name="sort_order" xsi:type="number">20</item>
+                    <item name="class" xsi:type="object">Codilar\Core\Model\TemplateParser\FilterPipeline\Condition</item>
+                </item>
+                <item name="variable_filter" xsi:type="array">
+                    <item name="sort_order" xsi:type="number">1000</item>
+                    <item name="class" xsi:type="object">Codilar\Core\Model\TemplateParser\FilterPipeline\Variable</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>

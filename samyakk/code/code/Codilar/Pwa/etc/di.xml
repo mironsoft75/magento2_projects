@@ -1,0 +1,4 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\Pwa\Api\Data\PwaInterface" type="Codilar\Pwa\Model\Pwa" />
+    <preference for="Codilar\Pwa\Api\PwaRepositoryInterface" type="Codilar\Pwa\Model\PwaRepository" />
+</config>

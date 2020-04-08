@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+  @package     htcPwa
+  @author      Codilar Technologies
+  @license     https://opensource.org/licenses/OSL-3.0 Open Software License v. 3.0 (OSL-3.0)
+  @link        http://www.codilar.com/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\Catalog\Api\Data\ProductInterface" type="Codilar\Catalog\Model\Product" />
+    <preference for="Codilar\Catalog\Api\Data\Product\ImageInterface" type="Magento\Framework\DataObject" />
+    <preference for="Codilar\Catalog\Api\AttributeOptionRepositoryInterface" type="Codilar\Catalog\Model\AttributeOptionRepository" />
+    <preference for="Codilar\Catalog\Api\Data\AttributeInterface" type="Magento\Framework\DataObject" />
+    <preference for="Codilar\Catalog\Api\Data\AttributeOptionInterface" type="Magento\Framework\DataObject" />
+    <type name="Codilar\Pwa\Model\Redirect\HandlerPool">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="catalog_product_view" xsi:type="object">Codilar\Catalog\Model\Redirection\Handlers\Product</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Codilar\Breadcrumbs\Api\BreadcrumbsManagementInterface">
+        <arguments>
+            <argument name="breadcumbsTypeEvaluator" xsi:type="array">
+                <item name="product" xsi:type="object">Codilar\Catalog\Model\Breadcrumbs\Evaluator</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

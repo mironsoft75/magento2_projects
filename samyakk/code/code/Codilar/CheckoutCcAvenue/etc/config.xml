@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <ccavenue_payment_gateway>
+                <active>0</active>
+                <test_payment_url><![CDATA[https://test.ccavenue.com/transaction/transaction.do?command=initiateTransaction]]></test_payment_url>
+                <live_payment_url><![CDATA[https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction]]></live_payment_url>
+                <mode>2</mode>
+                <title><![CDATA[Credit / Debit Card]]></title>
+                <instructions><![CDATA[You will be redirected to the CcAvenue Portal after placing order]]></instructions>
+                <use_logo>0</use_logo>
+                <redirect_message><![CDATA[You are being redirected to CcAvenue portal. Please <b>DO NOT</b> turn off or refresh this page]]></redirect_message>
+                <model>Codilar\CheckoutCcAvenue\Model\CcAvenue</model>
+                <pending_order_status>pending</pending_order_status>
+                <success_order_status>processing</success_order_status>
+                <success_order_message>CcAvenue Payment Success</success_order_message>
+                <failed_order_status>canceled</failed_order_status>
+                <failure_order_message>CcAvenue Payment Failed</failure_order_message>
+                <auto_order_cancel>1</auto_order_cancel>
+                <auto_order_cancel_time>30</auto_order_cancel_time>
+            </ccavenue_payment_gateway>
+        </payment>
+    </default>
+</config>

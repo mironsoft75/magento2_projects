@@ -1,0 +1,16 @@
+<?php
+/** @var \Codilar\DynamicForm\Block\Form\Response\Renderer\Fields $block */
+$fields = $block->getFields();
+?>
+<table class="table" border="1">
+    <tr>
+        <?php foreach (array_keys($fields) as $name): ?>
+            <th><?php echo $block->getLabel($name) ?></th>
+        <?php endforeach; ?>
+    </tr>
+    <tr>
+        <?php foreach ($fields as $value): ?>
+            <td><?php echo $value ?></td>
+        <?php endforeach; ?>
+    </tr>
+</table>

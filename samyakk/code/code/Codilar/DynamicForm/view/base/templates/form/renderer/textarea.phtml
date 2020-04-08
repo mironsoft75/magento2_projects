@@ -1,0 +1,12 @@
+<?php
+/** @var \Codilar\DynamicForm\Block\Form\Renderer\TextArea $block */
+$element = $block->getElement();
+$id = $block->getElementId();
+$value = $block->getValue();
+?>
+<div class="form-control element element-type-<?php echo $element->getIdentifier() ?>">
+    <label for="<?php echo $id ?>" class="label"><?php echo $element->getLabel() ?></label>
+    <div class="control">
+        <textarea data-validate='<?php echo $block->getValidationString() ?>' data-element_type="<?php echo $element->getType() ?>" name="<?php echo $element->getName() ?>" id="<?php echo $id ?>" class="<?php echo $element->getClassName() ?>"><?php echo $value ?></textarea>
+    </div>
+</div>

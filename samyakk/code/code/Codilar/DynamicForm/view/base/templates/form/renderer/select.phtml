@@ -1,0 +1,16 @@
+<?php
+/** @var \Codilar\DynamicForm\Block\Form\Renderer\Select $block */
+$element = $block->getElement();
+$id = $block->getElementId();
+$value = $block->getValue();
+?>
+<div class="form-control element element-type-<?php echo $element->getIdentifier() ?>">
+    <label for="<?php echo $id ?>" class="label"><?php echo $element->getLabel() ?></label>
+    <div class="control">
+        <select data-validate='<?php echo $block->getValidationString() ?>' data-element_type="<?php echo $element->getType() ?>" name="<?php echo $element->getName() ?>" id="<?php echo $id ?>" class="<?php echo $element->getClassName() ?>" <?php echo $block->getIsMultiple() ? 'multiple' : '' ?>>
+            <?php foreach ($element->getOptions() as $option): ?>
+                <option  value="<?php echo $option->getValue() ?>" <?php echo $value == $option->getValue() ? "selected" : "" ?>><?php echo $option->getLabel() ?></option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+</div>

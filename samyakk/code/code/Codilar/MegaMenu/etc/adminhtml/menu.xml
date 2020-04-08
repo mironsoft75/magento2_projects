@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * @package     magento2.3
+ * @author      Codilar Technologies
+ * @license     https://opensource.org/licenses/OSL-3.0 Open Software License v. 3.0 (OSL-3.0)
+ * @link        http://www.codilar.com/
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Codilar_MegaMenu::megamenu" title="Codilar Megamenu" translate="title" module="Codilar_DynamicForm" sortOrder="500" parent="Magento_Catalog::catalog" resource="Codilar_MegaMenu::megamenu"/>
+        <add id="Codilar_MegaMenu::megamenu_view" title="Add/Edit Links" translate="title" module="Codilar_MegaMenu" sortOrder="10" parent="Codilar_MegaMenu::megamenu" action="codilarmegamenu/links" resource="Codilar_MegaMenu::megamenu"/>
+    </menu>
+</config>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   @package     htcPwa
+   @author      Codilar Technologies
+   @license     https://opensource.org/licenses/OSL-3.0 Open Software License v. 3.0 (OSL-3.0)
+   @link        http://www.codilar.com/
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">carousel_item_add_form.carousel_item_add_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">General Information</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save" class="Codilar\Carousel\Block\Adminhtml\Carousel\Edit\Buttons\SaveButton"/>
+            <button name="reset" class="Codilar\Carousel\Block\Adminhtml\Carousel\Edit\Buttons\ResetButton"/>
+            <button name="delete" class="Magento\Cms\Block\Adminhtml\Block\Edit\DeleteButton"/>
+            <button name="back" class="Magento\Cms\Block\Adminhtml\Block\Edit\BackButton"/>
+        </buttons>
+        <namespace>carousel_item_add_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>carousel_item_add_form.carousel_item_add_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="carousel_item_add_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="*/*/save"/>
+        </settings>
+        <dataProvider class="Codilar\Carousel\Model\Carousel\Item\DataProvider" name="carousel_item_add_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general">
+        <settings>
+            <label/>
+        </settings>
+        <field name="id" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">carousel</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <visible>false</visible>
+                <dataScope>id</dataScope>
+            </settings>
+        </field>
+        <field name="carousel_id"  sortOrder="20" formElement="select">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">form</item>
+                    <item name="default" xsi:type="number">0</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>int</dataType>
+                <label translate="true">Carousel</label>
+                <dataScope>carousel_id</dataScope>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="Codilar\Carousel\Model\Source\CarouselOptions"/>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+        <field name="content">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">wysiwyg</item>
+                    <item name="source" xsi:type="string">content</item>
+                    <item name="label" xsi:type="string">Item Content</item>
+                    <item name="template" xsi:type="string">ui/form/field</item>
+                    <item name="wysiwyg" xsi:type="boolean">true</item>
+                    <item name="dataScope" xsi:type="string">content</item>
+                    <item name="sortOrder" xsi:type="number">100</item>
+                    <item name="rows" xsi:type="number">8</item>
+                </item>
+            </argument>
+        </field>
+        <field name="label" sortOrder="20" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">carousel</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Item Title</label>
+                <dataScope>label</dataScope>
+            </settings>
+        </field>
+        <!--
+                Start conditional inputs here.
+        -->
+        <field name="link_type">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Codilar\Carousel\Model\Source\LinkTypeOptions</item>
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Codilar_Carousel/js/carousel/item/link_type</item>
+                    <item name="elementTmpl" xsi:type="string">Codilar_Carousel/carousel/item/link_type</item>
+                    <item name="label" xsi:type="string" translate="true">Link Type</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">number</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="source" xsi:type="string">Store</item>
+                    <item name="dataScope" xsi:type="string">link_type</item>
+                    <item name="sortOrder" xsi:type="number">50</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+
+        <!-- following three fields will be shown on selection of the above field's value -->
+
+        <!-- Product dropdown changed to text field -->
+        <field name="product_data" sortOrder="60" formElement="input">
+           <settings>
+                <required>true</required>
+                <dataType>text</dataType>
+                <label>Product SKU</label>
+                <dataScope>product_data</dataScope>
+                <notice><![CDATA[Enter Product SKU]]></notice>
+            </settings>
+        </field>
+
+        <!--<field name="product_data" component="Codilar_Carousel/js/carousel/component/select-product" sortOrder="60" formElement="select">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filterOptions" xsi:type="boolean">true</item>
+                    <item name="multiple" xsi:type="boolean">false</item>
+                    <item name="showCheckbox" xsi:type="boolean">true</item>
+                    <item name="disableLabel" xsi:type="boolean">true</item>
+                </item>
+            </argument>
+            <settings>
+                <required>true</required>
+                <elementTmpl>ui/grid/filters/elements/ui-select</elementTmpl>
+                <label translate="true">Select Product</label>
+                <dataScope>product_data</dataScope>
+                <componentType>field</componentType>
+                <listens>
+                    <link name="${ $.namespace }.${ $.namespace }:responseData">setParsed</link>
+                </listens>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="Codilar\Carousel\Model\Source\ProductOptions"/>
+                    </settings>
+                </select>
+            </formElements>
+        </field>-->
+        <field name="category_data" component="Codilar_Carousel/js/carousel/component/select-product" sortOrder="60" formElement="select">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filterOptions" xsi:type="boolean">true</item>
+                    <item name="multiple" xsi:type="boolean">false</item>
+                    <item name="showCheckbox" xsi:type="boolean">true</item>
+                    <item name="disableLabel" xsi:type="boolean">true</item>
+                </item>
+            </argument>
+            <settings>
+                <required>true</required>
+                <elementTmpl>ui/grid/filters/elements/ui-select</elementTmpl>
+                <label translate="true">Select Category</label>
+                <dataScope>category_data</dataScope>
+                <componentType>field</componentType>
+                <listens>
+                    <link name="${ $.namespace }.${ $.namespace }:responseData">setParsed</link>
+                </listens>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="Codilar\Carousel\Model\Source\CategoryOptions"/>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+        <field name="cms_data" component="Codilar_Carousel/js/carousel/component/select-product" sortOrder="60" formElement="select">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filterOptions" xsi:type="boolean">true</item>
+                    <item name="multiple" xsi:type="boolean">false</item>
+                    <item name="showCheckbox" xsi:type="boolean">true</item>
+                    <item name="disableLabel" xsi:type="boolean">true</item>
+                </item>
+            </argument>
+            <settings>
+                <required>true</required>
+                <elementTmpl>ui/grid/filters/elements/ui-select</elementTmpl>
+                <label translate="true">Select Cms Page</label>
+                <dataScope>cms_data</dataScope>
+                <componentType>field</componentType>
+                <listens>
+                    <link name="${ $.namespace }.${ $.namespace }:responseData">setParsed</link>
+                </listens>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="Codilar\Carousel\Model\Source\CmsOptions"/>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+    </fieldset>
+</form>

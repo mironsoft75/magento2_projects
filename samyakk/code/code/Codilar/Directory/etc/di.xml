@@ -1,0 +1,6 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\Directory\Api\Data\CountryDataInterface" type="Codilar\Directory\Model\Data\CountryData" />
+    <preference for="Codilar\Directory\Api\Data\CountryInterface" type="Codilar\Directory\Model\Data\Country" />
+    <preference for="Codilar\Directory\Api\CountryRepositoryInterface" type="Codilar\Directory\Model\CountryRepository" />
+    <preference for="Codilar\Directory\Api\Data\RegionInterface" type="Codilar\Directory\Model\Data\Region" />
+</config>

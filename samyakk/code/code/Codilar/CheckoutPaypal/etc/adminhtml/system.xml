@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="1000" translate="label">
+            <group id="codilar_checkout_paypal" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+                <label>Codilar Checkout Paypal</label>
+                <field id="active" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="client_id" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label" type="text">
+                    <label>Client ID</label>
+                </field>
+                <field id="secret" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="30" translate="label" type="text">
+                    <label>Secret</label>
+                </field>
+                <field id="mode" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Mode</label>
+                    <source_model>Codilar\Checkout\Model\Source\Mode</source_model>
+                </field>
+                <field id="title" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="50" translate="label" type="text">
+                    <label>Title</label>
+                </field>
+                <field id="allowspecific" translate="label" type="allowspecific" sortOrder="53" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Applicable Countries</label>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                    <source_model>Magento\Payment\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="55" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Specific Countries</label>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="pending_order_status" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="60" translate="label" type="select">
+                    <label>Pending Order Status</label>
+                    <source_model>Codilar\Checkout\Model\Source\OrderStatus</source_model>
+                </field>
+                <field id="success_order_status" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="70" translate="label" type="select">
+                    <label>Success Order Status</label>
+                    <source_model>Codilar\Checkout\Model\Source\OrderStatus</source_model>
+                </field>
+                <field id="success_order_message" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="80" translate="label" type="text">
+                    <label>Success Order Message</label>
+                </field>
+                <field id="failure_order_status" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="90" translate="label" type="select">
+                    <label>Failure Order Status</label>
+                    <source_model>Codilar\Checkout\Model\Source\OrderStatus</source_model>
+                </field>
+                <field id="failure_order_message" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="100" translate="label" type="text">
+                    <label>Failure Order Message</label>
+                </field>
+                <field id="response_return_url" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="110" translate="label" type="text">
+                    <label>Response Return Url</label>
+                </field>
+                <field id="redirect_message" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="120" translate="label" type="textarea">
+                    <label>Redirect Message</label>
+                </field>
+                <field id="instructions" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="130" translate="label" type="textarea">
+                    <label>Instructions</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

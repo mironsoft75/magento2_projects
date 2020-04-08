@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Cache/etc/cache.xsd">
+    <type name="codilar_product_attributes" translate="label,description" instance="Codilar\Product\Model\Cache\ProductAttributes">
+        <label>Product API Attribute Cache</label>
+        <description>Product attribute Cache for API</description>
+    </type>
+</config>

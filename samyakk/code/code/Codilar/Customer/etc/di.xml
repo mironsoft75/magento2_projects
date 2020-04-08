@@ -1,0 +1,9 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\Customer\Api\CustomerManagementInterface" type="Codilar\Customer\Model\CustomerManagement" />
+    <preference for="Codilar\Customer\Api\Data\CustomerInterface" type="Codilar\Customer\Model\Data\Customer" />
+    <preference for="Codilar\Customer\Api\Data\AbstractResponseInterface" type="Magento\Framework\DataObject" />
+    <preference for="Codilar\Customer\Api\AddressManagementInterface" type="Codilar\Customer\Model\AddressManagement" />
+    <preference for="Codilar\Customer\Api\Data\AddressInterface" type="Codilar\Customer\Model\Data\Address" />
+    <preference for="Codilar\Customer\Api\AccountManagementInterface" type="Codilar\Customer\Model\AccountManagement" />
+    <preference for="Codilar\Customer\Api\Data\LoginResponseInterface" type="Magento\Framework\DataObject" />
+</config>

@@ -1,0 +1,18 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\Meta\Api\Data\MetaData\MetaInterface" type="Codilar\Meta\Model\Data\MetaData\Meta" />
+    <preference for="Codilar\Meta\Api\Data\MetaDataInterface" type="Codilar\Meta\Model\Data\MetaData" />
+    <preference for="Codilar\Meta\Api\MetaDataManagementInterface" type="Codilar\Meta\Model\MetaDataManagement" />
+    <preference for="Codilar\Meta\Api\MetaManagementInterface" type="Codilar\Meta\Model\MetaManagement" />
+
+    <type name="Codilar\Meta\Api\Types\Pool">
+        <arguments>
+            <argument name="metaTypes" xsi:type="array">
+                <item name="category" xsi:type="object">Codilar\Meta\Model\Types\Category</item>
+                <item name="product" xsi:type="object">Codilar\Meta\Model\Types\Product</item>
+                <item name="cms_page" xsi:type="object">Codilar\Meta\Model\Types\CmsPage</item>
+                <item name="dynamic_form" xsi:type="object">Codilar\Meta\Model\Types\DynamicForm</item>
+                <item name="homepage" xsi:type="object">Codilar\Meta\Model\Types\HomePage</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

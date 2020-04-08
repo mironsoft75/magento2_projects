@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="reset_password_general_confirm_email" label="Confirm Reset Password" file="confirm-reset-password.html" type="html" module="Codilar_ResetPassword" area="frontend"/>
+    <template id="reset_password_general_request_email" label="Request Reset Password" file="request-reset-password.html" type="html" module="Codilar_ResetPassword" area="frontend"/>
+</config>

@@ -1,0 +1,46 @@
+<?php
+/**
+ * @var \Codilar\CheckoutCcAvenue\Block\Form $block
+ */
+
+?>
+<form id="ccavenue_form" method="POST" action="<?php echo $block->escapeUrl($block->getSubmitUrl()); ?>">
+    <input type="hidden" id="encRequest" name="encRequest" value="<?php echo $block->escapeHtml($block->getEncryptedData()); ?>"/>
+    <input type="hidden" id="access_code" name="access_code" value="<?php echo $block->escapeHtml($block->getAccessCode()); ?>"/>
+</form>
+<div class="redirect-loader">
+    <div class="loader">
+        <img src="<?= /* @escapeNotVerified */ $block->getViewFileUrl('images/loader-1.gif') ?>"
+             alt="<?= /* @escapeNotVerified */ __('Loading...') ?>">
+    </div>
+    <div class="redirect-message"><?php echo $block->getRedirectingMessage(); ?></div>
+</div>
+<script>
+    require([
+            'jquery',
+        ], function($) {
+            $( document ).ready(function() {
+                if($('#access_code').val() && $('#encRequest').val()) {
+                    $('#ccavenue_form').submit();
+                }
+            });
+        }
+    );
+</script>
+<style>
+    .checkoutccavenue-request-index .section-item-content.nav-sections-item-content,
+    .checkoutccavenue-request-index .copyright{
+        display: none!important;
+    }
+    .redirect-loader{
+        position: fixed;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-bottom: 20px;
+    }
+    .loader {
+        margin: 0 auto;
+        text-align: center;
+    }
+</style>

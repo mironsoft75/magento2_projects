@@ -1,0 +1,33 @@
+<?php
+/** @var \Codilar\DynamicForm\Block\Form $block */
+$formContainerClass = 'dynamic-form-form';
+$formBlock = $block->getChildHtml('dynamicform.form.renderer');
+?>
+<?php if ($block->getForm()->getFormPlacement() == \Codilar\DynamicForm\Api\Data\FormInterface::FORM_PLACEMENT_TOP): ?>
+    <div class="<?php echo $formContainerClass ?>">
+        <?php echo $formBlock ?>
+    </div>
+<?php endif; ?>
+<?php if ($block->getForm()->getFormPlacement() == \Codilar\DynamicForm\Api\Data\FormInterface::FORM_PLACEMENT_LEFT): ?>
+    <div class="<?php echo $formContainerClass ?>" style="float: left">
+        <?php echo $formBlock ?>
+    </div>
+<?php endif; ?>
+<div class="dynamic-form-content">
+    <?php echo $block->getFormContent() ?>
+</div>
+<?php if ($block->getForm()->getFormPlacement() == \Codilar\DynamicForm\Api\Data\FormInterface::FORM_PLACEMENT_RIGHT): ?>
+    <div class="<?php echo $formContainerClass ?>" style="float: right">
+        <?php echo $formBlock ?>
+    </div>
+<?php endif; ?>
+<?php if ($block->getForm()->getFormPlacement() == \Codilar\DynamicForm\Api\Data\FormInterface::FORM_PLACEMENT_BOTTOM): ?>
+    <div class="<?php echo $formContainerClass ?>">
+        <?php echo $formBlock ?>
+    </div>
+<?php endif; ?>
+<?php if ($block->getForm()->getFormCss()): ?>
+    <style type="text/css">
+        <?php echo $block->getForm()->getFormCss() ?>
+    </style>
+<?php endif; ?>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+  @package     Magento 2
+  @author      Codilar Technologies
+  @license     https://opensource.org/licenses/OSL-3.0 Open Software License v. 3.0 (OSL-3.0)
+  @link        http://www.codilar.com/
+/-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\Onboarding\Api\OnboardingManagementInterface" type="Codilar\Onboarding\Model\OnboardingManagement" />
+    <type name="Codilar\Onboarding\Code\Generator\OnboardingSectionsGeneratorFactory">
+        <arguments>
+            <argument name="serviceTypeName" xsi:type="string">\Codilar\Onboarding\Api\OnboardingManagementInterface</argument>
+            <argument name="serviceMethodName" xsi:type="string">getAggregatedData</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Setup\Module\Di\App\Task\Operation\ApplicationCodeGenerator">
+        <plugin name="generate_onbording_during_di_compile" type="Codilar\Onboarding\Plugin\GenerateOnboardingData"/>
+    </type>
+</config>

@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="ccavenue_payment_gateway" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>CcAvenue Payment Gateway</label>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="merchant_id" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Merchant ID</label>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="gateway_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Gateway ID</label>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="secret_key" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Secret Key</label>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="mode" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Mode</label>
+                    <comment><![CDATA[We recommend you make your Integration on Test Environment before going Live in the Production environment.]]></comment>
+                    <source_model>Codilar\Checkout\Model\Source\Mode</source_model>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Title</label>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="instructions" translate="label" type="textarea" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Instructions</label>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="use_logo" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Use Logo</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="logo" translate="label" type="image" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Logo</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">ccavenue/config/logo</upload_dir>
+                    <base_url type="media" scope_info="1">ccavenue/config/logo</base_url>
+                    <depends>
+                        <field id="active">1</field>
+                        <field id="use_logo">1</field>
+                    </depends>
+                </field>
+                <field id="redirect_message" translate="label" type="textarea" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Redirect Message</label>
+                    <comment>Message to show user when redirecting to CcAvenue</comment>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="order_prefix" translate="label" type="text" sortOrder="95" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Reference Id Prefix</label>
+                    <comment>Useful when testing with the same credentials in different environments</comment>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="pending_order_status" translate="label comment" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Pending Order Status</label>
+                    <comment>What should the status of pending orders be</comment>
+                    <source_model>Codilar\Checkout\Model\Source\OrderStatus</source_model>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="success_order_status" translate="label comment" type="select" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Success Order Status</label>
+                    <comment>What should the status of successful orders be</comment>
+                    <source_model>Codilar\Checkout\Model\Source\OrderStatus</source_model>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="success_order_message" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="120" translate="label" type="text">
+                    <label>Success Order Message</label>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="failed_order_status" translate="label comment" type="select" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Failure Order Status</label>
+                    <comment>What should the status of unsuccessful orders be</comment>
+                    <source_model>Codilar\Checkout\Model\Source\OrderStatus</source_model>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="failure_order_message" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="140" translate="label" type="text">
+                    <label>Failure Order Message</label>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="response_return_url" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="150" translate="label" type="text">
+                    <label>Response Return Url</label>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="allowspecific" translate="label" type="allowspecific" sortOrder="153" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Applicable Countries</label>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                    <source_model>Magento\Payment\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="155" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Specific Countries</label>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="auto_order_cancel" translate="label" type="select" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Auto cancel orders</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="auto_order_cancel_time" translate="label" type="text" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Cancel orders after</label>
+                    <comment><![CDATA[in minutes (after order is placed)<br /><b>NOTE:</b> Requires CRON to be setup to run]]></comment>
+                    <depends>
+                        <field id="active">1</field>
+                        <field id="auto_order_cancel">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

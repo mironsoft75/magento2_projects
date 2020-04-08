@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * @package     magento2.3
+ * @author      Codilar Technologies
+ * @license     https://opensource.org/licenses/OSL-3.0 Open Software License v. 3.0 (OSL-3.0)
+ * @link        http://www.codilar.com/
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Codilar\DynamicForm\Block\Form" name="dynamicform.form.container.renderer" template="Codilar_DynamicForm::form.phtml" cacheable="false">
+                <block class="Codilar\DynamicForm\Block\Form\Renderer" name="dynamicform.form.renderer" template="Codilar_DynamicForm::form/renderer.phtml" />
+            </block>
+        </referenceContainer>
+        <referenceBlock name="page.main.title" remove="true" />
+    </body>
+</page>

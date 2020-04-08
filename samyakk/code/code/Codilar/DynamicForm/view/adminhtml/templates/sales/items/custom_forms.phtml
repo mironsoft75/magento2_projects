@@ -1,0 +1,28 @@
+<?php
+/** @var \Codilar\DynamicForm\Block\Adminhtml\Sales\Items\Column\CustomForms $block */
+?>
+<div class="dynamic-forms-container custom-forms-link">
+    <?php foreach ($block->getResponses() as $response): ?>
+        <div style="padding: 10px;border-bottom: 1px solid silver">
+            <a href="<?php echo $block->getUrl('dynamicform/formresponse/view', ['id' => $response->getData('form_response_id')]) ?>"><?php echo $response->getData('title') ?></a>
+        </div>
+    <?php endforeach; ?>
+</div>
+<script type="text/javascript">
+    require(['jquery'], function ($) {
+        var width = window.screen.width * 2 / 3;
+        var height = window.screen.height * 2 / 3;
+        var top = (window.screen.height - height) / 2;
+        var left = (window.screen.width - width) / 2;
+        $(document).on('click', '.dynamic-forms-container a', function (e) {
+            e.preventDefault();
+            var popup = window.open($(this).attr('href'), null, 'location=no,toolbar=no,menubar=no,scrollbars=yes,resizable=yes,width='+width+',height='+height+',top='+top+',left='+left);
+            popup.onload = function () {
+                popup.document.querySelector('.go-back').addEventListener('click', function (e) {
+                    e.preventDefault();
+                    popup.close();
+                });
+            }
+        });
+    });
+</script>

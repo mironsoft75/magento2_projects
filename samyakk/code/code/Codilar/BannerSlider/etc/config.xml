@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+    @package     htcPwa
+    @author      Codilar Technologies
+    @license     https://opensource.org/licenses/OSL-3.0 Open Software License v. 3.0 (OSL-3.0)
+    @link        http://www.codilar.com/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <homepage>
+            <banner_images>
+                <website>500x500</website>
+                <mobile>125x125</mobile>
+            </banner_images>
+        </homepage>
+    </default>
+</config>

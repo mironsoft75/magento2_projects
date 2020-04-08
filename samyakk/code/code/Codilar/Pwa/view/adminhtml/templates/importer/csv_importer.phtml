@@ -1,0 +1,48 @@
+<?php
+/** @var \Codilar\Pwa\Block\CsvImporter $block */
+?>
+<div class="csv-importer-container">
+    <form id="csv-importer" method="POST" action="<?php echo $block->getPostUrl() ?>" enctype="multipart/form-data">
+        <?php echo $block->getBlockHtml('formkey') ?>
+        <div>
+            <h1><?php echo __("Instructions")?></h1>
+            <div>
+                <h4><?php echo __("The CSV file should have the below columns")?></h4>
+                <ul>
+                    <li><?php echo __("request_url")?></li>
+                    <li><?php echo __("redirect_url")?></li>
+                </ul>
+            </div>
+        </div>
+        <br />
+        <div class="admin__form-field">
+            <label class="admin__form-field-label" for="csv">
+                <span><?php echo __("Choose CSV") ?></span>
+            </label>
+            <div class="admin__form-field-control">
+                <input id="csv" name="csv" class="admin__control-text" type="file" />
+            </div>
+        </div>
+        <div class="admin__control-fields">
+            <button type="submit" class="action- scalable primary"><?php echo __("Import CSV") ?></button>
+        </div>
+    </form>
+</div>
+<style type="text/css">
+    .csv-importer-container {
+        padding: 30px;
+    }
+    #csv-importer {
+        width: 70%;
+        margin: auto;
+    }
+    #csv-importer .admin__form-field {
+        margin: 10px;
+    }
+    #csv-importer .admin__form-field label {
+        font-weight: bold;
+    }
+    #csv-importer .admin__control-fields button {
+        padding: 10px 20px;
+    }
+</style>

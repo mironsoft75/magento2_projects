@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <!-- Request Reset Password -->
+    <route url="/V2/request/resetPassword" method="POST">
+        <service class="Codilar\ResetPassword\Api\RequestResetPasswordInterface" method="resetPassword"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <!---->
+    <!-- Check Token -->
+    <route url="/V2/check/resetToken/:token" method="GET">
+        <service class="Codilar\ResetPassword\Api\RequestResetPasswordInterface" method="checkToken"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <!---->
+    <!-- Reset Password -->
+    <route url="/V2/reset/password" method="POST">
+        <service class="Codilar\ResetPassword\Api\RequestResetPasswordInterface" method="confirmResetPassword"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <!---->
+</routes>

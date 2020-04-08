@@ -1,0 +1,7 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\ResetPassword\Api\Data\ResetPasswordInterface" type="Codilar\ResetPassword\Model\ResetPassword" />
+    <preference for="Codilar\ResetPassword\Api\ResetPasswordRepositoryInterface" type="Codilar\ResetPassword\Model\ResetPasswordRepository" />
+    <preference for="Codilar\ResetPassword\Api\RequestResetPasswordInterface" type="Codilar\ResetPassword\Model\RequestResetPassword" />
+    <preference for="Codilar\ResetPassword\Api\Data\RequestResetPasswordDataInterface" type="Codilar\ResetPassword\Model\Data\RequestResetPasswordData" />
+    <preference for="Codilar\ResetPassword\Api\Data\ResetPasswordDataInterface" type="Codilar\ResetPassword\Model\Data\ResetPasswordData" />
+</config>

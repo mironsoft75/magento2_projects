@@ -1,0 +1,37 @@
+<?php
+/**
+ * @package     htcPwa
+ * @author      Codilar Technologies
+ * @license     https://opensource.org/licenses/OSL-3.0 Open Software License v. 3.0 (OSL-3.0)
+ * @link        http://www.codilar.com/
+ */
+
+/**
+ * @var $block \Codilar\Offers\Block\StaticBlocks\TopCategories
+ */
+$collection = $block->getCollection();
+/**
+ * @var $category \Magento\Catalog\Model\Category
+ */
+?>
+<div class="home-container">
+    <div class="header-block-tittle">
+        <div class="flash-header flash-header-category"><?php echo __("Categories") ?></div>
+    </div>
+    <div class="background-categories">
+        <div id="top_category_list">
+            <?php $i = 1; foreach ($collection as $category): ?>
+                <a href="<?= $category->getUrl() ?>" class="mobile-categories-link-remove-block" target="_blank">
+                    <div class="top-category-item <?php if($i == 1){ echo "active";} ?>" data-category-id="<?= $category->getId()?>">
+                        <div class="category-icon-small-container">
+                           <div class="image-container">
+                            <img class="category-icon-image" src="<?php echo $block->getCategoryIcon($category) ?>" alt="category-icon" title="<?php echo $category->getName() ?>">
+                           </div>
+                        </div>
+                        <span><a href="<?= $category->getUrl() ?>" class="mobile-categories-link-remove mobile-categories-link-remove-block" target="_blank"><?= $category->getName() ?></a></span>
+                    </div>
+                </a>
+            <?php $i++; endforeach; ?>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="codilar" translate="label" sortOrder="100" class="codilar-tab">
+            <label>Codilar Settings</label>
+        </tab>
+        <section id="order_handler" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+            <resource>Codilar_Core::codilar</resource>
+            <class>separator-top</class>
+            <label>Order Cancel</label>
+            <tab>codilar</tab>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Order Cancel</label>
+                <field id="active" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+                    <label>Enable Order Cancel</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="threshold_time" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Threshold Time</label>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                    <comment>Threshold time should be given in minutes</comment>
+                </field>
+                <field id="order_cancel_email" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Order Cancel Email Template</label>
+                    <source_model>Codilar\OrderHandler\Model\Config\Source\Email\Template</source_model>
+                    <comment>If none choosen, no email will be sent.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

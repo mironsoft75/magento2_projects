@@ -1,0 +1,19 @@
+<!--@subject {{trans 'Hello %customer_email. Your response has been recorded' customer_email=$data.getCustomerEmail()}} @-->
+<!--@vars {
+"trans '%id' id=$data.getId()":"Response ID",
+"trans '%form_id' id=$data.getFormId()":"Form ID",
+"trans '%customer_email' customer_email=$data.getCustomerEmail()":"Logged In customer's email (NULL for guest)",
+"trans '%customer_ip' customer_ip=$data.getCustomerIp()":"Customer's IP",
+"block class='CodilarDynamicFormBlockFormResponseRendererFields' field-email="Email ID" area='frontend' fields=$data.fields template='Codilar_DynamicForm::form/response/renderer/fields_table_vertical.phtml'":"Form Fields Rendered Vertically (Table Format)",
+"block class='CodilarDynamicFormBlockFormResponseRendererFields' field-email="Email ID" area='frontend' fields=$data.fields template='Codilar_DynamicForm::form/response/renderer/fields_table_horizontal.phtml'":"Form Fields Rendered Horizontally (Table Format)",
+"trans '%response_message' response_message=$data.getResponseMessage()":"Response Message"
+} @-->
+{{template config_path="design/email/header_template"}}
+
+<h1>{{trans '%response_message' response_message=$data.getResponseMessage()}}</h1>
+<p>Below are your submitted fields. Please review them</p>
+<hr />
+<div>
+    {{block class='CodilarDynamicFormBlockFormResponseRendererFields' field-email="Email ID" area='frontend' fields=$data.fields template='Codilar_DynamicForm::form/response/renderer/fields_table_vertical.phtml'}}
+</div>
+{{template config_path="design/email/footer_template"}}

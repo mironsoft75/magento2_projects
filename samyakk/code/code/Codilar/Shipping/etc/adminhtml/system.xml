@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="carriers">
+            <group id="samyakk" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Samyakk Shipping Method</label>
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="name" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Name</label>
+                </field>
+                <field id="chargeable_categories" translate="label" type="multiselect" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Chargeable Categories</label>
+                    <source_model>Codilar\Shipping\Model\Config\Source\Categories</source_model>
+                </field>
+                <field id="country_wise_slabs" translate="label" type="textarea" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Country-wise shipping cost (JSON)</label>
+                    <comment><![CDATA[
+<ul>
+    <li>Should be a valid JSON</li>
+    <li>"*" can be used as a wildcard</li>
+    <li>
+        Sample JSON
+        <br /><br />
+        <pre>
+{
+    "slabs": [
+        {
+            "country" :  "IN",
+            "values"  :  [
+                {
+                    "from":  "*",
+                    "to"  :  "*",
+                    "value":  150
+                }
+            ]
+        }
+    ]
+}
+        </pre>
+    </li>
+</ul>
+                    ]]></comment>
+                </field>
+                <field id="allowed_zipcodes" translate="label" type="Magento\Config\Block\System\Config\Form\Field\File" sortOrder="100" showInDefault="1">
+                    <label>Allowed Zipcodes</label>
+                    <backend_model>Codilar\Shipping\Model\Config\Backend\File</backend_model>
+                    <upload_dir config="system">samyakk_allowed_zipcodes</upload_dir>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * @package     magento2.3
+ * @author      Codilar Technologies
+ * @license     https://opensource.org/licenses/OSL-3.0 Open Software License v. 3.0 (OSL-3.0)
+ * @link        http://www.codilar.com/
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\DynamicForm\Api\Data\FormInterface" type="Codilar\DynamicForm\Model\Data\Form" />
+    <preference for="Codilar\DynamicForm\Api\Data\Form\ElementInterface" type="Codilar\DynamicForm\Model\Data\Form\Element" />
+    <preference for="Codilar\DynamicForm\Api\Data\Form\Element\OptionInterface" type="Codilar\DynamicForm\Model\Data\Form\Element\Option" />
+    <preference for="Codilar\DynamicForm\Api\Data\FormSearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
+    <preference for="Codilar\DynamicForm\Api\Data\Form\ElementSearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
+    <preference for="Codilar\DynamicForm\Api\FormRepositoryInterface" type="Codilar\DynamicForm\Model\FormRepository" />
+    <preference for="Codilar\DynamicForm\Api\FormManagementInterface" type="Codilar\DynamicForm\Model\FormManagement" />
+    <preference for="Codilar\DynamicForm\Api\Form\ElementRepositoryInterface" type="Codilar\DynamicForm\Model\Form\ElementRepository" />
+    <preference for="Codilar\DynamicForm\Api\Data\Form\ResponseInterface" type="Codilar\DynamicForm\Model\Data\Form\Response" />
+    <preference for="Codilar\DynamicForm\Api\Data\Form\Response\FieldInterface" type="Codilar\DynamicForm\Model\Data\Form\Response\Field" />
+    <preference for="Codilar\DynamicForm\Api\Data\Form\ResponseSearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
+    <preference for="Codilar\DynamicForm\Api\Form\ResponseRepositoryInterface" type="Codilar\DynamicForm\Model\Form\ResponseRepository" />
+    <preference for="Codilar\DynamicForm\Api\Data\Form\Element\ValidationOptionsInterface" type="Codilar\DynamicForm\Model\Data\Form\Element\ValidationOptions" />
+    <preference for="Codilar\DynamicForm\Api\Form\DynamicFormFieldDataInterface" type="Magento\Framework\DataObject" />
+    <preference for="Codilar\DynamicForm\Api\Form\FormSubmitResponseInterface" type="Codilar\DynamicForm\Model\Form\FormSubmitResponse" />
+    <preference for="Codilar\DynamicForm\Api\Data\FormItemInterface" type="Magento\Framework\DataObject" />
+
+    <virtualType name="codilarDynamicFormStoreViewUiColumnRenderer" type="Magento\Store\Ui\Component\Listing\Column\Store">
+        <arguments>
+            <argument name="storeKey" xsi:type="string">store_views</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="codilarDynamicFormDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" />
+    <virtualType name="Codilar\DynamicForm\Model\ResourceModel\Form\Response\Grid\Collection" type="Codilar\DynamicForm\Model\ResourceModel\Form\Response\Collection">
+        <arguments>
+            <argument name="model" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\Document</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="dynamicform_form_response_listing_data_source" xsi:type="string">Codilar\DynamicForm\Model\ResourceModel\Form\Response\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Codilar\DynamicForm\Api\FormManagementInterface">
+        <plugin name="security_for_product_forms" type="Codilar\DynamicForm\Plugins\FormManagement" />
+    </type>
+    <virtualType name="CodilarDynamicFormBlockFormResponseRendererFields" type="Codilar\DynamicForm\Block\Form\Response\Renderer\Fields" />
+
+    <type name="Codilar\Breadcrumbs\Api\BreadcrumbsManagementInterface">
+        <arguments>
+            <argument name="breadcumbsTypeEvaluator" xsi:type="array">
+                <item name="dynamic_form" xsi:type="object">Codilar\DynamicForm\Model\Breadcrumbs\Evaluator</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

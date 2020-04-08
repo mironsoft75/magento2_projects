@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * @package     magento2.3
+ * @author      Codilar Technologies
+ * @license     https://opensource.org/licenses/OSL-3.0 Open Software License v. 3.0 (OSL-3.0)
+ * @link        http://www.codilar.com/
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Codilar_Carousel::carousel"
+             title="Carousel Blocks"
+             translate="title"
+             module="Codilar_Carousel"
+             parent="Codilar_Core::codilar"
+             sortOrder="25"
+             resource="Codilar_Carousel::carousel"
+        />
+        <add id="Codilar_Carousel::codilar"
+             title="Carousel"
+             module="Codilar_Carousel"
+             parent="Codilar_Carousel::carousel"
+             sortOrder="30"
+             resource="Codilar_Carousel::carousel"
+             action="carousel/index/index"/>
+
+        <add id="Codilar_Carousel::codilar1"
+             title="Carousel Items"
+             module="Codilar_Carousel"
+             parent="Codilar_Carousel::carousel"
+             sortOrder="35"
+             resource="Codilar_Carousel::carousel"
+             action="carousel/carouselitem/index"/>
+    </menu>
+</config>

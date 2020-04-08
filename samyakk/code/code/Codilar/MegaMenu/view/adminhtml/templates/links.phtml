@@ -1,0 +1,255 @@
+
+<?php
+/** @var \Codilar\MegaMenu\Block\Adminhtml\Links $block */
+?>
+<div class="admin__scope-old">
+    <div class="links-tree-container">
+        <hr />
+        <div class="add-new">
+            <h1><?php echo __("Add New Link") ?></h1>
+            <form action="javascript:void(0);" data-mage-init='{"validation": {}}'>
+                <table class="dynamic-form-response data-table">
+                    <tr>
+                        <th><label for="static-link-add-title"><?php echo __("Title") ?> *</label></th>
+                        <td><input data-validate="{required:true}" id="static-link-add-title" type="text" name="title" class="input-text admin__control-text required-entry" /></td>
+                    </tr>
+                    <tr>
+                        <th><label for="static-link-add-url"><?php echo __("URL") ?> *</label></th>
+                        <td><input data-validate="{required:true}" id="static-link-add-url" type="text" name="url" class="input-text admin__control-text required-entry" /></td>
+                    </tr>
+                    <tr>
+                        <th><label for="is-tagalys"><?php echo __("Is Tagalys") ?> *</label></th>
+                        <td>
+                            <select data-validate="{required:true}" id="is-tagalys" name="is-tagalys" class="input-text admin__control-text required-entry">
+                                <option value="true">True</option>
+                                <option value="false">False</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="submit" class="action primary action-primary"><?php echo __("Add") ?></button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <hr />
+        <div class="trees">
+            <div class="actions">
+                <button type="button" style="display: none" id="sync-required" class="action primary action-primary"><?php echo __("Syncronise Now") ?></button>
+                <button type="button" style="display: none" id="sync-not-required" disabled class="disabled action primary action-primary"><?php echo __("Syncronisation not required") ?></button>
+            </div>
+            <div id="trash-links-tree" style="text-align: right"></div>
+            <div class="links-tree" id="used-links-tree"></div>
+            <div class="links-tree" id="unused-links-tree"></div>
+        </div>
+    </div>
+</div>
+<style>
+    .links-tree-container .links-tree {
+        display: inline-block;
+        width: 45%;
+        border: 1px solid silver;
+        padding: 10px;
+        margin: 1%;
+        vertical-align: top;
+        min-height: 600px;
+    }
+</style>
+
+<script type="text/javascript">
+    require([
+        'jquery',
+        'extjs/ext-tree-checkbox',
+        'mage/mage'
+    ], function ($) {
+
+        var usedCategories = <?php echo \json_encode($block->getUsedCategories()) ?>;
+        var unusedCategories = <?php echo \json_encode($block->getUnusedCategories()) ?>;
+
+        var renderTree = function(elementId, data, rootText, allowChildren) {
+            var tree = new Ext.tree.TreePanel(elementId, {
+                animate: true,
+                loader: true,
+                enableDD: true,
+                containerScroll: true,
+                rootVisible: true,
+                style: {
+                    overflow: 'auto',
+                    overflowX: 'hidden'
+                }
+            });
+            var root = new Ext.tree.TreeNode({
+                text: rootText || "ROOT",
+                allowDrag: false,
+                allowDrop: true,
+                id: '1'
+            });
+            tree.setRootNode(root);
+            var prepareTree = function (parent, data) {
+                data.forEach(function (child) {
+                    child.text = child.name;
+                    if (child.id > 0) {
+                        child.disabled = true;
+                    }
+                    child.allowDrop = allowChildren === undefined ? true : allowChildren;
+                    var node = new Ext.tree.TreeNode(child);
+                    if (child.children) {
+                        prepareTree(node, child.children);
+                    }
+                    parent.appendChild(node);
+                });
+            };
+            prepareTree(root, data);
+            tree.render();
+            root.expand(false, false);
+            tree.expandAll();
+            return tree;
+        }
+
+        var usedLinksTree = renderTree('used-links-tree', usedCategories, 'Category Tree');
+        var unusedLinksTree = renderTree('unused-links-tree', unusedCategories, 'Unused Links', false);
+        var trashLinksTree = renderTree('trash-links-tree', [], 'TRASH (Drop here to delete link)');
+
+
+        var treeSyncronizer = {
+            treeSynced: null,
+            usedLinksTree: null,
+            unusedLinksTree: null,
+            init: function (usedLinksTree, unusedLinksTree) {
+                var self = this;
+                self.setTreeSynced(true);
+                self.usedLinksTree = usedLinksTree;
+                self.unusedLinksTree = unusedLinksTree;
+                var setTreeSyncedFalse = function () {
+                    self.setTreeSynced(false);
+                }.bind(self);
+                self.usedLinksTree.addListener('append', setTreeSyncedFalse);
+                self.usedLinksTree.addListener('remove', setTreeSyncedFalse);
+                self.unusedLinksTree.addListener('append', setTreeSyncedFalse);
+                self.unusedLinksTree.addListener('remove', setTreeSyncedFalse);
+                $('#sync-required').on('click', function (e) {
+                    e.preventDefault();
+                    self.syncTrees();
+                });
+            },
+            setTreeSynced: function (flag) {
+                this.treeSynced = flag;
+                this.renderSyncerButton();
+            },
+            renderSyncerButton: function () {
+                if (this.treeSynced) {
+                    $('#sync-required').hide();
+                    $('#sync-not-required').show();
+                } else {
+                    $('#sync-required').show();
+                    $('#sync-not-required').hide();
+                }
+            },
+            getDataFromNode: function (node, type) {
+                var data = [];
+                var self = this;
+                node.childNodes.forEach(function (child) {
+                    if (type === 'unused' || !child.disabled) {
+                        var leaf = child.attributes;
+                        if (type === 'used') {
+                            var previousSibling = child.previousSibling;
+                            var nextSibling = child.nextSibling;
+                            var parentNode = child.parentNode;
+                            var sort = null;
+                            while (previousSibling && !sort) {
+                                if (previousSibling.attributes.id > 0) {
+                                    sort = {
+                                        'type': 'after',
+                                        'id': previousSibling.attributes.id
+                                    };
+                                    break;
+                                }
+                                previousSibling = previousSibling.previousSibling;
+                            }
+                            while (nextSibling && !sort) {
+                                if (nextSibling.attributes.id > 0) {
+                                    sort = {
+                                        'type': 'before',
+                                        'id': nextSibling.attributes.id
+                                    };
+                                    break;
+                                }
+                                nextSibling = nextSibling.nextSibling;
+                            }
+                            if (!sort) {
+                                sort = {
+                                    'type': 'parent',
+                                    'id': parentNode.attributes.id
+                                };;
+                            }
+                            leaf.sort = sort;
+                        }
+                        data.push(leaf);
+                    }
+                    if (child.childNodes.length) {
+                        data = data.concat(self.getDataFromNode(child, type));
+                    }
+                });
+                return data;
+            },
+            syncTrees: function () {
+                var url = "<?php echo $block->getUrl('codilarmegamenu/links/update') ?>";
+                var usedLinks = this.getDataFromNode(this.usedLinksTree.getRootNode(), 'used');
+                var unusedLinks = this.getDataFromNode(this.unusedLinksTree.getRootNode(), 'unused');
+                $('body').loader('show');
+                $.ajax({
+                    url: url,
+                    method: 'post',
+                    data: {
+                        formkey: window.FORM_KEY,
+                        usedLinks: usedLinks,
+                        unusedLinks: unusedLinks
+                    },
+                    success: function (r) {
+                        $('body').loader('hide');
+                    }
+                });
+                this.setTreeSynced(true);
+            }
+        };
+
+        treeSyncronizer.init(usedLinksTree, unusedLinksTree);
+
+        trashLinksTree.addListener('append', function (tree) {
+            setTimeout(function() {
+                var node = tree.getRootNode();
+                while (node.firstChild) {
+                    node.removeChild(node.firstChild);
+                }
+            }, 100);
+        });
+
+
+        var addForm = $('.links-tree-container .add-new form');
+        addForm.on('submit', function (e) {
+            e.preventDefault();
+            if (!addForm.valid()) {
+                return false;
+            }
+            $('body').loader('show');
+            var node = new Ext.tree.TreeNode({
+                id: -1,
+                leaf: true,
+                text: addForm.find('[name="title"]').val(),
+                name: addForm.find('[name="title"]').val(),
+                url: addForm.find('[name="url"]').val(),
+                is_tagalys: addForm.find('[name="is-tagalys"]').val(),
+                allowDrop: false
+            });
+            addForm.trigger('reset');
+            setTimeout(function() {
+                unusedLinksTree.getRootNode().appendChild(node);
+                unusedLinksTree.expandAll()
+                addForm.validate().resetForm();
+                $('body').loader('hide');
+            }, 500);
+        });
+    });
+</script>

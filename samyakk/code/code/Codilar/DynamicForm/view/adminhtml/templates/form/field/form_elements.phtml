@@ -1,0 +1,52 @@
+<?php
+/** @var \Codilar\DynamicForm\Block\Adminhtml\Form\Field\FormElements $block */
+?>
+<div class="admin__field _required form_elements" data-index="form_elements">
+    <div class="admin__field-label">
+        <label for="form_elements">
+            <span><?php echo __("Form Builder") ?></span>
+        </label>
+    </div>
+    <div class="admin__field-control">
+        <div id="form_elements"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    require(['jquery', 'Codilar_DynamicForm/js/dynamicForm'], function ($) {
+        $("#form_elements").dynamicForm({
+            "config": {
+                "addButtonLabel": "<?php echo __("Add New Form Element") ?>"
+            },
+            "definition": {
+                'form_element_id': {
+                    'label': '<?php echo __("Form Element") ?>',
+                    'type': 'select',
+                    'options': <?php echo \json_encode($block->getFormElements()) ?>
+                }
+            },
+            "values": <?php echo \json_encode($block->getValues()) ?>,
+            "onChange": function (data) {
+                $('input[name="form_element_ids"]').val(
+                    data.form_element_id.filter(function (item) {
+                        return item;
+                    }).join(',')
+                ).trigger('change');
+            }
+        });
+    });
+</script>
+<style type="text/css">
+    .form_elements {
+        margin: 20px;
+        padding: 20px;
+        border-bottom: 1px solid silver;
+        border-top: 1px solid silver;
+    }
+    .form_elements div.admin__field-label {
+        text-align: left;
+        font-size: 1.6em;
+    }
+    .form_elements div.admin__field-control {
+        margin: 10px;
+    }
+</style>

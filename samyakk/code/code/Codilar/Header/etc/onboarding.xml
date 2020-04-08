@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Codilar_Onboarding:etc/onboarding.xsd">
+    <sections>
+        <section name="header">
+            <service>Codilar\Header\Api\HeaderManagementInterface</service>
+            <method>getHeaderData</method>
+        </section>
+    </sections>
+</config>

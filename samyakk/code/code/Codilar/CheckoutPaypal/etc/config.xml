@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <codilar_checkout_paypal>
+                <active>1</active>
+                <test_payment_url><![CDATA[https://api.sandbox.paypal.com]]></test_payment_url>
+                <live_payment_url><![CDATA[https://api.paypal.com]]></live_payment_url>
+                <mode>2</mode>
+                <model>Codilar\CheckoutPaypal\Model\Payment\CheckoutPaypal</model>
+                <pending_order_status>pending</pending_order_status>
+                <success_order_status>processing</success_order_status>
+                <success_order_message>Paypal Payment Success</success_order_message>
+                <failure_order_status>canceled</failure_order_status>
+                <failure_order_message>Paypal Payment Failed</failure_order_message>
+                <title>Paypal</title>
+            </codilar_checkout_paypal>
+        </payment>
+    </default>
+</config>

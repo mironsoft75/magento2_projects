@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<!--
+    @package     htcPwa
+    @author      Codilar Technologies
+    @license     https://opensource.org/licenses/OSL-3.0 Open Software License v. 3.0 (OSL-3.0)
+    @link        http://www.codilar.com/
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+
+    <!-- Payment status -->
+    <route url="/V2/order/payment/status/:type/:orderId" method="GET">
+        <service class="Codilar\Checkout\Api\PaymentManagementInterface" method="getPaymentStatus"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <!---->
+
+    <!-- Cart Fetch -->
+    <route url="/V2/checkout/cart/get" method="GET">
+        <service class="Codilar\Checkout\Api\CartManagementInterface" method="getCart"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <!---->
+
+    <!-- Cart item delete -->
+    <route url="/V2/checkout/cart/deleteItem" method="POST">
+        <service class="Codilar\Checkout\Api\CartManagementInterface" method="removeItem"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <!---->
+
+    <!-- Cart item add -->
+    <route url="/V2/checkout/cart/add" method="POST">
+        <service class="Codilar\Checkout\Api\CartManagementInterface" method="addItem"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <!---->
+
+    <!-- Place Order -->
+    <route url="/V2/checkout/cart/placeOrder" method="POST">
+        <service class="Codilar\Checkout\Api\QuoteManagementInterface" method="placeOrder"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+    </route>
+    <!---->
+
+    <!-- Shipping Methods -->
+    <route url="/V2/checkout/cart/getShippingMethods" method="POST">
+        <service class="Codilar\Checkout\Api\ShippingMethodManagementInterface" method="getShippingMethods"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+    </route>
+    <!---->
+
+    <!-- Shipping Method Set -->
+    <route url="/V2/checkout/cart/setShippingMethod" method="POST">
+        <service class="Codilar\Checkout\Api\ShippingMethodManagementInterface" method="setShippingMethod"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+    </route>
+    <!---->
+
+    <!-- Payment Methods -->
+    <route url="/V2/checkout/cart/getPaymentMethods" method="POST">
+        <service class="Codilar\Checkout\Api\PaymentMethodManagementInterface" method="getPaymentMethods"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+    </route>
+    <!---->
+
+    <!-- Remove Coupon -->
+    <route url="/V2/checkout/cart/removeCoupon" method="GET">
+        <service class="Codilar\Checkout\Api\CartManagementInterface" method="removeCoupon"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <!---->
+
+    <!-- Merge Cart -->
+    <route url="/V2/checkout/cart/merge" method="POST">
+        <service class="Codilar\Checkout\Api\CartManagementInterface" method="mergeCart"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+    </route>
+    <!---->
+
+</routes>

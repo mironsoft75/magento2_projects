@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\Product\Api\Data\Product\MetaInterface" type="Codilar\Product\Model\Data\Product\Meta" />
+    <preference for="Codilar\Product\Api\Data\Product\Configurations\OptionsInterface" type="Codilar\Product\Model\Data\Product\Configurations\Options" />
+    <preference for="Codilar\Product\Api\Data\Product\ConfigurationsInterface" type="Codilar\Product\Model\Data\Product\Configurations" />
+    <preference for="Codilar\Product\Api\Data\Product\OptionValues\ValuesInterface" type="Codilar\Product\Model\Data\Product\OptionValues\Values" />
+    <preference for="Codilar\Product\Api\Data\Product\OptionValuesInterface" type="Codilar\Product\Model\Data\Product\OptionValues" />
+    <preference for="Codilar\Product\Api\Data\Product\CustomOptions\ValuesInterface" type="Codilar\Product\Model\Data\Product\CustomOptions\Values" />
+    <preference for="Codilar\Product\Api\Data\Product\CustomOptionsInterface" type="Codilar\Product\Model\Data\Product\CustomOptions" />
+    <preference for="Codilar\Product\Api\Data\ProductInterface" type="Codilar\Product\Model\Data\Product" />
+    <preference for="Codilar\Product\Api\ProductManagementInterface" type="Codilar\Product\Model\ProductManagement" />
+    <preference for="Codilar\Product\Api\Product\MetaManagementInterface" type="Codilar\Product\Model\Product\MetaManagement" />
+    <preference for="Codilar\Product\Api\Product\ConfigurationManagementInterface" type="Codilar\Product\Model\Product\ConfigurationManagement" />
+    <preference for="Codilar\Product\Api\Product\Configurations\OptionsManagementInterface" type="Codilar\Product\Model\Product\Configurations\OptionsManagement" />
+    <preference for="Codilar\Product\Api\Product\OptionsValuesManagementInterface" type="Codilar\Product\Model\Product\OptionsValuesManagement" />
+    <preference for="Codilar\Product\Api\Product\OptionsValues\ValuesManagementInterface" type="Codilar\Product\Model\Product\OptionsValues\ValuesManagement" />
+    <preference for="Codilar\Product\Api\Product\CustomOptionsManagementInterface" type="Codilar\Product\Model\Product\CustomOptionsManagement" />
+    <preference for="Codilar\Product\Api\Product\CustomOptions\ValuesManagementInterface" type="Codilar\Product\Model\Product\CustomOptions\ValuesManagement" />
+    <preference for="Codilar\Product\Api\Product\SpecificationManagementInterface" type="Codilar\Product\Model\Product\SpecificationManagement" />
+    <preference for="Codilar\Product\Api\Data\Product\AttributesDataInterface" type="Codilar\Product\Model\Data\Product\AttributesData" />
+    <preference for="Codilar\Product\Api\Data\Product\SpecificationGroupInterface" type="Codilar\Product\Model\Data\Product\SpecificationGroup" />
+    <preference for="Codilar\Product\Api\Product\CustomAttributesManagementInterface" type="Codilar\Product\Model\Product\CustomAttributesManagement" />
+    <preference for="Codilar\Product\Api\Data\Product\MediaGalleryInterface" type="Codilar\Product\Model\Data\Product\MediaGallery" />
+
+    <type name="Codilar\Product\Model\Pool\CustomAttributesPool">
+        <arguments>
+            <argument name="customAttributes" xsi:type="array">
+                <item name="ship_time" xsi:type="string">ship_time</item>
+                <item name="trade_mark" xsi:type="string">trade_mark</item>
+                <item name="money_guarantee" xsi:type="string">money_guarantee</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

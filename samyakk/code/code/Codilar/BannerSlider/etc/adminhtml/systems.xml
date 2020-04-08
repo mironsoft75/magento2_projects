@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+    @package     htcPwa
+    @author      Codilar Technologies
+    @license     https://opensource.org/licenses/OSL-3.0 Open Software License v. 3.0 (OSL-3.0)
+    @link        http://www.codilar.com/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="codilar" translate="label" sortOrder="999" class="codilar-tab">
+            <label>Codilar Settings</label>
+        </tab>
+        <section id="homepage" translate="label" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Homepage</label>
+            <tab>codilar</tab>
+            <resource>Magestore_Bannerslider::config_bannerslider</resource>
+            <group id="slider" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Homepage Banners</label>
+                <field id="mobile_home" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Mobile Slider Id</label>
+                    <comment>Slider Id to be used in homepage</comment>
+                </field>
+                <field id="website_home" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Website Slider Id</label>
+                    <comment>Slider Id to be used in homepage</comment>
+                </field>
+            </group>
+            <group id="blocks" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Homepage Blocks Parent Key</label>
+                <field id="mobile_home" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Mobile Home Block Key</label>
+                    <comment>Product associated block parent id</comment>
+                </field>
+                <field id="website_home" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Website Home Block Key</label>
+                    <comment>Product associated block parent id</comment>
+                </field>
+            </group>
+            <group id="banner_images" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Responsive Banner Image Dimensions</label>
+                <field id="website" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Website</label>
+                    <comment><![CDATA[<b>width</b>x<b>height</b>. For eg, 125x125 ]]></comment>
+                </field>
+                <field id="mobile" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Mobile</label>
+                    <comment><![CDATA[<b>width</b>x<b>height</b>. For eg, 125x125 ]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

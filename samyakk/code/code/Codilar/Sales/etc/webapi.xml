@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+   @package     htcPwa
+   @author      Codilar Technologies
+   @license     https://opensource.org/licenses/OSL-3.0 Open Software License v. 3.0 (OSL-3.0)
+   @link        http://www.codilar.com/
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+
+    <!-- My order history-->
+    <route url="/V2/order-history" method="GET">
+        <service class="Codilar\Sales\Api\OrderRepositoryInterface" method="getOrderHistory"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+    </route>
+    <!---->
+
+    <!-- Order View -->
+    <route url="/V2/order/view/:orderId" method="GET">
+        <service class="Codilar\Sales\Api\OrderRepositoryInterface" method="getOrder"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+    </route>
+    <!---->
+
+    <route url="/V2/order/track" method="POST">
+        <service class="Codilar\Sales\Api\OrderRepositoryInterface" method="getGuestOrderStatus"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+</routes>

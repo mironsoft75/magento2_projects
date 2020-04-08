@@ -1,0 +1,26 @@
+type Query {
+    slideBanners : BannerSlider @resolver(class: "Codilar\\BannerSlider\\Model\\Resolver\\BannerSlider") @doc(description: "This will return the Query for BannerSlider")
+}
+
+type BannerSlider @doc(description: "Defines all data of BannerSlider") {
+    slider_id: Int @doc(description: "slider id")
+    slider_title: String @doc(description: "slider title")
+    slider_animation: String @doc(description: "slider animation style")
+    show_title: Int @doc(description: "show title or not")
+    banners: [Banner] @doc(description: "Array of children")
+}
+
+type Banner @doc(description: "This will define data for all banners of the Slider") {
+    banner_id: Int @doc(description: "banner id")
+    name: String @doc(description: "Banner Name")
+    click_url: String @doc(description: "Click url of the banner")
+    desktop_image: String @doc(description: "Desktop image url")
+    desktop_image_text: String @doc(description: "Desktop image text")
+    mobile_image: String @doc(description: "Mobile image url")
+    mobile_image_text: String @doc(description: "Mobile image text")
+    tablet_image: String @doc(description: "Tablet image url")
+    tablet_image_text: String @doc(description: "Tablet image text")
+    from: String @doc(description: "start time of the banner")
+    to: String @doc(description: "end time of the banner")
+    sort_order: Int @doc(description: "Position of the banner")
+}

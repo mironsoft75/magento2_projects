@@ -1,0 +1,95 @@
+<?php
+/** @var \Codilar\DynamicForm\Block\Adminhtml\Element\Field\FormElementOptions $block */
+?>
+<div id="form_element_options_container" class="admin__field _required form_element_options" data-index="form_element_options">
+    <div class="admin__field-label">
+        <label for="form_element_options">
+            <span><?php echo __("Choose Options") ?></span>
+        </label>
+    </div>
+    <div class="admin__field-control">
+        <div id="form_element_options"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    require(['jquery', 'Codilar_DynamicForm/js/dynamicForm'], function ($) {
+        var init = function () {
+            var optionableTypes = <?php echo \json_encode($block->getOptionableTypes() ) ?>;
+            optionableTypes = optionableTypes.map(function (item) {
+                return "" + item;
+            });
+
+            if (optionableTypes.indexOf("<?php echo $block->getTypeValue() ?>") < 0) {
+                $('#form_element_options_container').hide();
+            }
+
+            if ("<?php echo $block->getTypeValue() ?>" !== "<?php echo \Codilar\DynamicForm\Api\Data\Form\ElementInterface::TYPE_CUSTOM ?>" ) {
+                $('[name="custom_html"]').closest('.admin__field').hide();
+                $('[name="validation"]').closest('.admin__field').hide();
+            }
+
+            $(document).ready(function () {
+                $(document).on('change', 'select[name="type"]', function () {
+                    if (optionableTypes.indexOf($(this).val() + "") >= 0) {
+                        $('#form_element_options_container').show();
+                    } else {
+                        $('#form_element_options_container').hide();
+                    }
+
+                    if ($(this).val() === "<?php echo \Codilar\DynamicForm\Api\Data\Form\ElementInterface::TYPE_CUSTOM ?>") {
+                        $('[name="custom_html"]').closest('.admin__field').show();
+                        $('[name="validation"]').closest('.admin__field').show();
+                    } else {
+                        $('[name="custom_html"]').closest('.admin__field').hide();
+                        $('[name="validation"]').closest('.admin__field').hide();
+                    }
+
+                });
+            });
+
+            $("#form_element_options").dynamicForm({
+                "config": {
+                    "addButtonLabel": "<?php echo __("Add New Option") ?>",
+                    "serialize": {
+                        "strategy": 1
+                    }
+                },
+                "definition": {
+                    'label': {
+                        'label': '<?php echo __("Label") ?>',
+                        'type': 'text'
+                    },
+                    'value': {
+                        'label': '<?php echo __("Value") ?>',
+                        'type': 'text'
+                    }
+                },
+                "values": <?php echo \json_encode($block->getValues()) ?>,
+                "onChange": function (data) {
+                    $('input[name="options_json"]').val(JSON.stringify(data)).trigger('change');
+                }
+            });
+        };
+
+        $('body').loader('show');
+        setTimeout(function () {
+            init();
+            $('body').loader('hide');
+        }, 1000);
+    });
+</script>
+<style type="text/css">
+    .form_element_options {
+        margin: 20px;
+        padding: 20px;
+        border-bottom: 1px solid silver;
+        border-top: 1px solid silver;
+    }
+    .form_element_options div.admin__field-label {
+        text-align: left;
+        font-size: 1.6em;
+    }
+    .form_element_options div.admin__field-control {
+        margin: 10px;
+    }
+</style>
