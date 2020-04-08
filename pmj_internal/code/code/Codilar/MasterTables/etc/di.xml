@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\MasterTables\Api\LocationNameRepositoryInterface"
+                type="Codilar\MasterTables\Model\LocationNameRepository"/>
+    <preference for="Codilar\MasterTables\Api\MetalBomRepositoryInterface"
+                type="Codilar\MasterTables\Model\MetalBomRepository"/>
+    <preference for="Codilar\MasterTables\Api\MetalRepositoryInterface"
+                type="Codilar\MasterTables\Model\MetalRepository"/>
+    <preference for="Codilar\MasterTables\Api\StoneBomRepositoryInterface"
+                type="Codilar\MasterTables\Model\StoneBomRepository"/>
+    <preference for="Codilar\MasterTables\Api\VariantNameRepositoryInterface"
+                type="Codilar\MasterTables\Model\VariantNameRepository"/>
+    <preference for="Codilar\MasterTables\Api\Data\LocationNameInterface"
+                type="Codilar\MasterTables\Model\LocationName"/>
+    <preference for="Codilar\MasterTables\Api\Data\MetalBomInterface"
+                type="Codilar\MasterTables\Model\MetalBom"/>
+    <preference for="Codilar\MasterTables\Api\Data\MetalInterface"
+                type="Codilar\MasterTables\Model\Metal"/>
+    <preference for="Codilar\MasterTables\Api\Data\StoneBomInterface"
+                type="Codilar\MasterTables\Model\StoneBom"/>
+    <preference for="Codilar\MasterTables\Api\Data\VariantNameInterface"
+                type="Codilar\MasterTables\Model\VariantName"/>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="codilar_mastertables_variantname_grid_data_source" xsi:type="string">
+                    Codilar\MasterTables\Model\ResourceModel\VariantName\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Codilar\MasterTables\Model\ResourceModel\VariantName\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">codilar_variant_name</argument>
+            <argument name="resourceModel" xsi:type="string">
+                Codilar\MasterTables\Model\ResourceModel\VariantName
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="codilar_mastertables_metal_grid_data_source" xsi:type="string">
+                    Codilar\MasterTables\Model\ResourceModel\Metal\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Codilar\MasterTables\Model\ResourceModel\Metal\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">codilar_metal</argument>
+            <argument name="resourceModel" xsi:type="string">
+                Codilar\MasterTables\Model\ResourceModel\Metal
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="codilar_mastertables_locationname_grid_data_source" xsi:type="string">
+                    Codilar\MasterTables\Model\ResourceModel\LocationName\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Codilar\MasterTables\Model\ResourceModel\LocationName\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">codilar_location_name</argument>
+            <argument name="resourceModel" xsi:type="string">
+                Codilar\MasterTables\Model\ResourceModel\LocationName
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="codilar_mastertables_stonebom_grid_data_source" xsi:type="string">
+                    Codilar\MasterTables\Model\ResourceModel\StoneBom\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Codilar\MasterTables\Model\ResourceModel\StoneBom\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">codilar_stone_bom</argument>
+            <argument name="resourceModel" xsi:type="string">
+                Codilar\MasterTables\Model\ResourceModel\StoneBom
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="codilar_mastertables_metalbom_grid_data_source" xsi:type="string">
+                    Codilar\MasterTables\Model\ResourceModel\MetalBom\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Codilar\MasterTables\Model\ResourceModel\MetalBom\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">codilar_metal_bom</argument>
+            <argument name="resourceModel" xsi:type="string">
+                Codilar\MasterTables\Model\ResourceModel\MetalBom
+            </argument>
+        </arguments>
+    </virtualType>
+</config>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Codilar Technologies Pvt. Ltd.
+ * @category    pmj-internal
+ * @package    pmj-internal
+ * @copyright   Copyright (c) 2016 Codilar. (http://www.codilar.com)
+ * @purpose     pmj-internal
+ * @author       Codilar Team
+ **/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Mview/etc/mview.xsd">
+    <view id="codilar_product_videos" class="Codilar\ProductImageAndVideos\Model\Indexer\Video" group="indexer"/>
+    <view id="codilar_product_images" class="Codilar\ProductImageAndVideos\Model\Indexer\Images" group="indexer"/>
+</config>

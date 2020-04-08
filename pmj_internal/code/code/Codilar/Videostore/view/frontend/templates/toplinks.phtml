@@ -1,0 +1,123 @@
+<?php
+// @codingStandardsIgnoreFile
+
+/* @var \Magento\Wishlist\Block\Link $block */
+?>
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$userContext = $objectManager->get('Magento\Framework\App\Http\Context');
+$isLoggedIn = $userContext->getValue(\Magento\Customer\Model\Context::CONTEXT_AUTH);
+$baseurl = $objectManager->get('Magento\Store\Model\StoreManagerInterface')->getStore(0)->getBaseUrl();
+
+
+?>
+
+<?php
+/**
+ * @var Codilar\Videostore\Block\Cart\Index $block ;
+ */
+$blockObj = $block->getLayout()->createBlock('Codilar\Videostore\Block\Cart\Index');
+$storeCheck = $blockObj->getStoreId();
+?>
+
+<?php
+$url = null;
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$storeManager = $objectManager->create("\Magento\Store\Model\StoreManagerInterface");
+$websites = $storeManager->getWebsites();
+foreach ($websites as $website) {
+    foreach ($website->getStores() as $store) {
+        $wedsiteId = $website->getId();
+        $storeObj = $storeManager->getStore($store);
+        $storeId = $storeObj->getId();
+        $url = $storeObj->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_WEB);
+    }
+}
+?>
+
+<div class="drop-down d-none d-sm-inline-block">
+    <div class="selected country-switcher">
+        <a href="#"><span class="down-arrow"><?php echo ($storeCheck == 1) ? 'INDIA' : 'USA' ?></span></a>
+    </div>
+    <div class="options">
+        <ul>
+            <li class="ind mb-0 <?php echo ($storeCheck == 1) ? 'd-none' : 'd-block' ?>"><a href="<?php echo $url ?>">INDIA<span
+                            class="value"></span></a></li>
+            <li class="us mb-0 <?php echo ($storeCheck == 2) ? 'd-none' : 'd-block' ?>"><a
+                        href="<?php echo $url ?>">USA<span class="value"></span></a></li>
+        </ul>
+    </div>
+</div>
+
+
+<ul class="custom-header-links">
+    <li class="d-none d-sm-block">
+        <div class="dropdown" id="videocart" data-bind="scope:'videocart_component'">
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        </div>
+    </li>
+    <li class="d-none d-sm-block">
+        <?php if ($isLoggedIn) { ?>
+            <a class="d-block fs-14 text-white ml-3"
+               href="<?php echo $baseurl . 'customer/account/logout'; ?>">Logout</a>
+        <?php } ?>
+    </li>
+</ul>
+
+
+<script type="text/x-magento-init">
+{
+    "#videocart":{
+        "Magento_Ui/js/core/app": {
+        "components":{
+                "videocart_component":{
+                      "component": "Codilar_Videostore/js/view/content",
+                     "template": "Codilar_Videostore/view/videocart"
+                }
+            }
+        }
+    }
+}
+
+
+</script>
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "catalogAddToTryOn": {}
+            }
+        }
+
+
+</script>
+<script>
+    requirejs(['jquery'], function (jQuery) {
+        jQuery('body').click(function (e) {
+            if (e.target.className == 'cart-button-text') {
+                jQuery('#videocart-dropdown').toggle();
+            } else {
+                jQuery('#videocart-dropdown').hide();
+            }
+        });
+        jQuery('body').click(function (e) {
+            if (e.target.className == 'down-arrow') {
+                jQuery(".drop-down .options ul").toggle();
+            } else {
+                jQuery(".drop-down .options ul").hide();
+            }
+        });
+
+        jQuery(document).ready(function(){
+
+            jQuery(document).on("click","a.product",function() {
+                window.open(jQuery(this).attr('href'), '', "location=yes");
+	            event.preventDefault();
+            });
+            jQuery(document).on("click","a.s-product",function() {
+                window.open(jQuery(this).attr('href'), '', "location=yes");
+	            event.preventDefault();
+            });
+        });
+    });
+</script>
+

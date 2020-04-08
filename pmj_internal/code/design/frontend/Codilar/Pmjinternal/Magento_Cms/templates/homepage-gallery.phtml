@@ -1,0 +1,41 @@
+    <div class="home-banner d-none">
+    <?php
+    echo $this->getLayout()
+    ->createBlock('Magento\Cms\Block\Block')
+    ->setBlockId('home_banner')
+    ->toHtml();
+    ?>
+    </div>
+    <!-- Container for our image gallery --> 
+    <div class="img-gallery"></div>
+    
+    <!-- Script that calls gallery widget --> 
+    <script>
+    require ([
+        'jquery',
+        'mage/gallery/gallery'
+    ], function ($, Gallery) {
+
+            var imgArray = [];
+            $('.home-banner img').each(function(index,ele){
+                    imgArray.push($(ele).attr("src"));
+            });
+
+        var initializeGallery = function (images) {
+            $('.img-gallery').each(function (index, element) {
+                        Gallery({
+                        options: {
+                            "nav": "dots",
+                        },
+                        data: images.map(function (image) { return {img: image} }),
+                        fullscreen: {},
+                        breakpoints: {}
+                    }, element);
+
+                    });
+                   }
+                   initializeGallery(imgArray);
+                });
+
+    </script>
+  

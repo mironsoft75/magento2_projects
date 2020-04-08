@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Codilar Technologies Pvt. Ltd.
+ * @category    Codilar_Gst Extension
+ * @package    Codilar\Gst\etc\adminhtml
+ * @copyright   Copyright (c) 2017 Codilar. (http://www.codilar.com)
+ * @purpose     system configuration for gst configuration
+ * @author       Codilar Team
+ **/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <tab id="codilar" translate="label" sortOrder="10">
+            <label>Codilar</label>
+        </tab>
+        <section id="product_video_and_image_options" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>product_and_image_options</class>
+            <label>Product and Image Options</label>
+            <tab>codilar</tab>
+            <resource>Codilar_ProductImageAndVideos::product_and_image_options</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Configuration</label>
+                <field id="select_attribute" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Attribute Used To Generate Product And Images</label>
+                    <source_model>Codilar\ProductImageAndVideos\Model\Config\Source\SelectMode</source_model>
+                </field>
+                <field id="generated_folder_name" translate="label" type="text"  sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Generated Folder Name</label>
+                    <comment>Add folder Name followed by / ex: generated/</comment>
+                </field>
+                <field id="time_to_generate_thumbnail" translate="label" type="text"  sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Time to generate thumbnail(In second)</label>
+                    <comment>After Specified time thumbnail will be generated from video</comment>
+                </field>
+            </group>
+        </section>
+        <section id="url_restrictions" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>website_restriction</class>
+            <label>Website Urls Restrictions</label>
+            <tab>codilar</tab>
+            <resource>Codilar_ProductImageAndVideos::website_restriction</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Configuration</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="before_login" translate="label" type="text"  sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Add Allowed Urls before Login</label>
+                    <comment>Urls which are not specified here will be redirected to login page.</comment>
+                </field>
+                <field id="after_login" translate="label" type="text"  sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Add Allowed Urls After Login</label>
+                    <comment>Urls which are not specified here will be redirected to homepage.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

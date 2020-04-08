@@ -1,0 +1,53 @@
+<?php
+/** @var \Codilar\Videostore\Block\Cart\Index $block */
+?>
+<!-- <div class="img-bg">
+    <div class="tryon-modal-img">
+        <div class="img-container"> -->
+            <!-- <img src="<?php //echo $this->helper('\Magento\Cms\Helper\Wysiwyg\Images')->getBaseUrl() . 'wysiwyg/video_store/videostore_banner.png' ?>"> -->
+            <!-- <img src="https://shop.pmjjewels.com/media/wysiwyg/video_store/videostore_banner.png" /> -->
+  <!--       </div>
+    </div>
+</div> -->
+<!-- <div class="main-title">
+    <h2 class="pt-5 mb-4">Shortlisted Prducts</h2>
+</div> -->
+<div class="container-fluid">
+    <div class="videostore-product-container" id="videostore_product_container"
+         data-bind="scope: 'videocart_checkout'">
+        <!-- ko template: getTemplate() --><!-- /ko -->
+    </div>
+</div>
+<style>
+    .opt-control {
+        pointer-events: none;
+        opacity: 0.6;
+    }
+
+    input[disabled] {
+        pointer-events: none;
+    }
+</style>
+<script type="text/x-magento-init">
+{
+    "*":{
+        "Magento_Ui/js/core/app": {
+        "components":{
+                "videocart_checkout":{
+                      "component": "Codilar_Videostore/js/view/content",
+                     "template": "Codilar_Videostore/view/videocartlisting"
+                }
+            }
+        }
+    }
+}
+
+</script>
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "videocartForm": {}
+            }
+        }
+
+</script>

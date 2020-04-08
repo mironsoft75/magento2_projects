@@ -1,0 +1,19 @@
+<?php
+/** @var \Codilar\Videostore\Block\Email\ProductList $block */
+?>
+<?php $products = $block->getProducts();?>
+<?php foreach ($products as $product){ ?>
+    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+        <div style="width: 120px; min-width: 120px; max-width: 120px; overflow: hidden; box-sizing: border-box;  padding: 10px;">
+            <a href="<?php echo $product['url']?>" >
+                <img src="<?= $product['thumbnail']?>"style="display: block; width: 100%;">
+            </a>
+        </div>
+        <div  style="display: block; text-align: left">
+            <h3>
+                <a href="<?php echo $product['url'] ?>"><?php echo $product['name']?></a>.
+            </h3>
+            <h4><?= $product['price'] ?></h4>
+        </div>
+    </div>
+<?php  } ?>

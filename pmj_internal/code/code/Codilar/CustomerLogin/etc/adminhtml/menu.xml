@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+       <add id="Codilar_CustomerLogin::customerlogin" title="Login/Signup Popup" module="Codilar_CustomerLogin" sortOrder="30" resource="Codilar_CustomerLogin::manage" />
+        <add id="Codilar_CustomerLogin::customerlogin_manage_config" title="Configuration" module="Codilar_CustomerLogin" sortOrder="10" parent="Codilar_CustomerLogin::customerlogin" action="adminhtml/system_config/edit/section/customerlogin" resource="Codilar_CustomerLogin::manage"/>
+        <remove id="Codilar_CustomerLogin::customerlogin"/>
+    </menu>
+</config>

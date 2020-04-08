@@ -1,0 +1,8 @@
+stock_type,name,variant_name,karat_color,stock_code,location_name,dept,party,vendor_party,owner_party,pcs,total_weight,net_weight,pg_weight,metal_rate,bom_variant_name,stone_pcs,stone_weight,stone_rate,stock_value,labour_value,wastage
+COMPANY STOCK,MUTPNDMCUTMCUT-9,LSPPNDSPLMUT-9-1,"22,YELLOW",SPND9721,PMJ&GEMS-B-C-BANJARA HILLS-SHOWROOM,FG-BHSHW,,Kundan craft pvt. ltd. (Karigar),,1,7.67,7.106,6.53752,0,,0,0,0,0,450,10
+,,,,,,FG-BHSHW,,,,0,0,0,0,0,EMEMIXMIXGREENMIX,1,0.25,3500,375,0,
+,,,,,,FG-BHSHW,,,,0,0,0,0,0,PRLMIXMIXMIXMIX,15,1,450,100,0,
+,,,,,,FG-BHSHW,,,,0,0,0,0,0,DIAMUTAEFMIX,8,1.22,45000,42700,0,
+,,,,,,FG-BHSHW,,,,0,0,0,0,0,RUBMIXMIXREDMIX,1,0.05,3000,75,0,
+,,,,,,FG-BHSHW,,,,0,0,0,0,3200,AG-22-YELLOW,0,7.106,0,19612.56,0,
+,,,,,,FG-BHSHW,,,,0,0,0,0,0,LBDMIXMIXEFMIX,24,0.3,25000,4200,0,

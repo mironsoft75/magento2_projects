@@ -1,0 +1,65 @@
+<?php
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $userContext = $objectManager->get('Magento\Framework\App\Http\Context');
+        $isLoggedIn = $userContext->getValue(\Magento\Customer\Model\Context::CONTEXT_AUTH);
+        $baseurl = $objectManager->get('Magento\Store\Model\StoreManagerInterface')->getStore(0)->getBaseUrl();
+?>
+   <?php 
+    /**
+ *@var Codilar\Videostore\Block\Cart\Index $block;
+ */
+    $blockObj= $block->getLayout()->createBlock('Codilar\Videostore\Block\Cart\Index');
+    $storeCheck = $blockObj->getStoreId();
+    ?>
+
+    <?php 
+    $url = null;
+    $objectManager =  \Magento\Framework\App\ObjectManager::getInstance();    
+    $storeManager = $objectManager->create("\Magento\Store\Model\StoreManagerInterface");
+       $websites = $storeManager->getWebsites();
+            foreach($websites as $website){
+                foreach($website->getStores() as $store){
+                    $wedsiteId = $website->getId();
+                    $storeObj = $storeManager->getStore($store);
+                    $storeId = $storeObj->getId();
+                    $url = $storeObj->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_WEB);
+                }
+            }
+    ?>
+<li class="custom-header-links-mobile item link compare" data-bind="scope: 'compareProducts'" data-role="compare-products-link">
+    <a class="action compare no-display" title="<?= /* @escapeNotVerified */ __('Compare Products') ?>"
+       data-bind="attr: {'href': compareProducts().listUrl}, css: {'no-display': !compareProducts().count}"
+    >
+        <?= /* @escapeNotVerified */ __('Compare Products') ?>
+        <span class="counter qty" data-bind="text: compareProducts().countCaption"></span>
+    </a>
+</li>
+<li class="custom-header-links-mobile"><a href="<?php echo $this->getUrl('videostore/cart/'); ?>">Shortlisted Products</a></li>
+<!-- <li class="custom-header-links-mobile"><a href="<?php //echo $this->getUrl('store-locator'); ?>">Store Locator</a></li> -->
+<li class="custom-header-links-mobile">
+    
+      <ul class="pl-0">
+      <li class="ind mb-0"><a href="<?php echo $url ?>" class="<?php echo ($storeCheck == 1)? 'text-success':'text-dark' ?>">INDIA<span class="value"></span></a></li>
+      <li class="us mb-0"><a href="<?php echo $url ?>" class="<?php echo ($storeCheck == 2)? 'text-success':'text-dark' ?>">USA<span class="value"></span></a></li>
+    </ul>
+
+</li>
+ <li class="custom-header-links-mobile">
+        <?php if($isLoggedIn) { ?>
+            <a class="" href="<?php echo $baseurl .'customer/account/logout'; ?>">Logout</a>
+         <?php } ?>
+    </li>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "compareProducts": {
+                        "component": "Magento_Catalog/js/view/compare-products"
+                    }
+                }
+            }
+        }
+    }
+
+</script>

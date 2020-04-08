@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\Videostore\Api\VideostoreRequestRepositoryInterface"
+                type="Codilar\Videostore\Model\VideostoreRequestRepository" />
+    <preference for="Codilar\Videostore\Api\VideostoreCartRepositoryInterface"
+                type="Codilar\Videostore\Model\VideostoreCartRepository" />
+    <preference for="Codilar\Videostore\Api\VideostoreRequestActivityInterface"
+                type="Codilar\Videostore\Model\VideostoreRequestActivity" />
+    <preference for="Codilar\Videostore\Api\Data\VideostoreCartInterface"
+                type="Codilar\Videostore\Model\VideostoreCart" />
+    <preference for="Codilar\Videostore\Api\Data\VideostoreRequestActivityInterface"
+                type="Codilar\Videostore\Model\VideostoreRequestActivity" />
+    <preference for="Codilar\Videostore\Api\VideostoreRequestActivityRepositoryInterface"
+                type="Codilar\Videostore\Model\VideostoreRequestActivityRepository" />
+    <preference for="Magento\Customer\Block\Form\Login" 
+                type="Codilar\Videostore\Block\Form\Login" />
+    <type name="Magento\Catalog\Model\Config">
+        <plugin name="Codilar_Videostore::addCustomSortOptions" type="Codilar\Videostore\Plugin\Model\Config" />
+    </type>
+    <type name="Magento\Catalog\Block\Product\ProductList\Toolbar">
+        <plugin name="custom_custom_block_toolbar" type="Codilar\Videostore\Plugin\Catalog\Block\Toolbar" />
+    </type>
+    <type name="Magento\Catalog\Block\Product\ProductList\Toolbar">
+        <plugin name="Codilar_Videostore::implementCustomSortOptions" type="Codilar\Videostore\Plugin\Product\ProductList\Toolbar" />
+    </type>
+</config>

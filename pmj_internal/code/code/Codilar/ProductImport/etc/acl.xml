@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Codilar_ProductImport::compute_gst" title="Compute Gst"/>
+                            <resource id="Codilar_ProductImport::compute_price" title="Compute Price"/>
+                            <resource id="Codilar_ProductImport::product_assign_category" title="Assign Categories"/>
+                            <resource id="Codilar_ProductImport::update_product" title="Update Products"/>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

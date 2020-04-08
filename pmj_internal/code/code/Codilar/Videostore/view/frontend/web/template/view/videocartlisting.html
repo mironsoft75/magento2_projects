@@ -1,0 +1,33 @@
+<div class="videocart-product-container" title="Videocart list">
+    <div data-bind="afterRender: reloadSection()">
+        <!-- ko ifnot: getProducts().getLength() -->
+        <div class="listing-title">
+            <h3>Add Products to view</h3>
+        </div>
+        <!-- /ko -->
+        <!-- ko if: getProducts().getLength() -->
+       <!--  <div class="listing-title">
+            <h3>Selected products</h3>
+        </div> -->
+        <div class="row" data-bind="foreach: { data: getProducts(), as: 'product' }">
+            <div class="videocart-product border p-2 pt-5 mr-2 mt-2 text-center  col-sm-12 col-md-6 col-lg-6 col-xlg-4">
+                <div class="product-image v-listing">
+                    <a class="s-product" target="_blank" data-bind="attr: { href: $parent.getViewUrl() + 'index?id=' + ($index() + 1) }">
+                        <img data-bind="attr: { src: product.image_custom_urls, alt: product.name, title: product.name }" />
+                    </a>
+                </div>
+                <div class="product-details">
+                    <div class="product-item-name">
+                        <h3><a class="product-item-link text-dark" target="_blank" data-bind="text: product.name, attr: { href: $parent.getViewUrl() + 'index?id=' + ($index() + 1)}"></a></h3>
+                        <p style="font-weight: bold" class="product-item-price" data-bind="text: product.price"></p>
+                    </div>
+                    <form class="cart-delete-form" method="post" data-bind="submit: $parent.deleteProduct">
+                        <input type="hidden" name="product-id" data-bind="attr: { value: product.id}" />
+                        <button class="video-list-page video-delete" title="Remove" name="remove-cart-button"></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /ko -->
+    </div>
+</div>

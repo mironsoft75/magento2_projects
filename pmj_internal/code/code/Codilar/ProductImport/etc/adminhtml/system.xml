@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!--
+ /**
+  * @author Evince Team
+  * @copyright Copyright (c) 2018 Evince (http://evincemage.com/)
+  */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="codilar" translate="label" sortOrder="500">
+            <label>Codilar</label>
+        </tab>
+        <section id="compute_gst" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <tab>codilar</tab>
+            <resource>Codilar_ProductImport::compute_gst</resource>
+            <label>Compute Gst</label>
+            <group id="settings" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0"
+                   showInStore="0">
+                <label>Compute Gst</label>
+                <field id="gst_calculate" translate="label" type="select" sortOrder="1" showInDefault="1"
+                       showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Enable Gst</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="gst_percentage" translate="label" type="text" sortOrder="2" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <depends>
+                        <field id="*/*/gst_calculate">1</field>
+                    </depends>
+                    <label>Gst Percentage</label>
+                </field>
+            </group>
+        </section>
+        <section id="product_compute_price" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <label>Compute Price</label>
+            <tab>codilar</tab>
+            <resource>Codilar_ProductImport::compute_price</resource>
+            <group id="settings" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0"
+                   showInStore="0">
+                <label>General Settings</label>
+                <field id="compute_price" translate="label" type="select" sortOrder="1" showInDefault="1"
+                       showInWebsite="0"
+                       showInStore="0" canRestore="1">
+                    <label>Compute Price For Products</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+        <section id="product_update" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <label>Update Products</label>
+            <tab>codilar</tab>
+            <resource>Codilar_ProductImport::update_product</resource>
+            <group id="settings" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0"
+                   showInStore="0">
+                <label>General Settings</label>
+                <field id="product_update_on_import" translate="label" type="select" sortOrder="1" showInDefault="1"
+                       showInWebsite="0"
+                       showInStore="0" canRestore="1">
+                    <label>Update Products On Importing</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+        <section id="product_assign_category" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <label>Assign Categories</label>
+            <tab>codilar</tab>
+            <resource>Codilar_ProductImport::product_assign_category</resource>
+            <group id="settings" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0"
+                   showInStore="0">
+                <label>General Settings</label>
+                <field id="assign_category" translate="label" type="select" sortOrder="1" showInDefault="1"
+                       showInWebsite="0"
+                       showInStore="0" canRestore="1">
+                    <label>Assign Categories For Products</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

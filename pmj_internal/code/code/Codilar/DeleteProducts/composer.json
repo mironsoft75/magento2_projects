@@ -1,0 +1,21 @@
+{
+  "name": "codilar/deleteproducts",
+  "description": "codilar deleteproducts module",
+  "license": "proprietary",
+  "authors": [
+    {
+      "email": "mohith@codilar.com",
+      "name": "Mohith"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Codilar\\DeleteProducts\\": ""
+    }
+  }
+}

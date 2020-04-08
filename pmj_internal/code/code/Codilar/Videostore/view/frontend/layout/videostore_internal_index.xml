@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <head>
+         <css src="https://cdn.plyr.io/3.5.3/plyr.css" src_type="url" />
+        <css src="Codilar_Videostore::css/videocart.css"/>
+    </head>
+
+    <body>
+        <referenceContainer name="header.container" remove="true" />
+        <referenceBlock name="navigation.sections" display="false" />
+        <referenceContainer name="footer" remove="true" />
+        <referenceBlock name="copyright" remove="true"/>
+        <referenceContainer name="columns.top">
+            <block class="Codilar\Videostore\Block\Cart\Index" name="video_internal" template="Codilar_Videostore::videostore_internal.phtml" cacheable="false"/>
+            <!-- <script src="https://cdn.plyr.io/3.5.3/plyr.js" src_type="url"></script> -->
+        </referenceContainer>
+    </body>
+</page>
