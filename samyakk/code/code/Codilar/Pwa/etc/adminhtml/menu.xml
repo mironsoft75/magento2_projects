@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Codilar_Pwa::pwa"
+             title="Pwa Redirect Url"
+             translate="title"
+             module="Codilar_Pwa"
+             parent="Codilar_Core::codilar"
+             sortOrder="40"
+             resource="Codilar_Pwa::pwa"
+        />
+        <add id="Codilar_Pwa::index"
+             title="Pwa Redirect Url "
+             module="Codilar_Pwa"
+             parent="Codilar_Pwa::pwa"
+             sortOrder="45"
+             resource="Codilar_Pwa::index"
+             action="pwa/index/index"
+        />
+    </menu>
+</config>

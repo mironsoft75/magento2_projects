@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left"
+      xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="customer_form">
+            <block class="Codilar\ProductsInCart\Block\Adminhtml\Edit\Tab\ProductsInCart" name="customer_edit_tab_products_in_cart">
+                <action method="setTabLabel">
+                    <argument name="label" xsi:type="string">Products In Cart</argument>
+                </action>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

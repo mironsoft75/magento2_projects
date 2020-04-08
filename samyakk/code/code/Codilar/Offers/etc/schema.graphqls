@@ -1,0 +1,32 @@
+type Query {
+    offerBlocks : [OfferBlock] @resolver(class: "Codilar\\Offers\\Model\\Resolver\\OfferBlocks") @doc(description: "This will return the Query for offerBlocks")
+}
+
+type OfferBlock @doc(description: "Defines all data of block") {
+    block_id: Int @doc(description: "Block id")
+    title: String @doc(description: "Block title")
+    show_title: Int @doc(description: "Show title in frontend or not")
+    is_active: Int @doc(description: "Block is active or not")
+    sort_order: Int @doc(description: "Position of the block in homepage")
+    items: [BlockProduct] @doc(description: "Array of product items")
+}
+
+type BlockProduct @doc(description: "This will define data for product items") {
+    id: Int @doc(description: "Product id")
+    sku: String @doc(description: "Product Sku")
+    name: String @doc(description: "Product Name")
+    small_image: String @doc(description: "Product Image url")
+    url_key: String @doc(description: "Product url key")
+    product_type: String @doc(description: "Product Type")
+    price: ProductPrice @doc(description: "Array of prices")
+}
+
+type ProductPrice @doc(description: "This will define all the prices of product") {
+    regular_price: PriceData @doc(description: "Contains regular price amount")
+    special_price: PriceData @doc(description: "Contains regular price amount")
+}
+
+type PriceData @doc(description: "Contains regular price amount") {
+    value: Float @doc(description: "Price value")
+    currency: String @doc(description: "Price currency")
+}

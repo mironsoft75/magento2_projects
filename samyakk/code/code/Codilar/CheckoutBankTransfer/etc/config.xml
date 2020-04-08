@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <bank_transfer>
+                <active>0</active>
+                <title><![CDATA[Bank Transfer]]></title>
+                <model>Codilar\CheckoutBankTransfer\Model\BankTransfer</model>
+            </bank_transfer>
+        </payment>
+    </default>
+</config>

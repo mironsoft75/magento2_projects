@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+   <type name="Codilar\Checkout\Api\PaymentManagementInterface">
+        <arguments>
+            <argument name="typeEvaluator" xsi:type="array">
+                <item name="ccavenue_payment_gateway" xsi:type="object">Codilar\CheckoutCcAvenue\Model\Payment\Evaluator</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Codilar\OrderHandler\Model\Order\Status\Pool">
+        <arguments>
+            <argument name="pendingOrderStatuses" xsi:type="array">
+                <item name="ccavenue" xsi:type="object">Codilar\CheckoutCcAvenue\Model\Order\Status\Pending</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="migration" xsi:type="object">Codilar\Migration\Console\Migration\Proxy</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Codilar\Migration\Model\Migration\Types\Pool">
+        <arguments>
+            <argument name="migrationTypes" xsi:type="array">
+                <item name="customer" xsi:type="object">Codilar\Migration\Model\Customer</item>
+                <item name="orders" xsi:type="object">Codilar\Migration\Model\Orders</item>
+                <item name="customer_map" xsi:type="object">Codilar\Migration\Model\CustomerMap</item>
+                <item name="address" xsi:type="object">Codilar\Migration\Model\Address</item>
+                <item name="orders-import" xsi:type="object">Codilar\Migration\Model\OrdersImport</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

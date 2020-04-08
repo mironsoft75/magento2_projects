@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\SearchApi\Api\SearchRepositoryInterface" type="Codilar\SearchApi\Model\SearchRepository" />
+    <preference for="Codilar\SearchApi\Api\Data\ProductSuggestionInterface" type="Codilar\SearchApi\Model\Data\ProductSuggestion" />
+    <preference for="Codilar\SearchApi\Api\Data\ProductSearchSuggestionInterface" type="Codilar\SearchApi\Model\Data\ProductSearchSuggestion" />
+</config>

@@ -1,0 +1,11 @@
+<?php
+/**
+ * @var \Codilar\ViewCache\Block\Adminhtml\Cache\Additional $block
+ */
+?>
+<p>
+    <button onclick="confirmSetLocation('<?php echo __("Are you sure you want to clean the Vue cache?") ?>', '<?php  echo $block->getCleanViewCache() ?>')" type="button">
+        <?php  echo __('Flush Vue Cache') ?>
+    </button>
+    <span><?php echo __('Clear Vue Cache') ?></span>
+</p>

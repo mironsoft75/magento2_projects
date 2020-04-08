@@ -1,0 +1,25 @@
+type Query {
+    customCategory : [CustomCategory] @resolver(class: "Codilar\\MegaMenu\\Model\\Resolver\\Category") @doc(description: "This will return the Query for Categories")
+}
+
+type CustomCategory @doc(description: "Defines all data of Categories") {
+    id: Int @doc(description: "category id")
+    level: Int @doc(description: "category level")
+    name: String @doc(description: "name of the category")
+    url: String @doc(description: "category url")
+    image_url: String @doc(description: "image url of category")
+    show_in_menu: Int @doc(description: "Include in menu or not")
+    sort_order: Int @doc(description: "Position of the category")
+    children: [ChildCategory] @doc(description: "Array of children")
+}
+
+type ChildCategory @doc(description: "This will define data for children categories") {
+    id: Int @doc(description: "category id")
+    level: Int @doc(description: "category level")
+    name: String @doc(description: "name of the category")
+    url: String @doc(description: "category url")
+    image_url: String @doc(description: "image url of category")
+    show_in_menu: Int @doc(description: "Include in menu or not")
+    sort_order: Int @doc(description: "Position of the category")
+    children: [ChildCategory] @doc(description: "Array of children")
+}

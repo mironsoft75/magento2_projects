@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+
+    <!-- Header Stores-->
+    <route url="/V2/header-languages" method="GET">
+        <service class="Codilar\Store\Api\StoreRepositoryInterface" method="getStores"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+    </route>
+    <!---->
+
+    <route url="/V2/currencies" method="GET">
+        <service class="Codilar\Store\Api\StoreRepositoryInterface" method="getCurrencies"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <route url="/V2/currency" method="POST">
+        <service class="Codilar\Store\Api\StoreRepositoryInterface" method="setQuoteCurrency"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+    </route>
+
+</routes>

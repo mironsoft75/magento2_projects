@@ -1,0 +1,5 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\Breadcrumbs\Api\BreadcrumbsManagementInterface" type="Codilar\Breadcrumbs\Model\BreadcrumbsManagement" />
+    <preference for="Codilar\Breadcrumbs\Api\Data\BreadcrumbsResponseInterface" type="Codilar\Breadcrumbs\Model\Data\BreadcrumbsResponse" />
+    <preference for="Codilar\Breadcrumbs\Api\Data\Breadcrumbs\BreadcrumbsResponseDataInterface" type="Codilar\Breadcrumbs\Model\Data\Breadcrumbs\BreadcrumbsResponseData" />
+</config>

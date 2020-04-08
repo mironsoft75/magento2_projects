@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     magento2.3
+ * @author      Codilar Technologies
+ * @license     https://opensource.org/licenses/OSL-3.0 Open Software License v. 3.0 (OSL-3.0)
+ * @link        http://www.codilar.com/
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\NewsLetter\Api\Data\ResponseInterface" type="Codilar\NewsLetter\Model\Data\Response" />
+    <preference for="Codilar\NewsLetter\Api\NewsLetterManagementInterface" type="Codilar\NewsLetter\Model\NewsLetterManagement" />
+</config>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\Store\Api\Data\StoreInterface" type="Codilar\Store\Model\Store" />
+    <preference for="Codilar\Store\Api\Data\CurrencyInterface" type="Codilar\Store\Model\Data\Currency" />
+    <preference for="Codilar\Store\Api\Data\CurrencyDataInterface" type="Codilar\Store\Model\Data\CurrencyData" />
+    <preference for="Codilar\Store\Api\StoreRepositoryInterface" type="Codilar\Store\Model\StoreRepository" />
+    <preference for="Codilar\Store\Api\CurrencySwitcherRepositoryInterface" type="Codilar\Store\Model\CurrencySwitcherRepository" />
+    <preference for="Codilar\Store\Api\Data\CurrencySwitcherInterface" type="Codilar\Store\Model\CurrencySwitcher" />
+    <!--<type name="Magento\Store\Model\Store">-->
+        <!--<plugin name="order-currency-switch-plugin" type="Codilar\Store\Plugin\Model\Store" />-->
+    <!--</type>-->
+</config>

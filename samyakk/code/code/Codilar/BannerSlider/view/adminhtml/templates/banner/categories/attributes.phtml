@@ -1,0 +1,226 @@
+<?php
+/**
+ * @var $block \Codilar\BannerSlider\Block\Adminhtml\Banner\Edit\Category\FilterAttributes
+ */
+
+$banner = $block->getBannerData();
+//print_r($this->getRequest()->getParam('banner_id'));
+?>
+<select class="categories" name="category_id">
+    <option value="">Select Category</option>
+    <?php foreach ($block->getActiveCategories() as $category):?>
+        <option value="<?php echo $category->getId()?>" <?php echo $banner->getCategoryId() ==$category->getId() ? 'selected':'' ?>><?php echo $category->getName()?></option>
+    <?php endforeach;?>
+</select>
+<script type="text/template" id="attribute-data">
+        <span class="td">
+            <select name="attribute[]" class="filterable-attributes">
+                <option value="">select attribute</option>
+                <% for(var attribute in data){ %>
+                    <% if(data[attribute].attr_code != 'price'){ %>
+                        <option value="<%= data[attribute].attr_id %>" data-code="<%= data[attribute].attr_code %>"><%= data[attribute].attr_code %></option>
+                    <% }else{ %>
+                        <option value="<%= data[attribute].attr_code %>" data-code="<%= data[attribute].attr_code %>"><%= data[attribute].attr_code %></option>
+                    <% } %>
+                <% } %>
+            </select>
+        </span>
+        <span class="td attribute-option-container">
+
+        </span>
+        <span class="td"><button class="submit-attribute" type="button">submit</button></span>
+
+</script>
+<script type="text/template" id="attribute-options">
+    <% if(data.length != 0){ %>
+    <select name="options[]" class="attribute-options">
+        <% for(var option in data){ %>
+            <option value="<%= data[option].option_value %>"><%= data[option].option_label %></option>
+        <% }; %>
+    </select>
+    <% }else{ %>
+    <input class="attribute-options" type="text">
+    <% } %>
+</script>
+
+<script type="text/template" id="selected-options">
+    <div class="tr">
+        <span class="td"><%= selected_attr %></span>
+        <span class="td"><%= selected_option %></span>
+        <span class="td"><button type="button" class="delete-option" data-parent="<%= attr %>" data-id="<%= option %>">DELETE</button></span>
+    </div>
+</script>
+
+
+<style>
+    div.table
+    {
+        display:table;
+    }
+    form.tr, div.tr
+    {
+        display:table-row;
+    }
+    span.td
+    {
+        display:table-cell;
+        width: 100px;
+    }
+    div.selected-header{
+        margin-top: 20px;
+    }
+
+</style>
+
+
+<script>
+    require(['jquery', 'underscore'], function (jQuery, _) {
+        var rowTemplate = _.template(jQuery("#attribute-data").html());
+        var optionTemp = _.template(jQuery("#attribute-options").html());
+        var selected = _.template(jQuery("#selected-options").html());
+        jQuery(document).ready(function() {
+            var url = "<?php echo $this->getUrl('bannerslider/category/attributes')?>";
+            var cat_id = jQuery('.categories').val();
+
+            function getAttrs(cat_id) {
+                var getAttr = jQuery.get(url, {cat_id:cat_id});
+                getAttr.done(function (data) {
+                    addRow(data);
+                });
+            }
+
+            jQuery("#add_row").click(function () {
+                addRow({});
+                var attr_select = jQuery(".filterable-attributes");
+                var options = jQuery(".attribute-options");
+                var firstAttr = attr_select.first().html();
+                var firstOpt = options.first().html();
+                attr_select.last().html(firstAttr);
+            });
+
+            jQuery(document).on("change", ".filterable-attributes", function () {
+                var self = jQuery(this);
+                var attributeCode = jQuery('option:selected', this).attr("data-code");
+                var url = "<?php echo $this->getUrl('bannerslider/category/attributeoptions')?>";
+                var options = jQuery.get(url, {attr_code:attributeCode});
+                options.done(function (data) {
+                    var options = optionTemp({data:data});
+                    self.closest('span').next('.attribute-option-container')/*.find(".attribute-option-container")*/.html(options);
+                });
+            });
+
+            jQuery(document).on("change", ".attribute-options", function () {
+
+            });
+
+            jQuery(document).on("click", ".submit-attribute", function (e) {
+                e.preventDefault();
+                var attr_id = jQuery('.filterable-attributes').val();
+                var attr_option = jQuery('.attribute-options').val();
+                var category = jQuery('.categories').val();
+                var selected_attr = jQuery('.filterable-attributes').find(":selected").text();
+                var optionElement = jQuery('.attribute-options');
+                var selected_option = '';
+                if (optionElement.is('input')){
+                    selected_option = optionElement.val();
+                }else {
+                    selected_option = optionElement.find(":selected").text();
+                }
+                var banner = "<?php echo $this->getRequest()->getParam('banner_id');?>";
+                var formData = {attr:attr_id, option:attr_option, banner:banner, category:category};
+                url = "<?php echo $this->getUrl('bannerslider/category/saveattribute')?>";
+                var submit = jQuery.post(url, formData);
+                submit.done(function (data) {
+                    var row = selected({attr:attr_id, option:attr_option, selected_attr:selected_attr, selected_option:selected_option});
+                    jQuery('.selected-attr-container').append(row);
+                });
+            });
+
+            jQuery(document).on("click", ".delete-option", function (e) {
+                e.preventDefault();
+                var self = this;
+                var attr_id = jQuery(this).attr('data-parent');
+                var attr_option = jQuery(this).attr('data-id');
+                var banner = "<?php echo $this->getRequest()->getParam('banner_id');?>";
+                var formData = {attr:attr_id, option:attr_option, banner:banner, remove:1};
+                url = "<?php echo $this->getUrl('bannerslider/category/saveattribute')?>";
+                var submit = jQuery.post(url, formData);
+                submit.done(function (data) {
+                    deleteRow(self);
+                });
+            });
+
+            jQuery(document).on("change", ".categories", function () {
+                var category = jQuery(this).val();
+                getAttrs(category);
+            });
+            isCategory();
+            jQuery('#page_type').change(function () {
+                isCategory();
+            });
+            /*isMobile();
+            jQuery("#page_banner_device").change(function () {
+                isMobile();
+            })*/
+            jQuery("[name='type']").on("change",function () {
+                if (jQuery("option:selected", this).val() == 1) {
+                    jQuery("#attribute-page_category-attributes-container").hide();
+                    jQuery("#attribute-page_product_id-container").show();
+                } else if (jQuery("option:selected", this).val() == 1) {
+                    jQuery("#attribute-page_category-attributes-container").show();
+                    jQuery("#attribute-page_product_id-container").hide();
+                }
+            });
+            checkType();
+
+
+        });
+        function checkType() {
+            if (jQuery("[name='type'] option:selected").val() == 1) {
+                jQuery("#attribute-page_category-attributes-container").hide();
+                jQuery("#attribute-page_product_id-container").show();
+            } else if (jQuery("[name='type'] option:selected").val() == 1) {
+                jQuery("#attribute-page_category-attributes-container").show();
+                jQuery("#attribute-page_product_id-container").hide();
+            }
+        }
+        function isCategory(){
+            var type = jQuery('#page_type').val();
+            if (type == 1){
+                jQuery('.field-category-attributes').hide();
+                jQuery('.field-product_id').show();
+            }else if (type == 2){
+                jQuery('.field-category-attributes').show();
+                jQuery('.field-product_id').hide();
+            }else {
+                jQuery('.field-category-attributes').hide();
+                jQuery('.field-product_id').hide();
+            }
+        }
+        function isMobile() {
+            var type = jQuery('#page_banner_device').val();
+            if (type == 2){
+                jQuery('.field-type').show();
+                jQuery('.field-product_id').show();
+                jQuery('.field-category-attributes').show();
+            }else {
+                jQuery('.field-type').hide();
+                jQuery('.field-product_id').hide();
+                jQuery('.field-category-attributes').hide();
+            }
+        }
+
+        function addRow(data) {
+            var table = jQuery("#attributeTable");
+            var row = rowTemplate({data:data});
+            jQuery('#attributeTable .option-container').html(row);
+        }
+
+
+
+    });
+
+    function deleteRow(self) {
+        self.parentElement.parentElement.parentElement.removeChild(self.parentElement.parentElement);
+    }
+</script>

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <carriers>
+            <samyakk>
+                <active>1</active>
+                <model>Codilar\Shipping\Model\Carrier</model>
+                <title>Samyakk Shipping</title>
+                <name>Samyakk Shipping</name>
+                <country_wise_slabs><![CDATA[
+{
+    "slabs": [
+        {
+            "country" :  "IN",
+            "values"  :  [
+                {
+                    "from":  "*",
+                    "to"  :  "*",
+                    "value":  150
+                }
+            ]
+        },
+        {
+            "country" :  "*",
+            "values"  :  [
+                {
+                    "from":  0,
+                    "to"  :  4999,
+                    "value":  1000
+                },
+                {
+                    "from":  5000,
+                    "to"  :  19999,
+                    "value":  3000
+                },
+                {
+                    "from":  20000,
+                    "to"  :  "*",
+                    "value":  5000
+                }
+            ]
+        }
+    ]
+}
+                ]]></country_wise_slabs>
+            </samyakk>
+        </carriers>
+    </default>
+</config>

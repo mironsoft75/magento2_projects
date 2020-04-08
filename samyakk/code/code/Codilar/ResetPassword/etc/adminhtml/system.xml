@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="codilar" translate="label" sortOrder="100" class="codilar-tab">
+            <label>Codilar Settings</label>
+        </tab>
+        <section id="reset_password" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <resource>Codilar_Core::codilar</resource>
+            <class>separator-top</class>
+            <label>Reset Password</label>
+            <tab>codilar</tab>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>ResetPassword</label>
+                <field id="request_email" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Request Email Template</label>
+                    <source_model>Codilar\ResetPassword\Model\Config\Source\Email\Template</source_model>
+                    <comment>If none choosen, no email will be sent.</comment>
+                </field>
+                <field id="confirm_email" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Confirm Email Template</label>
+                    <source_model>Codilar\ResetPassword\Model\Config\Source\Email\Template</source_model>
+                    <comment>If none choosen, no email will be sent.</comment>
+                </field>
+                <field id="link_exprie_time" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Link Exprie Time</label>
+                    <comment>Reset Link exprice after this minutes of email sent</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

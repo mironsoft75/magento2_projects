@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/view.xsd">
+    <media>
+        <images module="Magento_Catalog">
+            <image id="offer_product_thumbnail" type="thumbnail">
+                <width>140</width>
+                <height>210</height>
+            </image>
+            <image id="offer_product_small_image" type="small_image">
+                <width>230</width>
+                <height>345</height>
+            </image>
+            <image id="offer_product_base_image" type="image">
+                <width>440</width>
+                <height>660</height>
+            </image>
+        </images>
+    </media>
+</view>

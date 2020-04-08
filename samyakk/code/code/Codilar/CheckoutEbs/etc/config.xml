@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <ebs_payment_gateway>
+                <active>0</active>
+                <test_payment_url><![CDATA[https://sandbox.secure.ebs.in/pg/ma/payment/request]]></test_payment_url>
+                <live_payment_url><![CDATA[https://secure.ebs.in/pg/ma/payment/request]]></live_payment_url>
+                <channel_for_standard_mode>0</channel_for_standard_mode>
+                <channel_for_direct_mode>2</channel_for_direct_mode>
+                <mode>2</mode>
+                <title><![CDATA[Credit / Debit Card]]></title>
+                <instructions><![CDATA[You will be redirected to the EBS Portal after placing order]]></instructions>
+                <use_logo>0</use_logo>
+                <redirect_message><![CDATA[You are being redirected to EBS portal. Please <b>DO NOT</b> turn off or refresh this page]]></redirect_message>
+                <model>Codilar\CheckoutEbs\Model\Ebs</model>
+                <pending_order_status>pending</pending_order_status>
+                <success_order_status>processing</success_order_status>
+                <success_order_message>EBS Payment Success</success_order_message>
+                <failed_order_status>canceled</failed_order_status>
+                <failure_order_message>EBS Payment Failed</failure_order_message>
+                <auto_order_cancel>1</auto_order_cancel>
+                <auto_order_cancel_time>30</auto_order_cancel_time>
+            </ebs_payment_gateway>
+        </payment>
+    </default>
+</config>

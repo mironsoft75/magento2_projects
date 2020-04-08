@@ -1,0 +1,24 @@
+<?php
+/** @var \Codilar\DynamicForm\Block\Adminhtml\FormResponse\View $block */
+$formResponse = $block->getFormResponse();
+$fields = $formResponse->getFields();
+?>
+<div class="admin__scope-old">
+    <form name="update_response_form" id="update_response_form" action="<?php echo $block->getUpdateAction() ?>">
+        <input type="hidden" name="response_id" value="<?php echo $block->getResponseId() ?>" />
+        <table class="dynamic-form-response data-table" >
+            <?php foreach ($fields as $field): ?>
+            <tr>
+                <th><label for="name"><?php echo $field->getName() ?></label></th>
+                <td><input id="name" type="text" name="<?php echo $field->getName() ?>" value="<?php echo htmlspecialchars($block->renderValue($field)) ?>" /> </td>
+            </tr>
+            <?php endforeach; ?>
+            <tr>
+                <td>
+                    <a href="javascript:window.history.back();" class="go-back action primary action-default"><?php echo __("Back") ?></a>
+                    <button type="submit" name="submit" class="action primary action-primary"><?php echo __("Update") ?>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

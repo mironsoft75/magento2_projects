@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\CheckoutPaypal\Api\Data\CheckoutPaypalInterface" type="Codilar\CheckoutPaypal\Model\CheckoutPaypal" />
+    <preference for="Codilar\CheckoutPaypal\Api\CheckoutPaypalRepositoryInterface" type="Codilar\CheckoutPaypal\Model\CheckoutPaypalRepository" />
+    <type name="Codilar\Checkout\Api\PaymentManagementInterface">
+        <arguments>
+            <argument name="typeEvaluator" xsi:type="array">
+                <item name="codilar_checkout_paypal" xsi:type="object">Codilar\CheckoutPaypal\Model\Payment\Evaluator</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Codilar\CheckoutPaypal\Logger\Handler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="Codilar\CheckoutPaypal\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">paypalLogger</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">Codilar\CheckoutPaypal\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Codilar\OrderHandler\Model\Order\Status\Pool">
+        <arguments>
+            <argument name="pendingOrderStatuses" xsi:type="array">
+                <item name="paypal" xsi:type="object">Codilar\CheckoutPaypal\Model\Order\Status\Pending</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

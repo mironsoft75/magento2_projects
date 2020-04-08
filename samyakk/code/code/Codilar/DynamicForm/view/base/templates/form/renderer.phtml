@@ -1,0 +1,24 @@
+<?php
+/** @var \Codilar\DynamicForm\Block\Form\Renderer $block */
+$identifier = $block->getForm()->getIdentifier();
+$illegalCharacters = [' ', '/', ','];
+foreach ($illegalCharacters as $illegalCharacter) {
+    $identifier = str_replace($illegalCharacter, '-', $identifier);
+}
+?>
+<form
+        id="<?php echo $identifier ?>"
+        method="post"
+        action="<?php echo $block->getUrl('dynamicform/form/submit', ['id' => $block->getForm()->getId()]) ?>"
+        enctype="multipart/form-data"
+        data-mage-init='{"validation":{}}'
+>
+    <?php foreach ($block->getForm()->getFormElements() as $formElement): ?>
+        <?php echo $block->getRenderer($formElement)->toHtml() ?>
+    <?php endforeach; ?>
+    <div class="control">
+        <button class="action-default action-submit" type="submit">
+            <span><?php echo __("Submit") ?></span>
+        </button>
+    </div>
+</form>

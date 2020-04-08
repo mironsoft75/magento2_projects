@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="order_items">
+            <arguments>
+                <argument name="columns" xsi:type="array">
+                    <item name="dynamic_forms" xsi:type="string" translate="true">Custom Forms</item>
+                </argument>
+            </arguments>
+            <referenceBlock name="default_order_items_renderer">
+                <arguments>
+                    <argument name="columns" xsi:type="array">
+                        <item name="dynamic_forms" xsi:type="string" translate="false">col-dynamic_forms</item>
+                    </argument>
+                </arguments>
+            </referenceBlock>
+            <block class="Codilar\DynamicForm\Block\Adminhtml\Sales\Items\Column\CustomForms" name="column_dynamic_forms" template="Codilar_DynamicForm::sales/items/custom_forms.phtml" group="column"/>
+        </referenceBlock>
+    </body>
+</page>

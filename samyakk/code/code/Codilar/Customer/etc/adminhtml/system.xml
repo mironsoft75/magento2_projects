@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+  @package     htcPwa
+  @author      Codilar Technologies
+  @license     https://opensource.org/licenses/OSL-3.0 Open Software License v. 3.0 (OSL-3.0)
+  @link        http://www.codilar.com/
+/-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="firebase" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+            <resource>Codilar_Core::codilar</resource>
+            <class>separator-top</class>
+            <label>Firebase</label>
+            <tab>codilar</tab>
+            <group id="google" translate="label" sortOrder="100" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Google</label>
+                <field id="service_account_json" translate="label, comment" type="textarea" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Service Account JSON</label>
+                    <comment>You can download the private key JSON from your Firebase console.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

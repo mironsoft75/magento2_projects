@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+   @package     htcPwa
+   @author      Codilar Technologies
+   @license     https://opensource.org/licenses/OSL-3.0 Open Software License v. 3.0 (OSL-3.0)
+   @link        http://www.codilar.com/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\Sales\Api\OrderRepositoryInterface" type="Codilar\Sales\Model\OrderRepository" />
+    <preference for="Codilar\Sales\Api\Data\OrderInterface" type="Codilar\Sales\Model\Order" />
+    <preference for="Codilar\Sales\Api\Data\OrderItemInterface" type="Codilar\Sales\Model\Order\Item" />
+    <preference for="Codilar\Sales\Api\Data\OrderItemOptionsInterface" type="Codilar\Sales\Model\Order\Item\Options" />
+    <preference for="Codilar\Sales\Api\Data\OrderItemFormsInterface" type="Codilar\Sales\Model\Order\Item\Forms" />
+    <preference for="Codilar\Sales\Api\Data\OrderItemShipmentTrackInterface" type="Codilar\Sales\Model\Order\Item\ShipmentTrack" />
+    <preference for="Codilar\Sales\Api\Data\OrderTrackResponseInterface" type="Magento\Framework\DataObject" />
+    <type name="Magento\Sales\Model\Order\Webapi\ChangeOutputArray">
+        <plugin name="undo_modifications_to_row_total" type="Codilar\Sales\Plugin\Model\Order\Webapi\ChangeOutputArray" />
+    </type>
+</config>

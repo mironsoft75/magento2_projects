@@ -1,0 +1,220 @@
+<?php
+/**
+ * @package     htcPwa
+ * @author      Codilar Technologies
+ * @license     https://opensource.org/licenses/OSL-3.0 Open Software License v. 3.0 (OSL-3.0)
+ * @link        http://www.codilar.com/
+ */
+use Magento\Framework\App\Action\Action;
+
+/**
+ * @var $block \Codilar\Offers\Block\HomepageBlocks
+ */
+
+$blocks = $block->getBlocks();
+?>
+<?php if ($blocks): ?>
+    <?php /** @var $blockItem \Codilar\Offers\Model\HomepageBlocks */ ?>
+    <?php foreach ($blocks as $blockItem): ?>
+        <?php if ($blockItem->getData('has_products')): ?>
+            <?php
+            $blockProducts = $block->getBlockProductDetails($blockItem);
+            ?>
+            <?php if ($blockProducts): ?>
+                <!--Display product carousel-->
+                <div class="products-block-container">
+                    <?php if ($blockItem->getData("show_title")): ?>
+                        <div class="block-title">
+                            <?php echo $blockItem->getData('title') ?>
+                        </div>
+                    <?php endif; ?>
+                    <div class="products list items product-items">
+                        <?php $iterator = 1; ?>
+                        <?php foreach ($blockProducts as $_product): ?>
+                            <?php
+                            $product = $block->getProductBySku($_product['sku']);
+                            ?>
+                            <?php echo  /* @escapeNotVerified */ ($iterator++ == 1) ? '<div class="item product product-item">' : '</div><div class="item product product-item">' ?>
+                            <div class="product-item-info" data-container="product-list">
+                                <a href="<?php echo /* @escapeNotVerified */ $_product['url'] ?>" class="product photo product-item-photo" tabindex="-1">
+                                    <?php echo $_product['image']->toHtml() ?>
+                                </a>
+                                <div class="product details product-item-details">
+                                    <?php
+                                    $_productNameStripped = $block->stripTags($_product['name'], null, true);
+                                    ?>
+                                    <strong class="product name product-item-name">
+                                        <a class="product-item-link"
+                                           href="<?php echo /* @escapeNotVerified */ $_product['url'] ?>">
+                                            <?php echo /* @escapeNotVerified */ $_product['name'] ?>
+                                        </a>
+                                    </strong>
+                                    <?php echo /* @escapeNotVerified */ $_product['price'] ?>
+                                    <div class="product-discount">
+                                        <?php echo /* @escapeNotVerified */ $_product['discount_label'] ?>
+                                    </div>
+                                    <?= $block->getProductDetailsHtml($product) ?>
+                                    <div class="product-item-inner">
+                                        <div class="product actions product-item-actions">
+                                            <div class="actions-primary">
+                                                <?php if ($_product['is_saleable']): ?>
+                                                    <?php $postParams = $block->getAddToCartPostParams($product); ?>
+                                                    <form class="addToCartForm" data-role="tocart-form" data-product-sku="<?php echo $block->escapeHtml($_product['sku']) ?>" action="<?= /* @NoEscape */ $postParams['action'] ?>" method="post">
+                                                        <input type="hidden" name="product" value="<?php echo /* @escapeNotVerified */ $postParams['data']['product'] ?>">
+                                                        <input type="hidden" name="<?php echo /* @escapeNotVerified */ Action::PARAM_NAME_URL_ENCODED ?>" value="<?= /* @escapeNotVerified */ $postParams['data'][Action::PARAM_NAME_URL_ENCODED] ?>">
+                                                        <?php echo $block->getBlockHtml('formkey') ?>
+                                                        <button type="submit"
+                                                                title="<?php echo $block->escapeHtml(__('Add to Cart')) ?>"
+                                                                class="action tocart primary">
+                                                            <span><?php echo /* @escapeNotVerified */ __('Add to Cart') ?></span>
+                                                        </button>
+                                                    </form>
+                                                    <div class="add-to-list-container" data-product_name="<?php echo $_product['name'] ?>" data-product_id="<?php echo $_product['id'] ?>">
+                                                        <div class="buttons-actions add-to-list-col add-to-list-block" >
+                                                            <a type=""
+                                                               title="<?= __("Add to list") ?>"
+                                                               class="addto-cart-product to-list tooltip-list">
+                                                                <span><?= __("Add to list") ?></span>
+                                                            </a>
+
+                                                            <ul class="list-dropdown-main-mylist">
+                                                                <div class="limit-items"></div>
+                                                                <span class="triangle-with-shadow"></span>
+                                                            </ul>
+                                                        </div>
+
+                                                        <script>
+                                                            require(['jquery', 'underscore', 'toastr'], function ($, _, toastr) {
+                                                                $(document).ready(function () {
+
+                                                                    function initListBlock() {
+                                                                        var template = _.template('<% _.each(lists, function (list) { %>\n' +
+                                                                            '            <li>\n' +
+                                                                            '                <a href="javascript:void(0);" onclick="addToList(this)" class="list-item" data-list_id="<%= list.list_id %>"><span class="listing-heading"><%= list.list_name %></span>\n' +
+                                                                            '             <% if(list.customer_id.length === 0){  %>      \n' +
+                                                                            '                    <span class="list-image"></span>\n' +
+                                                                            '             <% } %> \n'+
+                                                                            '                    <span class="mylist-qty"><%= list.item_count %></span></span>\n' +
+                                                                            '                </a>\n' +
+                                                                            '            </li>\n' +
+                                                                            '           <% }); %>');
+
+
+                                                                        var eventListenersAttached = false;
+                                                                        $(document).on("mylist_list_fetched", function (event, data) {
+                                                                            var container = $('.add-to-list-block').closest('.add-to-list-col').find('.list-dropdown-main-mylist .limit-items');
+                                                                            container.html(template(data));
+
+                                                                            if (eventListenersAttached) {
+                                                                                return true;
+                                                                            }
+
+                                                                            $('.add-to-list-block').click(function () {
+                                                                                var toggleDropdown = $(this).closest('.add-to-list-col').find('.list-dropdown-main-mylist');
+                                                                                toggleDropdown.toggle();
+                                                                            });
+                                                                            $(document).on('click', function (e) {
+                                                                                var container = $('.list-dropdown-main-mylist, .add-to-list-block');
+                                                                                if (!container.is(e.target) && container.has(e.target).length === 0){
+                                                                                    $('.list-dropdown-main-mylist').hide();
+                                                                                }
+                                                                            });
+
+                                                                            eventListenersAttached = true;
+                                                                        });
+
+                                                                        $(document).on("mylist_list_unauthorized", function () {
+                                                                            $('.add-to-list-block').click(function () {
+                                                                                $('#singIn').click();
+                                                                            });
+                                                                        });
+                                                                    }
+
+                                                                    initListBlock();
+
+
+                                                                    $(window).scroll(function () {
+                                                                        scroll = $(window).scrollTop();
+                                                                        if (scroll >= 80) {
+                                                                            $('.list-dropdown-main-mylist').addClass('rotate');
+                                                                            $('.triangle-with-shadow').addClass('triangle-with-shadow-block');
+                                                                        }else{
+                                                                            $('.list-dropdown-main-mylist').removeClass('rotate');
+                                                                            $('.triangle-with-shadow').removeClass('triangle-with-shadow-block');
+                                                                        }
+                                                                        if(scroll >= 180){
+                                                                            $('.list-dropdown-main-mylist').hide();
+                                                                        }
+                                                                    });
+
+
+                                                                });
+
+                                                            });
+                                                            function addToList(item) {
+                                                                var self = jQuery(item);
+                                                                var productName = self.closest(".add-to-list-container").data("product_name");
+                                                                var productId = self.closest(".add-to-list-container").data("product_id");
+                                                                jQuery.ajax({
+                                                                    url: "<?= $block->getUrl('customer/mylist_items/add') ?>",
+                                                                    method: "POST",
+                                                                    data: {
+                                                                        "item[list_id]": self.data('list_id'),
+                                                                        "item[list_item_name]": productName,
+                                                                        "item[product_id]": productId
+                                                                    },
+                                                                    success: function (r) {
+                                                                        window.alert(r.message.list_item_name+" is successfully added to list", "");
+                                                                        jQuery(document).trigger("_shopbylist_flush_event");
+                                                                    }
+                                                                });
+                                                            }
+
+                                                        </script>
+                                                    </div>
+                                                <?php else: ?>
+                                                    <?php if ($_product['is_available']): ?>
+                                                        <div class="stock available"><span><?php echo /* @escapeNotVerified */ __('In stock') ?></span></div>
+                                                    <?php else: ?>
+                                                        <div class="stock unavailable"><span><?php echo /* @escapeNotVerified */ __('Out of stock') ?></span></div>
+                                                    <?php endif; ?>
+                                                <?php endif; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+        <?php else: ?>
+            <!--Display static content -->
+            <div class="static-data-container">
+                <?php if ($blockItem->getData("show_title")): ?>
+                    <div class="block-title">
+                        <?php echo $blockItem->getData('title') ?>
+                    </div>
+                <?php endif; ?>
+                <?php
+                    echo $block->filterStaticData($blockItem->getData('block_data_static'));
+                ?>
+            </div>
+        <?php endif; ?>
+    <?php endforeach; ?>
+<?php else: ?>
+    <div class="error">
+        <p>
+            <?php echo __("Sorry nothing to show here...!") ?>
+        </p>
+    </div>
+<?php endif; ?>
+<script type="text/x-magento-init">
+    {
+        "[data-role=tocart-form], .form.map.checkout": {
+            "catalogAddToCart": {
+                "product_sku": "<?= /* @NoEscape */ (isset($_product))?$_product['sku']:null; ?>"
+            }
+        }
+    }
+</script>

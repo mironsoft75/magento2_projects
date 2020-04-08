@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\CategoryApi\Api\CategoryManagementInterface" type="Codilar\CategoryApi\Model\CategoryManagement" />
+
+    <preference for="Codilar\CategoryApi\Api\Data\CategoryPage\Details\AdditionalAttributesInterface" type="Codilar\CategoryApi\Model\Data\CategoryPage\Details\AdditionalAttributes" />
+    <preference for="Codilar\CategoryApi\Api\Data\CategoryPage\DetailsInterface" type="Codilar\CategoryApi\Model\Data\CategoryPage\Details" />
+    <preference for="Codilar\CategoryApi\Api\Data\CategoryPage\Filters\ItemsInterface" type="Codilar\CategoryApi\Model\Data\CategoryPage\Filters\Items" />
+    <preference for="Codilar\CategoryApi\Api\Data\CategoryPage\FiltersInterface" type="Codilar\CategoryApi\Model\Data\CategoryPage\Filters" />
+    <preference for="Codilar\CategoryApi\Api\Data\CategoryPage\SortOptions\DirectionsInterface" type="Codilar\CategoryApi\Model\Data\CategoryPage\SortOptions\Directions" />
+    <preference for="Codilar\CategoryApi\Api\Data\CategoryPage\SortOptionsInterface" type="Codilar\CategoryApi\Model\Data\CategoryPage\SortOptions" />
+    <preference for="Codilar\CategoryApi\Api\Data\CategoryPageInterface" type="Codilar\CategoryApi\Model\Data\CategoryPage" />
+    <preference for="Codilar\CategoryApi\Api\CategoryPage\DetailsManagementInterface" type="Codilar\CategoryApi\Model\CategoryPage\DetailsManagement" />
+    <preference for="Codilar\CategoryApi\Api\CategoryPage\Details\AdditionalAttributeManagementInterface" type="Codilar\CategoryApi\Model\CategoryPage\Details\AdditionalAttributeManagement" />
+    <preference for="Codilar\CategoryApi\Api\CategoryPage\SortOptionsManagementInterface" type="Codilar\CategoryApi\Model\CategoryPage\SortOptionsManagement" />
+    <preference for="Codilar\CategoryApi\Api\CategoryPage\SortOptions\DirectionsManagementInterface" type="Codilar\CategoryApi\Model\CategoryPage\SortOptions\DirectionsManagement" />
+    <preference for="Codilar\CategoryApi\Api\Data\CategoryPage\Details\ImagesInterface" type="Codilar\CategoryApi\Model\Data\CategoryPage\Details\Images" />
+    <preference for="Codilar\CategoryApi\Api\CategoryPage\Details\ImagesManagementInterface" type="Codilar\CategoryApi\Model\CategoryPage\Details\ImagesManagement" />
+
+    <type name="Codilar\CategoryApi\Model\Pool\CategoryProductsAttributesPool">
+        <arguments>
+            <argument name="categoryProductsAttributes" xsi:type="array">
+                <item name="ship_time" xsi:type="string">ship_time</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

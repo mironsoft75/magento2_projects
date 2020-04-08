@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <!-- Country Details -->
+    <route url="/V2/get/countries" method="GET">
+        <service class="Codilar\Directory\Api\CountryRepositoryInterface" method="getCountries"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <!---->
+</routes>

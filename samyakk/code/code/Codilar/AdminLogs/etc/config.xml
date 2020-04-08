@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * @package     Codilar_AdminLogs
+ * @author      Codilar
+ * @license     https://opensource.org/licenses/OSL-3.0 Open Software License v. 3.0 (OSL-3.0)
+ * @link        http://codilar.com/
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <admin_logs>
+            <general>
+                <blacklist_module><![CDATA[{"0": {"module_name":"mui"}}]]></blacklist_module>
+                <allowed_requests><![CDATA[POST,PUT,UPDATE,DELETE]]></allowed_requests>
+            </general>
+        </admin_logs>
+    </default>
+</config>

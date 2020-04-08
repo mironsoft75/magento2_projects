@@ -1,0 +1,56 @@
+<?php
+/** @var \Codilar\DynamicForm\Block\Adminhtml\Element\Field\FormValidationOptions $block */
+?>
+<div id="form_validation_options_container" class="admin__field _required form_validation_options" data-index="form_validation_options">
+    <div class="admin__field-label">
+        <label for="form_validation_options">
+            <span><?php echo __("Field Validations") ?></span>
+        </label>
+    </div>
+    <div class="admin__field-control">
+        <div id="form_validation_options"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    require(['jquery', 'Codilar_DynamicForm/js/dynamicForm'], function ($) {
+
+        $("#form_validation_options").dynamicForm({
+            "config": {
+                "addButtonLabel": "<?php echo __("Add New Validation") ?>",
+                "serialize": {
+                    "strategy": 1
+                }
+            },
+            "definition": {
+                'label': {
+                    'label': '<?php echo __("Validations") ?>',
+                    'type': 'select',
+                    'options': <?php echo \json_encode($block->getValidations()) ?>
+                },
+                'value': {
+                    'label': '<?php echo __("Data (comma separated for multiple)") ?>',
+                    'type': 'text'
+                }
+            },
+            "values": <?php echo \json_encode($block->getValues()) ?>,
+            "onChange": function (data) {
+                $('input[name="validation_json"]').val(JSON.stringify(data)).trigger('change');
+            }
+        });
+    });
+</script>
+<style type="text/css">
+    .form_validation_options {
+        margin: 20px;
+        padding: 20px;
+        border-bottom: 1px solid silver;
+        border-top: 1px solid silver;
+    }
+    .form_validation_options div.admin__field-label {
+        text-align: left;
+        font-size: 1.6em;
+    }
+    .form_validation_options div.admin__field-control {
+        margin: 10px;
+    }
+</style>
