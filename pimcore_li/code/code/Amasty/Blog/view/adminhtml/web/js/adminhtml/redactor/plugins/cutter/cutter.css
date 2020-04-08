@@ -1,0 +1,15 @@
+.redactor-toolbar li a.re-cutter {
+  background-image: url("images/icon_1_normal.svg");
+  background-size: 14px 14px;
+}
+.redactor-toolbar li a.re-cutter:hover {
+  background-image: url("images/icon_1_hover.svg");
+}
+.redactor-toolbar li a.re-cutter.redactor_active {
+  background-image: url("images/icon_1_active.svg");
+}
+/* HR Styles */
+.redactor-editor hr.cutter {
+  border: none;
+  border-top: 2px dashed #aaaaaa;
+}

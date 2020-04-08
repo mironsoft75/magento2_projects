@@ -1,0 +1,28 @@
+<?php
+/* @var \Pimcore\CartOption\Block\Button $block */
+/** @var  $pimcoreProductHelper \Pimcore\Product\Helper\Data */
+$pimcoreProductHelper = $this->helper('\Pimcore\Product\Helper\Data');
+$acesVehicleList = $pimcoreProductHelper->getAcesVehicleList(
+    $pimcoreProductHelper->getCurrentProduct()->getSku(),
+    ['year_id', 'make_name', 'model_name', 'sub_model', 'bed_length']
+);
+$List=array();
+$_product = $block->getProduct();
+$isAcesList = $_product->getData('has_aces') && count($acesVehicleList);
+foreach ($acesVehicleList as $value):
+    $List[ ]=$value['year_id']." ".$value['make_name']." ".$value['model_name']." ".$value['sub_model']." ".$value['bed_length'];
+endforeach;
+rsort($List);
+?>
+<input type="hidden" name="check_aces" value="<?= $isAcesList?>" id="check_aces">
+<input type="hidden" value="$acesVehicleList" id="isace">
+<div id="myModel">
+    <ul class="option-fitment option_popup" style="display: none">
+        <?php foreach ($List as $value): ?>
+            <li><?= $value ?></li>
+        <?php endforeach; ?>
+    </ul>
+    <button id="popup-addtocart" class="option_popup" style="display: none"> ADD TO CART</button>
+    <p class="option_popup info-txt" style="display: none">Can't Find your Vehicle?</p>
+    <a href="<?= $block->getShopUrl() ?>" class="option_popup shop-all-btn" style="display: none">Shop all product</a>
+</div>

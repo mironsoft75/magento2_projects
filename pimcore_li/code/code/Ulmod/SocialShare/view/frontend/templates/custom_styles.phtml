@@ -1,0 +1,344 @@
+<?php
+/**
+ * SocialShare
+ *
+ * @package     Ulmod_SocialShare
+ * @author      Ulmod <support@ulmod.com>
+ * @copyright   Copyright (c) 2016 Ulmod (http://www.ulmod.com/)
+ * @license     http://www.ulmod.com/license-agreement.html
+ */
+?>
+<?php
+/**
+ * @var $block \Ulmod\SocialShare\Block\SocialShare
+ */
+?>
+<?php
+  $_helper = $this->helper('Ulmod\SocialShare\Helper\Data');
+?>
+<?php if ($block->isEnabled()) : ?>
+<style type="text/css">
+.nav-sections-item-content > .navigation {
+    z-index: 1;
+}
+<?php if ($_helper->getPositionInHomepage() == "right") { ?>  
+.um-sharing-homepage{
+right: 0;
+}
+<?php } ?>
+<?php if ($_helper->getPositionInCmsPage() == "right") { ?>   
+.um-sharing-cmspage{
+right: 0;
+}
+<?php } ?>
+<?php if ($_helper->getPositionInCategoryPage() == "right") { ?>  
+.um-sharing-categorypage{
+right: 0;
+}
+<?php } ?>      
+<?php if ($_helper->getPositionInProductPage() == "right") { ?>   
+.um-sharing-productpage{
+right: 0;
+}
+<?php } ?>
+<?php if ($_helper->getPositionInAdditionalPage() == "right") { ?>   
+.um-sharing-additionalpage{
+right: 0;
+}
+<?php } ?>  
+<?php if ($_helper->getPositionInHomepage() == "left") { ?>   
+.um-sharing-homepage{
+left: 0;
+}
+.um-sharing-homepage a:hover  {
+padding: 0px 5px;
+}               
+<?php } ?>
+<?php if ($_helper->getPositionInCmsPage() == "left") { ?>    
+.um-sharing-cmspage{
+left: 0;
+}
+.um-sharing-cmspage a:hover {
+padding: 0px 5px;
+}               
+<?php } ?>
+<?php if ($_helper->getPositionInCategoryPage() == "left") { ?>   
+.um-sharing-categorypage{
+left: 0;
+}
+.um-sharing-categorypage a:hover  {
+padding: 0px 5px;
+}               
+<?php } ?>   
+<?php if ($_helper->getPositionInAdditionalPage() == "left") { ?>   
+.um-sharing-additionalpage{
+left: 0;
+}
+.um-sharing-additionalpage a:hover  {
+padding: 0px 5px;
+}               
+<?php } ?>         
+<?php if ($_helper->getPositionInProductPage() == "left") { ?>    
+.um-sharing-productpage{
+left: 0;
+}
+.um-sharing-productpage a:hover  {
+padding: 0px 5px;
+}           
+<?php } ?>  
+<?php if ($_helper->getPositionInProductPage() == "after_social_link") { ?>           
+#um-sharing-productpage {
+position: initial;
+width: auto;
+z-index: 100020;
+background: none;
+top: auto;
+padding: 20px 0px;
+}   
+<?php } ?> 
+
+<?php if ($_helper->isShowHomepage() && $block->getIsHomePage()) { ?>
+  #um-sharing-additionalpage {
+  display:none;
+  }   
+  .addthis_button_whatsapp .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getWhatsappBgcolorInHomePage(); ?> !important;
+  }
+  .addthis_button_facebook .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getFacebookBgcolorInHomePage(); ?> !important;
+  }
+  .addthis_button_twitter .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getTwitterBgcolorInHomePage(); ?> !important;
+  }
+  .addthis_button_linkedin .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getLinkedinBgcolorInHomePage(); ?> !important;
+  }
+  .addthis_button_google_plusone_share .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getGoogleplusBgcolorInHomePage(); ?> !important;
+  }
+  .addthis_button_pinterest_share .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getPinterestBgcolorInHomePage(); ?> !important;
+  }
+  .addthis_button_email .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getEmailBgcolorInHomePage(); ?> !important;
+  }
+  .addthis_button_compact .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getCompactBgcolorInHomePage(); ?> !important;
+  }
+  .addthis_counter .at-icon-wrapper,
+  .addthis_counter .atc_s {
+  background-color: #<?php /* @noEscape */ echo $_helper->getCounterBgcolorInHomePage(); ?> !important;
+  }
+<?php } ?> 
+<?php if ($_helper->isShowCmspage() && $block->getIsCmsPage()) { ?>
+  #um-sharing-additionalpage {
+  display:none;
+  }   
+  .addthis_button_whatsapp .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getWhatsappBgcolorInCmsPage(); ?> !important;
+  }
+  .addthis_button_facebook .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getFacebookBgcolorInCmsPage(); ?> !important;
+  }
+  .addthis_button_twitter .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getTwitterBgcolorInCmsPage(); ?> !important;
+  }
+  .addthis_button_linkedin .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getLinkedinBgcolorInCmsPage(); ?> !important;
+  }
+  .addthis_button_google_plusone_share .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getGoogleplusBgcolorInCmsPage(); ?> !important;
+  }
+  .addthis_button_pinterest_share .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getPinterestBgcolorInCmsPage(); ?> !important;
+  }
+  .addthis_button_email .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getEmailBgcolorInCmsPage(); ?> !important;
+  }
+  .addthis_button_compact .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getCompactBgcolorInCmsPage(); ?> !important;
+  }
+  .addthis_counter .at-icon-wrapper,
+  .addthis_counter .atc_s {
+  background-color: #<?php /* @noEscape */ echo $_helper->getCounterBgcolorInCmsPage(); ?> !important;
+  }
+<?php } ?>
+<?php if ($_helper->isShowCategorypage() && $block->getIsCategoryPage()) { ?>
+  #um-sharing-additionalpage {
+  display:none;
+  }   
+  .addthis_button_whatsapp .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getWhatsappBgcolorInCategoryPage(); ?> !important;
+  }
+  .addthis_button_facebook .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getFacebookBgcolorInCategoryPage(); ?> !important;
+  }
+  .addthis_button_twitter .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getTwitterBgcolorInCategoryPage(); ?> !important;
+  }
+  .addthis_button_linkedin .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getLinkedinBgcolorInCategoryPage(); ?> !important;
+  }
+  .addthis_button_google_plusone_share .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getGoogleplusBgcolorInCategoryPage(); ?> !important;
+  }
+  .addthis_button_pinterest_share .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getPinterestBgcolorInCategoryPage(); ?> !important;
+  }
+  .addthis_button_email .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getEmailBgcolorInCategoryPage(); ?> !important;
+  }
+  .addthis_button_compact .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getCompactBgcolorInCategoryPage(); ?> !important;
+  }
+  .addthis_counter .at-icon-wrapper,
+  .addthis_counter .atc_s {
+  background-color: #<?php /* @noEscape */ echo $_helper->getCounterBgcolorInCategoryPage(); ?> !important;
+  }
+<?php } ?>
+<?php if ($_helper->isShowProductpage() && $block->getIsProductPage()) { ?>
+  #um-sharing-additionalpage {
+  display:none;
+  }   
+  .addthis_button_whatsapp .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getWhatsappBgcolorInProductPage(); ?> !important;
+  }
+  .addthis_button_facebook .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getFacebookBgcolorInProductPage(); ?> !important;
+  }
+  .addthis_button_twitter .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getTwitterBgcolorInProductPage(); ?> !important;
+  }
+  .addthis_button_linkedin .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getLinkedinBgcolorInProductPage(); ?> !important;
+  }
+  .addthis_button_google_plusone_share .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getGoogleplusBgcolorInProductPage(); ?> !important;
+  }
+  .addthis_button_pinterest_share .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getPinterestBgcolorInProductPage(); ?> !important;
+  }
+  .addthis_button_email .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getEmailBgcolorInProductPage(); ?> !important;
+  }
+  .addthis_button_compact .at-icon-wrapper {
+  background-color: #<?php /* @noEscape */ echo $_helper->getCompactBgcolorInProductPage(); ?> !important;
+  }
+  .addthis_counter .at-icon-wrapper,
+  .addthis_counter .atc_s {
+  background-color: #<?php /* @noEscape */ echo $_helper->getCounterBgcolorInProductPage(); ?> !important;
+  }
+<?php } ?>
+<?php if ($_helper->isShowAdditionalpage()) { ?> 
+<?php if (strpos($_helper->getAdditionalPagesUrls(), $_helper->getCurrentUrl()) !== false) { ?> 
+  <?php if ($block->getIsHomePage()) { ?> 
+    .cms-index-index #um-sharing-additionalpage {
+    display:none;
+    }
+    .addthis_button_whatsapp .at-icon-wrapper {
+    background-color: #<?php /* @noEscape */ echo $_helper->getWhatsappBgcolorInHomePage(); ?> !important;
+    }
+    .addthis_button_facebook .at-icon-wrapper {
+    background-color: #<?php /* @noEscape */ echo $_helper->getFacebookBgcolorInHomePage(); ?> !important;
+    }
+    .addthis_button_twitter .at-icon-wrapper {
+    background-color: #<?php /* @noEscape */ echo $_helper->getTwitterBgcolorInHomePage(); ?> !important;
+    }
+    .addthis_button_linkedin .at-icon-wrapper {
+    background-color: #<?php /* @noEscape */ echo $_helper->getLinkedinBgcolorInHomePage(); ?> !important;
+    }
+    .addthis_button_google_plusone_share .at-icon-wrapper {
+    background-color: #<?php /* @noEscape */ echo $_helper->getGoogleplusBgcolorInHomePage(); ?> !important;
+    }
+    .addthis_button_pinterest_share .at-icon-wrapper {
+    background-color: #<?php /* @noEscape */ echo $_helper->getPinterestBgcolorInHomePage(); ?> !important;
+    }
+    .addthis_button_email .at-icon-wrapper {
+    background-color: #<?php /* @noEscape */ echo $_helper->getEmailBgcolorInHomePage(); ?> !important;
+    }
+    .addthis_button_compact .at-icon-wrapper {
+    background-color: #<?php /* @noEscape */ echo $_helper->getCompactBgcolorInHomePage(); ?> !important;
+    }
+    .addthis_counter .at-icon-wrapper,
+    .addthis_counter .atc_s {
+    background-color: #<?php /* @noEscape */ echo $_helper->getCounterBgcolorInHomePage(); ?> !important;
+    } 
+  <?php } else { ?>
+    .addthis_button_whatsapp .at-icon-wrapper {
+    background-color: #<?php /* @noEscape */ echo $_helper->getWhatsappBgcolorInAdditionalPage(); ?> !important;
+    }
+    .addthis_button_facebook .at-icon-wrapper {
+    background-color: #<?php /* @noEscape */ echo $_helper->getFacebookBgcolorInAdditionalPage(); ?> !important;
+    }
+    .addthis_button_twitter .at-icon-wrapper {
+    background-color: #<?php /* @noEscape */ echo $_helper->getTwitterBgcolorInAdditionalPage(); ?> !important;
+    }
+    .addthis_button_linkedin .at-icon-wrapper {
+    background-color: #<?php /* @noEscape */ echo $_helper->getLinkedinBgcolorInAdditionalPage(); ?> !important;
+    }
+    .addthis_button_google_plusone_share .at-icon-wrapper {
+    background-color: #<?php /* @noEscape */ echo $_helper->getGoogleplusBgcolorInAdditionalPage(); ?> !important;
+    }
+    .addthis_button_pinterest_share .at-icon-wrapper {
+    background-color: #<?php /* @noEscape */ echo $_helper->getPinterestBgcolorInAdditionalPage(); ?> !important;
+    }
+    .addthis_button_email .at-icon-wrapper {
+    background-color: #<?php /* @noEscape */ echo $_helper->getEmailBgcolorInAdditionalPage(); ?> !important;
+    }
+    .addthis_button_compact .at-icon-wrapper {
+    background-color: #<?php /* @noEscape */ echo $_helper->getCompactBgcolorInAdditionalPage(); ?> !important;
+    }
+    .addthis_counter .at-icon-wrapper,
+    .addthis_counter .atc_s {
+    background-color: #<?php /* @noEscape */ echo $_helper->getCounterBgcolorInAdditionalPage(); ?> !important;
+    }   
+  <?php } ?>
+<?php } ?>  
+<?php } ?>   
+<?php if ($_helper->getMobileInHomepage()) { ?>       
+@media only screen 
+and (min-width: 100px)
+and (max-width:<?php /* @noEscape */ echo $_helper->getMobileMaxWidthInHomepage(); ?>px) {
+.um-sharing-homepage {
+display: none;
+}
+}
+<?php } ?>  
+<?php if ($_helper->getMobileInCmsPage()) { ?>        
+@media only screen 
+and (min-width: 100px)
+and (max-width:<?php /* @noEscape */ echo $_helper->getMobileMaxWidthInCmsPage(); ?>px) {
+.um-sharing-cmspage {
+display: none;
+}
+}
+<?php } ?>          
+<?php if ($_helper->getMobileInCategoryPage()) { ?>       
+@media only screen 
+and (min-width: 100px)
+and (max-width:<?php /* @noEscape */ echo $_helper->getMobileMaxWidthInCategoryPage(); ?>px) {
+.um-sharing-categorypage {
+display: none;
+}
+}
+<?php } ?>   
+<?php if ($_helper->getMobileInProductPage()) { ?>        
+@media only screen 
+and (min-width: 100px)
+and (max-width:<?php /* @noEscape */ echo $_helper->getMobileMaxWidthInProductPage(); ?>px) {
+.um-sharing-productpage {
+display: none;
+}
+}
+<?php } ?>          
+<?php if ($_helper->getMobileInAdditionalpage()) { ?>       
+@media only screen 
+and (min-width: 100px)
+and (max-width:<?php /* @noEscape */ echo $_helper->getMobileMaxWidthInAdditionalpage(); ?>px) {
+.um-sharing-additionalpage {
+display: none;
+}
+}
+<?php } ?> 
+</style>
+<?php endif; ?> 

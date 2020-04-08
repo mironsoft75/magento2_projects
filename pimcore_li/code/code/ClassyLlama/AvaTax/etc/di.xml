@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ClassyLlama_AvaTax
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @copyright  Copyright (c) 2016 Avalara, Inc.
+ * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\Model\ShippingInformationManagement">
+        <plugin name="avatax_get_orig_and_valid_address" type="ClassyLlama\AvaTax\Plugin\Checkout\Model\ShippingInformationManagement" />
+    </type>
+    <preference for="ClassyLlama\AvaTax\Api\ValidAddressManagementInterface" type="ClassyLlama\AvaTax\Model\ValidAddressManagement" />
+    <type name="Magento\Tax\Model\Sales\Total\Quote\Subtotal">
+        <plugin name="avatax_tax_model_sales_total_quote_subtotal" type="ClassyLlama\AvaTax\Plugin\Tax\Model\Sales\Total\Quote\Subtotal" />
+    </type>
+    <type name="Magento\Tax\Model\Sales\Total\Quote\Shipping">
+        <plugin name="avatax_tax_model_sales_total_quote_shipping" type="ClassyLlama\AvaTax\Plugin\Tax\Model\Sales\Total\Quote\Shipping" />
+    </type>
+    <type name="Magento\Sales\Model\Spi\CreditmemoResourceInterface">
+        <plugin name="avatax_sales_spi_creditmemo_resource" type="ClassyLlama\AvaTax\Plugin\Sales\Model\Spi\CreditmemoResource" />
+    </type>
+    <type name="Magento\Sales\Model\Spi\InvoiceResourceInterface">
+        <plugin name="avatax_sales_spi_invoice_resource" type="ClassyLlama\AvaTax\Plugin\Sales\Model\Spi\InvoiceResource" />
+    </type>
+    <type name="Magento\Quote\Model\Quote\Config">
+        <plugin name="avatax_quote_model_quote_config" type="ClassyLlama\AvaTax\Plugin\Quote\Model\Quote\Config" />
+    </type>
+
+    <!--
+    /**
+     * Add plugin and preferences to display tax summary information on frontend
+     * See https://github.com/classyllama/ClassyLlama_AvaTax/issues/70 for details
+     */
+     -->
+    <type name="Magento\Tax\Model\Sales\Total\Quote\CommonTaxCollector">
+        <plugin name="avatax_quote_tax_collector" type="ClassyLlama\AvaTax\Plugin\Sales\Total\Quote\CommonTaxCollector" />
+    </type>
+    <preference for="Magento\Tax\Model\Quote\GrandTotalDetailsPlugin" type="ClassyLlama\AvaTax\Model\Quote\GrandTotalDetailsPlugin" />
+    <preference for="Magento\Tax\Api\Data\GrandTotalRatesInterface" type="ClassyLlama\AvaTax\Model\Tax\Calculation\GrandTotalRates" />
+    <preference for="ClassyLlama\AvaTax\Api\Data\GrandTotalRatesInterface" type="ClassyLlama\AvaTax\Model\Tax\Calculation\GrandTotalRates" />
+
+    <preference for="Magento\Tax\Model\Sales\Total\Quote\Tax" type="ClassyLlama\AvaTax\Model\Tax\Sales\Total\Quote\Tax"/>
+    <preference for="ClassyLlama\AvaTax\Api\Data\GetTaxResponseInterface" type="ClassyLlama\AvaTax\Framework\Interaction\Tax\Get\Response" />
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="avatax_tax_classes_customer_listing_data_source" xsi:type="string">ClassyLlama\AvaTax\Model\ResourceModel\Tax\Classes\Customer\Collection</item>
+                <item name="avatax_tax_classes_product_listing_data_source" xsi:type="string">ClassyLlama\AvaTax\Model\ResourceModel\Tax\Classes\Product\Collection</item>
+                <item name="avatax_log_listing_data_source" xsi:type="string">AvaTaxLogGridDataProvider</item>
+                <item name="avatax_queue_listing_data_source" xsi:type="string">AvaTaxQueueGridDataProvider</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="ClassyLlama\AvaTax\Model\ResourceModel\Tax\Classes\Customer\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">tax_class</argument>
+            <argument name="resourceModel" xsi:type="string">ClassyLlama\AvaTax\Model\ResourceModel\Tax\Classes\Customer</argument>
+        </arguments>
+    </type>
+    <type name="ClassyLlama\AvaTax\Model\ResourceModel\Tax\Classes\Product\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">tax_class</argument>
+            <argument name="resourceModel" xsi:type="string">ClassyLlama\AvaTax\Model\ResourceModel\Tax\Classes\Product</argument>
+        </arguments>
+    </type>
+    <virtualType name="AvaTaxLogGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">avatax_log</argument>
+            <argument name="resourceModel" xsi:type="string">ClassyLlama\AvaTax\Model\ResourceModel\Log</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="AvaTaxQueueGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">avatax_queue</argument>
+            <argument name="resourceModel" xsi:type="string">ClassyLlama\AvaTax\Model\ResourceModel\Queue</argument>
+        </arguments>
+    </virtualType>
+    <type name="ClassyLlama\AvaTax\Model\Logger\FileHandler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="ClassyLlama\AvaTax\Model\Logger\AvaTaxLogger">
+        <arguments>
+            <argument name="name" xsi:type="string">avatax</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="1" xsi:type="object">ClassyLlama\AvaTax\Model\Logger\DbHandler</item>
+                <item name="2" xsi:type="object">ClassyLlama\AvaTax\Model\Logger\FileHandler</item>
+            </argument>
+            <argument name="processors"  xsi:type="array">
+                <item name="1" xsi:type="object">ClassyLlama\AvaTax\Model\Logger\AvaTaxProcessor</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Monolog\Processor\IntrospectionProcessor">
+        <arguments>
+            <argument name="skipClassesPartials"  xsi:type="array">
+                <item name="1" xsi:type="string">ClassyLlama\AvaTax\Model\Logger\DbHandler</item>
+                <item name="2" xsi:type="string">ClassyLlama\AvaTax\Model\Logger\FileHandler</item>
+            </argument>
+        </arguments>
+    </type>
+    <!--
+    /**
+     * The following code will rewrite the connection name to connect to 'sales' database on split database install;
+     * falls back to default for a conventional install
+     */
+     -->
+    <type name="ClassyLlama\AvaTax\Model\ResourceModel\CreditMemo">
+        <arguments>
+            <argument name="connectionName" xsi:type="string">sales</argument>
+        </arguments>
+    </type>
+    <type name="ClassyLlama\AvaTax\Model\ResourceModel\Invoice">
+        <arguments>
+            <argument name="connectionName" xsi:type="string">sales</argument>
+        </arguments>
+    </type>
+    <type name="ClassyLlama\AvaTax\Model\ResourceModel\Log">
+        <arguments>
+            <argument name="connectionName" xsi:type="string">sales</argument>
+        </arguments>
+    </type>
+    <type name="ClassyLlama\AvaTax\Model\ResourceModel\Queue">
+        <arguments>
+            <argument name="connectionName" xsi:type="string">sales</argument>
+        </arguments>
+    </type>
+</config>

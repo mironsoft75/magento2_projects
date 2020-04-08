@@ -1,0 +1,23 @@
+<?php $post = $block->getPost(); ?>
+<meta property="og:type" content="article" />
+<?php if ($post->getMetaTitle()!= ""):?>
+    <meta property="og:title" content="<?php echo $post->getMetaTitle(); ?>" />
+<?php else:?>
+    <meta property="og:title" content="<?php echo $post->getTitle(); ?>" />
+<?php endif;?>
+<?php if ($post->getMetaTitle()!= ""):?>
+    <meta property="og:description" content="<?php echo htmlspecialchars(strip_tags($post->getMetaDescription())); ?>" />
+<?php else:?>
+    <meta property="og:description" content="<?php echo htmlspecialchars(strip_tags($block->getDescription())); ?>" />
+<?php endif;?>
+<meta property="og:url" content="<?php echo $post->getPostUrl(); ?>" />
+<?php if ($post->getMetaKeywords()!= ""):?>
+    <meta property="og:keywords" content="<?php echo $post->getMetaKeywords(); ?>" />
+<?php endif;?>
+<?php if ($imageUrl = $this->getMetaImageurl($post)) :?>
+    <meta property="og:image:<?php if ($this->getSecureConfig()) {
+    echo 'secure_url';
+}?>" content="<?php echo $imageUrl;?>" />
+<?php endif; ?>
+<meta property="og:image:width" content="620" />
+<meta property="og:image:height" content="541" />

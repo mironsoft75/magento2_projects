@@ -1,0 +1,29 @@
+<?php $postCollection = $block->getPostCollection(); ?>
+<?php echo '<?xml version="1.0" encoding="UTF-8" ?>'; ?>
+<?php echo '<rss version="2.0">'; ?>
+<?php echo '<channel>'; ?>
+<?php echo '<title>' . $block->escapeHtml(
+        $this->getTitle()
+    ) . '</title>'; ?>
+<?php echo '<description>' . $block->escapeHtml(
+        $this->getDescription()
+    ) . '</description>'; ?>
+<?php foreach ($postCollection as $post) {
+        ?>
+    <?php echo '<item>'; ?>
+    <?php echo '<title>' . $block->escapeHtml(
+            $post->getTitle(),
+            null,
+            true
+        ) . '</title>'; ?>
+    <?php echo '<link>' . $post->getPostUrl() . '</link>'; ?>
+    <?php echo '<description><![CDATA[' . substr(
+            $block->stripTags($post->getContent()),
+            0,
+            255
+        ) . ']]></description>'; ?>
+    <?php echo '</item>'; ?>
+<?php
+    } ?>
+<?php echo '</channel>'; ?>
+<?php echo '</rss>';

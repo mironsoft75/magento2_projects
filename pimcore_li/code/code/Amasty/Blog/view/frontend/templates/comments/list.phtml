@@ -1,0 +1,42 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+?>
+<?php
+$collection = $block->getCollection();
+?>
+
+<div class="amblog-comments-livestream" id="livestream">
+    <?php if ($collection->getSize()): ?>
+        <?php foreach ($collection as $message): ?>
+            <?php echo $block->getMessageHtml($message); ?>
+        <?php endforeach; ?>
+    <?php endif; ?>
+    <div class="am-comment-form" id="form" style="display: none;"></div>
+</div>
+<div id="amblog_loader_container" style="display: none;">
+    <div class="am-blog-loader"></div>
+</div>
+
+<script>
+    require([
+        'jquery',
+        'Amasty_Blog/js/amblog/comments',
+        'domReady!'
+    ], function ($) {
+        var element = $('#amblog_loader_container');
+
+        element.amblogComments({
+            form_selector: '.am-comment-form',
+            loader_container: 'amblog_loader_container',
+            form_url: '<?php echo $block->getFormUrl() ?>',
+            post_url: '<?php echo $block->getPostUrl() ?>',
+            post_id: '<?php echo $block->getPostId(); ?>',
+            session_id: '<?php echo $block->getSessionId(); ?>',
+            comments_counter: 'comments_counter'
+        });
+    });
+</script>

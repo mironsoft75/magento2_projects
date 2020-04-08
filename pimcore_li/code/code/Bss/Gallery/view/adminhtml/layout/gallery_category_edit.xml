@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="editor"/>
+    <body>
+    	<referenceContainer name="left">
+            <block class="Bss\Gallery\Block\Adminhtml\Category\Edit\Tabs"
+                name="bss_gallery_category.edit.tabs"/>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Bss\Gallery\Block\Adminhtml\Category\Edit" name="gallery_category_edit"/>
+            <block class="Bss\Gallery\Block\Adminhtml\Category\Edit\Tab\Image" name="gallery_category_edit_items" template="category/tab_image_js.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

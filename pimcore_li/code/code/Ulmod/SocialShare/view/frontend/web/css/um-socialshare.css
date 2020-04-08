@@ -1,0 +1,38 @@
+/**
+ * Productslider
+ *
+ * @package     Ulmod_Productslider
+ * @author      Ulmod <support@ulmod.com>
+ * @copyright   Copyright (c) 2016 Ulmod (http://www.ulmod.com/)
+ * @license     http://www.ulmod.com/license-agreement.html
+ */
+
+.um-sharing-homepage,
+.um-sharing-cmspage,
+.um-sharing-categorypage,
+.um-sharing-productpage,
+.um-sharing-additionalpage {
+position: fixed;
+top: 20%;
+width: 2.5pc;
+z-index: 100020;
+background: none;
+}
+.um-sharing-homepage a,
+.um-sharing-cmspage a,
+.um-sharing-categorypage a,
+.um-sharing-productpage a,
+.um-sharing-additionalpage a {
+margin: 0px !important;
+}
+.um-sharing-homepage a:hover,
+.um-sharing-cmspage a:hover,
+.um-sharing-categorypage a:hover,
+.um-sharing-productpage a:hover,
+.um-sharing-additionalpage a:hover  {
+    -webkit-transition: width .15s ease-in-out;
+transition: width .15s ease-in-out;
+    z-index: 100030;
+cursor: pointer;
+}
+

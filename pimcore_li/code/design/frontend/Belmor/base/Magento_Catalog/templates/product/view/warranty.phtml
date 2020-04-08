@@ -1,0 +1,15 @@
+<?php
+/** @var  $pimcoreProductHelper \Pimcore\Product\Helper\Data */
+$pimcoreProductHelper = $this->helper('\Pimcore\Product\Helper\Data');
+?>
+<?php if(! empty ($pimcoreProductHelper->getCurrentProduct()->getData('warranty_sheet') )): ?>
+<p>
+    <?= /* @escapeNotVerified */ __('Click the DOWNLOAD button below to see warranty details for this product.') ?>
+</p>
+    <h3 class="download-title">Download Warranty Sheet</h3>
+<div class="download-main">
+    <a href="<?=$pimcoreProductHelper->getCurrentProduct()->getData('warranty_sheet')?>" target="_blank" >
+    <button class="action secondary">DOWNLOAD</button>
+    </a>
+</div>
+<?php endif; ?>

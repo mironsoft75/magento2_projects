@@ -1,0 +1,54 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+?>
+<?php
+
+?>
+
+<?php /**  @var $this \Amasty\Blog\Block\Adminhtml\System\Config\Form\Element\Colors\Render */ ?>
+
+<select class=" select" name="groups[tags][fields][presetted_colors][value]" id="amblog_tags_presetted_colors">
+    <?php foreach ($this->getSchemes() as $value => $label): ?>
+        <option  value="<?php echo $value; ?>"><?php echo $label; ?></option>
+    <?php endforeach; ?>
+</select>
+
+<button onclick="applyColorScheme();" class="scalable apply" type="button" title="<?php echo __("Apply"); ?>" id="amblog_tags_presetted_colors_apply">
+    <span>
+        <span>
+            <span><?php echo __("Apply"); ?></span>
+        </span>
+    </span>
+</button>
+
+<div class="fixed"></div>
+
+<script type="text/javascript">
+
+    var colorSchemes = <?php echo $this->getSchemesDataJson(); ?>;
+    var applyColorScheme = function(){
+        
+        var key = $('amblog_tags_presetted_colors').value;
+        if (key){
+
+            if (colorSchemes[key]){
+                var data = colorSchemes[key];
+
+                for (rowKey in data){
+                    var id = 'amblog_tags_mt_' + rowKey;
+                    var element = $(id);
+                    if (element){
+                        element.value = data[rowKey];
+                        jQuery(element).css("backgroundColor", '#'+data[rowKey]);
+                    }
+                }
+            }
+        }
+        return false;
+    };
+
+</script>

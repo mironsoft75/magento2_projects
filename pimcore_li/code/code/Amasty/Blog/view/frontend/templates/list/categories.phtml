@@ -1,0 +1,18 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+?>
+<?php if (count($block->getCategories())): ?>
+    <span class="categories">
+        <?php echo __("Posted in: "); ?>
+        <?php $isFirst = true; ?>
+        <?php foreach ($block->getCategories() as $category): ?><?php if (!$isFirst): ?>,&nbsp;<?php endif
+            ?><a href="<?php echo $category->getUrl(); ?>"><?php
+            echo $block->escapeHtml($category->getName());
+            ?></a><?php $isFirst = false; ?><?php
+        endforeach; ?>
+    </span>
+<?php endif; ?>

@@ -1,0 +1,24 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+?>
+<script>
+    require([
+        'jquery',
+        'jquery/ui'
+    ], function($) {
+        require([
+            'Amasty_Blog/js/tag-it'
+        ], function() {
+            $( document ).ready(function() {
+                $("#posts_tags").tagit({
+                    availableTags: <?php echo \Zend_Json::encode($this->getTagsNamesArray())?>
+                });
+                $("#posts_tags").data("ui-tagit").tagInput.addClass("fancy");
+            });
+        });
+    });
+</script>

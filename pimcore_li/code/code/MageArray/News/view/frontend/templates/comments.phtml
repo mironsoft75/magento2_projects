@@ -1,0 +1,222 @@
+<?php
+$typeOfComment = $this->_dataHelper->getStoreConfig(
+    'magearray_news/comments/type_of_comment'
+);
+$useCaptcha = $this->_dataHelper->getStoreConfig(
+    'magearray_news/comments/use_captcha'
+);
+$googleSiteKey = $this->_dataHelper->getStoreConfig(
+    'magearray_news/comments/google_site_key'
+);
+$fbAppId = $this->_dataHelper->getStoreConfig(
+    'magearray_news/comments/fb_app_id'
+);
+$disqusShortname = $this->_dataHelper->getStoreConfig(
+    'magearray_news/comments/disqus_shortname'
+);
+$noOfComments = $this->_dataHelper->getStoreConfig(
+    'magearray_news/comments/no_of_comments'
+);
+$isLoggedIn = false;
+$id = $this->getRequest()->getParam('id'); ?>
+<?php if ($typeOfComment): ?>
+    <div class="magearray_comment">
+        <?php if ($typeOfComment == 'facebook'): ?>
+            <div class="post-comment">
+                <div id="fb-root"></div>
+                <script>(function (d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = "//connect.facebook.net/<?php echo $block->getLocaleCode() ?>/sdk.js#xfbml=1&version=v2.5&appId=<?php echo $fbAppId ?: '1644374252488583' ?>";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));</script>
+                <div class="post-comments clear">
+                    <div class="fb-comments"
+                         data-href="<?php echo $block->getPost()
+                             ->getPostUrl(); ?>"
+                         data-width="100%"
+                         data-numposts="<?php echo $noOfComments ?>">
+                    </div>
+                </div>
+            </div>
+        <?php elseif ($typeOfComment == 'disqus'): ?>
+            <div id="disqus_thread"></div>
+        <?php if (!$disqusShortname || $disqusShortname == ""): ?>
+            <?php $disqusShortname = 'magearray'; ?>
+        <?php endif; ?>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = "<?php echo $block->getPost()
+                        ->getPostUrl() ?>";
+                    this.page.identifier = "<?php echo $block->getPost()
+                        ->getUrl() ?>"
+                };
+                (function () {
+                    var d = document, s = d.createElement('script');
+                    s.src = '//<?php echo $disqusShortname; ?>.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+        <?php elseif ($typeOfComment == 'google'): ?>
+            <script src="https://apis.google.com/js/plusone.js"></script>
+            <div id="google_comments" data-width="100%"></div>
+            <script>
+                gapi.comments.render('google_comments', {
+                    href: '<?php echo $block->getPost()->getPostUrl() ?>',
+                    first_party_property: 'BLOGGER',
+                    view_type: 'FILTERED_POSTMOD'
+                });
+            </script>
+        <?php elseif ($typeOfComment == 'default'):?>
+        <?php
+        $comments = $block->getCollection($id);
+        $loginRequire = $this->_dataHelper->getStoreConfig(
+                'magearray_news/comments/login_require'
+        );
+        if ($loginRequire == 1):
+            $isLoggedIn = $block->getLoggedInDetail();
+        else:
+            $isLoggedIn = true;
+        endif; ?>
+
+        <?php $commentsCount = count($comments); ?>
+            <div id="comments">
+                <h3 class="news-post-item-title">
+                    <?php echo __('Comments') ?>
+                </h3>
+                <ol id="comment-list">
+                    <?php if ($commentsCount > 0): ?>
+
+                        <?php foreach ($comments as $comment): ?>
+                            <li class="comment">
+                                <div class="comment-text">
+                                    <span class="author">
+                                        <?php echo $comment->getSenderName() ?>
+                                    </span>
+                                    <span class="date">
+                                        <?php echo $comment->getCommentDate() ?>
+                                    </span>
+                                    <p>
+                                        <?php echo $comment->getComment() ?>
+                                    </p>
+                                </div>
+                            </li>
+                        <?php endforeach; ?>
+
+                    <?php else: ?>
+                        <p><?php echo __(
+                                'No Comments yet. be the first to comment.'
+                            ) ?>
+                        </p>
+                    <?php endif; ?>
+                </ol>
+                <?php echo $this->getPager() ?>
+            </div>
+        <?php $infiniteScroll = $this->_dataHelper->getStoreConfig(
+                'magearray_news/general/infinite_scroll'
+        ); ?>
+        <?php if ($infiniteScroll == 1): ?>
+            <script>
+                require(['jquery', 'newsscroll'], function ($) {
+                    var ias = $.ias({
+                        container: "#comments",
+                        item: ".comment",
+                        pagination: ".pages",
+                        next: ".pages .pages-item-next a"
+                    });
+                    ias.extension(new IASSpinnerExtension());
+                    ias.extension(new IASNoneLeftExtension(
+                        {text: 'There are no more comment left to load.'}
+                    ));
+                });
+            </script>
+        <?php endif; ?>
+		<?php if ($isLoggedIn): ?>
+            <div class="post-comment">
+                <h3 class="news-post-comment-title">
+                    <?php echo __('PLEASE POST YOUR COMMENTS & REVIEWS') ?>
+                </h3>
+                <form id="comments-form"
+                      action="<?php echo $this->getBaseUrl() .
+                          'news/comment/save' ?>"
+                      method="post"
+                      data-hasrequired="<?php echo __('* Required Fields') ?>"
+                      data-mage-init='{"validation":{}}'>
+                    <input type="hidden"
+                           value="<?php echo $id ?>"
+                           name="newspost_id">
+
+                    <p class="comment-form-comment">
+                        <label for="comment"
+                               class="required">
+                            Let us know what you have to say <em>*</em>
+                        </label>
+                        <textarea name="comment"  placeholder="Express your thoughts, idea or write a feedback by clicking here &amp; start an awesome comment" data-validate="{required:true}"></textarea>
+                    </p>
+
+                    <p class="comment-form-author">
+                        <label for="sender_name"
+                               class="required">Your Name <em>*</em></label>
+                        <input type="text"
+                               name="sender_name"
+                               placeholder="Your Name"
+                               data-validate="{required:true}"/>
+                    </p>
+                    <p class="comment-form-email">
+                        <label for="sender_email"
+                               class="required">Your Email <em>*</em>
+                        </label>
+                        <input type="text"
+                               name="sender_email"
+                               placeholder="your-real-email@example.com"
+                               data-validate="{
+                               required:true,
+                               'validate-email':true
+                               }"/>
+                    </p>
+
+                    <?php if ($useCaptcha == 1): ?>
+                        <div class="g-recaptcha"
+                             data-sitekey="<?php echo $googleSiteKey; ?>">
+                        </div>
+                        <script src='https://www.google.com/recaptcha/api.js'>
+                        </script>
+                        <br/>
+                    <?php endif; ?>
+
+                    <p class="form-submit">
+                        <input type="submit"
+                               class="action primary"
+                               value="Post Comment">
+                    </p>
+                </form>
+            </div>
+        <?php else: ?>
+            <strong><?php echo __('Please Login to Comment.') ?></strong>
+        <?php endif; ?>
+        <?php endif; ?>
+    </div>
+<?php endif;?>
+<script type="text/javascript">
+    require([
+        "jquery"
+    ], function ($) {
+        var myForm = $('#comments-form');
+        var formAlreadySubmitted = false;
+        myForm.submit(function (e) {
+            if (myForm.validation("isValid")) {
+                if (formAlreadySubmitted) {
+                    e.preventDefault();
+                    return false;
+                }
+                var submitChildren = $(this).find('button[type=submit]');
+                submitChildren.attr('disabled', 'disabled');
+                submitChildren.addClass('disabled');
+                formAlreadySubmitted = true;
+            }
+        });
+    });
+</script>

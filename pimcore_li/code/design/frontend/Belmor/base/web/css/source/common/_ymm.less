@@ -1,0 +1,141 @@
+.ymm-container {
+    background: @secondary;
+    .co-ymm-container {
+        height: 50px;
+        margin: auto;
+        max-width: @content-main-width;
+        width: 100%;
+        display: flex;
+        @media @mobile {
+            flex-direction: column;
+            width: 100%;
+            min-height: 35px;
+            height: auto;
+            box-sizing: border-box;
+            background: @secondary;
+        }
+        .co-ymm-form {
+            flex-basis: 100%;
+            display: flex;
+            transition: all 0.8s ease;
+            @media @mobile {
+                transition: all 0.8s ease;
+                display: none;
+                flex-direction: column;
+            }
+        }
+        .co-label {
+            font-size: 14px;
+        }
+        .co-select:required:invalid {
+            color: @input_text_color;
+        }
+        .co-select:not([disabled]):focus {
+            box-shadow: none;
+        }
+        .co-value-containers {
+            height: auto;
+            position: relative;
+            margin-left: 20px;
+            min-width: 15%;
+            width: 22%;
+            @media @mobile {
+                margin-left: 0;
+                width: 100%;
+                box-sizing: border-box;
+                padding: 10px;
+            }
+        }
+        .co-title-container {
+            min-width: inherit;
+            flex-basis: 25%;
+            pointer-events: none;
+            p {
+                color: @ymm_title_color;
+                font-weight: bold;
+                text-align: right;
+                font-size: 15px;
+                padding-top: 15px;
+                position: relative;
+                @media @mobile {
+                    pointer-events: all;
+                    text-align: center;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                    &::after {
+                        content: '\f067';
+                        font-family: 'Font Awesome\ 5 Free';
+                        font-weight: 900;
+                        position: absolute;
+                        top: 15px;
+                        right: 65px;
+                        width: 20px;
+                        height: 100%;
+                        color: @ymm_title_color;
+                        text-align: center;
+                        font-size: @regular-font-size;
+                    }
+                }
+            }
+        }
+        @media @mobile {
+            .co-title-container.active p::after {
+                content: '\f068';
+            }
+        }
+        .co-value-containers select {
+            font-family: @primary-font-medium;
+            text-transform: uppercase;
+            width: 100%;
+            border: 0;
+            margin-top: 10px;
+            height: 30px;
+        }
+        .co-value-containers select option {
+            font-family: @primary-font-medium;
+        }
+        .co-value-containers select:disabled {
+            opacity: 0.8;
+            color: @input_text_color;
+        }
+        .co-value-containers select option:first-child {
+            color: @input_text_color;
+        }
+        .co-value-containers select option {
+            color: @black;
+        }
+        /* styling for buttons*/
+        .co-btn-go {
+            width: 59px;
+            height: 30px;
+            margin: 10px 0;
+            background-color: @ymm_go_btn_bck ;
+            box-shadow: none;
+            border: none;
+            color: @white;
+            font-size: 15px;
+            text-transform: uppercase;
+            @media @mobile {
+                width: 100%;
+            }
+        }
+        .co-btn-reset {
+            width: auto;
+            height: 30px;
+            background-color: @ymm_reset_btn_bck;
+            margin: 0 0 0 15px;
+            box-shadow: none;
+            border: none;
+            color: @white;
+            font-size: 15px;
+            text-transform: uppercase;
+            @media @mobile {
+                margin: 10px 0;
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+        @media @mobile {}
+    }
+}

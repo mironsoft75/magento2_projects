@@ -1,0 +1,29 @@
+
+
+<a href="<?php echo $this->getUrl('news/view/index', ['id' => 1]) ?>"
+   class="action-default" id="post-preview-button" target="_blank"><?php echo __('Preview Changes') ?></a>
+
+<input type="hidden" name="preview" id="preview" value="">
+
+
+<script>
+    require([
+        'jquery'
+    ], function ($) {
+        var $form = $('#post-preview-button');
+        var pre=$('#preview');
+        $('.page-actions').prepend($form);
+        $('#edit_form').prepend(pre);
+        $('#edit_form input, select, textarea').on('change keypress', function () {
+            $('#post-preview-button').show();
+        });
+
+        $form.on('click', function (e) {
+            e.preventDefault();
+            $('#preview').val('1');
+            $('#edit_form').attr('target', 'preview').submit().attr('target', '');
+            $('#preview').val('0');
+        });
+    });
+    
+</script>

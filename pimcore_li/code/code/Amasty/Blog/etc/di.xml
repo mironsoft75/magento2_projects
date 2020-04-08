@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\App\Rss\RssManagerInterface">
+        <arguments>
+            <argument name="dataProviders" xsi:type="array">
+                <item name="amblog" xsi:type="string">Amasty\Blog\Block\Rss\Feeds</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Amasty\Blog\Model\Config\Backend\Route">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="urlHelper" xsi:type="object">Amasty\Blog\Helper\Url</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Amasty\XmlSitemap\Model\Sitemap">
+        <plugin name="Amasty_Blog::add-pages-to-sitemap" type="Amasty\Blog\Plugins\XmlSitemap\Model\Sitemap" />
+    </type>
+</config>

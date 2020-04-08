@@ -1,0 +1,28 @@
+<?php $categories = $block->getCategoryTree(); ?>
+<div id="sidebar">
+    <div class="widget widget_categories">
+        <h3>
+            <?php echo __('Categories'); ?>
+        </h3>
+        <ul>
+            <?php foreach ($categories as $categoryUrl => $categoryData): ?>
+                <?php $categoryArray = explode("*", $categoryData, 2); ?>
+                <?php $categoryId = $categoryArray[0];
+                $categoryName = $categoryArray[1]; ?>
+                <?php $postCount = $block->getTotalPosts($categoryId); ?>
+                <?php $categoryPlain = str_replace(
+                    '&nbsp;',
+                    '',
+                    $categoryName
+                ); ?>
+                <li class="cat-item cat-item-<?php echo $categoryId; ?>">
+                    <a href="<?php echo $block->getCatUrl($categoryUrl); ?>"
+                       title="View all posts filed under <?php echo $categoryPlain ?>">
+                        <?php echo $categoryName ?>
+                    </a>
+                    <?php echo ' (' . $postCount . ')'; ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>

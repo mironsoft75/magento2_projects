@@ -1,0 +1,87 @@
+<?php if ($block->displayPosts()): ?>
+    <?php $postCollection = $block->getRelatedpost(); ?>
+    <?php if ($postCollection->count()): ?>
+        <div class="related-posts">
+            <div class="box-title-area">
+                <h4 class="title">
+                    <?php echo __('You Might Also Like') ?>
+                </h4>
+            </div>
+            <div class="related-posts-inner clearfix related-carousel">
+                <?php $j = 0; ?>
+                <?php foreach ($postCollection as $post) : ?>
+                    <?php if ($j > 7):
+                        break;
+                    endif;
+                    $thumb = ""; ?>
+                    <div class="related-post-item item">
+                        <?php if ($imageUrl = $this->getThumbImageUrl(
+                            $post,
+                            190,
+                            100
+                        )
+                        ): ?>
+                            <?php $thumb = $imageUrl; ?>
+                        <?php elseif ($imageUrl = $this->getImageUrl(
+                            $post,
+                            190,
+                            100
+                        )
+                        ): ?>
+                            <?php $thumb = $imageUrl; ?>
+                        <?php else: ?>
+                            <?php $thumb = ""; ?>
+                        <?php endif; ?>
+                        <?php if ($thumb != ''): ?>
+                            <div class="related-post-image ">
+                                <a href="<?php echo $post->getPostUrl(); ?>"
+                                   title="<?php echo $post->getTitle() ?>"
+                                   class="image-link" data-id="fancybox">
+                                    <img src="<?php echo $thumb; ?>"
+                                         class="attachment-190-120 wp-post-image image-loaded">
+                                </a>
+                            </div>
+                        <?php endif; ?>
+                        <h3>
+                            <a class="post-item-link"
+                               href="<?php echo $post->getPostUrl() ?>">
+                                <?php echo $block->escapeHtml(
+                                    $post->getTitle()
+                                ); ?>
+                            </a>
+                        </h3>
+                          <span class="date">
+                            <?php echo date(
+                                'd M, Y',
+                                strtotime($post->getPublishDate())
+                                ) ?>
+                          </span>
+                    </div>
+                    <?php $j++; ?>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    <?php endif; ?>
+    <script>
+        require(['jquery', 'carouseljs'], function ($) {
+            $('.related-carousel').owlCarousel({
+                loop: true,
+                margin: 20,
+                responsiveClass: true,
+                nav: false,
+                dots: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            })
+        });
+    </script>
+<?php endif;

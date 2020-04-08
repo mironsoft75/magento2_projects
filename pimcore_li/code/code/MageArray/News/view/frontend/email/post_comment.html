@@ -1,0 +1,9 @@
+<!--@subject New Comment on "{{var data.title}}"@-->
+{{template config_path="design/email/header_template"}}
+<p>
+
+    {{trans "Name: %name" name=$data.name}} <br/>
+    {{trans "Email: %email" email=$data.email}}<br/>
+
+    {{trans "Comment: %comment" comment=$data.comment}}<br/>
+</p>

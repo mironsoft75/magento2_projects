@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Category</title>
+    </head>
+    <body>
+        <referenceBlock name="menu">
+            <action method="setActive">
+                <argument name="itemId" xsi:type="string">MageArray_News::newscat</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="MageArray\News\Block\Adminhtml\Newscat\Edit" name="newscat_edit"/>
+        </referenceContainer>
+        <referenceContainer name="left">
+            <block class="MageArray\News\Block\Adminhtml\Newscat\Edit\Tabs" name="newscat_edit_tabs">
+                <block class="MageArray\News\Block\Adminhtml\Newscat\Edit\Tab\Form" name="newscat_edit_tab_form"/>
+				<block class="MageArray\News\Block\Adminhtml\Newscat\Edit\Tab\Seo" name="newscat_edit_tab_seo"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">main_section</argument>
+                    <argument name="block" xsi:type="string">newscat_edit_tab_form</argument>
+                </action>
+				<action method="addTab">
+                    <argument name="name" xsi:type="string">seo_section</argument>
+                    <argument name="block" xsi:type="string">newscat_edit_tab_seo</argument>
+                </action>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

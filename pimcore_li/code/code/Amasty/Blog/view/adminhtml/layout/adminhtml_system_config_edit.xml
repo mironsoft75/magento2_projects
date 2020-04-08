@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+
+        <link src="Amasty_Blog::js/adminhtml/libs/lodash/lodash.js"/>
+        <link src="Amasty_Blog::js/adminhtml/angularjs/core/angular.min.js"/>
+        <link src="Amasty_Blog::js/adminhtml/angularjs/components/directives/draggable/ng-draggable.js"/>
+        <link src="Amasty_Blog::js/adminhtml/modules/layout.js"/>
+
+        <css src="Amasty_Blog::css/styles.css"/>
+        <css src="Amasty_Blog::css/glyphicons.css"/>
+
+        <css src="jquery/colorpicker/css/colorpicker.css"/>
+
+
+    </head>
+    <body>
+
+        <referenceContainer name="js">
+            <block class="Magento\PageCache\Block\System\Config\Form\Field\Export" template="Amasty_Blog::angular.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

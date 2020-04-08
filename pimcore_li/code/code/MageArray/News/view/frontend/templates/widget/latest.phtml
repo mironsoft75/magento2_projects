@@ -1,0 +1,15 @@
+<?php $latestPosts = $this->getCollection(); ?>
+<div id="sidebar">
+    <div class="widget widget_latest">
+        <h3><?php echo __('Latest Posts'); ?></h3>
+        <ul>
+            <?php foreach ($latestPosts as $post): ?>
+                <li class="cat-item">
+                    <a href="<?php echo $post->getPostUrl() ?>">
+                        <?php echo $post->getTitle() ?>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>

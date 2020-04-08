@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Store/etc/config.xsd">
+    <default>
+        <bss_gallery>
+            <general>
+                <enable>1</enable>
+                <image_per_page>20</image_per_page>
+                <layout_type>standard</layout_type>
+                <autoload>1</autoload>
+                <page_speed>2000</page_speed>
+            </general>
+        </bss_gallery>
+    </default>
+</config>

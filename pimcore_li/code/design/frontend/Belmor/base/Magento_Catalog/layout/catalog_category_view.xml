@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright Â© Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.container">
+            <container name="catalog.listing.head.info.main" label="head info block for listing page" htmlTag="div" htmlClass="listing-header-info-main" after="header-wrapper">
+                <block name="catalog.listing.head.info" template="Magento_Catalog::product/list/category-listing-head.phtml" before="-" />
+            </container>
+            <container name="catalog.listing.applied.filters.main" label="listing page applied filters section" htmlTag="div" htmlClass="listing-applied-filters-main" after="header-wrapper">
+                <block class="Amasty\Shopby\Block\Navigation\State" name="catalog.listing.applied.filters" template="Magento_Catalog::product/list/filters.phtml" before="-" />
+            </container>
+        </referenceContainer>
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+        <referenceContainer name="sidebar.additional" remove="true" />
+        <referenceBlock name="breadcrumbs" remove="true" />
+        <move element="page.main.title" destination="catalog.listing.applied.filters.main" after="catalog.listing.applied.filters"/>
+        <!-- <move element="catalog.navigation.state" destination="header.container" after="header-wrapper" /> -->
+    </body>
+</page>

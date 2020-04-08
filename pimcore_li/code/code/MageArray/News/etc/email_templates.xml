@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="magearray_news_comments_email_template" label="New Comment" file="post_comment.html" type="html"
+              module="MageArray_News" area="frontend"/>
+</config>

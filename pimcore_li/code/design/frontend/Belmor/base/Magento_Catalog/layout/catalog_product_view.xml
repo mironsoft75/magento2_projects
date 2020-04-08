@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Magestore_Bannerslider::css/flexslider.css" />
+</head>
+    <body>
+        <referenceContainer name="content">
+            <referenceContainer name="product.info.main">
+                <referenceBlock name="product.info.sku">
+                    <arguments>
+                        <argument name="at_call" xsi:type="string">getSku</argument>
+                        <argument name="at_code" xsi:type="string">sku</argument>
+                        <argument name="css_class" xsi:type="string">sku</argument>
+                        <argument name="at_label" xsi:type="string">Part Number:</argument>
+                        <argument name="add_attribute" xsi:type="string">itemprop="sku"</argument>
+                    </arguments>
+                </referenceBlock>
+            </referenceContainer>
+            <referenceBlock name="product.info.description">
+                <arguments>
+                    <argument name="at_call" xsi:type="string">getDescription</argument>
+                    <argument name="at_code" xsi:type="string">description</argument>
+                    <argument name="css_class" xsi:type="string">description</argument>
+                    <argument name="at_label" xsi:type="string">none</argument>
+                    <argument name="title" translate="true" xsi:type="string">Description</argument>
+                </arguments>
+            </referenceBlock>
+            <referenceBlock name="product.info.details">
+                <block name="product.info.installation" template="Magento_Catalog::product/view/installation.phtml" group="detailed_info">
+                    <arguments>
+                        <argument translate="true" name="title" xsi:type="string">Installation</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Catalog\Block\Product\View\Attributes" name="product.info.technical" template="Magento_Catalog::product/view/attributes.phtml" group="detailed_info">
+                    <arguments>
+                        <argument translate="true" name="title" xsi:type="string">Technical Details</argument>
+                    </arguments>
+                </block>
+                <referenceBlock name="product.attributes" remove="true" />
+                <block name="product.info.vehiclelist" template="Magento_Catalog::product/view/vehiclelist.phtml" group="detailed_info">
+                    <arguments>
+                        <argument translate="true" name="title" xsi:type="string">Vehicle List</argument>
+                    </arguments>
+                </block>
+                <block name="product.info.warranty" template="Magento_Catalog::product/view/warranty.phtml" group="detailed_info">
+                    <arguments>
+                        <argument translate="true" name="title" xsi:type="string">Warranty</argument>
+                    </arguments>
+                </block>
+                <block name="product.info.faq" template="Magento_Catalog::product/view/faq.phtml" group="detailed_info">
+                    <arguments>
+                        <argument translate="true" name="title" xsi:type="string">FAQ</argument>
+                    </arguments>
+                </block>
+            </referenceBlock>
+            <container name="product.suggested.items.main" label="suggested product main" htmlTag="div" htmlClass="suggested-product-main" after="product.info.details">
+                <block name="suggested.products" template="Magento_Catalog::product/view/suggested-products.phtml" before="-">
+                    <arguments>
+                        <argument translate="true" name="title" xsi:type="string">Vehicle List</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+        <referenceContainer name="product.info.social" remove="false" />
+        <referenceBlock name="product.info.mailto" remove="true"/>
+        <referenceBlock name="view.addto.compare" remove="true" />
+        <referenceBlock name="view.addto.wishlist" remove="true" />
+        <referenceBlock name="product.info.overview" remove="true"/>
+        <referenceBlock name="catalog.product.related" remove="true" />       
+        <move element="product.info.review" destination="product.info.price" after="product.info.stock.sku" />
+    </body>
+</page>

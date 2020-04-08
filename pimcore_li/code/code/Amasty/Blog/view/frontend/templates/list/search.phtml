@@ -1,0 +1,25 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+?>
+<div class="search-query fix-me">
+    <form id="mp_blog_content_search " action="<?php echo $block->getSearchUrl(); ?>" method="get">
+        <div class="input-box">
+            <input
+                type="text"
+                placeholder="<?php echo $block->getBlockHeader(); ?>"
+                class="input-text required-entry placeholder"
+                title="<?php echo $block->getBlockHeader(); ?>"
+                id="search-blog" name="query"
+                value="<?php echo $block->getQuery(); ?>"
+                maxlength="100" />
+
+            <button class="button" title="<?php echo $block->__("Search"); ?>" type="submit">
+                <i class="glyphicons search <?php echo $block->getColorClass(); ?>"></i>
+            </button>
+        </div>
+    </form>
+</div>

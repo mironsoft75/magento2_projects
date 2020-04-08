@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="jquery/fileUploader/css/jquery.fileupload-ui.css"/>
+		<css src="MageArray_News::css/preview.css"/>
+        <title>News Post</title>
+    </head>
+    <update handle="editor"/>
+    <body>
+        <referenceBlock name="menu">
+            <action method="setActive">
+                <argument name="itemId" xsi:type="string">MageArray_News::newspost</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="MageArray\News\Block\Adminhtml\Newspost\Edit" name="newspost_edit"/>
+			<block class="MageArray\News\Block\Adminhtml\Newspost\Edit" name="news.post.preview"
+                       template="MageArray_News::view/preview.phtml" cacheable="false"/>
+        </referenceContainer>
+        <referenceContainer name="left">
+            <block class="MageArray\News\Block\Adminhtml\Newspost\Edit\Tabs" name="newspost_edit_tabs">
+                <block class="MageArray\News\Block\Adminhtml\Newspost\Edit\Tab\Main" name="newspost_edit_tab_main"/>
+                <block class="MageArray\News\Block\Adminhtml\Newspost\Edit\Tab\Image" name="newspost_edit_tab_image"/>
+                <block class="MageArray\News\Block\Adminhtml\Newspost\Edit\Tab\Additional"
+                       name="newspost_edit_tab_additional"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">main_section</argument>
+                    <argument name="block" xsi:type="string">newspost_edit_tab_main</argument>
+                </action>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">image_section</argument>
+                    <argument name="block" xsi:type="string">newspost_edit_tab_image</argument>
+                </action>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">additional_section</argument>
+                    <argument name="block" xsi:type="string">newspost_edit_tab_additional</argument>
+                </action>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

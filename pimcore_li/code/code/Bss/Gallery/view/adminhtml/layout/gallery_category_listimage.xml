@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <container name="root" label="Root">
+        <block class="Bss\Gallery\Block\Adminhtml\Category\Edit\Tab\ListImage"
+               name="bss.gallery.category.edit.tab.listimage"/>
+        <block class="Magento\Backend\Block\Widget\Grid\Serializer" name="crosssell_grid_serializer">
+            <arguments>
+                <argument name="input_names" xsi:type="string">sorting</argument>
+                <argument name="grid_block" xsi:type="string">bss.gallery.category.edit.tab.listimage</argument>
+                <argument name="callback" xsi:type="string">getSelectedItems</argument>
+                <argument name="input_element_name" xsi:type="string">category_image</argument>
+                <argument name="reload_param_name" xsi:type="string">images</argument>
+            </arguments>
+        </block>
+    </container>
+</layout>
+

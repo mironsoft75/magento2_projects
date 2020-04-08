@@ -1,0 +1,94 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+?>
+<article class="mobile <?php echo $block->getMobileLayoutCode(); ?>">
+    <?php if ($block->hasMobileLeftColumn()): ?>
+        <aside class="left" id="amblog_left_off_canvas">
+            <?php foreach ($block->getMobileBlocks('left_side') as $alias): ?>
+                <div class="mobile-block" data-set="sidebar-<?php echo $alias; ?>">
+                    <?php echo $block->getSidebarBlockHtml($alias); ?>
+                </div>
+            <?php endforeach; ?>
+        </aside>
+        <script type="text/javascript">
+            //<![CDATA[
+            require(['jquery', 'Amasty_Blog/js/vendor/swipe/swipy'], function($){
+                $(document).ready(function(){
+                    $('#amblog_left_off_canvas').swipy({'side':'left'});
+                });
+            });
+            //]]>
+        </script>
+    <?php endif; ?>
+    <section class="content">
+        <div class="swipe-me <?php echo $block->hasMobileLeftColumn() ? "left" : "right"; ?>"
+             id="swipe_me"
+             title="<?php echo $block->hasMobileLeftColumn() ? __("Swipe to the right") : __("Swipe to the left"); ?>">
+            <?php echo $block->hasMobileLeftColumn() ? __("Swipe to the right") : __("Swipe to the left"); ?>
+        </div>
+        <?php foreach ($block->getMobileBlocks('content') as $alias): ?>
+            <div class="mobile-block" data-set="content-<?php echo $alias; ?>">
+                <?php echo $block->getContentBlockHtml($alias); ?>
+            </div>
+        <?php endforeach; ?>
+    </section>
+    <?php if ($block->hasMobileRightColumn()): ?>
+        <aside class="right" id="amblog_right_off_canvas">
+            <?php foreach ($block->getMobileBlocks('right_side') as $alias): ?>
+                <div class="mobile-block" data-set="sidebar-<?php echo $alias; ?>">
+                    <?php echo $block->getSidebarBlockHtml($alias); ?>
+                </div>
+            <?php endforeach; ?>
+        </aside>
+        <script type="text/javascript">
+            //<![CDATA[
+            require(['Amasty_Blog/js/vendor/swipe/swipy', 'jquery'], function(swip, $){
+                $('#amblog_right_off_canvas').swipy({'side':'right'});
+            });
+            //]]>
+        </script>
+    <?php endif; ?>
+</article>
+
+<article class="desktop <?php echo $block->getDesktopLayoutCode(); ?>">
+    <?php if ($block->hasDesktopLeftColumn()): ?>
+        <aside class="left">
+            <?php foreach ($block->getDesktopBlocks('left_side') as $alias): ?>
+                <div class="desktop-block" data-set="sidebar-<?php echo $alias; ?>">
+                    <?php echo $block->getSidebarBlockHtml($alias); ?>
+                </div>
+            <?php endforeach; ?>
+        </aside>
+    <?php endif; ?>
+    <section class="content">
+        <?php foreach ($block->getDesktopBlocks('content') as $alias): ?>
+            <div class="desktop-block"  data-set="content-<?php echo $alias; ?>">
+                <?php echo $block->getContentBlockHtml($alias); ?>
+            </div>
+        <?php endforeach; ?>
+    </section>
+    <?php if ($block->hasDesktopRightColumn()): ?>
+        <aside class="right">
+            <?php foreach ($block->getDesktopBlocks('right_side') as $alias): ?>
+                <div class="desktop-block"  data-set="sidebar-<?php echo $alias; ?>">
+                    <?php echo $block->getSidebarBlockHtml($alias); ?>
+                </div>
+            <?php endforeach; ?>
+        </aside>
+    <?php endif; ?>
+</article>
+
+<script type="text/javascript">
+    require(
+        ['jquery', 'Amasty_Blog/js/vendor/appendaround/appendaround'],
+        function($) {
+            $('<?php echo $block->getAskedBlockSelector(); ?>').appendAround();
+        }
+    )
+</script>
+
+

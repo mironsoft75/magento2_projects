@@ -1,0 +1,33 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+?>
+<div class="amblog-comment" id="am-blog-comment-<?php echo $block->getMessageId(); ?>"<?php if ($block->getIsAjax()): ?> style="display: none;"<?php endif; ?>>
+    <?php if ($block->isReply()): ?>
+    <div class="is-reply"></div>
+    <?php endif; ?>
+    <div class="am-comment-content <?php if ($block->isMyComment()): ?>my-comment<?php endif; ?>">
+        <div class="am-comment-header fix-me">
+            <span class="am-comment-author">
+                <strong><?php echo $block->escapeHtml($block->getAuthor()); ?></strong>
+            </span>
+            <span class="am-comment-date">
+                <?php echo __("%1 at %2", $block->getDate(), $block->getTime()); ?>
+            </span>
+            <?php if ($block->getNeedApproveMessage()): ?>
+                <span class="am-comment-willapprove"><?php echo __("This comment will become public after administrator approval."); ?></span>
+            <?php endif; ?>
+        </div>
+        <?php echo $block->getContent(); ?>
+        <div class="form-actions">
+            <span class="am-comment-reply-btn"><a data-id="<?php echo $block->getMessageId(); ?>" class="amblog_replyto" href="#am-comment-form-<?php echo $block->getMessageId(); ?>" ><?php echo __("Reply"); ?></a></span>
+        </div>
+    </div>
+    <div class="am-replies">
+        <?php echo $block->getRepliesHtml(); ?>
+        <div class="am-comment-form" id="am-comment-form-<?php echo $block->getMessageId(); ?>" style="display: none;"></div>
+    </div>
+</div>

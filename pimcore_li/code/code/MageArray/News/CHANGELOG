@@ -1,0 +1,27 @@
+MageArray_News
+
+-------------
+  CHANGELOG
+-------------
+
+===== 1.0.0 =====
+ * Initial stable M2 release
+
+===== 1.0.1 =====
+ * Support for Magento 2.1
+
+===== 1.0.2 =====
+ * Save news error solve
+ * Bug fixes
+ 
+===== 1.0.3 =====
+ * Bug fixes
+ * Magento 2.2 compatibility 
+ 
+===== 1.0.4 =====
+ * Add SiteMap Feature
+ * Add Preview Changes functionality in news post
+ * Add Og meta tag 
+ 
+===== 1.0.5 =====
+ * Bug fixes

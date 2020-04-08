@@ -1,0 +1,55 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+?>
+<?php
+
+/** @var \Amasty\Blog\Block\Content\Post\Details $block */
+
+$post = $block->getPost();
+?>
+
+<?php if ($block->showAuthor() && $post->getPostedBy()): ?>
+    <span class="posted-by"><i class="<?php echo $block->getColorClass(); ?> glyphicons user"></i><?php echo __("By "); ?>
+    <?php if ($block->useGoogleProfile()): ?>
+        <a rel="author"
+           href="<?php echo $block->getGoogleProfileUrl(); ?>"
+           target="_blank"
+           title="<?php echo $block->escapeHtml($post->getPostedBy()); ?>">
+    <?php endif; ?>
+    <?php echo $block->escapeHtml($post->getPostedBy()); ?>
+    <?php if ($block->useGoogleProfile()): ?>
+        </a>
+    <?php endif; ?>
+    </span>
+<?php endif; ?>
+<?php if ($post->getCreatedAt()): ?>
+    <span class="date">
+        <i class="<?php echo $block->getColorClass(); ?> glyphicons calendar"></i>
+        <?php echo $block->renderDate($post->getPublishedAt()); ?>
+    </span>
+<?php endif; ?>
+<?php if ($block->helperSettings->getDisplayViews()): ?>
+    <span class="views">
+        <i class="<?php echo $block->getColorClass(); ?> glyphicons eye_open"></i>
+        <?php echo __("%1 Views", $post->getViews()); ?>
+    </span>
+<?php endif; ?>
+<?php if ($post->getCommentsEnabled()): ?>
+    <span class="comments">
+        <i class="<?php echo $block->getColorClass(); ?> glyphicons conversation"></i>
+        <a href="<?php echo $block->getCommentsUrl(); ?>">
+        <?php $commentCount = $block->getCommentsCount();
+        if ($commentCount == 1): ?>
+            <?php echo __("%1 comment", $commentCount); ?>
+        <?php elseif ($commentCount > 1): ?>
+            <?php echo __("%1 comments", $commentCount); ?>
+        <?php else: ?>
+            <?php echo __("No comments"); ?>
+        <?php endif; ?>
+        </a>
+    </span>
+<?php endif; ?>

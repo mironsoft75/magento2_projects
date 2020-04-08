@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="news_popular" class="MageArray\News\Block\Widget\Popular" is_email_compatible="true" ttl="86400">
+        <label translate="true">Popular News Posts</label>
+        <description translate="true">Add popular news post widget anywhere in site</description>
+        <parameters>
+            <parameter name="count" xsi:type="text" visible="true">
+                <label translate="true">Post Count</label>
+            </parameter>
+        </parameters>
+    </widget>
+    <widget id="news_latest" class="MageArray\News\Block\Widget\Latest" is_email_compatible="true" ttl="86400">
+        <label translate="true">Latest News Posts</label>
+        <description translate="true">Add latest news post widget anywhere in site</description>
+        <parameters>
+            <parameter name="count" xsi:type="text" visible="true">
+                <label translate="true">Post Count</label>
+            </parameter>
+        </parameters>
+    </widget>
+    <widget id="news_categories" class="MageArray\News\Block\Widget\Categories" is_email_compatible="true" ttl="86400">
+        <label translate="true">News Categories</label>
+        <description translate="true">Add news categories widget anywhere in site</description>
+    </widget>
+
+</widgets>

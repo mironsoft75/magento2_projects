@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="3columns"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="MageArray_News::css/list.css"/>
+		<css src="MageArray_News::css/font-awesome.css"/>
+    </head>
+    <body>
+	<attribute name="class" value="news-page" />
+        <referenceContainer name="content">
+            <block class="MageArray\News\Block\Archive\NewsList" name="newspost" template="newslist.phtml">
+                <block class="Magento\Theme\Block\Html\Pager" name="post_list_pager" as="post_list_pager"/>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="sidebar.additional">
+            <block class="MageArray\News\Block\Widget\Search" name="news.widget.search" template="widget/search.phtml"/>
+            <block class="MageArray\News\Block\Widget\Categories"
+                   ifconfig="magearray_news/display_settings/list_page/category_onlist_right"
+                   name="news.categorytree.right"/>
+            <block class="MageArray\News\Block\Widget\Popular"
+                   ifconfig="magearray_news/display_settings/list_page/popular_onlist_right" name="news.popular.right"/>
+            <block class="MageArray\News\Block\Widget\Latest"
+                   ifconfig="magearray_news/display_settings/list_page/latest_onlist_right" name="news.latest.right"/>
+            <block class="MageArray\News\Block\Widget\Archive"
+                   ifconfig="magearray_news/display_settings/list_page/archive_onlist_right" name="news.archive.right"/>
+        </referenceContainer>
+        <referenceContainer name="sidebar.main">
+            <block class="MageArray\News\Block\Widget\Search" name="news.widget.search" template="widget/search.phtml"/>
+            <block class="MageArray\News\Block\Widget\Categories"
+                   ifconfig="magearray_news/display_settings/list_page/category_onlist_left" name="news.categorytree.left"/>
+            <block class="MageArray\News\Block\Widget\Popular"
+                   ifconfig="magearray_news/display_settings/list_page/popular_onlist_left" name="news.popular.left"/>
+            <block class="MageArray\News\Block\Widget\Latest"
+                   ifconfig="magearray_news/display_settings/list_page/latest_onlist_left" name="news.latest.left"/>
+            <block class="MageArray\News\Block\Widget\Archive"
+                   ifconfig="magearray_news/display_settings/list_page/archive_onlist_left" name="news.archive.right"/>
+        </referenceContainer>
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+        <referenceBlock name="wishlist_sidebar" remove="true"/>
+    </body>
+</page>

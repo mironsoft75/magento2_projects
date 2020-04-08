@@ -1,0 +1,29 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+?>
+<?php if ($block->getButtonsCount()): ?>
+<div class="amblog-social-container" id="social">
+    <div class="am-buttons fix-me">
+        <ul>
+        <?php foreach($block->getButtons() as $button): ?>
+
+            <?php if ($block->getHasImage($button)): ?>
+            <li>
+                <?php if ($button->getIsTemplate()): ?>
+                    <?php echo $block->getButtonHtml($button); ?>
+                <?php else: ?>
+                    <a target="_blank" href="<?php echo $block->getButtonUrl($button); ?>" title="<?php echo $button->getLabel(); ?>">
+                        <i class="blog-icon <?php echo $button->getValue(); ?>"></i>
+                    </a>
+                <?php endif; ?>
+            </li>
+            <?php endif; ?>
+        <?php endforeach; ?>
+        </ul>
+    </div>
+</div>
+<?php endif; ?>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="amblog_notify_admin_new_comment_email_template" label="Admin New Comment" file="admin_new_comment.html" type="html" module="Amasty_Blog" area="frontend"/>
+    <template id="amblog_notify_admin_scheduled_post_email_template" label="Admin Scheduled Post" file="admin_scheduled_post.html" type="html" module="Amasty_Blog" area="frontend"/>
+    <template id="amblog_notify_customer_comment_replyed_email_template" label="Customer Notifications" file="customer_reply_to_comment.html" type="html" module="Amasty_Blog" area="frontend"/>
+</config>

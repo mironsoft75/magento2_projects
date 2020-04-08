@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="blog.xsd">
+    <layout>
+        <tag>
+            <color_schemes>
+                <default>
+                    <label>Old Magento Colors</label>
+                    <data>
+                        <textcolor>2F2F2F</textcolor>
+                        <textcolor2>9C5909</textcolor2>
+                        <hicolor>2F2F2F</hicolor>
+                    </data>
+                </default>
+                <grey>
+                    <label>Grey</label>
+                    <data>
+                        <textcolor>111111</textcolor>
+                        <textcolor2>9B9B9B</textcolor2>
+                        <hicolor>111111</hicolor>
+                    </data>
+                </grey>
+                <red>
+                    <label>Red</label>
+                    <data>
+                        <textcolor>111111</textcolor>
+                        <textcolor2>9A3232</textcolor2>
+                        <hicolor>111111</hicolor>
+                    </data>
+                </red>
+                <green>
+                    <label>Green</label>
+                    <data>
+                        <textcolor>111111</textcolor>
+                        <textcolor2>329A47</textcolor2>
+                        <hicolor>111111</hicolor>
+                    </data>
+                </green>
+                <blue>
+                    <label>Blue</label>
+                    <data>
+                        <textcolor>111111</textcolor>
+                        <textcolor2>297aa3</textcolor2>
+                        <hicolor>111111</hicolor>
+                    </data>
+                </blue>
+                <white>
+                    <label>White</label>
+                    <data>
+                        <textcolor>FAFAFA</textcolor>
+                        <textcolor2>FFFFFF</textcolor2>
+                        <hicolor>FAFAFA</hicolor>
+                    </data>
+                </white>
+            </color_schemes>
+        </tag>
+        <content>
+            <search>
+                <label>Search the blog</label>
+                <frontend_block>Amasty\Blog\Block\Content\Search\Query</frontend_block>
+                <backend_image>images/layout/assets/search_wide.png</backend_image>
+                <sort_order>10</sort_order>
+            </search>
+        </content>
+        <sidebar>
+            <search>
+                <label>Search the blog</label>
+                <frontend_block>Amasty\Blog\Block\Sidebar\Search</frontend_block>
+                <backend_image>images/layout/assets/search.png</backend_image>
+                <sort_order>10</sort_order>
+            </search>
+            <categories>
+                <label>Categories</label>
+                <frontend_block>Amasty\Blog\Block\Sidebar\Category</frontend_block>
+                <backend_image>images/layout/assets/categories.png</backend_image>
+                <sort_order>20</sort_order>
+            </categories>
+            <recent-posts>
+                <label>Recent Posts</label>
+                <frontend_block>Amasty\Blog\Block\Sidebar\Recentpost</frontend_block>
+                <backend_image>images/layout/assets/recent_posts.png</backend_image>
+                <sort_order>30</sort_order>
+            </recent-posts>
+            <recent-comments>
+                <label>Recent Comments</label>
+                <frontend_block>Amasty\Blog\Block\Sidebar\Recentcomments</frontend_block>
+                <backend_image>images/layout/assets/recent_comments.png</backend_image>
+                <sort_order>40</sort_order>
+            </recent-comments>
+            <tags>
+                <label>Tags</label>
+                <frontend_block>Amasty\Blog\Block\Sidebar\Tag</frontend_block>
+                <backend_image>images/layout/assets/tags.png</backend_image>
+                <sort_order>50</sort_order>
+            </tags>
+        </sidebar>
+    </layout>
+    <import>
+        <awblog>
+            <label>aheadWorks Blog</label>
+            <note>Please make sure that aheadWorks Blog is Enabled in your system.</note>
+            <use_store_visibility>0</use_store_visibility>
+            <helper>mpblog/import_awblog</helper>
+            <form />
+        </awblog>
+        <wordpress>
+            <label>WordPress</label>
+            <note>Please upload XML file exported from your WordPress installation.</note>
+            <use_store_visibility>1</use_store_visibility>
+            <helper>mpblog/import_wordpress</helper>
+            <form>
+                <export_xml>
+                    <label>Export XML</label>
+                    <class>required-entry</class>
+                    <required>1</required>
+                    <name>export_xml</name>
+                    <type>file</type>
+                </export_xml>
+            </form>
+        </wordpress>
+    </import>
+
+</config>

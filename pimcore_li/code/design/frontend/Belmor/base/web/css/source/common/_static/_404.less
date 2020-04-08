@@ -1,0 +1,59 @@
+.cms-noroute-index{
+  .page-main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .columns{
+      width: 100%;
+      .co-404-container{
+        width: 50%;
+        margin: auto;
+        padding-top: 100px;
+        @media @mobile {
+            width: 60%;
+        }
+        .co-contents{
+          text-align: center;
+          img{
+            width: 404px;
+          }
+          p{
+            font-size: 18px;
+          }
+          .co-link-container{
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            .co-404-btn{
+              background: @primary;
+              text-decoration: none;
+              padding: 10px;
+              color: white;
+              width: 130px;
+              height: 20px;
+              margin: auto;
+            }
+            ul{
+              margin-top: 30px;
+              padding: 0;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 30px;
+              li{
+                list-style: none;
+                display: inline;
+                padding: 20px;
+                a{
+                  color: @primary;
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

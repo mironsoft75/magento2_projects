@@ -1,0 +1,37 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+?>
+<?php
+$collection = $block->getCollection();
+?>
+<?php if ($block->getDisplay() && count($collection)): ?>
+<div class="block amblog-recentcomments">
+    <div class="block-title">
+        <strong><span><?php echo $block->getBlockHeader(); ?></span></strong>
+    </div>
+    <div class="block-content">
+        <ul class="mplog-recent-comments">
+        <?php foreach ($collection as $comment): ?>
+            <li class="amblog-recent-comment amblog-recent-comment-<?php echo $comment->getId(); ?>">
+                <i class="<?php echo $block->getColorClass(); ?> glyphicons ok_2"></i>
+                <a href="<?php echo $comment->getCommentUrl(); ?>"><?php echo $block->escapeHtml($comment->getPostTitle()); ?></a>
+                <?php if ($block->showDate()): ?>
+                <div class="am-recentcomment-date">
+                    <?php echo $block->renderDate($comment->getCreatedAt()); ?>
+                </div>
+                <?php endif; ?>
+                <?php if ($block->showThesis()): ?>
+                <div class="am-comment-thesis">
+                    <?php echo $block->getStrippedContent($comment->getMessage()); ?>
+                </div>
+                <?php endif; ?>
+            </li>
+        <?php endforeach; ?>
+        </ul>
+    </div>
+</div>
+<?php endif; ?>

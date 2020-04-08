@@ -1,0 +1,35 @@
+<div class="title">
+    <h3><?= $block->escapeHtml(__('Suggested Products')) ?></h3>
+</div>
+<div class="suggested-product-slider">
+    <ul class="slider related-products slides">
+        <?php for ($x = 0; $x <= 7; $x++) { ?>
+        <li class="related-product">
+            <div class="img-main">
+                <img src="<?= $block->getViewFileUrl('images/img.png'); ?>" />
+            </div>
+            <p class="product-name">Ex-Extrawide Style</p>
+            <div class="product-rating">
+                <div class="review-control-vote">
+                    <label class="rating-4 opacity-1" for="Quality_1" title="4 star" id="Quality_1_label">
+                        <span>4 star</span>
+                    </label>             
+                </div>
+                <p class="reviews-number">327 Reviews</p>
+            </div>
+        </li>
+        <?php } ?>
+    </ul>
+</div>
+<script type="text/javascript">
+    require(['jquery', 'magestore/flexslider'], function($) {
+        $('.suggested-product-slider').flexslider({
+            animation: "slide",
+            animationLoop: false,
+            itemWidth: 306,
+            itemMargin: 15,
+            directionNav: true,
+            controlNav: false
+        });
+    });
+</script>

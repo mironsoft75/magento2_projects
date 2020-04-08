@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <amblog>
+            <layout>
+                <mobile_list>{"layout":"two-columns-right","left_side":[],"right_side":["categories","search","tags","recent-comments","recent-posts"],"content":["list"]}</mobile_list>
+                <mobile_post>{"layout":"two-columns-right","left_side":[],"right_side":["categories","search","tags","recent-comments","recent-posts"],"content":["post"]}</mobile_post>
+                <desktop_list>{"layout":"two-columns-right","left_side":[],"right_side":["categories","search","tags","recent-comments","recent-posts"],"content":["list"]}</desktop_list>
+                <desktop_post>{"layout":"two-columns-right","left_side":[],"right_side":["categories","search","tags","recent-comments","recent-posts"],"content":["post"]}</desktop_post>
+            </layout>
+            <footer_menu>
+                <display>1</display>
+                <label>Blog</label>
+            </footer_menu>
+            <search_engine>
+                <route>blog</route>
+                <title>Blog</title>
+            </search_engine>
+            <redirect>
+                <url_postfix>.html</url_postfix>
+                <redirect_to_seo_formatted_url>1</redirect_to_seo_formatted_url>
+            </redirect>
+            <list>
+                <count_per_page>10</count_per_page>
+            </list>
+            <post>
+                <display_author>1</display_author>
+                <display_print>0</display_print>
+                <display_views>1</display_views>
+                <display_categories>1</display_categories>
+                <display_tags>1</display_tags>
+                <date_manner>passed</date_manner>
+                <image_width>400</image_width>
+                <image_height>270</image_height>
+            </post>
+            <tags>
+                <minimal_post_count>1</minimal_post_count>
+                <mt_enabled>1</mt_enabled>
+                <mt_height>300</mt_height>
+                <mt_background>#F8F7F5</mt_background>
+                <mt_textcolor>#111111</mt_textcolor>
+                <mt_textcolor2>#297aa3</mt_textcolor2>
+                <mt_hicolor>#111111</mt_hicolor>
+            </tags>
+            <comments>
+                <use_comments>1</use_comments>
+                <allow_guests>1</allow_guests>
+                <record_limit>5</record_limit>
+                <display_short>1</display_short>
+                <display_date>1</display_date>
+                <nofollow>1</nofollow>
+                <ask_email>1</ask_email>
+                <ask_name>1</ask_name>
+                <gdpr>0</gdpr>
+                <gdpr_text><![CDATA[I agree to the <a href="/privacy-policy" target="_blank">Privacy Policy</a>]]></gdpr_text>
+            </comments>
+            <rss>
+                <display_on_list>1</display_on_list>
+                <post_feed>1</post_feed>
+                <category_feed>1</category_feed>
+                <comment_feed>1</comment_feed>
+            </rss>
+            <social>
+                <enabled>1</enabled>
+                <networks>twitter,facebook,vkontakte,blogger,pinterest,tumblr,digg,delicious,stumbleupon,slashdot,reddit,linkedin,google,googleplus</networks>
+            </social>
+        </amblog>
+    </default>
+</config>

@@ -1,0 +1,26 @@
+/* Fix List Styles */
+.redactor-editor ul {
+  list-style: disc;
+}
+.redactor-editor ol {
+  list-style: decimal;
+}
+/* Add Toolbar Button */
+.redactor-toolbar li a.re-magento {
+  background-image: url("images/icon_2_normal.svg");
+  background-size: 14px 14px;
+}
+.redactor-toolbar li a.re-magento:hover {
+  background-image: url("images/icon_2_hover.svg");
+}
+.redactor-toolbar li a.re-magento.redactor_active {
+  background-image: url("images/icon_2_active.svg");
+}
+/* Fix Modals buttons */
+#redactor_modal footer button {
+  background-image: none;
+}
+#redactor-toolbar-0,
+#redactor-toolbar-1 {
+  z-index: 1 !important;
+}

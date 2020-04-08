@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!--<preference for="Magento\Catalog\Model\ProductRepository" type="Pimcore\Common\Model\ProductRepository"/>-->
+    <type name="Magento\Catalog\Block\Product\ProductList\Toolbar">
+        <plugin name="pimcore_common_block_toolbar" type="Pimcore\Common\Plugin\Catalog\Block\Toolbar" />
+    </type>
+
+    <type name="Magento\Catalog\Model\Config">
+        <plugin name="pimcore_common_catalog_model_config" type="Pimcore\Common\Plugin\Catalog\Model\Config" />
+    </type>
+</config>

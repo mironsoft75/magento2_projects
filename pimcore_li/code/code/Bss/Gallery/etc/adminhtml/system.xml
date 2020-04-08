@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <!-- Add new Tab -->
+        <tab id="bss" translate="label" sortOrder="300"> 
+            <label> <![CDATA[Bss Commerce]]></label> 
+        </tab> 
+        <section id="bss_gallery" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Gallery</label>
+            <tab>bss</tab>
+            <!-- resource tag name which we have to defined in the acl.xml -->
+            <resource>Bss_Gallery::config_gallery</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled Gallery</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Version 1.0.3]]></comment>
+                </field>
+                <field id="image_per_page" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Image Per Page</label>
+                    <validate>validate-per-page-value-list</validate>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
+                <field id="layout_type" translate="label" type="select" sortOrder="30" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Album Layout</label>
+                    <source_model>Bss\Gallery\Model\Config\Source\LayoutType</source_model>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
+                <field id="autoload" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Popup Auto Play</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
+                <field id="page_speed" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Popup Auto Play Speed</label>
+                    <validate>validate-per-page-value-list</validate>
+                    <depends><field id="autoload">1</field></depends>
+                    <comment><![CDATA[Page Speed If Auto Next is Yes]]></comment>
+                </field>
+                <field id="title_position" translate="label" type="select" sortOrder="60" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Popup Title Position</label>
+                    <source_model>Bss\Gallery\Model\Config\Source\TitlePosition</source_model>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
+                <field id="transition_effect" translate="label" type="select" sortOrder="70" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Popup Transition Effect</label>
+                    <source_model>Bss\Gallery\Model\Config\Source\TransitionEffect</source_model>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

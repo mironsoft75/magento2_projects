@@ -1,0 +1,260 @@
+<?php $listStyle = $this->_dataHelper->getStoreConfig(
+    'magearray_news/display_settings/list_page/show_type'
+); ?>
+    <article id="content">
+        <?php if ($listStyle == 'list'): ?>
+            <ul class="news-lists news-lists-2 list-layout">
+                <?php foreach ($block->getCollection() as $post): ?>
+                    <?php $commentsCount = $block->getComments(
+                        $post->getNewspostId()
+                    ); ?>
+                    <li class="post clearfix">
+                        <?php if ($imageUrl = $this->getThumbImageUrl(
+                            $post,
+                            355,
+                            355
+                        )
+                        ): ?>
+                            <?php $thumb = $imageUrl; ?>
+                        <?php elseif ($imageUrl = $this->getImageUrl(
+                            $post,
+                            355,
+                            355
+                        )
+                        ): ?>
+                            <?php $thumb = $imageUrl; ?>
+                        <?php else: ?>
+                            <?php $thumb = ""; ?>
+                        <?php endif; ?>
+                        <?php if ($thumb != ''): ?>
+                            <div class="post-featured-item">
+                                <a href="<?php echo $post->getPostUrl(); ?>"
+                                   title="<?php echo $post->getTitle() ?>"
+                                   class="image-link"
+                                   data-id="fancybox">
+                                    <img src="<?php echo $thumb; ?>"
+                                         class="attachment-190-120 wp-post-image image-loaded">
+                                </a>
+                            </div>
+                        <?php endif; ?>
+                        <div class="post-entry-wrapper">
+                            <div class="post-list-text-content">
+                                <div class="post-header">
+                                    <?php if (!empty($post->getSourceEdition())): ?>
+                                        <p>
+                                        <span class="cat">
+                                            <?php echo $post
+                                                ->getSourceEdition() ?>
+                                        </span>
+                                        </p>
+                                    <?php endif; ?>
+                                    <h2>
+                                        <a href="<?php echo $post
+                                            ->getPostUrl(); ?>"
+                                           title="<?php echo $post
+                                               ->getTitle() ?>"
+                                           rel="bookmark">
+                                            <?php echo $post->getTitle() ?>
+                                        </a>
+                                    </h2>
+                                    <div class="date-author">
+                                        <p>
+                                    <span class="date">
+                                        <span class="month-stack">
+                                            <?php echo date(
+                                                'M',
+                                                strtotime(
+                                                    $post->getPublishDate()
+                                                )
+                                            ) ?>
+                                        </span>
+                                        <span class="time-stack">
+                                            <?php echo date(
+                                                'd',
+                                                strtotime(
+                                                    $post->getPublishDate()
+                                                )
+                                            ) ?>
+                                        </span>
+                                        <span class="year-stack">
+                                            <?php echo date(
+                                                'Y',
+                                                strtotime(
+                                                    $post->getPublishDate()
+                                                )
+                                            ) ?>
+                                        </span>
+                                    </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="post-entry">
+                                    <div class="post-entry-text">
+                                        <?php echo $block->getShortDescription(
+                                            $post->getNewspostId()
+                                        ); ?>
+                                    </div>
+                                </div>
+                                <div class="post-entry-bottom clearfix">
+                                    <a class="custom-more-link"
+                                       href="<?php echo $post
+                                           ->getPostUrl(); ?>">
+                                        <?php echo __('Continue Reading') ?>
+                                    </a>
+                                    <!-- Like Button -->
+                                    <div class="like-comment-buttons-wrapper clearfix">
+                                        <div class="like-comment-buttons">
+                                            <?php if (
+                                                $post->getDisplayViews() == 1
+                                            ): ?>
+                                                <a href="#" class="post-views">
+                                                    <i class="fa fa-eye"></i>
+                                                    <?php echo $post->getViews(); ?>
+                                                </a>
+                                            <?php endif; ?>
+                                            <a class="comment-button"
+                                               href="<?php echo $post
+                                                   ->getPostUrl(); ?>/#comments">
+                                                <i class="fa fa-comment-o"></i>
+                                                <?php echo $commentsCount ?>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- Like Button -->
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        <?php else: ?>
+            <div class="block posts">
+                <ul class="news-lists news-lists-2 grid-layout">
+                    <?php foreach ($this->getCollection() as $post): ?>
+                        <?php $commentsCount = $block->getComments(
+                            $post->getNewspostId()
+                        ); ?>
+                        <?php $thumb = ""; ?>
+                        <li class="post clearfix">
+                            <div class="post-header">
+                                <?php if (!empty($post->getSourceEdition())): ?>
+                                    <p>
+                                    <span class="cat">
+                                        <?php echo $post->getSourceEdition() ?>
+                                    </span>
+                                    </p>
+                                <?php endif; ?>
+                                <h2>
+                                    <a href="<?php echo $post->getPostUrl(); ?>"
+                                       title="<?php echo $post->getTitle() ?>"
+                                       rel="bookmark">
+                                        <?php echo $post->getTitle() ?>
+                                    </a>
+                                </h2>
+                            </div>
+                            <?php if ($imageUrl = $this->getThumbImageUrl(
+                                $post,
+                                355,
+                                355
+                            )
+                            ): ?>
+                                <?php $thumb = $imageUrl; ?>
+                            <?php elseif ($imageUrl = $this->getImageUrl(
+                                $post,
+                                355,
+                                355
+                            )
+                            ): ?>
+                                <?php $thumb = $imageUrl; ?>
+                            <?php else: ?>
+                                <?php $thumb = ""; ?>
+                            <?php endif; ?>
+                            <?php if ($thumb != ''): ?>
+                                <div class="post-featured-item">
+                                    <a href="<?php echo $post->getPostUrl(); ?>"
+                                       title="<?php echo $post->getTitle() ?>"
+                                       class="image-link"
+                                       data-id="fancybox">
+                                        <img src="<?php echo $thumb; ?>"
+                                             class="attachment-190-120 wp-post-image image-loaded">
+                                    </a>
+                                </div>
+                            <?php endif; ?>
+                            <div class="post-entry full essbis-hover-container">
+                                <div class="post-entry-text">
+                                    <?php echo $block->getShortDescription(
+                                        $post->getNewspostId()
+                                    ); ?>
+                                    <div class="date-author">
+                                        <?php echo __('Published at:') ?>
+                                        <span class="date">
+                                        <?php echo date(
+                                            'd M, Y',
+                                            strtotime(
+                                                $post->getPublishDate()
+                                            )
+                                        ) ?>
+                                    </span>
+                                        <?php if ($post->getDisplayViews() == 1): ?>
+                                            <?php echo __(' / ') ?>
+                                            <span class="views">
+                                            <?php echo $post->getViews(); ?>
+                                            <?php echo __('Views') ?>
+                                        </span>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-entry-bottom clearfix full">
+                                <a class="custom-more-link"
+                                   href="<?php echo $post->getPostUrl(); ?>">
+                                    <?php echo __('Continue Reading') ?>
+                                </a>
+                                <!-- Like Button -->
+                                <div class="like-comment-buttons-wrapper clearfix">
+                                    <div class="like-comment-buttons">
+                                        <?php if ($post->getDisplayViews() == 1): ?>
+                                            <a href="#" class="post-views">
+                                                <i class="fa fa-eye"></i>
+                                                <?php echo $post->getViews(); ?>
+                                            </a>
+                                        <?php endif; ?>
+                                        <a class="comment-button"
+                                           href="<?php echo $post
+                                               ->getPostUrl(); ?>/#comments">
+                                            <i class="fa fa-comment-o"></i>
+                                            <?php echo $commentsCount ?>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- Like Button -->
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
+        <?php echo $this->getPager() ?>
+    </article>
+<?php $infiniteScroll = $this->_dataHelper->getStoreConfig(
+    'magearray_news/general/infinite_scroll'
+); ?>
+<?php if ($infiniteScroll == 1): ?>
+    <script>
+        require(['jquery', 'newsscroll'], function ($) {
+                var ias = $.ias({
+                        container: "#content",
+                        item: ".post",
+                        pagination: ".pages",
+                        next: ".pages .pages-item-next a"
+                    }
+                );
+                ias.extension(new IASSpinnerExtension());
+                ias.extension(new IASNoneLeftExtension({
+                        text: 'There are no more pages left to load.'
+                    }
+                ));
+            }
+        );
+    </script>
+<?php endif;

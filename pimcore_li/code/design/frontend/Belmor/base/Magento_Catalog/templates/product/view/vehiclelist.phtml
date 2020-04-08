@@ -1,0 +1,57 @@
+<?php
+/** @var  $pimcoreProductHelper \Pimcore\Product\Helper\Data */
+$pimcoreProductHelper = $this->helper('\Pimcore\Product\Helper\Data');
+$acesVehicleList = $pimcoreProductHelper->getAcesVehicleList(
+    $pimcoreProductHelper->getCurrentProduct()->getSku(),
+    [
+        'year_id',
+        'make_name',
+        'model_name',
+        'sub_model',
+        'sub_detail',
+        'bed_length',
+        'bed_type',
+        'body_type',
+        'no_of_doors',
+        'fitment_position'
+    ]
+);
+
+?>
+
+<?php if (!empty($acesVehicleList)): ?>
+
+
+    <table class="description-tab-table">
+        <thead>
+        <tr>
+            <th>Year</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Sub-Model</th>
+            <th>Sub-Detail</th>
+            <th>Bed Length</th>
+            <th>Bed Type</th>
+            <th>Body Type</th>
+            <th>No of Doors</th>
+            <th>Fitment Position</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($acesVehicleList as $value): ?>
+            <tr>
+                <td><?= $value['year_id'] ?></td>
+                <td><?= $value['make_name'] ?></td>
+                <td><?= $value['model_name'] ?></td>
+                <td><?= $value['sub_model'] ?></td>
+                <td><?= $value['sub_detail'] ?></td>
+                <td><?= $value['bed_length'] ?></td>
+                <td><?= $value['bed_type'] ?></td>
+                <td><?= $value['body_type'] ?></td>
+                <td><?= $value['no_of_doors'] ?></td>
+                <td><?= $value['fitment_position'] ?></td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+<?php endif ?>

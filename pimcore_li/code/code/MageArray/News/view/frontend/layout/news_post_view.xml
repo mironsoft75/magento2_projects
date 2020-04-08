@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="MageArray_News::css/font-awesome.css"/>
+        <css src="MageArray_News::css/view.css"/>
+        <css src="MageArray_News::css/comments.css"/>
+		<css src="MageArray_News::css/list.css"/>
+		<css src="MageArray_News::css/owl.carousel.css"/>
+		<css src="MageArray_News::css/owl.theme.default.css"/>
+    </head>
+    <body>
+	<attribute name="class" value="news-page" />
+	<referenceBlock name="page.main.title" remove="true"/>
+		<referenceBlock name="head.additional">
+			<block class="MageArray\News\Block\PostView" name="news.post.meta"
+                       template="MageArray_News::view/meta.phtml" cacheable="false"/>
+		</referenceBlock>
+        <referenceContainer name="content">
+            <block class="MageArray\News\Block\PostView" name="news.list" template="postview.phtml" cacheable="false">
+                <block class="MageArray\News\Block\PostView" name="news.post.share"
+                       template="MageArray_News::view/share.phtml" cacheable="false"/>
+            </block>
+            
+            <block class="MageArray\News\Block\Postview\RelatedPosts" name="news.post.relatedposts" as="relatedposts"
+                   template="MageArray_News::view/relatedposts.phtml"/>
+            <block class="MageArray\News\Block\Postview\RelatedProducts" name="news.relatedproducts"
+                   as="relatedproducts" template="MageArray_News::view/relatedproducts.phtml"/>
+				   
+				   <block class="MageArray\News\Block\Comments" ifconfig="magearray_news/comments/type_of_comment"
+                   name="news.comment" template="comments.phtml" cacheable="false">
+                <block class="Magento\Theme\Block\Html\Pager" name="comment_list_pager" as="comment_list_pager"
+                       cacheable="false"/>
+                <action method="setCacheLifetime">
+                    <argument name="time" xsi:type="string">86400</argument>
+                </action>
+            </block>
+
+        </referenceContainer>
+        <referenceContainer name="sidebar.additional">
+            <block class="MageArray\News\Block\Widget\Search" name="news.widget.search" template="widget/search.phtml"/>
+            <block class="MageArray\News\Block\Widget\Categories"
+                   ifconfig="magearray_news/display_settings/view_page/category_onpost_right"
+                   name="news.categorytree.right"/>
+            <block class="MageArray\News\Block\Widget\Popular"
+                   ifconfig="magearray_news/display_settings/view_page/popular_onpost_right" name="news.popular.right"/>
+            <block class="MageArray\News\Block\Widget\Latest"
+                   ifconfig="magearray_news/display_settings/view_page/latest_onpost_right" name="news.latest.right"/>
+            <block class="MageArray\News\Block\Widget\Archive"
+                   ifconfig="magearray_news/display_settings/view_page/archive_onpost_right" name="news.archive.right"/>
+        </referenceContainer>
+        <referenceContainer name="sidebar.main">
+            <block class="MageArray\News\Block\Widget\Search" name="news.widget.search" template="widget/search.phtml"/>
+            <block class="MageArray\News\Block\Widget\Categories"
+                   ifconfig="magearray_news/display_settings/view_page/category_onpost_left" name="news.categorytree.left"/>
+            <block class="MageArray\News\Block\Widget\Popular"
+                   ifconfig="magearray_news/display_settings/view_page/popular_onpost_left" name="news.popular.left"/>
+            <block class="MageArray\News\Block\Widget\Latest"
+                   ifconfig="magearray_news/display_settings/view_page/latest_onpost_left" name="news.latest.left"/>
+            <block class="MageArray\News\Block\Widget\Archive"
+                   ifconfig="magearray_news/display_settings/view_page/archive_onpost_left" name="news.archive.left"/>
+
+        </referenceContainer>
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+        <referenceBlock name="wishlist_sidebar" remove="true"/>
+    </body>
+</page>
+

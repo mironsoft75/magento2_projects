@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+-->
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\App\RouterList">
+        <arguments>
+            <argument name="routerList" xsi:type="array">
+                <item name="amasty_blog_root" xsi:type="array">
+                    <item name="class" xsi:type="string">Amasty\Blog\Controller\Router</item>
+                    <item name="disable" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="string">60</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Amasty\Xsearch\Block\Search\Blog">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="collectionFactory" xsi:type="object">Magento\Framework\Data\CollectionFactory</item>
+                <item name="dataObjectFactory" xsi:type="object">Magento\Framework\DataObjectFactory</item>
+                <item name="postsCollectionFactory" xsi:type="object">Amasty\Blog\Model\ResourceModel\Posts\CollectionFactory</item>
+                <item name="categoriesCollectionFactory" xsi:type="object">Amasty\Blog\Model\ResourceModel\Categories\CollectionFactory</item>
+                <item name="tagsCollectionFactory" xsi:type="object">Amasty\Blog\Model\ResourceModel\Tags\CollectionFactory</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

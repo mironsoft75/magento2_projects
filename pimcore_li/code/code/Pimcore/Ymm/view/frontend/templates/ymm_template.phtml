@@ -1,0 +1,104 @@
+<?php
+/** @var  \Pimcore\Ymm\Block\Ymm $block */
+$yearIds = $block->getYears();
+$makeNames = $block->getMakeNames();
+$selectedYear = NULL;
+$selectedMake = NULL;
+$isSelectedYear = NULL;
+$isSelectedMake = NULL;
+?>
+<div class="ymm-container">
+    <div class="co-ymm-container">
+        <div class="co-title-container">
+            <p>SELECT YOUR VEHICLE</p>
+        </div>
+        <?php //can also use this url  -pimcore_ymm/ymm/attributeoptions ?>
+        <form class="co-ymm-form" action="<?= $this->getUrl('all-products') ?>" method="GET">
+            <!-- Year container -->
+            <div class="co-value-containers">
+                <select name="year_id" class="co-select" id="year">
+                    <option selected value="">Select year</option>
+                    <?php foreach ($yearIds as $id => $year): ?>
+                        <option
+                            <?php
+                            if ($block->getSelectedYear() == $id) {
+                                $selectedYear = $year;
+                                echo 'selected=selected';
+                            }
+                            ?>
+                                value="<?= $id ?>"><?= $year ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <!-- Make container -->
+            <div class="co-value-containers">
+                <select name="make_name" class="co-select" id="make">
+                    <option selected value="">Select make</option>
+                    <?php
+                    if ($selectedYear) {
+                        $makeNames = $block->getMakesByYear($selectedYear);
+                    }
+                    ?>
+                    <?php foreach ($makeNames as $id => $makeName): ?>
+
+                        <option
+                            <?php
+                            if ($block->getSelectedMake() == $id) {
+                                $selectedMake = $makeName;
+                                echo 'selected=selected';
+                            }
+                            ?>
+                                value="<?= $id ?>"><?= $makeName ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <!-- Model container-->
+            <div class="co-value-containers">
+                <?php
+                $modelNames = $block->getModelNames($selectedYear, $selectedMake);
+                ?>
+                <?php if (count($modelNames)): ?>
+                    <select name="model_name" class="co-select" id="model">
+
+                        <option value="">Select model</option>
+                        <?php foreach ($modelNames as $id => $modelName): ?>
+                            <option <?php echo $block->getSelectedModel() == $id ? 'selected=selected' : '' ?>
+                                    value="<?= $id ?>"><?= $modelName ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                <?php else: ?>
+                    <select name="model_name" disabled class="co-select" id="model">
+                        <option selected disabled value="">Select model</option>
+                    </select>
+                <?php endif; ?>
+
+            </div>
+            <!--Button container -->
+            <div class="co-value-containers">
+                <input class="co-btn co-btn-go dark-theme-color-bck" type="submit" value="GO"/>
+                <input class="co-btn co-btn-reset button primary" type="reset" value="RESET"/>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/x-magento-init">
+{
+    "*":{
+        "Pimcore_Ymm/js/ymm": {}
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+

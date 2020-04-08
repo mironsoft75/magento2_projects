@@ -1,0 +1,62 @@
+.cms-privacy-policy,
+.cms-terms-of-use,
+.cms-warranty-information,
+.cms-shipping-returns {
+    .page-main {
+        @media @mobile {
+            padding-top: 0;
+        }
+        .page-title-wrapper {
+            height: 268px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @media @mobile {
+                height: 170px;
+            }
+            h1 {
+                font-size: 57px;
+                text-transform: uppercase;
+                font-family: @primary-font-bold;
+                color: @primary;
+                text-align: center;
+                @media @mobile {
+                    font-size: 29px;
+                }
+            }
+        }
+        .privacy-policy-container,
+        .terms-of-use-container,
+        .warranty-information-container,
+        .shipping-returns-container{
+            box-sizing: border-box;
+            width: 85%;
+            margin: auto;
+            @media @mobile {
+                width: 100%;
+                padding: 10px;
+            }
+            p,
+            li,
+            * {
+                font-family: 'OpenSans', sans-serif;
+                font-size: @medium-font-size;
+            }
+            h4,
+            h3 {
+                font-family: @primary-font-bold;
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+.news-category-index,
+.news-view-index {
+    .page-wrapper {
+        .page-header {
+            background: @primary;
+        }
+    }
+}

@@ -1,0 +1,173 @@
+.amlocator-index-index {
+    .page-main {
+        .page-title {
+            display: none;
+        }
+        .columns {
+            .main {
+                .store-header {
+                    width: 100%;
+                    .store-title {
+                        margin-top: 20px;
+                        /* position: absolute;
+                        top: 0;
+                        left: 0;
+                        display: flex;
+                        height: 100%;
+                        width: 100%;
+                        align-items: center;
+                        justify-content: center; */
+                        h1 {
+                            font-family: @primary-font-bold;
+                            text-transform: uppercase;
+                            padding: 0;
+                            text-align: center;
+                        }
+                    }
+                }
+                .store-description {
+                    box-sizing: border-box;
+                    padding: 10px;
+                    text-align: center;
+                    margin-bottom: 30px;
+                    @media @mobile {
+                        margin-bottom: 50px;
+                    }
+                    p {
+                        width: 75%;
+                        margin: auto;
+                        font-size: @large-font-size;
+                        @media @mobile {
+                            width: 100%;
+                        }
+                    }
+                }
+                #amasty_locator_block {
+                    #amasty_locator_filter {
+                        margin-bottom: 30px;
+                        .column_right {
+                            display: none;
+                        }
+                        .column_left {
+                            width: 100%;
+                            .block-title {
+                                display: none;
+                            }
+                            .block-content {
+                                display: flex;
+                                width: 80%;
+                                margin: auto;
+                                height: 50px;
+                                margin-bottom: 20px;
+                                justify-content: center;
+                                align-items: center;
+                                @media @mobile {
+                                    width: 100%;
+                                    display: flex;
+                                    flex-direction: column;
+                                    flex-basis: 100%;
+                                    box-sizing: border-box;
+                                    padding: 10px;
+                                }
+                                label {
+                                    display: none;
+                                }
+                                #current-address {
+                                    flex-basis: 50%;
+                                    @media @mobile {
+                                        width: 100%;
+                                        flex-basis: 100%;
+                                    }
+                                    input {
+                                        text-transform: uppercase;
+                                        font-family: @primary-font-bold ;
+                                        font-size: @regular-font-size;
+                                        height: 50px;
+                                        padding: 0 12px;
+                                        border-right: none;
+                                        &::placeholder,
+                                        &::-moz-placeholder {
+                                            color: @silver_grey;
+                                        }
+                                        @media @mobile {
+                                            border-right: 1px solid @grey;
+                                        }
+                                    }
+                                }
+                                .amlocator_input {
+                                    margin: 0;
+                                    @media @mobile {
+                                        width: 100%;
+                                    }
+                                    &:not(:first-child) {
+                                        flex-basis: 25%;
+                                    }
+                                    #locateNearBy {
+                                        display: none;
+                                    }
+                                    select {
+                                        font-size: @regular-font-size;
+                                        font-family: @primary-font-bold;
+                                        text-transform: uppercase;
+                                        color: @silver_grey;
+                                        height: 50px;
+                                        padding: 0 12px;
+                                    }
+                                    button {
+                                        margin-top: 4px;
+                                        font-family: @primary-font-bold;
+                                        font-size: @large-font-size ;
+                                        text-transform: uppercase;
+                                        background: @secondary;
+                                        color: @light_color;
+                                        width: 100%;
+                                        height: 51px;
+                                        border: none;
+                                        border-radius: 0;
+                                        padding: 15px;
+                                        &:hover {
+                                            background: @secondary_hover;
+                                        }
+                                        @media @mobile {
+                                            width: 320px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .amlocator_center {
+                        box-sizing: border-box;
+                        @media @mobile {
+                            padding: 10px;
+                        }
+                        .amlocator_mapblock,
+                        .amlocator_store_list {
+                            padding-bottom: 100px;
+                            @media @mobile {
+                                width: 100% !important;
+                            }
+                        }
+                        .amlocator_store_list {
+                            height: 497px !important;
+                            .location_header,
+                            .co-google-maps-link {
+                                color: @dark_blue;
+                            }
+                            .co-google-maps-link:hover {
+                                color: @secondary;
+                            }
+                            .store-address-main {
+                                .co-google-maps-link {
+                                    float: right;
+                                    text-decoration: underline;
+                                    text-transform: uppercase;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

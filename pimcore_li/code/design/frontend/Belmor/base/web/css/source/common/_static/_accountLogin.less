@@ -1,0 +1,248 @@
+.customer-account-login,
+.customer-account-forgotpassword {
+    .page-title-wrapper {
+        padding-top: 20px;
+        padding-bottom: 0px;
+        @media @mobile {
+            padding-top: 20px;
+            padding-bottom: 0px;
+            text-align: center;
+        }
+        .page-title {
+            font-size: @xx-large-font-size;
+            text-transform: uppercase;
+            font-family: @primary-font-bold;
+        }
+    }
+    .block-customer-login {
+        .block-title {
+            strong {
+                font-family: @primary-font-bold;
+            }
+        }
+        .form-login {
+            //remeber box
+            #remember-me-box {
+                label {
+                    font-family: @primary-font-bold;
+                }
+                .wrapper {
+                    a {
+                        text-decoration: underline;
+                        color: @light_blue;
+                        &:hover {
+                            color: @dark_blue;
+                        }
+                    }
+                }
+            }
+            label {
+                font-family: @primary-font-bold;
+            }
+            input:not([type='checkbox']) {
+                font-size: @regular-font-size;
+                height: 50px;
+                padding: 0 12px;
+            }
+            .actions-toolbar {
+                .primary {
+                    button {
+                        text-transform: uppercase;
+                        font-size: @large-font-size;
+                    }
+                }
+                .secondary {
+                    a {
+                        text-decoration: underline;
+                        color: @dark_blue;
+                        &:hover {
+                            color: @light_blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .block-new-customer {
+        .block-title {
+            strong {
+                font-family: @primary-font-bold;
+            }
+        }
+        .primary {
+            a {
+                font-family: @primary-font-bold;
+                font-size: @large-font-size ;
+                text-transform: uppercase;
+                width: auto;
+                height: 50px;
+                border: none;
+                border-radius: 0;
+                padding: 12px;
+            }
+        }
+    }
+}
+
+//account create
+.customer-account-create {
+    .page-title-wrapper {
+        padding-top: 20px;
+        padding-bottom: 0px;
+        .page-title {
+            font-size: @xx-large-font-size;
+            text-transform: uppercase;
+            font-family: @primary-font-bold;
+        }
+    }
+    .form-create-account {
+        //remeber box
+        #remember-me-box {
+            label {
+                font-family: @primary-font-bold;
+            }
+            .wrapper {
+                a {
+                    text-decoration: underline;
+                    color: @light_blue;
+                    &:hover {
+                        color: @dark_blue;
+                    }
+                }
+            }
+        }
+        input:not([type='checkbox']) {
+            height: 50px;
+            font-size: @regular-font-size;
+            font-family: @primary-font-bold;
+            padding: 0 12px;
+        }
+        .primary {
+            button {
+                font-family: @primary-font-bold;
+                font-size: @large-font-size ;
+                text-transform: uppercase;
+                width: auto;
+                height: 50px;
+                border: none;
+                border-radius: 0;
+                padding: 15px;
+            }
+        }
+    }
+}
+
+// account dashboard 
+.account {
+    .page-main {
+        padding: 55px 0;
+        .page-title-wrapper {
+            width: 100%;
+            @media @mobile{
+                margin-top: -60px;
+            }
+            h1 {
+                font-size: @xx-large-font-size ;
+                text-transform: uppercase;
+                font-family: @primary-font-bold;
+                color: @primary;
+                text-align: center;
+                @media @mobile {
+                    font-size: @xx-large-font-size ;
+                }
+            }
+        }
+        .main {
+            input:not([type='checkbox']),
+            select {
+                height: 50px;
+                font-size: @regular-font-size;
+                font-family: @primary-font-bold;
+                padding: 0 12px;
+            }
+            
+            .actions-toolbar {
+                .primary {
+                    button {
+                        text-transform: uppercase;
+                        font-size: @primary-font-regular;
+                        border-radius: 0;
+                    }
+                }
+            }
+            .block-title {
+                border-bottom: 1px solid @light_grey;
+                padding-bottom: 10px;
+                a {
+                    text-decoration: underline;
+                    color: @light_blue;
+                    &:hover {
+                        color: @dark_blue;
+                    }
+                }
+                strong {
+                    font-weight: 300;
+                    font-size: @medium-font-size;
+                    font-family: @primary-font-regular;
+                }
+            }
+            .block-content {
+                padding-top: 10px;
+                a {
+                    text-decoration: underline;
+                    color: @light_blue;
+                    &:hover {
+                        color: @dark_blue;
+                    }
+                }
+            }
+            @media @mobile{
+                box-sizing: border-box;
+                padding: 15px;
+            }
+        }
+        .sidebar-main {
+            .block-collapsible-nav-content {
+                padding: 0;
+                .nav.items{
+                    list-style: none;
+                    padding: 10px;
+                }
+            }
+            .block.block-collapsible-nav{
+                @media @mobile{
+                    position: absolute;
+                    top: 0;
+                }
+            }
+        }
+    }
+}
+
+//forgot password 
+.customer-account-forgotpassword {
+    #form-validate {
+        label {
+            font-family: @primary-font-bold;
+        }
+        input:not([type='checkbox']) {
+            font-size: @regular-font-size;
+            height: 50px;
+            padding: 0 12px;
+        }
+        .actions-toolbar {
+            .primary {
+                button {
+                    font-family: @primary-font-bold;
+                    font-size: @large-font-size ;
+                    text-transform: uppercase;
+                    width: auto;
+                    height: 50px;
+                    border: none;
+                    border-radius: 0;
+                    padding: 15px;
+                }
+            }
+        }
+    }
+}

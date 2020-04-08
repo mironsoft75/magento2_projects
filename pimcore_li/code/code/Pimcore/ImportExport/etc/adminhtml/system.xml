@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="pimcore" translate="label" sortOrder="100">
+            <label>Pimcore</label>
+        </tab>
+        <section id="pimcore" translate="label" type="text" sortOrder="410" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Pimcore</label>
+            <tab>pimcore</tab>
+            <class>separator-top</class>
+            <resource>Pimcore_ImportExport::pimcore</resource>
+                <group id="import_export" translate="label" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Configuration</label>
+                    <field id="api_key" translate="label" type="obscure" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>API Key</label>
+                        <config_path>pimcore/import_export/api_key</config_path>
+                        <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    </field>
+                    <field id="api_url" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>API URL</label>
+                        <config_path>pimcore/import_export/api_url</config_path>
+                    </field>
+                    <field id="debug" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Debug</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <config_path>pimcore/import_export/debug</config_path>
+                    </field>
+                </group>
+        </section>
+    </system>
+</config>

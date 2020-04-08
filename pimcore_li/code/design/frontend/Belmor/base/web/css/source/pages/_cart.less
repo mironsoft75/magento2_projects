@@ -1,0 +1,71 @@
+body .page-wrapper header.page-header {
+    .minicart-wrapper {
+        .block-minicart {
+            padding-bottom: 0;
+            #minicart-content-wrapper {
+                .block-content {
+                    .actions {
+                        .primary {
+                            button {
+                                border-radius: 0;
+                            }
+                        }
+                    }
+                    .minicart-items-wrapper {
+                        @media @mobile {
+                            height: auto !important;
+                        }
+                        .minicart-items {
+                            .product {
+                                .product-item-details {
+                                    .product-item-pricing {
+                                        .details-qty {
+                                            button {
+                                               background: @mini_cart_update_bg;
+                                                color: @mini_cart_update_txt;
+                                                border-radius: 0;
+                                                border: none;
+                                                margin-left: 20px;
+                                                height: 32px;
+                                                &:hover{
+                                                    background: @mini_cart_update_bg;
+                                                    opacity: 0.9;
+                                                }
+                                                @media @mobile {
+                                                    border: none;
+                                                    margin-left: 25px;
+                                                    margin-top: 20px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.checkout-cart-index {
+    .cart-container {
+        button {
+            background: @mini_cart_update_bg;
+            color: @mini_cart_update_txt;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 15px 30px;
+            &:hover{
+            background: @mini_cart_update_bg;
+            opacity: 0.9;
+            }
+        }
+    }
+}
+
+.checkout-cart-index .page-main .cart-summary .block {
+    display: none !important;
+}

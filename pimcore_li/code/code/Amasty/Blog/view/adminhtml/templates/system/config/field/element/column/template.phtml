@@ -1,0 +1,69 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+?>
+<div class="enabled-blocks">
+
+    <div ng-if="isMyDrag(type)"
+         ng-drop="true"
+         ng-drop-success="onDropSuccess($data, $attrs, $oAttrs)"
+         ng-type="{{type}}"
+         ng-sub-type="{{subtype}}"
+         class="drop-place">
+        <?php echo __("Drop here"); ?>
+    </div>
+    <div
+        ng-drag="true"
+        ng-drag-data="block"
+        ng-drag-begin="onDragBegin($data, $attrs)"
+        ng-drag-cancel="onDragCancel($data, $attrs)"
+        class="block {{block}} {{type}}"
+        ng-type="{{type}}"
+        ng-sub-type="{{subtype}}"
+        ng-repeat-start="block in value[subtype]">
+
+        <div
+            class="block-title">
+            {{getBlockLabel(type, block)}}
+            <a ng-prevent-drag="true"
+               class="remove-block"
+               ng-click="removeBlock(subtype, $index)"
+               title="<?php echo __("Remove Block"); ?>">
+                <i class="glyphicons bin"></i>
+            </a>
+        </div>
+        <div class="block-content"
+             ng-style="{'background-image': 'url('+ getBackendImage(type, block) + ')'}"
+             ng-prevent-drag="true"></div>
+
+        <div class="fixed"></div>
+    </div>
+
+    <div ng-if="isMyDrag(type, block)"
+         ng-drop="true"
+         ng-drop-success="onDropSuccess($data, $attrs, $oAttrs)"
+         ng-drop-data="{{block}}"
+         class="drop-place"
+         ng-type="{{type}}"
+         ng-sub-type="{{subtype}}"
+         ng-repeat-end  >
+        <?php echo __("Drop here"); ?>
+    </div>
+</div>
+
+<div class="available-blocks" ng-if="!displayAddButton(type, subtype)">
+    <a ng-click="addToColumn(subtype, block.value)"
+       class="block-to-add"
+       ng-repeat="block in available[type]"
+       title="{{block.label}}" >
+        {{block.label}}
+    </a>
+</div>
+
+<a ng-click="showVariantsForColumn(subtype)"
+   class="add"
+   title="<?php echo __("Add Block to Column"); ?>"
+   ng-if="displayAddButton(type, subtype)">+</a>
