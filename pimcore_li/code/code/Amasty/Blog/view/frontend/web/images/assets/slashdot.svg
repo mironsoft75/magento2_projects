@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+
+      .cls-3 {
+        fill: #026664;
+      }
+
+      .cls-4 {
+        fill: #ffffff;
+      }
+    </style>
+  </defs>
+  <g id="slashdot">
+    <rect id="rect-1" class="cls-3" width="24" height="24"/>
+    <path d="M6.000,19.873 C6.000,19.873 13.079,4.000 13.079,4.000 C13.079,4.000 16.144,4.000 16.144,4.000 C16.144,4.000 9.067,19.873 9.067,19.873 C9.067,19.873 6.000,19.873 6.000,19.873 ZM19.000,17.472 C19.000,16.076 17.861,14.944 16.458,14.944 C15.054,14.944 13.916,16.076 13.916,17.472 C13.916,18.869 15.054,20.000 16.458,20.000 C17.861,20.000 19.000,18.869 19.000,17.472 Z" id="path-1" class="cls-4" fill-rule="evenodd"/>
+  </g>
+</svg>

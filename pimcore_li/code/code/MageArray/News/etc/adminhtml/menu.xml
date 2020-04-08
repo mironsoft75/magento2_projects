@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <update id="MageArray_Core::core" title="MageArray Extensions" module="MageArray_News" sortOrder="80"
+                resource="MageArray_News::news"/>
+        <add id="MageArray_News::news" title="News" module="MageArray_News" sortOrder="10" parent="MageArray_Core::core"
+              dependsOnModule="MageArray_News" resource="MageArray_News::news"/>
+        <add id="MageArray_News::newspost" title="Posts" module="MageArray_News" sortOrder="20"
+             resource="MageArray_News::newspost" action="news/newspost" parent="MageArray_News::news"/>
+        <add id="MageArray_News::newscat" title="Categories" module="MageArray_News" sortOrder="30"
+             resource="MageArray_News::newscat" action="news/newscat" parent="MageArray_News::news"/>
+        <add id="MageArray_News::newscomment" title="Comments" module="MageArray_News" sortOrder="30"
+             resource="MageArray_News::newscomment" action="news/newscomment" parent="MageArray_News::news"/>
+        <add id="MageArray_News::settings" title="Settings" module="MageArray_News" sortOrder="50"
+             resource="MageArray_News::settings" action="adminhtml/system_config/edit/section/magearray"
+             parent="MageArray_News::news"/>
+    </menu>
+</config>

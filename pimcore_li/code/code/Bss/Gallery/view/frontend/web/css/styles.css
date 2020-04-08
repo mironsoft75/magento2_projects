@@ -1,0 +1,64 @@
+/* RESET CSS */
+* {
+  box-sizing: border-box;
+}
+.gallery-category-list a:hover,.gallery-category-list a:active{text-decoration: none;cursor: pointer;}
+ul{list-style: none;margin:0;padding:0;}
+
+/* LIST CATEGORY */
+.gallery-category-list{list-style: none;padding:0;margin:0;width:100%;max-width: 1600px}
+.gallery-category-list:after,.gallery-cateview-index .toolbar .pages::after,.gallery-cateview-index .toolbar .pages .items:after{content: '';display: block;clear: both;}
+.gallery-category-list .gallery-category-list-item{float:left;box-sizing:border-box;padding:0 10px;width:20%;min-height: 220px}
+.gallery-category-item-title{padding:10px 10px 20px;text-align: center;margin:0}
+.gallery-cateview-index h1.gallery-category-item-title{padding:0;}
+h4.gallery-category-item-title{line-height: 20px;text-overflow:ellipsis;white-space:nowrap;font-size:1.2rem;overflow: hidden;}
+.gallery-category-list .gallery-category-list-item:hover .gallery-category-item{box-shadow: 0px 0px 8px #333}
+.fancybox-opened .fancybox-title{font-weight: bold;text-align: center;}
+.gallery-cateview-index .columns,.gallery-index-index .columns{display: block}
+.gallery-cateview-index .toolbar .pages .items{float:right;}
+.gallery-cateview-index .toolbar .pages .item{float:left;}
+.gallery-cateview-index .toolbar .pages{margin-bottom: 0}
+.gallery-category-list-ajax-wrapper > #load-more {background-color: #1979c3;border-radius: 3px;color: #fff;font-weight: bold;padding: 5px 10px;display:inline-block;margin-top:20px;}
+.gallery-category-list-ajax-wrapper > #load-more:hover {cursor: pointer;text-decoration: none;background-color: #321554}
+.gallery-category-item-description {text-align: center;margin:1rem 0 2rem;}
+.gallery-category-list-ajax-wrapper .gallery-category-item-description{display: none}
+/* AJAX LIST CATEGORY */
+.gallery-category-list-ajax-wrapper{text-align: center}
+.gallery-category-list-ajax{display: inline-block;width:auto;}
+.gallery-category-list-item-ajax {float: left;margin:10px;background-color: #006bb4;border-radius: 5px}
+.gallery-category-list-item-ajax:hover{background-color: #34D342}
+.gallery-category-list-item-ajax.active{background-color: #13A01F}
+.gallery-category-list-ajax a{color:#fff;/*padding:10px 25px;display: block*/}
+.gallery-category-item-title-ajax {display: block;margin: 0;padding: 7px 10px;}
+#gallery-loading{display: none}
+#gallery-wrapper > .no-data {text-align: center;}
+
+.owl-carousel {position: relative;height: 100%;}
+.owl-carousel div.owl--text {position: absolute;bottom: 4em;left: 2em;width: 20em;height: 8em;padding: 1em;background: rgba(255, 255, 255, 0.5);border-radius: 4px;}
+.owl-carousel .owl-controls {position: absolute;top: 50%;left: 0;right: 0;}
+.owl-carousel .owl-controls .owl-nav div {bottom:0;position: absolute;display: inline-block;zoom: 1;margin: 0;width: 50px;height: 30px;line-height: 30px;text-align: center;font-size: .9em;border-radius: 3px;color: #FFF;background: #000;opacity: .6;text-transform: capitalize;display:none;}
+.owl-carousel .owl-controls .owl-nav .owl-prev {left: 5px;}
+.owl-carousel .owl-controls .owl-nav .owl-next {right: 5px;}
+.owl-carousel:hover .owl-controls .owl-nav div{display:block;}
+.gallery-category-list-standard-wrapper,.gallery_slider {margin: 35px 0 15px}
+.category-item img{border-radius: 5px;border:2px solid #000;}
+
+@media screen and (max-width:1279px){
+	.gallery-category-list .gallery-category-list-item{width:25%;}
+}
+@media screen and (max-width:959px){
+	.gallery-category-list .gallery-category-list-item{width:33.333%;}
+}
+@media screen and (max-width:767px){
+	.gallery-category-list .gallery-category-list-item{width:50%;}
+}
+@media screen and (max-width:639px){
+	.gallery-category-list .gallery-category-list-item{width:50%;}
+	.gallery-category-list .toolbar-amount,.gallery-cateview-index .toolbar-amount{position: static;float:left;}
+	.gallery-category-list .toolbar-amount .pages .pages-items,.gallery-cateview-index .pages .pages-items{display: inline-block;}
+}
+@media screen and (max-width:479px){
+	.gallery-cateview-index .toolbar .pages .items{float:none;}
+	.gallery-category-list .toolbar-amount,.gallery-cateview-index .toolbar-amount{display: none}
+	.gallery-category-list .gallery-category-list-item{width:100%;min-height: 250px}
+}

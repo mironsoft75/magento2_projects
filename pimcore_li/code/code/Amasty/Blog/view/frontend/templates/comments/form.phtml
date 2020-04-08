@@ -1,0 +1,129 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+?>
+<?php
+/** @var $block \Amasty\Blog\Block\Comments\Form */
+if ($block->canPost()) : ?>
+    <?php
+    if ($block->isReply()) {
+        $titleText = __('Leave a reply to %1', $block->getReplyToCustomerName());
+    } else {
+        $titleText = __('Leave a comment');
+    }
+    ?>
+    <h5><?= $block->escapeHtml($titleText); ?></h5>
+
+    <?php if ($block->getIsAjax()) : ?>
+        <?= /** @escapeNotVerified */$block->getMessageBlockHtml(); ?>
+    <?php endif; ?>
+    <form class="amblog_form" id="amblog-form-<?= $block->escapeHtml($block->getPostId()); ?>" onsubmit="return false;">
+        <fieldset>
+            <div class="comment-form-field">
+                <div class="comment-form-input">
+                    <textarea name="message"
+                              class="textarea required-entry placeholder"
+                              id="message_field"
+                              placeholder="<?= $block->escapeHtml($block->isReply()
+                                  ? __('Leave your awesome reply here...')
+                                  : __('Leave your awesome comment here...')); ?>"
+                              title="<?= $block->escapeHtml($block->isReply() ?
+                                  __('Reply')
+                                  : __('Comment')); ?>" ><?= $block->escapeHtml($block->getFormData()->getMessage()) ?></textarea>
+                </div>
+            </div>
+            <?php if ($block->isGdprEnabled()) :
+                $randId = mt_rand(0, 10000);
+            ?>
+            <div class="gdprText">
+                <input type="checkbox" class="gdpr_agree" id="gdpr_agree<?= $randId ?>">
+                <label for="gdpr_agree<?= $randId; ?>"><?= /** @escapeNotVerified */ $block->getGdprText(); ?></label>
+            </div>
+            <?php endif; ?>
+
+            <div class="amblog-customer-info<?= ($block->isGdprEnabled() ? ' am-hidden' : '') ; ?>">
+                <?php if ($block->isAskName()) : ?>
+                    <div class="comment-form-field">
+                        <div class="comment-form-input">
+                            <input type="text"
+                                   name="name"
+                                   placeholder="<?= $block->escapeHtml(__('John Doe')); ?>"
+                                   id="name_field"
+                                   title="<?= $block->escapeHtml(__('Name')); ?>"
+                                   class="text required-entry placeholder"
+                                   value="<?= $block->escapeHtml($block->getFormData()->getName()
+                                       ? $block->getFormData()->getName()
+                                       : $block->getCustomerName()) ?>" />
+                        </div>
+                    </div>
+                <?php endif; ?>
+
+                <?php if ($block->isAskEmail()) : ?>
+                    <div class="comment-form-field">
+                        <div class="comment-form-input">
+                            <input type="text"
+                                   name="email"
+                                   id="email_field"
+                                   placeholder="<?= $block->escapeHtml(__("john.doe@example.com")); ?>"
+                                   class="text required-entry validate-email placeholder" title="<?php echo __('Email') ?>"
+                                   value="<?= $block->escapeHtml($block->getFormData()->getEmail()
+                                       ? $block->getFormData()->getEmail()
+                                       : $block->getCustomerEmail()); ?>" />
+                        </div>
+                    </div>
+                    <?php if ($block->isLoggedId()) : ?>
+                    <input type="hidden" name="customer_id" value="<?= $block->escapeHtml($block->getCustomerId()); ?>" />
+                    <?php endif; ?>
+                <?php endif; ?>
+            </div>
+
+            <input type="hidden" name="secure_code" value="<?= $block->escapeHtml($block->getSecureCode()); ?>" />
+            <input type="hidden" name="reply_to" value="<?= $block->escapeHtml($block->getReplyTo()); ?>" />
+            <input type="hidden" name="session_id" value="<?= $block->escapeHtml($block->getSessionId()); ?>" />
+
+            <div class="form-actions fix-me">
+                <?php if ($block->getEmailsEnabled()) : ?>
+                    <div class="comment-form-field to-left subscribe">
+                        <div class="comment-form-input">
+                            <input type="checkbox"
+                                   class="checkbox"
+                                   name="subscribe_to_replies"
+                                   id="subscribe_to_replies"
+                                   title="<?= $block->escapeHtml(__('Subscribe to replies')); ?>"
+                                   <?= ($block->isCustomerSubscribed())?'':'checked'; ?> />
+
+                            <label for="subscribe_to_replies">
+                                <?= $block->escapeHtml(__('Subscribe to comments')); ?>
+                            </label>
+                        </div>
+                    </div>
+                <?php endif; ?>
+
+
+                <button class="button to-right amblog_send" id="amblog_submit_comment"  type="submit">
+                    <span><span><?= $block->escapeHtml(__("Submit")); ?></span></span>
+                </button>
+            </div>
+        </fieldset>
+    </form>
+<?php else : ?>
+    <?php if ($block->getIsAjax()) : ?>
+        <?=/** @escapeNotVerified */ $block->getMessageBlockHtml(); ?>
+    <?php endif; ?>
+        <p>
+            <?= $block->escapeHtml(__("Please ")); ?>
+            <a href="<?= $block->escapeUrl($block->getLoginUrl()); ?>">
+                <?= $block->escapeHtml(__("login")); ?>
+            </a>
+            <?= $block->escapeHtml(($block->isReply()?__(" to reply."):__(" to comment."))); ?>
+        </p>
+    <p><?= $block->escapeHtml(__("Don't have an account?")); ?></p>
+    <p>
+        <a href="<?= $block->escapeUrl($block->getRegisterUrl()); ?>">
+            <?= $block->escapeHtml(__("Sign Up for free")); ?>
+        </a>.
+    </p>
+<?php endif; ?>

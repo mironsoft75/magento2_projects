@@ -1,0 +1,109 @@
+.cms-about-us,
+.cms-about-us-why-bushwacker,
+.cms-about-us-why-tonno-pro,
+.cms-about-us-why-belmor,
+.cms-about-us-why-avs,
+.cms-about-us-our-executive-team,
+.cms-about-us-patents {
+    .page-main {
+        position: relative;
+        .page-title-wrapper {
+            position: absolute;
+            top: 70px;
+            left: 38px;
+            color: @light_color;
+            @media @mobile {
+                font-family: @primary-font-bold;
+                top: 75px;
+                left: 10px;
+            }
+            h1 {
+                font-family: @primary-font-bold;
+            }
+        }
+        .block-static-block {
+            margin: 0;
+        }
+        .co-about-us-container {
+            width: 100%;
+            .co-header-container {
+                position: relative;
+                height: 150px;
+                overflow-y: hidden;
+                margin-left: -10px;
+                width: calc(~"100% + 20px");
+                p:first-child {
+                    position: absolute;
+                    left: 40px;
+                    top: 40px;
+                    color: @light_color;
+                    font-size: @medium-font-size;
+                    @media @mobile {
+                        top: 45px;
+                        left: 10px;
+                    }
+                }
+                img {
+                    position: absolute;
+                    left: 0;
+                    top: -115px;
+                    z-index: -1;
+                    @media @mobile {
+                        top: 0;
+                        height: 150px;
+                        object-fit: cover;
+                    }
+                }
+            }
+            .aboutus-nav {
+                box-sizing: border-box;
+                padding: 30px;
+                @media @mobile {
+                    display: none;
+                }
+                ul {
+                    padding: 0;
+                    margin: 0;
+                    @media @mobile {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    li {
+                        border: none;
+                        a {
+                            font-size: @large-med-font-size;
+                        }
+                        &:hover a {
+                            color: @secondary;
+                        }
+                        display: inline;
+                        list-style: none;
+                        padding: 0 20px;
+                        text-transform: uppercase;
+                        font-size: @large-font-size;
+                        color: @dark_black_blue ;
+                        @media @mobile {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .aboutus-mobile {
+            display: none;
+            box-sizing: border-box;
+            @media @mobile {
+                display: block;
+                margin-top: 10px;
+                select {
+                    text-transform: uppercase;
+                    font-family: @primary-font-bold;
+                    option {
+                        text-transform: uppercase;
+                        font-family: @primary-font-bold;
+                    }
+                }
+            }
+        }
+    }
+}

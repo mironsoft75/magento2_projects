@@ -1,0 +1,27 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+?>
+<?php
+$collection = $block->getCollection();
+?>
+<?php if ($block->getDisplay() && count($collection)): ?>
+<div class="block amblog-categories">
+    <div class="block-title">
+        <strong><span><?php echo $block->getBlockHeader(); ?></span></strong>
+    </div>
+    <div class="block-content">
+        <ul class="mplog-categories">
+        <?php foreach ($collection as $category): ?>
+            <li class="amblog-category<?php if ($category->getIsActive()): ?> active<?php endif; ?> amblog-category-<?php echo $category->getId(); ?>">
+                <i class="<?php echo $block->getColorClass(); ?> glyphicons ok_2"></i>
+                <a href="<?php echo $category->getUrl(); ?>"><?php echo $block->escapeHtml($category->getName()); ?></a>
+            </li>
+        <?php endforeach; ?>
+        </ul>
+    </div>
+</div>
+<?php endif; ?>

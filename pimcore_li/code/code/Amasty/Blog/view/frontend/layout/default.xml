@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="footer_links">
+            <block class="Amasty\Blog\Block\Link" ifconfig="amblog/footer_menu/display" name="amblog_link">
+                <arguments>
+                    <argument name="label" xsi:type="string">Blog</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

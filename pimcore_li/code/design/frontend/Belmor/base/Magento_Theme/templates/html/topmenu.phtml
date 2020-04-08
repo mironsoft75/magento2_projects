@@ -1,0 +1,136 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @var $block \Magento\Theme\Block\Html\Topmenu
+ */
+?>
+<?php $columnsLimit = $block->getColumnsLimit() ?: 0; ?>
+<?php $_menu = $block->getHtml('level-top', 'submenu', $columnsLimit) ?>
+<nav class="navigation" data-action="navigation">
+    <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+        <!-- <?= /* @escapeNotVerified */
+        $_menu ?> -->
+        <li class="level0 nav-1 first level-top">
+            <a href="<?= $this->getUrl('all-products') ?>" class="level-top">
+                <span><?= $block->escapeHtml(__('Fit my vehicle')) ?></span>
+            </a>
+        </li>
+        <li class="level0 nav-1 first level-top open-confirm-modal">
+            <a data-href="<?= $this->getUrl('all-products') ?>" href="<?= $this->getUrl('all-products') ?>"
+               class="level-top">
+                <span><?= $block->escapeHtml(__('Shop Our Products')) ?></span>
+            </a>
+        </li>
+        <li class="level0 nav-1 first level-top">
+            <a href="<?= $this->getUrl('store-locator') ?>" class="level-top">
+                <span><?= $block->escapeHtml(__('Find A Dealer')) ?></span>
+            </a>
+        </li>
+        <?= /* @escapeNotVerified */
+        $block->getChildHtml() ?>
+    </ul>
+</nav>
+
+
+<script type="text/javascript">
+    require(['jquery', 'Magento_Ui/js/modal/confirm', 'mage/translate'], function ($, confirmation) {
+        window.isYmmSelected = false;
+        var allProductsUrl = null;
+        $.get("<?php echo $this->getUrl('pimcore_ymm/ymm/shopallproducts') ?>", function (data) {
+            data = JSON.parse(JSON.stringify(data));
+            window.isYmmSelected = data.isYmmSelected;
+            allProductsUrl = data.allProductsUrl;
+        });
+        $('.open-confirm-modal').on("click", function (e) {
+            e.preventDefault();
+            if (window.isYmmSelected) {
+                window.location = allProductsUrl;
+            } else {
+                confirmation({
+                    title: $.mage.__('Select Your Vehicle'),
+                    content: $.mage.__('Optimize your experience by shopping for your specific vehicle'),
+                    buttons: [{
+                        text: $.mage.__('Not Now'),
+                        class: 'action-secondary action-dismiss',
+
+                        /**
+                         * Click handler.
+                         */
+                        click: function (event) {
+                            clearYmmInSession();
+                            window.location = $('.open-confirm-modal a').attr('data-href');
+                            this.closeModal(event, true);
+                        }
+                    }, {
+                        text: $.mage.__('Enter Fitment'),
+                        class: 'action-primary action-accept',
+
+                        /**
+                         * Click handler.
+                         */
+                        click: function (event) {
+                            clearYmmInSession();
+                            $('#year').prop('selectedIndex', 0);
+                            $('#make').prop('selectedIndex', 0);
+                            $('#model').prop('selectedIndex', 0);
+                            this.closeModal(event, true);
+                        }
+                    }]
+                });
+            }
+        });
+
+        function clearYmmInSession() {
+            $.post("<?php echo $this->getUrl('pimcore_ymm/ymm/index') ?>", {clearSelectedYmm: true})
+                .done(function (data) {
+                    //console.log(data);
+                });
+        }
+
+        /*clear drop down selects*/
+        $('.action-accept').on('click', function () {
+            $('#make').prop('selectedIndex', 0);
+            $('#year').prop('selectedIndex', 0);
+            $('#model').prop('selectedIndex', 0);
+        });
+        if ($(window).width() > 900) {
+            var entered = false;
+            $('.minicart-wrapper .action.showcart').on('mouseenter', function () {
+                var container = $(".minicart-wrapper");
+                if (!entered && !(container.hasClass('active'))) {
+                    $(this).click();
+                    entered = true;
+                }
+            })
+            $(document).mouseup(function (e) {
+                var container = $(".minicart-wrapper");
+
+                // if the target of the click isn't the container nor a descendant of the container
+                if (!container.is(e.target) && container.has(e.target).length === 0) {
+                    entered = false;
+                } else {
+                    if ($(e.target).is('.action.close')) {
+                        entered = false;
+                    }
+                }
+
+                setTimeout(function () {
+                    if (!(container.hasClass('active'))) {
+                        entered = false;
+                    }
+                }, 200)
+
+            });
+        }
+    });
+</script>

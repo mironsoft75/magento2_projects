@@ -1,0 +1,12 @@
+#post-preview-button {
+    -ms-flex-order: -100;
+    -webkit-order: -100;
+    order: -100;
+    font-size: 1.6rem;
+    letter-spacing: .025em;
+    padding-bottom: 0.6875em;
+    padding-top: 0.6875em;
+    margin-right: 4rem;
+    border: none;
+    display: none;
+}

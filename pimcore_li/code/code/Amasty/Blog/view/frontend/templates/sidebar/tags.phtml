@@ -1,0 +1,69 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+?>
+<?php
+$collection = $block->getCollection();
+?>
+<?php if ($block->getDisplay() && count($collection)): ?>
+<div class="block amblog-tags">
+    <div class="block-title">
+        <strong><span><?php echo __('Tags') ?></span></strong>
+    </div>
+    <div class="block-content">
+        <?php if ($block->getMtEnabled()): ?>
+        <div id="amblog_canvas_container" class="noSwipe">
+            <canvas height="<?php echo $block->getMtHeight(); ?>" id="amblog_canvas">
+                <p><?php echo __("Unfortunately, your browser doesn't support HTML5 canvas."); ?></p>
+            </canvas>
+        </div>
+        <?php endif; ?>
+        <div id="amblog_tags" class="tag-list <?php if ($block->getMtEnabled()): ?> cloud-enabled<?php endif; ?>">
+            <ul>
+                <?php foreach ($collection as $tag): ?>
+                <li>
+                    <a href="<?php echo $tag->getTagUrl(); ?>" class="tag tag<?php echo $block->getTagSizeClass($tag); ?><?php if ($block->isActive($tag)): ?> active<?php endif; ?>" title="<?php echo __("%1 Topics", $tag->getPostCount()); ?>"  ><?php echo $block->escapeHtml($tag->getName()); ?></a>
+                </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+
+    <?php if ($block->getMtEnabled()): ?>
+    <script type="text/javascript">
+        //<![CDATA[
+
+        require(['jquery', 'Amasty_Blog/js/tagcloud/tagcanvas.min'], function($){
+            $(document).ready(function() {
+                try {
+                    var options = {
+                        weight: true,
+                        weightMode: 'both',
+                        textHeight: 16,
+                        textColour: '<?php echo $block->getMtTextColor(); ?>',
+                        outlineColour: '<?php echo $block->getMtHiColor(); ?>',
+                        weightGradient: {
+                            0: '<?php echo $block->getMtTextColor(); ?>',
+                            1: '<?php echo $block->getMtTextColor2(); ?>'
+                        }
+                    };
+
+                    TagCanvas.Start('amblog_canvas', 'amblog_tags', options);
+                } catch (e) {
+                    // something went wrong, hide the canvas container
+
+                    console.log(e);
+
+                    document.getElementById('amblog_canvas_container').style.display = 'none';
+                }
+            })
+        });
+        //]]>
+    </script>
+    <?php endif; ?>
+
+</div>
+<?php endif; ?>

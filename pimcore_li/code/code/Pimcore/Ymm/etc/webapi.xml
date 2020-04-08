@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/Ymm/year" method="GET">
+        <service class="Pimcore\Ymm\Api\YmmApiManagementInterface" method="getYearIds"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/Ymm/make:year" method="GET">
+        <service class="Pimcore\Ymm\Api\YmmApiManagementInterface" method="getMakeByYear"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/Ymm/model:year:make" method="GET">
+        <service class="Pimcore\Ymm\Api\YmmApiManagementInterface" method="getModelByYearAndMake"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/Ymm/submodel:baseid" method="GET">
+        <service class="Pimcore\Ymm\Api\YmmApiManagementInterface" method="getSubmodelByBaseId"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>

@@ -1,0 +1,159 @@
+.contact-index-index {
+    .page-main {
+        .page-title {
+            display: none;
+        }
+    }
+    .contact-container {
+        .contact-header {
+            width: 100%;
+            max-height: 336px;
+            min-height: 75px;
+            height: 336px;
+            background: grey;
+            position: relative;
+            margin-left: -10px;
+            width: calc(~"100% + 10px");
+            @media @mobile {
+                width: calc(~"100% + 20px");
+                height: 130px;
+            }
+            img {
+                @media @mobile {
+                    object-fit: cover;
+                    height: 130px;
+                    width: 100%;
+                    overflow: hidden;
+                }
+            }
+            .header-title {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: flex;
+                height: 100%;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+                h1 {
+                    color: @light_color;
+                    font-family: @primary-font-bold;
+                    text-transform: uppercase;
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+        }
+        .contact-contents {
+            display: flex;
+            padding: 60px;
+            box-sizing: border-box;
+            @media @mobile {
+                padding: 20px;
+                display: block;
+            }
+            .contact-form {
+                flex-basis: 60%;
+                border-right: 1px solid @contact_page_right_border ;
+                box-sizing: border-box;
+                padding-right: 60px;
+                @media @mobile {
+                    padding-right: 0;
+                    border: none;
+                }
+                .form {
+                    input {
+                        height: 50px;
+                        font-family: @primary-font-bold;
+                    }
+                    textarea {
+                        font-family: @primary-font-bold;
+                    }
+                    .legend,
+                    .note {
+                        text-align: center;
+                        border: none;
+                    }
+                    .row {
+                        display: flex;
+                        box-sizing: border-box;
+                        height: auto;
+                        padding-bottom: 30px;
+                        @media @mobile {
+                            display: flex;
+                            flex-direction: column;
+                            padding-bottom: 0;
+                            height: auto;
+                        }
+                        .field{
+                            width: 50%;
+                            &:not(:first-child){
+                                margin-left: 25px;
+                                @media @mobile{
+                                    margin-left: 0;
+                                }
+                            }
+                            @media @mobile{
+                                width: 100%;
+                                padding-bottom: 20px;
+                            }
+                        }
+                    }
+                    .company,
+                    .subject{
+                        padding-bottom: 15px;
+                        @media @mobile{
+                            padding-bottom: 0;
+                        }
+                    }
+                }
+                .actions-toolbar {
+                    .primary {
+                        width: 100%;
+                        .submit {
+                            text-transform: uppercase;
+                            background: @secondary;
+                            width: 100%;
+                            &:hover {
+                                background: @secondary_hover;
+                            }
+                        }
+                    }
+                }
+            }
+            .contact-details {
+                flex-basis: 40%;
+                .details-list {
+                    display: flex;
+                    flex-direction: column;
+                    padding-top: 80px;
+                    @media @mobile {
+                        padding-left: 0;
+                    }
+                    li {
+                        list-style: none;
+                        font-size: 16px;
+                        .call-container,
+                        .mail-container {
+                            display: flex;
+                        }
+                        .mail-id,
+                        .call-number {
+                            strong {
+                                color: @primary;
+                                text-transform: uppercase;
+                            }
+                            a {
+                                color: @dark_blue;
+                                text-decoration: underline;
+                                &:hover {
+                                    color: @light_blue;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

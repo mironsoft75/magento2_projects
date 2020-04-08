@@ -1,0 +1,215 @@
+.cms-index-index {
+    .slider-main-box {
+        > .rev_slider_wrapper {
+            margin-left: -10px !important;
+            width: calc(~"100% + 20px");
+        }
+    }
+    .widget.block.block-static-block {
+        margin-bottom: 0;
+    }
+    //homepage slider 
+    .tp-parallax-wrap .flex-caption-contents {
+        margin:0;
+        .co-title {
+            width: auto;
+            font-weight: bold;
+            h1 {
+                margin: 0;
+                color: @homepage_slider_txt_color;
+                text-transform: uppercase;
+                font-family: @primary-font-bold;
+                text-align: left;
+                font-size: 55px;
+                @media @mobile{
+                    font-size: 42px !important;
+                }
+            }
+        }
+        .subtitle {
+            display: inline-block;
+            h3 {
+                color: @homepage_slider_txt_color;
+                font-size: 16px;
+                margin: 0;
+                font-family: @primary-font-bold;
+                text-transform: uppercase;
+                @media @mobile{
+                    font-size: 12px !important;
+                    margin-top: 10px !important;
+                }
+            }
+        }
+        .btn-container {
+            box-sizing: border-box;
+            display: block;
+            padding-top: 30px;
+            padding-left: 150px;
+            height: auto;
+            width: 100%;
+            @media @mobile{
+                padding-top: 10px !important;
+                padding-left: 135px !important;
+            }
+            a {
+                display: inline-block;
+                text-transform: uppercase;
+                width: auto;
+                height: auto;
+                background: @slide_btn_bg;
+                padding: 15px;
+                border: 3px solid @secondary;
+                border-radius: 0;
+                outline: none;
+                color: @slide_btn_color;
+                font-size: 24px;
+                box-shadow: none;
+                margin: 0;
+                @media @mobile{
+                    padding: 10px !important;
+                    border: 3px solid @secondary;
+                    font-size: 14px !important;
+                }
+            }
+        }
+    }
+    //homepage slider
+    .vehicle-main {
+        margin-top: 10px;
+    }
+    .column.main {
+        padding-bottom: 0;
+    }
+    .two-color-title {
+        margin: 0;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+        @media @desktop {
+            padding-left: 20px;
+        }
+    }
+    .shop-now {
+        padding-bottom: 22px;
+        @media @mobile {
+            margin-left: -@page-content-horizontal-padding;
+            margin-right: -@page-content-horizontal-padding;
+            padding: 0 @page-content-horizontal-padding;
+        }
+    }
+    .cards-main {
+        display: flex;
+        flex-wrap: wrap;
+        .card {
+            flex-basis: 33.33%;
+            padding: 0 5px;
+            box-sizing: border-box;
+            cursor: pointer;
+            margin-bottom: 10px;
+            @media @mobile {
+                flex-basis: 100%;
+                padding: 0;
+            }
+            .card-content {
+                display: block;
+                position: relative;
+                border: 3px solid transparent;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                .image-main {
+                    height: 170px;
+                    display: block;
+                    img {
+                        height: 100%;
+                        object-fit: cover;
+                        width: 100%;
+                    }
+                }
+                .content-main {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    span.title {
+                        font-size: 1.8rem;
+                        font-family: @primary-font-bold;
+                    }
+                    text-transform: uppercase;
+                }
+                .list-main {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    box-sizing: border-box;
+                    margin: 0;
+                    padding: 20px;
+                    list-style: none;
+                    overflow-y: hidden;
+                    text-transform: uppercase;
+                    li {
+                        margin: 0;
+                        margin-bottom: 5px;
+                        padding: 0;
+                        border: none;
+                        img {
+                            height: 41px;
+                        }
+                        a {
+                            color: @homepage_cardlink;
+                            transition: all 0.2s ease;
+                            &:hover {
+                                color: @homepage_cardlink_hover;
+                            }
+                        }
+                    }
+                    @media @mobile {
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+        .card:nth-child(3n+1) {
+            padding-left: 0;
+        }
+        .card:nth-child(3n) {
+            padding-right: 0;
+        }
+        .card:hover .card-content {
+            border: 3px solid @home_card_hover_border;
+        }
+    }
+}
+
+@media @mobile {
+    .nav-open .cards-main .card .card-content {
+        z-index: -1;
+    }
+        //homepage slider 
+    .rev_slider_wrapper .rev_slider .tp-leftarrow.tparrows.uranus{
+        left: -25px !important;
+    }
+    .rev_slider_wrapper .rev_slider .tp-rightarrow.tparrows.uranus{
+        left: 105% !important;
+    }
+    .rev_slider_wrapper .rev_slider .uranus.tparrows::before{
+        font-size: 30px !important;
+    }
+    .rev_slider_wrapper .rev_slider .tp-bullets.pim-slide-bot {
+        .tp-bullet{
+            width: 35px !important;
+            height: 3px !important;
+        }
+    }
+    .tp-bullets, .tp-tabs, .tp-thumbs{
+        left: 110% !important;
+    }
+}

@@ -1,0 +1,42 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+?>
+<?php
+$collection = $block->getCollection();
+?>
+<?php if ($block->getDisplay() && count($collection)): ?>
+<div class="block amblog-recentposts">
+    <div class="block-title">
+        <strong><span><?php echo $block->getBlockHeader(); ?></span></strong>
+    </div>
+    <div class="block-content">
+        <ul class="mbplog-recent-posts">
+        <?php foreach ($collection as $post): ?>
+            <li class="amblog-recent-post<?php if ($post->getIsActive()): ?> active<?php endif; ?> amblog-recent-post-<?php echo $post->getId(); ?> fix-me">
+                <?php if ($block->hasThumbnail($post)): ?>
+                <a class="thumbnail" href="<?php echo $post->getPostUrl(); ?>" title="<?php echo $block->escapeHtml($post->getTitle()); ?>">
+                    <img class="img" src="<?php echo $block->getThumbnailSrc($post); ?>" alt="<?php echo $block->escapeHtml($post->getTitle()); ?>" >
+                </a>
+                <?php endif; ?>
+                <a href="<?php echo $post->getPostUrl(); ?>"><?php echo $block->escapeHtml($post->getTitle()); ?></a>
+                <?php if ($block->showDate()): ?>
+                <div class="am-recentpost-date">
+                    <?php echo $block->renderDate($post->getCreatedAt()); ?>
+                </div>
+                <?php endif; ?>
+                <?php if ($block->showThesis()): ?>
+                <div class="am-post-thesis">
+                    <?php echo $block->getStrippedContent($post->getShortContent()); ?>
+                </div>
+                <?php endif; ?>
+
+            </li>
+        <?php endforeach; ?>
+        </ul>
+    </div>
+</div>
+<?php endif; ?>

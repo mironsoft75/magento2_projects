@@ -1,0 +1,238 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="config">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="layout">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="tag">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="color_schemes">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="default">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element type="xs:string" name="label"/>
+                                                                <xs:element name="data">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element type="xs:string" name="textcolor"/>
+                                                                            <xs:element type="xs:string" name="textcolor2"/>
+                                                                            <xs:element type="xs:string" name="hicolor"/>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="grey">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element type="xs:string" name="label"/>
+                                                                <xs:element name="data">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element type="xs:int" name="textcolor"/>
+                                                                            <xs:element type="xs:string" name="textcolor2"/>
+                                                                            <xs:element type="xs:int" name="hicolor"/>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="red">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element type="xs:string" name="label"/>
+                                                                <xs:element name="data">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element type="xs:int" name="textcolor"/>
+                                                                            <xs:element type="xs:string" name="textcolor2"/>
+                                                                            <xs:element type="xs:int" name="hicolor"/>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="green">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element type="xs:string" name="label"/>
+                                                                <xs:element name="data">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element type="xs:int" name="textcolor"/>
+                                                                            <xs:element type="xs:string" name="textcolor2"/>
+                                                                            <xs:element type="xs:int" name="hicolor"/>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="blue">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element type="xs:string" name="label"/>
+                                                                <xs:element name="data">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element type="xs:int" name="textcolor"/>
+                                                                            <xs:element type="xs:string" name="textcolor2"/>
+                                                                            <xs:element type="xs:int" name="hicolor"/>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="white">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element type="xs:string" name="label"/>
+                                                                <xs:element name="data">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element type="xs:string" name="textcolor"/>
+                                                                            <xs:element type="xs:string" name="textcolor2"/>
+                                                                            <xs:element type="xs:string" name="hicolor"/>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="content">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="search">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:string" name="label"/>
+                                                    <xs:element type="xs:string" name="frontend_block"/>
+                                                    <xs:element type="xs:string" name="backend_image"/>
+                                                    <xs:element type="xs:byte" name="sort_order"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="sidebar">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="search">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:string" name="label"/>
+                                                    <xs:element type="xs:string" name="frontend_block"/>
+                                                    <xs:element type="xs:string" name="backend_image"/>
+                                                    <xs:element type="xs:byte" name="sort_order"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="categories">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:string" name="label"/>
+                                                    <xs:element type="xs:string" name="frontend_block"/>
+                                                    <xs:element type="xs:string" name="backend_image"/>
+                                                    <xs:element type="xs:byte" name="sort_order"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="recent-posts">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:string" name="label"/>
+                                                    <xs:element type="xs:string" name="frontend_block"/>
+                                                    <xs:element type="xs:string" name="backend_image"/>
+                                                    <xs:element type="xs:byte" name="sort_order"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="recent-comments">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:string" name="label"/>
+                                                    <xs:element type="xs:string" name="frontend_block"/>
+                                                    <xs:element type="xs:string" name="backend_image"/>
+                                                    <xs:element type="xs:byte" name="sort_order"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="tags">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:string" name="label"/>
+                                                    <xs:element type="xs:string" name="frontend_block"/>
+                                                    <xs:element type="xs:string" name="backend_image"/>
+                                                    <xs:element type="xs:byte" name="sort_order"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="import">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="awblog">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:string" name="label"/>
+                                        <xs:element type="xs:string" name="note"/>
+                                        <xs:element type="xs:byte" name="use_store_visibility"/>
+                                        <xs:element type="xs:string" name="helper"/>
+                                        <xs:element type="xs:string" name="form"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="wordpress">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:string" name="label"/>
+                                        <xs:element type="xs:string" name="note"/>
+                                        <xs:element type="xs:byte" name="use_store_visibility"/>
+                                        <xs:element type="xs:string" name="helper"/>
+                                        <xs:element name="form">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="export_xml">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element type="xs:string" name="label"/>
+                                                                <xs:element type="xs:string" name="class"/>
+                                                                <xs:element type="xs:byte" name="required"/>
+                                                                <xs:element type="xs:string" name="name"/>
+                                                                <xs:element type="xs:string" name="type"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

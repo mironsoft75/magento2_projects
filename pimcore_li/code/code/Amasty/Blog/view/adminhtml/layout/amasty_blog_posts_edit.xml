@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+-->
+<!--
+/**
+ * Copyright © 2015 Amasty. All rights reserved.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Amasty_Blog::css/edit.css"/>
+        <css src="Amasty_Blog::css/jquery.tagit.css"/>
+        <css src="Amasty_Blog::css/tagit.ui-zendesk.css"/>
+    </head>
+    <body>
+        <referenceContainer name="left">
+            <block class="Amasty\Blog\Block\Adminhtml\Posts\Edit\Tabs" name="amasty_blog_posts_edit_tabs" >
+                <arguments>
+                    <argument name="id" xsi:type="string">amasty_blog_posts_edit_tabs</argument>
+                    <argument name="dest_element_id" xsi:type="string">edit_form</argument>
+                    <argument name="title" xsi:type="string" translate="true">Posts</argument>
+                </arguments>
+
+
+                <block class="Amasty\Blog\Block\Adminhtml\Posts\Edit\Tab\Content" name="amasty_blog_posts_edit_tab_content">
+                    <block class="Magento\Backend\Block\Text\ListText" name="content.form_after" as="form_after" />
+                </block>
+                <block class="Amasty\Blog\Block\Adminhtml\Posts\Edit\Tab\Thumbnail" name="amasty_blog_posts_edit_tab_thumbnail"/>
+                <block class="Amasty\Blog\Block\Adminhtml\Posts\Edit\Tab\Additional" name="amasty_blog_posts_edit_tab_additional"/>
+                <block class="Amasty\Blog\Block\Adminhtml\Posts\Edit\Tab\Metadata" name="amasty_blog_posts_edit_tab_metadata"/>
+                <block class="Amasty\Blog\Block\Adminhtml\Posts\Edit\Tab\Statistics" name="amasty_blog_posts_edit_tab_stat"/>
+
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">Content</argument>
+                    <argument name="block" xsi:type="string">amasty_blog_posts_edit_tab_content</argument>
+                </action>
+
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">Thumbnail</argument>
+                    <argument name="block" xsi:type="string">amasty_blog_posts_edit_tab_thumbnail</argument>
+                </action>
+
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">Additional</argument>
+                    <argument name="block" xsi:type="string">amasty_blog_posts_edit_tab_additional</argument>
+                </action>
+
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">Metadata</argument>
+                    <argument name="block" xsi:type="string">amasty_blog_posts_edit_tab_metadata</argument>
+                </action>
+
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">Stats</argument>
+                    <argument name="block" xsi:type="string">amasty_blog_posts_edit_tab_stat</argument>
+                </action>
+
+            </block>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Amasty\Blog\Block\Adminhtml\Posts\Edit" name="amasty_rewards_rule_edit"/>
+            <block class="Amasty\Blog\Block\Adminhtml\Posts\Tags" template="Amasty_Blog::posts_js.phtml" name="posts_form_scripts" />
+        </referenceContainer>
+    </body>
+</page>

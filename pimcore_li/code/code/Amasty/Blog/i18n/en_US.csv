@@ -1,0 +1,303 @@
+Categories,Categories
+"New Category","New Category"
+"Save and Continue Edit","Save and Continue Edit"
+"Edit Category `%1`","Edit Category `%1`"
+"Add New Category","Add New Category"
+Category,Category
+General,General
+Name,Name
+"Url Key","Url Key"
+"Sort Order","Sort Order"
+Status,Status
+Enabled,Enabled
+Disabled,Disabled
+"Visible In","Visible In"
+"Meta Data","Meta Data"
+"Meta Title","Meta Title"
+"Meta Tags","Meta Tags"
+"Meta Description","Meta Description"
+"Restricts in All","Restricts in All"
+"All Store Views","All Store Views"
+Comments,Comments
+"Edit Comment `%1`","Edit Comment `%1`"
+"Add New Comment","Add New Comment"
+Content,Content
+E-Mail,E-Mail
+Comment,Comment
+Approved,Approved
+Pending,Pending
+Rejected,Rejected
+"Posted From","Posted From"
+" <a href=""%1"">Show more</a>"," <a href=""%1"">Show more</a>"
+"Amasty Posts","Amasty Posts"
+"Add Post","Add Post"
+"Edit Post `%1`","Edit Post `%1`"
+"Add new Post","Add new Post"
+Post,Post
+Additional,Additional
+Author,Author
+"Google Profile","Google Profile"
+"Facebook Profile","Facebook Profile"
+"Twitter Profile","Twitter Profile"
+"Posted in","Posted in"
+"Allow comments","Allow comments"
+Yes,Yes
+No,No
+Remove,Remove
+Title,Title
+"URL Key","URL Key"
+"Short Content","Short Content"
+"Full Content","Full Content"
+Tags,Tags
+"Publish Status","Publish Status"
+Published,Published
+Hidden,Hidden
+Scheduled,Scheduled
+"Published Date","Published Date"
+Statistics,Statistics
+Views,Views
+Thumbnail,Thumbnail
+Thumbnails,Thumbnails
+"Post Image","Post Image"
+"The image will be resized to size from blog config","The image will be resized to size from blog config"
+"List Image","List Image"
+"Image link","Image link"
+Posts,Posts
+"One Column","One Column"
+"Two Columns and Left Sidebar","Two Columns and Left Sidebar"
+"Two Columns and Right Sidebar","Two Columns and Right Sidebar"
+"Three Columns","Three Columns"
+"Are you sure?","Are you sure?"
+"Use Website","Use Website"
+"Use Default","Use Default"
+List,List
+Grid,Grid
+"Select one and press Apply","Select one and press Apply"
+label,label
+"Amasty Tags","Amasty Tags"
+"Add Tag","Add Tag"
+"Edit Tag `%1`","Edit Tag `%1`"
+"Add New Tag","Add New Tag"
+Tag,Tag
+"Product ID","Product ID"
+Sku,Sku
+Price,Price
+"Edit Tag","Edit Tag"
+ID,ID
+"%1 comments","%1 comments"
+"No comments","No comments"
+Home,Home
+"Unknown post id.","Unknown post id."
+"Search results for '%1'","Search results for '%1'"
+"There are following posts founded for the search request '%1'","There are following posts founded for the search request '%1'"
+"Posts tagged '%1'","Posts tagged '%1'"
+"Blog Posts","Blog Posts"
+"Blog Tags","Blog Tags"
+"Blog Categories","Blog Categories"
+"Blog Comments","Blog Comments"
+"Blog Post Feed","Blog Post Feed"
+"Blog Tags Feed","Blog Tags Feed"
+"Recent Comments","Recent Comments"
+"Recent Posts","Recent Posts"
+"Search the blog","Search the blog"
+"%1 Topics","%1 Topics"
+"Amasty Blog Categories","Amasty Blog Categories"
+"You have deleted the category.","You have deleted the category."
+"We can't find a category to delete.","We can't find a category to delete."
+"This item no longer exists.","This item no longer exists."
+"You activated the category(s).","You activated the category(s)."
+"You inactivated the category(s).","You inactivated the category(s)."
+"You deleted the category(s).","You deleted the category(s)."
+"We can't delete category(s) right now. Please review the log and try again.","We can't delete category(s) right now. Please review the log and try again."
+"The wrong item is specified.","The wrong item is specified."
+"You saved the item.","You saved the item."
+"Something went wrong while saving the item data. Please review the error log.","Something went wrong while saving the item data. Please review the error log."
+"Amasty Blog Comments","Amasty Blog Comments"
+"This request no longer exists.","This request no longer exists."
+"You deleted comment.","You deleted comment."
+"We can't find a comment to delete.","We can't find a comment to delete."
+"Reply to Comment `%1`","Reply to Comment `%1`"
+"You activated the comment(s).","You activated the comment(s)."
+"You inactivated the comment(s).","You inactivated the comment(s)."
+"You deleted the comment(s).","You deleted the comment(s)."
+"We can't delete comment(s) right now. Please review the log and try again.","We can't delete comment(s) right now. Please review the log and try again."
+"Amasty Blog Posts","Amasty Blog Posts"
+"You deleted post.","You deleted post."
+"We can't find a post to delete.","We can't find a post to delete."
+"Please select a post to duplicate.","Please select a post to duplicate."
+"The post has been duplicated.","The post has been duplicated."
+"Add New Post","Add New Post"
+"You activated the post(s).","You activated the post(s)."
+"You inactivated the post(s).","You inactivated the post(s)."
+"You deleted the post(s).","You deleted the post(s)."
+"We can't delete post(s) right now. Please review the log and try again.","We can't delete post(s) right now. Please review the log and try again."
+"Amasty Blog Tags","Amasty Blog Tags"
+"You deleted tag.","You deleted tag."
+"We can't find a tag to delete.","We can't find a tag to delete."
+"We can't delete tag(s) right now. Please review the log and try again.","We can't delete tag(s) right now. Please review the log and try again."
+"Can not create comment.","Can not create comment."
+"Your session was expired. Please refresh this page and try again.","Your session was expired. Please refresh this page and try again."
+"Post is not found.","Post is not found."
+Today,Today
+Yesterday,Yesterday
+"%1 days ago","%1 days ago"
+"%1 day ago","%1 day ago"
+"%1 month ago","%1 month ago"
+"%1 months ago","%1 months ago"
+"%1 year ago","%1 year ago"
+"%1 years ago","%1 years ago"
+"URL route and URL key are not allow /","URL route and URL key are not allow /"
+Wait,Wait
+Sent,Sent
+Canceled,Canceled
+Failed,Failed
+Subscribed,Subscribed
+Unsubscribed,Unsubscribed
+Classic,Classic
+Red,Red
+Green,Green
+Blue,Blue
+Grey,Grey
+"Old Magento","Old Magento"
+"No Postfix","No Postfix"
+.html,.html
+Blog,Blog
+"Image file was not found.","Image file was not found."
+Twitter,Twitter
+Facebook,Facebook
+VKontakte,VKontakte
+Odnoklassniki,Odnoklassniki
+Blogger,Blogger
+Pinterest,Pinterest
+Tumblr,Tumblr
+Digg,Digg
+Del.icio.us,Del.icio.us
+StumbleUpon,StumbleUpon
+Slashdot,Slashdot
+Reddit,Reddit
+LinkedIn,LinkedIn
+"Google Bookmarks","Google Bookmarks"
+"Google Plus","Google Plus"
+"Category '%1' can be disabled only. Some category has same Url Key for the same Store View.","Category '%1' can be disabled only. Some category has same Url Key for the same Store View."
+"A Category with the same url key already exists.","A Category with the same url key already exists."
+"Post '%1' can be disabled only. Some post has same Url Key for the same Store View.","Post '%1' can be disabled only. Some post has same Url Key for the same Store View."
+"A post with the same url key already exists.","A post with the same url key already exists."
+"Drop here","Drop here"
+"Remove Block","Remove Block"
+"Add Block to Column","Add Block to Column"
+Apply,Apply
+"RSS Feed with Comments","RSS Feed with Comments"
+"Leave a comment","Leave a comment"
+"Leave a reply to %1","Leave a reply to %1"
+"Leave your awesome reply here...","Leave your awesome reply here..."
+"Leave your awesome comment here...","Leave your awesome comment here..."
+Reply,Reply
+"John Doe","John Doe"
+john.doe@example.com,john.doe@example.com
+Email,Email
+"Subscribe to replies","Subscribe to replies"
+"Subscribe to comments","Subscribe to comments"
+Submit,Submit
+"Please ","Please "
+login,login
+" to reply."," to reply."
+" to comment."," to comment."
+"Don't have an account?","Don't have an account?"
+"Sign Up for free","Sign Up for free"
+"%1 at %2","%1 at %2"
+"This comment will become public after administrator approval.","This comment will become public after administrator approval."
+"Subscribe RSS Feed","Subscribe RSS Feed"
+"RSS Feed","RSS Feed"
+"Read More","Read More"
+"There are no posts yet.","There are no posts yet."
+"Swipe to the right","Swipe to the right"
+"Swipe to the left","Swipe to the left"
+"Posted in: ","Posted in: "
+"Newer Entries","Newer Entries"
+"Older Entries","Older Entries"
+Search,Search
+"Print This Page","Print This Page"
+Print,Print
+"By ","By "
+"%1 Views","%1 Views"
+"%1 comment","%1 comment"
+"Unfortunately, your browser doesn't support HTML5 canvas.","Unfortunately, your browser doesn't support HTML5 canvas."
+"Amasty Blog","Amasty Blog"
+"Footer Menu Integration","Footer Menu Integration"
+Display,Display
+Label,Label
+"Search Engine Optimization","Search Engine Optimization"
+"Breadcrumb Label","Breadcrumb Label"
+Route,Route
+"Title Prefix for Blog Pro","Title Prefix for Blog Pro"
+"Meta Title for Blog Pro","Meta Title for Blog Pro"
+"Meta Keywords for Blog Pro","Meta Keywords for Blog Pro"
+"Meta Description for Blog Pro","Meta Description for Blog Pro"
+"URLs and Redirects","URLs and Redirects"
+"URL Postfix","URL Postfix"
+"Redirect to SEO formatted URL","Redirect to SEO formatted URL"
+Layout,Layout
+"Mobile List","Mobile List"
+"Mobile Post","Mobile Post"
+"Desktop List","Desktop List"
+"Desktop Post","Desktop Post"
+"Number of Posts per Page","Number of Posts per Page"
+"Display Author Name","Display Author Name"
+"Display Number of Views","Display Number of Views"
+"Display Print Link","Display Print Link"
+"Display Categories","Display Categories"
+"Display Tags","Display Tags"
+"Date Format","Date Format"
+"Width of image on Blog page","Width of image on Blog page"
+"Height of image on Blog page","Height of image on Blog page"
+"Use Comments","Use Comments"
+"Automatic Approving","Automatic Approving"
+"Allow Guest Comments","Allow Guest Comments"
+"Quantity of Recent Comments in Block","Quantity of Recent Comments in Block"
+"Display Short Content for Recent Comments","Display Short Content for Recent Comments"
+"Display Date for Recent Comments","Display Date for Recent Comments"
+"Attribute rel=""nofollow"" for Links in Comment","Attribute rel=""nofollow"" for Links in Comment"
+"Ask Email for Comment","Ask Email for Comment"
+"Ask Name for Comment","Ask Name for Comment"
+"Enable GDPR consent","Enable GDPR consent"
+"GDPR Consent Text","GDPR Consent Text"
+"Recent Posts Block","Recent Posts Block"
+"Recent Posts Quantity in Block","Recent Posts Quantity in Block"
+"Display Short Content","Display Short Content"
+"Display Date","Display Date"
+"Short Content Limit","Short Content Limit"
+"Minimal Posts Number per Tag","Minimal Posts Number per Tag"
+"Use 3D Cloud to Display Tags","Use 3D Cloud to Display Tags"
+"3D Cloud: Height","3D Cloud: Height"
+"3D Cloud: Color Scheme","3D Cloud: Color Scheme"
+"Choose any color scheme and press Apply to fill color fields automatically","Choose any color scheme and press Apply to fill color fields automatically"
+"3D Cloud: Text Color","3D Cloud: Text Color"
+"3D Cloud: Tag Color for Less Used Tags","3D Cloud: Tag Color for Less Used Tags"
+"3D Cloud: Tag Highlight Color","3D Cloud: Tag Highlight Color"
+RSS,RSS
+"Display Link on List","Display Link on List"
+"Post Feed","Post Feed"
+"Category Feed","Category Feed"
+"Comment Feed","Comment Feed"
+"Publisher Information","Publisher Information"
+"Facebook Account","Facebook Account"
+"Twitter Account","Twitter Account"
+"Social Buttons","Social Buttons"
+Networks,Networks
+"Look and Feel","Look and Feel"
+Include,Include
+Activate,Activate
+Inactivate,Inactivate
+Delete,Delete
+"Store Views","Store Views"
+"Created At","Created At"
+"Updated At","Updated At"
+Action,Action
+Edit,Edit
+E-mail,E-mail
+Approve,Approve
+Reject,Reject
+"Published At","Published At"
+Duplicate,Duplicate
+"Tagged Posts","Tagged Posts"
+"Used in Posts","Used in Posts"

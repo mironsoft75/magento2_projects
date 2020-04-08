@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * SocialShare
+ *
+ * @package     Ulmod_SocialShare
+ * @author      Ulmod <support@ulmod.com>
+ * @copyright   Copyright (c) 2016 Ulmod (http://www.ulmod.com/)
+ * @license     http://www.ulmod.com/license-agreement.html
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+     <body>
+		 	<move element="um-socialshare-page" destination="product.info.social" after="-"/>
+     </body>
+</page>

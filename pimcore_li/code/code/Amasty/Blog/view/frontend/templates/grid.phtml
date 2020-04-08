@@ -1,0 +1,64 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+?>
+<div class="amblog-container grid">
+    <div class="am-blog-head fix-me">
+        <!--<h1 class="am-title"><?php /*echo $block->getPageHeader(); */?></h1>-->
+        <?php if ($block->getShowRssLink()): ?>
+            <span class="am-blog-rss">
+            <i class="<?php echo $block->getColorClass(); ?> glyphicons rss"></i>
+            <a class="am-blog-rss-link" href="<?php echo $block->getRssFeedUrl(); ?>" target="_blank"
+               title="<?php echo __("Subscribe RSS Feed"); ?>">
+                <?php echo __("RSS Feed"); ?>
+            </a>
+        </span>
+        <?php endif; ?>
+    </div>
+    
+    <?php if (count($block->getCollection())): ?>
+
+    <ul class="list">
+            <?php foreach ($block->getCollection() as $post): ?>
+        <li class="list-item">
+            <div class="list-content">
+                <h3><a href="<?php echo $post->getPostUrl(); ?>"><?php echo $block->escapeHtml($post->getTitle()); ?></a></h3>
+
+                <?php if ($post->getListThumbnailSrc()): ?>
+                    <div class="thumbnail-container">
+                        <div class="post-thumbnail">
+                            <a
+                                href="<?php echo $post->getPostUrl(); ?>"
+                                title="<?php echo $block->escapeHtml($post->getTitle()); ?>">
+
+                                <img class="thumbnail"
+                                     src="<?php echo $post->getListThumbnailSrc(); ?>"
+                                     alt="<?php echo $block->escapeHtml($post->getTitle()); ?>"/>
+                            </a>
+                        </div>
+                    </div>
+                <?php endif; ?>
+
+                <?php echo $block->getHeaderHtml($post); ?>
+
+                <p><?php echo $post->getShortContent(); ?></p>
+
+                <?php echo $block->getFooterHtml($post); ?>
+
+                <a class="button am-read-more" href="<?php echo $block->getReadMoreUrl($post); ?>" title="<?php echo __("Read More"); ?>">
+                    <?php echo __("Read More"); ?>
+                </a>
+            </div>
+        </li>
+        <?php endforeach; ?>
+
+    </ul>
+        <?php echo $block->getToolbarHtml(); ?>
+    <?php else: ?>
+        <?php echo __("There are no posts yet."); ?>
+    <?php endif; ?>
+
+</div>

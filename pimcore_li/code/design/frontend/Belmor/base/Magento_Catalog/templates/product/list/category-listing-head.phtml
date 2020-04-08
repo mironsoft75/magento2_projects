@@ -1,0 +1,46 @@
+<?php
+/** @var \Pimcore\Product\Helper\Data $pimcoreProductHelper */
+$pimcoreProductHelper = $this->helper('\Pimcore\Product\Helper\Data');
+$isMakePage = $pimcoreProductHelper->hasOnlyMakeFilter($block->getRequest());
+?>
+<?php if($isMakePage): ?>
+<style>#page-title-heading,.listing-applied-filters-main{ display:none;}</style>
+    <?php
+    echo $block->getLayout()
+        ->createBlock('Magento\Cms\Block\Block')
+        ->setBlockId($block->getRequest()->getParam('listinghead_cms_id'))
+        ->toHtml();
+    ?>
+<!--<div class="listing-head-info">
+    <div class="image-title-main">
+        <div class="img-main">
+            <img src="https://belmor.com/pub/media/catalog/category/category-mast-default2-d-x2.jpg" />
+        </div>
+        <div class="titles-main">
+            <p class="sm-img-title">Chevy Trucks</p>
+            <h1 class="lg-img-title">Chevy Trucks</h1>
+        </div>
+    </div>
+    <div class="content-main">
+        <ul class="sub-category-main">
+            <li class="sub-category">
+                <a href="#">Checvy Silverado 1500</a>
+            </li>
+            <li class="sub-category">
+                <a href="#">Checvy Silverado 2500</a>
+            </li>
+            <li class="sub-category">
+                <a href="#">Checvy Silverado 3500</a>
+            </li>
+            <li class="sub-category">
+                <a href="#">Checvy colorado</a>
+            </li>
+        </ul>
+        <div class="info-content">
+            <p class="info">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet ipsum nec justo tincidunt placerat. Donec at placerat enim. Pellentesque eget metus ac neque finibus placerat. Pellentesque tempus rhoncus arcu sed placerat. Donec pharetra quam at lorem viverra, a faucibus ipsum rhoncus. Vivamus consectetur laoreet orci a commodo. Maecenas porta rhoncus sodales.
+            </p>
+        </div>
+    </div>
+</div>-->
+<?php endif; ?>

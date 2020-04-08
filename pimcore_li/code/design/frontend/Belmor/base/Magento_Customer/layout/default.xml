@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+        <referenceContainer name="sidebar.additional" remove="true" />
+
+        <referenceBlock name="top.links">   
+
+            <!-- Remove wish list link-->
+            <referenceBlock name="multiple-wish-list-link" remove="true" />
+
+            <!-- Remove News link-->
+            <referenceBlock name="news-link" remove="true"/>
+
+            <!-- Remove Invitation link-->
+            <referenceBlock name="invitation_link_top" remove="true"/>
+
+             <!-- Support link -->
+              <block class="Magento\Framework\View\Element\Html\Link" name="contact-top-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Support</argument>
+                    <argument name="path" xsi:type="string" translate="true">contact</argument>
+                </arguments>
+            </block>        
+
+            <!-- Logout link -->
+            <block class="Magento\Framework\View\Element\Html\Link" name="logout-top-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Logout</argument>
+                    <argument name="path" xsi:type="string" translate="true">customer/account/logout</argument>
+                </arguments>
+            </block>        
+        </referenceBlock>
+    </body>
+</page>

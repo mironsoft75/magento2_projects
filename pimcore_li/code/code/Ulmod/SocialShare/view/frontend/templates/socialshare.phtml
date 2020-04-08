@@ -1,0 +1,698 @@
+<?php
+/**
+ * SocialShare
+ *
+ * @package     Ulmod_SocialShare
+ * @author      Ulmod <support@ulmod.com>
+ * @copyright   Copyright (c) 2016 Ulmod (http://www.ulmod.com/)
+ * @license     http://www.ulmod.com/license-agreement.html
+ */
+?>
+<?php
+/**
+ * @var $block \Ulmod\SocialShare\Block\SocialShare
+ */
+?>
+<?php
+$_helper = $this->helper('Ulmod\SocialShare\Helper\Data');
+?>
+<?php if ($block->isEnabled()) : ?>
+<?php
+/**
+ * Homepage
+ */
+?>
+<?php if ($_helper->isShowHomepage()) : ?>
+<?php if ($block->getIsHomePage()) : ?>       
+<?php if ($_helper->getDisplayServices() == "display_individual_services") : ?>   
+<div class="um-socialshare um-sharing-homepage individual-services" 
+  id="um-sharing-homepage">
+    <?php if ($_helper->getStyleInHomepage() == "style1"
+           || $_helper->getStyleInHomepage() == "style2"
+           || $_helper->getStyleInHomepage() == "style3") :?>                     
+    <div class="addthis_toolbox addthis_default_style  
+        <?php
+        if ($_helper->getStyleInHomepage() == "style2") {
+          /* @noEscape */ echo __('addthis_20x20_style');
+        } elseif ($_helper->getStyleInHomepage() == "style3") {
+          /* @noEscape */ echo __('addthis_32x32_style');
+        } else {
+          /* @noEscape */ echo __(' ');
+        }
+            ?>">
+            <?php if ($_helper->getDisplayWhatsapp()) :?>    
+         <a class="addthis_button_whatsapp"></a>
+            <?php endif; ?>            
+            <?php if ($_helper->getDisplayFacebook()) :?>    
+         <a class="addthis_button_facebook"></a>
+            <?php endif; ?>    
+            <?php if ($_helper->getDisplayTwitter()) :?>              
+         <a class="addthis_button_twitter"></a>
+            <?php endif; ?>                   
+            <?php if ($_helper->getDisplayLinkedin()) :?>                 
+          <a class="addthis_button_linkedin"></a>
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayGoogleplus()) :?>
+         <a class="addthis_button_google_plusone_share"></a>
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayPinterest()) :?>
+         <a class="addthis_button_pinterest_share"></a>   
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayEmail()) :?>  
+         <a class="addthis_button_email"></a> 
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayCompact()) :?>    
+         <a class="addthis_button_compact"></a>
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayCounter()) :?>    
+         <a class="addthis_counter"></a>  
+            <?php endif; ?>                 
+     </div>
+        <?php endif; ?>
+        <?php if ($_helper->getStyleInHomepage() == "style4") :?>     
+     <div class="addthis_toolbox addthis_default_style">
+            <?php if ($_helper->getDisplayWhatsapp()) :?>    
+          <a class="addthis_button_whatsapp addthis_20x20_style"></a>
+            <?php endif; ?>      
+            <?php if ($_helper->getDisplayFacebook()) :?>    
+          <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+            <?php endif; ?>    
+            <?php if ($_helper->getDisplayTwitter()) :?>              
+          <a class="addthis_button_tweet"></a>
+            <?php endif; ?>                   
+            <?php if ($_helper->getDisplayLinkedin()) :?>                 
+          <a class="addthis_button_linkedin_counter"></a> 
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayGoogleplus()) :?>
+          <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayPinterest()) :?>
+         <a class="addthis_button_pinterest_pinit"
+        pi:pinit:url="http://www.apple.com"
+        pi:pinit:media="http://images.apple.com/home/images/hero.jpg"
+        pi:pinit:layout="horizontal"></a> 
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayCompact()) :?>    
+         <a class="addthis_button_compact"></a>
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayCounter()) :?>    
+         <a class="addthis_counter"></a>  
+            <?php endif; ?>               
+     </div>
+    <?php endif;?>                       
+</div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=[YOUR PUB ID]">
+</script>       
+<?php endif; ?>             
+<?php if ($_helper->getDisplayServices() == "display_all_services") : ?>  
+<div class="um-socialshare um-sharing-homepage all-services" id="um-sharing-homepage">
+    <?php if ($_helper->getStyleInHomepage() == "style1"
+            || $_helper->getStyleInHomepage() == "style2"
+            || $_helper->getStyleInHomepage() == "style3") :?>   
+    <div class="addthis_toolbox addthis_default_style  
+        <?php
+        if ($_helper->getStyleInHomepage() == "style2") {
+          /* @noEscape */ echo __('addthis_20x20_style');
+        } elseif ($_helper->getStyleInHomepage() == "style3") {
+          /* @noEscape */ echo __('addthis_32x32_style');
+        } else {
+          /* @noEscape */ echo __(' ');
+        }
+            ?>">  
+         <a class="addthis_button_whatsapp"></a>         
+         <a class="addthis_button_facebook"></a> 
+         <a class="addthis_button_twitter"></a>             
+         <a class="addthis_button_linkedin"></a>
+         <a class="addthis_button_google_plusone_share"></a>
+         <a class="addthis_button_pinterest_share"></a>
+         <a class="addthis_button_email"></a>   
+         <a class="addthis_button_compact"></a> 
+         <a class="addthis_counter"></a>                
+      </div>
+    <?php endif;?>
+    <?php if ($_helper->getStyleInHomepage() == "style4") :?>  
+         <div class="addthis_toolbox addthis_default_style">
+             <a class="addthis_button_whatsapp addthis_20x20_style"></a>
+             <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>        
+             <a class="addthis_button_tweet"></a>       
+             <a class="addthis_button_linkedin_counter"></a>  
+             <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+             <a class="addthis_button_pinterest_pinit"
+          pi:pinit:url="http://www.apple.com"
+          pi:pinit:media="http://images.apple.com/home/images/hero.jpg"
+          pi:pinit:layout="horizontal"></a>
+             <a class="addthis_button_compact"></a> 
+             <a class="addthis_counter"></a>              
+         </div>
+    <?php endif;?>                           
+</div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=[YOUR PUB ID]">
+</script>        
+<?php endif; ?>
+<?php endif; ?>
+<?php endif; ?>
+<?php
+/**
+ * Cms Page
+ */
+?>
+<?php if ($_helper->isShowCmsPage()) : ?>   
+<?php  if ($block->getIsCmsPage()) { ?>
+<?php if ($_helper->getDisplayServices() == "display_individual_services") : ?>   
+<div class="um-socialshare um-sharing-cmspage individual-services" 
+  id="um-sharing-cmspage">
+    <?php if ($_helper->getStyleInCmsPage() == "style1"
+           || $_helper->getStyleInCmsPage() == "style2"
+           || $_helper->getStyleInCmsPage() == "style3") :?>                    
+    <div class="addthis_toolbox addthis_default_style  
+        <?php
+        if ($_helper->getStyleInCmsPage() == "style2") {
+          /* @noEscape */ echo __('addthis_20x20_style');
+        } elseif ($_helper->getStyleInCmsPage() == "style3") {
+          /* @noEscape */ echo __('addthis_32x32_style');
+        } else {
+          /* @noEscape */ echo __(' ');
+        }
+            ?>">          
+            <?php if ($_helper->getDisplayWhatsapp()) :?>    
+         <a class="addthis_button_whatsapp"></a>
+            <?php endif; ?>  
+            <?php if ($_helper->getDisplayFacebook()) :?>    
+         <a class="addthis_button_facebook"></a>
+            <?php endif; ?>    
+            <?php if ($_helper->getDisplayTwitter()) :?>              
+         <a class="addthis_button_twitter"></a>
+            <?php endif; ?>                   
+            <?php if ($_helper->getDisplayLinkedin()) :?>                 
+          <a class="addthis_button_linkedin"></a>
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayGoogleplus()) :?>
+         <a class="addthis_button_google_plusone_share"></a>
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayPinterest()) :?>
+         <a class="addthis_button_pinterest_share"></a>   
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayEmail()) :?>  
+         <a class="addthis_button_email"></a> 
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayCompact()) :?>    
+         <a class="addthis_button_compact"></a>
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayCounter()) :?>    
+         <a class="addthis_counter"></a>  
+            <?php endif; ?>              
+     </div>
+        <?php endif; ?>
+        <?php if ($_helper->getStyleInCmsPage() == "style4") :?>  
+     <div class="addthis_toolbox addthis_default_style">
+            <?php if ($_helper->getDisplayWhatsapp()) :?>    
+          <a class="addthis_button_whatsapp addthis_20x20_style"></a>
+            <?php endif; ?>      
+            <?php if ($_helper->getDisplayFacebook()) :?>    
+         <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+            <?php endif; ?>    
+            <?php if ($_helper->getDisplayTwitter()) :?>              
+         <a class="addthis_button_tweet"></a>
+            <?php endif; ?>                   
+            <?php if ($_helper->getDisplayLinkedin()) :?>                 
+          <a class="addthis_button_linkedin_counter"></a> 
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayGoogleplus()) :?>
+         <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayPinterest()) :?>
+         <a class="addthis_button_pinterest_pinit"
+         pi:pinit:url="http://www.apple.com"
+         pi:pinit:media="http://images.apple.com/home/images/hero.jpg"
+         pi:pinit:layout="horizontal"></a> 
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayCompact()) :?>    
+         <a class="addthis_button_compact"></a>
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayCounter()) :?>    
+         <a class="addthis_counter"></a>  
+            <?php endif; ?>               
+     </div>
+    <?php endif;?>     
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=[YOUR PUB ID]">
+</script>                  
+</div>      
+<?php endif; ?>             
+<?php if ($_helper->getDisplayServices() == "display_all_services") : ?>  
+<div class="um-socialshare um-sharing-cmspage all-services"
+  id="um-sharing-cmspage">
+    <?php if ($_helper->getStyleInCmsPage() == "style1"
+           || $_helper->getStyleInCmsPage() == "style2"
+           || $_helper->getStyleInCmsPage() == "style3") :?>  
+    <div class="addthis_toolbox addthis_default_style  
+        <?php
+        if ($_helper->getStyleInCmsPage() == "style2") {
+          /* @noEscape */ echo __('addthis_20x20_style');
+        } elseif ($_helper->getStyleInCmsPage() == "style3") {
+          /* @noEscape */ echo __('addthis_32x32_style');
+        } else {
+          /* @noEscape */ echo __(' ');
+        }
+            ?>">  
+         <a class="addthis_button_whatsapp"></a>         
+         <a class="addthis_button_facebook"></a> 
+         <a class="addthis_button_twitter"></a>             
+         <a class="addthis_button_linkedin"></a>
+         <a class="addthis_button_google_plusone_share"></a>
+         <a class="addthis_button_pinterest_share"></a>
+         <a class="addthis_button_email"></a>   
+         <a class="addthis_button_compact"></a> 
+         <a class="addthis_counter"></a>                
+      </div>
+    <?php endif;?>
+    <?php if ($_helper->getStyleInCmsPage() == "style4") :?>   
+         <div class="addthis_toolbox addthis_default_style">
+             <a class="addthis_button_whatsapp addthis_20x20_style"></a>       
+             <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>        
+             <a class="addthis_button_tweet"></a>       
+             <a class="addthis_button_linkedin_counter"></a>  
+             <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+             <a class="addthis_button_pinterest_pinit"
+             pi:pinit:url="http://www.apple.com"
+             pi:pinit:media="http://images.apple.com/home/images/hero.jpg"
+             pi:pinit:layout="horizontal"></a>
+             <a class="addthis_button_compact"></a> 
+             <a class="addthis_counter"></a>              
+         </div>
+    <?php endif;?>   
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=[YOUR PUB ID]">
+</script>                         
+</div>     
+<?php endif; ?>
+<?php } ?>  
+<?php endif; ?>
+<?php
+/**
+ * Category Page
+ */
+?>
+<?php if ($_helper->isShowCategoryPage()) : ?>    
+<?php  if ($block->getIsCategoryPage()) { ?>       
+<?php if ($_helper->getDisplayServices() == "display_individual_services") : ?>   
+ <div class="um-socialshare um-sharing-categorypage individual-services" id="um-sharing-categorypage">
+        <?php if ($_helper->getStyleInCategoryPage() == "style1"
+               || $_helper->getStyleInCategoryPage() == "style2"
+               || $_helper->getStyleInCategoryPage() == "style3") :?>                     
+        <div class="addthis_toolbox addthis_default_style  
+            <?php
+            if ($_helper->getStyleInCategoryPage() == "style2") {
+            /* @noEscape */ echo __('addthis_20x20_style');
+            } elseif ($_helper->getStyleInCategoryPage() == "style3") {
+            /* @noEscape */ echo __('addthis_32x32_style');
+            } else {
+            /* @noEscape */ echo __(' ');
+            }
+                ?>">
+                <?php if ($_helper->getDisplayWhatsapp()) :?>    
+              <a class="addthis_button_whatsapp"></a>
+                <?php endif; ?>                
+                <?php if ($_helper->getDisplayFacebook()) :?>    
+              <a class="addthis_button_facebook"></a>
+                <?php endif; ?>    
+                <?php if ($_helper->getDisplayTwitter()) :?>              
+             <a class="addthis_button_twitter"></a>
+                <?php endif; ?>                   
+                <?php if ($_helper->getDisplayLinkedin()) :?>                 
+              <a class="addthis_button_linkedin"></a>
+                <?php endif; ?>
+                <?php if ($_helper->getDisplayGoogleplus()) :?>
+             <a class="addthis_button_google_plusone_share"></a>
+                <?php endif; ?>
+                <?php if ($_helper->getDisplayPinterest()) :?>
+             <a class="addthis_button_pinterest_share"></a>   
+                <?php endif; ?>
+                <?php if ($_helper->getDisplayEmail()) :?>  
+             <a class="addthis_button_email"></a> 
+                <?php endif; ?>
+                <?php if ($_helper->getDisplayCompact()) :?>    
+             <a class="addthis_button_compact"></a>
+                <?php endif; ?>
+                <?php if ($_helper->getDisplayCounter()) :?>    
+             <a class="addthis_counter"></a>  
+                <?php endif; ?>                 
+         </div>
+            <?php endif; ?>
+            <?php if ($_helper->getStyleInCategoryPage() == "style4") :?>     
+         <div class="addthis_toolbox addthis_default_style">
+                <?php if ($_helper->getDisplayWhatsapp()) :?>    
+              <a class="addthis_button_whatsapp addthis_20x20_style"></a>
+                <?php endif; ?>          
+                <?php if ($_helper->getDisplayFacebook()) :?>    
+            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                <?php endif; ?>    
+                <?php if ($_helper->getDisplayTwitter()) :?>              
+             <a class="addthis_button_tweet"></a>
+                <?php endif; ?>                   
+                <?php if ($_helper->getDisplayLinkedin()) :?>                 
+              <a class="addthis_button_linkedin_counter"></a> 
+                <?php endif; ?>
+                <?php if ($_helper->getDisplayGoogleplus()) :?>
+             <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+                <?php endif; ?>
+                <?php if ($_helper->getDisplayPinterest()) :?>
+             <a class="addthis_button_pinterest_pinit"
+          pi:pinit:url="http://www.apple.com"
+          pi:pinit:media="http://images.apple.com/home/images/hero.jpg"
+          pi:pinit:layout="horizontal"></a> 
+                <?php endif; ?>
+                <?php if ($_helper->getDisplayCompact()) :?>    
+             <a class="addthis_button_compact"></a>
+                <?php endif; ?>
+                <?php if ($_helper->getDisplayCounter()) :?>    
+             <a class="addthis_counter"></a>  
+                <?php endif; ?>               
+         </div>
+        <?php endif;?>                       
+  </div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=[YOUR PUB ID]">
+</script>       
+<?php endif; ?>             
+<?php if ($_helper->getDisplayServices() == "display_all_services") : ?>  
+<div class="um-socialshare um-sharing-categorypage all-services" id="um-sharing-categorypage">
+        <?php if ($_helper->getStyleInCategoryPage() == "style1"
+        || $_helper->getStyleInCategoryPage() == "style2"
+        || $_helper->getStyleInCategoryPage() == "style3") :?>   
+        <div class="addthis_toolbox addthis_default_style  
+            <?php
+            if ($_helper->getStyleInCategoryPage() == "style2") {
+            /* @noEscape */ echo __('addthis_20x20_style');
+            } elseif ($_helper->getStyleInCategoryPage() == "style3") {
+            /* @noEscape */ echo __('addthis_32x32_style');
+            } else {
+          /* @noEscape */ echo __(' ');
+            }
+                ?>">  
+             <a class="addthis_button_whatsapp"></a>              
+             <a class="addthis_button_facebook"></a> 
+             <a class="addthis_button_twitter"></a>             
+             <a class="addthis_button_linkedin"></a>
+             <a class="addthis_button_google_plusone_share"></a>
+             <a class="addthis_button_pinterest_share"></a>
+             <a class="addthis_button_email"></a>   
+             <a class="addthis_button_compact"></a> 
+             <a class="addthis_counter"></a>                
+          </div>
+        <?php endif;?>
+        <?php if ($_helper->getStyleInCategoryPage() == "style4") :?>  
+             <div class="addthis_toolbox addthis_default_style"> 
+                 <a class="addthis_button_whatsapp addthis_20x20_style"></a>
+                 <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>        
+                 <a class="addthis_button_tweet"></a>       
+                 <a class="addthis_button_linkedin_counter"></a>  
+                 <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+                 <a class="addthis_button_pinterest_pinit"
+          pi:pinit:url="http://www.apple.com" 
+          pi:pinit:media="http://images.apple.com/home/images/hero.jpg" 
+          pi:pinit:layout="horizontal"></a>
+                 <a class="addthis_button_compact"></a> 
+                 <a class="addthis_counter"></a>              
+             </div>
+        <?php endif;?>                           
+  </div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=[YOUR PUB ID]">
+</script>        
+<?php endif; ?>
+<?php } ?>  
+<?php endif; ?>
+
+<?php
+/**
+ * Additional
+ */
+?>
+<?php if ($_helper->isShowAdditionalpage()) : ?>
+<?php if (strpos($_helper->getAdditionalPagesUrls(), $_helper->getCurrentUrl()) !== false) : ?>       
+<?php if ($_helper->getDisplayServices() == "display_individual_services") : ?>   
+<div class="um-socialshare um-sharing-additionalpage individual-services" 
+  id="um-sharing-additionalpage">
+    <?php if ($_helper->getStyleInAdditionalpage() == "style1"
+           || $_helper->getStyleInAdditionalpage() == "style2"
+           || $_helper->getStyleInAdditionalpage() == "style3") :?>                     
+    <div class="addthis_toolbox addthis_default_style  
+        <?php
+        if ($_helper->getStyleInAdditionalpage() == "style2") {
+          /* @noEscape */ echo __('addthis_20x20_style');
+        } elseif ($_helper->getStyleInAdditionalpage() == "style3") {
+          /* @noEscape */ echo __('addthis_32x32_style');
+        } else {
+          /* @noEscape */ echo __(' ');
+        }
+            ?>">
+            <?php if ($_helper->getDisplayWhatsapp()) :?>    
+         <a class="addthis_button_whatsapp"></a>
+            <?php endif; ?>            
+            <?php if ($_helper->getDisplayFacebook()) :?>    
+         <a class="addthis_button_facebook"></a>
+            <?php endif; ?>    
+            <?php if ($_helper->getDisplayTwitter()) :?>              
+         <a class="addthis_button_twitter"></a>
+            <?php endif; ?>                   
+            <?php if ($_helper->getDisplayLinkedin()) :?>                 
+          <a class="addthis_button_linkedin"></a>
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayGoogleplus()) :?>
+         <a class="addthis_button_google_plusone_share"></a>
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayPinterest()) :?>
+         <a class="addthis_button_pinterest_share"></a>   
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayEmail()) :?>  
+         <a class="addthis_button_email"></a> 
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayCompact()) :?>    
+         <a class="addthis_button_compact"></a>
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayCounter()) :?>    
+         <a class="addthis_counter"></a>  
+            <?php endif; ?>                 
+     </div>
+        <?php endif; ?>
+        <?php if ($_helper->getStyleInAdditionalpage() == "style4") :?>     
+     <div class="addthis_toolbox addthis_default_style">
+            <?php if ($_helper->getDisplayWhatsapp()) :?>    
+          <a class="addthis_button_whatsapp addthis_20x20_style"></a>
+            <?php endif; ?>      
+            <?php if ($_helper->getDisplayFacebook()) :?>    
+          <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+            <?php endif; ?>    
+            <?php if ($_helper->getDisplayTwitter()) :?>              
+          <a class="addthis_button_tweet"></a>
+            <?php endif; ?>                   
+            <?php if ($_helper->getDisplayLinkedin()) :?>                 
+          <a class="addthis_button_linkedin_counter"></a> 
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayGoogleplus()) :?>
+          <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayPinterest()) :?>
+         <a class="addthis_button_pinterest_pinit"
+        pi:pinit:url="http://www.apple.com"
+        pi:pinit:media="http://images.apple.com/home/images/hero.jpg"
+        pi:pinit:layout="horizontal"></a> 
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayCompact()) :?>    
+         <a class="addthis_button_compact"></a>
+            <?php endif; ?>
+            <?php if ($_helper->getDisplayCounter()) :?>    
+         <a class="addthis_counter"></a>  
+            <?php endif; ?>               
+     </div>
+    <?php endif;?>                       
+</div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=[YOUR PUB ID]">
+</script>       
+<?php endif; ?>             
+<?php if ($_helper->getDisplayServices() == "display_all_services") : ?>  
+<div class="um-socialshare um-sharing-additionalpage all-services" id="um-sharing-additionalpage">
+    <?php if ($_helper->getStyleInAdditionalpage() == "style1"
+            || $_helper->getStyleInAdditionalpage() == "style2"
+            || $_helper->getStyleInAdditionalpage() == "style3") :?>   
+    <div class="addthis_toolbox addthis_default_style  
+        <?php
+        if ($_helper->getStyleInAdditionalpage() == "style2") {
+          /* @noEscape */ echo __('addthis_20x20_style');
+        } elseif ($_helper->getStyleInAdditionalpage() == "style3") {
+          /* @noEscape */ echo __('addthis_32x32_style');
+        } else {
+          /* @noEscape */ echo __(' ');
+        }
+            ?>">  
+         <a class="addthis_button_whatsapp"></a>         
+         <a class="addthis_button_facebook"></a> 
+         <a class="addthis_button_twitter"></a>             
+         <a class="addthis_button_linkedin"></a>
+         <a class="addthis_button_google_plusone_share"></a>
+         <a class="addthis_button_pinterest_share"></a>
+         <a class="addthis_button_email"></a>   
+         <a class="addthis_button_compact"></a> 
+         <a class="addthis_counter"></a>                
+      </div>
+    <?php endif;?>
+    <?php if ($_helper->getStyleInAdditionalpage() == "style4") :?>  
+         <div class="addthis_toolbox addthis_default_style">
+             <a class="addthis_button_whatsapp addthis_20x20_style"></a>
+             <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>        
+             <a class="addthis_button_tweet"></a>       
+             <a class="addthis_button_linkedin_counter"></a>  
+             <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+             <a class="addthis_button_pinterest_pinit"
+          pi:pinit:url="http://www.apple.com"
+          pi:pinit:media="http://images.apple.com/home/images/hero.jpg"
+          pi:pinit:layout="horizontal"></a>
+             <a class="addthis_button_compact"></a> 
+             <a class="addthis_counter"></a>              
+         </div>
+    <?php endif;?>                           
+</div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=[YOUR PUB ID]">
+</script>    
+<script type="text/javascript">
+    require([
+    'jquery'
+    ], function ($) {
+        $("#um-sharing-cmspage").remove();
+    });
+</script>     
+<?php endif; ?>
+<?php endif; ?>
+<?php endif; ?>
+<?php
+/**
+ * Product Page
+ */
+?>
+<?php if ($_helper->isShowProductPage()) : ?> 
+<?php  if ($block->getIsProductPage()) { ?>            
+<?php if ($_helper->getDisplayServices() == "display_individual_services") : ?>   
+ <div class="um-socialshare um-sharing-productpage individual-services" id="um-sharing-productpage">
+        <?php if ($_helper->getStyleInProductPage() == "style1"
+        || $_helper->getStyleInProductPage() == "style2"
+        || $_helper->getStyleInProductPage() == "style3") :?>                    
+        <div class="addthis_toolbox addthis_default_style  
+            <?php
+            if ($_helper->getStyleInProductPage() == "style2") {
+              /* @noEscape */ echo __('addthis_20x20_style');
+            } elseif ($_helper->getStyleInProductPage() == "style3") {
+              /* @noEscape */ echo __('addthis_32x32_style');
+            } else {
+              /* @noEscape */ echo __(' ');
+            }
+                ?>">
+                <?php if ($_helper->getDisplayWhatsapp()) :?>    
+              <a class="addthis_button_whatsapp"></a>
+                <?php endif; ?>                
+                <?php if ($_helper->getDisplayFacebook()) :?>    
+             <a class="addthis_button_facebook"></a>
+                <?php endif; ?>    
+                <?php if ($_helper->getDisplayTwitter()) :?>              
+             <a class="addthis_button_twitter"></a>
+                <?php endif; ?>                   
+                <?php if ($_helper->getDisplayLinkedin()) :?>                 
+              <a class="addthis_button_linkedin"></a>
+                <?php endif; ?>
+                <?php if ($_helper->getDisplayGoogleplus()) :?>
+             <a class="addthis_button_google_plusone_share"></a>
+                <?php endif; ?>
+                <?php if ($_helper->getDisplayPinterest()) :?>
+             <a class="addthis_button_pinterest_share"></a>   
+                <?php endif; ?>
+                <?php if ($_helper->getDisplayEmail()) :?>  
+             <a class="addthis_button_email"></a> 
+                <?php endif; ?>
+                <?php if ($_helper->getDisplayCompact()) :?>    
+             <a class="addthis_button_compact"></a>
+                <?php endif; ?>
+                <?php if ($_helper->getDisplayCounter()) :?>    
+             <a class="addthis_counter"></a>  
+                <?php endif; ?>                 
+         </div>
+            <?php endif; ?>
+            <?php if ($_helper->getStyleInProductPage() == "style4") :?>  
+         <div class="addthis_toolbox addthis_default_style">
+                <?php if ($_helper->getDisplayWhatsapp()) :?>    
+              <a class="addthis_button_whatsapp addthis_20x20_style"></a>
+                <?php endif; ?>
+                <?php if ($_helper->getDisplayFacebook()) :?>    
+              <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                <?php endif; ?>    
+                <?php if ($_helper->getDisplayTwitter()) :?>              
+              <a class="addthis_button_tweet"></a>
+                <?php endif; ?>                   
+                <?php if ($_helper->getDisplayLinkedin()) :?>                 
+              <a class="addthis_button_linkedin_counter"></a> 
+                <?php endif; ?>
+                <?php if ($_helper->getDisplayGoogleplus()) :?>
+              <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+                <?php endif; ?>
+                <?php if ($_helper->getDisplayPinterest()) :?>
+             <a class="addthis_button_pinterest_pinit"
+        pi:pinit:url="http://www.apple.com" 
+        pi:pinit:media="http://images.apple.com/home/images/hero.jpg" 
+        pi:pinit:layout="horizontal"></a> 
+                <?php endif; ?>
+                <?php if ($_helper->getDisplayCompact()) :?>    
+             <a class="addthis_button_compact"></a>
+                <?php endif; ?>
+                <?php if ($_helper->getDisplayCounter()) :?>    
+             <a class="addthis_counter"></a>  
+                <?php endif; ?>               
+         </div>
+        <?php endif;?>                       
+  </div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=[YOUR PUB ID]">
+</script>       
+<?php endif; ?>             
+<?php if ($_helper->getDisplayServices() == "display_all_services") : ?>  
+<div class="um-socialshare um-sharing-productpage all-services" id="um-sharing-productpage">
+        <?php if ($_helper->getStyleInProductPage() == "style1"
+                || $_helper->getStyleInProductPage() == "style2"
+                || $_helper->getStyleInProductPage() == "style3") :?>  
+        <div class="addthis_toolbox addthis_default_style  
+            <?php
+            if ($_helper->getStyleInProductPage() == "style2") {
+            /* @noEscape */ echo __('addthis_20x20_style');
+            } elseif ($_helper->getStyleInProductPage() == "style3") {
+            /* @noEscape */ echo __('addthis_32x32_style');
+            } else {
+            /* @noEscape */ echo __(' ');
+            }
+                ?>">   
+             <a class="addthis_button_whatsapp"></a>
+             <a class="addthis_button_facebook"></a> 
+             <a class="addthis_button_twitter"></a>             
+             <a class="addthis_button_linkedin"></a>
+             <a class="addthis_button_google_plusone_share"></a>
+             <a class="addthis_button_pinterest_share"></a>
+             <a class="addthis_button_email"></a>   
+             <a class="addthis_button_compact"></a> 
+             <a class="addthis_counter"></a>                
+          </div>
+        <?php endif;?>
+        <?php if ($_helper->getStyleInProductPage() == "style4") :?>   
+             <div class="addthis_toolbox addthis_default_style">
+                 <a class="addthis_button_whatsapp addthis_20x20_style"></a>
+                 <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>        
+                 <a class="addthis_button_tweet"></a>       
+                 <a class="addthis_button_linkedin_counter"></a>  
+                 <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+                 <a class="addthis_button_pinterest_pinit" 
+          pi:pinit:url="http://www.apple.com" 
+          pi:pinit:media="http://images.apple.com/home/images/hero.jpg" 
+          pi:pinit:layout="horizontal"></a>
+                 <a class="addthis_button_compact"></a> 
+                 <a class="addthis_counter"></a>              
+             </div>
+        <?php endif;?>                           
+  </div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=[YOUR PUB ID]">
+</script>        
+<?php endif; ?>
+<?php } ?>  
+<?php endif; ?>
+<?php endif ?>
+

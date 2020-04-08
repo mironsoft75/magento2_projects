@@ -1,0 +1,38 @@
+ <div class="co-footer-container">
+     <div class="co-section-1">
+        <div class="co-store-logo">
+            <img src="<?php echo $this->helper('\Magento\Cms\Helper\Wysiwyg\Images')->getBaseUrl().'wysiwyg/tonnopro/footer/TonnoPro_Footer_Logo.png' ?>" />
+        </div>
+    </div>
+    
+    <div class="co-section-2">
+        <div class="co-company-container">
+            <ul class="co-company-links">
+                    <li><p>Company</p> </li>
+                    <!-- <li> <a href="<?php echo $this->getUrl('about-us');?>">About Us</a> </li> -->
+                    <!-- <li><a href="<?php echo $this->getUrl('news'); ?>">News & press</a></li> -->
+                    <!-- <li><a href="<?php echo $this->getUrl('gallery'); ?>">Gallery</a></li> -->
+                    <li><a href="<?php echo $this->getUrl('blog'); ?>">Blog</a></li>
+                    <li><a href="<?php echo $this->getUrl('contact'); ?>">Contact Us</a></li>
+                    <li><a href="http://www.channelsync.com/BusinessProfile/Index/bca7ebd8-6dd3-4532-80ce-c3de4b12e95e">Dealer Authorization</a></li>
+                    <!-- <li><a href="https://www.lundinternational.com/login">Dealer login</a></li> -->
+            </ul>
+        </div>
+        <div class="co-product-container">
+            <ul class="co-product-links">
+                        <li><p>Products</p></li>
+                        <li><a href="<?=$this->getUrl('all-products');?>">Shop our products</a></li>
+                        <li><a href="<?=$this->getUrl('store-locator');?>">Find a dealer</a></li>
+            </ul>
+        </div>
+        <div class="co-support-container">
+            <ul class="co-support-links">
+                        <li><p>Support</p></li>
+                        <li><a href="<?php echo $this->getUrl('customer/account'); ?>">My account</a></li>
+                        <!-- <li><a href="#">Faq</a></li> -->
+                        <li><a href="<?= $this->getUrl('sales/guest/form/');?>">Shipping & Returns</a></li>
+                        <li><a href="<?= $this->getUrl('warranty-information');?>">Warranty information</a></li>   
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Product list toolbar
+ *
+ * @var $block \Magento\Catalog\Block\Product\ProductList\Toolbar
+ */
+use Magento\Catalog\Model\Product\ProductList\Toolbar;
+?>
+<div class="field limiter">
+    <label class="label" for="limiter">
+        <span><?= /* @escapeNotVerified */ __('Display:') ?></span>
+    </label>
+    <div class="control">
+        <select id="limiter" data-role="limiter" class="limiter-options">
+            <?php foreach ($block->getAvailableLimit() as $_key => $_limit): ?>
+                <option value="<?= /* @escapeNotVerified */ $_key ?>"<?php if ($block->isLimitCurrent($_key)): ?>
+                    selected="selected"<?php endif ?>>
+                    <?= /* @escapeNotVerified */ $_limit ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+        <div id="limiter-custom" class="limiter-options-custom">
+            <?php foreach ($block->getAvailableLimit() as $_key => $_limit): ?>
+                <div class="limiter-option-custom" data-value="<?= /* @escapeNotVerified */ $_key ?>"<?php if ($block->isLimitCurrent($_key)): ?>
+                    id="limiter-option-selected"<?php endif ?>>
+                    <p><?= /* @escapeNotVerified */ $_limit ?></p>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    require(['jquery'], function ($) {
+        $('.limiter-option-custom').click(function(data){
+            $('#limiter').val($(this).attr('data-value')).change();
+        });       
+    });
+</script>

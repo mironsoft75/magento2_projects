@@ -1,0 +1,16 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+?>
+<div class="comments-action fix-me">
+    <?php if ($block->showRss()): ?>
+        <span class="rss-comments"><a href="<?php echo $block->getRssCommentFeedUrl(); ?>" title="<?php echo __("RSS Feed with Comments"); ?>"><i class="blog-icon rss"></i></a></span>
+    <?php endif; ?>
+    <?php if ($block->commentsEnabled()): ?>
+        <span class="leave-a-comment"><a id="amblog_leave_comment" href="#form"><?php echo __("Leave a comment"); ?></a></span>
+    <?php endif; ?>
+</div>
+

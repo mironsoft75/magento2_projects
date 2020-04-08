@@ -1,0 +1,19 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+?>
+<?php
+$post = $block->getPost();
+?>
+<?php if ($post->getCanonicalUrl()): ?>
+<link rel="canonical" href="<?php echo $post->getCanonicalUrl(); ?>">
+<?php endif; ?>
+
+<?php if ($block->getGoogleProfileUrl()): ?>
+<link rel="author" href="<?php echo $block->getGoogleProfileUrl(); ?>" />
+<?php endif; ?>
+
+

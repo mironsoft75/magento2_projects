@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Bss_Gallery::gallery_content" title="Bss Gallery Manage" module="Bss_Gallery" sortOrder="50" parent="Magento_Backend::content" resource="Bss_Gallery::gallery_content" dependsOnConfig="bss_gallery/general/enable"/>
+		<add id="Bss_Gallery::item" title="Manage Item" module="Bss_Gallery" sortOrder="0" parent="Bss_Gallery::gallery_content" action="gallery/item" resource="Bss_Gallery::item" dependsOnConfig="bss_gallery/general/enable"/>
+		<add id="Bss_Gallery::category" title="Manage Album" module="Bss_Gallery" sortOrder="0" parent="Bss_Gallery::gallery_content" action="gallery/category" resource="Bss_Gallery::category" dependsOnConfig="bss_gallery/general/enable"/>
+		<add id="Bss_Gallery::config" title="Manage Config" module="Bss_Gallery" sortOrder="80" parent="Bss_Gallery::gallery_content" action="adminhtml/system_config/edit/section/bss_gallery" resource="Bss_Gallery::category" dependsOnConfig="bss_gallery/general/enable"/>
+		<add id="Bss_Gallery::import" title="Import" module="Bss_Gallery" sortOrder="50" parent="Bss_Gallery::gallery_content" action="gallery/import" resource="Bss_Gallery::item" dependsOnConfig="bss_gallery/general/enable"/>
+	</menu>
+</config>

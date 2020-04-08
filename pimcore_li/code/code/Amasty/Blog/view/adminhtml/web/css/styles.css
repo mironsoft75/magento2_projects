@@ -1,0 +1,350 @@
+/* Layout Configuration */
+.form-list div.scope-label {
+    padding-left: 5px;
+    color: #6f8992;
+    font-size: .9em;
+}
+#amblog_layout td {
+    width: 670px;
+}
+#amblog_layout td .label {
+    float: left;
+}
+#amblog_layout td .use-default {
+    float: right;
+}
+#amblog_layout td .scope-label {
+    float: right;
+}
+#amblog_layout .layout-element {
+    float: left;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#amblog_layout .layout-element .layout-selector {
+    margin-bottom: 10px;
+}
+#amblog_layout .layout-element .layout-selector ul {
+    float: left;
+}
+#amblog_layout .layout-element .layout-selector ul li {
+    margin: 0;
+    float: left;
+}
+#amblog_layout .layout-element .layout-selector ul li a.layout-btn {
+    display: block;
+    background: url("../images/buttons_atlas.png") no-repeat;
+    width: 35px;
+    height: 35px;
+    text-indent: -9999px;
+    cursor: pointer;
+    font-size: 0px;
+    opacity: .8;
+    border-bottom: 1px solid #999999;
+}
+#amblog_layout .layout-element .layout-selector ul li a.one-column {
+    background-position: -105px -35px;
+}
+#amblog_layout .layout-element .layout-selector ul li a.three-columns {
+    background-position: 0px -35px;
+}
+#amblog_layout .layout-element .layout-selector ul li a.two-columns-left {
+    background-position: -35px -35px;
+}
+#amblog_layout .layout-element .layout-selector ul li a.two-columns-right {
+    background-position: -70px -35px;
+}
+#amblog_layout .layout-element .layout-selector ul li a.layout-btn:hover {
+    opacity: 1;
+}
+#amblog_layout .layout-element .layout-selector ul li a.layout-btn:active,
+#amblog_layout .layout-element .layout-selector ul li a.layout-btn.active {
+    border-bottom: 3px solid #f16323;
+}
+#amblog_layout .layout-element .layout-selector ul li a.one-column:active,
+#amblog_layout .layout-element .layout-selector ul li a.one-column.active {
+    background-position: -105px -1px;
+}
+#amblog_layout .layout-element .layout-selector ul li a.three-columns:active,
+#amblog_layout .layout-element .layout-selector ul li a.three-columns.active {
+    background-position: 0px -1px;
+}
+#amblog_layout .layout-element .layout-selector ul li a.two-columns-left:active,
+#amblog_layout .layout-element .layout-selector ul li a.two-columns-left.active {
+    background-position: -35px -1px;
+}
+#amblog_layout .layout-element .layout-selector ul li a.two-columns-right:active,
+#amblog_layout .layout-element .layout-selector ul li a.two-columns-right.active {
+    background-position: -70px -1px;
+}
+#amblog_layout .layout-element .layout-selector span.title {
+    float: left;
+    padding-top: 8px;
+    padding-left: 10px;
+    color: #306375;
+    font-weight: bold;
+}
+#amblog_layout .layout-element .layout-columns {
+    float: left;
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+}
+#amblog_layout .layout-element .layout-columns div.blog-left-sidebar:first-child,
+#amblog_layout .layout-element .layout-columns div.blog-content:first-child,
+#amblog_layout .layout-element .layout-columns div.blog-right-sidebar:first-child {
+    padding-left: 0 !important;
+}
+#amblog_layout .layout-element .layout-columns .column {
+    height: 100%;
+    border: 1px dashed #999999;
+    min-height: 200px;
+    -webkit-border-radius: 5px;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 5px;
+    -moz-background-clip: padding;
+    border-radius: 5px;
+    background-clip: padding-box;
+    padding: 10px !important;
+}
+#amblog_layout .layout-element .layout-columns .column .available-blocks a.block-to-add {
+    background-color: #ffffff;
+    display: block;
+    margin-bottom: 5px;
+    border: 1px solid #f16323;
+    color: #2f2f2f;
+    -webkit-border-radius: 2px;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 2px;
+    -moz-background-clip: padding;
+    border-radius: 2px;
+    background-clip: padding-box;
+    padding: 3px 5px;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: background-color 300ms ease-out;
+    -moz-transition: background-color 300ms ease-out;
+    -o-transition: background-color 300ms ease-out;
+    transition: background-color 300ms ease-out;
+}
+#amblog_layout .layout-element .layout-columns .column .available-blocks a.block-to-add:hover {
+    background-color: #E7EFEF;
+}
+#amblog_layout .layout-element .layout-columns .column a.add {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 69px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -moz-background-clip: padding;
+    border-radius: 2px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+    background-color: #f16323;
+    color: white;
+    padding-top: 7px;
+    font-size: 44px;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    opacity: 0.8;
+    -webkit-transition: opacity 300ms ease-out;
+    -moz-transition: opacity 300ms ease-out;
+    -o-transition: opacity 300ms ease-out;
+    transition: opacity 300ms ease-out;
+}
+#amblog_layout .layout-element .layout-columns .column a.add:hover {
+    opacity: 1;
+}
+#amblog_layout .layout-element .layout-columns .column img {
+    padding: 10px 0;
+}
+#amblog_layout .layout-element .layout-columns .column .enabled-blocks .drop-place {
+    text-align: center;
+    margin-bottom: 10px;
+    border: 1px dashed #999999;
+    color: #999999;
+    display: block;
+    padding: 5px 5px;
+    -webkit-transition: padding 300ms ease-in-out;
+    -moz-transition: padding 300ms ease-in-out;
+    -o-transition: padding 300ms ease-in-out;
+    transition: padding 300ms ease-in-out;
+    -webkit-border-radius: 2px;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 2px;
+    -moz-background-clip: padding;
+    border-radius: 2px;
+    background-clip: padding-box;
+}
+#amblog_layout .layout-element .layout-columns .column .enabled-blocks .drop-place:hover,
+#amblog_layout .layout-element .layout-columns .column .enabled-blocks .drop-place.drag-enter {
+    padding: 60px 5px;
+}
+#amblog_layout .layout-element .layout-columns .column .enabled-blocks .block {
+    margin-bottom: 10px;
+    overflow: hidden;
+    -webkit-border-radius: 2px;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 2px;
+    -moz-background-clip: padding;
+    border-radius: 2px;
+    background-clip: padding-box;
+    -webkit-transition: -webkit-box-shadow ease-in 150ms;
+    -moz-transition: -moz-box-shadow ease-in 150ms;
+    -o-transition: box-shadow ease-in 150ms;
+    transition: box-shadow ease-in 150ms;
+    width: 140px;
+}
+#amblog_layout .layout-element .layout-columns .column .enabled-blocks .block.dragging {
+    cursor: move;
+    -webkit-box-shadow: 0 0 10px #999999;
+    -moz-box-shadow: 0 0 10px #999999;
+    box-shadow: 0 0 10px #999999;
+}
+#amblog_layout .layout-element .layout-columns .column .enabled-blocks .block.content {
+    padding: 0;
+    width: 280px;
+}
+#amblog_layout .layout-element .layout-columns .column .enabled-blocks .block .block-title {
+    background-color: #6f8992;
+    padding: 3px 5px;
+    color: white;
+    font-weight: bold;
+    cursor: move;
+    font-size: 12px;
+}
+#amblog_layout .layout-element .layout-columns .column .enabled-blocks .block .block-title .remove-block {
+    float: right;
+    display: block;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+#amblog_layout .layout-element .layout-columns .column .enabled-blocks .block .block-title .remove-block i.glyphicons,
+#amblog_layout .layout-element .layout-columns .column .enabled-blocks .block .block-title .remove-block i.glyphicons:before {
+    color: white;
+    font-size: 12px;
+}
+#amblog_layout .layout-element .layout-columns .column .enabled-blocks .block .block-content {
+    height: 135px;
+    background: #FFFFFF 50% 100%;
+}
+#amblog_layout .layout-element .layout-columns .blog-left-sidebar {
+    width: 160px;
+    float: left;
+    box-sizing: border-box;
+}
+#amblog_layout .layout-element .layout-columns .blog-content {
+    width: 300px;
+    float: left;
+    box-sizing: border-box;
+    margin-left: 5px;
+}
+#amblog_layout .layout-element .layout-columns .blog-right-sidebar {
+    width: 160px;
+    float: left;
+    box-sizing: border-box;
+    margin-left: 5px;
+}
+/* Button Icons */
+button.save.scheduled span {
+    background-image: url("../images/schedule_btn_icon.gif");
+}
+button.save.scheduled.disabled span {
+    background-image: url("../images/schedule_btn_icon_disabled.gif");
+}
+button.save.duplicate span {
+    background-image: url("../images/duplicate_btn_icon.gif");
+}
+/* Color Scheme for Tags */
+select#amblog_tags_presetted_colors {
+    width: 176px;
+    float: left;
+}
+#row_amblog_tags_presetted_colors button.apply {
+    float: left;
+    margin-left: 5px;
+}
+/* Misc Staff */
+div.fixed {
+    clear: both;
+}
+/* Backend Post Form */
+#blog_tabs_post_content_content table.form-list {
+    width: 80%;
+    min-width: 800px;
+}
+#redactor-modal footer button {
+    background-image: none;
+}
+.form-list td.value select.size-field {
+    width: 60px;
+}
+.form-list .am-radio-selector {
+    height: 350px;
+    position: relative;
+}
+.form-list .am-radio-selector table tr td {
+    width: 191px;
+}
+.form-list .am-radio-selector div.option {
+    position: absolute;
+    cursor: pointer;
+    width: 191px;
+    height: 299px;
+    z-index: 10;
+}
+.form-list .am-radio-selector .mockup {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 542px;
+    height: 272px;
+    -webkit-transition: width 0.3s ease-in-out;
+    -moz-transition: width 0.3s ease-in-out;
+    -o-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
+    -webkit-box-shadow: 0px 1px 2px 0px rgba(111, 137, 146, 0.75);
+    -moz-box-shadow: 0px 1px 2px 0px rgba(111, 137, 146, 0.75);
+    box-shadow: 0px 1px 2px 0px rgba(111, 137, 146, 0.75);
+    z-index: 1;
+    padding: 10px;
+}
+.form-list .am-radio-selector .mockup.w2 {
+    width: 362px;
+}
+.form-list .am-radio-selector .mockup.w1 {
+    width: 182px;
+}
+.form-list .am-radio-selector .mockup .thumbnail {
+    height: 72px;
+}
+.form-list .am-radio-selector .mockup .title {
+    height: 12px;
+}
+.form-list .am-radio-selector .mockup .line {
+    height: 6px;
+}
+.form-list .am-radio-selector .mockup .button {
+    height: 24px;
+    width: 100px;
+}
+.form-list .am-radio-selector .mockup .fake-element {
+    background-color: #6f8992;
+}
+.form-list .am-radio-selector .mockup .big-margin {
+    margin-bottom: 12px;
+}
+.form-list .am-radio-selector .mockup .small-margin {
+    margin-bottom: 6px;
+}
+#amblog_tags td input.color.input-text {
+    -webkit-transition: background-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out;
+    -o-transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+}

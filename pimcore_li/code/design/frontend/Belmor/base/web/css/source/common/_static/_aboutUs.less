@@ -1,0 +1,215 @@
+@import "_aboutBlock.less";
+.cms-about-us {
+    .page-main {
+        .co-about-us-container {
+            .active-history {
+                a {
+                    color: @secondary;
+                }
+            }
+            .aboutus-nav {
+                ul {
+                    li {
+                        &:first-child {
+                            padding-left: 0px;
+                        }
+                        &:nth-child(1) {
+                            a {
+                                color: @secondary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .history {
+            font-size: @regular-font-size ;
+            box-sizing: border-box;
+            padding: 0 30px;
+            @media @mobile {
+                padding: 10px 0;
+            }
+            .mid-container {
+                display: flex;
+                @media @mobile {
+                    flex-direction: column-reverse;
+                }
+                .mid-text {
+                    flex-basis: 60%;
+                }
+                .mid-img {
+                    flex-basis: 21%;
+                    padding-left: 20px;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.cms-about-us-why-bushwacker, 
+.cms-about-us-why-tonno-pro, 
+.cms-about-us-why-belmor {
+    .page-main {
+        .co-about-us-container {
+            .aboutus-nav {
+                .active-why {
+                    a {
+                        color: @secondary;
+                    }
+                }
+                ul {
+                    li {
+                        &:first-child {
+                            padding-left: 0px;
+                        }
+                        &:nth-child(2) {
+                            a {
+                                color: @secondary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .why-bushwacker {
+            font-size: @regular-font-size;
+            box-sizing: border-box;
+            padding: 0 30px;
+            @media @mobile {
+                padding: 10px 0;
+            }
+        }
+    }
+}
+
+.cms-about-us-patents {
+    .page-main {
+        .co-about-us-container {
+            .aboutus-nav {
+                .active-patents {
+                    a {
+                        color: @secondary;
+                    }
+                }
+                ul {
+                    li {
+                        &:first-child {
+                            padding-left: 0px;
+                        }
+                        &:nth-child(4) {
+                            a {
+                                color: @secondary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .patents {
+            font-size: @regular-font-size;
+            box-sizing: border-box;
+            padding: 0 30px;
+            @media @mobile {
+                padding: 0;
+            }
+            .patent-table {
+                thead {
+                    tr {
+                        th {
+                            &:first-child {
+                                padding-left: 0;
+                                width: 100px;
+                            }
+                        }
+                    }
+                }
+                tbody {
+                    tr {
+                        td {
+                            &:first-child {
+                                padding-left: 0;
+                            }
+                        }
+                    }
+                    a {
+                        color: @secondary;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.cms-about-us-our-executive-team {
+    .page-main {
+        .co-about-us-container {
+            .aboutus-nav {
+                .active-team {
+                    a {
+                        color: @secondary;
+                    }
+                }
+                ul {
+                    li {
+                        &:first-child {
+                            padding-left: 0px;
+                        }
+                        &:nth-child(3) {
+                            a {
+                                color: @secondary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .our-executive-team {
+            font-size: @regular-font-size ;
+            box-sizing: border-box;
+            padding: 0 30px;
+            @media @mobile {
+                padding: 0 20px;
+            }
+            .executive-team-grid {
+                display: flex;
+                box-sizing: border-box;
+                @media @mobile {
+                    flex-direction: column;
+                }
+                .executive-team-card {
+                    flex-basis: 25%;
+                    box-sizing: border-box;
+                    padding: 20px;
+                    height: 500px;
+                    @media @mobile {
+                        flex-basis: unset;
+                        padding: 0;
+                    }
+                    .executive-team-img {
+                        width: 100%;
+                        height: 80%;
+                        background: @light_blue;
+                    }
+                    .executive-team-details {
+                        box-sizing: border-box;
+                        padding: 10px;
+                        text-align: center;
+                        color: @dark_txt ;
+                        .executive-name {
+                            font-size: @large-font-size;
+                            font-family: @primary-font-bold;
+                        }
+                        .executive-title {
+                            color: @dark_black_blue;
+                            font-size: @regular-font-size;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

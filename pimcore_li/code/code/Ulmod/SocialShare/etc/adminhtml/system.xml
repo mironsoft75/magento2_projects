@@ -1,0 +1,536 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * SocialShare
+ *
+ * @package     Ulmod_SocialShare
+ * @author      Ulmod <support@ulmod.com>
+ * @copyright   Copyright (c) 2016 Ulmod (http://www.ulmod.com/)
+ * @license     http://www.ulmod.com/license-agreement.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+		<tab id="um_extensions" translate="label" sortOrder="888777"  class="ulmod-tab">
+			<label>Ulmod Extensions</label>
+		</tab>
+		<section id="umsocialshare" translate="label" type="text" sortOrder="470" showInDefault="1" showInWebsite="1" showInStore="1">
+			<class>separator-top</class>
+			<label>Social Share</label>
+			<tab>um_extensions</tab>
+            <resource>Ulmod_SocialShare::config_socialshare</resource>			
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+			    <field id="version" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+	                <label>Info</label>
+					<frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Form\Info</frontend_model>
+                </field>			
+                <field id="enabled" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					 <comment>If Yes, the extension will be enabled in storefront.</comment>
+                </field>
+            </group>
+            <group id="service" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Sharing Service</label>
+                <field id="display_services" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Sharing services</label>
+                    <source_model>Ulmod\SocialShare\Model\System\Config\Source\Services</source_model>	
+				  <comment><![CDATA[<p style=font-size:12px;line-height:20px><strong>Individual Sharing services : </strong>If selected. Individual sharing button service wuill display. Please select your desired service for this case.<br><strong>All Sharing services : </strong>If selected. All sharing services button will display instead of individual sharing button.<br> ]]></comment> 
+                </field>	
+                <field id="display_whatsapp" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Whatsapp</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                   <depends>
+					  <field id="display_services">display_individual_services</field>
+                   </depends>					
+					 <comment>If Yes, whatsapp sharing button will display.</comment>
+                </field>		
+                <field id="display_facebook" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Facebook</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                   <depends>
+					  <field id="display_services">display_individual_services</field>
+                   </depends>					
+					 <comment>If Yes, facebook sharing button will display.</comment>
+                </field>				
+                <field id="display_twitter" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Twitter</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                   <depends>
+					  <field id="display_services">display_individual_services</field>
+                   </depends>					
+					 <comment>If Yes, twitter sharing button will display.</comment>
+                </field>
+                <field id="display_linkedin" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Linkedin</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                   <depends>
+					  <field id="display_services">display_individual_services</field>
+                   </depends>					
+					 <comment>If Yes, twitter sharing button will display.</comment>
+                </field>			
+                <field id="display_googleplus" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Google Plus</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                   <depends>
+					  <field id="display_services">display_individual_services</field>
+                   </depends>					
+					 <comment>If Yes, google+ sharing button will display.</comment>
+                </field>	
+                <field id="display_pinterest" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Pinterest</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                   <depends>
+					  <field id="display_services">display_individual_services</field>
+                   </depends>					
+					 <comment>If Yes, pinterest sharing button will display.</comment>
+                </field>	
+                <field id="display_email" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Email</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                   <depends>
+					  <field id="display_services">display_individual_services</field>
+                   </depends>					
+					 <comment>If Yes, email sharing button will display.</comment>
+                </field>				
+                <field id="display_compact" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Compact (+ Share)</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                   <depends>
+					  <field id="display_services">display_individual_services</field>
+                   </depends>					
+					 <comment>If Yes, + button to select more sharing button will display.</comment>
+                </field>	
+                <field id="display_counter" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Counter</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                   <depends>
+					  <field id="display_services">display_individual_services</field>
+                   </depends>					
+					 <comment>If Yes, counter will sharing number will display.</comment>
+                </field>				
+            </group>				
+            <group id="page" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Pages</label>
+				<group id="home" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+				    <label>Homepage</label>
+					<group id="display" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+				    	<label>Display</label>						
+						<field id="home_page" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+							<label>Show In Homepage</label>
+							<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						</field>			
+						<field id="home_page_position" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+						  <label>Position In Homepage</label>
+						   <source_model>Ulmod\SocialShare\Model\System\Config\Source\Position</source_model>
+						   <depends>
+							  <field id="home_page">1</field>
+						   </depends>
+						   <comment>Left or Right </comment>				   
+						</field>
+						<field id="home_page_style" translate="label tooltip comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+						  <label>Button Style In Homepage</label>
+						   <source_model>Ulmod\SocialShare\Model\System\Config\Source\Style</source_model>
+						   <depends>
+							  <field id="home_page">1</field>
+						   </depends>
+						   <comment>Select the buttons style type. Please note that the button color option (In the Design section) is applicable for buttons style 1, 2 and 3 only</comment>		   				   
+						</field>	
+						<field id="home_page_mobile" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+						  <label>Hide On Mobile Devices?</label>
+						  <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						   <depends>
+							  <field id="home_page">1</field>
+						   </depends>
+						   <comment>Set to "Yes" to hide the Social Sharing Buttons on targeted devices size. If "No", the Social Sharing Buttons will display on all devices screens size</comment>	   
+						</field>
+						<field id="home_page_mobile_maxwidth" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+						  <label>Devices Max Width (in pixels)</label>
+						  <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						   <depends>
+							  <field id="home_page_mobile">1</field>
+						   </depends>
+						   <comment>Please, enter the max-width of all devices to which you want to hide the Social Sharing Buttons. eg: If 540, the Social Sharing Buttons will be hidden on all devices with max screen width 540px</comment>				   
+						</field>
+					</group>
+					<group id="design" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					   <label>Design</label>
+		               <field id="whatsapp_bgcolor" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Whatsapp Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="facebook_bgcolor" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Facebook Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>		
+		               <field id="twitter_bgcolor" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Twitter Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="linkedin_bgcolor" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Linkedin Button Colorr</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="googleplus_bgcolor" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Googleplus Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="pinterest_bgcolor" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Pinterest Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="email_bgcolor" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Email Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>
+		               <field id="compact_bgcolor" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Compact Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>
+		               <field id="counter_bgcolor" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Counter Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>                       		
+					</group>
+                </group>
+                <group id="cms" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>CMS Pages(All)</label>
+					<group id="display" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+				    	<label>Display</label>	
+						<field id="cms_page" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+							<label>Show In CMS Pages</label>
+							<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						</field>			
+						<field id="cms_page_position" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+						  <label>Position In CMS Pages</label>
+						  <source_model>Ulmod\SocialShare\Model\System\Config\Source\Position</source_model>
+						   <depends>
+							  <field id="cms_page">1</field>
+						   </depends>
+						   <comment>left, right, top or button</comment>				   
+						</field>
+						<field id="cms_page_style" translate="label tooltip comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+						  <label>Button Style In CMS Page</label>
+						   <source_model>Ulmod\SocialShare\Model\System\Config\Source\Style</source_model>
+						   <depends>
+							  <field id="cms_page">1</field>
+						   </depends>
+						   <comment>Select the buttons style type. Please note that the button color option (In the Design section) is applicable for buttons style 1, 2 and 3 only</comment>	   				   
+						</field>
+						<field id="cms_page_mobile" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+						  <label>Hide On Mobile Devices?</label>
+						  <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						   <depends>
+							  <field id="cms_page">1</field>
+						   </depends>
+						   <comment>Set to "Yes" to hide the Social Sharing Buttons on targeted devices size. If "No", the Social Sharing Buttons will display on all devices screens size</comment>			   
+						</field>	
+						<field id="cms_page_mobile_maxwidth" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+						  <label>Devices Max Width (in pixels)</label>
+						  <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						   <depends>
+							  <field id="cms_page_mobile">1</field>
+						   </depends>
+						   <comment>Please, enter the max-width of all devices to which you want to hide the Social Sharing Buttons. eg: If 540, the Social Sharing Buttons will be hidden on all devices with max screen width 540px</comment>				   
+						</field>
+					</group>
+					<group id="design" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					   <label>Design</label>
+		               <field id="whatsapp_bgcolor" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Whatsapp Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="facebook_bgcolor" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Facebook Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>		
+		               <field id="twitter_bgcolor" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Twitter Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="linkedin_bgcolor" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Linkedin Button Colorr</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="googleplus_bgcolor" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Googleplus Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="pinterest_bgcolor" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Pinterest Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="email_bgcolor" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Email Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>
+		               <field id="compact_bgcolor" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Compact Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>
+		               <field id="counter_bgcolor" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Counter Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>                       		
+					</group>
+                </group>
+                <group id="category" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+			      <label>Category</label>		
+					<group id="display" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+				    	<label>Display</label>	
+						<field id="category_page" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+							<label>Show In Category Pages</label>
+							<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						</field>			
+						<field id="category_page_position" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+						  <label>Position In Category Pages</label>
+						  <source_model>Ulmod\SocialShare\Model\System\Config\Source\Position</source_model>
+						   <depends>
+							  <field id="category_page">1</field>
+						   </depends>
+						   <comment>Left, Right, Top or Button</comment>				   
+						</field>
+						<field id="category_page_style" translate="label tooltip comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+						  <label>Button Style In Category Page</label>
+						   <source_model>Ulmod\SocialShare\Model\System\Config\Source\Style</source_model>
+						   <depends>
+							  <field id="category_page">1</field>
+						   </depends>
+						   <comment>Select the buttons style type. Please note that the button color option (In the Design section) is applicable for buttons style 1, 2 and 3 only</comment>	   				   
+						</field>	
+						<field id="category_page_mobile" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+						  <label>Hide On Mobile Devices?</label>
+						  <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						   <depends>
+							  <field id="category_page">1</field>
+						   </depends>
+						   <comment>Set to "Yes" to hide the Social Sharing Buttons on targeted devices size. If "No", the Social Sharing Buttons will display on all devices screens size</comment>		   
+						</field>	
+						<field id="category_page_mobile_maxwidth" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+						  <label>Devices Max Width (in pixels)</label>
+						  <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						   <depends>
+							  <field id="category_page_mobile">1</field>
+						   </depends>
+						   <comment>Please, enter the max-width of all devices to which you want to hide the Social Sharing Buttons. eg: If 540, the Social Sharing Buttons will be hidden on all devices with max screen width 540px</comment>				   
+						</field>
+					</group>	
+					<group id="design" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					   <label>Design</label>
+		               <field id="whatsapp_bgcolor" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Whatsapp Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="facebook_bgcolor" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Facebook Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>		
+		               <field id="twitter_bgcolor" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Twitter Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="linkedin_bgcolor" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Linkedin Button Colorr</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="googleplus_bgcolor" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Googleplus Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="pinterest_bgcolor" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Pinterest Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="email_bgcolor" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Email Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>
+		               <field id="compact_bgcolor" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Compact Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>
+		               <field id="counter_bgcolor" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Counter Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>                       		
+					</group>									
+                </group>
+                <group id="product" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+			      <label>Product</label>
+					<group id="display" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+				    	<label>Display</label>
+						<field id="product_page" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+							<label>Show In Product Pages</label>
+							<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						</field>			
+						<field id="product_page_position" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+						  <label>Position In Product Pages</label>
+						  <source_model>Ulmod\SocialShare\Model\System\Config\Source\ProductPosition</source_model>
+						   <depends>
+							  <field id="product_page">1</field>
+						   </depends>
+						   <comment>Left, Right or After social links</comment>				   
+						</field>
+						<field id="product_page_style" translate="label tooltip comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+						  <label>Button Style In Product Page</label>
+						   <source_model>Ulmod\SocialShare\Model\System\Config\Source\Style</source_model>
+						   <depends>
+							  <field id="product_page">1</field>
+						   </depends>
+						   <comment>Select the buttons style type. Please note that the button color option (In the Design section) is applicable for buttons style 1, 2 and 3 only</comment>   				   
+						</field>
+						<field id="product_page_mobile" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+						  <label>Hide On Mobile Devices?</label>
+						  <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						   <depends>
+							  <field id="product_page">1</field>
+						   </depends>
+						   <comment>Set to "Yes" to hide the Social Sharing Buttons on targeted devices size. If "No", the Social Sharing Buttons will display on all devices screens size</comment>			   
+						</field>
+						<field id="product_page_mobile_maxwidth" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+						  <label>Devices Max Width (in pixels)</label>
+						  <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						   <depends>
+							  <field id="product_page_mobile">1</field>
+						   </depends>
+						   <comment>Please, enter the max-width of all devices to which you want to hide the Social Sharing Buttons. eg: If 540, the Social Sharing Buttons will be hidden on all devices with max screen width 540px</comment>				   
+						</field>
+					</group>	
+					<group id="design" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					   <label>Design</label>
+		               <field id="whatsapp_bgcolor" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Whatsapp Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="facebook_bgcolor" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Facebook Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>		
+		               <field id="twitter_bgcolor" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Twitter Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="linkedin_bgcolor" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Linkedin Button Colorr</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="googleplus_bgcolor" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Googleplus Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="pinterest_bgcolor" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Pinterest Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="email_bgcolor" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Email Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>
+		               <field id="compact_bgcolor" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Compact Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>
+		               <field id="counter_bgcolor" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Counter Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>                       		
+					</group>									
+				</group> 
+                <group id="additional" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+			      <label>Additional</label>
+					<group id="display" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+				    	<label>Display</label>
+						<field id="additional_page" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+							<label>Show In Additional Pages</label>
+							<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						</field>
+						<field id="links" translate="label comment" type="textarea" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+							<label>Links</label>
+						   <depends>
+							  <field id="additional_page">1</field>
+						   </depends>							
+							<comment><![CDATA[Please add the links of the pages to enable the social share buttons. One link per line. Example : <br>
+									http://mysite/blog/<br>						
+									http://mysite/faqs/<br>		
+									http://mysite/documents/<br>]]></comment>							
+						</field>									
+						<field id="additional_page_position" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+						  <label>Position In Additional Pages</label>
+						  <source_model>Ulmod\SocialShare\Model\System\Config\Source\AdditionalPosition</source_model>
+						   <depends>
+							  <field id="additional_page">1</field>
+						   </depends>
+						   <comment>Left, Right or After social links</comment>				   
+						</field>
+						<field id="additional_page_style" translate="label tooltip comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+						  <label>Button Style In Additional Page</label>
+						   <source_model>Ulmod\SocialShare\Model\System\Config\Source\Style</source_model>
+						   <depends>
+							  <field id="additional_page">1</field>
+						   </depends>
+						   <comment>Select the buttons style type. Please note that the button color option (In the Design section) is applicable for buttons style 1, 2 and 3 only</comment>  				   
+						</field>
+						<field id="additional_page_mobile" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+						  <label>Hide On Mobile Devices?</label>
+						  <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						   <depends>
+							  <field id="additional_page">1</field>
+						   </depends>
+						   <comment>Set to "Yes" to hide the Social Sharing Buttons on targeted devices size. If "No", the Social Sharing Buttons will display on all devices screens size</comment>			   
+						</field>
+						<field id="additional_page_mobile_maxwidth" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+						  <label>Devices Max Width (in pixels)</label>
+						  <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						   <depends>
+							  <field id="additional_page_mobile">1</field>
+						   </depends>
+						   <comment>Please, enter the max-width of all devices to which you want to hide the Social Sharing Buttons. eg: If 540, the Social Sharing Buttons will be hidden on all devices with max screen width 540px</comment>				   
+						</field>
+					</group>	
+					<group id="design" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					   <label>Design</label>
+		               <field id="whatsapp_bgcolor" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Whatsapp Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="facebook_bgcolor" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Facebook Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>		
+		               <field id="twitter_bgcolor" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Twitter Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="linkedin_bgcolor" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Linkedin Button Colorr</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="googleplus_bgcolor" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Googleplus Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="pinterest_bgcolor" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Pinterest Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>	
+		               <field id="email_bgcolor" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Email Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>
+		               <field id="compact_bgcolor" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Compact Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>
+		               <field id="counter_bgcolor" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+		                    <label>Counter Button Color</label>
+		                    <frontend_model>Ulmod\SocialShare\Block\Adminhtml\System\Config\Color</frontend_model> 
+		                </field>                       		
+					</group>									
+				</group>
+            </group>	
+        </section>
+    </system>
+</config>
+
+	

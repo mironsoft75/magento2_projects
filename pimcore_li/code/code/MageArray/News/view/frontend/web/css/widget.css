@@ -1,0 +1,26 @@
+.widget_popular ul {
+    padding: 2px 0;
+    list-style: none;
+}
+
+.widget_popular li {
+    color: #999999;
+}
+
+.widget_latest ul {
+    padding: 2px 0;
+    list-style: none;
+}
+
+.widget_latest li {
+    color: #999999;
+}
+
+.widget_archive ul {
+    padding: 2px 0;
+    list-style: none;
+}
+
+.widget_archive li {
+    color: #999999;
+}

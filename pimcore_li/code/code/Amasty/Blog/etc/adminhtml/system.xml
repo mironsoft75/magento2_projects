@@ -1,0 +1,404 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="amblog" translate="label" type="text" sortOrder="21215" showInDefault="1" showInWebsite="1" showInStore="1">
+            <resource>Amasty_Blog::config</resource>
+            <class>separator-top</class>
+            <label>Amasty Blog</label>
+            <tab>amasty</tab>
+<!--            <group id="top_menu" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Top Menu Integration</label>
+                <field id="display" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="label" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Label</label>
+                </field>
+                <field id="position" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                </field>
+            </group>-->
+            <group id="footer_menu" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Footer Menu Integration</label>
+                <field id="display" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="label" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Label</label>
+                </field>
+<!--                <field id="position" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                </field>-->
+            </group>
+            <group id="search_engine" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Search Engine Optimization</label>
+                <field id="bread" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Breadcrumb Label</label>
+                </field>
+                <field id="route" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Route</label>
+                    <backend_model>Amasty\Blog\Model\Config\Backend\Route</backend_model>
+                </field>
+                <field id="title" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title Prefix for Blog Pro</label>
+                </field>
+                <field id="meta_title" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Meta Title for Blog Pro</label>
+                </field>
+                <field id="meta_keywords" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Meta Keywords for Blog Pro</label>
+                </field>
+                <field id="meta_description" translate="label comment" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Meta Description for Blog Pro</label>
+                </field>
+            </group>
+
+            <group id="redirect" translate="label" type="text" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>URLs and Redirects</label>
+
+                <field id="url_postfix" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>URL Postfix</label>
+                    <source_model>Amasty\Blog\Model\Config\Source\Postfix</source_model>
+                </field>
+
+                <field id="redirect_to_seo_formatted_url" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Redirect to SEO formatted URL</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+            </group>
+
+            <group id="layout" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Layout</label>
+                <field id="mobile_list" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Mobile List</label>
+                    <frontend_model>Amasty\Blog\Block\Adminhtml\System\Config\Field\Layout\Mobile\Mlist</frontend_model>
+                </field>
+                <field id="mobile_post" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Mobile Post</label>
+                    <frontend_model>Amasty\Blog\Block\Adminhtml\System\Config\Field\Layout\Mobile\Post</frontend_model>
+                </field>
+                <field id="desktop_list" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Desktop List</label>
+                    <frontend_model>Amasty\Blog\Block\Adminhtml\System\Config\Field\Layout\Desktop\Mlist</frontend_model>
+                </field>
+                <field id="desktop_post" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Desktop Post</label>
+                    <frontend_model>Amasty\Blog\Block\Adminhtml\System\Config\Field\Layout\Desktop\Post</frontend_model>
+                </field>
+            </group>
+            <group id="list" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>List</label>
+                <field id="count_per_page" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Number of Posts per Page</label>
+                </field>
+            </group>
+            <group id="post" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Post</label>
+                <field id="display_author" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Author Name</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="display_views" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Number of Views</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="display_print" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Print Link</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="display_categories" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Categories</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="display_tags" translate="label comment" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Tags</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="date_manner" translate="label comment" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Date Format</label>
+                    <source_model>Amasty\Blog\Model\Config\Source\Date</source_model>
+                </field>
+                <field id="image_width" translate="label comment" type="text" sortOrder="70" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Width of image on Blog page</label>
+                    <validate>required-entry validate-number validate-greater-than-zero validate-number-range number-range-1-10000</validate>
+                </field>
+                <field id="image_height" translate="label comment" type="text" sortOrder="80" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Height of image on Blog page</label>
+                    <validate>required-entry validate-number validate-greater-than-zero validate-number-range number-range-1-10000</validate>
+                </field>
+            </group>
+            <group id="comments" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Comments</label>
+                <field id="use_comments" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Use Comments</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="autoapprove" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Automatic Approving</label>
+                    <depends>
+                        <field id="use_comments">1</field>
+                    </depends>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="allow_guests" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Allow Guest Comments</label>
+                    <depends>
+                        <field id="use_comments">1</field>
+                    </depends>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="record_limit" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Quantity of Recent Comments in Block</label>
+                    <depends>
+                        <field id="use_comments">1</field>
+                    </depends>
+                </field>
+                <field id="display_short" translate="label comment" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Short Content for Recent Comments</label>
+                    <depends>
+                        <field id="use_comments">1</field>
+                    </depends>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="display_date" translate="label comment" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Date for Recent Comments</label>
+                    <depends>
+                        <field id="use_comments">1</field>
+                    </depends>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="nofollow" translate="label comment" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Attribute rel=&quot;nofollow&quot; for Links in Comment</label>
+                    <depends>
+                        <field id="use_comments">1</field>
+                    </depends>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="ask_email" translate="label comment" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Ask Email for Comment</label>
+                    <depends>
+                        <field id="use_comments">1</field>
+                    </depends>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="ask_name" translate="label comment" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Ask Name for Comment</label>
+                    <depends>
+                        <field id="use_comments">1</field>
+                    </depends>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="gdpr" translate="label comment" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable GDPR consent</label>
+                    <depends>
+                        <field id="use_comments">1</field>
+                    </depends>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="gdpr_text" translate="label comment" type="textarea" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>GDPR Consent Text</label>
+                    <depends>
+                        <field id="use_comments">1</field>
+                        <field id="gdpr">1</field>
+                    </depends>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="recent_posts" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Recent Posts Block</label>
+                <field id="record_limit" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Recent Posts Quantity in Block</label>
+                </field>
+                <field id="display_short" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Short Content</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="display_date" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Date</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="short_limit" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Short Content Limit</label>
+                </field>
+            </group>
+            <group id="tags" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Tags</label>
+                <field id="minimal_post_count" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Minimal Posts Number per Tag</label>
+                </field>
+
+                <field id="mt_enabled" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Use 3D Cloud to Display Tags</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="mt_height" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>3D Cloud: Height</label>
+                    <depends>
+                        <field id="mt_enabled">1</field>
+                    </depends>
+                </field>
+                <field id="presetted_colors" translate="label comment" type="text" sortOrder="400" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>3D Cloud: Color Scheme</label>
+                    <comment>Choose any color scheme and press Apply to fill color fields automatically</comment>
+                    <frontend_model>Amasty\Blog\Block\Adminhtml\Settings\Colors</frontend_model>
+                    <depends>
+                        <field id="mt_enabled">1</field>
+                    </depends>
+                </field>
+                <field id="mt_textcolor" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>3D Cloud: Text Color</label>
+                    <depends>
+                        <field id="mt_enabled">1</field>
+                    </depends>
+                    <frontend_model>Amasty\Blog\Block\Adminhtml\System\Config\Field\Color</frontend_model>
+                </field>
+
+                <field id="mt_textcolor2" translate="label comment" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>3D Cloud: Tag Color for Less Used Tags</label>
+                    <depends>
+                        <field id="mt_enabled">1</field>
+                    </depends>
+                    <frontend_model>Amasty\Blog\Block\Adminhtml\System\Config\Field\Color</frontend_model>
+                </field>
+
+                <field id="mt_hicolor" translate="label comment" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>3D Cloud: Tag Highlight Color</label>
+                    <depends>
+                        <field id="mt_enabled">1</field>
+                    </depends>
+                    <frontend_model>Amasty\Blog\Block\Adminhtml\System\Config\Field\Color</frontend_model>
+                </field>
+            </group>
+
+            <group id="rss" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>RSS</label>
+                <field id="display_on_list" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Link on List</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="post_feed" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Post Feed</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="category_feed" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category Feed</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="comment_feed" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Comment Feed</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <group id="publisher" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Publisher Information</label>
+
+                <field id="facebook" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Facebook Account</label>
+                </field>
+                <field id="twitter" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Twitter Account</label>
+                </field>
+            </group>
+            <group id="social" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Social Buttons</label>
+
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="networks" translate="label comment" type="multiselect" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Networks</label>
+                    <source_model>Amasty\Blog\Model\Config\Source\Networks</source_model>
+                </field>
+            </group>
+
+<!--            <group id="sitemap" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Sitemap</label>
+
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="include" translate="label comment" type="multiselect" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Include</label>
+                    <source_model>Amasty\Blog\Model\Config\Source\Sitemap</source_model>
+                </field>
+            </group>-->
+
+            <group id="style" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Look and Feel</label>
+                <field id="color_sheme" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Include</label>
+                    <source_model>Amasty\Blog\Model\Config\Source\Colors</source_model>
+                </field>
+            </group>
+            <!--<group id="notify_admin_new_comment" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Notification of Added Comment</label>
+                <field id="receiver" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Receiver</label>
+                    <comment>This will be used in the "To" field. Several emails should be separated by comma.</comment>
+                </field>
+                <field id="sender" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sender</label>
+                    <comment>This will be used as "From"</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+                </field>
+                <field id="email_template" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Notification Template</label>
+                    <comment>This email template will be used to send a notification of a new submitted comment.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+            </group>
+            <group id="notify_admin_scheduled_post" translate="label" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Notification of Post Publishing</label>
+                <field id="receiver" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Receiver</label>
+                    <comment>This will be used in the "To" field. Several emails should be separated by comma.</comment>
+                </field>
+                <field id="sender" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sender</label>
+                    <comment>This will be used as "From"</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+                </field>
+                <field id="email_template" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Notification Template</label>
+                    <comment>This email template will be used to sent a notification of publishing a scheduled post.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+            </group>
+            <group id="notify_customer_comment_replyed" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Customer Notifications</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="sender" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sender</label>
+                    <comment>This will be used as "From"</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+                </field>
+                <field id="email_template" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Notification Template</label>
+                    <comment>This email template will be used to sent a notification of reply to a customer's comment</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+            </group>-->
+        </section>
+    </system>
+</config>

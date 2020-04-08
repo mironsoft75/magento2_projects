@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+-->
+<!--
+/**
+ * Copyright © 2015 Amasty. All rights reserved.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="left">
+            <block class="Amasty\Blog\Block\Adminhtml\Comments\Edit\Tabs" name="amasty_blog_comments_edit_tabs" >
+                <arguments>
+                    <argument name="id" xsi:type="string">amasty_blog_comments_edit_tabs</argument>
+                    <argument name="dest_element_id" xsi:type="string">edit_form</argument>
+                    <argument name="title" xsi:type="string" translate="true">Comments</argument>
+                </arguments>
+
+
+                <block class="Amasty\Blog\Block\Adminhtml\Comments\Edit\Tab\General" name="amasty_blog_comments_edit_tab_general"/>
+
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">General</argument>
+                    <argument name="block" xsi:type="string">amasty_blog_comments_edit_tab_general</argument>
+                </action>
+
+            </block>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Amasty\Blog\Block\Adminhtml\Categories\Edit" name="amasty_blog_comments_edit"/>
+        </referenceContainer>
+    </body>
+</page>

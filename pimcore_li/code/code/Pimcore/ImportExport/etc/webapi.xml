@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+
+    <!-- Product Service -->
+    <route url="/V2/Pimcore/products" method="POST">
+        <service class="Pimcore\ImportExport\Api\ProductRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Magento_Catalog::products" />
+        </resources>
+    </route>
+    <route url="/V2/Pimcore/products/:sku" method="PUT">
+        <service class="Pimcore\ImportExport\Api\ProductRepositoryInterface" method="save" />
+        <resources>
+            <resource ref="Magento_Catalog::products" />
+        </resources>
+    </route>
+    <route url="/V2/Pimcore/products/:sku" method="DELETE">
+        <service class="Pimcore\ImportExport\Api\ProductRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="Magento_Catalog::products" />
+        </resources>
+    </route>
+    <route url="/V2/Pimcore/products" method="GET">
+        <service class="Pimcore\ImportExport\Api\ProductRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="Magento_Catalog::products" />
+        </resources>
+    </route>
+    <route url="/V2/Pimcore/products/:sku" method="GET">
+        <service class="Pimcore\ImportExport\Api\ProductRepositoryInterface" method="get"/>
+        <resources>
+            <resource ref="Magento_Catalog::products" />
+        </resources>
+    </route>
+</routes>

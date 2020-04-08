@@ -1,0 +1,19 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+?>
+<?php
+/** @var \Amasty\Blog\Block\Content\Post\Details $block */
+
+$post = $block->getPost();
+?>
+
+<?php if ($block->helperSettings->getUseTags()): ?>
+    <?php echo $block->getTagsHtml(); ?>
+<?php endif; ?>
+<?php if ($block->helperSettings->getUseCategories()): ?>
+    <?php echo $block->getCategoriesHtml(); ?>
+<?php endif; ?>

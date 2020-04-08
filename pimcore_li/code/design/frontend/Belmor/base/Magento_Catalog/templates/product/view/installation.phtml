@@ -1,0 +1,97 @@
+<?php
+/** @var  $pimcoreProductHelper \Pimcore\Product\Helper\Data */
+$pimcoreProductHelper = $this->helper('\Pimcore\Product\Helper\Data');
+?>
+<?php if(! empty ($pimcoreProductHelper->getCurrentProduct()->getData('installation_sheet') )): ?>
+<p>
+    <?= /* @escapeNotVerified */ __('Click the DOWNLOAD button below to see installation details for this product.') ?>
+</p>
+    <h3 class="download-title"><?= /* @escapeNotVerified */ __('Download Instruction Sheet') ?></h3>
+<div class="download-main">
+    <a href="<?=$pimcoreProductHelper->getCurrentProduct()->getData('installation_sheet')?>" target="_blank" >
+    <button class="action secondary"><?= /* @escapeNotVerified */ __('DOWNLOAD') ?></button>
+    </a>
+</div>
+
+<?php
+    $count = 0;
+    $galleryImages = $pimcoreProductHelper->getCurrentProduct()->getMediaGalleryImages();
+    if ($galleryImages) {
+        foreach ($galleryImages as $image) {
+             if($image->getVideoUrl()){
+                 $count=1;
+             }
+        }
+    }
+    if($count) {   ?>
+        <div class="installation-video-main">
+            <h3 class="title"><?= /* @escapeNotVerified */ __('Watch Videos') ?></h3>
+            <div class="videos-lists">
+                <?php
+                $galleryImages = $pimcoreProductHelper->getCurrentProduct()->getMediaGalleryImages();
+                if ($galleryImages) {
+                    foreach ($galleryImages as $image) {
+                        $imageData = $image->getData();
+                        // Check media type
+                        if (isset($imageData['media_type']) && $imageData['media_type'] == 'external-video') { ?>
+                            <div data-video-url="<?php echo $imageData['video_url']; ?>" class="video-list">
+                                <div class="video-thumbnail">
+                                    <img src="<?php echo $imageData['medium_image_url']; ?>" />
+                                </div>
+                                <p class="title"><?php echo $imageData['video_title']; ?></p>
+                            </div>
+                        <?php }
+                    }
+                }
+                ?>
+            </div>
+            <div class="videoplayer-popup-main" style="display: none">
+                <div class="video-content">
+                    <iframe width="100%" height="400" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <script>
+            require(
+                [
+                    'jquery',
+                    'Magento_Ui/js/modal/modal'
+                ],
+                function(
+                    $,
+                    modal
+                ) {
+                    var options = {
+                        type: 'popup',
+                        responsive: false,
+                        modalClass: 'video-popup',
+                        buttons: []
+                    };
+
+                    var popup = modal(options, $('.videoplayer-popup-main'));
+                    $(".videos-lists .video-list").on('click',function(){
+                        var videoUrl = $(this).attr('data-video-url');
+                        iframeEmbedUrl = "//www.youtube.com/embed/"+getId(videoUrl);
+                        $('.videoplayer-popup-main .video-content iframe').attr('src', iframeEmbedUrl);
+                        $(".videoplayer-popup-main").modal("openModal").on('modalclosed', function() {
+                            $('.videoplayer-popup-main .video-content iframe').attr('src', '');
+                        });
+                    });
+
+                    //get youtube id fom url
+                    function getId(url) {
+                        var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+                        var match = url.match(regExp);
+
+                        if (match && match[2].length == 11) {
+                            return match[2];
+                        } else {
+                            return 'error';
+                        }
+                    }
+
+                }
+            );
+        </script>
+    <?php }?>
+<?php endif;  ?>

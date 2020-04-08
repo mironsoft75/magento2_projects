@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="MageArray_News::css/category_sidebar.css"/>
+        <css src="MageArray_News::css/widget.css"/>
+    </head>
+    <body>
+        <referenceBlock name="top.links">
+            <block class="MageArray\News\Block\Top\Link" name="news-link" ifconfig="magearray_news/general/top_menu_link"/>
+        </referenceBlock>
+        <referenceBlock name="footer_links">
+            <block class="MageArray\News\Block\Top\Link" name="news-link-footer"
+                   ifconfig="magearray_news/general/footer_link"/>
+			<block class="MageArray\News\Block\Top\Sitemap" name="sitemap-link-footer"
+                   ifconfig="magearray_news/general/show_sitemap"/>
+        </referenceBlock>
+
+    </body>
+</page>

@@ -1,0 +1,162 @@
+<?php
+/** @var $block \Bss\Gallery\Block\CategoryView */
+/** @var $category \Bss\Gallery\Model\Category */
+
+$category = $block->getCategory();
+$items = $block->getCollection();
+?>
+<?php if ($items->getSize() > 0) : ?>
+<?php $isAutoLoad = $block->isAutoLoad(); ?>
+<?php $pageSpeed = $block->getPageSpeed(); ?>
+<?php $titlePosition = $block->getTitlePosition(); ?>
+<?php $transitionEffect = $block->getTransitionEffect(); ?>
+<?php $layout = $this->getData('bss_gallery_layout') ?>
+<link rel="stylesheet" type="text/css" href="<?php echo $block->getViewFileUrl('Bss_Gallery::css/styles.css')?>">
+<link rel="stylesheet" type="text/css" href="<?php echo $block->getViewFileUrl('Bss_Gallery::js/fancybox/source/jquery.fancybox.css')?>">
+<link rel="stylesheet" type="text/css" href="<?php echo $block->getViewFileUrl('Bss_Gallery::js/fancybox/source/helpers/jquery.fancybox-buttons.css')?>">
+<link rel="stylesheet" type="text/css" href="<?php echo $block->getViewFileUrl('Bss_Gallery::js/fancybox/source/helpers/jquery.fancybox-thumbs.css')?>">
+<link rel="stylesheet" type="text/css" href="<?php echo $block->getViewFileUrl('Bss_Gallery::js/owl.carousel.2.0/assets/owl.carousel.css')?>">
+<div id="gallery-wrapper">
+    <h2 class="gallery-category-item-title"><?php echo $this->getData('bss_gallery_description'); ?></h2>
+    <?php if($layout == 'standard') : ?>
+    <ul class="gallery-category-list-widget gallery-item-list-widget">
+        <?php foreach ($items as $item): ?>
+            <li class="gallery-category-list-item-widget">
+                <div class="gallery-category-item-widget">
+                    <?php if ($item->getVideo() != null) : ?>
+                        <a title="<?php echo $item->getDescription() ?>" href="<?php echo $item->getVideo() ?>"
+                           class="fancybox-widget fancybox.iframewidget" rel="gallery">
+                            <img src="<?php echo $block->getImageResize($item->getImage()) ?>"/>
+                        </a>
+                    <?php else : ?>
+                        <a title="<?php echo $item->getDescription() ?>"
+                           href="<?php echo $block->getImageUrl($item->getImage()) ?>" class="fancybox-widget" rel="gallery">
+                            <img src="<?php echo $block->getImageResize($item->getImage()) ?>"/>
+                        </a>
+                    <?php endif ?>
+                </div>
+                <h4 class="gallery-category-item-title-widget">
+                    <?php echo $item->getTitle() ?>
+                </h4>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+    <script>
+        require(['jquery',
+            'bss_fancybox',
+            'bss_fancyboxButtons',
+            'bss_fancyboxThumbs',
+            'bss_fancyboxMedia'
+        ], function ($) {
+            $(document).ready(function () {
+                $('.fancybox-widget').fancybox({
+                    <?php if($isAutoLoad) : ?>
+                        autoPlay : true,
+                        playSpeed : <?php echo $pageSpeed ?>,
+                    <?php endif ?>
+                    helpers: {
+                        title: {
+                            type: '<?php echo $titlePosition ?>'
+                        },
+                        overlay: {
+                            locked: false
+                        },
+                        buttons : {}
+                    },
+                    'nextEffect': '<?php echo $transitionEffect ?>',
+                });
+            });
+        });
+    </script>
+    <?php endif ?>
+    <?php if($layout == 'slider') : ?>
+        <ul class="gallery_slider">
+        <?php foreach ($items as $item): ?>
+            <li class="item">
+                <div class="gallery-category-item-widget">
+                    <?php if ($item->getVideo() != null) : ?>
+                        <a title="<?php echo $item->getDescription() ?>" href="<?php echo $item->getVideo() ?>"
+                           class="fancybox-widget fancybox.iframe.widget" rel="gallery">
+                            <img src="<?php echo $block->getImageResize($item->getImage()) ?>"/>
+                        </a>
+                    <?php else : ?>
+                        <a title="<?php echo $item->getDescription() ?>"
+                           href="<?php echo $block->getImageUrl($item->getImage()) ?>" class="fancybox-widget" rel="gallery">
+                            <img src="<?php echo $block->getImageResize($item->getImage()) ?>"/>
+                        </a>
+                    <?php endif ?>
+                </div>
+                <h4 class="gallery-category-item-title">
+                    <?php echo $item->getTitle() ?>
+                </h4>
+            </li>
+        <?php endforeach; ?>
+        </ul>
+        <script>
+        require(['jquery',
+                'bss_fancybox',
+                'bss_fancyboxButtons',
+                'bss_fancyboxThumbs',
+                'bss_fancyboxMedia'
+            ], function ($) {
+                $(document).ready(function () {
+                    $('.fancybox-widget').fancybox({
+                        <?php if($isAutoLoad) : ?>
+                            autoPlay : true,
+                            playSpeed : <?php echo $pageSpeed ?>,
+                        <?php endif ?>
+                        helpers: {
+                            title: {
+                                type: '<?php echo $titlePosition ?>'
+                            },
+                            overlay: {
+                                locked: false
+                            },
+                            buttons : {}
+                        },
+                        'nextEffect': '<?php echo $transitionEffect ?>',
+                    });
+                });
+            });
+        </script>
+        <script>
+            require(['jquery',
+                'bss_owlslider',
+            ], function ($) {
+                $(document).ready(function () {
+                    $('ul.gallery_slider').owlCarousel({
+                        'loop':true,
+                        'margin':20,
+                        'autoHeight' : true,
+                        'nav' : true,
+                        'responsiveClass':true,
+                        'responsive':{
+                            '0':{
+                                items:1,
+                            },
+                            '600':{
+                                items:3,
+                            },
+                            '960':{
+                                items:4,
+                            },
+                            '1200':{
+                                items:5,
+                            }
+                        },
+                        'autoHeight' : false,
+                        <?php if($this->getData('bss_gallery_slider_autoplay')) : ?>
+                        'autoplay' : true,
+                        <?php if($this->getData('bss_gallery_slider_autoplay_timeout')) : ?>
+                        'autoplayTimeout' : '<?php echo (int)$this->getData('bss_gallery_slider_autoplay_timeout') ?>',
+                        <?php endif ?>
+                        <?php endif ?>
+                    });
+                });
+            });
+        </script>
+    <?php endif ?>
+    <?php else : ?>
+        <p><?php echo __('This Category has no image !') ?></p>
+    <?php endif ?>
+</div>

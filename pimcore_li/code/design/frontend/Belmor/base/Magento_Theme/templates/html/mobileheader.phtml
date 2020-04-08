@@ -1,0 +1,27 @@
+<div class="mobile-links-container">
+    <p class="links-title">Help</p>
+    <ul class="mobile-links">
+        <li> <a href="<?php echo $this->getUrl('about-us');?>">About Us</a> </li>
+        <li><a href="<?php echo $this->getUrl('contact'); ?>">Support</a></li>
+        <li><a href="<?php echo $this->getUrl('privacy-policy'); ?>">Privacy Policy</a></li>
+        <li><a href="<?php echo $this->getUrl('terms-of-use'); ?>">Terms of use</a></li>
+    </ul>
+</div>
+<script>
+    require([
+        'jquery'],
+         function ($) {
+            $('.mobile-links-container p').click(function(){
+                $('.mobile-links-container').toggleClass('mobile-links-active');
+                //$('.mobile-links-container .mobile-links').toggle();
+            })
+            $(document).mouseup(function(e) {
+                var container = $(".mobile-links-container");
+                // if the target of the click isn't the container nor a descendant of the container
+                if (!container.is(e.target) && container.has(e.target).length === 0) 
+                {
+                    container.addClass('mobile-links-active');
+                }
+            })
+    });
+</script>

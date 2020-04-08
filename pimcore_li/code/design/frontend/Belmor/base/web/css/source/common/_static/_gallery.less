@@ -1,0 +1,43 @@
+.cms-gallery {
+    .page-main {
+        @media @mobile {
+            padding-top: 0;
+        }
+        .page-title-wrapper {
+            height: 268px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @media @mobile {
+                height: 170px;
+            }
+            h1 {
+                font-size: 57px;
+                text-transform: uppercase;
+                font-family: @primary-font-bold;
+                color: @primary;
+                text-align: center;
+                @media @mobile {
+                    font-size: 29px;
+                }
+            }
+        }
+        .gallery-category-list-widget.gallery-item-list-widget {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                width: 25%;
+                box-sizing: border-box;
+                padding: 10px;
+                h4 {
+                    display: none;
+                }
+            }
+        }
+    }
+    .page-footer .block.newsletter .content .co-social ul li a{
+        width: 40px;
+        height: 40px;
+    }
+}

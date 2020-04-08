@@ -1,0 +1,75 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+?>
+<?php
+/** @var \Amasty\Blog\Block\Content\Lists $block */
+?>
+<div class="amblog-container list">
+    <div class="am-blog-head fix-me">
+        <!--<h1 class="am-title"><?php /*echo $block->getPageHeader(); */?></h1>-->
+        <?php if ($block->getShowRssLink()): ?>
+            <span class="am-blog-rss">
+            <i class="<?php echo $block->getColorClass(); ?> glyphicons rss"></i>
+            <a class="am-blog-rss-link" href="<?php echo $block->getRssFeedUrl(); ?>" target="_blank"
+               title="<?php echo __("Subscribe RSS Feed"); ?>">
+                <?php echo __("RSS Feed"); ?>
+            </a>
+        </span>
+        <?php endif; ?>
+    </div>
+    <?php if (count($block->getCollection())): ?>
+
+        <div class="amblog-list">
+            <?php foreach ($block->getCollection() as $post): ?>
+                <div class="amblog-post">
+
+                    <div class="am-header fix-me">
+                        <?php echo $block->getHeaderHtml($post); ?>
+                    </div>
+                    
+                    <div class="thumbnail-container">
+
+                    <?php if ($post->getListThumbnailSrc()): ?>
+
+                        <div class="post-thumbnail">
+                            <a
+                                href="<?php echo $post->getPostUrl(); ?>"
+                                title="<?php echo $block->escapeHtml($post->getTitle()); ?>">
+
+                                <img class="thumbnail"
+                                     src="<?php echo $post->getListThumbnailSrc(); ?>"
+                                     alt="<?php echo $block->escapeHtml($post->getTitle()); ?>"/>
+                            </a>
+                        </div>
+
+                    <?php endif; ?>
+
+                        <div class="post-content">
+                            <div class="am-post-header">
+                                <h2><a href="<?php echo $post->getPostUrl(); ?>"><?php echo $block->escapeHtml($post->getTitle()); ?></a></h2>
+                            </div>
+
+                            <div class="am-content std fix-me">
+                                <?php echo $post->getShortContent(); ?>
+                            </div>
+                        </div>
+
+                        <div class="am-details fix-me">
+                            <a class="button am-read-more" href="<?php echo $block->getReadMoreUrl($post); ?>" title="<?php echo __("Read More"); ?>">
+                                <?php echo __("Read More"); ?>
+                            </a>
+                            <?php echo $block->getFooterHtml($post); ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+        <?php echo $block->getToolbarHtml(); ?>
+    <?php else: ?>
+        <?php echo __("There are no posts yet."); ?>
+    <?php endif; ?>
+</div>

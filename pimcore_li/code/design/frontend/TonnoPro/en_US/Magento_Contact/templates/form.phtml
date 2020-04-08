@@ -1,0 +1,133 @@
+<?php
+
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+/** @var \Magento\Contact\Block\ContactForm $block */
+?>
+
+<div class="contact-container">
+    <div class="contact-header">
+        <img src="<?php echo $this->helper('\Magento\Cms\Helper\Wysiwyg\Images')->getBaseUrl(); ?>wysiwyg/contact/contact_banner.jpg" />
+        <div class="header-title">
+            <h1>
+                <?= $block->escapeHtmlAttr(__('Contact Us')) ?>
+            </h1>
+        </div>
+    </div>
+    <div class="contact-contents">
+        <div class="contact-form">
+            <form class="form contact" action="<?= $block->escapeUrl($block->getFormAction()) ?>" id="contact-form"
+                  method="post" data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>" data-mage-init='{"validation":{}}'>
+                <fieldset class="fieldset">
+                    <legend class="legend"><span>
+                            <?= $block->escapeHtml(__('Please fill out the form below with your information and questions or comments and we will respond to your inquiry as soon as possible.')) ?></span></legend><br />
+                    <div class="field note no-label">
+                        <?= $block->escapeHtml(__('*Required Fields')) ?>
+                    </div>
+                    <!-- second row  -->
+                    <div class="row">
+                        <div class="field name required">
+                            <div class="control">
+                                <input name="name" id="name" title="<?= $block->escapeHtmlAttr(__('Name')) ?>" value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('name') ? : $this->helper('Magento\Contact\Helper\Data')->getUserName()) ?>"
+                                       placeholder="<?= $block->escapeHtmlAttr(__('Name*')) ?>" class="input-text" type="text"
+                                       data-validate="{required:true}" />
+                            </div>
+                        </div>
+                        <div class="field telephone required">
+                            <div class="control">
+                                <input name="telephone" id="telephone" title="<?= $block->escapeHtmlAttr(__('Phone Number')) ?>"
+                                       value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('telephone')) ?>"
+                                       placeholder="<?= $block->escapeHtml(__('Phone Number*')) ?>" class="input-text" data-validate="{required:true}"
+                                       type="text" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- second row  -->
+                    <div class="row">
+                        <div class="field email required">
+                            <div class="control">
+                                <input name="email" id="email" title="<?= $block->escapeHtmlAttr(__('Email')) ?>" value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('email') ? : $this->helper('Magento\Contact\Helper\Data')->getUserEmail()) ?>"
+                                       placeholder=" <?= $block->escapeHtml(__('Email Address')) ?>" class="input-text"
+                                       type="email" data-validate="{required:true, 'validate-email':true}" />
+                            </div>
+                        </div>
+                        <div class="field title">
+                            <div class="control">
+                                <input name="title" id="title" title="<?= $block->escapeHtmlAttr(__('Title')) ?>" value="<?= $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getPostValue('title')) ?>"
+                                       placeholder=" <?= $block->escapeHtml(__('Title')) ?>" class="input-text" type="text" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- thrid row  -->
+                    <div class="field company">
+                        <div class="control">
+                            <input name="company" id="company" title="<?= $block->escapeHtmlAttr(__('Company')) ?>"
+                                   value="<?= $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getPostValue('company')) ?>" placeholder=" <?= $block->escapeHtml(__('company')) ?>" class="input-text"
+                                   type="text" />
+                        </div>
+                    </div>
+                    <!-- fourth row  -->
+                    <div class="field subject">
+                        <div class="control">
+                            <input name="subject" id="subject" title="<?= $block->escapeHtmlAttr(__('Subject')) ?>"
+                                   value="<?= $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getPostValue('subject')) ?>" placeholder=" <?= $block->escapeHtml(__('subject')) ?>" class="input-text"
+                                   type="text" />
+                        </div>
+                    </div>
+                    <!-- enquiry row  -->
+                    <div class="field comment required">
+                        <div class="control">
+                            <textarea name="comment" id="comment" title="<?= $block->escapeHtmlAttr(__('What’s on your mind?')) ?>"
+                                      placeholder="<?= $block->escapeHtml(__('Type your Inquiry')) ?>" class="input-text"
+                                      cols="5" rows="3" data-validate="{required:true}"><?= $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getPostValue('comment')) ?></textarea>
+                        </div>
+                    </div>
+                    <?= $block->getChildHtml('form.additional.info') ?>
+                </fieldset>
+                <div class="actions-toolbar">
+                    <div class="primary">
+                        <input type="hidden" name="hideit" id="hideit" value="" />
+                        <button type="submit" title="<?= $block->escapeHtmlAttr(__('Submit')) ?>" class="action secondary submit">
+                            <span>
+                                <?= $block->escapeHtml(__('Submit')) ?></span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="contact-details">
+            <ul class="details-list">
+                <li>
+                    <div class="call-container">
+                        <div class="call-icon">
+
+                        </div>
+                        <div class="call-number">
+                            <p><strong>Call</strong><br>
+                                Phone: <a href="tel:888-477-3729">(888) 477-3729</a><br> 
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="mail-container">
+                        <div class="mail-icon">
+
+                        </div>
+                        <div class="mail-id">
+                            <p><strong>Email</strong><br>
+                                <a href="mailto:infoTP@lundinter.com">Customer Care</a> - General Product Inquiries<br>
+                                <a href="mailto:infoTP@lundinter.com">Warranty Service</a> - Issues regarding returning or replacing TonnoPro Products<br>
+                                <a href="mailto:infoTP@lundinter.com    ">MAP Policy Administrator</a> - Questions relating to Minimum Advertised Pricing<br>
+                            </p>
+                        </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

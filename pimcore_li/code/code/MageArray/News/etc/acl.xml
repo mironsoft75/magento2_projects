@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="MageArray_Core::core" title="MageArray Extensions" sortOrder="80">
+                    <resource id="MageArray_News::news" title="News" sortOrder="50">
+                        <resource id="MageArray_News::newspost" title="Posts" sortOrder="10"/>
+                        <resource id="MageArray_News::newscat" title="Categories" sortOrder="20"/>
+                        <resource id="MageArray_News::newscomment" title="Comments" sortOrder="30"/>
+                    </resource>
+                </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <!-- this resource id we can use in system.xml for section -->
+                            <resource id="MageArray_News::config_news" title="News Section" sortOrder="80"/>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

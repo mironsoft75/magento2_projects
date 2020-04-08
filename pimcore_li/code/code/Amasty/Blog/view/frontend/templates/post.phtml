@@ -1,0 +1,68 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+?>
+<?php
+$post = $block->getPost();
+?>
+<div class="amblog-container">
+    <div class="amblog-post">
+
+        <div class="am-blog-head fix-me">
+            <!--<h1 class=""><?php /*echo $block->escapeHtml($post->getTitle()); */?></h1>-->
+
+            <?php if($block->getShowPrintLink()): ?>
+                <span class="am-blog-print">
+                    <i class="<?php echo $block->getColorClass(); ?> glyphicons print"></i>
+                    <a class="am-blog-print-link" href="#" onclick="window.print(); return false;" title="<?php echo __("Print This Page"); ?>">
+                        <?php echo __("Print"); ?>
+                    </a>
+                </span>
+            <?php endif; ?>
+        </div>
+
+        <?php if ($post->getPostThumbnailSrc()): ?>
+            <div class="post-thumbnail">
+                <?php if ($block->hasThumbnailUrl()): ?>
+                <a class="thumbnail-url" title="<?php echo $block->escapeHtml($post->getTitle()); ?>" href="<?php echo $block->getThumbnailUrl(); ?>">
+                    <?php endif; ?>
+                    <img class="thumbnail"
+                         src="<?php echo $post->getPostImageSrc(); ?>"
+                         alt="<?php echo $block->escapeHtml($post->getTitle()); ?>"/>
+                    <?php if ($block->hasThumbnailUrl()): ?>
+                </a>
+            <?php endif; ?>
+            </div>
+        <?php endif; ?>
+
+        <div class="am-header fix-me">
+            <?php echo $block->getHeaderHtml($post); ?>
+        </div>
+        <div class="am-content std fix-me">
+            <?php echo $post->getFullContent(); ?>
+            <div class="am-details fix-me">
+                <?php echo $block->getFooterHtml($post); ?>
+            </div>
+        </div>
+
+        <?php if ($post->getCommentsEnabled() || $block->settingsHelper->getSocialEnabled()): ?>
+            <div class="customer-action-bar fix-me">
+                <?php if ($block->settingsHelper->getSocialEnabled()): ?>
+                    <?php echo $block->getSocialHtml(); ?>
+                <?php endif; ?>
+                <?php if ($post->getCommentsEnabled()): ?>
+                    <?php echo $block->getCommentsActionHtml(); ?>
+                <?php endif; ?>
+            </div>
+        <?php endif; ?>
+
+        <?php if ($post->getCommentsEnabled()): ?>
+            <div class="amblog-comments-container" id="comments">
+                <?php echo $block->getCommentsHtml(); ?>
+            </div>
+        <?php endif; ?>
+    </div>
+</div>

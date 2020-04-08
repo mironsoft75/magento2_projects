@@ -1,0 +1,89 @@
+<?php $post = $block->getPost(); ?>
+<?php $block->setPageView(); ?>
+<div class="post-view post article-item">
+    <div class="post-header">
+        <?php if (!empty($post->getSourceEdition())): ?>
+            <p>
+                <span class="cat">
+                    <?php echo $post->getSourceEdition() ?>
+                </span>
+            </p>
+        <?php endif; ?>
+        <h1>
+            <?php echo $post->getTitle() ?>
+        </h1>
+    </div>
+    <div class="post-featured-item">
+        <?php if ($imageUrl = $this->getImageUrl($post, 900, 500)): ?>
+            <?php $thumb = $imageUrl; ?>
+        <?php elseif ($imageUrl = $this->getThumbImageUrl($post, 900, 500)): ?>
+            <?php $thumb = $imageUrl; ?>
+        <?php else: ?>
+            <?php $thumb = ""; ?>
+        <?php endif; ?>
+        <?php if ($thumb != ''): ?>
+            <img src="<?php echo $thumb; ?>"
+                 class="attachment-190-120 wp-post-image image-loaded"/>
+        <?php endif; ?>
+    </div>
+    <div class="post-entry full essbis-hover-container">
+        <div class="post-entry-text">
+            <?php if (
+                $post->getDisplayShare() == 1 &&
+                $post->getShareAbove() == 1
+            ): ?>
+                <?php echo $this->getChildHtml('news.post.share') ?>
+            <?php endif; ?>
+            <div class="news-post-item-content">
+                <?php echo $block->getDescription(); ?>
+            </div>
+            <?php if (
+                $post->getDisplayShare() == 1 &&
+                $post->getShareBelow() == 1
+            ): ?>
+                <?php echo $this->getChildHtml('news.post.share') ?>
+            <?php endif; ?>
+            <div class="date-author">
+                <?php echo __('Published at:') ?>
+                <span class="date">
+                    <?php echo $post->getCreatedDate(); ?>
+                </span>
+                <?php if ($post->getDisplayViews() == 1): ?>
+                    <?php echo __(' / ') ?>
+                    <span class="views">
+                        <?php echo $post->getViews(); ?>
+                        <?php echo __('Views') ?>
+                    </span>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+    <div class="post-line-bottom">
+        <?php if ($post->getTagonpost() == 1 && !empty($post->getTags())): ?>
+            <div class="post-tags">
+                <?php $tags = explode(',', $post->getTags()) ?>
+                <em>
+                    <?php echo __('Tags') ?>
+                </em> |
+                <?php foreach ($tags as $tag): ?>
+                    <a>
+                        <?php echo $tag ?>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+        <?php if (!empty($post->getSourceEdition())): ?>
+            <div class="news-source-edition">
+                <em>
+                    <?php echo __('Source edition') ?>
+                </em> |
+                <?php echo $post->getSourceEdition() ?>
+            </div>
+        <?php endif; ?>
+    </div>
+</div>
+<script>
+    require(['jquery'], function ($) {
+        }
+    );
+</script>

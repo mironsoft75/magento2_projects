@@ -1,0 +1,227 @@
+<?php /** @var $block \Bss\Gallery\Block\CategoryList */ ?>
+<?php $categories = $block->getCollection() ?>
+<?php $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); ?>
+<?php $limit = $objectManager->create('Bss\Gallery\Helper\Category')->getItemPerPage(); ?>
+<?php $isAutoLoad = $block->isAutoLoad(); ?>
+<?php $pageSpeed = $block->getPageSpeed(); ?>
+<?php $titlePosition = $block->getTitlePosition(); ?>
+<?php $transitionEffect = $block->getTransitionEffect(); ?>
+<link rel="stylesheet" type="text/css" href="<?php echo $block->getViewFileUrl('Bss_Gallery::css/styles.css')?>">
+<link rel="stylesheet" type="text/css" href="<?php echo $block->getViewFileUrl('Bss_Gallery::js/fancybox/source/jquery.fancybox.css')?>">
+<link rel="stylesheet" type="text/css" href="<?php echo $block->getViewFileUrl('Bss_Gallery::js/fancybox/source/helpers/jquery.fancybox-buttons.css')?>">
+<link rel="stylesheet" type="text/css" href="<?php echo $block->getViewFileUrl('Bss_Gallery::js/fancybox/source/helpers/jquery.fancybox-thumbs.css')?>">
+<link rel="stylesheet" type="text/css" href="<?php echo $block->getViewFileUrl('Bss_Gallery::js/owl.carousel.2.0/assets/owl.carousel.css')?>">
+<div id="gallery-wrapper">
+    <h1 class="gallery-category-item-title"><?php echo __('Image Gallery') ?></h1>
+    <?php if ($categories->getSize() > 0) : ?>
+        <?php
+            $layoutType = $block->getLayoutType();
+        ?>
+        <!-- STANDRAD LAYOUT -->
+        <?php if ($layoutType == 'standard') : ?>
+            <div class="gallery-category-list-standard-wrapper">
+                <ul class="gallery-category-list">
+                    <?php foreach ($block->getCollection() as $category): ?>
+                        <li class="gallery-category-list-item">
+                            <div class="gallery-category-item">
+                                <a href="<?php echo $category->getUrl() ?>">
+                                    <img src="<?php echo $block->getImageResize($category->getThumbnail()) ?>"/>
+                                </a>
+                            </div>
+                            <h4 class="gallery-category-item-title">
+                                <a href="<?php echo $category->getUrl() ?>"><?php echo $category->getTitle() ?>
+                                    <span
+                                        class="item_count"><?php echo '(' . $block->countItems($category) . ')' ?></span>
+                                </a>
+                            </h4>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+            <!-- LIST AJAX -->
+        <?php elseif ($layoutType == 'list_ajax') : ?>
+            <div class="gallery-category-list-ajax-wrapper">
+                <ul class="gallery-category-list gallery-category-list-ajax">
+                    <?php $i = 0 ?>
+                    <?php foreach ($block->getCollection() as $category): ?>
+                        <li class="gallery-category-list-item-ajax <?php if ($i == 0)
+                            echo ' active' ?>"
+                            cate-id="<?php echo $category->getId() ?>"
+                            item-ids="<?php echo $category->getData('Item_ids') ?>">
+                            <h4 class="gallery-category-item-title-ajax">
+                                <a><?php echo $category->getTitle() ?></a>
+                            </h4>
+                        </li>
+                        <?php $i++ ?>
+                    <?php endforeach; ?>
+                </ul>
+                <br/>
+                <?php foreach ($block->getCollection() as $category): ?>
+                    <p class="gallery-category-item-description" cate-id="<?php echo $category->getId() ?>" <?php if($category->getId() == $categories->getFirstItem()->getId()) : ?> style="display:block"<?php endif ?>><?php echo $category->getCategoryDescription() ?></p>
+                <?php endforeach ?>
+                <br/>
+                <ul class="gallery-category-list gallery-category-list-content">
+                    <?php $items = $block->getFirstCategoryItems() ?>
+                    <?php foreach ($items as $item): ?>
+                        <li class="gallery-category-list-item" item-id="<?php echo $item->getId() ?>">
+                            <div class="gallery-category-item">
+                                <?php if ($item->getVideo() && $item->getVideo() != '') : ?>
+                                    <a title="<?php echo $item->getDescription() ?>"
+                                       href="<?php echo $item->getVideo() ?>" class="fancybox fancybox.iframe"
+                                       rel="gallery">
+                                        <img src="<?php echo $block->getImageResizeItem($item->getImage()) ?>"/>
+                                    </a>
+                                <?php else : ?>
+                                    <a title="<?php echo $item->getDescription() ?>"
+                                       href="<?php echo $block->getItemImageUrl($item->getImage()) ?>" class="fancybox"
+                                       rel="gallery">
+                                        <img src="<?php echo $block->getImageResizeItem($item->getImage()) ?>"/>
+                                    </a>
+                                <?php endif ?>
+                            </div>
+                            <h4 class="gallery-category-item-title">
+                                <?php echo $item->getTitle() ?>
+                            </h4>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                <?php $count = $block->countFirstCategoryItems() ?>
+                <a id="load-more" style="<?php if($count <= $limit) echo 'display:none' ?>">Load More</a>
+                <div id="gallery-loading"><img
+                        src="<?php echo $block->getViewFileUrl('Bss_Gallery::images/ajax-loader.gif') ?>"/></div>
+            </div>
+        <?php endif ?>
+    <?php else : ?>
+        <p class="no-data"><?php echo __('You have no gallery') ?></p>
+    <?php endif ?>
+    <script>
+        require(
+            [
+                'jquery',
+                'bss_fancybox',
+                'bss_fancyboxButtons',
+                'bss_fancyboxThumbs',
+                'bss_fancyboxMedia'
+            ],
+            function ($) {
+                $(document).ready(function () {
+                    $('.fancybox').fancybox({
+                    <?php if($isAutoLoad) : ?>
+                        autoPlay : true,
+                        playSpeed : <?php echo $pageSpeed ?>,
+                    <?php endif ?>
+                    helpers: {
+                        title: {
+                            type: '<?php echo $titlePosition ?>'
+                        },
+                        overlay: {
+                            locked: false
+                        },
+                        buttons : {}
+                    },
+                    'nextEffect': '<?php echo $transitionEffect ?>',
+                });
+                    $('.gallery-category-list-item-ajax').click(function () {
+                        $.fancybox.showLoading();
+                        $('#load-more').hide();
+                        $('.gallery-category-list-item-ajax.active').removeClass('active');
+                        $(this).addClass('active');
+                        cateItemsIds = $(this).attr('item-ids').split(',');
+                        cateId = $(this).attr('cate-id');
+                        $.ajax({
+                            url: '<?php echo $block->getBaseUrl() ?>' + 'gallery/index/ajax',
+                            type: 'POST',
+                            dataType: 'json',
+                            data: {
+                                'cateId': cateId
+                            }
+                        }).done(function (data) {
+                            count = 0;
+                            var limit = parseInt('<?php echo $limit ?>');
+                            $('#gallery-loading').hide();
+                            if (data != null) {
+                                $('.gallery-category-list-content').html(data);
+                            }
+                            if (cateItemsIds.length <= (count+limit) || cateItemsIds.length == (count+limit)) {
+                                $('#load-more').hide();
+                            } else {
+                                $('#load-more').show();
+                            }
+                            $.fancybox.hideLoading();
+                            $('.gallery-category-item-description').each(function(){
+                                if($(this).attr('cate-id') == cateId){
+                                    $(this).show();
+                                }else{
+                                    $(this).hide();
+                                }
+                            });
+                        }).fail(function () {
+                            $.fancybox.hideLoading();
+                            $('.gallery-category-list .gallery-category-list-item').each(function () {
+                                if (cateItemsIds.indexOf($(this).attr('item-id')) != -1) {
+                                    $(this).show();
+                                    $(this).find('a.fancybox').attr('rel', 'gallery-' + cateId);
+                                } else {
+                                    $(this).hide();
+                                }
+                            });
+                            $('#load-more').hide();
+                        })
+                    });
+
+                    $('#load-more').click(function () {
+                        $.fancybox.showLoading();
+                        $('#load-more').hide();
+                        cateItemsIds = $('.gallery-category-list-item-ajax.active').attr('item-ids').split(',');
+                        cateId = $('.gallery-category-list-item-ajax.active').attr('cate-id');
+                        itemIds = [];
+                        $('.gallery-category-list .gallery-category-list-item').each(function () {
+                            id = $(this).attr('item-id');
+                            itemIds.push(id);
+                        });
+                        $.ajax({
+                            url: '<?php echo $block->getBaseUrl() ?>' + 'gallery/index/ajax',
+                            type: 'POST',
+                            dataType: 'json',
+                            data: {
+                                'itemIds': itemIds,
+                                'cateId': cateId
+                            }
+                        }).done(function (data) {
+                            $.fancybox.hideLoading();
+                            count = 0;
+                            var limit = parseInt('<?php echo $limit ?>');
+                            $('.gallery-category-list .gallery-category-list-item').each(function () {
+                                if (cateItemsIds.indexOf($(this).attr('item-id')) != -1) {
+                                    $(this).show();
+                                    $(this).find('a.fancybox').attr('rel', 'gallery-' + cateId);
+                                    count++;
+                                } else {
+                                    $(this).hide();
+                                }
+                            });
+                            if (data != null) {
+                                $('.gallery-category-list-content').append(data);
+                            }
+                            if (cateItemsIds.length <= (count+limit) || cateItemsIds.length == (count+limit)) {
+                                $('#load-more').hide();
+                            } else {
+                                $('#load-more').show();
+                            }
+                        }).fail(function () {
+                            $.fancybox.hideLoading();
+                            $('.gallery-category-list .gallery-category-list-item').each(function () {
+                                if (cateItemsIds.indexOf($(this).attr('item-id')) != -1) {
+                                    $(this).show();
+                                    $(this).find('a.fancybox').attr('rel', 'gallery-' + cateId);
+                                } else {
+                                    $(this).hide();
+                                }
+                                $('#load-more').hide();
+                            });
+                        })
+                    });
+                });
+            });
+    </script>
+</div>

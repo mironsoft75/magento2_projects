@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="amblog_default"/>
+
+    <body>
+        <referenceContainer name="header">
+            <block class="Amasty\Blog\Block\Content\Lists\Wrapper" name="amblog.content.list.wrapper" as="amblog_content_list_wrapper" />
+        </referenceContainer>
+
+        <referenceContainer name="layout.content">
+
+            <block class="Amasty\Blog\Block\Content\Category\Lists"
+                   name="amblog.content.list"
+                   as="list"
+                   template="Amasty_Blog::list.phtml"/>
+
+            <block class="Amasty\Blog\Block\Content\Category\Grid"
+                   name="amblog.content.grid"
+                   as="grid"
+                   template="Amasty_Blog::grid.phtml"/>
+        </referenceContainer>
+
+    </body>
+</page>

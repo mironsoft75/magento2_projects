@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="bss_gallery_widget" class="Bss\Gallery\Block\Widget\Gallery">
+        <label translate="true">Bss Gallery Widget</label>
+        <description>Gallery Album</description>
+        <parameters>
+            <parameter name="bss_gallery_description" xsi:type="text" visible="true" sort_order="10">
+                <label translate="true">Widget Description</label>
+            </parameter>
+            <parameter name="bss_gallery_category" xsi:type="select" source_model="Bss\Gallery\Model\Config\Source\WidgetCategory" visible="true" sort_order="20" >
+                <label translate="true">Widget Album</label>
+            </parameter>
+            <parameter name="bss_gallery_layout" xsi:type="select" visible="true" sort_order="30" >
+                <label translate="true">Widget Layout</label>
+                <options>
+                    <option name="slider" value="slider" selected="true">
+                        <label translate="true">Slider</label>
+                    </option>
+                    <option name="standard" value="standard">
+                        <label translate="true">Standard</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="bss_gallery_slider_autoplay" xsi:type="select" visible="true" sort_order="40" >
+                <label translate="true">Auto Play</label>
+                <depends>
+                    <parameter name="bss_gallery_layout" value="slider" />
+                </depends>
+                <options>
+                    <option name="true" value="1" selected="true">
+                        <label translate="true">True</label>
+                    </option>
+                    <option name="false" value="0">
+                        <label translate="true">False</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="bss_gallery_slider_autoplay_timeout" xsi:type="text" visible="true" sort_order="50">
+                <label translate="true">Auto Play Time</label>
+                <description>Include time to next each image when auto play is activated, count in milliseconds.</description>
+                <depends>
+                    <parameter name="bss_gallery_layout" value="slider" />
+                </depends>
+            </parameter>
+
+
+        </parameters>
+    </widget>
+</widgets>

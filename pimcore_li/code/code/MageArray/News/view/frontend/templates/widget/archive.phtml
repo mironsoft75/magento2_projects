@@ -1,0 +1,33 @@
+<?php $monthList = $block->monthList(); ?>
+<?php if (!empty($monthList)) : ?>
+    <div id="sidebar">
+        <div class="widget widget_archive">
+            <h3><?php echo __('Archive'); ?></h3>
+            <ul>
+                <?php foreach ($monthList as $posttime): ?>
+                    <?php
+                    $archiveTitle = $block->getMonth(
+                            $posttime
+                        ) . ' ' .
+                        $block->getYear($posttime);
+                    $archiveTitle = $block->escapeHtml(
+                        $archiveTitle,
+                        null,
+                        true
+                    ); ?>
+                    <li class="cat-item">
+                        <a title="<?php echo __(
+                            'Archive %s',
+                            $archiveTitle
+                        ) ?>"
+                           href="<?php echo $block->getArchiveUrl(
+                               $posttime
+                           ) ?>">
+                            <?php echo $archiveTitle ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+<?php endif;

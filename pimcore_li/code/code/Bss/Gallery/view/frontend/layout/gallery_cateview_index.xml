@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<!--     <head>
+        <css src="Bss_Gallery::css/styles.css"/>
+        <css src="Bss_Gallery::js/fancybox/source/jquery.fancybox.css"/>
+    </head> -->
+    <body>
+        <referenceBlock name="page.main.title" display="false"/>
+        <referenceContainer name="content">
+            <block class="Bss\Gallery\Block\CategoryView" name="gallery.category"
+                   template="Bss_Gallery::category_view.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

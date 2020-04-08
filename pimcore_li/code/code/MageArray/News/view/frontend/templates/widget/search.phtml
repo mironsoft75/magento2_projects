@@ -1,0 +1,39 @@
+<div class="widget block block-search" data-bind="scope: 'news-search'">
+    <div class="block-content">
+        <form class="form minisearch"
+              id="news_search_mini_form"
+              action="<?php echo $this->getUrl(
+                  $block->getSearchUrl()
+              ) ?>"
+              method="get">
+            <div class="field search">
+                <label class="label" for="search" data-role="minisearch-label">
+                    <span><?php echo __('Search') ?></span>
+                </label>
+                <div class="control">
+                    <input id="search_news" type="text" name="s"
+                           value="<?php echo $block->escapeHtml(
+                               $block->getSearchQuery()
+                           ) ?>"
+                           class="input-text"
+                           aria-haspopup="false"
+                           maxlength="128"
+                           role="combobox"
+                           placeholder="<?php echo __(
+                               'Search posts here...'
+                           ) ?>"
+                           aria-autocomplete="both" autocomplete="off">
+                </div>
+            </div>
+            <div class="actions">
+                <button type="submit"
+                        title="<?php echo __('Search') ?>"
+                        class="action search">
+                    <span>
+                        <?php echo __('Search') ?>
+                    </span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

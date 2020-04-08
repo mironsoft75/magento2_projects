@@ -1,0 +1,42 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \Magento\Newsletter\Block\Subscribe $block */
+
+?>
+<div class="block newsletter">
+    <div class="title"><strong>
+            <?= $block->escapeHtml(__('Sign Up To Receive Our Newsletter:')) ?></strong></div>
+    <div class="content">
+        <form class="form subscribe" novalidate action="<?= $block->escapeUrl($block->getFormActionUrl()) ?>" method="post"
+            data-mage-init='{"validation": {"errorClass": "mage-error"}}' id="newsletter-validate-detail">
+            <div class="field newsletter">
+                <label class="label" for="newsletter"><span>
+                        <?= $block->escapeHtml(__('Sign Up To Receive Our Newsletter:')) ?></span></label>
+                <div class="control">
+                    <input name="email" type="email" id="newsletter" placeholder="<?= $block->escapeHtmlAttr(__('Enter Email Address')) ?>"
+                        data-validate="{required:true, 'validate-email':true}" />
+                </div>
+            </div>
+            <div class="actions">
+                <button class="action go secondary-back" title="<?= $block->escapeHtmlAttr(__('Go')) ?>" type="submit">
+                    <span>
+                        <?= $block->escapeHtml(__('Go')) ?></span>
+                </button>
+            </div>
+        </form>
+        <div class="co-social">
+            <ul>
+                <li><a href="https://www.facebook.com/bushwackerinc/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://twitter.com/bushwackerinc" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/bushwackerinc/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.youtube.com/user/Bushwackerinc" target="_blank"><i class="fab fa-youtube"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</div>

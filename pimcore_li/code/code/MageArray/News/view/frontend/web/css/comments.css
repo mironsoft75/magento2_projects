@@ -1,0 +1,102 @@
+#comment-list ul, ol {
+    list-style: none;
+}
+
+#comments {
+    margin-top: 0;
+}
+
+.post-comment {
+    margin-top: 50px;
+}
+
+.magearray_comment h3 {
+    margin: 0 0 20px;
+    text-transform: uppercase;
+    padding: 0;
+}
+
+.magearray_comment li.comment {
+    border-bottom: 1px dotted #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.pager, .ias-spinner, .ias-noneleft {
+    clear: both;
+}
+
+#comment-list {
+    margin-top: 15px;
+    margin-left: -40px;
+    width: 95%;
+}
+
+.magearray_comment {
+    margin-top: 40px;
+    padding: 40px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+p.comment-form-author, p.comment-form-email {
+    position: relative;
+    width: 48%;
+    float: left;
+    margin-right: 4%;
+}
+
+p.comment-form-email {
+    margin-right: 0;
+}
+
+.post-comment label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+}
+
+.post-comment input[type="text"], .post-comment input[type="email"], .post-comment textarea {
+    padding: 15px;
+    font-size: 13px;
+    border: 1px solid #e5e5e5;
+}
+
+.post-comment input[type="text"], .post-comment input[type="email"] {
+    width: 100%;
+    height: 44px;
+}
+
+p.form-submit {
+    display: block;
+    text-align: right;
+    clear: both;
+    margin-top: 1rem;
+}
+
+.magearray_comment .comment-text {
+    overflow: hidden;
+}
+
+.magearray_comment .comment-text span.author, .magearray_comment .comment-text span.author a {
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.magearray_comment .comment-text span.date {
+    display: block;
+    font-size: 12px;
+    font-style: italic;
+    color: #AAA;
+    margin-bottom: 20px;
+}
+
+.magearray_comment .comment-text span.author {
+    margin-bottom: 5px;
+}

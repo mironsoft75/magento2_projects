@@ -1,0 +1,40 @@
+<?php
+$helper = $this->helper('MageArray\News\Helper\Data');
+$posts = $helper->getNewsPostList();
+$categories = $helper->getCategoryList();
+?>
+<?php
+/**
+ * show posts list
+ */
+if (!empty($posts)):
+?>
+    <h2><?php echo count($posts) == 1 ? __('Post') : __('Posts') ?></h2>
+    <ul>
+        <?php foreach ($posts as $post): ?>
+            <li>
+                <a href="<?php echo substr($helper->getUrlByPost($post), 0, -1) ?>">
+                    <?php echo $post->getTitle(); ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+<?php endif; ?>
+
+<?php
+/**
+ * show categories list
+ */
+if (!empty($categories)):
+    ?>
+    <h2><?php echo count($categories) == 1 ? __('Category') : __('Categories') ?></h2>
+    <ul>
+        <?php foreach ($categories as $category): ?>
+            <li>
+                <a href="<?php echo $helper->getCatUrl($category->getCatUrlKey()) ?>">
+                    <?php echo $category->getCatName(); ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+<?php endif; ?>

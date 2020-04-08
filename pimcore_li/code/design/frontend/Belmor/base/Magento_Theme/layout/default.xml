@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="https://use.fontawesome.com/releases/v5.3.1/css/all.css" type="text/css" src_type="url"/>
+
+        <!-- Google Fonts -->
+        <link src="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" src_type="url" rel="stylesheet" /> 
+    </head>
+    <body>
+        <move element="navigation.sections" destination="header-wrapper" after="logo" />
+        <move element="header.panel.wrapper" destination="header-wrapper" after="top.search" />
+        <referenceBlock name="top.links">
+            <referenceBlock name="register-link" remove="true" />
+            <referenceBlock name="wish-list-link" remove="true"/>
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="customer-account-navigation-orders-link-top" after="my-account-link" >
+                <arguments>
+                    <argument name="path" xsi:type="string">sales/order/history</argument>
+                    <argument name="label" xsi:type="string" translate="true">My Orders</argument>
+                    <argument name="sortOrder" xsi:type="number">200</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <referenceBlock name="navigation.sections">
+            <block name="mobile-header-links" group="navigation-sections" template="Magento_Theme::html/mobileheader.phtml" before="-" />
+        </referenceBlock>
+        
+        <referenceBlock name="wish-list-link" remove="true" />
+        <referenceBlock name="footer_links" remove="true"/>
+        <referenceBlock name="faq-header-link" remove="true" />
+        <referenceBlock name="authorization-link" remove="true" />
+        <referenceBlock name="report.bugs" remove="true"/>
+        <referenceContainer name="footer">
+             <block class="Magento\Theme\Block\Html\Footer" name="footer-content-block" template="Magento_Theme::html/footer.phtml" />
+        </referenceContainer>
+        <move element="copyright" destination="footer-container" after="footer-content-block"/>
+    </body>
+</page>

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Bss\Gallery\Api\Data\CategoryInterface" type="Bss\Gallery\Model\Category" />
+    <preference for="Bss\Gallery\Api\Data\ItemInterface" type="Bss\Gallery\Model\Item" />
+    <virtualType name="GalleryCategoryGirdFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="GalleryItemGirdFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="CategoryGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Bss\Gallery\Model\Resource\Category\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">GalleryCategoryGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="ItemGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Bss\Gallery\Model\Resource\Item\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">GalleryItemGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Bss\Gallery\Model\ResourceModel\Category\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">bss_gallery_category</argument>
+            <argument name="resourceModel" xsi:type="string">Bss\Gallery\Model\ResourceModel\Category</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Bss\Gallery\Model\ResourceModel\Item\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">bss_gallery_item</argument>
+            <argument name="resourceModel" xsi:type="string">Bss\Gallery\Model\ResourceModel\Item</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="gallery_category_listing_data_source" xsi:type="string">Bss\Gallery\Model\ResourceModel\Category\Grid\Collection</item>
+                <item name="gallery_item_listing_data_source" xsi:type="string">Bss\Gallery\Model\ResourceModel\Item\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

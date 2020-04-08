@@ -1,0 +1,14 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+?>
+<?php if ($block->getTags()->getSize()): ?>
+    <span class="am-tags">
+    <?php $isFirst = true; ?>
+    <?php foreach ($block->getTags() as $tag): ?><?php if (!$isFirst): ?>,
+    <?php endif ?><a href="<?php echo $tag->getTagUrl(); ?>">#<?php echo $block->escapeHtml($tag->getName()); ?></a><?php $isFirst = false; ?><?php endforeach; ?>
+    </span>
+<?php endif; ?>

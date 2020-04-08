@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * SocialShare
+ *
+ * @package     Ulmod_SocialShare
+ * @author      Ulmod <support@ulmod.com>
+ * @copyright   Copyright (c) 2016 Ulmod (http://www.ulmod.com/)
+ * @license     http://www.ulmod.com/license-agreement.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+			   <resource id="Magento_Backend::admin">
+                   <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Ulmod_SocialShare::config_socialshare" title="Social Share by Ulmod" />
+                        </resource>
+                    </resource>
+                  </resource>						
+			   </resource> 	   
+        </resources>
+    </acl>
+</config>

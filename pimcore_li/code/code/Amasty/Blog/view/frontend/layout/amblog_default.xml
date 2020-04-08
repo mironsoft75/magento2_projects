@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Blog
+ */
+-->
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Amasty_Blog::css/styles.css" />
+        <css src="Amasty_Blog::css/glyphicons/css/glyphicons.css" />
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Amasty\Blog\Block\Layout" name="layout" as="layout">
+                <block class="Amasty\Blog\Block\Layout\Container" name="layout.content" as="layout_content">
+                    <action method="setType">
+                        <argument name="type" xsi:type="string">content</argument>
+                    </action>
+                </block>
+
+                <block class="Amasty\Blog\Block\Layout\Container" name="layout.sidebar" as="layout_sidebar">
+                    <action method="setType">
+                        <argument name="type" xsi:type="string">sidebar</argument>
+                    </action>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
+

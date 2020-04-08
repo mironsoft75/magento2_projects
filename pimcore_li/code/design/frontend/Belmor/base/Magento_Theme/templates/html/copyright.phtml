@@ -1,0 +1,21 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<div class="copyright">
+    <div class="copyright-contents">
+        <div class="copyright-text">
+            <?= /* @escapeNotVerified */ $block->getCopyright() ?>
+        </div>
+        <div class="copyright-links-container">
+            <ul class="copyright-links">
+                <li><a href="#">Site Map</a></li>
+                <li><a href="<?php echo $this->getUrl('privacy-policy'); ?>">Privacy Policy</a></li>
+                <li><a href="<?php echo $this->getUrl('terms-of-use'); ?>">Terms of use</a></li>
+            </ul>
+        </div>
+        <div class="clear-copy"></div>
+    </div>
+</div>
